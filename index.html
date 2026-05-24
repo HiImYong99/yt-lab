@@ -13,6 +13,14 @@
 
   <title>YT Lab</title>
   <meta name="description" content="YT Lab — 소비자용 웹·앱 서비스를 설계하고 출시하는 작은 제품 스튜디오. A small product studio building consumer web and mobile services." />
+
+  <meta name="theme-color" content="#0a0a0a" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="YT Lab" />
+  <meta property="og:title" content="YT Lab — 제품 스튜디오" />
+  <meta property="og:description" content="앱인토스에서 9개의 미니앱을 운영하는 작은 제품 스튜디오. A small product studio running 9 mini-apps on Apps in Toss." />
+  <meta property="og:locale" content="ko_KR" />
+  <meta name="twitter:card" content="summary" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230a0a0a'/><text x='50' y='66' font-size='44' font-family='monospace' fill='%23fff' text-anchor='middle' font-weight='700'>YT</text></svg>" />
 
   <style>
@@ -125,6 +133,209 @@
       gap: 8px;
     }
 
+    .work {
+      padding: clamp(48px, 8vh, 96px) clamp(20px, 6vw, 64px);
+      border-top: 1px solid var(--line);
+    }
+    .work-inner { max-width: 920px; margin: 0 auto; }
+    .work h2 {
+      font-size: clamp(22px, 3.4vw, 32px);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+      margin-top: 14px;
+    }
+
+    .stats {
+      display: flex;
+      gap: clamp(28px, 6vw, 72px);
+      flex-wrap: wrap;
+      margin: 34px 0 44px;
+    }
+    .stat { display: flex; flex-direction: column; }
+    .stat .num {
+      font-size: clamp(34px, 6vw, 50px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .stat .lbl {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 9px;
+      max-width: 20ch;
+    }
+
+    .apps {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .apps li {
+      background: var(--bg);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .apps .nm { font-weight: 600; font-size: 16px; letter-spacing: -0.01em; }
+    .apps .tag {
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .apps .metric { margin-top: 8px; font-size: 13px; color: #cfcfcf; }
+    .apps .metric b { color: var(--fg); font-weight: 600; }
+    .apps a.store {
+      margin-top: 8px;
+      align-self: flex-start;
+      color: var(--fg);
+      text-decoration: none;
+      font-size: 13px;
+      border-bottom: 1px solid #333;
+      padding-bottom: 1px;
+      transition: border-color .15s;
+    }
+    .apps a.store:hover { border-color: var(--fg); }
+    .asof { margin-top: 18px; font-size: 12px; color: var(--muted); }
+
+    html { scroll-behavior: smooth; }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: -22vh;
+      left: 50%;
+      width: 92vw;
+      max-width: 920px;
+      height: 64vh;
+      transform: translateX(-50%);
+      background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.055), transparent 72%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    header, main, .approach, .work, .channel, footer { position: relative; z-index: 1; }
+
+    .nav { display: flex; align-items: center; gap: clamp(16px, 3vw, 28px); }
+    .navlinks { display: flex; gap: clamp(16px, 3vw, 28px); }
+    .navlinks a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color .15s;
+    }
+    .navlinks a:hover { color: var(--fg); }
+    @media (max-width: 560px) { .navlinks { display: none; } }
+
+    .cta { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 30px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      font: inherit;
+      font-size: 15px;
+      padding: 11px 20px;
+      border-radius: 999px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background .15s, border-color .15s, color .15s, transform .15s;
+    }
+    .btn-primary { background: var(--fg); color: var(--bg); border: 1px solid var(--fg); font-weight: 600; }
+    .btn-primary:hover { background: #fff; transform: translateY(-1px); }
+    .btn-ghost { background: none; color: var(--fg); border: 1px solid var(--line); }
+    .btn-ghost:hover { border-color: #444; }
+
+    .approach {
+      padding: clamp(48px, 8vh, 96px) clamp(20px, 6vw, 64px);
+      border-top: 1px solid var(--line);
+    }
+    .approach-inner { max-width: 920px; margin: 0 auto; }
+    .approach h2 {
+      font-size: clamp(22px, 3.4vw, 32px);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+      margin-top: 14px;
+    }
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: clamp(22px, 4vw, 40px);
+      margin-top: 40px;
+    }
+    .principle .pnum {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .principle h3 {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin: 10px 0 8px;
+    }
+    .principle p { font-size: 14px; color: var(--muted); line-height: 1.65; }
+
+    .channel {
+      padding: clamp(48px, 8vh, 96px) clamp(20px, 6vw, 64px);
+      border-top: 1px solid var(--line);
+    }
+    .channel-inner { max-width: 920px; margin: 0 auto; }
+    .channel h2 {
+      font-size: clamp(22px, 3.4vw, 32px);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+      margin-top: 14px;
+    }
+    .channel .lead2 {
+      font-size: clamp(15px, 2vw, 17px);
+      color: #cfcfcf;
+      max-width: 60ch;
+      margin-top: 18px;
+    }
+    .videos {
+      list-style: none;
+      margin: 34px 0 32px;
+      display: grid;
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .videos li {
+      background: var(--bg);
+      padding: 16px 20px;
+      display: flex;
+      gap: 13px;
+      align-items: baseline;
+      font-size: 15px;
+    }
+    .videos li::before {
+      content: "▶";
+      color: var(--muted);
+      font-size: 10px;
+      flex: none;
+      transform: translateY(-1px);
+    }
+
+    footer .fnav { display: flex; gap: 18px; flex-wrap: wrap; }
+    footer .fnav a { color: var(--muted); text-decoration: none; transition: color .15s; }
+    footer .fnav a:hover { color: var(--fg); }
+
+    .js .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+    .js .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .js .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
     [data-lang] { display: none; }
     html[lang="ko"] [data-lang="ko"],
     html[lang="en"] [data-lang="en"] { display: revert; }
@@ -133,7 +344,15 @@
 <body>
   <header class="topbar">
     <div class="mark">YT<span class="dot">·</span>Lab</div>
-    <button class="langtoggle" id="langBtn" aria-label="Switch language">EN</button>
+    <nav class="nav">
+      <div class="navlinks">
+        <a href="#approach"><span data-lang="ko">방식</span><span data-lang="en">Approach</span></a>
+        <a href="#work"><span data-lang="ko">제품</span><span data-lang="en">Products</span></a>
+        <a href="#youtube"><span data-lang="ko">콘텐츠</span><span data-lang="en">YouTube</span></a>
+        <a href="#contact"><span data-lang="ko">문의</span><span data-lang="en">Contact</span></a>
+      </div>
+      <button class="langtoggle" id="langBtn" aria-label="Switch language">EN</button>
+    </nav>
   </header>
 
   <main>
@@ -153,17 +372,228 @@
         <span data-lang="en">YT Lab is a product studio that designs and ships web and mobile services, fast. We build self-operating products across shopping, content, and mini-apps.</span>
       </p>
 
-      <div class="contact">
+      <div class="cta">
+        <a class="btn btn-primary" href="#work">
+          <span data-lang="ko">제품 보기</span>
+          <span data-lang="en">See our products</span>
+        </a>
+        <a class="btn btn-ghost" href="mailto:ytlab.kr@gmail.com">
+          <span data-lang="ko">함께 일하기</span>
+          <span data-lang="en">Work with us</span>
+        </a>
+      </div>
+
+      <div class="contact" id="contact">
         <span data-lang="ko">문의</span>
         <span data-lang="en">Contact</span>
         <span class="sep">/</span>
         <a href="mailto:ytlab.kr@gmail.com">ytlab.kr@gmail.com</a>
+        <span class="sep">/</span>
+        <a href="https://www.youtube.com/@VibeBuidler" target="_blank" rel="noopener">YouTube</a>
       </div>
     </div>
   </main>
 
+  <section class="approach" id="approach">
+    <div class="approach-inner">
+      <span class="badge reveal">
+        <span data-lang="ko">일하는 방식</span>
+        <span data-lang="en">How we work</span>
+      </span>
+      <h2 class="reveal">
+        <span data-lang="ko">아이디어를 빠르게 제품으로.</span>
+        <span data-lang="en">Ideas into products, fast.</span>
+      </h2>
+
+      <div class="principles">
+        <div class="principle reveal">
+          <span class="pnum">01</span>
+          <h3>
+            <span data-lang="ko">빠르게 출시</span>
+            <span data-lang="en">Ship fast</span>
+          </h3>
+          <p>
+            <span data-lang="ko">아이디어를 며칠 만에 실제 사용자가 쓰는 앱으로 내보냅니다.</span>
+            <span data-lang="en">We turn an idea into a live app people can open within days.</span>
+          </p>
+        </div>
+        <div class="principle reveal">
+          <span class="pnum">02</span>
+          <h3>
+            <span data-lang="ko">직접 운영</span>
+            <span data-lang="en">Run what we ship</span>
+          </h3>
+          <p>
+            <span data-lang="ko">출시로 끝내지 않고, 지표를 보며 계속 다듬습니다.</span>
+            <span data-lang="en">We don't stop at launch — we watch the numbers and keep refining.</span>
+          </p>
+        </div>
+        <div class="principle reveal">
+          <span class="pnum">03</span>
+          <h3>
+            <span data-lang="ko">데이터로 결정</span>
+            <span data-lang="en">Decide with data</span>
+          </h3>
+          <p>
+            <span data-lang="ko">실제 사용량과 반응으로 다음에 만들 것을 정합니다.</span>
+            <span data-lang="en">Real usage and feedback decide what we build next.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="work" id="work">
+    <div class="work-inner">
+      <span class="badge reveal">
+        <span data-lang="ko">운영 중</span>
+        <span data-lang="en">Live</span>
+      </span>
+      <h2 class="reveal">
+        <span data-lang="ko">앱인토스에서 9개의 미니앱을 운영합니다.</span>
+        <span data-lang="en">We run 9 mini-apps on Apps in Toss.</span>
+      </h2>
+
+      <div class="stats reveal">
+        <div class="stat">
+          <span class="num">9</span>
+          <span class="lbl">
+            <span data-lang="ko">운영 중인 미니앱</span>
+            <span data-lang="en">mini-apps live</span>
+          </span>
+        </div>
+        <div class="stat">
+          <span class="num">2,883</span>
+          <span class="lbl">
+            <span data-lang="ko">오늘의 상식 · 5월 누적 이용</span>
+            <span data-lang="en">Today's Trivia · May active total</span>
+          </span>
+        </div>
+        <div class="stat">
+          <span class="num">1,323</span>
+          <span class="lbl">
+            <span data-lang="ko">오늘의 소비 미션 · 5월 누적 이용</span>
+            <span data-lang="en">Spending Mission · May active total</span>
+          </span>
+        </div>
+      </div>
+
+      <ul class="apps reveal">
+        <li>
+          <span class="nm">오늘의 상식</span>
+          <span class="tag" data-lang="ko">상식 퀴즈 · 리워드</span>
+          <span class="tag" data-lang="en">Trivia quiz, rewards</span>
+          <span class="metric">
+            <span data-lang="ko">5월 누적 이용 <b>2,883</b></span>
+            <span data-lang="en">May active total <b>2,883</b></span>
+          </span>
+        </li>
+        <li>
+          <span class="nm">오늘의 소비 미션</span>
+          <span class="tag" data-lang="ko">소비 줄이고 리워드</span>
+          <span class="tag" data-lang="en">Spend less, earn rewards</span>
+          <span class="metric">
+            <span data-lang="ko">5월 누적 이용 <b>1,323</b></span>
+            <span data-lang="en">May active total <b>1,323</b></span>
+          </span>
+        </li>
+        <li>
+          <span class="nm">그때 샀더라면</span>
+          <span class="tag" data-lang="ko">주식·코인 수익률</span>
+          <span class="tag" data-lang="en">Stock &amp; crypto returns</span>
+        </li>
+        <li>
+          <span class="nm">AI 월세</span>
+          <span class="tag" data-lang="ko">AI 구독비 관리</span>
+          <span class="tag" data-lang="en">AI subscription tracker</span>
+        </li>
+        <li>
+          <span class="nm">오늘일진</span>
+          <span class="tag" data-lang="ko">사주 운세 카드</span>
+          <span class="tag" data-lang="en">Daily saju fortune</span>
+        </li>
+        <li>
+          <span class="nm">하루카드</span>
+          <span class="tag" data-lang="ko">안부 그림 카드</span>
+          <span class="tag" data-lang="en">Family greeting cards</span>
+        </li>
+        <li>
+          <span class="nm">오늘하루</span>
+          <span class="tag" data-lang="ko">AI 감정 일기</span>
+          <span class="tag" data-lang="en">AI journaling</span>
+        </li>
+        <li>
+          <span class="nm">오늘의 영단어</span>
+          <span class="tag" data-lang="ko">하루 5단어 영어</span>
+          <span class="tag" data-lang="en">5 English words a day</span>
+        </li>
+        <li>
+          <span class="nm">애니멀 팝</span>
+          <span class="tag" data-lang="ko">동물 합치기 퍼즐</span>
+          <span class="tag" data-lang="en">Animal merge puzzle</span>
+          <a class="store" href="https://play.google.com/store/apps/details?id=com.animalpop.app" target="_blank" rel="noopener">
+            <span data-lang="ko">Google Play</span>
+            <span data-lang="en">Google Play</span>
+          </a>
+        </li>
+      </ul>
+
+      <p class="asof">
+        <span data-lang="ko">2026년 5월 기준</span>
+        <span data-lang="en">As of May 2026</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="channel" id="youtube">
+    <div class="channel-inner">
+      <span class="badge reveal">
+        <span data-lang="ko">콘텐츠</span>
+        <span data-lang="en">YouTube</span>
+      </span>
+      <h2 class="reveal">
+        <span data-lang="ko">코딩 못해도, AI로 직접 만들 수 있습니다.</span>
+        <span data-lang="en">Can't code? You can still build with AI.</span>
+      </h2>
+      <p class="lead2 reveal">
+        <span data-lang="ko">유튜브 <b>바이브빌더</b>에서 비개발자를 위한 바이브코딩과 AI 도구 활용법, 그리고 매주 쏟아지는 AI 뉴스를 쉽게 풀어 전합니다.</span>
+        <span data-lang="en">On <b>Vibe Builder</b>, I break down vibe coding and AI tools for non-developers — plus the AI news that actually matters, made simple.</span>
+      </p>
+
+      <ul class="videos reveal">
+        <li>
+          <span class="vt" data-lang="ko">비개발자가 바이브코딩으로 돈 버는 4가지 방법</span>
+          <span class="vt" data-lang="en">4 ways non-developers make money with vibe coding</span>
+        </li>
+        <li>
+          <span class="vt" data-lang="ko">코딩 못해도 OK — AI 시대에 살아남는 3가지 방법</span>
+          <span class="vt" data-lang="en">Can't code? 3 ways to thrive in the AI era</span>
+        </li>
+        <li>
+          <span class="vt" data-lang="ko">비개발자가 클로드 코드를 포기하면 안 되는 이유</span>
+          <span class="vt" data-lang="en">Why non-developers shouldn't give up on Claude Code</span>
+        </li>
+        <li>
+          <span class="vt" data-lang="ko">AI 에이전트로 SNS 마케팅 자동화하는 법</span>
+          <span class="vt" data-lang="en">Automating social media marketing with AI agents</span>
+        </li>
+      </ul>
+
+      <a class="btn btn-primary reveal" href="https://www.youtube.com/@VibeBuidler" target="_blank" rel="noopener">
+        <span data-lang="ko">유튜브에서 보기</span>
+        <span data-lang="en">Watch on YouTube</span>
+      </a>
+    </div>
+  </section>
+
   <footer>
     <span>© <span id="year"></span> YT Lab</span>
+    <div class="fnav">
+      <a href="#approach"><span data-lang="ko">방식</span><span data-lang="en">Approach</span></a>
+      <a href="#work"><span data-lang="ko">제품</span><span data-lang="en">Products</span></a>
+      <a href="https://www.youtube.com/@VibeBuidler" target="_blank" rel="noopener">YouTube</a>
+      <a href="mailto:ytlab.kr@gmail.com">ytlab.kr@gmail.com</a>
+    </div>
     <span>
       <span data-lang="ko">대한민국 · Seoul, KR</span>
       <span data-lang="en">Seoul, Republic of Korea</span>
@@ -171,7 +601,20 @@
   </footer>
 
   <script>
+    document.documentElement.classList.add("js");
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    var reveals = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.12 });
+      reveals.forEach(function (el) { io.observe(el); });
+    } else {
+      reveals.forEach(function (el) { el.classList.add("in"); });
+    }
 
     var btn = document.getElementById("langBtn");
     function setLang(l) {
