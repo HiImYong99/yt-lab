@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!--
+    Google Search Console 인증용 meta 태그.
+    Search Console → 속성 추가 → "HTML 태그" 방식에서 받은 content 값을 아래에 붙여넣고
+    다시 푸시하면 인증됩니다. (현재는 placeholder)
+  -->
+  <meta name="google-site-verification" content="PASTE_SEARCH_CONSOLE_TOKEN_HERE" />
+
+  <title>YT Lab</title>
+  <meta name="description" content="YT Lab — 소비자용 웹·앱 서비스를 설계하고 출시하는 작은 제품 스튜디오. A small product studio building consumer web and mobile services." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230a0a0a'/><text x='50' y='66' font-size='44' font-family='monospace' fill='%23fff' text-anchor='middle' font-weight='700'>YT</text></svg>" />
+
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --fg: #ededed;
+      --muted: #8a8a8a;
+      --line: #1f1f1f;
+      --accent: #e5e5e5;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px clamp(20px, 6vw, 64px);
+    }
+    .mark {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: -0.02em;
+    }
+    .mark .dot { color: var(--muted); }
+
+    .langtoggle {
+      background: none;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font: inherit;
+      font-size: 13px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: color .15s, border-color .15s;
+    }
+    .langtoggle:hover { color: var(--fg); border-color: #333; }
+
+    main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: clamp(40px, 10vh, 120px) clamp(20px, 6vw, 64px);
+    }
+    .hero { max-width: 720px; }
+
+    .badge {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 5px 12px;
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 7vw, 68px);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+    .lead {
+      font-size: clamp(17px, 2.4vw, 21px);
+      color: #cfcfcf;
+      max-width: 56ch;
+      margin-bottom: 36px;
+    }
+
+    .contact {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+      font-size: 15px;
+    }
+    .contact a {
+      color: var(--fg);
+      text-decoration: none;
+      border-bottom: 1px solid #333;
+      padding-bottom: 1px;
+      transition: border-color .15s;
+    }
+    .contact a:hover { border-color: var(--fg); }
+    .contact .sep { color: var(--line); }
+
+    footer {
+      padding: 28px clamp(20px, 6vw, 64px);
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    [data-lang] { display: none; }
+    html[lang="ko"] [data-lang="ko"],
+    html[lang="en"] [data-lang="en"] { display: revert; }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="mark">YT<span class="dot">·</span>Lab</div>
+    <button class="langtoggle" id="langBtn" aria-label="Switch language">EN</button>
+  </header>
+
+  <main>
+    <div class="hero">
+      <span class="badge">
+        <span data-lang="ko">제품 스튜디오</span>
+        <span data-lang="en">Product Studio</span>
+      </span>
+
+      <h1>
+        <span data-lang="ko">작은 팀이 만드는<br>소비자용 제품.</span>
+        <span data-lang="en">Consumer products<br>from a small team.</span>
+      </h1>
+
+      <p class="lead">
+        <span data-lang="ko">YT Lab은 웹·모바일 서비스를 빠르게 설계하고 출시하는 제품 스튜디오입니다. 쇼핑, 콘텐츠, 미니앱 분야에서 직접 운영 가능한 제품을 만듭니다.</span>
+        <span data-lang="en">YT Lab is a product studio that designs and ships web and mobile services, fast. We build self-operating products across shopping, content, and mini-apps.</span>
+      </p>
+
+      <div class="contact">
+        <span data-lang="ko">문의</span>
+        <span data-lang="en">Contact</span>
+        <span class="sep">/</span>
+        <a href="mailto:good19422@naver.com">good19422@naver.com</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <span>© <span id="year"></span> YT Lab</span>
+    <span>
+      <span data-lang="ko">대한민국 · Seoul, KR</span>
+      <span data-lang="en">Seoul, Republic of Korea</span>
+    </span>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    var btn = document.getElementById("langBtn");
+    function setLang(l) {
+      document.documentElement.lang = l;
+      btn.textContent = l === "ko" ? "EN" : "한국어";
+      try { localStorage.setItem("yt_lang", l); } catch (e) {}
+    }
+    btn.addEventListener("click", function () {
+      setLang(document.documentElement.lang === "ko" ? "en" : "ko");
+    });
+    var saved;
+    try { saved = localStorage.getItem("yt_lang"); } catch (e) {}
+    setLang(saved || (navigator.language && navigator.language.startsWith("en") ? "en" : "ko"));
+  </script>
+</body>
+</html>
