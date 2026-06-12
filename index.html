@@ -383,25 +383,78 @@
     .collab .cta { margin: 30px 0 0; }
     footer .biz { color: var(--muted); }
 
-    .toast {
+    .modal-backdrop {
       position: fixed;
-      left: 50%;
-      bottom: 28px;
-      transform: translateX(-50%) translateY(20px);
-      background: var(--fg);
-      color: var(--bg);
-      font-size: 14px;
-      font-weight: 600;
-      padding: 11px 18px;
-      border-radius: 999px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+      inset: 0;
+      background: rgba(0, 0, 0, 0.66);
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 30;
       opacity: 0;
-      pointer-events: none;
-      transition: opacity .2s ease, transform .2s ease;
-      z-index: 20;
-      max-width: 90vw;
+      transition: opacity .2s ease;
     }
-    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+    .modal-backdrop.show { opacity: 1; }
+    .modal-backdrop[hidden] { display: none; }
+    .modal {
+      background: #111;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: clamp(22px, 4vw, 34px);
+      width: 100%;
+      max-width: 460px;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      transform: translateY(12px);
+      transition: transform .2s ease;
+    }
+    .modal-backdrop.show .modal { transform: none; }
+    .modal h3 { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; }
+    .modal-sub { color: var(--muted); font-size: 14px; margin-top: 8px; line-height: 1.5; }
+    .modal-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: none;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color .15s, border-color .15s;
+    }
+    .modal-close:hover { color: var(--fg); border-color: #444; }
+    .modal form { margin-top: 22px; display: flex; flex-direction: column; gap: 14px; }
+    .field { display: flex; flex-direction: column; gap: 6px; }
+    .field label { font-size: 13px; color: var(--muted); }
+    .field input, .field select, .field textarea {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 11px 13px;
+      color: var(--fg);
+      font: inherit;
+      font-size: 15px;
+      width: 100%;
+    }
+    .field textarea { min-height: 124px; resize: vertical; line-height: 1.55; }
+    .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: #555; }
+    .modal .btn-primary { justify-content: center; width: 100%; margin-top: 4px; }
+    .modal .btn-primary[disabled] { opacity: .55; cursor: default; }
+    .modal-alt { text-align: center; font-size: 13px; margin: 2px 0 0; }
+    .modal-alt a { color: var(--muted); text-decoration: underline; }
+    .modal-err { color: #ff7373; font-size: 13px; text-align: center; }
+    .modal-result { text-align: center; padding: 14px 0 4px; }
+    .modal-result h3 { margin-bottom: 8px; }
+    .hp { position: absolute; left: -9999px; width: 0; height: 0; opacity: 0; }
 
     [data-lang] { display: none; }
     html[lang="ko"] [data-lang="ko"],
@@ -730,7 +783,79 @@
     </span>
   </footer>
 
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="modal-backdrop" id="contactModal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="cmTitle">
+      <button class="modal-close" id="cmClose" aria-label="닫기">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 3l10 10M13 3 3 13"/></svg>
+      </button>
+
+      <form id="contactForm" novalidate>
+        <div>
+          <h3 id="cmTitle">
+            <span data-lang="ko">제작·협업 문의</span>
+            <span data-lang="en">Start a project</span>
+          </h3>
+          <p class="modal-sub">
+            <span data-lang="ko">간단히 남겨주시면 contact@ytlab.site로 바로 전달돼요. 보통 1~2일 안에 회신드려요.</span>
+            <span data-lang="en">Drop a note and it goes straight to contact@ytlab.site. We usually reply within 1–2 days.</span>
+          </p>
+        </div>
+
+        <div class="field">
+          <label for="cmName"><span data-lang="ko">성함 · 회사명</span><span data-lang="en">Name / company</span></label>
+          <input id="cmName" name="name" type="text" autocomplete="name" />
+        </div>
+        <div class="field">
+          <label for="cmEmail"><span data-lang="ko">회신받을 이메일</span><span data-lang="en">Email to reply to</span></label>
+          <input id="cmEmail" name="email" type="email" autocomplete="email" required />
+        </div>
+        <div class="field">
+          <label for="cmType"><span data-lang="ko">문의 유형</span><span data-lang="en">Type</span></label>
+          <select id="cmType" name="type">
+            <option>앱 제작 (iOS · Android)</option>
+            <option>앱인토스 미니앱</option>
+            <option>웹사이트 · 웹서비스</option>
+            <option>협업 · 제휴</option>
+            <option>기타</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="cmMsg"><span data-lang="ko">내용</span><span data-lang="en">Message</span></label>
+          <textarea id="cmMsg" name="message" required></textarea>
+        </div>
+
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+        <p class="modal-err" id="contactErr" hidden></p>
+
+        <button type="submit" class="btn btn-primary">
+          <span data-lang="ko">발송하기</span>
+          <span data-lang="en">Send</span>
+        </button>
+        <p class="modal-alt">
+          <a href="mailto:contact@ytlab.site?subject=제작%20문의" data-direct>
+            <span data-lang="ko">또는 메일 앱으로 직접 보내기</span>
+            <span data-lang="en">or use your own mail app</span>
+          </a>
+        </p>
+      </form>
+
+      <div class="modal-result" id="contactResult" hidden>
+        <h3>
+          <span data-lang="ko">문의가 접수됐어요</span>
+          <span data-lang="en">Message sent</span>
+        </h3>
+        <p class="modal-sub">
+          <span data-lang="ko">contact@ytlab.site로 전달했어요. 보통 1~2일 안에 회신드려요.</span>
+          <span data-lang="en">Sent to contact@ytlab.site. We usually reply within 1–2 days.</span>
+        </p>
+        <button class="btn btn-ghost" id="cmDone" style="justify-content:center;width:100%;margin-top:16px">
+          <span data-lang="ko">닫기</span>
+          <span data-lang="en">Close</span>
+        </button>
+      </div>
+    </div>
+  </div>
 
   <script>
     document.documentElement.classList.add("js");
@@ -761,27 +886,90 @@
     try { saved = localStorage.getItem("yt_lang"); } catch (e) {}
     setLang(saved || (navigator.language && navigator.language.startsWith("en") ? "en" : "ko"));
 
-    var toast = document.getElementById("toast");
-    var toastTimer;
-    function showToast(msg) {
-      toast.textContent = msg;
-      toast.classList.add("show");
-      clearTimeout(toastTimer);
-      toastTimer = setTimeout(function () { toast.classList.remove("show"); }, 2600);
+    // Contact modal
+    var modal = document.getElementById("contactModal");
+    var cform = document.getElementById("contactForm");
+    var cresult = document.getElementById("contactResult");
+    var cerr = document.getElementById("contactErr");
+    var TMPL = {
+      ko: { name: "성함 또는 회사명", msg: "안녕하세요, YT Lab.\n\n· 만들고 싶은 것:\n· 예상 일정:\n· 예산(선택):\n· 참고 링크(선택):" },
+      en: { name: "Your name or company", msg: "Hi YT Lab,\n\n· What you want to build:\n· Timeline:\n· Budget (optional):\n· Reference links (optional):" }
+    };
+    function fillModalLang() {
+      var t = document.documentElement.lang === "en" ? TMPL.en : TMPL.ko;
+      cform.elements["name"].placeholder = t.name;
+      cform.elements["email"].placeholder = "you@example.com";
+      var msg = cform.elements["message"];
+      if (msg.dataset.touched !== "1") msg.value = t.msg;
     }
-    document.querySelectorAll('a[href^="mailto:"]').forEach(function (a) {
-      a.addEventListener("click", function () {
-        var email = a.getAttribute("href").replace("mailto:", "").split("?")[0];
-        var en = document.documentElement.lang === "en";
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(email).then(function () {
-            showToast((en ? "Email copied · " : "메일 주소 복사됨 · ") + email);
-          }).catch(function () {
-            showToast(email);
-          });
-        } else {
-          showToast(email);
-        }
+    function openModal() {
+      cerr.hidden = true;
+      fillModalLang();
+      modal.hidden = false;
+      requestAnimationFrame(function () { modal.classList.add("show"); });
+      document.body.style.overflow = "hidden";
+      setTimeout(function () { cform.elements["email"].focus(); }, 80);
+    }
+    function closeModal() {
+      modal.classList.remove("show");
+      document.body.style.overflow = "";
+      setTimeout(function () { modal.hidden = true; }, 200);
+    }
+    function resetModal() {
+      cform.reset();
+      cform.elements["message"].dataset.touched = "";
+      cform.hidden = false;
+      cresult.hidden = true;
+      cerr.hidden = true;
+      cform.querySelector('button[type="submit"]').disabled = false;
+    }
+    cform.elements["message"].addEventListener("input", function () { this.dataset.touched = "1"; });
+    document.querySelectorAll('a[href^="mailto:"]:not([data-direct])').forEach(function (a) {
+      a.addEventListener("click", function (e) { e.preventDefault(); openModal(); });
+    });
+    document.getElementById("cmClose").addEventListener("click", closeModal);
+    document.getElementById("cmDone").addEventListener("click", function () { resetModal(); closeModal(); });
+    modal.addEventListener("click", function (e) { if (e.target === modal) closeModal(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !modal.hidden) closeModal(); });
+    btn.addEventListener("click", function () { if (!modal.hidden) fillModalLang(); });
+
+    cform.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (cform.elements["_honey"].value) return;
+      var en = document.documentElement.lang === "en";
+      if (!cform.elements["email"].value || !cform.elements["message"].value.trim()) {
+        cerr.textContent = en ? "Please enter your email and a message." : "이메일과 내용을 입력해주세요.";
+        cerr.hidden = false;
+        return;
+      }
+      cerr.hidden = true;
+      var sb = cform.querySelector('button[type="submit"]');
+      sb.disabled = true;
+      sb.querySelector('[data-lang="ko"]').textContent = "보내는 중…";
+      sb.querySelector('[data-lang="en"]').textContent = "Sending…";
+      fetch("https://formsubmit.co/ajax/contact@ytlab.site", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({
+          name: cform.elements["name"].value || "(미입력)",
+          email: cform.elements["email"].value,
+          type: cform.elements["type"].value,
+          message: cform.elements["message"].value,
+          _subject: "YT Lab 문의 — " + cform.elements["type"].value,
+          _template: "table",
+          _captcha: "false"
+        })
+      }).then(function (r) { return r.json(); }).then(function (j) {
+        if (j && (j.success === true || j.success === "true")) {
+          cform.hidden = true;
+          cresult.hidden = false;
+        } else { throw new Error("fail"); }
+      }).catch(function () {
+        cerr.textContent = en ? "Couldn't send. Please email contact@ytlab.site directly." : "발송에 실패했어요. contact@ytlab.site로 직접 메일 주세요.";
+        cerr.hidden = false;
+        sb.disabled = false;
+        sb.querySelector('[data-lang="ko"]').textContent = "발송하기";
+        sb.querySelector('[data-lang="en"]').textContent = "Send";
       });
     });
   </script>
