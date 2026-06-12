@@ -18,7 +18,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="YT Lab" />
   <meta property="og:title" content="YT Lab — 제품 스튜디오" />
-  <meta property="og:description" content="앱인토스에서 10개의 미니앱을 운영하는 작은 제품 스튜디오. A small product studio running 10 mini-apps on Apps in Toss." />
+  <meta property="og:description" content="앱인토스에서 15개의 미니앱을 운영하고 App Store에 진출한 1인 제품 스튜디오. A solo product studio running 15 mini-apps on Apps in Toss, now on the App Store." />
   <meta property="og:locale" content="ko_KR" />
   <meta name="twitter:card" content="summary" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230a0a0a'/><text x='50' y='66' font-size='44' font-family='monospace' fill='%23fff' text-anchor='middle' font-weight='700'>YT</text></svg>" />
@@ -220,7 +220,7 @@
       pointer-events: none;
       z-index: 0;
     }
-    header, main, .approach, .work, .channel, footer { position: relative; z-index: 1; }
+    header, main, .approach, .work, .channel, .collab, footer { position: relative; z-index: 1; }
 
     .nav { display: flex; align-items: center; gap: clamp(16px, 3vw, 28px); }
     .navlinks { display: flex; gap: clamp(16px, 3vw, 28px); }
@@ -336,6 +336,53 @@
       .js .reveal { opacity: 1; transform: none; transition: none; }
     }
 
+    .wins {
+      list-style: none;
+      margin: 34px 0 0;
+      display: grid;
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .wins li {
+      background: var(--bg);
+      padding: 16px 20px;
+      display: flex;
+      gap: 13px;
+      align-items: baseline;
+      font-size: 15px;
+      color: #cfcfcf;
+    }
+    .wins li::before {
+      content: "—";
+      color: var(--muted);
+      flex: none;
+    }
+    .wins b { color: var(--fg); font-weight: 600; }
+
+    .collab {
+      padding: clamp(48px, 8vh, 96px) clamp(20px, 6vw, 64px);
+      border-top: 1px solid var(--line);
+    }
+    .collab-inner { max-width: 920px; margin: 0 auto; }
+    .collab h2 {
+      font-size: clamp(22px, 3.4vw, 32px);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+      margin-top: 14px;
+    }
+    .collab .lead2 {
+      font-size: clamp(15px, 2vw, 17px);
+      color: #cfcfcf;
+      max-width: 60ch;
+      margin-top: 18px;
+    }
+    .collab .cta { margin: 30px 0 0; }
+    footer .biz { color: var(--muted); }
+
     [data-lang] { display: none; }
     html[lang="ko"] [data-lang="ko"],
     html[lang="en"] [data-lang="en"] { display: revert; }
@@ -347,9 +394,10 @@
     <nav class="nav">
       <div class="navlinks">
         <a href="#approach"><span data-lang="ko">방식</span><span data-lang="en">Approach</span></a>
+        <a href="#traction"><span data-lang="ko">성과</span><span data-lang="en">Traction</span></a>
         <a href="#work"><span data-lang="ko">제품</span><span data-lang="en">Products</span></a>
         <a href="#youtube"><span data-lang="ko">콘텐츠</span><span data-lang="en">YouTube</span></a>
-        <a href="#contact"><span data-lang="ko">문의</span><span data-lang="en">Contact</span></a>
+        <a href="#collab"><span data-lang="ko">협업</span><span data-lang="en">Hire us</span></a>
       </div>
       <button class="langtoggle" id="langBtn" aria-label="Switch language">EN</button>
     </nav>
@@ -443,20 +491,20 @@
     </div>
   </section>
 
-  <section class="work" id="work">
+  <section class="work" id="traction">
     <div class="work-inner">
       <span class="badge reveal">
-        <span data-lang="ko">운영 중</span>
-        <span data-lang="en">Live</span>
+        <span data-lang="ko">성과</span>
+        <span data-lang="en">Traction</span>
       </span>
       <h2 class="reveal">
-        <span data-lang="ko">앱인토스에서 10개의 미니앱을 운영합니다.</span>
-        <span data-lang="en">We run 10 mini-apps on Apps in Toss.</span>
+        <span data-lang="ko">숫자로 보는 YT Lab.</span>
+        <span data-lang="en">YT Lab by the numbers.</span>
       </h2>
 
       <div class="stats reveal">
         <div class="stat">
-          <span class="num">10</span>
+          <span class="num">15</span>
           <span class="lbl">
             <span data-lang="ko">운영 중인 미니앱</span>
             <span data-lang="en">mini-apps live</span>
@@ -465,11 +513,50 @@
         <div class="stat">
           <span class="num" id="mau">6,027</span>
           <span class="lbl">
-            <span data-lang="ko">5월 MAU · 10개 앱 합산</span>
-            <span data-lang="en">May MAU · 10 apps combined</span>
+            <span data-lang="ko">5월 MAU · 대표 10개 합산</span>
+            <span data-lang="en">May MAU · top 10 combined</span>
+          </span>
+        </div>
+        <div class="stat">
+          <span class="num">3</span>
+          <span class="lbl">
+            <span data-lang="ko">운영 플랫폼 · 앱인토스 · App Store · Google Play</span>
+            <span data-lang="en">platforms · Apps in Toss, App Store, Google Play</span>
           </span>
         </div>
       </div>
+
+      <ul class="wins reveal">
+        <li>
+          <span data-lang="ko">앱인토스에서 미니앱 <b>15개</b>를 운영합니다 — 리워드 · 콘텐츠 · 생활 · 금융</span>
+          <span data-lang="en">Running <b>15 mini-apps</b> on Apps in Toss — rewards, content, lifestyle, finance</span>
+        </li>
+        <li>
+          <span data-lang="ko">대표 10개 앱의 <b>5월 MAU 6,027명</b> 달성</span>
+          <span data-lang="en">Top 10 apps reached <b>6,027 monthly active users</b> in May</span>
+        </li>
+        <li>
+          <span data-lang="ko"><b>App Store 진출</b> — 마이포폴(금융), 2026년 6월 출시</span>
+          <span data-lang="en"><b>Launched on the App Store</b> — My Popol (finance), June 2026</span>
+        </li>
+        <li>
+          <span data-lang="ko"><b>멀티 플랫폼</b> 운영 — 앱인토스 · App Store · Google Play 동시 출시</span>
+          <span data-lang="en"><b>Multi-platform</b> — shipping across Apps in Toss, App Store, and Google Play</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="work" id="work">
+    <div class="work-inner">
+      <span class="badge reveal">
+        <span data-lang="ko">운영 중</span>
+        <span data-lang="en">Live</span>
+      </span>
+      <h2 class="reveal">
+        <span data-lang="ko">대표 미니앱 10개를 소개합니다.</span>
+        <span data-lang="en">A look at our top 10 mini-apps.</span>
+      </h2>
 
       <ul class="apps reveal">
         <li>
@@ -580,17 +667,46 @@
     </div>
   </section>
 
+  <section class="collab" id="collab">
+    <div class="collab-inner">
+      <span class="badge reveal">
+        <span data-lang="ko">협업</span>
+        <span data-lang="en">Work with us</span>
+      </span>
+      <h2 class="reveal">
+        <span data-lang="ko">함께 만들 제품이 있나요?</span>
+        <span data-lang="en">Got a product to build?</span>
+      </h2>
+      <p class="lead2 reveal">
+        <span data-lang="ko">앱인토스 미니앱, iOS·Android 앱, 웹 서비스를 기획부터 디자인·개발·운영까지 한 번에 만듭니다. 외주와 협업 문의를 환영합니다.</span>
+        <span data-lang="en">From Apps in Toss mini-apps to iOS, Android, and web — we design, build, and run products end to end. Open to client work and collaboration.</span>
+      </p>
+      <div class="cta reveal">
+        <a class="btn btn-primary" href="mailto:contact@ytlab.site">
+          <span data-lang="ko">제작 문의하기</span>
+          <span data-lang="en">Start a project</span>
+        </a>
+        <a class="btn btn-ghost" href="#work">
+          <span data-lang="ko">제품 먼저 보기</span>
+          <span data-lang="en">See our products</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <footer>
     <span>© <span id="year"></span> YT Lab</span>
     <div class="fnav">
       <a href="#approach"><span data-lang="ko">방식</span><span data-lang="en">Approach</span></a>
+      <a href="#traction"><span data-lang="ko">성과</span><span data-lang="en">Traction</span></a>
       <a href="#work"><span data-lang="ko">제품</span><span data-lang="en">Products</span></a>
+      <a href="#collab"><span data-lang="ko">협업</span><span data-lang="en">Hire us</span></a>
       <a href="https://www.youtube.com/@VibeBuidler" target="_blank" rel="noopener">YouTube</a>
       <a href="mailto:contact@ytlab.site">contact@ytlab.site</a>
     </div>
-    <span>
-      <span data-lang="ko">대한민국 · Seoul, KR</span>
-      <span data-lang="en">Seoul, Republic of Korea</span>
+    <span class="biz">
+      <span data-lang="ko">상호 YT Lab · 대한민국 서울</span>
+      <span data-lang="en">YT Lab · Seoul, Republic of Korea</span>
     </span>
   </footer>
 
