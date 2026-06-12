@@ -383,6 +383,26 @@
     .collab .cta { margin: 30px 0 0; }
     footer .biz { color: var(--muted); }
 
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 28px;
+      transform: translateX(-50%) translateY(20px);
+      background: var(--fg);
+      color: var(--bg);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 11px 18px;
+      border-radius: 999px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s ease, transform .2s ease;
+      z-index: 20;
+      max-width: 90vw;
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
     [data-lang] { display: none; }
     html[lang="ko"] [data-lang="ko"],
     html[lang="en"] [data-lang="en"] { display: revert; }
@@ -425,7 +445,7 @@
           <span data-lang="ko">제품 보기</span>
           <span data-lang="en">See our products</span>
         </a>
-        <a class="btn btn-ghost" href="mailto:contact@ytlab.site">
+        <a class="btn btn-ghost" href="mailto:contact@ytlab.site?subject=협업%20문의">
           <span data-lang="ko">함께 일하기</span>
           <span data-lang="en">Work with us</span>
         </a>
@@ -682,7 +702,7 @@
         <span data-lang="en">From Apps in Toss mini-apps to iOS, Android, and web — we design, build, and run products end to end. Open to client work and collaboration.</span>
       </p>
       <div class="cta reveal">
-        <a class="btn btn-primary" href="mailto:contact@ytlab.site">
+        <a class="btn btn-primary" href="mailto:contact@ytlab.site?subject=제작%20문의">
           <span data-lang="ko">제작 문의하기</span>
           <span data-lang="en">Start a project</span>
         </a>
@@ -709,6 +729,8 @@
       <span data-lang="en">YT Lab · Seoul, Republic of Korea</span>
     </span>
   </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script>
     document.documentElement.classList.add("js");
@@ -738,6 +760,30 @@
     var saved;
     try { saved = localStorage.getItem("yt_lang"); } catch (e) {}
     setLang(saved || (navigator.language && navigator.language.startsWith("en") ? "en" : "ko"));
+
+    var toast = document.getElementById("toast");
+    var toastTimer;
+    function showToast(msg) {
+      toast.textContent = msg;
+      toast.classList.add("show");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(function () { toast.classList.remove("show"); }, 2600);
+    }
+    document.querySelectorAll('a[href^="mailto:"]').forEach(function (a) {
+      a.addEventListener("click", function () {
+        var email = a.getAttribute("href").replace("mailto:", "").split("?")[0];
+        var en = document.documentElement.lang === "en";
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(email).then(function () {
+            showToast((en ? "Email copied · " : "메일 주소 복사됨 · ") + email);
+          }).catch(function () {
+            showToast(email);
+          });
+        } else {
+          showToast(email);
+        }
+      });
+    });
   </script>
 </body>
 </html>
