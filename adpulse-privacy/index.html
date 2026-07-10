@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+<title>AdPulse — 개인정보 처리방침</title>
+<style>
+  :root { --ink:#1a1b1e; --muted:#6b6e76; --line:#e6e4dd; --accent:#0f7b54; --paper:#f7f6f2; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--paper); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:720px; margin:0 auto; padding:56px 24px 96px; }
+  h1 { font-size:30px; letter-spacing:-0.02em; margin:0 0 6px; }
+  .eyebrow { color:var(--accent); font-weight:700; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; margin:0 0 14px; }
+  .meta { color:var(--muted); font-size:14px; margin:0 0 40px; }
+  h2 { font-size:18px; margin:38px 0 10px; letter-spacing:-0.01em; }
+  p, li { font-size:15.5px; color:#33353b; }
+  ul { padding-left:20px; }
+  a { color:var(--accent); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin:14px 0; }
+  table { width:100%; border-collapse:collapse; margin:10px 0; font-size:14.5px; }
+  th, td { text-align:left; padding:10px 8px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { color:var(--muted); font-weight:600; }
+  footer { margin-top:56px; padding-top:20px; border-top:1px solid var(--line); color:var(--muted); font-size:13.5px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="eyebrow">AdPulse</p>
+  <h1>개인정보 처리방침</h1>
+  <p class="meta">시행일: 2026년 7월 10일</p>
+  <p class="meta" style="margin-bottom:36px">한국어 · <a href="en/">English</a></p>
+
+  <p>YT Lab(이하 "개발자")은 모바일 앱 <strong>AdPulse</strong>(이하 "앱")를 운영합니다.
+  앱은 이용자가 본인의 Google 계정으로 로그인해 본인의 AdMob·AdSense 광고 수익을 조회하는 대시보드입니다.
+  <strong>개발자는 자체 서버를 운영하지 않으며, 이용자의 수익 데이터와 인증 정보는 이용자 기기 밖으로 전송·저장되지 않습니다.</strong></p>
+
+  <h2>1. 처리하는 정보</h2>
+  <table>
+    <tr><th>항목</th><th>시점</th><th>목적·보관</th></tr>
+    <tr><td>Google 계정 기본 프로필(이름, 이메일, 프로필 사진)</td><td>Google 로그인 시</td><td>앱 내 계정 표시. 기기에만 보관</td></tr>
+    <tr><td>AdMob 보고서 데이터(예상 수익 등, 읽기 전용)</td><td>이용자가 AdMob 연결에 동의한 경우</td><td>대시보드 표시. 기기에만 캐시</td></tr>
+    <tr><td>AdSense 보고서 데이터(예상 수익 등, 읽기 전용)</td><td>이용자가 AdSense 연결에 동의한 경우</td><td>대시보드 표시. 기기에만 캐시</td></tr>
+    <tr><td>광고 식별자·대략적 위치·앱 상호작용·진단 정보</td><td>광고 표시 시(아래 3항)</td><td>광고 게재·측정, 오류 진단</td></tr>
+  </table>
+  <div class="card">
+    앱이 Google API로부터 받은 정보는 기기 내 대시보드 표시라는 단일 목적에만 사용됩니다.
+    수익 데이터를 제3자에게 판매·공유·이전하지 않으며, 광고 목적으로 사용하지 않고, 사람이 열람하지 않습니다.
+  </div>
+
+  <h2>2. Google API 접근(제한적 사용 고지)</h2>
+  <p>앱은 Google 로그인 후 이용자가 명시적으로 동의한 경우에만 아래의 읽기 전용 권한을 요청합니다.</p>
+  <ul>
+    <li><code>admob.readonly</code> — AdMob 보고서 조회</li>
+    <li><code>adsense.readonly</code> — AdSense 보고서 조회</li>
+  </ul>
+  <p>AdPulse가 Google API에서 받은 정보의 사용은
+  <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API 서비스 사용자 데이터 정책</a>의
+  <strong>제한적 사용(Limited Use) 요건을 포함하여 해당 정책을 준수합니다.</strong></p>
+
+  <h2>3. 광고</h2>
+  <p>앱은 무료로 제공되며 <strong>Google AdMob</strong>을 통해 광고를 게재합니다. AdMob은 광고 게재·측정·개인 맞춤을 위해
+  광고 식별자, 대략적 위치, 기기·사용 정보를 수집·이용할 수 있습니다. 자세한 내용은
+  <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 개인정보처리방침</a> 및
+  <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">AdMob 데이터 이용</a>을 참고하세요.</p>
+  <ul>
+    <li><strong>iOS</strong>: 추적 동의(App Tracking Transparency)에 동의한 경우에만 기기 광고 식별자(IDFA)가 맞춤 광고에 사용됩니다.</li>
+    <li><strong>EU/EEA·영국</strong>: Google UMP 동의 화면을 통해 동의 여부를 수집하며, 동의에 따라 맞춤 또는 비맞춤 광고가 표시됩니다.</li>
+    <li>광고 식별자는 기기 설정에서 언제든지 재설정하거나 맞춤 광고를 해제할 수 있습니다.</li>
+  </ul>
+
+  <h2>4. 데이터 보관·삭제</h2>
+  <ul>
+    <li>수익 데이터 캐시와 로그인 상태는 이용자 기기에만 저장되며, 앱에서 <strong>로그아웃</strong>하거나 앱을 삭제하면 제거됩니다.</li>
+    <li>앱의 Google 계정 접근 권한은 <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google 계정 &gt; 보안 &gt; 제3자 액세스</a>에서 언제든지 철회할 수 있습니다.</li>
+  </ul>
+
+  <h2>5. 제3자 서비스</h2>
+  <ul>
+    <li>Google 로그인(Google Identity) — 계정 인증</li>
+    <li>Google AdMob API·AdSense Management API — 수익 데이터 조회(읽기 전용)</li>
+    <li>Google AdMob — 앱 내 광고 게재·측정</li>
+  </ul>
+
+  <h2>6. 아동의 개인정보</h2>
+  <p>앱은 광고 게시자(개발자·퍼블리셔)를 대상으로 하며 만 13세 미만(대한민국 만 14세 미만) 아동을 대상으로 하지 않습니다.</p>
+
+  <h2>7. 문의</h2>
+  <p>개인정보 처리에 관한 문의: <a href="mailto:contact@ytlab.site">contact@ytlab.site</a></p>
+
+  <h2>8. 고지 의무</h2>
+  <p>본 방침이 변경되는 경우 이 페이지를 통해 공지하며, 중요한 변경은 앱 내에서 별도로 알립니다.</p>
+
+  <footer>
+    AdPulse는 독립 앱으로 Google과 관련이 없습니다. AdMob과 AdSense는 Google LLC의 상표입니다.<br>
+    © 2026 YT Lab · <a href="https://ytlab.site">ytlab.site</a>
+  </footer>
+</div>
+</body>
+</html>
