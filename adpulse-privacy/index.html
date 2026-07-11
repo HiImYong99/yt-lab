@@ -44,6 +44,7 @@
     <tr><td>Google 계정 기본 프로필(이름, 이메일, 프로필 사진)</td><td>Google 로그인 시</td><td>앱 내 계정 표시. 기기에만 보관</td></tr>
     <tr><td>AdMob 보고서 데이터(예상 수익 등, 읽기 전용)</td><td>이용자가 AdMob 연결에 동의한 경우</td><td>대시보드 표시. 기기에만 캐시</td></tr>
     <tr><td>AdSense 보고서 데이터(예상 수익 등, 읽기 전용)</td><td>이용자가 AdSense 연결에 동의한 경우</td><td>대시보드 표시. 기기에만 캐시</td></tr>
+    <tr><td>광고 식별자·대략적 위치·앱 상호작용·진단 정보</td><td>광고 표시 시(아래 3항)</td><td>광고 게재·측정, 오류 진단</td></tr>
   </table>
   <div class="card">
     앱이 Google API로부터 받은 정보는 기기 내 대시보드 표시라는 단일 목적에만 사용됩니다.
@@ -60,8 +61,16 @@
   <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API 서비스 사용자 데이터 정책</a>의
   <strong>제한적 사용(Limited Use) 요건을 포함하여 해당 정책을 준수합니다.</strong></p>
 
-  <h2>3. 광고 없음</h2>
-  <p>앱에는 광고가 없으며, 광고 SDK·추적 기술을 사용하지 않습니다. 광고 식별자(IDFA/AAID)를 수집하지 않습니다.</p>
+  <h2>3. 광고</h2>
+  <p>앱은 무료로 제공되며 <strong>Google AdMob</strong>을 통해 광고를 게재합니다. AdMob은 광고 게재·측정·개인 맞춤을 위해
+  광고 식별자, 대략적 위치, 기기·사용 정보를 수집·이용할 수 있습니다. 자세한 내용은
+  <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 개인정보처리방침</a> 및
+  <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">AdMob 데이터 이용</a>을 참고하세요.</p>
+  <ul>
+    <li><strong>iOS</strong>: 추적 동의(App Tracking Transparency)에 동의한 경우에만 기기 광고 식별자(IDFA)가 맞춤 광고에 사용됩니다.</li>
+    <li><strong>EU/EEA·영국</strong>: Google UMP 동의 화면을 통해 동의 여부를 수집하며, 동의에 따라 맞춤 또는 비맞춤 광고가 표시됩니다.</li>
+    <li>광고 식별자는 기기 설정에서 언제든지 재설정하거나 맞춤 광고를 해제할 수 있습니다.</li>
+  </ul>
 
   <h2>4. 데이터 보관·삭제</h2>
   <ul>
@@ -73,6 +82,7 @@
   <ul>
     <li>Google 로그인(Google Identity) — 계정 인증</li>
     <li>Google AdMob API·AdSense Management API — 수익 데이터 조회(읽기 전용)</li>
+    <li>Google AdMob — 앱 내 광고 게재·측정</li>
   </ul>
 
   <h2>6. 아동의 개인정보</h2>

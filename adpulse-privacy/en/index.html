@@ -44,6 +44,7 @@
     <tr><td>Basic Google profile (name, email, photo)</td><td>On Google sign-in</td><td>Shown in the app. Stored on your device only</td></tr>
     <tr><td>AdMob report data (estimated earnings, read-only)</td><td>Only after you connect AdMob</td><td>Dashboard display. Cached on your device only</td></tr>
     <tr><td>AdSense report data (estimated earnings, read-only)</td><td>Only after you connect AdSense</td><td>Dashboard display. Cached on your device only</td></tr>
+    <tr><td>Advertising identifier, coarse location, app interaction, diagnostics</td><td>When ads are shown (section 3)</td><td>Ad serving and measurement, diagnostics</td></tr>
   </table>
   <div class="card">
     Information received from Google APIs is used for a single purpose: rendering your dashboard on your device.
@@ -61,8 +62,16 @@
   <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>,
   <strong>including the Limited Use requirements.</strong></p>
 
-  <h2>3. No advertising</h2>
-  <p>The app contains no ads and uses no advertising SDKs or tracking technologies. It does not collect the advertising identifier (IDFA/AAID).</p>
+  <h2>3. Advertising</h2>
+  <p>The app is free and shows ads via <strong>Google AdMob</strong>. AdMob may collect and use the advertising identifier,
+  coarse location, and device/usage information for ad serving, measurement, and personalization. See the
+  <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a> and
+  <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">how AdMob uses data</a>.</p>
+  <ul>
+    <li><strong>iOS</strong>: the device advertising identifier (IDFA) is used for personalized ads only if you allow tracking via App Tracking Transparency.</li>
+    <li><strong>EU/EEA/UK</strong>: consent is collected via the Google UMP consent form; personalized or non-personalized ads are shown accordingly.</li>
+    <li>You can reset the advertising identifier or opt out of personalized ads in your device settings at any time.</li>
+  </ul>
 
   <h2>4. Retention and deletion</h2>
   <ul>
@@ -75,6 +84,7 @@
   <ul>
     <li>Google Sign-In (Google Identity) — authentication</li>
     <li>Google AdMob API · AdSense Management API — read-only revenue reports</li>
+    <li>Google AdMob — in-app advertising</li>
   </ul>
 
   <h2>6. Children</h2>
