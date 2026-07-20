@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+<title>말랑브레인 (MallowBrain) — 개인정보 처리방침</title>
+<style>
+  :root { --ink:#1a1b1e; --muted:#6b6e76; --line:#e6e4dd; --accent:#a1790c; --paper:#fff8ea; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--paper); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:720px; margin:0 auto; padding:56px 24px 96px; }
+  h1 { font-size:30px; letter-spacing:-0.02em; margin:0 0 6px; }
+  .eyebrow { color:var(--accent); font-weight:700; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; margin:0 0 14px; }
+  .meta { color:var(--muted); font-size:14px; margin:0 0 40px; }
+  h2 { font-size:18px; margin:38px 0 10px; letter-spacing:-0.01em; }
+  p, li { font-size:15.5px; color:#33353b; }
+  ul { padding-left:20px; }
+  a { color:var(--accent); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin:14px 0; }
+  table { width:100%; border-collapse:collapse; margin:10px 0; font-size:14.5px; }
+  th, td { text-align:left; padding:10px 8px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { color:var(--muted); font-weight:600; }
+  footer { margin-top:56px; padding-top:20px; border-top:1px solid var(--line); color:var(--muted); font-size:13.5px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="eyebrow">MallowBrain</p>
+  <h1>개인정보 처리방침</h1>
+  <p class="meta">시행일: 2026년 7월 21일</p>
+  <p class="meta" style="margin-bottom:36px">한국어 · <a href="en/">English</a></p>
+
+  <p>YT Lab(이하 "개발자")은 모바일 게임 <strong>말랑브레인 (MallowBrain)</strong>(이하 "앱")을 운영하며,
+  이용자의 개인정보를 중요하게 생각합니다. 본 방침은 앱이 어떤 정보를 어떻게 처리하는지 설명합니다.</p>
+
+  <h2>1. 수집하는 정보</h2>
+  <p>앱은 별도의 회원가입·로그인이 없으며, 다음 정보만 처리합니다.</p>
+  <table>
+    <tr><th>항목</th><th>수집 시점</th><th>목적</th></tr>
+    <tr><td>닉네임 (앱이 자동 생성, 이용자가 변경 가능)</td><td>글로벌 랭킹에 기록이 등록될 때</td><td>랭킹에 표시</td></tr>
+    <tr><td>게임 기록 (게임별 최고 점수, 날짜)</td><td>랭킹 등록 시</td><td>순위 산정·표시</td></tr>
+    <tr><td>임의 기기 식별자 (앱이 무작위로 생성)</td><td>최초 랭킹 등록 시</td><td>한 기기당 하나의 기록 관리(중복 방지)</td></tr>
+    <tr><td>국가/지역 (기기 언어·지역 설정에서 추정)</td><td>랭킹 등록 시</td><td>국기 표시 및 국가별 랭킹</td></tr>
+  </table>
+  <div class="card">
+    이름·이메일·전화번호·위치·연락처 등 식별 가능한 개인정보는 수집하지 않습니다.
+    닉네임은 앱이 무작위로 만든 별명이며 실명이 아닙니다. 랭킹에 표시되길 원하지 않으면
+    프로필에서 닉네임을 언제든지 바꿀 수 있습니다.
+    무작위 기기 식별자는 광고 식별자(IDFA)가 아니며 다른 앱·서비스 추적에 사용되지 않습니다.
+    국가/지역은 기기의 언어·지역 설정에서 추정한 국가 코드(예: KR)이며, GPS 등 정밀 위치 정보를 수집하지 않습니다.
+  </div>
+
+  <h2>2. 처리 및 보관</h2>
+  <ul>
+    <li>등록된 랭킹 정보는 Google Firebase(Cloud Firestore, 리전: 대한민국 서울 asia-northeast3)에 저장됩니다.</li>
+    <li>기기 내 정보(기록, 설정, 무작위 식별자, 구독 상태)는 이용자 기기에만 저장됩니다.</li>
+    <li>랭킹 정보는 서비스 제공 기간 동안 보관되며, 삭제 요청 시 지체 없이 삭제합니다.</li>
+  </ul>
+
+  <h2>3. 광고</h2>
+  <p>무료 이용 시 Google AdMob 배너 광고가 표시될 수 있습니다.</p>
+  <ul>
+    <li>iOS에서는 앱 추적 투명성(ATT) 권한을 요청하며, <strong>허용 여부와 관계없이 앱의 모든 기능을 동일하게 사용할 수 있습니다.</strong> 거부 시 개인 맞춤이 아닌 일반 광고가 표시됩니다.</li>
+    <li>광고 게재 과정에서 Google이 광고 식별자·대략적 위치(IP 기반)·기기 정보를 처리할 수 있습니다. 자세한 내용은 <a href="https://policies.google.com/privacy" rel="noopener">Google 개인정보처리방침</a>을 참고하세요.</li>
+    <li>플러스 구독 시 광고가 표시되지 않습니다.</li>
+  </ul>
+
+  <h2>4. 결제</h2>
+  <p>플러스 구독 결제는 Apple App Store를 통해 처리됩니다. 개발자는 카드번호 등 결제 정보를
+  수집·저장하지 않으며, 구독 관리·해지는 App Store 계정 설정에서 할 수 있습니다.</p>
+
+  <h2>5. 제3자 제공</h2>
+  <p>개발자는 수집한 정보를 제3자에게 판매하거나 제공하지 않습니다. 위 Firebase(저장)와
+  AdMob(광고 게재) 외 다른 곳으로 정보가 전송되지 않습니다.</p>
+
+  <h2>6. 아동의 개인정보</h2>
+  <p>앱은 만 13세 이상을 대상으로 하며, 아동을 대상으로 개인정보를 수집하지 않습니다.</p>
+
+  <h2>7. 이용자 권리 및 문의</h2>
+  <p>랭킹 기록 삭제 등 개인정보 관련 요청은 아래로 연락해 주세요. 확인 후 지체 없이 처리합니다.</p>
+  <div class="card">이메일: <a href="mailto:contact@ytlab.site">contact@ytlab.site</a></div>
+
+  <h2>8. 방침 변경</h2>
+  <p>본 방침이 변경되는 경우 이 페이지를 통해 공지하며, 중요한 변경은 앱 내에서도 안내합니다.</p>
+
+  <footer>YT Lab · 말랑브레인 (MallowBrain) · 최종 업데이트 2026-07-21</footer>
+</div>
+</body>
+</html>
