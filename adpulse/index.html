@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+<title>AdPulse — AdMob &amp; AdSense revenue monitor</title>
+<meta name="description" content="AdPulse is an iOS app that shows your own Google AdMob and AdSense earnings on one dashboard. Read-only, no server, sample data without signing in.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AdPulse — AdMob & AdSense revenue monitor">
+<meta property="og:description" content="See your own AdMob and AdSense earnings on one dashboard.">
+<style>
+  :root { --ink:#1a1b1e; --muted:#6b6e76; --line:#e6e4dd; --accent:#0f7b54; --paper:#f7f6f2; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--paper); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:720px; margin:0 auto; padding:56px 24px 96px; }
+  h1 { font-size:32px; letter-spacing:-0.02em; margin:0 0 8px; }
+  .eyebrow { color:var(--accent); font-weight:700; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; margin:0 0 14px; }
+  .lede { font-size:17px; color:#33353b; margin:0 0 36px; }
+  h2 { font-size:18px; margin:38px 0 10px; letter-spacing:-0.01em; }
+  p, li { font-size:15.5px; color:#33353b; }
+  ul { padding-left:20px; }
+  li { margin:6px 0; }
+  a { color:var(--accent); }
+  .card { background:#fff; border:1px solid var(--line); border-radius:14px; padding:20px 22px; margin:22px 0; }
+  .foot { margin-top:52px; padding-top:22px; border-top:1px solid var(--line); color:var(--muted); font-size:14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="eyebrow">YT Lab</p>
+  <h1>AdPulse</h1>
+  <p class="lede">An iOS app that puts your own Google AdMob and AdSense earnings on a single dashboard — the numbers you already own, without opening two web consoles.</p>
+
+  <h2>What it does</h2>
+  <ul>
+    <li>Today, yesterday and month-to-date earnings side by side, with 7- and 28-day charts.</li>
+    <li>Per-app (AdMob) and per-site (AdSense) breakdowns, down to ad unit and country.</li>
+    <li>A monthly calendar of daily earnings and a 12-month archive.</li>
+    <li>A home-screen widget with the same figures.</li>
+    <li>Sample data on first launch, so every screen works before you connect anything.</li>
+  </ul>
+
+  <h2>How it uses Google account data</h2>
+  <div class="card">
+    <p>Connecting a Google account is optional and exists for one purpose: reading the earnings reports of <em>that</em> account.</p>
+    <ul>
+      <li><strong>AdMob</strong> — <code>https://www.googleapis.com/auth/admob.readonly</code>: reads your AdMob account's reporting data (earnings, impressions, clicks per app, ad unit and country) to draw the dashboard, the charts and the per-app detail screens.</li>
+      <li><strong>AdSense</strong> — <code>https://www.googleapis.com/auth/adsense.readonly</code>: reads your AdSense account's reporting data (earnings, page views, clicks per site) for the same screens.</li>
+    </ul>
+    <p>Both scopes are read-only. AdPulse never creates, edits or deletes anything in your AdMob or AdSense account, and never posts on your behalf.</p>
+    <p>The app has no server. Reports are fetched from Google directly by the app on your device, displayed, and cached only in that device's local storage; OAuth tokens are held in the iOS Keychain. Nothing is uploaded to us or shared with third parties. Revoking access in your Google account, or signing out in the app, removes them.</p>
+  </div>
+
+  <h2>Links</h2>
+  <ul>
+    <li><a href="/adpulse-privacy/en/">Privacy policy (English)</a> · <a href="/adpulse-privacy/">개인정보 처리방침 (한국어)</a></li>
+    <li><a href="/adpulse-terms/">Terms of service</a></li>
+    <li>Support: <a href="mailto:contact@ytlab.site">contact@ytlab.site</a></li>
+  </ul>
+
+  <p class="foot">AdPulse is an independent app by YT Lab. It is not affiliated with, sponsored by or endorsed by Google LLC. AdMob and AdSense are trademarks of Google LLC.</p>
+</div>
+</body>
+</html>
