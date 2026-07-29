@@ -1,0 +1,6 @@
+[2026-06-12T15:22:15.459Z] GET https://ytlab.site/ → pending (?ms, ?B)
+[2026-06-12T15:22:17.974Z] GET https://hiimyong99.github.io/yt-lab/ → pending (?ms, ?B)
+[2026-06-12T15:22:18.226Z] GET http://ytlab.site/ → 200 (253ms, 28393B)
+[2026-06-12T15:23:10.998Z] GET http://ytlab.site/ → pending (?ms, ?B)
+[2026-06-12T15:23:13.414Z] POST https://formsubmit.co/ajax/contact@ytlab.site → pending (?ms, ?B)
+[2026-06-12T15:23:32.340Z] GET http://ytlab.site/ → 200 (13ms, 28393B)
