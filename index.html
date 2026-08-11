@@ -18,7 +18,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="YT Lab" />
   <meta property="og:title" content="YT Lab — 제품 스튜디오" />
-  <meta property="og:description" content="앱인토스에서 10개의 미니앱을 운영하고 App Store에 진출한 1인 제품 스튜디오. A solo product studio running 10 mini-apps on Apps in Toss, now on the App Store." />
+  <meta property="og:description" content="앱인토스 미니앱 14개와 App Store·Google Play 앱 10개를 운영하는 1인 제품 스튜디오. A solo product studio running 14 mini-apps on Apps in Toss and 10 apps on the App Store &amp; Google Play." />
   <meta property="og:locale" content="ko_KR" />
   <meta name="twitter:card" content="summary" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230a0a0a'/><text x='50' y='66' font-size='44' font-family='monospace' fill='%23fff' text-anchor='middle' font-weight='700'>YT</text></svg>" />
@@ -204,6 +204,91 @@
     }
     .apps a.store:hover { border-color: var(--fg); }
     .asof { margin-top: 18px; font-size: 12px; color: var(--muted); }
+
+    .apps li[data-app] { cursor: pointer; transition: background .18s; }
+    .apps li[data-app]:hover, .apps li[data-app]:focus-visible { background: #141414; outline: none; }
+    .apps .ic {
+      width: 46px;
+      height: 46px;
+      border-radius: 11px;
+      object-fit: cover;
+      margin-bottom: 8px;
+      background: #1a1a1a;
+      transition: transform .18s;
+    }
+    .apps li[data-app]:hover .ic { transform: scale(1.07) rotate(-2deg); }
+    .apps .more {
+      margin-top: auto;
+      padding-top: 8px;
+      font-size: 12px;
+      color: var(--muted);
+      opacity: 0;
+      transform: translateX(-4px);
+      transition: opacity .18s, transform .18s;
+    }
+    .apps li[data-app]:hover .more, .apps li[data-app]:focus-visible .more { opacity: 1; transform: none; }
+
+    .modal.appmodal { max-width: 520px; padding: 0; overflow: hidden auto; }
+    .appmodal-head {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      padding: clamp(22px, 4vw, 30px) clamp(22px, 4vw, 30px) 0;
+    }
+    .appmodal-head img {
+      width: 68px;
+      height: 68px;
+      border-radius: 16px;
+      object-fit: cover;
+      background: #1a1a1a;
+      flex: none;
+    }
+    .appmodal-head .t h3 { font-size: 21px; font-weight: 700; letter-spacing: -0.02em; }
+    .appmodal-head .t .sub { color: var(--muted); font-size: 13px; margin-top: 3px; }
+    .appmodal-plat {
+      display: inline-block;
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 3px 9px;
+      margin-top: 8px;
+    }
+    .appmodal-desc {
+      padding: 16px clamp(22px, 4vw, 30px) 0;
+      font-size: 14.5px;
+      line-height: 1.7;
+      color: #cfcfcf;
+    }
+    .appmodal-shots {
+      display: flex;
+      gap: 10px;
+      padding: 18px clamp(22px, 4vw, 30px) 4px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+    .appmodal-shots::-webkit-scrollbar { display: none; }
+    .appmodal-shots img {
+      width: 158px;
+      aspect-ratio: 2 / 3;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: #151515;
+      flex: none;
+      scroll-snap-align: start;
+    }
+    .appmodal-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding: 20px clamp(22px, 4vw, 30px) clamp(22px, 4vw, 30px);
+    }
+    .appmodal-links .btn { font-size: 14px; padding: 9px 16px; }
+    .appmodal-links .note { font-size: 12.5px; color: var(--muted); align-self: center; }
 
     html { scroll-behavior: smooth; }
 
@@ -577,40 +662,40 @@
 
       <div class="stats reveal">
         <div class="stat">
+          <span class="num">14</span>
+          <span class="lbl">
+            <span data-lang="ko">운영 중인 미니앱 · 앱인토스</span>
+            <span data-lang="en">mini-apps live on Apps in Toss</span>
+          </span>
+        </div>
+        <div class="stat">
           <span class="num">10</span>
           <span class="lbl">
-            <span data-lang="ko">운영 중인 미니앱</span>
-            <span data-lang="en">mini-apps live</span>
+            <span data-lang="ko">스토어 앱 · App Store · Google Play</span>
+            <span data-lang="en">apps on the App Store &amp; Google Play</span>
           </span>
         </div>
         <div class="stat">
-          <span class="num" id="mau">6,027</span>
+          <span class="num" id="mau">11,612</span>
           <span class="lbl">
-            <span data-lang="ko">5월 MAU · 10개 앱 합산</span>
-            <span data-lang="en">May MAU · 10 apps combined</span>
-          </span>
-        </div>
-        <div class="stat">
-          <span class="num">3</span>
-          <span class="lbl">
-            <span data-lang="ko">운영 플랫폼 · 앱인토스 · App Store · Google Play</span>
-            <span data-lang="en">platforms · Apps in Toss, App Store, Google Play</span>
+            <span data-lang="ko">7월 MAU · 13개 미니앱 합산</span>
+            <span data-lang="en">July MAU · 13 mini-apps combined</span>
           </span>
         </div>
       </div>
 
       <ul class="wins reveal">
         <li>
-          <span data-lang="ko">앱인토스에서 미니앱 <b>10개</b>를 운영합니다 — 리워드 · 콘텐츠 · 생활 · 금융</span>
-          <span data-lang="en">Running <b>10 mini-apps</b> on Apps in Toss — rewards, content, lifestyle, finance</span>
+          <span data-lang="ko">앱인토스에서 미니앱 <b>14개</b>를 운영합니다 — 리워드 · 콘텐츠 · 생활 · 게임</span>
+          <span data-lang="en">Running <b>14 mini-apps</b> on Apps in Toss — rewards, content, lifestyle, games</span>
         </li>
         <li>
-          <span data-lang="ko">10개 앱 합산 <b>5월 MAU 6,027명</b> 달성</span>
-          <span data-lang="en">Reached <b>6,027 monthly active users</b> across 10 apps in May</span>
+          <span data-lang="ko">13개 미니앱 합산 <b>7월 MAU 11,612명</b> — 5월 6,027명에서 두 달 만에 약 2배 성장 (8월 출시작 1개 제외)</span>
+          <span data-lang="en">Reached <b>11,612 monthly active users</b> in July — nearly 2× growth from 6,027 in May (excludes one app launched in August)</span>
         </li>
         <li>
-          <span data-lang="ko"><b>App Store 진출</b> — 마이포폴(금융), 2026년 6월 출시</span>
-          <span data-lang="en"><b>Launched on the App Store</b> — My Popol (finance), June 2026</span>
+          <span data-lang="ko"><b>App Store · Google Play 앱 10종</b> 출시 — 게임 · 금융 · 생산성 · 쇼핑</span>
+          <span data-lang="en"><b>10 apps shipped</b> to the App Store &amp; Google Play — games, finance, productivity, shopping</span>
         </li>
         <li>
           <span data-lang="ko"><b>멀티 플랫폼</b> 운영 — 앱인토스 · App Store · Google Play 동시 출시</span>
@@ -627,74 +712,221 @@
         <span data-lang="en">Live</span>
       </span>
       <h2 class="reveal">
-        <span data-lang="ko">앱인토스에서 10개의 미니앱을 운영합니다.</span>
-        <span data-lang="en">We run 10 mini-apps on Apps in Toss.</span>
+        <span data-lang="ko">앱인토스에서 14개의 미니앱을 운영합니다.</span>
+        <span data-lang="en">We run 14 mini-apps on Apps in Toss.</span>
       </h2>
 
       <ul class="apps reveal">
-        <li>
+        <li data-app="quiz" tabindex="0">
+          <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/1c159c11-bfc0-4df9-9ca2-72c20b833120.png" />
           <span class="nm">오늘의 상식</span>
           <span class="tag" data-lang="ko">상식 퀴즈 · 리워드</span>
           <span class="tag" data-lang="en">Trivia quiz, rewards</span>
+          <span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span>
         </li>
-        <li>
-          <span class="nm">오늘의 소비 미션</span>
-          <span class="tag" data-lang="ko">소비 줄이고 리워드</span>
-          <span class="tag" data-lang="en">Spend less, earn rewards</span>
+        <li data-app="numrush" tabindex="0">
+          <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/427c72d7-3a30-4fd9-9962-b1d1dd45be71.png" />
+          <span class="nm">숫자 러시</span>
+          <span class="tag" data-lang="ko">숫자 순서 게임</span>
+          <span class="tag" data-lang="en">Number tap race</span>
+          <span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span>
         </li>
-        <li>
-          <span class="nm">그때 샀더라면</span>
-          <span class="tag" data-lang="ko">주식·코인 수익률</span>
-          <span class="tag" data-lang="en">Stock &amp; crypto returns</span>
+        <li data-app="calcking" tabindex="0">
+          <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/75c44346-16bd-4fe5-a662-2b4686d26e3b.png" />
+          <span class="nm">순간계산왕</span>
+          <span class="tag" data-lang="ko">암산 스피드 게임</span>
+          <span class="tag" data-lang="en">Mental math speed game</span>
+          <span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span>
         </li>
-        <li>
-          <span class="nm">AI 월세</span>
-          <span class="tag" data-lang="ko">AI 구독비 관리</span>
-          <span class="tag" data-lang="en">AI subscription tracker</span>
-        </li>
-        <li>
-          <span class="nm">오늘일진</span>
-          <span class="tag" data-lang="ko">사주 운세 카드</span>
-          <span class="tag" data-lang="en">Daily saju fortune</span>
-        </li>
-        <li>
-          <span class="nm">하루카드</span>
-          <span class="tag" data-lang="ko">안부 그림 카드</span>
-          <span class="tag" data-lang="en">Family greeting cards</span>
-        </li>
-        <li>
-          <span class="nm">오늘하루</span>
-          <span class="tag" data-lang="ko">AI 감정 일기</span>
-          <span class="tag" data-lang="en">AI journaling</span>
-        </li>
-        <li>
-          <span class="nm">오늘의 영단어</span>
-          <span class="tag" data-lang="ko">하루 5단어 영어</span>
-          <span class="tag" data-lang="en">5 English words a day</span>
-        </li>
-        <li>
+        <li data-app="animalpop-t" tabindex="0">
+          <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/13ee6c7f-08f9-42ef-8294-dafbb535be7f.png" />
           <span class="nm">애니멀 팝</span>
           <span class="tag" data-lang="ko">동물 합치기 퍼즐</span>
           <span class="tag" data-lang="en">Animal merge puzzle</span>
-          <a class="store" href="https://play.google.com/store/apps/details?id=com.animalpop.app" target="_blank" rel="noopener">
-            <span data-lang="ko">Google Play</span>
-            <span data-lang="en">Google Play</span>
-          </a>
+          <span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span>
         </li>
-        <li>
-          <span class="nm">마이포폴</span>
-          <span class="tag" data-lang="ko">연금·ISA 투자 시뮬레이터</span>
-          <span class="tag" data-lang="en">Pension &amp; ISA simulator</span>
-          <a class="store" href="https://apps.apple.com/kr/app/id6774625277" target="_blank" rel="noopener">
-            <span data-lang="ko">App Store</span>
-            <span data-lang="en">App Store</span>
-          </a>
+        <li data-app="ifbought" tabindex="0">
+          <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/d315f890-bb3b-469c-9cf2-03f28e7d4cae.png" />
+          <span class="nm">그때 샀더라면</span>
+          <span class="tag" data-lang="ko">주식·코인 수익률</span>
+          <span class="tag" data-lang="en">Stock &amp; crypto returns</span>
+          <span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span>
+        </li>
+        <li data-app="econews" tabindex="0">
+          <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/87ac48da-ac12-40ab-af73-685806d6a5dd.png" />
+          <span class="nm">오늘의 경제뉴스</span>
+          <span class="tag" data-lang="ko">경제 뉴스 브리핑</span>
+          <span class="tag" data-lang="en">Daily economy briefing</span>
+          <span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span>
+        </li>
+        <li data-app="word5" tabindex="0">
+          <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/3129b2a5-6bac-46fa-9d91-086580e8f040.png" />
+          <span class="nm">오늘의 영단어</span>
+          <span class="tag" data-lang="ko">하루 5단어 영어</span>
+          <span class="tag" data-lang="en">5 English words a day</span>
+          <span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span>
+        </li>
+        <li data-app="savequest" tabindex="0">
+          <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/b723844a-2b54-4d7f-93b5-44e1c99a5efb.png" />
+          <span class="nm">오늘의 소비 미션</span>
+          <span class="tag" data-lang="ko">소비 줄이고 리워드</span>
+          <span class="tag" data-lang="en">Spend less, earn rewards</span>
+          <span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span>
+        </li>
+        <li data-app="lowprice" tabindex="0">
+          <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/8807db79-665f-4554-8b80-805c832191bd.png" />
+          <span class="nm">우리동네 최저가</span>
+          <span class="tag" data-lang="ko">생필품 최저가 정보</span>
+          <span class="tag" data-lang="en">Local lowest prices</span>
+          <span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span>
+        </li>
+        <li data-app="onedaycard" tabindex="0">
+          <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/522fcc38-1ab0-40c9-bdad-1e02c7fc32c1.png" />
+          <span class="nm">하루카드</span>
+          <span class="tag" data-lang="ko">안부 그림 카드</span>
+          <span class="tag" data-lang="en">Family greeting cards</span>
+          <span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span>
+        </li>
+        <li data-app="airent" tabindex="0">
+          <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/87dae129-58d7-4cd9-972e-13f988b6ffaa.png" />
+          <span class="nm">AI 월세</span>
+          <span class="tag" data-lang="ko">AI 구독비 관리</span>
+          <span class="tag" data-lang="en">AI subscription tracker</span>
+          <span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span>
+        </li>
+        <li data-app="dailyjin" tabindex="0">
+          <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/6f06242c-eed9-4039-8892-ccbb0dc5802a.png" />
+          <span class="nm">오늘일진</span>
+          <span class="tag" data-lang="ko">사주 운세 카드</span>
+          <span class="tag" data-lang="en">Daily saju fortune</span>
+          <span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span>
+        </li>
+        <li data-app="dailyrecap" tabindex="0">
+          <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/7831fe00-5ad3-4d9e-be42-d34ccd0aa138.png" />
+          <span class="nm">오늘하루</span>
+          <span class="tag" data-lang="ko">AI 감정 일기</span>
+          <span class="tag" data-lang="en">AI journaling</span>
+          <span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span>
+        </li>
+        <li data-app="mallow-t" tabindex="0">
+          <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/5829742d-25ca-4ac6-9545-ae98b48c86b7.png" />
+          <span class="nm">말랑브레인</span>
+          <span class="tag" data-lang="ko">두뇌 게임 모음</span>
+          <span class="tag" data-lang="en">Brain game collection</span>
+          <span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span>
         </li>
       </ul>
 
       <p class="asof">
-        <span data-lang="ko">2026년 5월 기준</span>
-        <span data-lang="en">As of May 2026</span>
+        <span data-lang="ko">2026년 8월 기준</span>
+        <span data-lang="en">As of August 2026</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="work" id="stores">
+    <div class="work-inner">
+      <span class="badge reveal">
+        <span data-lang="ko">스토어 앱</span>
+        <span data-lang="en">On the stores</span>
+      </span>
+      <h2 class="reveal">
+        <span data-lang="ko">App Store와 Google Play에 10개의 앱을 출시했습니다.</span>
+        <span data-lang="en">10 apps shipped to the App Store &amp; Google Play.</span>
+      </h2>
+
+      <ul class="apps reveal">
+        <li data-app="mypopol" tabindex="0">
+          <img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c0/98/a0/c098a02f-8c24-d4e6-09b8-94607d5125b1/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg" />
+          <span class="nm">마이포폴</span>
+          <span class="tag" data-lang="ko">연금·ISA 투자 시뮬레이터</span>
+          <span class="tag" data-lang="en">Pension &amp; ISA simulator</span>
+          <a class="store" href="https://apps.apple.com/kr/app/id6774625277" target="_blank" rel="noopener">App Store</a>
+          <span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span>
+        </li>
+        <li data-app="spill" tabindex="0">
+          <img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/72/52/ed/7252edda-11dd-057d-997f-8de41170023f/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg" />
+          <span class="nm">Spill</span>
+          <span class="tag" data-lang="ko">한 줄 미리알림 · 캘린더</span>
+          <span class="tag" data-lang="en">One-line reminders &amp; calendar</span>
+          <a class="store" href="https://apps.apple.com/kr/app/id6778608148" target="_blank" rel="noopener">App Store</a>
+          <span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span>
+        </li>
+        <li data-app="jangbogo" tabindex="0">
+          <img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/21/48/66/21486604-4bd8-e234-cc33-582cd46f3997/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg" />
+          <span class="nm">장보고</span>
+          <span class="tag" data-lang="ko">생필품 가격비교</span>
+          <span class="tag" data-lang="en">Grocery price comparison</span>
+          <a class="store" href="https://apps.apple.com/kr/app/id6780779462" target="_blank" rel="noopener">App Store</a>
+          <span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span>
+        </li>
+        <li data-app="animalpop" tabindex="0">
+          <img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/bd/65/63/bd656378-0214-0df3-a776-0cb5ca357d79/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg" />
+          <span class="nm">애니멀 팝</span>
+          <span class="tag" data-lang="ko">동물 합치기 퍼즐</span>
+          <span class="tag" data-lang="en">Animal merge puzzle</span>
+          <a class="store" href="https://apps.apple.com/kr/app/id6782373454" target="_blank" rel="noopener">App Store</a>
+          <a class="store" href="https://play.google.com/store/apps/details?id=com.animalpop.app" target="_blank" rel="noopener">Google Play</a>
+          <span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span>
+        </li>
+        <li data-app="oneto50" tabindex="0">
+          <img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/db/fd/cc/dbfdccec-425f-f77b-7fa8-bc44a19f0e1c/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg" />
+          <span class="nm">1 to 50</span>
+          <span class="tag" data-lang="ko">숫자 순서 게임</span>
+          <span class="tag" data-lang="en">Number tap race</span>
+          <a class="store" href="https://apps.apple.com/kr/app/id6782382427" target="_blank" rel="noopener">App Store</a>
+          <a class="store" href="https://play.google.com/store/apps/details?id=com.ytlab.one_to_fifty" target="_blank" rel="noopener">Google Play</a>
+          <span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span>
+        </li>
+        <li data-app="treble" tabindex="0">
+          <img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7e/1f/47/7e1f471a-2f69-d0ac-e89c-fbd76259782e/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg" />
+          <span class="nm">로드 투 트레블</span>
+          <span class="tag" data-lang="ko">축구 드래프트 게임</span>
+          <span class="tag" data-lang="en">Football draft game</span>
+          <a class="store" href="https://apps.apple.com/kr/app/id6783814192" target="_blank" rel="noopener">App Store</a>
+          <a class="store" href="https://play.google.com/store/apps/details?id=dev.goldenroad.golden_road_app" target="_blank" rel="noopener">Google Play</a>
+          <span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span>
+        </li>
+        <li data-app="sumdash" tabindex="0">
+          <img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/aa/5c/67/aa5c67a8-953a-f6e5-0c85-cf8261d17d25/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg" />
+          <span class="nm">SumDash</span>
+          <span class="tag" data-lang="ko">사칙연산 스피드 게임</span>
+          <span class="tag" data-lang="en">Math speed game</span>
+          <a class="store" href="https://apps.apple.com/kr/app/id6785198584" target="_blank" rel="noopener">App Store</a>
+          <a class="store" href="https://play.google.com/store/apps/details?id=com.ytlab.sumdash" target="_blank" rel="noopener">Google Play</a>
+          <span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span>
+        </li>
+        <li data-app="admeter" tabindex="0">
+          <img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/56/17/31/5617317b-8d62-9614-c9cf-c935aae6c987/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg" />
+          <span class="nm">AdMeter</span>
+          <span class="tag" data-lang="ko">애드몹·애드센스 수익 대시보드</span>
+          <span class="tag" data-lang="en">AdMob &amp; AdSense earnings</span>
+          <a class="store" href="https://apps.apple.com/kr/app/id6789329258" target="_blank" rel="noopener">App Store</a>
+          <a class="store" href="https://play.google.com/store/apps/details?id=site.ytlab.adpulse" target="_blank" rel="noopener">Google Play</a>
+          <span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span>
+        </li>
+        <li data-app="blindduel" tabindex="0">
+          <img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/f4/48/32/f44832cc-37b0-910e-eb7c-d1e718a839b2/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg" />
+          <span class="nm">블라인드 듀얼</span>
+          <span class="tag" data-lang="ko">한 장 심리전 카드게임</span>
+          <span class="tag" data-lang="en">One-card bluffing duel</span>
+          <a class="store" href="https://apps.apple.com/kr/app/id6791613672" target="_blank" rel="noopener">App Store</a>
+          <a class="store" href="https://play.google.com/store/apps/details?id=com.ytlab.blind_poker" target="_blank" rel="noopener">Google Play</a>
+          <span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span>
+        </li>
+        <li data-app="mallow" tabindex="0">
+          <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/5829742d-25ca-4ac6-9545-ae98b48c86b7.png" />
+          <span class="nm">말랑브레인</span>
+          <span class="tag" data-lang="ko">두뇌 게임 모음</span>
+          <span class="tag" data-lang="en">Brain game collection</span>
+          <a class="store" href="https://play.google.com/store/apps/details?id=com.ytlab.malang_brain" target="_blank" rel="noopener">Google Play</a>
+          <span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span>
+        </li>
+      </ul>
+
+      <p class="asof">
+        <span data-lang="ko">2026년 8월 기준</span>
+        <span data-lang="en">As of August 2026</span>
       </p>
     </div>
   </section>
@@ -782,6 +1014,25 @@
       <span data-lang="en">YT Lab · Seoul, Republic of Korea</span>
     </span>
   </footer>
+
+  <div class="modal-backdrop" id="appModal" hidden>
+    <div class="modal appmodal" role="dialog" aria-modal="true" aria-labelledby="amName">
+      <button class="modal-close" id="amClose" aria-label="닫기">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M3 3l10 10M13 3 3 13"/></svg>
+      </button>
+      <div class="appmodal-head">
+        <img id="amIcon" alt="" src="" />
+        <div class="t">
+          <h3 id="amName"></h3>
+          <p class="sub" id="amSub"></p>
+          <span class="appmodal-plat" id="amPlat"></span>
+        </div>
+      </div>
+      <p class="appmodal-desc" id="amDesc"></p>
+      <div class="appmodal-shots" id="amShots" hidden></div>
+      <div class="appmodal-links" id="amLinks"></div>
+    </div>
+  </div>
 
   <div class="modal-backdrop" id="contactModal" hidden>
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="cmTitle">
@@ -885,6 +1136,119 @@
     var saved;
     try { saved = localStorage.getItem("yt_lang"); } catch (e) {}
     setLang(saved || (navigator.language && navigator.language.startsWith("en") ? "en" : "ko"));
+
+    // App detail modal
+    var APPS = {
+      "quiz":       { ko: "매일 새로운 상식 퀴즈를 풀고 포인트 리워드를 받는 습관형 퀴즈 앱. 혜택탭·미니앱홈에서 꾸준히 유입되는 대표작입니다.", en: "A daily trivia habit — answer fresh general-knowledge quizzes and earn point rewards inside Toss." },
+      "numrush":    { ko: "1부터 50까지 숫자를 순서대로 최대한 빨리 탭하는 스피드 게임. 토스 유저들과 기록으로 경쟁합니다.", en: "Tap 1 to 50 in order as fast as you can and race the clock against other Toss users." },
+      "calcking":   { ko: "제한시간 안에 사칙연산 정답을 고르는 암산 스피드 게임. 맞힐수록 빨라지는 아케이드 루프.", en: "Pick the right answer before the timer hits zero — an arcade loop that speeds up as you score." },
+      "animalpop-t":{ ko: "같은 동물 둘을 합치면 더 큰 동물로 자라는 힐링 머지 퍼즐. 병아리에서 사자까지 키워보세요.", en: "Merge two of the same animal into a bigger one — a cozy drop-and-merge puzzle from chick to lion." },
+      "ifbought":   { ko: "\"그때 그 주식·코인을 샀더라면 지금 얼마일까?\" 가정 투자 수익률을 바로 계산해주는 재미형 금융 콘텐츠.", en: "\"What if I'd bought it back then?\" — instantly see how a hypothetical stock or crypto bet would have played out." },
+      "econews":    { ko: "하루 5분, 오늘 꼭 알아야 할 경제 뉴스만 골라 쉽게 풀어주는 브리핑.", en: "A 5-minute daily briefing of the economy news that actually matters, in plain language." },
+      "word5":      { ko: "하루 5개 영단어로 부담 없이 이어가는 영어 학습 습관.", en: "Five English words a day — a learning habit light enough to actually keep." },
+      "savequest":  { ko: "오늘의 소비 절약 미션을 달성하고 리워드를 받는 절약 습관 앱.", en: "Complete today's saving mission, spend less, and earn rewards." },
+      "lowprice":   { ko: "한국소비자원 가격 데이터로 우리 동네 생필품 최저가를 찾아주는 정보 앱.", en: "Find the lowest local prices for daily essentials, powered by Korea Consumer Agency data." },
+      "onedaycard": { ko: "가족·지인에게 마음을 전하는 안부 그림 카드. 그림과 한마디로 하루를 선물합니다.", en: "Send warm illustrated greeting cards to family and friends — a picture and a line to make their day." },
+      "airent":     { ko: "매달 나가는 AI 구독료를 한눈에 모아 관리하는 \"AI 월세\" 트래커.", en: "Your monthly \"AI rent\" — track and manage every AI subscription in one place." },
+      "dailyjin":   { ko: "매일 아침 사주 기반 오늘의 운세를 카드 한 장으로 보여주는 운세 콘텐츠.", en: "Your daily saju fortune, delivered as a single card every morning." },
+      "dailyrecap": { ko: "하루를 한 줄로 남기면 AI가 감정을 읽고 위로를 건네는 감정 일기.", en: "Write one line about your day and an AI reads the mood and writes back with comfort." },
+      "mallow-t":   { ko: "순발력·기억력·계산력을 겨루는 두뇌 게임 모음. 2026년 8월 앱인토스 신작.", en: "A collection of reflex, memory, and math brain games — our newest Toss release (Aug 2026)." },
+      "mypopol":    { ko: "적립식 투자를 \"미리 설계\"해 보는 시뮬레이터. 매달 얼마를, 몇 년간, 어떤 계좌(연금저축·ISA)로 모으면 세후 결과가 어떻게 달라지는지 보여줍니다.", en: "Design your recurring investments in advance — see how monthly amount, horizon, and account type (pension, ISA) change your after-tax outcome.", shots: ["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/29/bd/6d/29bd6d85-6fb9-7224-0298-d33e360d4cb4/01-home.png/640x960bb.jpg","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/28/8c/9c/288c9c28-3dfd-4bee-7ddf-84d1dcc70ef7/02-simulate.png/640x960bb.jpg","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7c/9f/0e/7c9f0e70-907a-efe8-fea1-f8ec869f611b/03-vault.png/640x960bb.jpg"] },
+      "spill":      { ko: "한 줄 쓰면 있어야 할 곳에 자동으로 들어가는 가장 빠른 미리알림·캘린더. 날짜·목록 정리는 앱이 합니다.", en: "The fastest way to remember: write one line and it lands where it belongs — dates, lists, and calendar handled for you.", shots: ["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b5/2a/59/b52a59f2-6193-ac43-73ec-46332c3da9fe/1_chat-ko.png/640x960bb.jpg","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c2/4f/33/c24f3390-64ab-4faa-8295-7634c4f573a7/2_tasks-ko.png/640x960bb.jpg","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/10/0e/de/100ede59-392d-3fcb-2f3d-7838cbb242a2/3_ideas-ko.png/640x960bb.jpg"] },
+      "jangbogo":   { ko: "장보기 전에 우리 동네 생필품 가격부터. 한국소비자원 조사 데이터로 라면·우유·계란 같은 생필품 가격을 비교합니다.", en: "Compare local grocery prices before you shop — ramen, milk, eggs and more, based on Korea Consumer Agency survey data.", shots: ["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/6e/57/9e/6e579eab-5988-218c-4c31-2d54c10dd1ff/01_hook.png/640x960bb.jpg","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/cb/50/0c/cb500c3e-db29-38bd-974c-a83cb0ae8d1a/01_hook.png/640x960bb.jpg","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7b/77/b8/7b77b8fe-7d21-d2f2-deff-2837721ca450/02_core.png/640x960bb.jpg"] },
+      "animalpop":  { ko: "같은 동물 둘을 톡! 합치면 더 큰 동물로 자라나는 힐링 합치기 퍼즐. 앱인토스 버전으로도 만날 수 있어요.", en: "Drop, merge, and grow adorable animals from chick to lion — also available as a Toss mini-app.", shots: ["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8a/3a/58/8a3a5822-2563-b10c-ef3a-47b9e75240a6/AnimalPop_ko_1.png/640x960bb.jpg","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/de/f9/8f/def98fa4-cbdd-fb57-7c47-2b1b6199074b/AnimalPop_ko_2.png/640x960bb.jpg","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/72/9d/85/729d8560-71bd-d84d-1812-b8ff2374d936/AnimalPop_ko_3.png/640x960bb.jpg"] },
+      "oneto50":    { ko: "1부터 50까지 얼마나 빨리 탭할 수 있나요? 기록을 줄이고 전 세계 랭킹과 겨루는 숫자 순서 게임.", en: "How fast can you tap 1 to 50? Cut your time and climb the global leaderboard.", shots: ["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5d/98/d0/5d98d047-2cfa-1f4f-e546-94f5666d0b26/1_loop.png/640x960bb.jpg","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f3/4b/35/f34b355a-117f-1adb-9136-facdf51c04fc/2_compete.png/640x960bb.jpg","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/fc/40/7c/fc407ce8-1c2f-7e53-6b0e-8d44be449216/3_win.png/640x960bb.jpg"] },
+      "treble":     { ko: "진짜 선수, 숨겨진 능력치, 단 한 번의 완벽한 시즌. 팀을 뽑고 트레블에 도전하는 축구 드래프트 게임.", en: "Real players, hidden ratings, one perfect season — draft your squad and chase the treble.", shots: ["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/d1/bb/1c/d1bb1c2b-c5ca-2495-4d24-7e46a99cae5f/01_hook.png/640x960bb.jpg","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/66/f9/1e/66f91ee5-6a70-7ae5-d4f1-21e35556b892/02_trophies.png/640x960bb.jpg","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/bf/23/fc/bf23fc1d-d072-23b1-66f1-2c5beb08a736/03_album.png/640x960bb.jpg"] },
+      "sumdash":    { ko: "카운트다운이 0이 되기 전에 정답을 눌러라. 사칙연산을 아케이드로 바꾼 빠른 암산 게임 — 맞힐수록 빨라집니다.", en: "Hit the right answer before the countdown ends — arithmetic turned into an arcade rush that keeps speeding up.", shots: ["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/9e/3b/90/9e3b905d-a5c5-c693-6a9f-1241f2b5ff48/ios_65_1_play.png/640x960bb.jpg","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c8/58/dd/c858dd78-2097-9368-949e-3e72dd115991/ios_65_2_rank.png/640x960bb.jpg","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d9/ea/f0/d9eaf0e1-7af4-cbec-c777-76ab5371c765/ios_65_3_modes.png/640x960bb.jpg"] },
+      "admeter":    { ko: "내 광고는 24시간 돈을 법니다. 애드몹·애드센스 수익을 구글 로그인 한 번으로 한 화면에 모아 보여주는 대시보드.", en: "Your ads earn around the clock — AdMeter pulls AdMob and AdSense earnings into one screen with a single Google sign-in.", shots: ["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c4/46/fa/c446faca-346c-23c9-77ff-f273d5c59f0b/1_glance.png/640x960bb.jpg","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1e/c4/6c/1ec46cd7-6b37-3ff7-c2f4-870f6e5958f9/2_calendar.png/640x960bb.jpg","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f0/38/ea/f038eafe-a840-a90a-bb64-4bfd0c0e0865/3_sources.png/640x960bb.jpg"] },
+      "blindduel":  { ko: "상대 카드는 보이는데 내 카드만 안 보인다. 한 장으로 벌이는 블러핑 심리전 카드게임.", en: "You can see their card — just not your own. A one-card bluffing duel of pure mind games.", shots: ["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/0a/09/f2/0a09f2b8-737c-3fca-193a-c15fdc5da0f1/1_hero.png/640x960bb.jpg","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/08/fc/5d/08fc5d44-78f2-a9de-7d58-aebd650e4c29/2_rule.png/640x960bb.jpg","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f6/d3/bc/f6d3bc2f-701f-0aa2-95d0-d49ef80e9ddc/3_league.png/640x960bb.jpg"] },
+      "mallow":     { ko: "순발력·기억력·계산력을 겨루는 두뇌 게임 모음. Google Play에서 만나보세요 — App Store 버전은 심사 중입니다.", en: "Reflex, memory, and math brain games in one app — on Google Play now, App Store version in review." }
+    };
+
+    var appModal = document.getElementById("appModal");
+    var amIcon = document.getElementById("amIcon");
+    var amName = document.getElementById("amName");
+    var amSub = document.getElementById("amSub");
+    var amPlat = document.getElementById("amPlat");
+    var amDesc = document.getElementById("amDesc");
+    var amShots = document.getElementById("amShots");
+    var amLinks = document.getElementById("amLinks");
+    var amLastFocus = null;
+    var amHideTimer = null;
+
+    function openAppModal(li) {
+      clearTimeout(amHideTimer);
+      var key = li.getAttribute("data-app");
+      var d = APPS[key];
+      if (!d) return;
+      var en = document.documentElement.lang === "en";
+      amIcon.src = li.querySelector(".ic") ? li.querySelector(".ic").src : "";
+      amName.textContent = li.querySelector(".nm").textContent;
+      var tag = li.querySelector('.tag[data-lang="' + (en ? "en" : "ko") + '"]');
+      amSub.textContent = tag ? tag.textContent : "";
+      var stores = li.querySelectorAll("a.store");
+      amPlat.textContent = stores.length
+        ? Array.prototype.map.call(stores, function (a) { return a.textContent; }).join(" · ")
+        : (en ? "Apps in Toss mini-app" : "앱인토스 미니앱");
+      amDesc.textContent = en ? d.en : d.ko;
+      amShots.innerHTML = "";
+      if (d.shots && d.shots.length) {
+        d.shots.forEach(function (u) {
+          var img = document.createElement("img");
+          img.src = u;
+          img.alt = "";
+          img.loading = "lazy";
+          amShots.appendChild(img);
+        });
+        amShots.hidden = false;
+      } else {
+        amShots.hidden = true;
+      }
+      amLinks.innerHTML = "";
+      if (stores.length) {
+        Array.prototype.forEach.call(stores, function (a) {
+          var b = document.createElement("a");
+          b.className = "btn btn-primary";
+          b.href = a.href;
+          b.target = "_blank";
+          b.rel = "noopener";
+          b.textContent = a.textContent + " ↗";
+          amLinks.appendChild(b);
+        });
+      } else {
+        var note = document.createElement("span");
+        note.className = "note";
+        note.textContent = en
+          ? "Open the Toss app and search the name to try it."
+          : "토스 앱에서 이름으로 검색하면 바로 열 수 있어요.";
+        amLinks.appendChild(note);
+      }
+      amLastFocus = li;
+      appModal.hidden = false;
+      requestAnimationFrame(function () { appModal.classList.add("show"); });
+      document.body.style.overflow = "hidden";
+      document.getElementById("amClose").focus();
+    }
+    function closeAppModal() {
+      appModal.classList.remove("show");
+      document.body.style.overflow = "";
+      clearTimeout(amHideTimer);
+      amHideTimer = setTimeout(function () { appModal.hidden = true; }, 200);
+      if (amLastFocus) amLastFocus.focus();
+    }
+    document.querySelectorAll(".apps li[data-app]").forEach(function (li) {
+      li.addEventListener("click", function (e) {
+        if (e.target.closest("a")) return;
+        openAppModal(li);
+      });
+      li.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openAppModal(li); }
+      });
+    });
+    document.getElementById("amClose").addEventListener("click", closeAppModal);
+    appModal.addEventListener("click", function (e) { if (e.target === appModal) closeAppModal(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !appModal.hidden) closeAppModal(); });
+    btn.addEventListener("click", function () { if (!appModal.hidden && amLastFocus) openAppModal(amLastFocus); });
 
     // Contact modal
     var modal = document.getElementById("contactModal");
