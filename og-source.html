@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1200px; height: 630px; overflow: hidden;
+    background: #0a0a0a; color: #ededed;
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    position: relative;
+  }
+  body::before {
+    content: ""; position: absolute; top: -220px; left: 50%;
+    width: 1100px; height: 620px; transform: translateX(-50%);
+    background: radial-gradient(50% 50% at 50% 50%, rgba(255,255,255,.075), transparent 72%);
+  }
+  .wrap { position: relative; padding: 62px 64px 0; height: 100%; display: flex; flex-direction: column; }
+  .mark { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-weight: 700; font-size: 27px; letter-spacing: -.02em; }
+  .mark .dot { color: #8a8a8a; }
+  h1 { font-size: 63px; line-height: 1.08; letter-spacing: -.035em; font-weight: 700; margin-top: 40px; }
+  .lead { font-size: 24px; color: #b9b9b9; margin-top: 20px; letter-spacing: -.01em; }
+  .stats { display: flex; gap: 62px; margin-top: 42px; }
+  .stat .num { font-size: 46px; font-weight: 700; letter-spacing: -.03em; line-height: 1; }
+  .stat .lbl { font-size: 15px; color: #8a8a8a; margin-top: 9px; }
+  .icons { position: absolute; right: 0; bottom: 0; left: 0; display: flex; gap: 14px; padding: 0 64px 44px; }
+  .icons img { width: 62px; height: 62px; border-radius: 15px; object-fit: cover; background: #1a1a1a; }
+  .fade { position: absolute; right: 0; bottom: 44px; width: 190px; height: 62px; background: linear-gradient(90deg, transparent, #0a0a0a 78%); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="mark">YT<span class="dot">·</span>Lab</div>
+    <h1>작은 팀이 만드는<br />소비자용 제품.</h1>
+    <p class="lead">앱인토스 · App Store · Google Play에서 앱을 만들고 직접 운영합니다.</p>
+    <div class="stats">
+      <div class="stat"><div class="num">14</div><div class="lbl">앱인토스 미니앱</div></div>
+      <div class="stat"><div class="num">10</div><div class="lbl">App Store · Google Play 앱</div></div>
+      <div class="stat"><div class="num">11,612</div><div class="lbl">7월 MAU</div></div>
+    </div>
+  </div>
+  <div class="icons">
+    <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c0/98/a0/c098a02f-8c24-d4e6-09b8-94607d5125b1/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" />
+    <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/bd/65/63/bd656378-0214-0df3-a776-0cb5ca357d79/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/256x256bb.jpg" />
+    <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7e/1f/47/7e1f471a-2f69-d0ac-e89c-fbd76259782e/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" />
+    <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/aa/5c/67/aa5c67a8-953a-f6e5-0c85-cf8261d17d25/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" />
+    <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/56/17/31/5617317b-8d62-9614-c9cf-c935aae6c987/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" />
+    <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/72/52/ed/7252edda-11dd-057d-997f-8de41170023f/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg" />
+    <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/db/fd/cc/dbfdccec-425f-f77b-7fa8-bc44a19f0e1c/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" />
+    <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/f4/48/32/f44832cc-37b0-910e-eb7c-d1e718a839b2/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg" />
+    <img src="https://static.toss.im/appsintoss/25373/5829742d-25ca-4ac6-9545-ae98b48c86b7.png" />
+    <img src="https://static.toss.im/appsintoss/25373/1c159c11-bfc0-4df9-9ca2-72c20b833120.png" />
+    <img src="https://static.toss.im/appsintoss/25373/87ac48da-ac12-40ab-af73-685806d6a5dd.png" />
+    <img src="https://static.toss.im/appsintoss/25373/522fcc38-1ab0-40c9-bdad-1e02c7fc32c1.png" />
+    <img src="https://static.toss.im/appsintoss/25373/6f06242c-eed9-4039-8892-ccbb0dc5802a.png" />
+    <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/21/48/66/21486604-4bd8-e234-cc33-582cd46f3997/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" />
+  </div>
+  <div class="fade"></div>
+</body>
+</html>
