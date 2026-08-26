@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="index,follow">
+<title>TradeProof — Privacy Policy</title>
+<style>
+  :root { --ink:#1a1b1e; --muted:#6b6e76; --line:#e6e4dd; --accent:#2563eb; --paper:#f7f6f2; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--paper); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:720px; margin:0 auto; padding:56px 24px 96px; }
+  h1 { font-size:30px; letter-spacing:-0.02em; margin:0 0 6px; }
+  .eyebrow { color:var(--accent); font-weight:700; font-size:13px; letter-spacing:0.12em; text-transform:uppercase; margin:0 0 14px; }
+  .meta { color:var(--muted); font-size:14px; margin:0 0 40px; }
+  h2 { font-size:18px; margin:38px 0 10px; letter-spacing:-0.01em; }
+  p, li { font-size:15.5px; color:#33353b; }
+  ul { padding-left:20px; }
+  a { color:var(--accent); text-decoration:none; }
+  a:hover { text-decoration:underline; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin:14px 0; }
+  table { width:100%; border-collapse:collapse; margin:10px 0; font-size:14.5px; }
+  th, td { text-align:left; padding:10px 8px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { color:var(--muted); font-weight:600; }
+  footer { margin-top:56px; padding-top:20px; border-top:1px solid var(--line); color:var(--muted); font-size:13.5px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="eyebrow">TradeProof</p>
+  <h1>Privacy Policy</h1>
+  <p class="meta">Effective: 2026-08-27 · <a href="/tradeproof-privacy/">한국어</a></p>
+
+  <p>YT Lab ("we") processes personal data of TradeProof app ("Service") users as follows.</p>
+
+  <h2>1. Data we collect</h2>
+  <div class="card">
+    <table>
+      <tr><th>Data</th><th>Purpose</th><th>Retention</th></tr>
+      <tr><td>Email address</td><td>Account creation, sign-in, email verification</td><td>Deleted on account deletion</td></tr>
+      <tr><td>Nickname</td><td>Leaderboard and profile display</td><td>Deleted on account deletion</td></tr>
+      <tr><td>Exchange API key (read-only)</td><td>Balance/deposit-withdrawal lookup and return computation</td><td>Deleted immediately on unlink or account deletion</td></tr>
+      <tr><td>Balance snapshots &amp; holdings</td><td>Metrics (return, MDD) and ranking computation</td><td>Deleted on account deletion</td></tr>
+    </table>
+  </div>
+
+  <h2>2. API key handling</h2>
+  <ul>
+    <li>Only <b>read-only</b> exchange API keys can be registered; keys with withdrawal or trading permission are rejected.</li>
+    <li>Keys are stored server-side encrypted with AES-256-GCM and are never stored on your device.</li>
+    <li>Keys are used solely to read balances and deposit/withdrawal history.</li>
+  </ul>
+
+  <h2>3. What is public</h2>
+  <ul>
+    <li>Only your nickname, percentage metrics (return, MDD) and a normalized index curve may be visible to other users.</li>
+    <li>Absolute amounts — balances and holdings — are never exposed.</li>
+    <li>Profile visibility can be changed in the app settings.</li>
+  </ul>
+
+  <h2>4. Processors and third parties</h2>
+  <p>The Service uses Google Firebase (authentication, database, serverless functions; Google LLC) to process data. We do not sell or share personal data with any other third party.</p>
+
+  <h2>5. Deletion</h2>
+  <p>Using "Delete account" in the app permanently deletes your email, nickname, API key, snapshots and metric history immediately.</p>
+
+  <h2>6. Your rights</h2>
+  <p>You can unlink your exchange or delete your account at any time in the app, and contact us below for any privacy inquiry.</p>
+
+  <h2>7. Disclaimer</h2>
+  <p>All information in the Service is informational only and is not investment advice. You are solely responsible for your investment decisions.</p>
+
+  <h2>8. Contact</h2>
+  <p>Email: <a href="mailto:contact@ytlab.site">contact@ytlab.site</a></p>
+
+  <footer>© 2026 YT Lab. This policy may be revised as the Service changes; revisions are posted on this page.</footer>
+</div>
+</body>
+</html>
