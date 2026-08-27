@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>TradeProof — 이메일 인증</title>
+<style>
+  :root { --ink:#16181D; --sub:#6A7180; --line:#E4E7EC; --up:#0F766E; --down:#B91C1C; --accent:#3FBF9A; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:#fff; color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;
+    display:flex; align-items:center; justify-content:center; min-height:100vh; padding:24px; }
+  .card { max-width:420px; width:100%; text-align:center; }
+  .logo { width:72px; height:72px; border-radius:18px; background:var(--ink); margin:0 auto 22px;
+    display:flex; align-items:center; justify-content:center; }
+  .logo svg { width:44px; height:44px; }
+  h1 { font-size:22px; margin:0 0 10px; letter-spacing:-0.01em; }
+  p { font-size:15px; color:var(--sub); line-height:1.7; margin:0; }
+  .ok h1 { color:var(--up); }
+  .err h1 { color:var(--down); }
+  .spinner { width:28px; height:28px; border:3px solid var(--line); border-top-color:var(--ink);
+    border-radius:50%; margin:0 auto 18px; animation:spin .8s linear infinite; }
+  @keyframes spin { to { transform:rotate(360deg); } }
+  .hidden { display:none; }
+  .note { margin-top:26px; font-size:12.5px; color:#9BA3B0; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="logo">
+    <svg viewBox="0 0 1024 1024"><polyline points="150,700 300,620 420,660 560,480 700,530 874,330" fill="none" stroke="#3FBF9A" stroke-width="56" stroke-linecap="round" stroke-linejoin="round"/><circle cx="770" cy="292" r="150" fill="#3FBF9A"/><path d="M 700 292 L 752 348 L 850 236" fill="none" stroke="#16181D" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+
+  <div id="loading">
+    <div class="spinner"></div>
+    <h1>이메일을 인증하는 중…</h1>
+    <p>잠시만 기다려 주세요.</p>
+  </div>
+
+  <div id="ok" class="ok hidden">
+    <h1>인증 완료!</h1>
+    <p>이메일 인증이 끝났어요.<br>TradeProof 앱으로 돌아가면 자동으로 다음 단계로 넘어가요.</p>
+  </div>
+
+  <div id="reset" class="ok hidden">
+    <h1>비밀번호 재설정</h1>
+    <p>새 비밀번호는 앱의 로그인 화면에서 설정을 이어가 주세요.<br>이 링크는 확인되었습니다.</p>
+  </div>
+
+  <div id="err" class="err hidden">
+    <h1>인증에 실패했어요</h1>
+    <p id="errmsg">링크가 만료됐거나 이미 사용된 링크예요.<br>앱에서 "인증 메일 다시 보내기"를 눌러 새 링크를 받아 주세요.</p>
+  </div>
+
+  <p class="note">TradeProof · <a href="/tradeproof-privacy/" style="color:#9BA3B0">개인정보 처리방침</a></p>
+</div>
+
+<script>
+(function () {
+  var API_KEY = "AIzaSyA88IZZaEzJuSm3e0ffebB_UZGr_ybN4hI"; // public web API key
+  var q = new URLSearchParams(location.search);
+  var mode = q.get("mode");
+  var oob = q.get("oobCode");
+
+  function show(id) {
+    ["loading", "ok", "reset", "err"].forEach(function (x) {
+      document.getElementById(x).classList.toggle("hidden", x !== id);
+    });
+  }
+
+  if (!oob) {
+    document.getElementById("errmsg").innerHTML =
+      "링크 정보가 누락됐어요. 메일 앱이 링크를 변형했을 수 있어요.<br>메일의 링크 주소를 복사해 브라우저 주소창에 직접 붙여넣어 보세요.";
+    show("err");
+    return;
+  }
+
+  // 비밀번호 재설정 링크는 코드 확인만 하고 안내
+  if (mode === "resetPassword") { show("reset"); return; }
+
+  // verifyEmail (mode 누락 시에도 시도 — 메일 클라이언트가 파라미터를 깎는 경우 대비)
+  fetch("https://identitytoolkit.googleapis.com/v1/accounts:update?key=" + API_KEY, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ oobCode: oob })
+  }).then(function (r) { return r.json(); }).then(function (d) {
+    if (d.error) {
+      var code = (d.error.message || "");
+      if (code.indexOf("EXPIRED") >= 0) {
+        document.getElementById("errmsg").innerHTML =
+          "링크가 만료됐어요.<br>앱에서 \"인증 메일 다시 보내기\"를 눌러 새 링크를 받아 주세요.";
+      } else if (code.indexOf("INVALID_OOB") >= 0) {
+        document.getElementById("errmsg").innerHTML =
+          "이미 사용됐거나 유효하지 않은 링크예요.<br>앱으로 돌아가 인증 상태를 확인해 주세요.";
+      }
+      show("err");
+    } else {
+      show("ok");
+    }
+  }).catch(function () {
+    document.getElementById("errmsg").textContent = "네트워크 오류가 발생했어요. 잠시 후 다시 시도해 주세요.";
+    show("err");
+  });
+})();
+</script>
+</body>
+</html>
