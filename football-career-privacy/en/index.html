@@ -41,9 +41,10 @@
   <p>There is no sign-up. The app does not collect your name, email, phone number, contacts or location. Only the following is processed.</p>
   <table>
     <tr><th>Data</th><th>Processed by</th><th>Purpose</th></tr>
-    <tr><td>Advertising identifier (IDFA / AAID)</td><td>Google AdMob</td><td>Serving and measuring the single ad shown at the end of a career</td></tr>
-    <tr><td>Purchase receipts</td><td>Apple App Store / Google Play</td><td>Confirming and restoring the remove-ads and style-pack purchases</td></tr>
+    <tr><td>Advertising identifier (IDFA / AAID)</td><td>Google AdMob</td><td>Serving and measuring the bottom banner and the end-of-career ad</td></tr>
+    <tr><td>Purchase receipts</td><td>Apple App Store / Google Play</td><td>Confirming and restoring the remove-ads and position-pack purchases</td></tr>
     <tr><td>Game progress (your shelf of retired players, settings, what you own)</td><td>Your device</td><td>Picking up where you left off</td></tr>
+    <tr><td>Player name, career record, anonymous id</td><td>This app's ranking server (Cloudflare)</td><td>The global ranking - <strong>only if you opt in</strong>. See section 7</td></tr>
   </table>
   <div class="card">
     Careers and the shelf are stored <strong>on your device only</strong>. The developer neither collects nor can see how you play.
@@ -53,12 +54,12 @@
   <h2>2. Storage</h2>
   <ul>
     <li>Everything is kept in on-device storage (shared_preferences) and is removed when you delete the app.</li>
-    <li>The developer runs no server for this app.</li>
+    <li>Nothing reaches a server of ours unless you enter the ranking. Section 7 covers how long that is kept and how to have it deleted.</li>
   </ul>
 
   <h2>3. Advertising</h2>
   <ul>
-    <li>An ad is shown <strong>once, when a career ends</strong>. There are no banners and nothing between seasons.</li>
+    <li>Ads are a <strong>bottom banner</strong> and <strong>one at the end of a career</strong>. Nothing between seasons, and nothing on top of a screen where you are choosing.</li>
     <li>Google AdMob may process the advertising identifier and related data to serve and measure ads. See the
       <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</li>
     <li>On iOS, personalised or non-personalised ads follow your App Tracking Transparency choice. In Europe a consent form is shown first.</li>
@@ -68,32 +69,47 @@
   <h2>4. Payments</h2>
   <ul>
     <li>In-app purchases are handled by the App Store and Google Play. The developer never receives card or other financial details.</li>
-    <li>Two products are sold - remove ads and the style pack - both one-off, non-consumable purchases.</li>
+    <li>Two products are sold - remove ads and the position pack - both one-off, non-consumable purchases.</li>
     <li>Purchases can be recovered with "Restore purchases" in the app.</li>
   </ul>
 
   <h2>5. Sharing</h2>
-  <p>The developer does not sell user data and shares nothing beyond the processing described above (AdMob, app-store billing), except where required by law.</p>
+  <p>The developer does not sell user data and shares nothing beyond the processing described above (AdMob, app-store billing, and the Cloudflare processing that the ranking uses if you opt in), except where required by law.</p>
 
   <h2>6. Your choices</h2>
   <ul>
-    <li>Deleting the app deletes everything stored on the device. There is nothing held elsewhere to request the deletion of.</li>
+    <li>Deleting the app deletes everything stored on the device.</li>
+    <li>Anything you entered into the ranking can be deleted on request - see section 7.</li>
     <li>The advertising identifier can be reset or limited in your device settings (iOS: Settings &gt; Privacy &gt; Tracking; Android: Settings &gt; Ads).</li>
   </ul>
 
-  <h2>7. Children</h2>
+  <h2>7. Global ranking</h2>
+  <p>The app offers an opt-in global ranking. Only from a device that has agreed to take part, the following is sent to our ranking server:</p>
+  <ul>
+    <li>The player's name (up to 16 characters). The game generates one to suit the chosen nationality; you can keep it or type your own</li>
+    <li>Your career's play record (position, club, per-season appearances, goals, assists, and rating, national-team caps, retirement age, peak rating, earnings, and similar in-game stats)</li>
+    <li>An anonymous id (uid) issued by our service - not a device or advertising identifier, and it changes if you delete and reinstall the app</li>
+  </ul>
+  <p>Device identifiers, advertising identifiers, location, contacts, and email addresses are not sent by this feature.</p>
+  <ul>
+    <li><strong>Retention</strong> - the information above is kept indefinitely, until a deletion request is made.</li>
+    <li><strong>Deletion requests</strong> - send the id shown at the bottom of the ranking card on the home screen to the contact address below, and we will delete every record that id created on our server: its submitted careers, the reports it filed, the reports filed against its own careers, and any player it blocked. The one thing this does not delete: if another player blocked this id, that block is their own setting, not this id's data, and it stays in place.</li>
+    <li><strong>Where this is processed</strong> - the information above is processed and stored on Cloudflare (Workers and D1), and is not shared with any other third party for this purpose.</li>
+  </ul>
+
+  <h2>8. Children</h2>
   <p>The app is not directed at children and does not knowingly collect data from them.</p>
 
-  <h2>8. About the names in the game</h2>
+  <h2>9. About the names in the game</h2>
   <p>Every league, club, player and manager name in the app is invented and is not connected to any real organisation or person.</p>
 
-  <h2>9. Contact</h2>
+  <h2>10. Contact</h2>
   <div class="card">
     Developer: YT Lab<br>
     Email: <a href="mailto:contact@ytlab.site">contact@ytlab.site</a>
   </div>
 
-  <h2>10. Changes</h2>
+  <h2>11. Changes</h2>
   <p>Any change to this policy will be published on this page.</p>
 
   <footer>© YT Lab · <a href="https://ytlab.site">ytlab.site</a></footer>
