@@ -174,13 +174,6 @@
     .bullets li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 6px; height: 1px; background: var(--muted); }
     .bullets b { color: var(--fg); font-weight: 600; }
 
-    .cases { list-style: none; display: flex; flex-direction: column; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
-    .cases li { background: var(--bg); padding: 18px 20px; display: grid; grid-template-columns: 1fr; gap: 6px; }
-    .cases .t { font-weight: 600; font-size: 15px; display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
-    .cases .t .when { font-size: 12.5px; color: var(--muted); font-weight: 400; }
-    .cases .row { font-size: 14px; color: var(--soft); display: grid; grid-template-columns: 44px 1fr; gap: 10px; }
-    .cases .row .k { color: var(--muted); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; padding-top: 3px; }
-
     .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
     .skills div { background: var(--bg); padding: 18px 20px; }
     .skills h3 { font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 10px; }
@@ -201,9 +194,6 @@
       gap: 8px;
     }
 
-    @media (max-width: 560px) {
-      .cases .row { grid-template-columns: 1fr; gap: 2px; }
-    }
     @media (max-width: 480px) {
       .topactions .pill:not(#printBtn) { display: none; }
       .apps { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
@@ -225,7 +215,7 @@
       .apps .nm { font-size: 12.5px; }
       .apps .tg { font-size: 11px; }
       .apps .lks { display: none; }
-      .cases li, .job, .skills div { break-inside: avoid; }
+      .job, .skills div { break-inside: avoid; }
     }
   </style>
 </head>
@@ -244,7 +234,6 @@
       <h1>김용태</h1>
       <p class="role">
         2026년 3월부터 앱 32개를 만들어 앱인토스 · App Store · Google Play에 출시하고 직접 운영합니다.
-        본업은 원자력 소프트웨어 QA입니다.
       </p>
       <ul class="meta">
         <li><a href="mailto:contact@ytlab.site">contact@ytlab.site</a></li>
@@ -255,7 +244,6 @@
 
     <div class="stats">
       <div class="stat"><span class="num">32</span><span class="lbl">출시·운영 중인 앱 · 스토어 14 · 앱인토스 18</span></div>
-      <div class="stat"><span class="num">73</span><span class="lbl">App Store 심사 통과 버전</span></div>
       <div class="stat"><span class="num">31,697</span><span class="lbl">누적 신규 사용자 · 미니앱 합산 · 3~8월</span></div>
       <div class="stat"><span class="num">7,156</span><span class="lbl">8월 MAU · 미니앱 합산 · 최고 11,612 (7월)</span></div>
     </div>
@@ -481,35 +469,6 @@
       <p class="note">2026년 9월 12일 기준. 앱 수·버전 수·사용자 수는 App Store Connect · Google Play · 앱인토스 콘솔에서 확인한 값입니다. 심사 중·준비 중인 앱은 제외했습니다.</p>
     </section>
 
-    <section id="cases">
-      <h2>출시·운영 기록</h2>
-      <p class="h2sub">출시하면서 실제로 부딪힌 문제와 처리한 방식.</p>
-      <ul class="cases">
-        <li>
-          <div class="t">Android 릴리스 빌드 실행 즉시 크래시 <span class="when">로드 투 트레블 · 2026.07</span></div>
-          <div class="row"><span class="k">문제</span><span>디버그 빌드와 iOS는 정상인데 Google Play용 릴리스 빌드만 실행 직후 종료. 1 to 50은 같은 증상으로 Play 심사에서 "broken functionality" 반려.</span></div>
-          <div class="row"><span class="k">원인</span><span>R8 코드 축소가 광고 SDK가 리플렉션으로 생성하는 androidx.work / Room 클래스를 제거. mapping.txt 부재와 dex 내 클래스 존재 여부 대조로 확인.</span></div>
-          <div class="row"><span class="k">조치</span><span>keep 규칙 추가 후 같은 구성의 1 to 50 · SumDash에도 선제 적용. "릴리스 빌드 실기기 실행 확인"을 배포 전 점검 항목으로 문서화.</span></div>
-        </li>
-        <li>
-          <div class="t">App Store Guideline 2.1 반려 — 권한 프롬프트 미표시 <span class="when">2026.06</span></div>
-          <div class="row"><span class="k">문제</span><span>심사 기기에서 앱 추적 투명성(ATT) 권한 프롬프트가 뜨지 않아 반려.</span></div>
-          <div class="row"><span class="k">원인</span><span>프롬프트를 앱이 활성 상태가 되기 전에 호출해 iOS가 요청을 무시.</span></div>
-          <div class="row"><span class="k">조치</span><span>앱 라이프사이클 활성화 이후로 호출 시점을 옮기고 재제출, 승인.</span></div>
-        </li>
-        <li>
-          <div class="t">출시본과 소스 트리 불일치 발견 <span class="when">마이포폴 · 2026.08</span></div>
-          <div class="row"><span class="k">문제</span><span>스토어 라이브 버전(1.0.9)이 로컬 git 트리보다 7개 버전 앞서 있음을 빌드 전 대조에서 발견. 그대로 빌드했으면 출시된 기능이 사라진 채 배포될 상황.</span></div>
-          <div class="row"><span class="k">조치</span><span>"빌드 전 스토어 버전·브랜치 대조"와 "배포 즉시 커밋·푸시"를 배포 절차의 고정 단계로 추가.</span></div>
-        </li>
-        <li>
-          <div class="t">토스 혜택탭 노출 축소로 8월 MAU 38% 감소 <span class="when">2026.08</span></div>
-          <div class="row"><span class="k">문제</span><span>7월 11,612명이던 미니앱 합산 MAU가 8월 7,156명으로 감소.</span></div>
-          <div class="row"><span class="k">원인</span><span>유입 경로별 집계에서 혜택탭 비중이 큰 앱(오늘의 상식·숫자 러시·순간계산왕)만 동시에 빠진 것을 확인. 제품 이탈이 아니라 플랫폼 노출 변화.</span></div>
-          <div class="row"><span class="k">조치</span><span>단일 유입 경로 의존을 줄이기 위해 같은 게임을 스토어 앱으로도 출시(말랑브레인·로드 투 트레블·십이장기·블라인드 듀얼).</span></div>
-        </li>
-      </ul>
-    </section>
 
     <section id="career">
       <h2>경력</h2>
@@ -540,7 +499,6 @@
           <span class="period">2026.03 – 현재</span>
         </div>
         <ul class="bullets">
-          <li>빌드 → 스토어 업로드 → 심사 제출을 <b>App Store Connect API · Android Publisher API 스크립트로 자동화</b></li>
           <li>출시 후 MAU · 유입 경로 · 리텐션을 보고 유지 · 개선 · 중단을 결정</li>
           <li>유튜브 채널 <a href="https://www.youtube.com/@VibeBuilderkr" target="_blank" rel="noopener">바이브빌더</a> 운영 — 비개발자 대상 AI 도구 활용 콘텐츠</li>
         </ul>
@@ -553,19 +511,13 @@
         <div>
           <h3>테스트 · 품질</h3>
           <ul>
-            <li>요구사항 기반 테스트케이스 설계</li><li>회귀 테스트</li><li>결함 관리 · JIRA</li><li>시험 절차서 · 결과보고서 작성</li><li>테스트 시나리오 설계</li><li>테스트 환경 구축</li><li>현장 시험(SAT) 지원</li>
+            <li>요구사항 기반 테스트케이스 설계</li><li>회귀 테스트</li><li>결함 관리 · JIRA</li><li>시험 절차서 · 결과보고서 작성</li><li>테스트 시나리오 설계</li><li>테스트 환경 구축</li>
           </ul>
         </div>
         <div>
           <h3>출시 · 운영</h3>
           <ul>
-            <li>App Store Connect</li><li>Google Play Console</li><li>앱인토스 콘솔</li><li>스토어 심사 대응</li><li>ASO · 스토어 리스팅</li><li>AdMob · AdSense</li><li>지표 기반 운영 판단</li>
-          </ul>
-        </div>
-        <div>
-          <h3>도구 · 자동화</h3>
-          <ul>
-            <li>AI 코딩 에이전트 운용 (Claude Code · Codex)</li><li>Git</li><li>스토어 API 스크립트</li><li>Flutter 프로젝트 운영</li>
+            <li>App Store Connect</li><li>Google Play Console</li><li>앱인토스 콘솔</li><li>스토어 심사 대응</li><li>ASO · 스토어 리스팅</li><li>AdMob · AdSense</li><li>AI 코딩 에이전트 운용 (Claude Code · Codex)</li>
           </ul>
         </div>
       </div>
