@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>김용태 — 포트폴리오</title>
+  <meta name="description" content="김용태 포트폴리오. 앱인토스 · App Store · Google Play에 출시해 운영 중인 서비스 32개." />
+  <meta name="theme-color" content="#0a0a0a" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230a0a0a'/><text x='50' y='66' font-size='44' font-family='monospace' fill='%23fff' text-anchor='middle' font-weight='700'>YT</text></svg>" />
+
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --fg: #ededed;
+      --muted: #8a8a8a;
+      --line: #1f1f1f;
+      --soft: #cfcfcf;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      word-break: keep-all;
+    }
+    a { color: inherit; }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 24px clamp(20px, 6vw, 64px);
+    }
+    .mark {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: -0.02em;
+      text-decoration: none;
+    }
+    .mark .dot { color: var(--muted); }
+    .topactions { display: flex; align-items: center; gap: 10px; }
+    .pill {
+      background: none;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font: inherit;
+      font-size: 13px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: color .15s, border-color .15s;
+    }
+    .pill:hover { color: var(--fg); border-color: #333; }
+
+    .wrap { max-width: 960px; margin: 0 auto; padding: 0 clamp(20px, 6vw, 64px); }
+
+    .hero { padding: clamp(20px, 5vh, 56px) 0 clamp(28px, 5vh, 44px); }
+    .badge {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 5px 12px;
+      margin-bottom: 22px;
+    }
+    h1 {
+      font-size: clamp(34px, 6.5vw, 56px);
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .role {
+      font-size: clamp(16px, 2.2vw, 19px);
+      color: var(--soft);
+      max-width: 60ch;
+      margin-bottom: 22px;
+    }
+    .meta {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .meta a { text-decoration: none; border-bottom: 1px solid #333; padding-bottom: 1px; color: var(--fg); }
+    .meta a:hover { border-color: var(--fg); }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: clamp(32px, 6vh, 56px);
+    }
+    .stat { background: var(--bg); padding: 18px 20px; }
+    .stat .num { display: block; font-size: clamp(26px, 4vw, 34px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; }
+    .stat .lbl { display: block; font-size: 12.5px; color: var(--muted); margin-top: 6px; }
+
+    section { padding: clamp(30px, 5vh, 48px) 0; border-top: 1px solid var(--line); }
+    h2 {
+      font-size: clamp(20px, 3vw, 26px);
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+    }
+    .h2sub { font-size: 14px; color: var(--muted); margin-top: 6px; margin-bottom: 22px; }
+    h3 { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; }
+    .sub { font-size: 14px; color: var(--muted); margin-top: 2px; }
+    .period { font-size: 13px; color: var(--muted); white-space: nowrap; }
+
+    .grouphead {
+      display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+      margin: 26px 0 12px;
+    }
+    .grouphead:first-of-type { margin-top: 0; }
+    .grouphead .gt { font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+    .grouphead .gn { font-size: 13px; color: var(--muted); }
+
+    .apps {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 1px;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .apps li {
+      background: var(--bg);
+      outline: 1px solid var(--line);
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .apps .ic { width: 44px; height: 44px; border-radius: 11px; object-fit: cover; background: #161616; margin-bottom: 9px; }
+    .apps .nm { font-weight: 600; font-size: 15.5px; letter-spacing: -0.01em; }
+    .apps .tg { font-size: 13px; color: var(--soft); }
+    .apps .dt { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+    .apps .lks { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+    .apps .lks a {
+      font-size: 12px;
+      color: var(--soft);
+      text-decoration: none;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 3px 9px;
+      white-space: nowrap;
+      transition: color .15s, border-color .15s;
+    }
+    .apps .lks a:hover { color: var(--fg); border-color: #333; }
+
+    .job { display: flex; flex-direction: column; gap: 4px; }
+    .job + .job { margin-top: 30px; }
+    .job .head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+    .bullets { list-style: none; margin-top: 10px; display: flex; flex-direction: column; gap: 9px; }
+    .bullets li { position: relative; padding-left: 18px; font-size: 14.5px; color: var(--soft); }
+    .bullets li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 6px; height: 1px; background: var(--muted); }
+    .bullets b { color: var(--fg); font-weight: 600; }
+
+    .cases { list-style: none; display: flex; flex-direction: column; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+    .cases li { background: var(--bg); padding: 18px 20px; display: grid; grid-template-columns: 1fr; gap: 6px; }
+    .cases .t { font-weight: 600; font-size: 15px; display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
+    .cases .t .when { font-size: 12.5px; color: var(--muted); font-weight: 400; }
+    .cases .row { font-size: 14px; color: var(--soft); display: grid; grid-template-columns: 44px 1fr; gap: 10px; }
+    .cases .row .k { color: var(--muted); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; padding-top: 3px; }
+
+    .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+    .skills div { background: var(--bg); padding: 18px 20px; }
+    .skills h3 { font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 10px; }
+    .skills ul { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
+    .skills li { font-size: 13px; border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px; color: var(--soft); }
+
+    .note { font-size: 13px; color: var(--muted); margin-top: 14px; }
+
+    footer {
+      margin-top: clamp(28px, 5vh, 56px);
+      padding: 26px clamp(20px, 6vw, 64px);
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    @media (max-width: 560px) {
+      .cases .row { grid-template-columns: 1fr; gap: 2px; }
+    }
+    @media (max-width: 480px) {
+      .topactions .pill:not(#printBtn) { display: none; }
+      .apps { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+    }
+
+    @media print {
+      :root { --bg: #ffffff; --fg: #111111; --muted: #666666; --line: #dddddd; --soft: #333333; }
+      @page { margin: 12mm; }
+      body { font-size: 12px; }
+      .topbar, .pill { display: none !important; }
+      .wrap { max-width: none; padding: 0; }
+      .hero { padding: 0 0 18px; }
+      h1 { font-size: 28px; }
+      .stats { margin-bottom: 18px; }
+      section { padding: 16px 0; }
+      .apps { grid-template-columns: repeat(4, 1fr); }
+      .apps li { padding: 10px; break-inside: avoid; }
+      .apps .ic { width: 30px; height: 30px; margin-bottom: 6px; }
+      .apps .nm { font-size: 12.5px; }
+      .apps .tg { font-size: 11px; }
+      .apps .lks { display: none; }
+      .cases li, .job, .skills div { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="mark" href="/">YT<span class="dot">·</span>Lab</a>
+    <div class="topactions">
+      <a class="pill" href="mailto:contact@ytlab.site">contact@ytlab.site</a>
+      <button class="pill" id="printBtn" type="button">PDF로 저장</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="hero">
+      <span class="badge">포트폴리오 · 2026년 9월</span>
+      <h1>김용태</h1>
+      <p class="role">
+        2026년 3월부터 앱 32개를 만들어 앱인토스 · App Store · Google Play에 출시하고 직접 운영합니다.
+        본업은 원자력 소프트웨어 QA입니다.
+      </p>
+      <ul class="meta">
+        <li><a href="mailto:contact@ytlab.site">contact@ytlab.site</a></li>
+        <li><a href="https://ytlab.site" target="_blank" rel="noopener">ytlab.site</a></li>
+        <li>충북 청주</li>
+      </ul>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><span class="num">32</span><span class="lbl">출시·운영 중인 앱 · 스토어 14 · 앱인토스 18</span></div>
+      <div class="stat"><span class="num">73</span><span class="lbl">App Store 심사 통과 버전</span></div>
+      <div class="stat"><span class="num">31,697</span><span class="lbl">누적 신규 사용자 · 미니앱 합산 · 3~8월</span></div>
+      <div class="stat"><span class="num">7,156</span><span class="lbl">8월 MAU · 미니앱 합산 · 최고 11,612 (7월)</span></div>
+    </div>
+
+    <section id="products">
+      <h2>만든 서비스</h2>
+      <p class="h2sub">기획 · 디자인 · 개발 · 스토어 제출 · 운영을 전부 혼자. 구현은 AI 코딩 에이전트에 맡기고, 무엇을 만들지와 내보낼지는 직접 판단합니다.</p>
+
+      <div class="grouphead"><span class="gt">App Store · Google Play</span><span class="gn">14개</span></div>
+      <ul class="apps">
+        <li>
+          <img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c0/98/a0/c098a02f-8c24-d4e6-09b8-94607d5125b1/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" />
+          <span class="nm">마이포폴</span>
+          <span class="tg">연금·ISA 적립 투자 시뮬레이터</span>
+          <span class="dt">2026.06 출시</span>
+          <span class="lks"><a href="https://apps.apple.com/kr/app/id6774625277" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=com.mypopol.app" target="_blank" rel="noopener">Google Play</a></span>
+        </li>
+        <li>
+          <img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/72/52/ed/7252edda-11dd-057d-997f-8de41170023f/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg" />
+          <span class="nm">Spill</span>
+          <span class="tg">한 줄 미리알림 · 캘린더</span>
+          <span class="dt">2026.06 출시</span>
+          <span class="lks"><a href="https://apps.apple.com/kr/app/id6778608148" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=com.spill.spill" target="_blank" rel="noopener">Google Play</a></span>
+        </li>
+        <li>
+          <img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/21/48/66/21486604-4bd8-e234-cc33-582cd46f3997/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" />
+          <span class="nm">장보고</span>
+          <span class="tg">생필품 가격비교</span>
+          <span class="dt">2026.06 출시</span>
+          <span class="lks"><a href="https://play.google.com/store/apps/details?id=site.ytlab.jangbogo" target="_blank" rel="noopener">Google Play</a></span>
+        </li>
+        <li>
+          <img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/db/fd/cc/dbfdccec-425f-f77b-7fa8-bc44a19f0e1c/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" />
+          <span class="nm">1 to 50</span>
+          <span class="tg">숫자 순서 스피드 게임</span>
+          <span class="dt">2026.06 출시</span>
+          <span class="lks"><a href="https://apps.apple.com/kr/app/id6782382427" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=com.ytlab.one_to_fifty" target="_blank" rel="noopener">Google Play</a></span>
+        </li>
+        <li>
+          <img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7e/1f/47/7e1f471a-2f69-d0ac-e89c-fbd76259782e/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" />
+          <span class="nm">로드 투 트레블</span>
+          <span class="tg">축구 드래프트 게임</span>
+          <span class="dt">2026.07 출시</span>
+          <span class="lks"><a href="https://apps.apple.com/kr/app/id6783814192" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=dev.goldenroad.golden_road_app" target="_blank" rel="noopener">Google Play</a></span>
+        </li>
+        <li>
+          <img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/bd/65/63/bd656378-0214-0df3-a776-0cb5ca357d79/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/256x256bb.jpg" />
+          <span class="nm">애니멀 팝</span>
+          <span class="tg">동물 합치기 퍼즐</span>
+          <span class="dt">2026.07 출시</span>
+          <span class="lks"><a href="https://apps.apple.com/kr/app/id6782373454" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=com.animalpop.app" target="_blank" rel="noopener">Google Play</a></span>
+        </li>
+        <li>
+          <img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/aa/5c/67/aa5c67a8-953a-f6e5-0c85-cf8261d17d25/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" />
+          <span class="nm">SumDash</span>
+          <span class="tg">사칙연산 스피드 게임</span>
+          <span class="dt">2026.07 출시</span>
+          <span class="lks"><a href="https://apps.apple.com/kr/app/id6785198584" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=com.ytlab.sumdash" target="_blank" rel="noopener">Google Play</a></span>
+        </li>
+        <li>
+          <img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/f4/48/32/f44832cc-37b0-910e-eb7c-d1e718a839b2/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg" />
+          <span class="nm">블라인드 듀얼</span>
+          <span class="tg">한 장 심리전 카드게임</span>
+          <span class="dt">2026.07 출시</span>
+          <span class="lks"><a href="https://apps.apple.com/kr/app/id6791613672" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=com.ytlab.blind_poker" target="_blank" rel="noopener">Google Play</a></span>
+        </li>
+        <li>
+          <img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/56/17/31/5617317b-8d62-9614-c9cf-c935aae6c987/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" />
+          <span class="nm">AdMeter</span>
+          <span class="tg">애드몹 · 애드센스 수익 대시보드</span>
+          <span class="dt">2026.07 출시</span>
+          <span class="lks"><a href="https://apps.apple.com/kr/app/id6789329258" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=site.ytlab.adpulse" target="_blank" rel="noopener">Google Play</a></span>
+        </li>
+        <li>
+          <img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/de/e6/4f/dee64f4e-a974-55cb-8268-85a920bc4c92/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" />
+          <span class="nm">쿠파노트</span>
+          <span class="tg">쿠팡 파트너스 실적 · 정산 달력</span>
+          <span class="dt">2026.08 출시</span>
+          <span class="lks"><a href="https://apps.apple.com/kr/app/id6795585727" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=site.ytlab.kupanote" target="_blank" rel="noopener">Google Play</a></span>
+        </li>
+        <li>
+          <img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/45/3d/8b/453d8be5-335f-b976-f1d9-f2c5d791c37e/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg" />
+          <span class="nm">밴픽 매니저</span>
+          <span class="tg">e스포츠 구단 경영 게임</span>
+          <span class="dt">2026.08 출시</span>
+          <span class="lks"><a href="https://apps.apple.com/kr/app/id6802333370" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=com.ytlab.esports_gm" target="_blank" rel="noopener">Google Play</a></span>
+        </li>
+        <li>
+          <img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/cf/70/af/cf70af7e-397f-5a20-ebf0-9f90ada55936/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/256x256bb.jpg" />
+          <span class="nm">말랑브레인</span>
+          <span class="tg">두뇌 게임 7종 모음</span>
+          <span class="dt">2026.08 출시</span>
+          <span class="lks"><a href="https://apps.apple.com/kr/app/id6792457720" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=com.ytlab.malang_brain" target="_blank" rel="noopener">Google Play</a></span>
+        </li>
+        <li>
+          <img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/21/b1/20/21b1203b-2c47-7c55-9d75-22e2657a4738/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" />
+          <span class="nm">십이장기 · 12 Chess</span>
+          <span class="tg">3×4 판 미니 체스</span>
+          <span class="dt">2026.09 출시</span>
+          <span class="lks"><a href="https://apps.apple.com/kr/app/id6804221169" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=com.ytlab.tinythrone" target="_blank" rel="noopener">Google Play</a></span>
+        </li>
+        <li>
+          <img class="ic" loading="lazy" alt="" src="https://play-lh.googleusercontent.com/OtIpMPCdImr2mJfPGGEJhCeQzBagjMEAItQ34KMNZXqBf9NBs3pkncQLtMx4oVElrGEA6w44i2RMSBmvybsKGQ=s256" />
+          <span class="nm">축구선수 키우기</span>
+          <span class="tg">축구선수 커리어 시뮬레이션</span>
+          <span class="dt">2026.09 출시</span>
+          <span class="lks"><a href="https://play.google.com/store/apps/details?id=site.ytlab.soccer_career" target="_blank" rel="noopener">Google Play</a></span>
+        </li>
+      </ul>
+
+      <div class="grouphead"><span class="gt">앱인토스 미니앱</span><span class="gn">18개 · 토스 앱에서 이름으로 검색</span></div>
+      <ul class="apps">
+        <li>
+          <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/87dae129-58d7-4cd9-972e-13f988b6ffaa.png" />
+          <span class="nm">AI 월세</span>
+          <span class="tg">AI 구독비 관리</span>
+          <span class="dt">2026.03 출시</span>
+        </li>
+        <li>
+          <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/1c159c11-bfc0-4df9-9ca2-72c20b833120.png" />
+          <span class="nm">오늘의 상식</span>
+          <span class="tg">상식 퀴즈 · 리워드</span>
+          <span class="dt">2026.04 출시</span>
+        </li>
+        <li>
+          <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/d315f890-bb3b-469c-9cf2-03f28e7d4cae.png" />
+          <span class="nm">그때 샀더라면</span>
+          <span class="tg">주식 · 코인 가정 수익률</span>
+          <span class="dt">2026.04 출시</span>
+        </li>
+        <li>
+          <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/b723844a-2b54-4d7f-93b5-44e1c99a5efb.png" />
+          <span class="nm">오늘의 소비 미션</span>
+          <span class="tg">소비 절약 미션 · 리워드</span>
+          <span class="dt">2026.04 출시</span>
+        </li>
+        <li>
+          <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/7831fe00-5ad3-4d9e-be42-d34ccd0aa138.png" />
+          <span class="nm">오늘하루</span>
+          <span class="tg">AI 감정 일기</span>
+          <span class="dt">2026.04 출시</span>
+        </li>
+        <li>
+          <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/13ee6c7f-08f9-42ef-8294-dafbb535be7f.png" />
+          <span class="nm">애니멀 팝</span>
+          <span class="tg">동물 합치기 퍼즐</span>
+          <span class="dt">2026.04 출시</span>
+        </li>
+        <li>
+          <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/522fcc38-1ab0-40c9-bdad-1e02c7fc32c1.png" />
+          <span class="nm">하루카드</span>
+          <span class="tg">안부 그림 카드</span>
+          <span class="dt">2026.05 출시</span>
+        </li>
+        <li>
+          <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/6f06242c-eed9-4039-8892-ccbb0dc5802a.png" />
+          <span class="nm">오늘일진</span>
+          <span class="tg">사주 운세 카드</span>
+          <span class="dt">2026.05 출시</span>
+        </li>
+        <li>
+          <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/3129b2a5-6bac-46fa-9d91-086580e8f040.png" />
+          <span class="nm">오늘의 영단어</span>
+          <span class="tg">하루 5단어 영어</span>
+          <span class="dt">2026.05 출시</span>
+        </li>
+        <li>
+          <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/87ac48da-ac12-40ab-af73-685806d6a5dd.png" />
+          <span class="nm">오늘의 경제뉴스</span>
+          <span class="tg">경제 뉴스 브리핑</span>
+          <span class="dt">2026.06 출시</span>
+        </li>
+        <li>
+          <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/8807db79-665f-4554-8b80-805c832191bd.png" />
+          <span class="nm">우리동네 최저가</span>
+          <span class="tg">생필품 최저가 정보</span>
+          <span class="dt">2026.06 출시</span>
+        </li>
+        <li>
+          <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/427c72d7-3a30-4fd9-9962-b1d1dd45be71.png" />
+          <span class="nm">숫자 러시</span>
+          <span class="tg">숫자 순서 게임</span>
+          <span class="dt">2026.07 출시</span>
+        </li>
+        <li>
+          <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/75c44346-16bd-4fe5-a662-2b4686d26e3b.png" />
+          <span class="nm">순간계산왕</span>
+          <span class="tg">암산 스피드 게임</span>
+          <span class="dt">2026.07 출시</span>
+        </li>
+        <li>
+          <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/5829742d-25ca-4ac6-9545-ae98b48c86b7.png" />
+          <span class="nm">말랑브레인</span>
+          <span class="tg">두뇌 게임 모음</span>
+          <span class="dt">2026.08 출시</span>
+        </li>
+        <li>
+          <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/b883d566-9893-4f8c-a062-ef1417c19aed.png" />
+          <span class="nm">로드 투 트레블</span>
+          <span class="tg">축구 드래프트 게임</span>
+          <span class="dt">2026.08 출시</span>
+        </li>
+        <li>
+          <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/402ad9de-57ad-44c6-b71c-5b45c078f3c9.png" />
+          <span class="nm">십이장기</span>
+          <span class="tg">3×4 판 미니 체스</span>
+          <span class="dt">2026.09 출시</span>
+        </li>
+        <li>
+          <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/8bb60a81-ea9c-4e5d-b51b-792a6364c379.png" />
+          <span class="nm">블라인드 듀얼</span>
+          <span class="tg">한 장 심리전 카드게임</span>
+          <span class="dt">2026.09 출시</span>
+        </li>
+        <li>
+          <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/e799b4f3-fd37-4af3-8654-75a97e63c13e.png" />
+          <span class="nm">축구선수 키우기</span>
+          <span class="tg">축구선수 커리어 시뮬레이션</span>
+          <span class="dt">2026.09 출시</span>
+        </li>
+      </ul>
+
+      <p class="note">2026년 9월 12일 기준. 앱 수·버전 수·사용자 수는 App Store Connect · Google Play · 앱인토스 콘솔에서 확인한 값입니다. 심사 중·준비 중인 앱은 제외했습니다.</p>
+    </section>
+
+    <section id="cases">
+      <h2>출시·운영 기록</h2>
+      <p class="h2sub">출시하면서 실제로 부딪힌 문제와 처리한 방식.</p>
+      <ul class="cases">
+        <li>
+          <div class="t">Android 릴리스 빌드 실행 즉시 크래시 <span class="when">로드 투 트레블 · 2026.07</span></div>
+          <div class="row"><span class="k">문제</span><span>디버그 빌드와 iOS는 정상인데 Google Play용 릴리스 빌드만 실행 직후 종료. 1 to 50은 같은 증상으로 Play 심사에서 "broken functionality" 반려.</span></div>
+          <div class="row"><span class="k">원인</span><span>R8 코드 축소가 광고 SDK가 리플렉션으로 생성하는 androidx.work / Room 클래스를 제거. mapping.txt 부재와 dex 내 클래스 존재 여부 대조로 확인.</span></div>
+          <div class="row"><span class="k">조치</span><span>keep 규칙 추가 후 같은 구성의 1 to 50 · SumDash에도 선제 적용. "릴리스 빌드 실기기 실행 확인"을 배포 전 점검 항목으로 문서화.</span></div>
+        </li>
+        <li>
+          <div class="t">App Store Guideline 2.1 반려 — 권한 프롬프트 미표시 <span class="when">2026.06</span></div>
+          <div class="row"><span class="k">문제</span><span>심사 기기에서 앱 추적 투명성(ATT) 권한 프롬프트가 뜨지 않아 반려.</span></div>
+          <div class="row"><span class="k">원인</span><span>프롬프트를 앱이 활성 상태가 되기 전에 호출해 iOS가 요청을 무시.</span></div>
+          <div class="row"><span class="k">조치</span><span>앱 라이프사이클 활성화 이후로 호출 시점을 옮기고 재제출, 승인.</span></div>
+        </li>
+        <li>
+          <div class="t">출시본과 소스 트리 불일치 발견 <span class="when">마이포폴 · 2026.08</span></div>
+          <div class="row"><span class="k">문제</span><span>스토어 라이브 버전(1.0.9)이 로컬 git 트리보다 7개 버전 앞서 있음을 빌드 전 대조에서 발견. 그대로 빌드했으면 출시된 기능이 사라진 채 배포될 상황.</span></div>
+          <div class="row"><span class="k">조치</span><span>"빌드 전 스토어 버전·브랜치 대조"와 "배포 즉시 커밋·푸시"를 배포 절차의 고정 단계로 추가.</span></div>
+        </li>
+        <li>
+          <div class="t">토스 혜택탭 노출 축소로 8월 MAU 38% 감소 <span class="when">2026.08</span></div>
+          <div class="row"><span class="k">문제</span><span>7월 11,612명이던 미니앱 합산 MAU가 8월 7,156명으로 감소.</span></div>
+          <div class="row"><span class="k">원인</span><span>유입 경로별 집계에서 혜택탭 비중이 큰 앱(오늘의 상식·숫자 러시·순간계산왕)만 동시에 빠진 것을 확인. 제품 이탈이 아니라 플랫폼 노출 변화.</span></div>
+          <div class="row"><span class="k">조치</span><span>단일 유입 경로 의존을 줄이기 위해 같은 게임을 스토어 앱으로도 출시(말랑브레인·로드 투 트레블·십이장기·블라인드 듀얼).</span></div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="career">
+      <h2>경력</h2>
+      <div class="job">
+        <div class="head">
+          <div>
+            <h3>비앤에프테크놀로지(주)</h3>
+            <p class="sub">IPS엔지니어링팀 · QA / 테스터</p>
+          </div>
+          <span class="period">2024.05 – 재직중</span>
+        </div>
+        <ul class="bullets">
+          <li><b>테스트케이스 설계</b> — SRS를 분석해 항목별 입력·조건·기대결과를 정의한 테스트케이스 작성</li>
+          <li><b>SW 회귀시험 수행</b> — 릴리스·패치마다 수정 기능과 결함 조치 항목을 검증하고 기존 기능 영향 여부 확인</li>
+          <li><b>시험 문서 작성</b> — 고객 제출용 시험 절차서·결과보고서 작성 및 발행</li>
+          <li><b>결함 이슈 보고 및 추적 (JIRA)</b> — 재현 절차·시험 환경·기대/실제 결과를 포함해 티켓 등록, 개발팀 조치 후 재검증</li>
+          <li><b>원자력 발전소 현장 시험 지원</b> — SW 현장 설치 시 고객 환경에서 시험 절차서를 직접 수행해 설치 결과 검증</li>
+          <li><b>테스트 환경 설치 자동화</b> — 수작업으로 반복하던 설치 절차를 단계별로 정리한 뒤 AI 코딩 도구로 자동화, 작업자별 소요시간 편차를 없애고 팀 공용 도구로 적용</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="head">
+          <div>
+            <h3>YT Lab</h3>
+            <p class="sub">1인 스튜디오 · 기획 · 출시 · 운영</p>
+          </div>
+          <span class="period">2026.03 – 현재</span>
+        </div>
+        <ul class="bullets">
+          <li>빌드 → 스토어 업로드 → 심사 제출을 <b>App Store Connect API · Android Publisher API 스크립트로 자동화</b></li>
+          <li>출시 후 MAU · 유입 경로 · 리텐션을 보고 유지 · 개선 · 중단을 결정</li>
+          <li>유튜브 채널 <a href="https://www.youtube.com/@VibeBuilderkr" target="_blank" rel="noopener">바이브빌더</a> 운영 — 비개발자 대상 AI 도구 활용 콘텐츠</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>스킬</h2>
+      <div class="skills">
+        <div>
+          <h3>테스트 · 품질</h3>
+          <ul>
+            <li>요구사항 기반 테스트케이스 설계</li><li>회귀 테스트</li><li>결함 관리 · JIRA</li><li>시험 절차서 · 결과보고서 작성</li><li>테스트 시나리오 설계</li><li>테스트 환경 구축</li><li>현장 시험(SAT) 지원</li>
+          </ul>
+        </div>
+        <div>
+          <h3>출시 · 운영</h3>
+          <ul>
+            <li>App Store Connect</li><li>Google Play Console</li><li>앱인토스 콘솔</li><li>스토어 심사 대응</li><li>ASO · 스토어 리스팅</li><li>AdMob · AdSense</li><li>지표 기반 운영 판단</li>
+          </ul>
+        </div>
+        <div>
+          <h3>도구 · 자동화</h3>
+          <ul>
+            <li>AI 코딩 에이전트 운용 (Claude Code · Codex)</li><li>Git</li><li>스토어 API 스크립트</li><li>Flutter 프로젝트 운영</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="edu">
+      <h2>학력</h2>
+      <h3>컴퓨터공학 전공 · 학사</h3>
+    </section>
+  </main>
+
+  <footer>
+    <span>김용태 · <a href="mailto:contact@ytlab.site">contact@ytlab.site</a></span>
+    <span>마지막 업데이트 2026.09.12</span>
+  </footer>
+
+  <script>
+    document.getElementById("printBtn").addEventListener("click", function () { window.print(); });
+  </script>
+</body>
+</html>
