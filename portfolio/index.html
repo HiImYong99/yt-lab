@@ -229,6 +229,8 @@
       color: var(--accent); display: block; margin-bottom: 4px;
     }
     .cblock p { font-size: 14.5px; color: var(--soft); line-height: 1.65; }
+    .cblock p + p { margin-top: 10px; }
+    .cgrid:has(.quad) { align-items: start; }
     .cblock p b { color: var(--fg); font-weight: 600; }
     .clinks { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 4px; }
     .clinks a {
@@ -240,6 +242,10 @@
 
     .cshot { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
     .cshot img { width: 100%; border-radius: 12px; border: 1px solid var(--line); background: var(--img-bg); }
+    .cshot.quad { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .ctitle .pair { display: flex; }
+    .ctitle .pair img { width: 40px; height: 40px; border-radius: 10px; background: var(--img-bg); border: 1px solid var(--bg); }
+    .ctitle .pair img + img { margin-left: -12px; }
 
     /* ---------- app grid ---------- */
     .grouphead { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin: 34px 0 14px; }
@@ -302,16 +308,6 @@
     footer a:hover { color: var(--accent); border-color: var(--accent); }
 
 
-    /* ---------- pointer ring (desktop only, native cursor kept) ---------- */
-    .ring {
-      position: fixed; top: 0; left: 0; z-index: 90; pointer-events: none;
-      width: 26px; height: 26px; margin: -13px 0 0 -13px; border-radius: 50%;
-      border: 1px solid var(--line2); opacity: 0;
-      transition: width .22s, height .22s, margin .22s, border-color .22s, opacity .3s, background .22s;
-    }
-    .ring.on { opacity: 1; }
-    .ring.hot { width: 46px; height: 46px; margin: -23px 0 0 -23px; border-color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); }
-
     /* ---------- hero letters ---------- */
     h1 span { display: inline-block; }
     html.js h1 span { opacity: 0; transform: translateY(.3em) rotate(4deg); transition: opacity .55s ease, transform .7s cubic-bezier(.2,.8,.2,1); }
@@ -350,7 +346,9 @@
       color: var(--muted); border: 1px solid var(--line2); border-radius: 999px; padding: 3px 9px;
     }
     .mshots { display: flex; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 4px; }
-    .mshots img { width: 190px; flex: none; border-radius: 12px; border: 1px solid var(--line); background: var(--img-bg); scroll-snap-align: start; }
+    /* fixed height, free width: portrait and landscape shots sit on the same baseline */
+    .mshots img { height: 340px; width: auto; flex: none; border-radius: 12px; border: 1px solid var(--line); background: var(--img-bg); scroll-snap-align: start; }
+    @media (max-width: 560px) { .mshots img { height: 260px; } }
     .mdesc { font-size: 14.5px; color: var(--soft); line-height: 1.7; }
     .mlinks { display: flex; flex-wrap: wrap; gap: 7px; }
     .mlinks a {
@@ -388,7 +386,6 @@
       html { scroll-behavior: auto; }
       .mrow.a, .mrow.b { animation: none; }
       html.js .rv, html.js h1 span, html.js .tlrow { opacity: 1; transform: none; transition: none; }
-      .ring { display: none; }
       html.js dialog.sheet[open] .inner { animation: none; }
     }
 
@@ -405,6 +402,7 @@
       h2 { font-size: 18px; }
       .case { padding: 12px 0; }
       .cshot { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+      .cshot.quad { grid-template-columns: repeat(2, 1fr); gap: 6px; }
       .cshot img { border-radius: 6px; }
       .apps { grid-template-columns: repeat(4, 1fr); gap: 6px; }
       .apps li { padding: 8px; break-inside: avoid; border-radius: 8px; }
@@ -415,7 +413,7 @@
       .job, .skills > div, .case { break-inside: avoid; }
       html.js .rv, html.js h1 span, html.js .tlrow { opacity: 1 !important; transform: none !important; }
       [data-par] { transform: none !important; }
-      .ring, dialog.sheet { display: none !important; }
+      dialog.sheet { display: none !important; }
       /* print snapshots immediately, so the forced end values must not animate toward */
       html.js .rv { transition: none !important; }
     }
@@ -459,7 +457,7 @@
     <div class="wrap">
       <div class="stats">
         <div class="stat"><span class="num">26</span><span class="lbl">직접 만들어 운영 중인 앱<br />스토어 14 · 앱인토스 18 · 양쪽 출시 6</span></div>
-        <div class="stat"><span class="num">31,697</span><span class="lbl">누적 신규 사용자<br />미니앱 합산 · 3~8월</span></div>
+        <div class="stat"><span class="num">869</span><span class="lbl">스토어 누적 다운로드<br />App Store 777 · Google Play 92</span></div>
         <div class="stat"><span class="num">7,156</span><span class="lbl">8월 MAU<br />미니앱 합산 · 최고 11,612 (7월)</span></div>
         <div class="stat"><span class="num">207,639</span><span class="lbl">유튜브 채널 누적 조회수<br />바이브빌더 · 영상 105편 · 구독 1.7천</span></div>
       </div>
@@ -563,33 +561,40 @@
         <!-- CASE 3 -->
         <article class="case rv">
           <div class="cgrid">
-          <div class="cshot">
+          <div class="cshot quad">
             <img data-par="-18" loading="lazy" alt="AdMeter 오늘 수익 화면" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c4/46/fa/c446faca-346c-23c9-77ff-f273d5c59f0b/1_glance.png/626x0w.webp" />
-            <img data-par="12" loading="lazy" alt="AdMeter 월별 캘린더 화면" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1e/c4/6c/1ec46cd7-6b37-3ff7-c2f4-870f6e5958f9/2_calendar.png/626x0w.webp" />
-            <img data-par="-8" loading="lazy" alt="AdMeter 수익원별 화면" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f0/38/ea/f038eafe-a840-a90a-bb64-4bfd0c0e0865/3_sources.png/626x0w.webp" />
+            <img data-par="12" loading="lazy" alt="AdMeter 수익원별 화면" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f0/38/ea/f038eafe-a840-a90a-bb64-4bfd0c0e0865/3_sources.png/626x0w.webp" />
+            <img data-par="-8" loading="lazy" alt="쿠파노트 홈 화면" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c3/39/9f/c3399f78-cec0-1b55-3a55-7419a5d725f5/1_home.png/626x0w.webp" />
+            <img data-par="14" loading="lazy" alt="쿠파노트 정산 달력 화면" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d9/ef/47/d9ef475d-2fba-9467-d404-cbf1eb54a0fc/2_calendar.png/626x0w.webp" />
           </div>
           <div>
             <div class="ctitle">
-              <img loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/56/17/31/5617317b-8d62-9614-c9cf-c935aae6c987/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/128x128bb.jpg" />
-              <h3>AdMeter</h3>
+              <span class="pair">
+                <img loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/56/17/31/5617317b-8d62-9614-c9cf-c935aae6c987/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/128x128bb.jpg" />
+                <img loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/de/e6/4f/dee64f4e-a974-55cb-8268-85a920bc4c92/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/128x128bb.jpg" />
+              </span>
+              <h3>AdMeter · 쿠파노트</h3>
             </div>
-            <div class="ctags"><span>광고 수익 대시보드</span><span>iOS · Android</span><span>2026.07</span><span>v1.0.1</span></div>
+            <div class="ctags"><span>내가 쓰려고 만든 도구</span><span>iOS · Android</span><span>2026.07 · 2026.08</span></div>
             <div class="cbody">
               <div class="cblock">
                 <span class="k">문제</span>
-                <p>앱을 여러 개 굴리면 수익이 애드몹과 애드센스로 갈라집니다. 콘솔이 서로 달라 오늘 얼마 벌었는지 알려면 매번 탭 두 개를 열고 더해야 했습니다. 제가 매일 하던 일입니다.</p>
+                <p>앱을 26개 굴리다 보니 매일 같은 일을 반복하고 있었습니다. 광고 수익은 애드몹과 애드센스 콘솔이 따로라 탭 두 개를 열고 더해야 했고, 쿠팡 파트너스는 어제 얼마 벌었는지 보려고 하루에도 몇 번씩 사이트를 새로고침했습니다. 둘 다 제 업무였습니다.</p>
               </div>
               <div class="cblock">
                 <span class="k">만든 것</span>
-                <p>구글 계정을 한 번 연결하면 두 네트워크 수익을 한 화면에 합쳐 보여 줍니다. 앱별 · 사이트별 분해, 일자별 월 캘린더, 7일 · 28일 추이, 홈 화면 위젯까지 넣었습니다. 권한은 <b>보고서 읽기 전용</b>만 받고 개발자 서버를 두지 않아, 토큰과 수익 데이터가 기기 밖으로 나가지 않습니다.</p>
+                <p><b>AdMeter</b>는 구글 계정을 한 번 연결하면 두 네트워크 수익을 한 화면에 합쳐 줍니다. 앱별 · 사이트별 분해, 월 캘린더, 홈 화면 위젯까지. 권한은 <b>보고서 읽기 전용</b>만 받고 개발자 서버를 두지 않아 토큰이 기기 밖으로 나가지 않습니다.</p>
+                <p><b>쿠파노트</b>는 매일 오후 3시에 어제 실적을 받아 채워 두고 알림 한 통을 보냅니다. 새로고침할 이유 자체를 없앴습니다. 정산 일정과 입금 예정액까지 달력에 얹었습니다.</p>
               </div>
               <div class="cblock">
                 <span class="k">결과</span>
-                <p>제 앱들 수익을 보려고 만들어 그대로 출시한 도구입니다. iOS · Android 동시 출시, 영구 해제형 프리미엄 인앱 상품 1종으로 운영 중입니다.</p>
+                <p>둘 다 제가 쓰려고 만든 사내 도구였는데, 쓸 만해지자 그대로 <b>스토어에 출시</b>했습니다. iOS · Android 동시 출시, AdMeter는 영구 해제형 프리미엄, 쿠파노트는 월 990원 구독으로 수익화하고 있습니다. 지금도 제 수익을 이 두 앱으로 봅니다.</p>
               </div>
               <div class="clinks">
-                <a href="https://apps.apple.com/kr/app/id6789329258" target="_blank" rel="noopener">App Store</a>
-                <a href="https://play.google.com/store/apps/details?id=site.ytlab.adpulse" target="_blank" rel="noopener">Google Play</a>
+                <a href="https://apps.apple.com/kr/app/id6789329258" target="_blank" rel="noopener">AdMeter · App Store</a>
+                <a href="https://play.google.com/store/apps/details?id=site.ytlab.adpulse" target="_blank" rel="noopener">AdMeter · Google Play</a>
+                <a href="https://apps.apple.com/kr/app/id6795585727" target="_blank" rel="noopener">쿠파노트 · App Store</a>
+                <a href="https://play.google.com/store/apps/details?id=site.ytlab.kupanote" target="_blank" rel="noopener">쿠파노트 · Google Play</a>
               </div>
             </div>
           </div>
@@ -784,7 +789,7 @@
           </li>
         </ul>
 
-        <p class="note rv">2026년 9월 12일 기준. 앱 수와 사용자 수는 App Store Connect · Google Play Console · 앱인토스 콘솔에서, 유튜브 수치는 채널 페이지에서 확인한 값입니다. 6개 앱(애니멀 팝 · 말랑브레인 · 로드 투 트레블 · 십이장기 · 블라인드 듀얼 · 축구선수 키우기)은 스토어와 앱인토스 양쪽에 올려 두 목록에 모두 나옵니다.</p>
+        <p class="note rv">2026년 9월 13일 기준. App Store 다운로드는 App Store Connect 분석 리포트의 첫 다운로드 합계(앱 10개, 각 출시일~9월 11일)이고, Google Play는 콘솔 설치 리포트 기준입니다(앱 8개, 8월 21일까지 + 축구선수 키우기). 두 스토어 모두 최근 출시한 일부 앱은 리포트가 아직 집계 전이라 빠져 있습니다. 미니앱 사용자 수는 앱인토스 콘솔, 유튜브 수치는 채널 페이지에서 확인한 값입니다. 6개 앱(애니멀 팝 · 말랑브레인 · 로드 투 트레블 · 십이장기 · 블라인드 듀얼 · 축구선수 키우기)은 스토어와 앱인토스 양쪽에 올려 두 목록에 모두 나옵니다.</p>
       </section>
 
       <section id="career">
@@ -936,7 +941,7 @@
 
 
       // ---- app detail sheet ----
-      var APPS = {"mypopol":{"v":"1.0.9","r":"2026.06","u":"2026.07","g":"금융","iap":[0,0],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/29/bd/6d/29bd6d85-6fb9-7224-0298-d33e360d4cb4/01-home.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/28/8c/9c/288c9c28-3dfd-4bee-7ddf-84d1dcc70ef7/02-simulate.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7c/9f/0e/7c9f0e70-907a-efe8-fea1-f8ec869f611b/03-vault.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/85/64/3e/85643e74-25a1-9765-eb42-7271aa04284a/04-backtest.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/52/07/54/520754f2-bfdf-7ab7-ba40-95fcc47bc7f0/05-explore.png/626x0w.webp"],"d":"마이포폴은 적립식 투자를 \"미리 설계\"해 보는 시뮬레이터입니다. 매달 얼마를, 몇 년 동안, 어떤 계좌로 모으면 결과가 어떻게 달라지는지 세후 기준으로 가정해 보여줍니다. (실제 거래·중개 기능은 없습니다.)"},"spill":{"v":"1.0.7","r":"2026.06","u":"2026.08","g":"생산성","iap":[0,0],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b5/2a/59/b52a59f2-6193-ac43-73ec-46332c3da9fe/1_chat-ko.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c2/4f/33/c24f3390-64ab-4faa-8295-7634c4f573a7/2_tasks-ko.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/10/0e/de/100ede59-392d-3fcb-2f3d-7838cbb242a2/3_ideas-ko.png/626x0w.webp"],"d":"Spill은 가장 빠르게 기억하는 방법입니다. 한 줄 쓰면, 있어야 할 곳에 자동으로 들어갑니다. 대부분의 미리알림 앱은 날짜·시간·목록을 일일이 눌러야 합니다. Spill은 평범한 문장을 읽고 알아서 정리합니다."},"one-to-fifty":{"v":"1.0.8","r":"2026.06","u":"2026.08","g":"게임","iap":[1,1],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5d/98/d0/5d98d047-2cfa-1f4f-e546-94f5666d0b26/1_loop.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f3/4b/35/f34b355a-117f-1adb-9136-facdf51c04fc/2_compete.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/fc/40/7c/fc407ce8-1c2f-7e53-6b0e-8d44be449216/3_win.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/36/44/10/36441035-69d3-46e1-7353-9cfcbcd728d3/4_modes.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/59/84/84/59848459-a0f9-d9ed-2eb5-94ddba8c152d/5_themes.png/626x0w.webp"],"d":"1부터 50까지, 얼마나 빨리 탭할 수 있나요? 다음 숫자를 찾아 누르고, 시간을 줄이고, 그다음엔 전 세계와 겨루세요. 1 to 50: 숫자 순서 게임은 단 하나의 중독적인 루프로 만들어진 스피드 게임입니다. 격자에서 다음 수를 찾아 손가락이 움직이는 만큼 빠르게 터치하세요. 배우는 데는 몇 초면 충분하지만, 마스터하는 데는 끝이 없습니다."},"road-to-treble":{"v":"3.6.5","r":"2026.07","u":"2026.09","g":"게임","iap":[26,23],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a7/da/f6/a7daf622-ddd3-b266-1868-3a230bece00f/6.7_01_manager.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/36/c7/c9/36c7c903-43aa-323f-aeca-c1c66db4c5fa/6.7_02_matchday.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/cc/bc/9a/ccbc9a56-4d96-fa46-e839-2548a0960e3d/6.7_03_weekdraft.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/26/d7/14/26d71480-e869-556b-aaaf-d9aa52eb2b30/6.7_04_hook.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ce/a4/9d/cea49d2a-da6d-c231-e7ad-8eee2d3b48e3/6.7_05_trophies.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/bc/21/cd/bc21cd82-f071-f3d4-8e0c-649e537d454f/6.7_06_album.png/626x0w.webp"],"d":"능력치를 가린 채 11개 포지션을 한 명씩 채우는 축구 드래프트 게임입니다. 화려한 이름값에 속을지 숨은 보석을 알아볼지는 당신의 축구 지식에 달렸습니다. 베스트11을 확정하고 시즌을 돌려 트레블에 도전하세요."},"animal-pop":{"v":"1.4.1","r":"2026.07","u":"2026.07","g":"게임","iap":[1,1],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8a/3a/58/8a3a5822-2563-b10c-ef3a-47b9e75240a6/AnimalPop_ko_1.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/de/f9/8f/def98fa4-cbdd-fb57-7c47-2b1b6199074b/AnimalPop_ko_2.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/72/9d/85/729d8560-71bd-d84d-1812-b8ff2374d936/AnimalPop_ko_3.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/eb/88/22/eb8822de-14ec-04ec-8c60-65ea190a098d/AnimalPop_ko_4.png/626x0w.webp"],"d":"같은 동물 둘을 톡! 합치면 더 큰 동물로 자라나요. 병아리에서 시작해 사자까지, 귀여운 동물을 합쳐 키우는 힐링 합치기 퍼즐! 떨어뜨리고, 합치고, 점수를 쌓는 단순한 규칙."},"sumdash":{"v":"1.2.4","r":"2026.07","u":"2026.08","g":"게임","iap":[1,1],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/9e/3b/90/9e3b905d-a5c5-c693-6a9f-1241f2b5ff48/ios_65_1_play.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c8/58/dd/c858dd78-2097-9368-949e-3e72dd115991/ios_65_2_rank.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d9/ea/f0/d9eaf0e1-7af4-cbec-c777-76ab5371c765/ios_65_3_modes.png/626x0w.webp"],"d":"카운트다운이 0이 되기 전에 정답을 눌러라. SumDash는 사칙연산을 아케이드 게임으로 바꾼 빠른 암산 게임입니다. 정답을 맞힐 때마다 시간이 충전되고, 속도는 조금씩 더 빨라집니다. 시작은 쉽습니다. 하지만 끝까지 쉬웠던 적은 없습니다."},"blind-duel":{"v":"2.1.3","r":"2026.07","u":"2026.09","g":"게임","iap":[5,5],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ab/44/4d/ab444dfb-9c1f-35a5-fa59-384526b2b1e9/1_hero.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b7/88/e2/b788e29c-a630-e9b2-9378-22410a2d0f83/2_rule.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f1/3d/3f/f13d3f38-1a7f-7b34-54fa-7b875a8dde76/3_league.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/81/42/7e/81427e3b-7174-c6d6-1e23-755a934ca079/4_style.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/17/68/23/17682333-abe4-05ea-cd33-ef509cfad796/5_duel.png/626x0w.webp"],"d":"상대 카드는 보이는데, 내 카드만 안 보인다. 한 장으로 벌이는 블러핑 심리전, 블라인드 듀얼. 읽고, 속여서 라운드를 가져가세요. 승부를 결정하는 단 한 장이 나만 안 보입니다."},"admeter":{"v":"1.0.1","r":"2026.07","u":"2026.08","g":"금융","iap":[1,1],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c4/46/fa/c446faca-346c-23c9-77ff-f273d5c59f0b/1_glance.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1e/c4/6c/1ec46cd7-6b37-3ff7-c2f4-870f6e5958f9/2_calendar.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f0/38/ea/f038eafe-a840-a90a-bb64-4bfd0c0e0865/3_sources.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/66/a4/c5/66a4c514-a445-489c-f153-29dfc81a8b1b/4_detail.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/68/8f/11/688f11c3-e70f-8310-e444-00801a6b3d68/5_theme.png/626x0w.webp"],"d":"내 광고는 24시간 돈을 법니다. AdMeter는 그 돈을 한 화면에 모아 보여줍니다. 구글 계정으로 로그인하면 애드몹(AdMob)과 애드센스(AdSense) 수익을 함께 볼 수 있습니다 — 스프레드시트도, 브라우저 탭도, 콘솔 뒤지기도 필요 없습니다."},"kupanote":{"v":"1.0.7","r":"2026.08","u":"2026.09","g":"비즈니스","iap":[0,0],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c3/39/9f/c3399f78-cec0-1b55-3a55-7419a5d725f5/1_home.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d9/ef/47/d9ef475d-2fba-9467-d404-cbf1eb54a0fc/2_calendar.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f4/1d/ce/f41dce39-c1fe-d63d-f93e-fbb9daa53b9f/3_products.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f0/8f/ce/f08fceaa-b059-12ca-8e12-68227689e1aa/4_trust.png/626x0w.webp"],"d":"쿠팡 파트너스 실적을 매일 오후 3시에 받아 채워 두고 알림 한 통을 보냅니다. 사이트에 들어가 새로고침할 이유를 없앤 앱입니다.","sub":"구독 1종 · 월 990원"},"banpick":{"v":"1.0","r":"2026.08","u":"2026.08","g":"게임","iap":[7,7],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/23/07/d3/2307d3d6-2a95-3373-8f45-3d25c7929028/1_draft_69.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ff/15/8c/ff158c1f-e275-63d6-20a7-6296267456e2/2_hub_69.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/48/79/e8/4879e8ec-39fc-61d3-75b0-b0748e218a08/3_awards_69.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/42/5c/94/425c9408-cf85-a7e1-8e05-f8802d02ae5a/4_tier_69.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a2/70/85/a270851e-7915-f609-c82d-3cfbff155321/5_sheet_69.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fc/f1/bd/fcf1bd76-f9af-bb60-5a0d-04f3d68a70ef/6_tactic_69.png/626x0w.webp"],"d":"당신은 신생 e스포츠 게임단의 감독입니다. 2부 리그에서 시작해 밴픽을 읽고, 선수를 키우고, 리그 정상과 월드 챔피언십까지 올라가세요."},"malang-brain":{"v":"1.0.0","r":"2026.08","u":"2026.08","g":"게임","iap":[0,0],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a9/a8/f7/a9a8f7c8-aae7-b6f6-96be-0b89ccd488b0/1_games.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a3/d8/54/a3d85418-0846-7d8b-5c2f-d527234c4004/2_percentile.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1f/1d/fc/1f1dfc8a-8f10-d7cc-d0bf-25aa0fc76196/3_rank.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/90/24/f3/9024f3f4-5e92-5d19-0b0f-f1f46bb66fa3/4_growth.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8e/2b/0b/8e2b0bf8-c7c5-e57c-69a4-61410a3044bc/5_play.png/626x0w.webp"],"d":"말랑한 머리, 일곱 가지로 단련하세요. 말랑브레인은 7가지 두뇌게임을 아기자기한 페이퍼 월드에 담았어요. 한 판은 1분 이내, 모든 점수는 전 세계 백분위로, 전부 합쳐 나만의 말랑지수가 됩니다.","sub":"구독 2종 · 월 · 연"},"twelve-chess":{"v":"1.0.3","r":"2026.09","u":"2026.09","g":"게임","iap":[1,1],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b1/df/20/b1df209c-5bd3-afca-f1dd-dd9f3662e243/1_home.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1b/9f/8b/1b9f8bda-f71d-3686-9a37-9b0adbfac7d8/2_select.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f6/d8/ab/f6d8abc6-2d04-3654-0c15-6bc322562c53/3_midgame.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8e/ea/64/8eea6467-3ffe-b40f-a8e9-2e3d56401bf9/4_sheet.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/62/02/15/62021580-835c-c665-24b3-e87ad7040954/5_rank.png/626x0w.webp"],"d":"체스를 열두 칸으로 줄였습니다. 12 Chess는 3x4 판에서 벌어지는 3분짜리 수싸움입니다. 첫 수부터 모든 기물이 서로 사정권 안에 있어서, 외울 오프닝도 없고 늘어지는 중반도 없습니다. 1수부터 그냥 싸움입니다."},"jangbogo":{"v":"1.0.0","r":"2026.06","u":"2026.06","g":"쇼핑","iap":[0,0],"s":["https://play-lh.googleusercontent.com/vCeRgub6Ax20hcW3NhXX4y1oVqufgH13eTJny2srnhcJsONsiHOKXwl2ovrxLP9ivmHNKUe0Tbc0-1WUNw=w626","https://play-lh.googleusercontent.com/S6QtrFbnUIIFWjnYSF5NQzeCuBnJ496EbwXfPToilL-HQh19xku479KNfjJLPRXc-Tt-IWvozCrnPkETgGRYRjs=w626","https://play-lh.googleusercontent.com/rViQcEDtikbwhyNLnEoRwGP2m6ch0whqGIXKsS6aki5wp438Tp_zxOHUBhU5OfaSydnKofxvwMlaKrnv36cq5Q=w626","https://play-lh.googleusercontent.com/O4Q8WRKJu5jpcu7-vBA35Ug9hFvSax7dK6iXgSgWYUFNSK9ecj71pNug9Uyy9wMlxw-HSfutvhiGBmYT3viqfQ=w626","https://play-lh.googleusercontent.com/wcT0T_20S3r6ZIZP-823zOPwHv4dY7imqobKb6ElZSun2KkJOujjkyEZDXFDgowDPQ0_thJymRy8c-12RCs9=w626","https://play-lh.googleusercontent.com/Uckhl3xX7nSrBF6SLMk6B1-S8WfeEnvSWgTtlnXMb0LZLK1H2L2CsTOZqwAan4aK_UFN5NquOTnMSx_1n2y_=w626"],"d":"마트와 온라인에 흩어진 생필품 가격을 한 번에 비교해, 지금 어디가 제일 싼지 알려 줍니다."},"soccer-career":{"v":"1.2.0","r":"2026.09","u":"2026.09","g":"게임","iap":[0,0],"s":["https://play-lh.googleusercontent.com/gCXzvzwqUFc-fGDO5lx39TU5VNhSBkA52ygQKZQMyi3foIZf4-lGg0bvqmTwYWgLqU-u_NJov3TMWzVEHw=w626","https://play-lh.googleusercontent.com/sUm8UNiyEQQodc2Ec32u2x-0khND1XW82ebAofSyNjWQCwF36qE_dCgk27tVytCFy-QlYgtevfA2Pw4Cwd4RLw=w626","https://play-lh.googleusercontent.com/jBXv1mW1ktZiRR3bJq4UsbOY7rmFenAaLjyEUMjKYVAP3ci8BjdZn04v6qwU486Sk2hTTqGVXeU8lxvvSzT-PQ=w626","https://play-lh.googleusercontent.com/Mlk6tgEkQyR8d5EP2iQtQIlabucGlScSwKB_EoGbEoVU2B-4mfAwPs4dbr9F-ax-66_ByF86MXGlgW0rk_EKJgk=w626","https://play-lh.googleusercontent.com/DNd9O5NJUmFza2yhoWqsRFTIP2j64EUpCD9nqECHcCbl8pfT7zLq66Hd9_s-mDlJqpRmUG0jnJycbAh5ipAh=w626","https://play-lh.googleusercontent.com/aGOhEPDzYVEFjx_IM9gtlx78tbi1-EiaE8soUUhG6-TQtSEaAHfV5uPkabYRkoEm038YJjggFJ1LD2YckPfZiA=w626"],"d":"유소년부터 은퇴까지, 축구선수 한 명의 커리어를 선택으로 굴려 보는 시뮬레이션입니다."}};
+      var APPS = {"mypopol":{"v":"1.0.9","r":"2026.06","u":"2026.07","g":"금융","iap":[0,0],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/29/bd/6d/29bd6d85-6fb9-7224-0298-d33e360d4cb4/01-home.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/28/8c/9c/288c9c28-3dfd-4bee-7ddf-84d1dcc70ef7/02-simulate.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7c/9f/0e/7c9f0e70-907a-efe8-fea1-f8ec869f611b/03-vault.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/85/64/3e/85643e74-25a1-9765-eb42-7271aa04284a/04-backtest.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/52/07/54/520754f2-bfdf-7ab7-ba40-95fcc47bc7f0/05-explore.png/626x0w.webp"],"d":"마이포폴은 적립식 투자를 \"미리 설계\"해 보는 시뮬레이터입니다. 매달 얼마를, 몇 년 동안, 어떤 계좌로 모으면 결과가 어떻게 달라지는지 세후 기준으로 가정해 보여줍니다. (실제 거래·중개 기능은 없습니다.)"},"spill":{"v":"1.0.7","r":"2026.06","u":"2026.08","g":"생산성","iap":[0,0],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b5/2a/59/b52a59f2-6193-ac43-73ec-46332c3da9fe/1_chat-ko.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c2/4f/33/c24f3390-64ab-4faa-8295-7634c4f573a7/2_tasks-ko.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/10/0e/de/100ede59-392d-3fcb-2f3d-7838cbb242a2/3_ideas-ko.png/626x0w.webp"],"d":"Spill은 가장 빠르게 기억하는 방법입니다. 한 줄 쓰면, 있어야 할 곳에 자동으로 들어갑니다. 대부분의 미리알림 앱은 날짜·시간·목록을 일일이 눌러야 합니다. Spill은 평범한 문장을 읽고 알아서 정리합니다."},"one-to-fifty":{"v":"1.0.8","r":"2026.06","u":"2026.08","g":"게임","iap":[1,1],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5d/98/d0/5d98d047-2cfa-1f4f-e546-94f5666d0b26/1_loop.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f3/4b/35/f34b355a-117f-1adb-9136-facdf51c04fc/2_compete.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/fc/40/7c/fc407ce8-1c2f-7e53-6b0e-8d44be449216/3_win.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/36/44/10/36441035-69d3-46e1-7353-9cfcbcd728d3/4_modes.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/59/84/84/59848459-a0f9-d9ed-2eb5-94ddba8c152d/5_themes.png/626x0w.webp"],"d":"1부터 50까지, 얼마나 빨리 탭할 수 있나요? 다음 숫자를 찾아 누르고, 시간을 줄이고, 그다음엔 전 세계와 겨루세요. 1 to 50: 숫자 순서 게임은 단 하나의 중독적인 루프로 만들어진 스피드 게임입니다. 격자에서 다음 수를 찾아 손가락이 움직이는 만큼 빠르게 터치하세요. 배우는 데는 몇 초면 충분하지만, 마스터하는 데는 끝이 없습니다."},"road-to-treble":{"v":"3.6.5","r":"2026.07","u":"2026.09","g":"게임","iap":[26,23],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a7/da/f6/a7daf622-ddd3-b266-1868-3a230bece00f/6.7_01_manager.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/36/c7/c9/36c7c903-43aa-323f-aeca-c1c66db4c5fa/6.7_02_matchday.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/cc/bc/9a/ccbc9a56-4d96-fa46-e839-2548a0960e3d/6.7_03_weekdraft.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/26/d7/14/26d71480-e869-556b-aaaf-d9aa52eb2b30/6.7_04_hook.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ce/a4/9d/cea49d2a-da6d-c231-e7ad-8eee2d3b48e3/6.7_05_trophies.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/bc/21/cd/bc21cd82-f071-f3d4-8e0c-649e537d454f/6.7_06_album.png/626x0w.webp"],"d":"능력치를 가린 채 11개 포지션을 한 명씩 채우는 축구 드래프트 게임입니다. 화려한 이름값에 속을지 숨은 보석을 알아볼지는 당신의 축구 지식에 달렸습니다. 베스트11을 확정하고 시즌을 돌려 트레블에 도전하세요."},"animal-pop":{"v":"1.4.1","r":"2026.07","u":"2026.07","g":"게임","iap":[1,1],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8a/3a/58/8a3a5822-2563-b10c-ef3a-47b9e75240a6/AnimalPop_ko_1.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/de/f9/8f/def98fa4-cbdd-fb57-7c47-2b1b6199074b/AnimalPop_ko_2.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/72/9d/85/729d8560-71bd-d84d-1812-b8ff2374d936/AnimalPop_ko_3.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/eb/88/22/eb8822de-14ec-04ec-8c60-65ea190a098d/AnimalPop_ko_4.png/626x0w.webp"],"d":"같은 동물 둘을 톡! 합치면 더 큰 동물로 자라나요. 병아리에서 시작해 사자까지, 귀여운 동물을 합쳐 키우는 힐링 합치기 퍼즐! 떨어뜨리고, 합치고, 점수를 쌓는 단순한 규칙."},"sumdash":{"v":"1.2.4","r":"2026.07","u":"2026.08","g":"게임","iap":[1,1],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/9e/3b/90/9e3b905d-a5c5-c693-6a9f-1241f2b5ff48/ios_65_1_play.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c8/58/dd/c858dd78-2097-9368-949e-3e72dd115991/ios_65_2_rank.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d9/ea/f0/d9eaf0e1-7af4-cbec-c777-76ab5371c765/ios_65_3_modes.png/626x0w.webp"],"d":"카운트다운이 0이 되기 전에 정답을 눌러라. SumDash는 사칙연산을 아케이드 게임으로 바꾼 빠른 암산 게임입니다. 정답을 맞힐 때마다 시간이 충전되고, 속도는 조금씩 더 빨라집니다. 시작은 쉽습니다. 하지만 끝까지 쉬웠던 적은 없습니다."},"blind-duel":{"v":"2.1.3","r":"2026.07","u":"2026.09","g":"게임","iap":[5,5],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ab/44/4d/ab444dfb-9c1f-35a5-fa59-384526b2b1e9/1_hero.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b7/88/e2/b788e29c-a630-e9b2-9378-22410a2d0f83/2_rule.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f1/3d/3f/f13d3f38-1a7f-7b34-54fa-7b875a8dde76/3_league.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/81/42/7e/81427e3b-7174-c6d6-1e23-755a934ca079/4_style.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/17/68/23/17682333-abe4-05ea-cd33-ef509cfad796/5_duel.png/626x0w.webp"],"d":"상대 카드는 보이는데, 내 카드만 안 보인다. 한 장으로 벌이는 블러핑 심리전, 블라인드 듀얼. 읽고, 속여서 라운드를 가져가세요. 승부를 결정하는 단 한 장이 나만 안 보입니다."},"admeter":{"v":"1.0.1","r":"2026.07","u":"2026.08","g":"금융","iap":[1,1],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c4/46/fa/c446faca-346c-23c9-77ff-f273d5c59f0b/1_glance.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1e/c4/6c/1ec46cd7-6b37-3ff7-c2f4-870f6e5958f9/2_calendar.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f0/38/ea/f038eafe-a840-a90a-bb64-4bfd0c0e0865/3_sources.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/66/a4/c5/66a4c514-a445-489c-f153-29dfc81a8b1b/4_detail.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/68/8f/11/688f11c3-e70f-8310-e444-00801a6b3d68/5_theme.png/626x0w.webp"],"d":"내 광고는 24시간 돈을 법니다. AdMeter는 그 돈을 한 화면에 모아 보여줍니다. 구글 계정으로 로그인하면 애드몹(AdMob)과 애드센스(AdSense) 수익을 함께 볼 수 있습니다 — 스프레드시트도, 브라우저 탭도, 콘솔 뒤지기도 필요 없습니다."},"kupanote":{"v":"1.0.7","r":"2026.08","u":"2026.09","g":"비즈니스","iap":[0,0],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c3/39/9f/c3399f78-cec0-1b55-3a55-7419a5d725f5/1_home.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d9/ef/47/d9ef475d-2fba-9467-d404-cbf1eb54a0fc/2_calendar.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f4/1d/ce/f41dce39-c1fe-d63d-f93e-fbb9daa53b9f/3_products.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f0/8f/ce/f08fceaa-b059-12ca-8e12-68227689e1aa/4_trust.png/626x0w.webp"],"d":"쿠팡 파트너스 실적을 매일 오후 3시에 받아 채워 두고 알림 한 통을 보냅니다. 사이트에 들어가 새로고침할 이유를 없앤 앱입니다.","sub":"구독 1종 · 월 990원"},"banpick":{"v":"1.0","r":"2026.08","u":"2026.08","g":"게임","iap":[7,7],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/23/07/d3/2307d3d6-2a95-3373-8f45-3d25c7929028/1_draft_69.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ff/15/8c/ff158c1f-e275-63d6-20a7-6296267456e2/2_hub_69.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/48/79/e8/4879e8ec-39fc-61d3-75b0-b0748e218a08/3_awards_69.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/42/5c/94/425c9408-cf85-a7e1-8e05-f8802d02ae5a/4_tier_69.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a2/70/85/a270851e-7915-f609-c82d-3cfbff155321/5_sheet_69.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fc/f1/bd/fcf1bd76-f9af-bb60-5a0d-04f3d68a70ef/6_tactic_69.png/626x0w.webp"],"d":"당신은 신생 e스포츠 게임단의 감독입니다. 2부 리그에서 시작해 밴픽을 읽고, 선수를 키우고, 리그 정상과 월드 챔피언십까지 올라가세요."},"malang-brain":{"v":"1.0.0","r":"2026.08","u":"2026.08","g":"게임","iap":[0,0],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a9/a8/f7/a9a8f7c8-aae7-b6f6-96be-0b89ccd488b0/1_games.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a3/d8/54/a3d85418-0846-7d8b-5c2f-d527234c4004/2_percentile.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1f/1d/fc/1f1dfc8a-8f10-d7cc-d0bf-25aa0fc76196/3_rank.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/90/24/f3/9024f3f4-5e92-5d19-0b0f-f1f46bb66fa3/4_growth.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8e/2b/0b/8e2b0bf8-c7c5-e57c-69a4-61410a3044bc/5_play.png/626x0w.webp"],"d":"말랑한 머리, 일곱 가지로 단련하세요. 말랑브레인은 7가지 두뇌게임을 아기자기한 페이퍼 월드에 담았어요. 한 판은 1분 이내, 모든 점수는 전 세계 백분위로, 전부 합쳐 나만의 말랑지수가 됩니다.","sub":"구독 2종 · 월 · 연"},"twelve-chess":{"v":"1.0.3","r":"2026.09","u":"2026.09","g":"게임","iap":[1,1],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b1/df/20/b1df209c-5bd3-afca-f1dd-dd9f3662e243/1_home.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1b/9f/8b/1b9f8bda-f71d-3686-9a37-9b0adbfac7d8/2_select.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f6/d8/ab/f6d8abc6-2d04-3654-0c15-6bc322562c53/3_midgame.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8e/ea/64/8eea6467-3ffe-b40f-a8e9-2e3d56401bf9/4_sheet.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/62/02/15/62021580-835c-c665-24b3-e87ad7040954/5_rank.png/626x0w.webp"],"d":"체스를 열두 칸으로 줄였습니다. 12 Chess는 3x4 판에서 벌어지는 3분짜리 수싸움입니다. 첫 수부터 모든 기물이 서로 사정권 안에 있어서, 외울 오프닝도 없고 늘어지는 중반도 없습니다. 1수부터 그냥 싸움입니다."},"jangbogo":{"v":"1.0.0","r":"2026.06","u":"2026.06","g":"쇼핑","iap":[0,0],"s":["https://play-lh.googleusercontent.com/S6QtrFbnUIIFWjnYSF5NQzeCuBnJ496EbwXfPToilL-HQh19xku479KNfjJLPRXc-Tt-IWvozCrnPkETgGRYRjs=w600","https://play-lh.googleusercontent.com/rViQcEDtikbwhyNLnEoRwGP2m6ch0whqGIXKsS6aki5wp438Tp_zxOHUBhU5OfaSydnKofxvwMlaKrnv36cq5Q=w600","https://play-lh.googleusercontent.com/O4Q8WRKJu5jpcu7-vBA35Ug9hFvSax7dK6iXgSgWYUFNSK9ecj71pNug9Uyy9wMlxw-HSfutvhiGBmYT3viqfQ=w600","https://play-lh.googleusercontent.com/wcT0T_20S3r6ZIZP-823zOPwHv4dY7imqobKb6ElZSun2KkJOujjkyEZDXFDgowDPQ0_thJymRy8c-12RCs9=w600","https://play-lh.googleusercontent.com/Uckhl3xX7nSrBF6SLMk6B1-S8WfeEnvSWgTtlnXMb0LZLK1H2L2CsTOZqwAan4aK_UFN5NquOTnMSx_1n2y_=w600"],"d":"마트와 온라인에 흩어진 생필품 가격을 한 번에 비교해, 지금 어디가 제일 싼지 알려 줍니다."},"soccer-career":{"v":"1.2.0","r":"2026.09","u":"2026.09","g":"게임","iap":[0,0],"s":["https://play-lh.googleusercontent.com/sUm8UNiyEQQodc2Ec32u2x-0khND1XW82ebAofSyNjWQCwF36qE_dCgk27tVytCFy-QlYgtevfA2Pw4Cwd4RLw=w600","https://play-lh.googleusercontent.com/jBXv1mW1ktZiRR3bJq4UsbOY7rmFenAaLjyEUMjKYVAP3ci8BjdZn04v6qwU486Sk2hTTqGVXeU8lxvvSzT-PQ=w600","https://play-lh.googleusercontent.com/Mlk6tgEkQyR8d5EP2iQtQIlabucGlScSwKB_EoGbEoVU2B-4mfAwPs4dbr9F-ax-66_ByF86MXGlgW0rk_EKJgk=w600","https://play-lh.googleusercontent.com/DNd9O5NJUmFza2yhoWqsRFTIP2j64EUpCD9nqECHcCbl8pfT7zLq66Hd9_s-mDlJqpRmUG0jnJycbAh5ipAh=w600","https://play-lh.googleusercontent.com/aGOhEPDzYVEFjx_IM9gtlx78tbi1-EiaE8soUUhG6-TQtSEaAHfV5uPkabYRkoEm038YJjggFJ1LD2YckPfZiA=w600","https://play-lh.googleusercontent.com/COb4dsS-a2bTs7ZUtX8Cqa4ukbH7J1_-ilYbpZ4q6dovCrH5ZeoqYZK0oPd-YSrDh4OBTV5UvGiI-w6LGdBUUg=w600"],"d":"유소년부터 은퇴까지, 축구선수 한 명의 커리어를 선택으로 굴려 보는 시뮬레이션입니다."}};
       var sheet = document.getElementById("sheet");
       var lastFocus = null;
 
@@ -1066,28 +1071,6 @@
         parallax();
         window.addEventListener("scroll", onPar, { passive: true });
         window.addEventListener("resize", onPar);
-      }
-
-      // pointer ring, desktop only; the native cursor is left alone
-      if (motionOK && window.matchMedia("(pointer: fine)").matches) {
-        var ring = document.createElement("div");
-        ring.className = "ring";
-        document.body.appendChild(ring);
-        var rx = 0, ry = 0, tx = 0, ty = 0, running = false;
-        function loop() {
-          rx += (tx - rx) * .18; ry += (ty - ry) * .18;
-          ring.style.transform = "translate3d(" + rx.toFixed(1) + "px," + ry.toFixed(1) + "px,0)";
-          if (Math.abs(tx - rx) > .3 || Math.abs(ty - ry) > .3) requestAnimationFrame(loop);
-          else running = false;
-        }
-        document.addEventListener("pointermove", function (e) {
-          tx = e.clientX; ty = e.clientY;
-          ring.classList.add("on");
-          var hot = e.target.closest("a, button, li[data-detail], .apps li");
-          ring.classList.toggle("hot", !!hot);
-          if (!running) { running = true; requestAnimationFrame(loop); }
-        }, { passive: true });
-        document.addEventListener("pointerleave", function () { ring.classList.remove("on"); });
       }
 
       var bar = document.getElementById("topbar");
