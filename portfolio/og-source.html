@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1200px; height: 630px; overflow: hidden;
+    background: #080808; color: #f2f2f0;
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+  }
+  body::before {
+    content: ""; position: absolute; top: -300px; left: 8%;
+    width: 900px; height: 700px;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(216,255,54,.10), transparent 70%);
+  }
+  .wrap { position: relative; padding: 58px 64px 0; height: 100%; display: flex; flex-direction: column; }
+  .top { display: flex; align-items: center; justify-content: space-between; }
+  .mark { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-weight: 700; font-size: 26px; letter-spacing: -.02em; }
+  .mark .dot { color: #d8ff36; }
+  .eyebrow {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 15px; letter-spacing: .16em; text-transform: uppercase; color: #7c7c76;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .eyebrow::before { content: ""; width: 30px; height: 1px; background: #d8ff36; }
+  h1 { font-size: 104px; line-height: .9; letter-spacing: -.055em; font-weight: 800; margin-top: 46px; }
+  h1 .acc { color: #d8ff36; }
+  .lead { font-size: 25px; line-height: 1.45; color: #c2c2bc; margin-top: 26px; letter-spacing: -.015em; max-width: 22ch; }
+  .lead b { color: #f2f2f0; font-weight: 600; }
+  .stats { display: flex; gap: 56px; margin-top: auto; margin-bottom: 130px; }
+  .stat .num { font-size: 44px; font-weight: 800; letter-spacing: -.04em; line-height: 1; font-variant-numeric: tabular-nums; }
+  .stat:first-child .num { color: #d8ff36; }
+  .stat .lbl { font-size: 15px; color: #7c7c76; margin-top: 10px; }
+  .icons { position: absolute; right: 0; bottom: 0; left: 0; display: flex; gap: 13px; padding: 0 64px 44px; }
+  .icons img { flex: none; width: 58px; height: 58px; border-radius: 14px; object-fit: cover; background: #151514; opacity: .6; }
+  .fade { position: absolute; right: 0; bottom: 44px; width: 210px; height: 58px; background: linear-gradient(90deg, transparent, #080808 76%); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <div class="mark">YT<span class="dot">·</span>Lab</div>
+      <div class="eyebrow">Portfolio — 2026.09</div>
+    </div>
+    <h1>김용태<span class="acc">.</span></h1>
+    <p class="lead">AI로 앱 <b>22개</b>를 만들어 앱인토스 · App Store · Google Play에 출시하고 직접 운영합니다.</p>
+    <div class="stats">
+      <div class="stat"><div class="num">22</div><div class="lbl">직접 만들어 운영 중인 앱</div></div>
+      <div class="stat"><div class="num">869</div><div class="lbl">스토어 누적 다운로드</div></div>
+      <div class="stat"><div class="num">7,156</div><div class="lbl">8월 MAU · 미니앱 합산</div></div>
+      <div class="stat"><div class="num">105</div><div class="lbl">유튜브 영상</div></div>
+    </div>
+  </div>
+  <div class="icons">
+    <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c0/98/a0/c098a02f-8c24-d4e6-09b8-94607d5125b1/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" />
+    <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7e/1f/47/7e1f471a-2f69-d0ac-e89c-fbd76259782e/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" />
+    <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/56/17/31/5617317b-8d62-9614-c9cf-c935aae6c987/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" />
+    <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/de/e6/4f/dee64f4e-a974-55cb-8268-85a920bc4c92/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" />
+    <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/bd/65/63/bd656378-0214-0df3-a776-0cb5ca357d79/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/256x256bb.jpg" />
+    <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/aa/5c/67/aa5c67a8-953a-f6e5-0c85-cf8261d17d25/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" />
+    <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/f4/48/32/f44832cc-37b0-910e-eb7c-d1e718a839b2/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg" />
+    <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/45/3d/8b/453d8be5-335f-b976-f1d9-f2c5d791c37e/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg" />
+    <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/cf/70/af/cf70af7e-397f-5a20-ebf0-9f90ada55936/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/256x256bb.jpg" />
+    <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/21/b1/20/21b1203b-2c47-7c55-9d75-22e2657a4738/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" />
+    <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/72/52/ed/7252edda-11dd-057d-997f-8de41170023f/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg" />
+    <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/db/fd/cc/dbfdccec-425f-f77b-7fa8-bc44a19f0e1c/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" />
+    <img src="https://play-lh.googleusercontent.com/OtIpMPCdImr2mJfPGGEJhCeQzBagjMEAItQ34KMNZXqBf9NBs3pkncQLtMx4oVElrGEA6w44i2RMSBmvybsKGQ=s256" />
+    <img src="https://static.toss.im/appsintoss/25373/1c159c11-bfc0-4df9-9ca2-72c20b833120.png" />
+    <img src="https://static.toss.im/appsintoss/25373/d315f890-bb3b-469c-9cf2-03f28e7d4cae.png" />
+    <img src="https://static.toss.im/appsintoss/25373/7831fe00-5ad3-4d9e-be42-d34ccd0aa138.png" />
+    <img src="https://static.toss.im/appsintoss/25373/6f06242c-eed9-4039-8892-ccbb0dc5802a.png" />
+    <img src="https://static.toss.im/appsintoss/25373/522fcc38-1ab0-40c9-bdad-1e02c7fc32c1.png" />
+  </div>
+  <div class="fade"></div>
+</body>
+</html>
