@@ -5,9 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
   <title>김용태 — 포트폴리오</title>
-  <meta name="description" content="김용태 포트폴리오. 앱인토스 · App Store · Google Play에 출시해 운영 중인 서비스 32개." />
-  <meta name="theme-color" content="#080808" />
+  <meta name="description" content="김용태 포트폴리오. 앱인토스 · App Store · Google Play에 출시해 운영 중인 앱 26개." />
+  <meta name="theme-color" content="#080808" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#fbfbf8" media="(prefers-color-scheme: light)" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23080808'/><text x='50' y='66' font-size='44' font-family='monospace' fill='%23d8ff36' text-anchor='middle' font-weight='700'>YT</text></svg>" />
+  <script>
+    // runs before paint so a pinned theme never flashes the other palette
+    try {
+      var t = localStorage.getItem("theme");
+      if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  </script>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
 
@@ -21,8 +29,50 @@
       --line: #1d1d1b;
       --line2: #2c2c29;
       --accent: #d8ff36;
+      --on-accent: #000;
+      --topbar-bg: rgba(8, 8, 8, .72);
+      --hover: #161615;
+      --img-bg: #151514;
+      --icon-dim: .48;
       --mono: ui-monospace, SFMono-Regular, Menlo, "SF Mono", monospace;
       --gut: clamp(20px, 5vw, 56px);
+      color-scheme: dark;
+    }
+
+    /* light palette: follows the system unless the toggle has pinned a theme */
+    @media (prefers-color-scheme: light) {
+      :root:not([data-theme="dark"]) {
+      --bg: #fbfbf8;
+        --card: #fff;
+        --fg: #14140f;
+        --soft: #3d3d36;
+        --muted: #76766c;
+        --line: #e7e6de;
+        --line2: #d3d2c8;
+        --accent: #5d7c00;
+        --on-accent: #fff;
+        --topbar-bg: rgba(251, 251, 248, .78);
+        --hover: #f2f1ea;
+        --img-bg: #eeede6;
+        --icon-dim: .62;
+        color-scheme: light;
+      }
+    }
+    :root[data-theme="light"] {
+      --bg: #fbfbf8;
+      --card: #fff;
+      --fg: #14140f;
+      --soft: #3d3d36;
+      --muted: #76766c;
+      --line: #e7e6de;
+      --line2: #d3d2c8;
+      --accent: #5d7c00;
+      --on-accent: #fff;
+      --topbar-bg: rgba(251, 251, 248, .78);
+      --hover: #f2f1ea;
+      --img-bg: #eeede6;
+      --icon-dim: .62;
+      color-scheme: light;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
@@ -37,7 +87,7 @@
     }
     a { color: inherit; }
     img { display: block; max-width: 100%; }
-    ::selection { background: var(--accent); color: #000; }
+    ::selection { background: var(--accent); color: var(--on-accent); }
 
     .wrap { max-width: 1080px; margin: 0 auto; padding: 0 var(--gut); }
 
@@ -46,7 +96,7 @@
       position: sticky; top: 0; z-index: 40;
       display: flex; justify-content: space-between; align-items: center; gap: 12px;
       padding: 14px var(--gut);
-      background: rgba(8,8,8,.72);
+      background: var(--topbar-bg);
       backdrop-filter: saturate(160%) blur(14px);
       -webkit-backdrop-filter: saturate(160%) blur(14px);
       border-bottom: 1px solid transparent;
@@ -56,19 +106,20 @@
     .mark { font-family: var(--mono); font-weight: 700; font-size: 16px; letter-spacing: -.02em; text-decoration: none; }
     .mark .dot { color: var(--accent); }
     .topnav { display: flex; align-items: center; gap: 4px; }
+    .topactions { display: flex; align-items: center; gap: 8px; }
     .topnav a {
       font-family: var(--mono); font-size: 11.5px; letter-spacing: .04em; text-transform: uppercase;
       color: var(--muted); text-decoration: none; padding: 6px 10px; border-radius: 999px;
       transition: color .15s, background .15s;
     }
-    .topnav a:hover { color: var(--fg); background: #161615; }
+    .topnav a:hover { color: var(--fg); background: var(--hover); }
     .btn {
       font-family: var(--mono); font-size: 11.5px; letter-spacing: .04em; text-transform: uppercase;
       background: none; border: 1px solid var(--line2); color: var(--soft);
       padding: 6px 12px; border-radius: 999px; cursor: pointer;
       transition: color .15s, border-color .15s, background .15s;
     }
-    .btn:hover { color: #000; background: var(--accent); border-color: var(--accent); }
+    .btn:hover { color: var(--on-accent); background: var(--accent); border-color: var(--accent); }
 
     /* ---------- hero ---------- */
     .hero { padding: clamp(48px, 11vh, 112px) 0 clamp(30px, 6vh, 54px); }
@@ -112,7 +163,7 @@
     .marquee::after { right: 0; background: linear-gradient(270deg, var(--bg), transparent); }
     .mrow { display: flex; width: max-content; gap: 14px; }
     .mrow + .mrow { margin-top: 14px; }
-    .mrow img { width: 46px; height: 46px; border-radius: 12px; background: #151514; opacity: .48; transition: opacity .25s, transform .25s; }
+    .mrow img { width: 46px; height: 46px; border-radius: 12px; background: var(--img-bg); opacity: var(--icon-dim); transition: opacity .25s, transform .25s; }
     .mrow img:hover { opacity: 1; transform: translateY(-3px); }
     .mrow.a { animation: slideA 46s linear infinite; }
     .mrow.b { animation: slideB 58s linear infinite; }
@@ -150,7 +201,7 @@
     }
     .tlrow .m { font-family: var(--mono); font-size: 12.5px; color: var(--muted); letter-spacing: .03em; }
     .tlrow .ico { display: flex; flex-wrap: wrap; gap: 6px; }
-    .tlrow .ico img { width: 26px; height: 26px; border-radius: 7px; background: #151514; }
+    .tlrow .ico img { width: 26px; height: 26px; border-radius: 7px; background: var(--img-bg); }
     .tlrow .c { font-family: var(--mono); font-size: 12.5px; color: var(--soft); font-variant-numeric: tabular-nums; white-space: nowrap; }
     .tlrow.peak .m, .tlrow.peak .c { color: var(--accent); }
     .tlfoot {
@@ -165,7 +216,7 @@
     .cgrid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 52px); align-items: center; }
     .case.flip .cgrid > .cshot { order: 2; }
     .ctitle { display: flex; align-items: center; gap: 12px; margin-bottom: 6px; }
-    .ctitle img { width: 40px; height: 40px; border-radius: 10px; background: #151514; }
+    .ctitle img { width: 40px; height: 40px; border-radius: 10px; background: var(--img-bg); }
     .ctitle h3 { font-size: clamp(21px, 3vw, 28px); font-weight: 700; letter-spacing: -.03em; line-height: 1.15; }
     .ctags { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 16px; }
     .ctags span {
@@ -188,24 +239,7 @@
     .clinks a:hover { color: var(--accent); border-color: var(--accent); }
 
     .cshot { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-    .cshot img { width: 100%; border-radius: 12px; border: 1px solid var(--line); background: #111; }
-
-    /* case chart */
-    .chart { border: 1px solid var(--line); border-radius: 16px; padding: 22px 20px 18px; background: var(--card); }
-    .chart .ct { font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
-    .bars { display: flex; align-items: flex-end; gap: clamp(8px, 2.5vw, 20px); height: 190px; }
-    .bar { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 8px; height: 100%; }
-    .bar .v { font-family: var(--mono); font-size: 11.5px; color: var(--soft); font-variant-numeric: tabular-nums; }
-    .bar .col {
-      width: 100%; background: var(--line2); border-radius: 5px 5px 0 0; height: 0;
-      transition: height .9s cubic-bezier(.2,.7,.2,1);
-      -webkit-print-color-adjust: exact; print-color-adjust: exact;
-    }
-    .bar.hi .col { background: var(--accent); }
-    .bar.hi .v { color: var(--accent); }
-    .bar .m { font-family: var(--mono); font-size: 11px; color: var(--muted); }
-    .chnote { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 12.5px; color: var(--muted); }
-    .chnote b { color: var(--fg); font-weight: 600; }
+    .cshot img { width: 100%; border-radius: 12px; border: 1px solid var(--line); background: var(--img-bg); }
 
     /* ---------- app grid ---------- */
     .grouphead { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin: 34px 0 14px; }
@@ -219,8 +253,8 @@
       padding: 16px; display: flex; flex-direction: column; gap: 4px;
       transition: border-color .18s, transform .18s, background .18s;
     }
-    .apps li:hover { border-color: var(--line2); transform: translateY(-2px); background: #131312; }
-    .apps .ic { width: 42px; height: 42px; border-radius: 11px; object-fit: cover; background: #151514; margin-bottom: 10px; }
+    .apps li:hover { border-color: var(--line2); transform: translateY(-2px); background: var(--hover); }
+    .apps .ic { width: 42px; height: 42px; border-radius: 11px; object-fit: cover; background: var(--img-bg); margin-bottom: 10px; }
     .apps .nm { font-weight: 600; font-size: 15px; letter-spacing: -.02em; }
     .apps .tg { font-size: 12.5px; color: var(--muted); line-height: 1.45; }
     .apps .dt { font-family: var(--mono); font-size: 11px; color: var(--muted); margin-top: 2px; }
@@ -267,6 +301,67 @@
     footer a { color: var(--soft); text-decoration: none; border-bottom: 1px solid var(--line2); }
     footer a:hover { color: var(--accent); border-color: var(--accent); }
 
+
+    /* ---------- pointer ring (desktop only, native cursor kept) ---------- */
+    .ring {
+      position: fixed; top: 0; left: 0; z-index: 90; pointer-events: none;
+      width: 26px; height: 26px; margin: -13px 0 0 -13px; border-radius: 50%;
+      border: 1px solid var(--line2); opacity: 0;
+      transition: width .22s, height .22s, margin .22s, border-color .22s, opacity .3s, background .22s;
+    }
+    .ring.on { opacity: 1; }
+    .ring.hot { width: 46px; height: 46px; margin: -23px 0 0 -23px; border-color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); }
+
+    /* ---------- hero letters ---------- */
+    h1 span { display: inline-block; }
+    html.js h1 span { opacity: 0; transform: translateY(.3em) rotate(4deg); transition: opacity .55s ease, transform .7s cubic-bezier(.2,.8,.2,1); }
+    html.js h1.in span { opacity: 1; transform: none; }
+
+    /* ---------- detail affordance ---------- */
+    .apps li[data-detail] { cursor: pointer; }
+    .apps .lks .detail {
+      font: inherit; font-size: 11px; background: none; cursor: pointer;
+      color: var(--accent); border: 1px solid var(--accent); border-radius: 999px; padding: 3px 9px;
+    }
+    .apps .lks .detail:hover { color: var(--on-accent); background: var(--accent); }
+
+    /* ---------- detail sheet ---------- */
+    dialog.sheet {
+      border: 0; padding: 0; background: transparent; color: var(--fg);
+      width: min(880px, 94vw); max-height: 88vh; overflow: visible;
+      margin: auto; /* the global reset zeroes the UA margin that centres a dialog */
+    }
+    dialog.sheet::backdrop { background: rgba(0,0,0,.66); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+    .sheet .inner {
+      background: var(--card); border: 1px solid var(--line2); border-radius: 18px;
+      display: flex; flex-direction: column; max-height: 88vh; overflow: hidden;
+    }
+    html.js dialog.sheet[open] .inner { animation: pop .34s cubic-bezier(.2,.8,.2,1); }
+    @keyframes pop { from { opacity: 0; transform: translateY(18px) scale(.97); } to { opacity: 1; transform: none; } }
+    .mhead { display: flex; align-items: center; gap: 14px; padding: 18px 20px; border-bottom: 1px solid var(--line); }
+    .mhead img { width: 46px; height: 46px; border-radius: 12px; background: var(--img-bg); flex: none; }
+    .mhead h3 { font-size: 19px; font-weight: 700; letter-spacing: -.03em; }
+    .mhead .msub { font-size: 13px; color: var(--muted); }
+    .mhead .btn { margin-left: auto; flex: none; }
+    .mbody { padding: 18px 20px 22px; overflow-y: auto; display: flex; flex-direction: column; gap: 16px; }
+    .mchips { display: flex; flex-wrap: wrap; gap: 6px; }
+    .mchips span {
+      font-family: var(--mono); font-size: 10.5px; letter-spacing: .05em; text-transform: uppercase;
+      color: var(--muted); border: 1px solid var(--line2); border-radius: 999px; padding: 3px 9px;
+    }
+    .mshots { display: flex; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 4px; }
+    .mshots img { width: 190px; flex: none; border-radius: 12px; border: 1px solid var(--line); background: var(--img-bg); scroll-snap-align: start; }
+    .mdesc { font-size: 14.5px; color: var(--soft); line-height: 1.7; }
+    .mlinks { display: flex; flex-wrap: wrap; gap: 7px; }
+    .mlinks a {
+      font-size: 12px; text-decoration: none; color: var(--soft);
+      border: 1px solid var(--line2); border-radius: 999px; padding: 4px 11px;
+    }
+    .mlinks a:hover { color: var(--accent); border-color: var(--accent); }
+
+    html.js .tlrow { opacity: 0; transform: translateX(-12px); transition: opacity .5s ease, transform .6s cubic-bezier(.2,.8,.2,1); }
+    html.js .tlrow.in { opacity: 1; transform: none; }
+
     /* ---------- reveal ---------- */
     /* hidden only once the reveal script has claimed the page; without JS everything stays visible */
     html.js .rv { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s cubic-bezier(.2,.7,.2,1); }
@@ -292,12 +387,13 @@
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .mrow.a, .mrow.b { animation: none; }
-      html.js .rv { opacity: 1; transform: none; transition: none; }
-      .bar .col { transition: none; }
+      html.js .rv, html.js h1 span, html.js .tlrow { opacity: 1; transform: none; transition: none; }
+      .ring { display: none; }
+      html.js dialog.sheet[open] .inner { animation: none; }
     }
 
     @media print {
-      :root { --bg: #fff; --card: #fff; --fg: #111; --soft: #333; --muted: #666; --line: #ddd; --line2: #ccc; --accent: #111; }
+      :root, :root[data-theme] { --bg: #fff; --card: #fff; --fg: #111; --soft: #333; --muted: #666; --line: #ddd; --line2: #ccc; --accent: #111; --on-accent: #fff; --img-bg: #fff; --topbar-bg: #fff; --hover: #fff; --icon-dim: 1; color-scheme: light; }
       @page { margin: 12mm; }
       body { font-size: 11.5px; }
       .topbar, .marquee, .btn { display: none !important; }
@@ -316,10 +412,12 @@
       .apps .nm { font-size: 11.5px; }
       .apps .tg { font-size: 10px; }
       .apps .lks { display: none; }
-      .job, .skills > div, .case, .chart { break-inside: avoid; }
-      html.js .rv { opacity: 1 !important; transform: none !important; }
+      .job, .skills > div, .case { break-inside: avoid; }
+      html.js .rv, html.js h1 span, html.js .tlrow { opacity: 1 !important; transform: none !important; }
+      [data-par] { transform: none !important; }
+      .ring, dialog.sheet { display: none !important; }
       /* print snapshots immediately, so the forced end values must not animate toward */
-      html.js .rv, .bar .col { transition: none !important; }
+      html.js .rv { transition: none !important; }
     }
   </style>
 </head>
@@ -332,48 +430,52 @@
       <a href="#products">전체</a>
       <a href="#career">경력</a>
     </nav>
-    <button class="btn" id="printBtn" type="button">PDF</button>
+    <span class="topactions">
+      <button class="btn" id="themeBtn" type="button" aria-pressed="false">Light</button>
+      <button class="btn" id="printBtn" type="button">PDF</button>
+    </span>
   </header>
 
   <main>
     <div class="wrap">
       <div class="hero">
         <p class="eyebrow">Portfolio — 2026.09</p>
-        <h1>김용태<span class="acc">.</span></h1>
+        <h1 id="heroName"><span>김</span><span>용</span><span>태</span><span class="acc">.</span></h1>
         <p class="lede">
-          AI로 앱 <b>32개</b>를 만들어 앱인토스 · App Store · Google Play에 출시하고 직접 운영합니다.
+          AI로 앱 <b>26개</b>를 만들어 앱인토스 · App Store · Google Play에 출시하고 직접 운영합니다.
         </p>
         <ul class="meta">
           <li><a href="mailto:contact@ytlab.site">contact@ytlab.site</a></li>
           <li><a href="https://ytlab.site" target="_blank" rel="noopener">ytlab.site</a></li>
           <li><a href="https://apps.apple.com/kr/developer/yt-lab/id6774625279" target="_blank" rel="noopener">App Store 개발자 페이지</a></li>
           <li><a href="https://play.google.com/store/apps/dev?id=8062279144506213960" target="_blank" rel="noopener">Google Play 개발자 페이지</a></li>
+          <li><a href="https://www.youtube.com/@VibeBuilderkr" target="_blank" rel="noopener">유튜브 · 바이브빌더</a></li>
         </ul>
       </div>
     </div>
 
-    <div class="marquee" id="marquee" aria-hidden="true"></div>
+    <div class="marquee" id="marquee" data-par="-22" aria-hidden="true"></div>
 
     <div class="wrap">
       <div class="stats">
-        <div class="stat"><span class="num">32</span><span class="lbl">출시·운영 중인 앱<br />스토어 14 · 앱인토스 18</span></div>
+        <div class="stat"><span class="num">26</span><span class="lbl">직접 만들어 운영 중인 앱<br />스토어 14 · 앱인토스 18 · 양쪽 출시 6</span></div>
         <div class="stat"><span class="num">31,697</span><span class="lbl">누적 신규 사용자<br />미니앱 합산 · 3~8월</span></div>
         <div class="stat"><span class="num">7,156</span><span class="lbl">8월 MAU<br />미니앱 합산 · 최고 11,612 (7월)</span></div>
-        <div class="stat"><span class="num">73</span><span class="lbl">App Store 승인 빌드<br />누적 · 출시 후 업데이트 포함</span></div>
+        <div class="stat"><span class="num">80,143</span><span class="lbl">유튜브 누적 조회수<br />바이브빌더 · 영상 105편 · 구독 1,720</span></div>
       </div>
 
       <section id="timeline">
         <div class="shead rv">
           <span class="snum">01</span>
           <div>
-            <h2>6개월, 32개</h2>
+            <h2>6개월, 26개</h2>
             <p class="ssub">2026년 3월 첫 출시부터 지금까지. 기획 · 디자인 · 개발 · 스토어 제출 · 운영을 전부 혼자 맡았습니다.</p>
           </div>
         </div>
         <div class="tl rv" id="tl"></div>
         <div class="tlfoot rv">
-          <span>평균 <b>월 4.6개</b> 출시</span>
-          <span>최다 <b>2026.07 · 7개</b></span>
+          <span id="tlavg">평균 <b>월 3.7개</b> 출시</span>
+          <span id="tlpeak">최다 <b>06 · 07월 · 6개</b></span>
         </div>
       </section>
 
@@ -390,9 +492,9 @@
         <article class="case rv">
           <div class="cgrid">
             <div class="cshot">
-              <img loading="lazy" alt="마이포폴 홈 화면" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/29/bd/6d/29bd6d85-6fb9-7224-0298-d33e360d4cb4/01-home.png/626x0w.webp" />
-              <img loading="lazy" alt="마이포폴 시뮬레이션 화면" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/28/8c/9c/288c9c28-3dfd-4bee-7ddf-84d1dcc70ef7/02-simulate.png/626x0w.webp" />
-              <img loading="lazy" alt="마이포폴 백테스트 화면" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/85/64/3e/85643e74-25a1-9765-eb42-7271aa04284a/04-backtest.png/626x0w.webp" />
+              <img data-par="-18" loading="lazy" alt="마이포폴 홈 화면" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/29/bd/6d/29bd6d85-6fb9-7224-0298-d33e360d4cb4/01-home.png/626x0w.webp" />
+              <img data-par="12" loading="lazy" alt="마이포폴 시뮬레이션 화면" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/28/8c/9c/288c9c28-3dfd-4bee-7ddf-84d1dcc70ef7/02-simulate.png/626x0w.webp" />
+              <img data-par="-8" loading="lazy" alt="마이포폴 백테스트 화면" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/85/64/3e/85643e74-25a1-9765-eb42-7271aa04284a/04-backtest.png/626x0w.webp" />
             </div>
             <div>
               <div class="ctitle">
@@ -425,79 +527,72 @@
         <!-- CASE 2 -->
         <article class="case flip rv">
           <div class="cgrid">
-            <div class="cshot" style="grid-template-columns: 1fr;">
-              <div class="chart" id="chart">
-                <p class="ct">월간 활성 사용자 · 2026</p>
-                <div class="bars">
-                  <div class="bar" data-v="170"><span class="v">170</span><span class="col"></span><span class="m">04</span></div>
-                  <div class="bar" data-v="288"><span class="v">288</span><span class="col"></span><span class="m">05</span></div>
-                  <div class="bar" data-v="354"><span class="v">354</span><span class="col"></span><span class="m">06</span></div>
-                  <div class="bar" data-v="703"><span class="v">703</span><span class="col"></span><span class="m">07</span></div>
-                  <div class="bar hi" data-v="1868"><span class="v">1,868</span><span class="col"></span><span class="m">08</span></div>
-                </div>
-                <div class="chnote">
-                  <span>유입 <b>검색 56% → 전체탭 98%</b></span>
-                  <span>출처 · 앱인토스 콘솔</span>
-                </div>
+          <div class="cshot">
+            <img data-par="-18" loading="lazy" alt="로드 투 트레블 매니저 화면" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a7/da/f6/a7daf622-ddd3-b266-1868-3a230bece00f/6.7_01_manager.png/626x0w.webp" />
+            <img data-par="12" loading="lazy" alt="로드 투 트레블 드래프트 화면" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/cc/bc/9a/ccbc9a56-4d96-fa46-e839-2548a0960e3d/6.7_03_weekdraft.png/626x0w.webp" />
+            <img data-par="-8" loading="lazy" alt="로드 투 트레블 트로피 화면" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ce/a4/9d/cea49d2a-da6d-c231-e7ad-8eee2d3b48e3/6.7_05_trophies.png/626x0w.webp" />
+          </div>
+          <div>
+            <div class="ctitle">
+              <img loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7e/1f/47/7e1f471a-2f69-d0ac-e89c-fbd76259782e/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/128x128bb.jpg" />
+              <h3>로드 투 트레블</h3>
+            </div>
+            <div class="ctags"><span>축구 드래프트 게임</span><span>iOS · Android</span><span>2026.07</span><span>v3.6.5</span></div>
+            <div class="cbody">
+              <div class="cblock">
+                <span class="k">문제</span>
+                <p>능력치를 가린 채 11명을 뽑는 드래프트 게임입니다. 계정도 결제도 없이 바로 한 판이 돌아가야 하는데, 그러면 돈 낼 이유가 사라집니다. 무료로 끝까지 재미있으면서 살 것도 있어야 했습니다.</p>
+              </div>
+              <div class="cblock">
+                <span class="k">만든 것</span>
+                <p>기본 드래프트는 전부 무료로 열어 두고, <b>인앱 상품 23종</b>을 콘텐츠로 붙였습니다. 광고 제거형 프리미엄 하나, 5대 리그별 레전드 · 히어로 선수 팩, 유로 · 월드컵 · 아시안컵 같은 대회 모드, 2009-10 · 2018-19 시대 모드입니다. 사는 순간 새 드래프트 풀이 열리는 구조라 결제가 곧 새 판입니다. 포메이션 <b>8종</b>이 같은 선수로도 시즌 결과를 갈라놓게 밸런스를 잡고, 데일리 챌린지와 <b>12개 언어</b>로 재방문 이유를 만들었습니다.</p>
+              </div>
+              <div class="cblock">
+                <span class="k">결과</span>
+                <p>7월 출시 후 <b>v3.6.5</b>까지 업데이트하며 운영 중. iOS · Android 동시 출시, 인앱 상품 23종이 심사를 통과해 판매 중입니다.</p>
+              </div>
+              <div class="clinks">
+                <a href="https://apps.apple.com/kr/app/id6783814192" target="_blank" rel="noopener">App Store</a>
+                <a href="https://play.google.com/store/apps/details?id=dev.goldenroad.golden_road_app" target="_blank" rel="noopener">Google Play</a>
               </div>
             </div>
-            <div>
-              <div class="ctitle">
-                <img loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/d315f890-bb3b-469c-9cf2-03f28e7d4cae.png" />
-                <h3>그때 샀더라면</h3>
-              </div>
-              <div class="ctags"><span>앱인토스 미니앱</span><span>2026.04</span><span>5개월 연속 성장</span></div>
-              <div class="cbody">
-                <div class="cblock">
-                  <span class="k">문제</span>
-                  <p>출시 직후 유입의 <b>56%가 검색</b>이었습니다. 검색은 이미 앱을 아는 사람만 들어오는 채널이라, 노출이 늘지 않으면 성장이 멈추는 구조였습니다.</p>
-                </div>
-                <div class="cblock">
-                  <span class="k">한 일</span>
-                  <p>콘솔 유입 경로를 월 단위로 쪼개 어느 채널이 실제로 신규를 데려오는지 확인했습니다. 검색 쪽은 <b>삼전 · 나스닥 · 살걸 · 토스증권</b>처럼 사람들이 실제로 치는 말 10개를 키워드로 등록해 커버리지를 넓혔습니다. 제품은 거치식 · 적립식 두 방식과 그래프 결과표로, 한 번 열면 여러 번 돌려 보게 만들었습니다.</p>
-                </div>
-                <div class="cblock">
-                  <span class="k">결과</span>
-                  <p>4월 170명에서 8월 <b>1,868명</b>으로 <b>11배</b>. 유입 구성도 검색 56%에서 전체탭 98%로 바뀌었습니다. 운영 중인 미니앱 18개 가운데 5개월 연속 성장한 유일한 앱입니다.</p>
-                </div>
-              </div>
-            </div>
+          </div>
           </div>
         </article>
 
         <!-- CASE 3 -->
         <article class="case rv">
           <div class="cgrid">
-            <div class="cshot">
-              <img loading="lazy" alt="로드 투 트레블 매니저 화면" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a7/da/f6/a7daf622-ddd3-b266-1868-3a230bece00f/6.7_01_manager.png/626x0w.webp" />
-              <img loading="lazy" alt="로드 투 트레블 드래프트 화면" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/cc/bc/9a/ccbc9a56-4d96-fa46-e839-2548a0960e3d/6.7_03_weekdraft.png/626x0w.webp" />
-              <img loading="lazy" alt="로드 투 트레블 트로피 화면" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ce/a4/9d/cea49d2a-da6d-c231-e7ad-8eee2d3b48e3/6.7_05_trophies.png/626x0w.webp" />
+          <div class="cshot">
+            <img data-par="-18" loading="lazy" alt="AdMeter 오늘 수익 화면" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c4/46/fa/c446faca-346c-23c9-77ff-f273d5c59f0b/1_glance.png/626x0w.webp" />
+            <img data-par="12" loading="lazy" alt="AdMeter 월별 캘린더 화면" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1e/c4/6c/1ec46cd7-6b37-3ff7-c2f4-870f6e5958f9/2_calendar.png/626x0w.webp" />
+            <img data-par="-8" loading="lazy" alt="AdMeter 수익원별 화면" src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f0/38/ea/f038eafe-a840-a90a-bb64-4bfd0c0e0865/3_sources.png/626x0w.webp" />
+          </div>
+          <div>
+            <div class="ctitle">
+              <img loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/56/17/31/5617317b-8d62-9614-c9cf-c935aae6c987/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/128x128bb.jpg" />
+              <h3>AdMeter</h3>
             </div>
-            <div>
-              <div class="ctitle">
-                <img loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7e/1f/47/7e1f471a-2f69-d0ac-e89c-fbd76259782e/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/128x128bb.jpg" />
-                <h3>로드 투 트레블</h3>
+            <div class="ctags"><span>광고 수익 대시보드</span><span>iOS · Android</span><span>2026.07</span><span>v1.0.1</span></div>
+            <div class="cbody">
+              <div class="cblock">
+                <span class="k">문제</span>
+                <p>앱을 여러 개 굴리면 수익이 애드몹과 애드센스로 갈라집니다. 콘솔이 서로 달라 오늘 얼마 벌었는지 알려면 매번 탭 두 개를 열고 더해야 했습니다. 제가 매일 하던 일입니다.</p>
               </div>
-              <div class="ctags"><span>축구 드래프트 게임</span><span>iOS · iPad · Android</span><span>앱인토스</span><span>v3.6.5</span></div>
-              <div class="cbody">
-                <div class="cblock">
-                  <span class="k">문제</span>
-                  <p>능력치를 가린 채 11명을 뽑는 드래프트 게임입니다. 재미가 전부 밸런스에서 나오는데, 스토어 앱과 앱인토스 미니앱은 실행 환경이 달라 같은 게임을 각각 구현해야 했습니다.</p>
-                </div>
-                <div class="cblock">
-                  <span class="k">만든 것</span>
-                  <p>포메이션 <b>8종</b>이 같은 선수로도 시즌 결과를 갈라놓도록 밸런스를 잡았습니다. 매일 전 세계가 같은 라인업 퍼즐 하나에 도전하는 데일리 챌린지로 재방문 이유를 만들고, iPad 레이아웃과 <b>12개 언어</b>를 따로 대응했습니다.</p>
-                </div>
-                <div class="cblock">
-                  <span class="k">결과</span>
-                  <p>7월 스토어 출시 후 <b>v3.6.5</b>까지 업데이트하며 운영 중. 8월 앱인토스로 확장해 한 달 만에 신규 <b>532명</b>, 그중 <b>56%가 검색 유입</b>으로 이름을 알고 찾아온 사용자였습니다.</p>
-                </div>
-                <div class="clinks">
-                  <a href="https://apps.apple.com/kr/app/id6783814192" target="_blank" rel="noopener">App Store</a>
-                  <a href="https://play.google.com/store/apps/details?id=dev.goldenroad.golden_road_app" target="_blank" rel="noopener">Google Play</a>
-                </div>
+              <div class="cblock">
+                <span class="k">만든 것</span>
+                <p>구글 계정을 한 번 연결하면 두 네트워크 수익을 한 화면에 합쳐 보여 줍니다. 앱별 · 사이트별 분해, 일자별 월 캘린더, 7일 · 28일 추이, 홈 화면 위젯까지 넣었습니다. 권한은 <b>보고서 읽기 전용</b>만 받고 개발자 서버를 두지 않아, 토큰과 수익 데이터가 기기 밖으로 나가지 않습니다.</p>
+              </div>
+              <div class="cblock">
+                <span class="k">결과</span>
+                <p>제 앱들 수익을 보려고 만들어 그대로 출시한 도구입니다. iOS · Android 동시 출시, 영구 해제형 프리미엄 인앱 상품 1종으로 운영 중입니다.</p>
+              </div>
+              <div class="clinks">
+                <a href="https://apps.apple.com/kr/app/id6789329258" target="_blank" rel="noopener">App Store</a>
+                <a href="https://play.google.com/store/apps/details?id=site.ytlab.adpulse" target="_blank" rel="noopener">Google Play</a>
               </div>
             </div>
+          </div>
           </div>
         </article>
       </section>
@@ -507,189 +602,189 @@
           <span class="snum">03</span>
           <div>
             <h2>전체 서비스</h2>
-            <p class="ssub">출시해서 지금도 운영 중인 32개. 심사 중 · 준비 중인 앱은 뺐습니다.</p>
+            <p class="ssub">앱 26개를 스토어와 앱인토스 합쳐 32번 출시해 운영 중입니다. 심사 중 · 준비 중인 앱은 뺐습니다.</p>
           </div>
         </div>
 
         <div class="grouphead rv"><span class="gt">App Store · Google Play</span><span class="gn">14</span></div>
         <ul class="apps rv">
-          <li>
+          <li data-detail data-key="mypopol">
             <img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c0/98/a0/c098a02f-8c24-d4e6-09b8-94607d5125b1/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" />
             <span class="nm">마이포폴</span>
             <span class="tg">연금·ISA 적립 투자 시뮬레이터</span>
             <span class="dt">2026.06</span>
-            <span class="lks"><a href="https://apps.apple.com/kr/app/id6774625277" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=com.mypopol.app" target="_blank" rel="noopener">Google Play</a></span>
+            <span class="lks"><button class="detail" type="button">상세</button><a href="https://apps.apple.com/kr/app/id6774625277" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=com.mypopol.app" target="_blank" rel="noopener">Google Play</a></span>
           </li>
-          <li>
+          <li data-detail data-key="spill">
             <img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/72/52/ed/7252edda-11dd-057d-997f-8de41170023f/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg" />
             <span class="nm">Spill</span>
             <span class="tg">한 줄 미리알림 · 캘린더</span>
             <span class="dt">2026.06</span>
-            <span class="lks"><a href="https://apps.apple.com/kr/app/id6778608148" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=com.spill.spill" target="_blank" rel="noopener">Google Play</a></span>
+            <span class="lks"><button class="detail" type="button">상세</button><a href="https://apps.apple.com/kr/app/id6778608148" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=com.spill.spill" target="_blank" rel="noopener">Google Play</a></span>
           </li>
-          <li>
+          <li data-detail data-key="jangbogo">
             <img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/21/48/66/21486604-4bd8-e234-cc33-582cd46f3997/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" />
             <span class="nm">장보고</span>
             <span class="tg">생필품 가격비교</span>
             <span class="dt">2026.06</span>
-            <span class="lks"><a href="https://play.google.com/store/apps/details?id=site.ytlab.jangbogo" target="_blank" rel="noopener">Google Play</a></span>
+            <span class="lks"><button class="detail" type="button">상세</button><a href="https://play.google.com/store/apps/details?id=site.ytlab.jangbogo" target="_blank" rel="noopener">Google Play</a></span>
           </li>
-          <li>
+          <li data-detail data-key="one-to-fifty">
             <img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/db/fd/cc/dbfdccec-425f-f77b-7fa8-bc44a19f0e1c/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" />
             <span class="nm">1 to 50</span>
             <span class="tg">숫자 순서 스피드 게임</span>
             <span class="dt">2026.06</span>
-            <span class="lks"><a href="https://apps.apple.com/kr/app/id6782382427" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=com.ytlab.one_to_fifty" target="_blank" rel="noopener">Google Play</a></span>
+            <span class="lks"><button class="detail" type="button">상세</button><a href="https://apps.apple.com/kr/app/id6782382427" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=com.ytlab.one_to_fifty" target="_blank" rel="noopener">Google Play</a></span>
           </li>
-          <li>
+          <li data-detail data-key="road-to-treble">
             <img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/7e/1f/47/7e1f471a-2f69-d0ac-e89c-fbd76259782e/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" />
             <span class="nm">로드 투 트레블</span>
             <span class="tg">축구 드래프트 게임</span>
             <span class="dt">2026.07</span>
-            <span class="lks"><a href="https://apps.apple.com/kr/app/id6783814192" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=dev.goldenroad.golden_road_app" target="_blank" rel="noopener">Google Play</a></span>
+            <span class="lks"><button class="detail" type="button">상세</button><a href="https://apps.apple.com/kr/app/id6783814192" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=dev.goldenroad.golden_road_app" target="_blank" rel="noopener">Google Play</a></span>
           </li>
-          <li>
+          <li data-detail data-key="animal-pop">
             <img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/bd/65/63/bd656378-0214-0df3-a776-0cb5ca357d79/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/256x256bb.jpg" />
             <span class="nm">애니멀 팝</span>
             <span class="tg">동물 합치기 퍼즐</span>
             <span class="dt">2026.07</span>
-            <span class="lks"><a href="https://apps.apple.com/kr/app/id6782373454" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=com.animalpop.app" target="_blank" rel="noopener">Google Play</a></span>
+            <span class="lks"><button class="detail" type="button">상세</button><a href="https://apps.apple.com/kr/app/id6782373454" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=com.animalpop.app" target="_blank" rel="noopener">Google Play</a></span>
           </li>
-          <li>
+          <li data-detail data-key="sumdash">
             <img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/aa/5c/67/aa5c67a8-953a-f6e5-0c85-cf8261d17d25/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" />
             <span class="nm">SumDash</span>
             <span class="tg">사칙연산 스피드 게임</span>
             <span class="dt">2026.07</span>
-            <span class="lks"><a href="https://apps.apple.com/kr/app/id6785198584" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=com.ytlab.sumdash" target="_blank" rel="noopener">Google Play</a></span>
+            <span class="lks"><button class="detail" type="button">상세</button><a href="https://apps.apple.com/kr/app/id6785198584" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=com.ytlab.sumdash" target="_blank" rel="noopener">Google Play</a></span>
           </li>
-          <li>
+          <li data-detail data-key="blind-duel">
             <img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/f4/48/32/f44832cc-37b0-910e-eb7c-d1e718a839b2/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg" />
             <span class="nm">블라인드 듀얼</span>
             <span class="tg">한 장 심리전 카드게임</span>
             <span class="dt">2026.07</span>
-            <span class="lks"><a href="https://apps.apple.com/kr/app/id6791613672" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=com.ytlab.blind_poker" target="_blank" rel="noopener">Google Play</a></span>
+            <span class="lks"><button class="detail" type="button">상세</button><a href="https://apps.apple.com/kr/app/id6791613672" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=com.ytlab.blind_poker" target="_blank" rel="noopener">Google Play</a></span>
           </li>
-          <li>
+          <li data-detail data-key="admeter">
             <img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/56/17/31/5617317b-8d62-9614-c9cf-c935aae6c987/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" />
             <span class="nm">AdMeter</span>
             <span class="tg">애드몹 · 애드센스 수익 대시보드</span>
             <span class="dt">2026.07</span>
-            <span class="lks"><a href="https://apps.apple.com/kr/app/id6789329258" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=site.ytlab.adpulse" target="_blank" rel="noopener">Google Play</a></span>
+            <span class="lks"><button class="detail" type="button">상세</button><a href="https://apps.apple.com/kr/app/id6789329258" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=site.ytlab.adpulse" target="_blank" rel="noopener">Google Play</a></span>
           </li>
-          <li>
+          <li data-detail data-key="kupanote">
             <img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/de/e6/4f/dee64f4e-a974-55cb-8268-85a920bc4c92/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" />
             <span class="nm">쿠파노트</span>
             <span class="tg">쿠팡 파트너스 실적 · 정산 달력</span>
             <span class="dt">2026.08</span>
-            <span class="lks"><a href="https://apps.apple.com/kr/app/id6795585727" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=site.ytlab.kupanote" target="_blank" rel="noopener">Google Play</a></span>
+            <span class="lks"><button class="detail" type="button">상세</button><a href="https://apps.apple.com/kr/app/id6795585727" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=site.ytlab.kupanote" target="_blank" rel="noopener">Google Play</a></span>
           </li>
-          <li>
+          <li data-detail data-key="banpick">
             <img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/45/3d/8b/453d8be5-335f-b976-f1d9-f2c5d791c37e/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg" />
             <span class="nm">밴픽 매니저</span>
             <span class="tg">e스포츠 구단 경영 게임</span>
             <span class="dt">2026.08</span>
-            <span class="lks"><a href="https://apps.apple.com/kr/app/id6802333370" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=com.ytlab.esports_gm" target="_blank" rel="noopener">Google Play</a></span>
+            <span class="lks"><button class="detail" type="button">상세</button><a href="https://apps.apple.com/kr/app/id6802333370" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=com.ytlab.esports_gm" target="_blank" rel="noopener">Google Play</a></span>
           </li>
-          <li>
+          <li data-detail data-key="malang-brain">
             <img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/cf/70/af/cf70af7e-397f-5a20-ebf0-9f90ada55936/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/256x256bb.jpg" />
             <span class="nm">말랑브레인</span>
             <span class="tg">두뇌 게임 7종 모음</span>
             <span class="dt">2026.08</span>
-            <span class="lks"><a href="https://apps.apple.com/kr/app/id6792457720" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=com.ytlab.malang_brain" target="_blank" rel="noopener">Google Play</a></span>
+            <span class="lks"><button class="detail" type="button">상세</button><a href="https://apps.apple.com/kr/app/id6792457720" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=com.ytlab.malang_brain" target="_blank" rel="noopener">Google Play</a></span>
           </li>
-          <li>
+          <li data-detail data-key="twelve-chess">
             <img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/21/b1/20/21b1203b-2c47-7c55-9d75-22e2657a4738/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" />
             <span class="nm">십이장기 · 12 Chess</span>
             <span class="tg">3×4 판 미니 체스</span>
             <span class="dt">2026.09</span>
-            <span class="lks"><a href="https://apps.apple.com/kr/app/id6804221169" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=com.ytlab.tinythrone" target="_blank" rel="noopener">Google Play</a></span>
+            <span class="lks"><button class="detail" type="button">상세</button><a href="https://apps.apple.com/kr/app/id6804221169" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=com.ytlab.tinythrone" target="_blank" rel="noopener">Google Play</a></span>
           </li>
-          <li>
+          <li data-detail data-key="soccer-career">
             <img class="ic" loading="lazy" alt="" src="https://play-lh.googleusercontent.com/OtIpMPCdImr2mJfPGGEJhCeQzBagjMEAItQ34KMNZXqBf9NBs3pkncQLtMx4oVElrGEA6w44i2RMSBmvybsKGQ=s256" />
             <span class="nm">축구선수 키우기</span>
             <span class="tg">축구선수 커리어 시뮬레이션</span>
             <span class="dt">2026.09</span>
-            <span class="lks"><a href="https://play.google.com/store/apps/details?id=site.ytlab.soccer_career" target="_blank" rel="noopener">Google Play</a></span>
+            <span class="lks"><button class="detail" type="button">상세</button><a href="https://play.google.com/store/apps/details?id=site.ytlab.soccer_career" target="_blank" rel="noopener">Google Play</a></span>
           </li>
         </ul>
 
         <div class="grouphead rv"><span class="gt">앱인토스 미니앱</span><span class="gn">18 · 토스 앱에서 이름으로 검색</span></div>
         <ul class="apps rv">
-          <li>
+          <li data-key="ai-rent">
             <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/87dae129-58d7-4cd9-972e-13f988b6ffaa.png" />
             <span class="nm">AI 월세</span><span class="tg">AI 구독비 관리</span><span class="dt">2026.03</span>
           </li>
-          <li>
+          <li data-key="today-trivia">
             <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/1c159c11-bfc0-4df9-9ca2-72c20b833120.png" />
             <span class="nm">오늘의 상식</span><span class="tg">상식 퀴즈 · 리워드</span><span class="dt">2026.04</span>
           </li>
-          <li>
+          <li data-key="if-bought">
             <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/d315f890-bb3b-469c-9cf2-03f28e7d4cae.png" />
             <span class="nm">그때 샀더라면</span><span class="tg">주식 · 코인 가정 수익률</span><span class="dt">2026.04</span>
           </li>
-          <li>
+          <li data-key="spend-mission">
             <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/b723844a-2b54-4d7f-93b5-44e1c99a5efb.png" />
             <span class="nm">오늘의 소비 미션</span><span class="tg">소비 절약 미션 · 리워드</span><span class="dt">2026.04</span>
           </li>
-          <li>
+          <li data-key="today-diary">
             <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/7831fe00-5ad3-4d9e-be42-d34ccd0aa138.png" />
             <span class="nm">오늘하루</span><span class="tg">AI 감정 일기</span><span class="dt">2026.04</span>
           </li>
-          <li>
+          <li data-key="animal-pop">
             <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/13ee6c7f-08f9-42ef-8294-dafbb535be7f.png" />
             <span class="nm">애니멀 팝</span><span class="tg">동물 합치기 퍼즐</span><span class="dt">2026.04</span>
           </li>
-          <li>
+          <li data-key="haru-card">
             <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/522fcc38-1ab0-40c9-bdad-1e02c7fc32c1.png" />
             <span class="nm">하루카드</span><span class="tg">안부 그림 카드</span><span class="dt">2026.05</span>
           </li>
-          <li>
+          <li data-key="today-fortune">
             <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/6f06242c-eed9-4039-8892-ccbb0dc5802a.png" />
             <span class="nm">오늘일진</span><span class="tg">사주 운세 카드</span><span class="dt">2026.05</span>
           </li>
-          <li>
+          <li data-key="today-word">
             <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/3129b2a5-6bac-46fa-9d91-086580e8f040.png" />
             <span class="nm">오늘의 영단어</span><span class="tg">하루 5단어 영어</span><span class="dt">2026.05</span>
           </li>
-          <li>
+          <li data-key="econ-news">
             <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/87ac48da-ac12-40ab-af73-685806d6a5dd.png" />
             <span class="nm">오늘의 경제뉴스</span><span class="tg">경제 뉴스 브리핑</span><span class="dt">2026.06</span>
           </li>
-          <li>
+          <li data-key="lowest-price">
             <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/8807db79-665f-4554-8b80-805c832191bd.png" />
             <span class="nm">우리동네 최저가</span><span class="tg">생필품 최저가 정보</span><span class="dt">2026.06</span>
           </li>
-          <li>
+          <li data-key="number-rush">
             <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/427c72d7-3a30-4fd9-9962-b1d1dd45be71.png" />
             <span class="nm">숫자 러시</span><span class="tg">숫자 순서 게임</span><span class="dt">2026.07</span>
           </li>
-          <li>
+          <li data-key="quick-calc">
             <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/75c44346-16bd-4fe5-a662-2b4686d26e3b.png" />
             <span class="nm">순간계산왕</span><span class="tg">암산 스피드 게임</span><span class="dt">2026.07</span>
           </li>
-          <li>
+          <li data-key="malang-brain">
             <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/5829742d-25ca-4ac6-9545-ae98b48c86b7.png" />
             <span class="nm">말랑브레인</span><span class="tg">두뇌 게임 모음</span><span class="dt">2026.08</span>
           </li>
-          <li>
+          <li data-key="road-to-treble">
             <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/b883d566-9893-4f8c-a062-ef1417c19aed.png" />
             <span class="nm">로드 투 트레블</span><span class="tg">축구 드래프트 게임</span><span class="dt">2026.08</span>
           </li>
-          <li>
+          <li data-key="twelve-chess">
             <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/402ad9de-57ad-44c6-b71c-5b45c078f3c9.png" />
             <span class="nm">십이장기</span><span class="tg">3×4 판 미니 체스</span><span class="dt">2026.09</span>
           </li>
-          <li>
+          <li data-key="blind-duel">
             <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/8bb60a81-ea9c-4e5d-b51b-792a6364c379.png" />
             <span class="nm">블라인드 듀얼</span><span class="tg">한 장 심리전 카드게임</span><span class="dt">2026.09</span>
           </li>
-          <li>
+          <li data-key="soccer-career">
             <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/e799b4f3-fd37-4af3-8654-75a97e63c13e.png" />
             <span class="nm">축구선수 키우기</span><span class="tg">축구선수 커리어 시뮬레이션</span><span class="dt">2026.09</span>
           </li>
         </ul>
 
-        <p class="note rv">2026년 9월 12일 기준. 앱 수 · 빌드 수 · 사용자 수는 App Store Connect · Google Play Console · 앱인토스 콘솔에서 확인한 값입니다.</p>
+        <p class="note rv">2026년 9월 12일 기준. 앱 수와 사용자 수는 App Store Connect · Google Play Console · 앱인토스 콘솔에서, 유튜브 수치는 채널 페이지에서 확인한 값입니다. 6개 앱(애니멀 팝 · 말랑브레인 · 로드 투 트레블 · 십이장기 · 블라인드 듀얼 · 축구선수 키우기)은 스토어와 앱인토스 양쪽에 올려 두 목록에 모두 나옵니다.</p>
       </section>
 
       <section id="career">
@@ -761,6 +856,26 @@
     </div>
   </main>
 
+  <dialog class="sheet" id="sheet" aria-labelledby="sheetTitle">
+    <div class="inner">
+      <header class="mhead">
+        <img id="sheetIcon" alt="" />
+        <div>
+          <h3 id="sheetTitle"></h3>
+          <p class="msub" id="sheetSub"></p>
+        </div>
+        <button class="btn" id="sheetClose" type="button">닫기</button>
+      </header>
+      <div class="mbody">
+        <div class="mchips" id="sheetChips"></div>
+        <div class="mshots" id="sheetShots"></div>
+        <p class="mdesc" id="sheetDesc"></p>
+        <div class="mlinks" id="sheetLinks"></div>
+      </div>
+    </div>
+  </dialog>
+
+
   <footer>
     <span>김용태 · <a href="mailto:contact@ytlab.site">contact@ytlab.site</a></span>
     <span>마지막 업데이트 2026.09.12</span>
@@ -772,22 +887,17 @@
 
       var cards = Array.prototype.slice.call(document.querySelectorAll(".apps li"));
 
-      // ---- scroll reveal + chart fill (set up first so a builder error can't hide the page) ----
-      var bars = Array.prototype.slice.call(document.querySelectorAll(".bar"));
-      var peak = bars.reduce(function (n, b) { return Math.max(n, +b.dataset.v); }, 1);
-      function fill() { bars.forEach(function (b) { b.querySelector(".col").style.height = (+b.dataset.v / peak * 100) + "%"; }); }
+      // ---- scroll reveal (set up first so a builder error can't hide the page) ----
       function revealAll() { document.querySelectorAll(".rv").forEach(function (el) { el.classList.add("in"); }); }
 
       var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       if (reduce || !("IntersectionObserver" in window)) {
         revealAll();
-        fill();
       } else {
         var io = new IntersectionObserver(function (entries) {
           entries.forEach(function (e) {
             if (!e.isIntersecting) return;
             e.target.classList.add("in");
-            if (e.target.querySelector(".bars")) fill();
             io.unobserve(e.target);
           });
         }, { rootMargin: "0px 0px -40px 0px", threshold: 0.05 });
@@ -795,12 +905,190 @@
       }
 
       // printing can start from anywhere, including the browser's own menu
-      function beforePrint() { revealAll(); fill(); }
+      function beforePrint() { revealAll(); }
       window.addEventListener("beforeprint", beforePrint);
       document.getElementById("printBtn").addEventListener("click", function () {
         beforePrint();
         window.print();
       });
+
+      var root = document.documentElement;
+      var themeBtn = document.getElementById("themeBtn");
+      var systemLight = window.matchMedia("(prefers-color-scheme: light)");
+      function isLight() {
+        var pinned = root.getAttribute("data-theme");
+        return pinned ? pinned === "light" : systemLight.matches;
+      }
+      function paintToggle() {
+        var light = isLight();
+        themeBtn.textContent = light ? "Dark" : "Light";
+        themeBtn.setAttribute("aria-pressed", String(light));
+        themeBtn.setAttribute("aria-label", light ? "어두운 테마로 전환" : "밝은 테마로 전환");
+      }
+      paintToggle();
+      systemLight.addEventListener("change", paintToggle);
+      themeBtn.addEventListener("click", function () {
+        var next = isLight() ? "dark" : "light";
+        root.setAttribute("data-theme", next);
+        try { localStorage.setItem("theme", next); } catch (e) {}
+        paintToggle();
+      });
+
+
+      // ---- app detail sheet ----
+      var APPS = {"mypopol":{"v":"1.0.9","r":"2026.06","u":"2026.07","g":"금융","iap":[0,0],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/29/bd/6d/29bd6d85-6fb9-7224-0298-d33e360d4cb4/01-home.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/28/8c/9c/288c9c28-3dfd-4bee-7ddf-84d1dcc70ef7/02-simulate.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7c/9f/0e/7c9f0e70-907a-efe8-fea1-f8ec869f611b/03-vault.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/85/64/3e/85643e74-25a1-9765-eb42-7271aa04284a/04-backtest.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/52/07/54/520754f2-bfdf-7ab7-ba40-95fcc47bc7f0/05-explore.png/626x0w.webp"],"d":"마이포폴은 적립식 투자를 \"미리 설계\"해 보는 시뮬레이터입니다. 매달 얼마를, 몇 년 동안, 어떤 계좌로 모으면 결과가 어떻게 달라지는지 세후 기준으로 가정해 보여줍니다. (실제 거래·중개 기능은 없습니다.)"},"spill":{"v":"1.0.7","r":"2026.06","u":"2026.08","g":"생산성","iap":[0,0],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b5/2a/59/b52a59f2-6193-ac43-73ec-46332c3da9fe/1_chat-ko.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c2/4f/33/c24f3390-64ab-4faa-8295-7634c4f573a7/2_tasks-ko.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/10/0e/de/100ede59-392d-3fcb-2f3d-7838cbb242a2/3_ideas-ko.png/626x0w.webp"],"d":"Spill은 가장 빠르게 기억하는 방법입니다. 한 줄 쓰면, 있어야 할 곳에 자동으로 들어갑니다. 대부분의 미리알림 앱은 날짜·시간·목록을 일일이 눌러야 합니다. Spill은 평범한 문장을 읽고 알아서 정리합니다."},"one-to-fifty":{"v":"1.0.8","r":"2026.06","u":"2026.08","g":"게임","iap":[1,1],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5d/98/d0/5d98d047-2cfa-1f4f-e546-94f5666d0b26/1_loop.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f3/4b/35/f34b355a-117f-1adb-9136-facdf51c04fc/2_compete.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/fc/40/7c/fc407ce8-1c2f-7e53-6b0e-8d44be449216/3_win.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/36/44/10/36441035-69d3-46e1-7353-9cfcbcd728d3/4_modes.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/59/84/84/59848459-a0f9-d9ed-2eb5-94ddba8c152d/5_themes.png/626x0w.webp"],"d":"1부터 50까지, 얼마나 빨리 탭할 수 있나요? 다음 숫자를 찾아 누르고, 시간을 줄이고, 그다음엔 전 세계와 겨루세요. 1 to 50: 숫자 순서 게임은 단 하나의 중독적인 루프로 만들어진 스피드 게임입니다. 격자에서 다음 수를 찾아 손가락이 움직이는 만큼 빠르게 터치하세요. 배우는 데는 몇 초면 충분하지만, 마스터하는 데는 끝이 없습니다."},"road-to-treble":{"v":"3.6.5","r":"2026.07","u":"2026.09","g":"게임","iap":[26,23],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a7/da/f6/a7daf622-ddd3-b266-1868-3a230bece00f/6.7_01_manager.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/36/c7/c9/36c7c903-43aa-323f-aeca-c1c66db4c5fa/6.7_02_matchday.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/cc/bc/9a/ccbc9a56-4d96-fa46-e839-2548a0960e3d/6.7_03_weekdraft.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/26/d7/14/26d71480-e869-556b-aaaf-d9aa52eb2b30/6.7_04_hook.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ce/a4/9d/cea49d2a-da6d-c231-e7ad-8eee2d3b48e3/6.7_05_trophies.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/bc/21/cd/bc21cd82-f071-f3d4-8e0c-649e537d454f/6.7_06_album.png/626x0w.webp"],"d":"능력치를 가린 채 11개 포지션을 한 명씩 채우는 축구 드래프트 게임입니다. 화려한 이름값에 속을지 숨은 보석을 알아볼지는 당신의 축구 지식에 달렸습니다. 베스트11을 확정하고 시즌을 돌려 트레블에 도전하세요."},"animal-pop":{"v":"1.4.1","r":"2026.07","u":"2026.07","g":"게임","iap":[1,1],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8a/3a/58/8a3a5822-2563-b10c-ef3a-47b9e75240a6/AnimalPop_ko_1.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/de/f9/8f/def98fa4-cbdd-fb57-7c47-2b1b6199074b/AnimalPop_ko_2.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/72/9d/85/729d8560-71bd-d84d-1812-b8ff2374d936/AnimalPop_ko_3.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/eb/88/22/eb8822de-14ec-04ec-8c60-65ea190a098d/AnimalPop_ko_4.png/626x0w.webp"],"d":"같은 동물 둘을 톡! 합치면 더 큰 동물로 자라나요. 병아리에서 시작해 사자까지, 귀여운 동물을 합쳐 키우는 힐링 합치기 퍼즐! 떨어뜨리고, 합치고, 점수를 쌓는 단순한 규칙."},"sumdash":{"v":"1.2.4","r":"2026.07","u":"2026.08","g":"게임","iap":[1,1],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/9e/3b/90/9e3b905d-a5c5-c693-6a9f-1241f2b5ff48/ios_65_1_play.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c8/58/dd/c858dd78-2097-9368-949e-3e72dd115991/ios_65_2_rank.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d9/ea/f0/d9eaf0e1-7af4-cbec-c777-76ab5371c765/ios_65_3_modes.png/626x0w.webp"],"d":"카운트다운이 0이 되기 전에 정답을 눌러라. SumDash는 사칙연산을 아케이드 게임으로 바꾼 빠른 암산 게임입니다. 정답을 맞힐 때마다 시간이 충전되고, 속도는 조금씩 더 빨라집니다. 시작은 쉽습니다. 하지만 끝까지 쉬웠던 적은 없습니다."},"blind-duel":{"v":"2.1.3","r":"2026.07","u":"2026.09","g":"게임","iap":[5,5],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ab/44/4d/ab444dfb-9c1f-35a5-fa59-384526b2b1e9/1_hero.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b7/88/e2/b788e29c-a630-e9b2-9378-22410a2d0f83/2_rule.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f1/3d/3f/f13d3f38-1a7f-7b34-54fa-7b875a8dde76/3_league.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/81/42/7e/81427e3b-7174-c6d6-1e23-755a934ca079/4_style.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/17/68/23/17682333-abe4-05ea-cd33-ef509cfad796/5_duel.png/626x0w.webp"],"d":"상대 카드는 보이는데, 내 카드만 안 보인다. 한 장으로 벌이는 블러핑 심리전, 블라인드 듀얼. 읽고, 속여서 라운드를 가져가세요. 승부를 결정하는 단 한 장이 나만 안 보입니다."},"admeter":{"v":"1.0.1","r":"2026.07","u":"2026.08","g":"금융","iap":[1,1],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c4/46/fa/c446faca-346c-23c9-77ff-f273d5c59f0b/1_glance.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1e/c4/6c/1ec46cd7-6b37-3ff7-c2f4-870f6e5958f9/2_calendar.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f0/38/ea/f038eafe-a840-a90a-bb64-4bfd0c0e0865/3_sources.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/66/a4/c5/66a4c514-a445-489c-f153-29dfc81a8b1b/4_detail.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/68/8f/11/688f11c3-e70f-8310-e444-00801a6b3d68/5_theme.png/626x0w.webp"],"d":"내 광고는 24시간 돈을 법니다. AdMeter는 그 돈을 한 화면에 모아 보여줍니다. 구글 계정으로 로그인하면 애드몹(AdMob)과 애드센스(AdSense) 수익을 함께 볼 수 있습니다 — 스프레드시트도, 브라우저 탭도, 콘솔 뒤지기도 필요 없습니다."},"kupanote":{"v":"1.0.7","r":"2026.08","u":"2026.09","g":"비즈니스","iap":[0,0],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c3/39/9f/c3399f78-cec0-1b55-3a55-7419a5d725f5/1_home.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d9/ef/47/d9ef475d-2fba-9467-d404-cbf1eb54a0fc/2_calendar.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f4/1d/ce/f41dce39-c1fe-d63d-f93e-fbb9daa53b9f/3_products.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f0/8f/ce/f08fceaa-b059-12ca-8e12-68227689e1aa/4_trust.png/626x0w.webp"],"d":"쿠팡 파트너스 실적을 매일 오후 3시에 받아 채워 두고 알림 한 통을 보냅니다. 사이트에 들어가 새로고침할 이유를 없앤 앱입니다.","sub":"구독 1종 · 월 990원"},"banpick":{"v":"1.0","r":"2026.08","u":"2026.08","g":"게임","iap":[7,7],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/23/07/d3/2307d3d6-2a95-3373-8f45-3d25c7929028/1_draft_69.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ff/15/8c/ff158c1f-e275-63d6-20a7-6296267456e2/2_hub_69.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/48/79/e8/4879e8ec-39fc-61d3-75b0-b0748e218a08/3_awards_69.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/42/5c/94/425c9408-cf85-a7e1-8e05-f8802d02ae5a/4_tier_69.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a2/70/85/a270851e-7915-f609-c82d-3cfbff155321/5_sheet_69.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fc/f1/bd/fcf1bd76-f9af-bb60-5a0d-04f3d68a70ef/6_tactic_69.png/626x0w.webp"],"d":"당신은 신생 e스포츠 게임단의 감독입니다. 2부 리그에서 시작해 밴픽을 읽고, 선수를 키우고, 리그 정상과 월드 챔피언십까지 올라가세요."},"malang-brain":{"v":"1.0.0","r":"2026.08","u":"2026.08","g":"게임","iap":[0,0],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a9/a8/f7/a9a8f7c8-aae7-b6f6-96be-0b89ccd488b0/1_games.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a3/d8/54/a3d85418-0846-7d8b-5c2f-d527234c4004/2_percentile.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1f/1d/fc/1f1dfc8a-8f10-d7cc-d0bf-25aa0fc76196/3_rank.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/90/24/f3/9024f3f4-5e92-5d19-0b0f-f1f46bb66fa3/4_growth.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8e/2b/0b/8e2b0bf8-c7c5-e57c-69a4-61410a3044bc/5_play.png/626x0w.webp"],"d":"말랑한 머리, 일곱 가지로 단련하세요. 말랑브레인은 7가지 두뇌게임을 아기자기한 페이퍼 월드에 담았어요. 한 판은 1분 이내, 모든 점수는 전 세계 백분위로, 전부 합쳐 나만의 말랑지수가 됩니다.","sub":"구독 2종 · 월 · 연"},"twelve-chess":{"v":"1.0.3","r":"2026.09","u":"2026.09","g":"게임","iap":[1,1],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b1/df/20/b1df209c-5bd3-afca-f1dd-dd9f3662e243/1_home.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1b/9f/8b/1b9f8bda-f71d-3686-9a37-9b0adbfac7d8/2_select.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f6/d8/ab/f6d8abc6-2d04-3654-0c15-6bc322562c53/3_midgame.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8e/ea/64/8eea6467-3ffe-b40f-a8e9-2e3d56401bf9/4_sheet.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/62/02/15/62021580-835c-c665-24b3-e87ad7040954/5_rank.png/626x0w.webp"],"d":"체스를 열두 칸으로 줄였습니다. 12 Chess는 3x4 판에서 벌어지는 3분짜리 수싸움입니다. 첫 수부터 모든 기물이 서로 사정권 안에 있어서, 외울 오프닝도 없고 늘어지는 중반도 없습니다. 1수부터 그냥 싸움입니다."},"jangbogo":{"v":"1.0.0","r":"2026.06","u":"2026.06","g":"쇼핑","iap":[0,0],"s":["https://play-lh.googleusercontent.com/vCeRgub6Ax20hcW3NhXX4y1oVqufgH13eTJny2srnhcJsONsiHOKXwl2ovrxLP9ivmHNKUe0Tbc0-1WUNw=w626","https://play-lh.googleusercontent.com/S6QtrFbnUIIFWjnYSF5NQzeCuBnJ496EbwXfPToilL-HQh19xku479KNfjJLPRXc-Tt-IWvozCrnPkETgGRYRjs=w626","https://play-lh.googleusercontent.com/rViQcEDtikbwhyNLnEoRwGP2m6ch0whqGIXKsS6aki5wp438Tp_zxOHUBhU5OfaSydnKofxvwMlaKrnv36cq5Q=w626","https://play-lh.googleusercontent.com/O4Q8WRKJu5jpcu7-vBA35Ug9hFvSax7dK6iXgSgWYUFNSK9ecj71pNug9Uyy9wMlxw-HSfutvhiGBmYT3viqfQ=w626","https://play-lh.googleusercontent.com/wcT0T_20S3r6ZIZP-823zOPwHv4dY7imqobKb6ElZSun2KkJOujjkyEZDXFDgowDPQ0_thJymRy8c-12RCs9=w626","https://play-lh.googleusercontent.com/Uckhl3xX7nSrBF6SLMk6B1-S8WfeEnvSWgTtlnXMb0LZLK1H2L2CsTOZqwAan4aK_UFN5NquOTnMSx_1n2y_=w626"],"d":"마트와 온라인에 흩어진 생필품 가격을 한 번에 비교해, 지금 어디가 제일 싼지 알려 줍니다."},"soccer-career":{"v":"1.2.0","r":"2026.09","u":"2026.09","g":"게임","iap":[0,0],"s":["https://play-lh.googleusercontent.com/gCXzvzwqUFc-fGDO5lx39TU5VNhSBkA52ygQKZQMyi3foIZf4-lGg0bvqmTwYWgLqU-u_NJov3TMWzVEHw=w626","https://play-lh.googleusercontent.com/sUm8UNiyEQQodc2Ec32u2x-0khND1XW82ebAofSyNjWQCwF36qE_dCgk27tVytCFy-QlYgtevfA2Pw4Cwd4RLw=w626","https://play-lh.googleusercontent.com/jBXv1mW1ktZiRR3bJq4UsbOY7rmFenAaLjyEUMjKYVAP3ci8BjdZn04v6qwU486Sk2hTTqGVXeU8lxvvSzT-PQ=w626","https://play-lh.googleusercontent.com/Mlk6tgEkQyR8d5EP2iQtQIlabucGlScSwKB_EoGbEoVU2B-4mfAwPs4dbr9F-ax-66_ByF86MXGlgW0rk_EKJgk=w626","https://play-lh.googleusercontent.com/DNd9O5NJUmFza2yhoWqsRFTIP2j64EUpCD9nqECHcCbl8pfT7zLq66Hd9_s-mDlJqpRmUG0jnJycbAh5ipAh=w626","https://play-lh.googleusercontent.com/aGOhEPDzYVEFjx_IM9gtlx78tbi1-EiaE8soUUhG6-TQtSEaAHfV5uPkabYRkoEm038YJjggFJ1LD2YckPfZiA=w626"],"d":"유소년부터 은퇴까지, 축구선수 한 명의 커리어를 선택으로 굴려 보는 시뮬레이션입니다."}};
+      var sheet = document.getElementById("sheet");
+      var lastFocus = null;
+
+      function chip(text) { var el = document.createElement("span"); el.textContent = text; return el; }
+
+      function openSheet(li) {
+        var d = APPS[li.dataset.key];
+        if (!d || !sheet.showModal) return;
+        lastFocus = document.activeElement;
+
+        document.getElementById("sheetIcon").src = li.querySelector(".ic").getAttribute("src");
+        document.getElementById("sheetTitle").textContent = li.querySelector(".nm").textContent;
+        document.getElementById("sheetSub").textContent = li.querySelector(".tg").textContent;
+
+        var links = Array.prototype.slice.call(li.querySelectorAll(".lks a"));
+        var chips = document.getElementById("sheetChips");
+        chips.textContent = "";
+        [d.g, links.map(function (a) { return a.textContent === "App Store" ? "iOS" : "Android"; }).join(" · "),
+         "v" + d.v, "출시 " + d.r, "업데이트 " + d.u,
+         d.iap[1] ? "인앱 " + d.iap[1] + "종" : "", d.sub || ""]
+          .filter(Boolean).forEach(function (t) { chips.appendChild(chip(t)); });
+
+        var shots = document.getElementById("sheetShots");
+        shots.textContent = "";
+        d.s.forEach(function (src, i) {
+          var img = document.createElement("img");
+          img.src = src; img.alt = li.querySelector(".nm").textContent + " 화면 " + (i + 1);
+          img.loading = "lazy";
+          shots.appendChild(img);
+        });
+        shots.scrollLeft = 0;
+
+        document.getElementById("sheetDesc").textContent = d.d;
+        var out = document.getElementById("sheetLinks");
+        out.textContent = "";
+        links.forEach(function (a) { out.appendChild(a.cloneNode(true)); });
+
+        document.body.style.overflow = "hidden";
+        sheet.showModal();
+      }
+
+      if (sheet) {
+        document.getElementById("sheetClose").addEventListener("click", function () { sheet.close(); });
+        sheet.addEventListener("click", function (e) { if (e.target === sheet) sheet.close(); });
+        sheet.addEventListener("close", function () {
+          document.body.style.overflow = "";
+          if (lastFocus) lastFocus.focus();
+        });
+        document.querySelectorAll(".apps").forEach(function (grid) {
+          grid.addEventListener("click", function (e) {
+            if (e.target.closest("a")) return;
+            var li = e.target.closest("li[data-detail]");
+            if (li) openSheet(li);
+          });
+        });
+      }
+
+      // ---- motion ----
+      var motionOK = !reduce;
+
+      var hero = document.getElementById("heroName");
+      if (hero) {
+        Array.prototype.forEach.call(hero.children, function (el, i) {
+          el.style.transitionDelay = (i * 70) + "ms";
+        });
+        requestAnimationFrame(function () { hero.classList.add("in"); });
+      }
+
+      // number count-up on the stats row
+      var nums = Array.prototype.slice.call(document.querySelectorAll(".stat .num"));
+      function countUp() {
+        nums.forEach(function (el) {
+          var target = parseInt(el.textContent.replace(/[^0-9]/g, ""), 10);
+          if (!target) return;
+          if (!motionOK) return;
+          var t0 = performance.now(), dur = 1100;
+          // guarantees the real number even if rAF is throttled mid-count
+          setTimeout(function () { el.textContent = target.toLocaleString("ko-KR"); }, dur + 400);
+          (function step(now) {
+            var k = Math.min(1, (now - t0) / dur);
+            var eased = 1 - Math.pow(1 - k, 3);
+            el.textContent = Math.round(target * eased).toLocaleString("ko-KR");
+            if (k < 1) requestAnimationFrame(step);
+          })(t0);
+        });
+      }
+
+      // timeline rows come in one after another
+      function staggerRows() {
+        document.querySelectorAll(".tlrow").forEach(function (row, i) {
+          row.style.transitionDelay = (i * 65) + "ms";
+          row.classList.add("in");
+        });
+      }
+
+      if (!motionOK || !("IntersectionObserver" in window)) {
+        staggerRows();
+      } else {
+        var statsIO = new IntersectionObserver(function (es) {
+          es.forEach(function (e) { if (e.isIntersecting) { countUp(); statsIO.disconnect(); } });
+        }, { threshold: .4 });
+        var statsEl = document.querySelector(".stats");
+        if (statsEl) statsIO.observe(statsEl);
+
+        var tlIO = new IntersectionObserver(function (es) {
+          es.forEach(function (e) { if (e.isIntersecting) { staggerRows(); tlIO.disconnect(); } });
+        }, { threshold: .1 });
+        var tlEl = document.getElementById("tl");
+        if (tlEl) tlIO.observe(tlEl);
+      }
+
+      // parallax: elements drift against the scroll while they cross the viewport
+      var parEls = Array.prototype.slice.call(document.querySelectorAll("[data-par]"));
+      if (motionOK && parEls.length) {
+        var ticking = false;
+        function parallax() {
+          var vh = window.innerHeight;
+          parEls.forEach(function (el) {
+            var r = el.getBoundingClientRect();
+            if (r.bottom < -200 || r.top > vh + 200) return;
+            var p = (r.top + r.height / 2 - vh / 2) / vh;
+            el.style.transform = "translate3d(0," + (p * +el.dataset.par).toFixed(1) + "px,0)";
+          });
+          ticking = false;
+        }
+        var onPar = function () { if (!ticking) { ticking = true; requestAnimationFrame(parallax); } };
+        parallax();
+        window.addEventListener("scroll", onPar, { passive: true });
+        window.addEventListener("resize", onPar);
+      }
+
+      // pointer ring, desktop only; the native cursor is left alone
+      if (motionOK && window.matchMedia("(pointer: fine)").matches) {
+        var ring = document.createElement("div");
+        ring.className = "ring";
+        document.body.appendChild(ring);
+        var rx = 0, ry = 0, tx = 0, ty = 0, running = false;
+        function loop() {
+          rx += (tx - rx) * .18; ry += (ty - ry) * .18;
+          ring.style.transform = "translate3d(" + rx.toFixed(1) + "px," + ry.toFixed(1) + "px,0)";
+          if (Math.abs(tx - rx) > .3 || Math.abs(ty - ry) > .3) requestAnimationFrame(loop);
+          else running = false;
+        }
+        document.addEventListener("pointermove", function (e) {
+          tx = e.clientX; ty = e.clientY;
+          ring.classList.add("on");
+          var hot = e.target.closest("a, button, li[data-detail], .apps li");
+          ring.classList.toggle("hot", !!hot);
+          if (!running) { running = true; requestAnimationFrame(loop); }
+        }, { passive: true });
+        document.addEventListener("pointerleave", function () { ring.classList.remove("on"); });
+      }
 
       var bar = document.getElementById("topbar");
       var onScroll = function () { bar.classList.toggle("stuck", window.scrollY > 8); };
@@ -824,13 +1112,20 @@
         mq.appendChild(row);
       });
 
-      // ---- launch timeline, grouped by the date on each card ----
-      var months = {};
+      // ---- launch timeline: one entry per product, at the month it first shipped ----
+      var first = {};
       cards.forEach(function (li) {
+        var key = li.dataset.key;
         var m = li.querySelector(".dt").textContent.trim().slice(0, 7);
-        (months[m] = months[m] || []).push(li.querySelector(".ic").getAttribute("src"));
+        if (!first[key] || m < first[key].m) first[key] = { m: m, src: li.querySelector(".ic").getAttribute("src") };
+      });
+      var months = {};
+      Object.keys(first).forEach(function (key) {
+        var e = first[key];
+        (months[e.m] = months[e.m] || []).push(e.src);
       });
       var keys = Object.keys(months).sort();
+      var total = Object.keys(first).length;
       var max = keys.reduce(function (n, k) { return Math.max(n, months[k].length); }, 0);
       var tl = document.getElementById("tl");
       keys.forEach(function (k) {
@@ -857,6 +1152,12 @@
         row.appendChild(count);
         tl.appendChild(row);
       });
+
+      var peakMonths = keys.filter(function (k) { return months[k].length === max; });
+      document.getElementById("tlavg").innerHTML =
+        "평균 <b>월 " + (total / keys.length).toFixed(1) + "개</b> 출시";
+      document.getElementById("tlpeak").innerHTML =
+        "최다 <b>" + peakMonths.map(function (k) { return k.slice(5); }).join(" · ") + "월 · " + max + "개</b>";
     })();
   </script>
 </body>
