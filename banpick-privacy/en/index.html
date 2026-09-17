@@ -31,7 +31,7 @@
 <div class="wrap">
   <p class="eyebrow">Ban Pick Manager</p>
   <h1>Privacy Policy</h1>
-  <p class="meta">Effective date: August 21, 2026</p>
+  <p class="meta">Effective date: August 21, 2026 · Revised: September 18, 2026 (diagnostics and analytics apply from app version 1.1.0)</p>
   <p class="meta" style="margin-bottom:36px"><a href="../">한국어</a> · English</p>
 
   <p>YT Lab ("we", "the developer") operates the mobile game <strong>Ban Pick Manager</strong> ("the app").
@@ -43,6 +43,8 @@
     <tr><th>Data</th><th>When</th><th>Purpose</th></tr>
     <tr><td>Game progress (career save, settings)</td><td>While playing</td><td>Stored on your device only — never sent to a server</td></tr>
     <tr><td>Advertising identifier, coarse location, app interaction, diagnostics</td><td>When ads are shown (see section 2)</td><td>Ad delivery and measurement, crash diagnostics</td></tr>
+    <tr><td>Crash records (stack trace, device model, OS version, and the game stage, screen size and text-size setting at the time of the error)</td><td>When the app hits an error</td><td>Finding and fixing the cause</td></tr>
+    <tr><td>Usage events (season and week progress, match start and end, the point where progress stalls)</td><td>While playing</td><td>Finding where players get stuck, improving the game</td></tr>
   </table>
   <div class="card">
     All game data — career saves and settings — is stored <strong>only on your device</strong> and is never
@@ -61,28 +63,44 @@
     <li>Purchasing the Remove Ads product disables interstitial and banner ads.</li>
   </ul>
 
-  <h2>3. In-app purchases</h2>
+  <h2>3. Diagnostics and usage analytics (from app version 1.1.0)</h2>
+  <p>To find out where the app fails or where players get stuck, we use
+  <strong>Google Firebase</strong> — Crashlytics (crash records), Analytics (usage events)
+  and Remote Config (applying settings remotely). This applies from app version 1.1.0.</p>
+  <ul>
+    <li>What is collected is the crash records and usage events listed in section 1. <strong>It does not include your name, email, phone number or anything else that identifies you directly.</strong></li>
+    <li>Your save file itself is never uploaded. What we receive is a summary of the kind "which stage, for how long".</li>
+    <li>Retention: crash records are kept for 90 days and usage events for up to 14 months under Google's policy, then deleted.</li>
+    <li>If you press "I'm stuck" in the settings screen, the game stage and screen details at that moment are sent with it.</li>
+    <li>On iOS, if you decline App Tracking Transparency, the advertising identifier is not linked to this analytics data.</li>
+  </ul>
+  <p>See <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase privacy</a> for details.</p>
+
+  <h2>4. In-app purchases</h2>
   <p>The app offers in-app purchases such as in-game funds, convenience packs, and Remove Ads.
   Payments are processed by the Apple App Store; we never collect or store your payment details.
   Purchases are restored through your App Store account.</p>
 
-  <h2>4. Third-party services</h2>
+  <h2>5. Third-party services</h2>
   <ul>
     <li>Google AdMob — ad delivery and measurement</li>
+    <li>Google Firebase (Crashlytics · Analytics · Remote Config) — crash records, usage analytics, remote settings</li>
     <li>Apple App Store — in-app purchase processing</li>
   </ul>
 
-  <h2>5. Data retention and deletion</h2>
+  <h2>6. Data retention and deletion</h2>
   <p>All game data lives only on your device and is removed when you delete the app.
-  We do not keep your game data on any server.</p>
+  We do not keep your game data on any server.
+  The crash records and usage events described in section 3 are held by Google Firebase and
+  deleted automatically once the retention periods above pass.</p>
 
-  <h2>6. Children</h2>
+  <h2>7. Children</h2>
   <p>The app is not directed at children under 13, and we do not knowingly collect personal information from children.</p>
 
-  <h2>7. Changes</h2>
+  <h2>8. Changes</h2>
   <p>We may update this policy; changes will be posted on this page with a new effective date.</p>
 
-  <h2>8. Contact</h2>
+  <h2>9. Contact</h2>
   <p>Privacy inquiries: <a href="mailto:contact@ytlab.site">contact@ytlab.site</a></p>
 
   <footer>© 2026 YT Lab · Ban Pick Manager</footer>
