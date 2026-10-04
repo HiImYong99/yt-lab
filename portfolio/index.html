@@ -10,18 +10,18 @@
   <meta property="og:site_name" content="YT Lab" />
   <meta property="og:url" content="https://ytlab.site/portfolio/" />
   <meta property="og:title" content="김용태 — 포트폴리오" />
-  <meta property="og:description" content="AI로 앱·웹·콘텐츠 제작 프로세스를 자동화하고 직접 운영합니다." />
+  <meta property="og:description" content="앱·게임 25개 서비스를 직접 출시·운영하고 유튜브 제작·발행을 자동화합니다." />
   <meta property="og:locale" content="ko_KR" />
-  <meta property="og:image" content="https://ytlab.site/portfolio/og.png?v=20260929" />
-  <meta property="og:image:secure_url" content="https://ytlab.site/portfolio/og.png?v=20260929" />
+  <meta property="og:image" content="https://ytlab.site/portfolio/og.png?v=20261004" />
+  <meta property="og:image:secure_url" content="https://ytlab.site/portfolio/og.png?v=20261004" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="김용태 포트폴리오 — 운영 중인 앱 22개, App Store 누적 다운로드 2,115회, 유튜브 누적 조회수 225,716회" />
+  <meta property="og:image:alt" content="김용태 포트폴리오 — 운영 서비스 25개, 집계 기간 내 App Store 첫 다운로드 1,069회·Google Play 신규 설치 1,052건" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="김용태 — 포트폴리오" />
-  <meta name="twitter:description" content="AI로 앱·웹·콘텐츠 제작 프로세스를 자동화하고 직접 운영합니다." />
-  <meta name="twitter:image" content="https://ytlab.site/portfolio/og.png?v=20260929" />
+  <meta name="twitter:description" content="앱·게임 25개 서비스를 직접 출시·운영하고 유튜브 제작·발행을 자동화합니다." />
+  <meta name="twitter:image" content="https://ytlab.site/portfolio/og.png?v=20261004" />
   <meta name="theme-color" content="#080808" media="(prefers-color-scheme: dark)" />
   <meta name="theme-color" content="#fbfbf8" media="(prefers-color-scheme: light)" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23080808'/><text x='50' y='66' font-size='44' font-family='monospace' fill='%23d8ff36' text-anchor='middle' font-weight='700'>YT</text></svg>" />
@@ -249,6 +249,13 @@
       backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
     }
 
+    .app-screens { display: flex; gap: 12px; padding: 24px 18px 44px; align-items: center; }
+    .case-visual.app-screens img { width: calc((100% - 24px) / 3); height: 340px; min-height: 0; object-fit: contain; border-radius: 12px; }
+    .secondary .case { padding: clamp(28px, 4vh, 42px) 0; }
+    .secondary .case h3 { font-size: clamp(22px, 3vw, 30px); }
+    .secondary h2 { font-size: clamp(26px, 4vw, 36px); }
+    @media (max-width: 600px) { .case-visual.app-screens img { height: 250px; } }
+
     /* ---------- section frame ---------- */
     section { padding: clamp(56px, 10vh, 110px) 0; border-top: 1px solid var(--line); }
     section:first-of-type { border-top: 0; }
@@ -455,9 +462,9 @@
   <header class="topbar" id="topbar">
     <a class="mark" href="/">YT<span class="dot">·</span>Lab</a>
     <nav class="topnav">
-      <a href="#automation">자동화</a>
-      <a href="#timeline">타임라인</a>
-      <a href="#products">서비스</a>
+      <a href="#automation">앱·유튜브</a>
+      <a href="#products">앱 목록</a>
+      <a href="#timeline">출시 기록</a>
       <a href="#career">경력</a>
     </nav>
     <span class="topactions">
@@ -469,10 +476,10 @@
   <main>
     <div class="wrap">
       <div class="hero">
-        <p class="eyebrow">Portfolio — 2026.09</p>
+        <p class="eyebrow">Portfolio — 2026.10</p>
         <h1 id="heroName"><span>김</span><span>용</span><span>태</span><span class="acc">.</span></h1>
         <p class="lede">
-          AI로 앱·웹·콘텐츠 제작 프로세스를 자동화하고, <b>실제 결과물</b>을 출시해 직접 운영합니다.
+          앱·게임을 기획해 <b>직접 출시·운영</b>하고, 유튜브 콘텐츠 제작과 발행을 자동화합니다.
         </p>
         <ul class="meta">
           <li><a href="mailto:contact@ytlab.site">contact@ytlab.site</a></li>
@@ -488,38 +495,42 @@
 
     <div class="wrap">
       <div class="stats">
-        <div class="stat"><span class="num">22</span><span class="lbl">직접 만들어 운영 중인 앱<br />스토어 14 · 앱인토스 18 · 양쪽 출시 10</span></div>
-        <div class="stat"><span class="num">2,115</span><span class="lbl">App Store 누적 다운로드<br />App Store Connect · 2026.09.28 기준</span></div>
-        <div class="stat"><span class="num">17,193</span><span class="lbl">pickr.shop 최근 28일 방문<br />페이지 열람 49,789회 · 상품 클릭 698회</span></div>
+        <div class="stat"><span class="num">25</span><span class="lbl">직접 만들어 운영 중인 서비스<br />스토어 17 · 앱인토스 19 · 양쪽 출시 11</span></div>
         <div class="stat"><span class="num">225,716</span><span class="lbl">유튜브 채널 누적 조회수<br />바이브빌더 · 2026.09.29 기준</span></div>
+        <div class="stat"><span class="num">1,069</span><span class="lbl">App Store 첫 다운로드<br />2026.08.28~10.02 · 집계 기간 내</span></div>
+        <div class="stat"><span class="num">1,052</span><span class="lbl">Google Play 신규 설치<br />2026.05.01~09.25 · 집계 기간 내</span></div>
       </div>
+
+      <p class="note">다운로드·설치는 제공된 공식 리포트의 집계이며 출시 이후 전체 누적 수치가 아닙니다. 신규 앱 일부의 데이터는 아직 미제공되어 합계에서 제외했습니다. 상세 집계 범위는 <a href="#download-scope">아래 기준</a>을 참고해 주세요.</p>
 
       <section id="automation">
         <div class="shead rv">
           <span class="snum">01</span>
           <div>
-            <h2>질문에서 끝내지 않고,<br />운영까지 연결했습니다</h2>
-            <p class="ssub">반복 업무를 단계로 나누고 AI 에이전트에 맡긴 뒤, 사람이 검증해야 할 지점을 남기는 방식으로 자동화합니다.</p>
+            <h2>앱을 만들고,<br />유튜브로 기록합니다</h2>
+            <p class="ssub">주력은 앱·게임 제작과 유튜브입니다. 기획부터 검증·출시·운영까지 직접 맡고, 반복 제작 과정은 자동화합니다.</p>
           </div>
         </div>
 
         <div class="cases">
           <article class="case rv">
             <div class="case-copy">
-              <p class="case-tag">웹서비스 운영 · 검색 방문 · 상품 연결</p>
-              <h3>검색 방문이 실제 상품 클릭으로 이어지는 pickr.shop</h3>
-              <p class="case-desc">받는 사람·시기·예산에 맞는 선물을 추천합니다. 검색으로 방문한 사람이 어떤 페이지를 보고 실제 상품까지 이동하는지 확인하며 서비스를 개선합니다.</p>
+              <p class="case-tag">앱·게임 기획 · 출시 · 운영</p>
+              <h3>아이디어를 직접 쓰는 앱으로</h3>
+              <p class="case-desc">앱·게임의 아이디어와 요구사항을 정하고, AI 에이전트와 구현한 뒤 직접 검증해 출시합니다. App Store·Google Play·앱인토스의 공개 상태와 다운로드·설치를 확인하며 운영합니다.</p>
               <div class="case-metrics">
-                <span class="case-metric"><b>17,193</b><span>최근 28일 방문</span></span>
-                <span class="case-metric"><b>49,789</b><span>페이지가 열린 횟수</span></span>
-                <span class="case-metric"><b>698</b><span>상품을 보러 간 횟수</span></span>
+                <span class="case-metric"><b>25</b><span>중복 제외 서비스</span></span>
+                <span class="case-metric"><b>17</b><span>스토어 앱·게임</span></span>
+                <span class="case-metric"><b>19</b><span>앱인토스 미니앱</span></span>
               </div>
-              <p class="case-role"><b>담당</b> 기획 · 검색 수요 분석 · AI 에이전트 지시 · 품질 검증 · 운영 판단</p>
-              <a class="case-link" href="https://pickr.shop" target="_blank" rel="noopener">pickr.shop 방문</a>
+              <p class="case-role"><b>담당</b> 기획 · 요구사항 정의 · 에이전트 지시 · 실제 기기 검증 · 출시 · 운영</p>
+              <a class="case-link" href="#products">만든 앱·게임 전체 보기</a>
             </div>
-            <figure class="case-visual contain">
-              <img src="./assets/pickr-case.png" alt="pickr.shop 선물 큐레이션 서비스 대표 이미지" loading="lazy" />
-              <figcaption class="case-proof">2026.09.28 기준 · 최근 28일 실제 운영 데이터</figcaption>
+            <figure class="case-visual app-screens">
+              <img src="./assets/app-football.png" alt="축구선수 키우기 스토어 소개 화면" loading="lazy" />
+              <img src="./assets/app-admeter.png" alt="AdMeter 스토어 소개 화면" loading="lazy" />
+              <img src="./assets/app-mission.png" alt="오늘의 소비 미션 소개 화면" loading="lazy" />
+              <figcaption class="case-proof">직접 출시한 앱·게임의 소개 화면</figcaption>
             </figure>
           </article>
 
@@ -539,50 +550,19 @@
               <figcaption class="case-proof">단계 실패 시 이후 실행 중단 · 필요한 단계부터 재실행</figcaption>
             </figure>
           </article>
-
-          <article class="case rv">
-            <div class="case-copy">
-              <p class="case-tag">인스타그램 카드뉴스 자동화</p>
-              <h3>제작이 아니라 발행 가능한 운영 프로세스</h3>
-              <p class="case-desc">주제를 고르고 사실을 확인한 뒤 5장 카드뉴스를 렌더합니다. 중복을 막고, 사람의 명시적 승인 전에는 발행하지 않습니다.</p>
-              <ol class="flow" aria-label="인스타그램 자동화 단계">
-                <li>주제 기획</li><li>카드 작성</li><li>렌더</li><li>승인</li><li>발행</li>
-              </ol>
-              <p class="case-role"><b>담당</b> 콘텐츠 원칙 · 브랜드 가이드 · 승인 조건 · 발행 규칙 정의</p>
-            </div>
-            <figure class="case-visual">
-              <img src="./assets/instagram-case.png" alt="풋살노트 인스타그램 카드뉴스 5장" loading="lazy" />
-              <figcaption class="case-proof">1080×1350 카드 5장 · Instagram API 발행</figcaption>
-            </figure>
-          </article>
-        </div>
-      </section>
-
-      <section id="timeline">
-        <div class="shead rv">
-          <span class="snum">02</span>
-          <div>
-            <h2>6개월, 22개</h2>
-            <p class="ssub">2026년 3월 첫 출시부터 지금까지. 기획 · 요구사항 정의 · AI 에이전트 지시 · 검증 · 스토어 제출 · 운영을 맡았습니다.</p>
-          </div>
-        </div>
-        <div class="tl rv" id="tl"></div>
-        <div class="tlfoot rv">
-          <span id="tlavg">평균 <b>월 3.1개</b> 출시</span>
-          <span id="tlpeak">최다 <b>04월 · 5개</b></span>
         </div>
       </section>
 
       <section id="products">
         <div class="shead rv">
-          <span class="snum">03</span>
+          <span class="snum">02</span>
           <div>
             <h2>만든 서비스</h2>
-            <p class="ssub">앱 22개를 스토어와 앱인토스 합쳐 32번 출시해 운영 중입니다. 심사 중 · 준비 중인 앱은 뺐습니다.</p>
+            <p class="ssub">25개 서비스를 스토어 17개·앱인토스 19개로 출시해 운영 중입니다. 양쪽 출시 11개는 동일 서비스로 계산했습니다. 2026.10.04 공개 상태 확인 기준입니다.</p>
           </div>
         </div>
 
-        <div class="grouphead rv"><span class="gt">App Store · Google Play</span><span class="gn">14</span></div>
+        <div class="grouphead rv"><span class="gt">App Store · Google Play</span><span class="gn">17 · App Store 15 / Google Play 14</span></div>
         <ul class="apps rv">
           <li data-detail data-key="mypopol">
             <img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/c0/98/a0/c098a02f-8c24-d4e6-09b8-94607d5125b1/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" />
@@ -596,7 +576,7 @@
             <span class="nm">Spill</span>
             <span class="tg">한 줄 미리알림 · 캘린더</span>
             <span class="dt">2026.06</span>
-            <span class="lks"><button class="detail" type="button">상세</button><a href="https://apps.apple.com/kr/app/id6778608148" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=com.spill.spill" target="_blank" rel="noopener">Google Play</a></span>
+            <span class="lks"><button class="detail" type="button">상세</button><a href="https://apps.apple.com/kr/app/id6778608148" target="_blank" rel="noopener">App Store</a></span>
           </li>
           <li data-detail data-key="jangbogo">
             <img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/21/48/66/21486604-4bd8-e234-cc33-582cd46f3997/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" />
@@ -680,11 +660,32 @@
             <span class="nm">축구선수 키우기</span>
             <span class="tg">축구선수 커리어 시뮬레이션</span>
             <span class="dt">2026.09</span>
-            <span class="lks"><button class="detail" type="button">상세</button><a href="https://play.google.com/store/apps/details?id=site.ytlab.soccer_career" target="_blank" rel="noopener">Google Play</a></span>
+            <span class="lks"><button class="detail" type="button">상세</button><a href="https://apps.apple.com/kr/app/id6807107830" target="_blank" rel="noopener">App Store</a><a href="https://play.google.com/store/apps/details?id=site.ytlab.soccer_career" target="_blank" rel="noopener">Google Play</a></span>
+          </li>
+          <li data-detail data-key="road-to-crown">
+            <img class="ic" loading="lazy" alt="" src="./assets/road-to-crown.png" />
+            <span class="nm">로드 투 크라운</span>
+            <span class="tg">야구 드래프트 게임</span>
+            <span class="dt">2026.09</span>
+            <span class="lks"><button class="detail" type="button">상세</button><a href="https://apps.apple.com/kr/app/%EB%A1%9C%EB%93%9C-%ED%88%AC-%ED%81%AC%EB%9D%BC%EC%9A%B4-%EC%95%BC%EA%B5%AC-%EB%93%9C%EB%9E%98%ED%94%84%ED%8A%B8/id6815189319?uo=4" target="_blank" rel="noopener">App Store</a></span>
+          </li>
+          <li data-detail data-key="rimrise">
+            <img class="ic" loading="lazy" alt="" src="./assets/rimrise.png" />
+            <span class="nm">림라이즈</span>
+            <span class="tg">농구선수 커리어 시뮬레이션</span>
+            <span class="dt">2026.10</span>
+            <span class="lks"><button class="detail" type="button">상세</button><a href="https://apps.apple.com/kr/app/%EB%A6%BC%EB%9D%BC%EC%9D%B4%EC%A6%88-%EB%86%8D%EA%B5%AC-%EC%84%A0%EC%88%98-%ED%82%A4%EC%9A%B0%EA%B8%B0-%EC%8B%9C%EB%AE%AC%EB%A0%88%EC%9D%B4%EC%85%98/id6816143700?uo=4" target="_blank" rel="noopener">App Store</a></span>
+          </li>
+          <li data-detail data-key="sack-race">
+            <img class="ic" loading="lazy" alt="" src="./assets/sack-race.png" />
+            <span class="nm">Sack Race</span>
+            <span class="tg">축구 감독·구단 운영 게임</span>
+            <span class="dt">2026.09</span>
+            <span class="lks"><button class="detail" type="button">상세</button><a href="https://play.google.com/store/apps/details?id=site.ytlab.sack_race" target="_blank" rel="noopener">Google Play</a></span>
           </li>
         </ul>
 
-        <div class="grouphead rv"><span class="gt">앱인토스 미니앱</span><span class="gn">18 · 토스 앱에서 이름으로 검색</span></div>
+        <div class="grouphead rv"><span class="gt">앱인토스 미니앱</span><span class="gn">19 · 토스 앱에서 이름으로 검색</span></div>
         <ul class="apps rv">
           <li data-key="ai-rent">
             <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/87dae129-58d7-4cd9-972e-13f988b6ffaa.png" />
@@ -754,18 +755,83 @@
             <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/8bb60a81-ea9c-4e5d-b51b-792a6364c379.png" />
             <span class="nm">블라인드 듀얼</span><span class="tg">한 장 심리전 카드게임</span><span class="dt">2026.09</span>
           </li>
+          <li data-key="banpick">
+            <img class="ic" loading="lazy" alt="" src="./assets/banpick.png" />
+            <span class="nm">밴픽 매니저</span><span class="tg">e스포츠 구단 경영 게임</span><span class="dt">2026.09</span>
+          </li>
           <li data-key="soccer-career">
             <img class="ic" loading="lazy" alt="" src="https://static.toss.im/appsintoss/25373/e799b4f3-fd37-4af3-8654-75a97e63c13e.png" />
             <span class="nm">축구선수 키우기</span><span class="tg">축구선수 커리어 시뮬레이션</span><span class="dt">2026.09</span>
           </li>
         </ul>
 
-        <p class="note rv">2026년 9월 13일 기준. App Store 다운로드는 App Store Connect 분석 리포트의 첫 다운로드 합계(앱 10개, 각 출시일~9월 11일)이고, Google Play는 콘솔 설치 리포트 기준입니다(앱 8개, 8월 21일까지 + 축구선수 키우기). 두 스토어 모두 최근 출시한 일부 앱은 리포트가 아직 집계 전이라 빠져 있습니다. 미니앱 사용자 수는 앱인토스 콘솔, 유튜브 수치는 채널 페이지에서 확인한 값입니다. 10개 앱은 스토어와 앱인토스 양쪽에 올려 두 목록에 모두 나옵니다. 애니멀 팝 · 말랑브레인 · 로드 투 트레블 · 십이장기 · 블라인드 듀얼 · 축구선수 키우기는 이름이 같고, 마이포폴(오늘의 경제뉴스) · 장보고(우리동네 최저가) · 1 to 50(숫자 러시) · SumDash(순간계산왕)는 앱인토스에서 이름이 다릅니다.</p>
+        <p class="note rv" id="download-scope">2026.10.04 확인. App Store는 App Store Connect 일별 리포트의 2026.08.28~10.02 첫 다운로드 1,069회이며, 같은 날짜의 재발행 데이터는 최신본으로 교체했습니다. 축구선수 키우기·로드 투 크라운은 09.30부터 집계됐고, 림라이즈는 리포트 미제공으로 제외했습니다. Google Play는 제공된 설치 리포트의 2026.05.01~09.25 신규 사용자 설치 1,052건이며, 이후 날짜와 쿠파노트·Sack Race 등 리포트 미제공 앱은 제외했습니다. 두 수치는 전체 누적이 아니며 집계 기간도 다릅니다. 양쪽에 출시한 11개 서비스는 각 목록에 모두 표시합니다. 이름이 다른 4쌍은 마이포폴(오늘의 경제뉴스) · 장보고(우리동네 최저가) · 1 to 50(숫자 러시) · SumDash(순간계산왕)입니다.</p>
+      </section>
+
+      <section id="timeline">
+        <div class="shead rv">
+          <span class="snum">03</span>
+          <div>
+            <h2>2026년 3월부터, 25개</h2>
+            <p class="ssub">2026년 3월 첫 출시부터 지금까지. 기획 · 요구사항 정의 · AI 에이전트 지시 · 검증 · 스토어 제출 · 운영을 맡았습니다.</p>
+          </div>
+        </div>
+        <div class="tl rv" id="tl"></div>
+        <div class="tlfoot rv">
+          <span id="tlavg">평균 <b>월 3.1개</b> 출시</span>
+          <span id="tlpeak">최다 <b>04월 · 5개</b></span>
+        </div>
+      </section>
+
+      <section id="more-work" class="secondary">
+        <div class="shead rv">
+          <span class="snum">04</span>
+          <div>
+            <h2>함께 운영하는 SNS·웹서비스</h2>
+            <p class="ssub">주력 작업 외에 콘텐츠 제작·발행과 검색 유입 서비스도 운영합니다.</p>
+          </div>
+        </div>
+        <div class="cases">
+          <article class="case rv">
+            <div class="case-copy">
+              <p class="case-tag">인스타그램 카드뉴스 자동화</p>
+              <h3>제작이 아니라 발행 가능한 운영 프로세스</h3>
+              <p class="case-desc">주제를 고르고 사실을 확인한 뒤 5장 카드뉴스를 렌더합니다. 중복을 막고, 사람의 명시적 승인 전에는 발행하지 않습니다.</p>
+              <ol class="flow" aria-label="인스타그램 자동화 단계">
+                <li>주제 기획</li><li>카드 작성</li><li>렌더</li><li>승인</li><li>발행</li>
+              </ol>
+              <p class="case-role"><b>담당</b> 콘텐츠 원칙 · 브랜드 가이드 · 승인 조건 · 발행 규칙 정의</p>
+            </div>
+            <figure class="case-visual">
+              <img src="./assets/instagram-case.png" alt="풋살노트 인스타그램 카드뉴스 5장" loading="lazy" />
+              <figcaption class="case-proof">1080×1350 카드 5장 · Instagram API 발행</figcaption>
+            </figure>
+          </article>
+
+          <article class="case rv">
+            <div class="case-copy">
+              <p class="case-tag">웹서비스 운영 · 검색 방문 · 상품 연결</p>
+              <h3>검색 방문이 실제 상품 클릭으로 이어지는 pickr.shop</h3>
+              <p class="case-desc">받는 사람·시기·예산에 맞는 선물을 추천합니다. 검색으로 방문한 사람이 어떤 페이지를 보고 실제 상품까지 이동하는지 확인하며 서비스를 개선합니다.</p>
+              <div class="case-metrics">
+                <span class="case-metric"><b>17,193</b><span>최근 28일 방문</span></span>
+                <span class="case-metric"><b>49,789</b><span>페이지가 열린 횟수</span></span>
+                <span class="case-metric"><b>698</b><span>상품을 보러 간 횟수</span></span>
+              </div>
+              <p class="case-role"><b>담당</b> 기획 · 검색 수요 분석 · AI 에이전트 지시 · 품질 검증 · 운영 판단</p>
+              <a class="case-link" href="https://pickr.shop" target="_blank" rel="noopener">pickr.shop 방문</a>
+            </div>
+            <figure class="case-visual">
+              <img src="./assets/pickr-live-20261004.png" alt="pickr.shop 예산별 선물 추천과 실제 상품 목록 화면" loading="lazy" />
+              <figcaption class="case-proof">실제 서비스 화면 · 운영 수치 2026.09.28 기준</figcaption>
+            </figure>
+          </article>
+        </div>
       </section>
 
       <section id="career">
         <div class="shead rv">
-          <span class="snum">04</span>
+          <span class="snum">05</span>
           <div><h2>경력</h2></div>
         </div>
 
@@ -802,7 +868,7 @@
 
       <section id="skills">
         <div class="shead rv">
-          <span class="snum">05</span>
+          <span class="snum">06</span>
           <div><h2>스킬</h2></div>
         </div>
         <div class="skills rv">
@@ -823,7 +889,7 @@
 
       <section id="edu">
         <div class="shead rv">
-          <span class="snum">06</span>
+          <span class="snum">07</span>
           <div><h2>학력</h2></div>
         </div>
         <div class="edu rv">
@@ -856,7 +922,7 @@
 
   <footer>
     <span>김용태 · <a href="mailto:contact@ytlab.site">contact@ytlab.site</a></span>
-    <span>마지막 업데이트 2026.09.29</span>
+    <span>마지막 업데이트 2026.10.04</span>
   </footer>
 
   <script>
@@ -915,6 +981,7 @@
 
       // ---- app detail sheet ----
       var APPS = {"mypopol":{"v":"1.0.9","r":"2026.06","u":"2026.07","g":"금융","iap":[0,0],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/29/bd/6d/29bd6d85-6fb9-7224-0298-d33e360d4cb4/01-home.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/28/8c/9c/288c9c28-3dfd-4bee-7ddf-84d1dcc70ef7/02-simulate.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/7c/9f/0e/7c9f0e70-907a-efe8-fea1-f8ec869f611b/03-vault.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/85/64/3e/85643e74-25a1-9765-eb42-7271aa04284a/04-backtest.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/52/07/54/520754f2-bfdf-7ab7-ba40-95fcc47bc7f0/05-explore.png/626x0w.webp"],"d":"마이포폴은 적립식 투자를 \"미리 설계\"해 보는 시뮬레이터입니다. 매달 얼마를, 몇 년 동안, 어떤 계좌로 모으면 결과가 어떻게 달라지는지 세후 기준으로 가정해 보여줍니다. (실제 거래·중개 기능은 없습니다.)"},"spill":{"v":"1.0.7","r":"2026.06","u":"2026.08","g":"생산성","iap":[0,0],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b5/2a/59/b52a59f2-6193-ac43-73ec-46332c3da9fe/1_chat-ko.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c2/4f/33/c24f3390-64ab-4faa-8295-7634c4f573a7/2_tasks-ko.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/10/0e/de/100ede59-392d-3fcb-2f3d-7838cbb242a2/3_ideas-ko.png/626x0w.webp"],"d":"Spill은 가장 빠르게 기억하는 방법입니다. 한 줄 쓰면, 있어야 할 곳에 자동으로 들어갑니다. 대부분의 미리알림 앱은 날짜·시간·목록을 일일이 눌러야 합니다. Spill은 평범한 문장을 읽고 알아서 정리합니다."},"one-to-fifty":{"v":"1.0.8","r":"2026.06","u":"2026.08","g":"게임","iap":[1,1],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5d/98/d0/5d98d047-2cfa-1f4f-e546-94f5666d0b26/1_loop.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f3/4b/35/f34b355a-117f-1adb-9136-facdf51c04fc/2_compete.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/fc/40/7c/fc407ce8-1c2f-7e53-6b0e-8d44be449216/3_win.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/36/44/10/36441035-69d3-46e1-7353-9cfcbcd728d3/4_modes.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/59/84/84/59848459-a0f9-d9ed-2eb5-94ddba8c152d/5_themes.png/626x0w.webp"],"d":"1부터 50까지, 얼마나 빨리 탭할 수 있나요? 다음 숫자를 찾아 누르고, 시간을 줄이고, 그다음엔 전 세계와 겨루세요. 1 to 50: 숫자 순서 게임은 단 하나의 중독적인 루프로 만들어진 스피드 게임입니다. 격자에서 다음 수를 찾아 손가락이 움직이는 만큼 빠르게 터치하세요. 배우는 데는 몇 초면 충분하지만, 마스터하는 데는 끝이 없습니다."},"road-to-treble":{"v":"3.6.5","r":"2026.07","u":"2026.09","g":"게임","iap":[26,23],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a7/da/f6/a7daf622-ddd3-b266-1868-3a230bece00f/6.7_01_manager.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/36/c7/c9/36c7c903-43aa-323f-aeca-c1c66db4c5fa/6.7_02_matchday.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/cc/bc/9a/ccbc9a56-4d96-fa46-e839-2548a0960e3d/6.7_03_weekdraft.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/26/d7/14/26d71480-e869-556b-aaaf-d9aa52eb2b30/6.7_04_hook.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ce/a4/9d/cea49d2a-da6d-c231-e7ad-8eee2d3b48e3/6.7_05_trophies.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/bc/21/cd/bc21cd82-f071-f3d4-8e0c-649e537d454f/6.7_06_album.png/626x0w.webp"],"d":"능력치를 가린 채 11개 포지션을 한 명씩 채우는 축구 드래프트 게임입니다. 화려한 이름값에 속을지 숨은 보석을 알아볼지는 당신의 축구 지식에 달렸습니다. 베스트11을 확정하고 시즌을 돌려 트레블에 도전하세요."},"animal-pop":{"v":"1.4.1","r":"2026.07","u":"2026.07","g":"게임","iap":[1,1],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8a/3a/58/8a3a5822-2563-b10c-ef3a-47b9e75240a6/AnimalPop_ko_1.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/de/f9/8f/def98fa4-cbdd-fb57-7c47-2b1b6199074b/AnimalPop_ko_2.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/72/9d/85/729d8560-71bd-d84d-1812-b8ff2374d936/AnimalPop_ko_3.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/eb/88/22/eb8822de-14ec-04ec-8c60-65ea190a098d/AnimalPop_ko_4.png/626x0w.webp"],"d":"같은 동물 둘을 톡! 합치면 더 큰 동물로 자라나요. 병아리에서 시작해 사자까지, 귀여운 동물을 합쳐 키우는 힐링 합치기 퍼즐! 떨어뜨리고, 합치고, 점수를 쌓는 단순한 규칙."},"sumdash":{"v":"1.2.4","r":"2026.07","u":"2026.08","g":"게임","iap":[1,1],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/9e/3b/90/9e3b905d-a5c5-c693-6a9f-1241f2b5ff48/ios_65_1_play.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c8/58/dd/c858dd78-2097-9368-949e-3e72dd115991/ios_65_2_rank.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d9/ea/f0/d9eaf0e1-7af4-cbec-c777-76ab5371c765/ios_65_3_modes.png/626x0w.webp"],"d":"카운트다운이 0이 되기 전에 정답을 눌러라. SumDash는 사칙연산을 아케이드 게임으로 바꾼 빠른 암산 게임입니다. 정답을 맞힐 때마다 시간이 충전되고, 속도는 조금씩 더 빨라집니다. 시작은 쉽습니다. 하지만 끝까지 쉬웠던 적은 없습니다."},"blind-duel":{"v":"2.1.3","r":"2026.07","u":"2026.09","g":"게임","iap":[5,5],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ab/44/4d/ab444dfb-9c1f-35a5-fa59-384526b2b1e9/1_hero.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b7/88/e2/b788e29c-a630-e9b2-9378-22410a2d0f83/2_rule.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f1/3d/3f/f13d3f38-1a7f-7b34-54fa-7b875a8dde76/3_league.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/81/42/7e/81427e3b-7174-c6d6-1e23-755a934ca079/4_style.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/17/68/23/17682333-abe4-05ea-cd33-ef509cfad796/5_duel.png/626x0w.webp"],"d":"상대 카드는 보이는데, 내 카드만 안 보인다. 한 장으로 벌이는 블러핑 심리전, 블라인드 듀얼. 읽고, 속여서 라운드를 가져가세요. 승부를 결정하는 단 한 장이 나만 안 보입니다."},"admeter":{"v":"1.0.1","r":"2026.07","u":"2026.08","g":"금융","iap":[1,1],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c4/46/fa/c446faca-346c-23c9-77ff-f273d5c59f0b/1_glance.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1e/c4/6c/1ec46cd7-6b37-3ff7-c2f4-870f6e5958f9/2_calendar.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f0/38/ea/f038eafe-a840-a90a-bb64-4bfd0c0e0865/3_sources.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/66/a4/c5/66a4c514-a445-489c-f153-29dfc81a8b1b/4_detail.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/68/8f/11/688f11c3-e70f-8310-e444-00801a6b3d68/5_theme.png/626x0w.webp"],"d":"내 광고는 24시간 돈을 법니다. AdMeter는 그 돈을 한 화면에 모아 보여줍니다. 구글 계정으로 로그인하면 애드몹(AdMob)과 애드센스(AdSense) 수익을 함께 볼 수 있습니다 — 스프레드시트도, 브라우저 탭도, 콘솔 뒤지기도 필요 없습니다."},"kupanote":{"v":"1.0.7","r":"2026.08","u":"2026.09","g":"비즈니스","iap":[0,0],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c3/39/9f/c3399f78-cec0-1b55-3a55-7419a5d725f5/1_home.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d9/ef/47/d9ef475d-2fba-9467-d404-cbf1eb54a0fc/2_calendar.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f4/1d/ce/f41dce39-c1fe-d63d-f93e-fbb9daa53b9f/3_products.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f0/8f/ce/f08fceaa-b059-12ca-8e12-68227689e1aa/4_trust.png/626x0w.webp"],"d":"쿠팡 파트너스 실적을 매일 오후 3시에 받아 채워 두고 알림 한 통을 보냅니다. 사이트에 들어가 새로고침할 이유를 없앤 앱입니다.","sub":"구독 1종 · 월 990원"},"banpick":{"v":"1.0","r":"2026.08","u":"2026.08","g":"게임","iap":[7,7],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/23/07/d3/2307d3d6-2a95-3373-8f45-3d25c7929028/1_draft_69.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ff/15/8c/ff158c1f-e275-63d6-20a7-6296267456e2/2_hub_69.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/48/79/e8/4879e8ec-39fc-61d3-75b0-b0748e218a08/3_awards_69.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/42/5c/94/425c9408-cf85-a7e1-8e05-f8802d02ae5a/4_tier_69.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a2/70/85/a270851e-7915-f609-c82d-3cfbff155321/5_sheet_69.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/fc/f1/bd/fcf1bd76-f9af-bb60-5a0d-04f3d68a70ef/6_tactic_69.png/626x0w.webp"],"d":"당신은 신생 e스포츠 게임단의 감독입니다. 2부 리그에서 시작해 밴픽을 읽고, 선수를 키우고, 리그 정상과 월드 챔피언십까지 올라가세요."},"malang-brain":{"v":"1.0.0","r":"2026.08","u":"2026.08","g":"게임","iap":[0,0],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a9/a8/f7/a9a8f7c8-aae7-b6f6-96be-0b89ccd488b0/1_games.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a3/d8/54/a3d85418-0846-7d8b-5c2f-d527234c4004/2_percentile.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1f/1d/fc/1f1dfc8a-8f10-d7cc-d0bf-25aa0fc76196/3_rank.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/90/24/f3/9024f3f4-5e92-5d19-0b0f-f1f46bb66fa3/4_growth.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8e/2b/0b/8e2b0bf8-c7c5-e57c-69a4-61410a3044bc/5_play.png/626x0w.webp"],"d":"말랑한 머리, 일곱 가지로 단련하세요. 말랑브레인은 7가지 두뇌게임을 아기자기한 페이퍼 월드에 담았어요. 한 판은 1분 이내, 모든 점수는 전 세계 백분위로, 전부 합쳐 나만의 말랑지수가 됩니다.","sub":"구독 2종 · 월 · 연"},"twelve-chess":{"v":"1.0.3","r":"2026.09","u":"2026.09","g":"게임","iap":[1,1],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b1/df/20/b1df209c-5bd3-afca-f1dd-dd9f3662e243/1_home.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1b/9f/8b/1b9f8bda-f71d-3686-9a37-9b0adbfac7d8/2_select.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f6/d8/ab/f6d8abc6-2d04-3654-0c15-6bc322562c53/3_midgame.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8e/ea/64/8eea6467-3ffe-b40f-a8e9-2e3d56401bf9/4_sheet.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/62/02/15/62021580-835c-c665-24b3-e87ad7040954/5_rank.png/626x0w.webp"],"d":"체스를 열두 칸으로 줄였습니다. 12 Chess는 3x4 판에서 벌어지는 3분짜리 수싸움입니다. 첫 수부터 모든 기물이 서로 사정권 안에 있어서, 외울 오프닝도 없고 늘어지는 중반도 없습니다. 1수부터 그냥 싸움입니다."},"jangbogo":{"v":"1.0.0","r":"2026.06","u":"2026.06","g":"쇼핑","iap":[0,0],"s":["https://play-lh.googleusercontent.com/S6QtrFbnUIIFWjnYSF5NQzeCuBnJ496EbwXfPToilL-HQh19xku479KNfjJLPRXc-Tt-IWvozCrnPkETgGRYRjs=w600","https://play-lh.googleusercontent.com/rViQcEDtikbwhyNLnEoRwGP2m6ch0whqGIXKsS6aki5wp438Tp_zxOHUBhU5OfaSydnKofxvwMlaKrnv36cq5Q=w600","https://play-lh.googleusercontent.com/O4Q8WRKJu5jpcu7-vBA35Ug9hFvSax7dK6iXgSgWYUFNSK9ecj71pNug9Uyy9wMlxw-HSfutvhiGBmYT3viqfQ=w600","https://play-lh.googleusercontent.com/wcT0T_20S3r6ZIZP-823zOPwHv4dY7imqobKb6ElZSun2KkJOujjkyEZDXFDgowDPQ0_thJymRy8c-12RCs9=w600","https://play-lh.googleusercontent.com/Uckhl3xX7nSrBF6SLMk6B1-S8WfeEnvSWgTtlnXMb0LZLK1H2L2CsTOZqwAan4aK_UFN5NquOTnMSx_1n2y_=w600"],"d":"마트와 온라인에 흩어진 생필품 가격을 한 번에 비교해, 지금 어디가 제일 싼지 알려 줍니다."},"soccer-career":{"v":"1.2.0","r":"2026.09","u":"2026.09","g":"게임","iap":[0,0],"s":["https://play-lh.googleusercontent.com/sUm8UNiyEQQodc2Ec32u2x-0khND1XW82ebAofSyNjWQCwF36qE_dCgk27tVytCFy-QlYgtevfA2Pw4Cwd4RLw=w600","https://play-lh.googleusercontent.com/jBXv1mW1ktZiRR3bJq4UsbOY7rmFenAaLjyEUMjKYVAP3ci8BjdZn04v6qwU486Sk2hTTqGVXeU8lxvvSzT-PQ=w600","https://play-lh.googleusercontent.com/Mlk6tgEkQyR8d5EP2iQtQIlabucGlScSwKB_EoGbEoVU2B-4mfAwPs4dbr9F-ax-66_ByF86MXGlgW0rk_EKJgk=w600","https://play-lh.googleusercontent.com/DNd9O5NJUmFza2yhoWqsRFTIP2j64EUpCD9nqECHcCbl8pfT7zLq66Hd9_s-mDlJqpRmUG0jnJycbAh5ipAh=w600","https://play-lh.googleusercontent.com/aGOhEPDzYVEFjx_IM9gtlx78tbi1-EiaE8soUUhG6-TQtSEaAHfV5uPkabYRkoEm038YJjggFJ1LD2YckPfZiA=w600","https://play-lh.googleusercontent.com/COb4dsS-a2bTs7ZUtX8Cqa4ukbH7J1_-ilYbpZ4q6dovCrH5ZeoqYZK0oPd-YSrDh4OBTV5UvGiI-w6LGdBUUg=w600"],"d":"유소년부터 은퇴까지, 축구선수 한 명의 커리어를 선택으로 굴려 보는 시뮬레이션입니다."}};
+      Object.assign(APPS, {"road-to-crown":{"v":"1.0.2","r":"2026.09","u":"2026.09","g":"게임","iap":[0,0],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/14/cc/bc/14ccbcdc-2beb-962f-66ce-8645f4ff4d53/01_cover.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/23/bf/0d/23bf0df3-9e33-6f48-7024-d65860bd8fdc/02_draft.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d4/a0/68/d4a068b1-4839-e78a-28a9-23f8b6d983f3/03_slate.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/40/68/36/406836e4-d3f1-2d6f-ae44-6f216631e302/04_album.png/626x0w.webp"],"d":"야구 선수를 드래프트하고 구단을 운영하는 야구 드래프트 게임입니다."},"rimrise":{"v":"2.0.0","r":"2026.10","u":"2026.10","g":"게임","iap":[0,0],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/45/a3/26/45a3265c-2e7b-7b6b-dd84-de9277b787e3/ko_1month.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/de/37/4b/de374bb6-549f-b098-0675-73556abcb1ce/ko_2event.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a4/2a/39/a42a392a-5d31-bdf2-dd30-f39e9e1a5621/ko_3ceremony.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c5/de/06/c5de066a-c1af-291f-f2dd-65e2b8201003/ko_4playoffs.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/80/04/f5/8004f548-f2fa-ba45-3a91-510896bf0b9c/ko_5growth.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b2/76/0b/b2760b0e-1057-73de-24e6-c4b1257f5934/ko_6plan.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d4/90/8a/d4908aaf-e717-9392-2042-f0efb6760018/ko_7career.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/bf/04/0f/bf040f63-1a5e-b3cb-2737-8af202d2e0dd/ko_8slots.png/626x0w.webp"],"d":"농구선수 한 명의 커리어를 성장시키는 시뮬레이션입니다."},"soccer-career":{"v":"2.2.0","r":"2026.09","u":"2026.10","g":"게임","iap":[0,0],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/2d/73/f1/2d73f1df-26c1-46d6-23ed-2807ff92f8c4/ko_1month.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/2e/af/f4/2eaff445-3a6f-c93d-fc59-1d57f05c5147/ko_2event.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/10/89/25/10892517-d996-bab5-64a0-933788aad0e0/ko_3offer.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/24/ba/e9/24bae90e-bbc0-3b38-d9cd-13ecebd69cd6/ko_4plan.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/87/5a/2c/875a2cb5-5abb-de66-a8dc-5e114e63bef6/ko_5result.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/74/a5/d4/74a5d499-151e-f301-6840-e4446e7c7bba/ko_6outcome.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d1/d1/c4/d1d1c4d5-90ab-9db1-cc66-738e4c1c1b27/ko_7award.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/08/fc/a5/08fca516-a9d4-532c-739d-19db7df35b61/ko_8board.png/626x0w.webp"],"d":"유소년부터 은퇴까지, 축구선수 한 명의 커리어를 선택으로 굴려 보는 시뮬레이션입니다."},"sack-race":{"v":"1.0.0","r":"2026.09","u":"2026.09","g":"게임","iap":[0,0],"s":["./assets/sack-race-screen.png"],"d":"전술과 이적시장을 관리하고 구단의 평가에 따라 시즌을 이어가는 축구 감독 게임입니다."}});
       var sheet = document.getElementById("sheet");
       var lastFocus = null;
 
