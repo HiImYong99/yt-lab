@@ -1,23 +1,214 @@
 [
   {
-    "id": "2026-09-19-team",
-    "date": "2026-09-19",
-    "title": "전생 선수단이 열렸습니다",
-    "body": "은퇴시킨 선수들로 11명을 세워 친선경기와 리그 시즌을 치를 수 있습니다. 진열장에 이름이 하나 늘 때마다 유스 한 명이 밀려납니다. 리그 시즌은 커리어를 하나 끝낼 때마다 하나씩 열립니다.",
-    "important": true
+    "id": "2026-10-05-live-2-2-1",
+    "date": "2026-10-05",
+    "title": "2.2.1 업데이트 안내",
+    "body": "- 공지사항이 앱에서 선택한 언어로 표시됩니다.\n- 광고 동의 처리를 개선하고, 필요한 경우 설정에서 광고 개인정보 선택을 변경할 수 있게 했습니다.",
+    "important": true,
+    "translations": {
+      "ko": {
+        "title": "2.2.1 업데이트 안내",
+        "body": "- 공지사항이 앱에서 선택한 언어로 표시됩니다.\n- 광고 동의 처리를 개선하고, 필요한 경우 설정에서 광고 개인정보 선택을 변경할 수 있게 했습니다."
+      },
+      "en": {
+        "title": "2.2.1 update",
+        "body": "- Notices now follow the language selected in the app.\n- Improved ad consent handling and added ad privacy choices in Settings when required."
+      },
+      "ja": {
+        "title": "2.2.1アップデート",
+        "body": "- お知らせがアプリで選択した言語で表示されるようになりました。\n- 広告の同意処理を改善し、必要な場合は設定から広告のプライバシー設定を変更できます。"
+      },
+      "zh": {
+        "title": "2.2.1 更新",
+        "body": "- 公告现在会使用应用中选择的语言显示。\n- 改进了广告同意流程，并在需要时提供设置中的广告隐私选项。"
+      },
+      "es": {
+        "title": "Actualización 2.2.1",
+        "body": "- Los avisos ahora se muestran en el idioma seleccionado en la aplicación.\n- Mejoramos la gestión del consentimiento publicitario y añadimos opciones de privacidad de anuncios en Ajustes cuando son necesarias."
+      },
+      "pt": {
+        "title": "Atualização 2.2.1",
+        "body": "- Os avisos agora seguem o idioma selecionado no aplicativo.\n- Melhoramos o consentimento de anúncios e adicionamos opções de privacidade de anúncios nas Configurações quando necessário."
+      },
+      "fr": {
+        "title": "Mise à jour 2.2.1",
+        "body": "- Les annonces du jeu suivent désormais la langue choisie dans l’application.\n- Amélioration du consentement publicitaire et ajout des choix de confidentialité des publicités dans les paramètres lorsque nécessaire."
+      },
+      "de": {
+        "title": "Update 2.2.1",
+        "body": "- Mitteilungen erscheinen jetzt in der in der App gewählten Sprache.\n- Verbesserte Verarbeitung der Werbeeinwilligung und bei Bedarf zusätzliche Datenschutzeinstellungen für Werbung in den Einstellungen."
+      },
+      "it": {
+        "title": "Aggiornamento 2.2.1",
+        "body": "- Gli avvisi ora seguono la lingua selezionata nell’app.\n- Migliorata la gestione del consenso pubblicitario e aggiunte opzioni di privacy degli annunci nelle Impostazioni quando necessario."
+      },
+      "id": {
+        "title": "Pembaruan 2.2.1",
+        "body": "- Pengumuman kini mengikuti bahasa yang dipilih di aplikasi.\n- Penanganan persetujuan iklan ditingkatkan dan pilihan privasi iklan ditambahkan di Pengaturan jika diperlukan."
+      },
+      "tr": {
+        "title": "2.2.1 güncellemesi",
+        "body": "- Duyurular artık uygulamada seçilen dilde gösterilir.\n- Reklam onayı işlemleri iyileştirildi ve gerektiğinde Ayarlar bölümüne reklam gizliliği seçenekleri eklendi."
+      }
+    }
+  },
+  {
+    "id": "2026-10-05-live-retirement-record",
+    "date": "2026-10-05",
+    "title": "전생 시스템 삭제와 은퇴 기록 안내",
+    "body": "전생 시스템 삭제. 상속, 기억, 전생 선수단이 없어졌다. 은퇴한 선수는 은퇴 기록에 그대로 남는다(10명, 후원 팩 50명).",
+    "important": true,
+    "translations": {
+      "ko": {
+        "title": "전생 시스템 삭제와 은퇴 기록 안내",
+        "body": "전생 시스템 삭제. 상속, 기억, 전생 선수단이 없어졌다. 은퇴한 선수는 은퇴 기록에 그대로 남는다(10명, 후원 팩 50명)."
+      },
+      "en": {
+        "title": "Past lives removed; retirement records remain",
+        "body": "Past lives are removed: inheritance, memories and the past-life XI are gone. Retired players stay in the retirement record (10, or 50 with the supporter pack)."
+      },
+      "ja": {
+        "title": "前世システムの廃止と引退記録",
+        "body": "前世システムを廃止しました。継承、記憶、前世のイレブンはなくなります。引退した選手は引退の記録にそのまま残ります(10人、サポーターパックで50人)。"
+      },
+      "zh": {
+        "title": "移除前世系统,保留退役记录",
+        "body": "前世系统已移除:继承、记忆和前世首发十一人都不再有。已退役的球员仍保留在退役记录中(10 名,支持者包 50 名)。"
+      },
+      "es": {
+        "title": "Sin vidas pasadas; se conservan los registros",
+        "body": "Se elimina el sistema de vidas pasadas: herencia, recuerdos y el once de vidas pasadas. Los jugadores retirados siguen en el registro de retiradas (10, o 50 con el pack de socio)."
+      },
+      "pt": {
+        "title": "Sem vidas passadas; os registros permanecem",
+        "body": "O sistema de vidas passadas foi removido: herança, memórias e o time de vidas passadas acabaram. Os jogadores aposentados continuam no registro de aposentadorias (10, ou 50 com o pacote de apoio)."
+      },
+      "fr": {
+        "title": "Fin des vies passées, archives conservées",
+        "body": "Les vies passées disparaissent : héritage, souvenirs et onze des vies passées. Les joueurs retraités restent dans les archives des carrières (10, ou 50 avec le pack supporter)."
+      },
+      "de": {
+        "title": "Frühere Leben entfallen, Karrierearchiv bleibt",
+        "body": "Frühere Leben entfallen: Erbe, Erinnerungen und die Elf der früheren Leben sind weg. Zurückgetretene Spieler bleiben im Karrierearchiv (10, mit dem Supporter-Paket 50)."
+      },
+      "it": {
+        "title": "Vite passate rimosse, archivio conservato",
+        "body": "Il sistema delle vite passate è stato tolto: eredità, ricordi e l'undici delle vite passate non ci sono più. I giocatori ritirati restano nell'archivio carriere (10, o 50 con il pacchetto sostenitore)."
+      },
+      "id": {
+        "title": "Kehidupan lampau dihapus, catatan pensiun tetap ada",
+        "body": "Sistem kehidupan lampau dihapus: warisan, kenangan, dan susunan pemain kehidupan lampau hilang. Pemain yang sudah pensiun tetap ada di catatan pensiun (10, atau 50 dengan paket pendukung)."
+      },
+      "tr": {
+        "title": "Geçmiş yaşamlar kaldırıldı, emeklilik kayıtları duruyor",
+        "body": "Geçmiş yaşam sistemi kaldırıldı: miras, anılar ve geçmiş yaşamların ilk 11'i yok. Emekli oyuncular emeklilik kayıtlarında kalır (10, destekçi paketiyle 50)."
+      }
+    }
   },
   {
     "id": "2026-09-19-save",
     "date": "2026-09-19",
     "title": "진행 중인 커리어가 저장됩니다",
     "body": "앱을 닫아도 플레이 중이던 생이 남습니다. 첫 화면에서 이어할 수 있습니다.",
-    "important": false
+    "important": false,
+    "translations": {
+      "ko": {
+        "title": "진행 중인 커리어가 저장됩니다",
+        "body": "앱을 닫아도 플레이 중이던 생이 남습니다. 첫 화면에서 이어할 수 있습니다."
+      },
+      "en": {
+        "title": "Your current career is saved",
+        "body": "Your ongoing career is kept when you close the app. You can continue from the home screen."
+      },
+      "ja": {
+        "title": "進行中のキャリアが保存されます",
+        "body": "アプリを閉じても進行中のキャリアは保存されます。ホーム画面から再開できます。"
+      },
+      "zh": {
+        "title": "进行中的职业生涯会自动保存",
+        "body": "关闭应用后，进行中的职业生涯仍会保留。你可以从主界面继续。"
+      },
+      "es": {
+        "title": "Tu carrera actual se guarda",
+        "body": "Tu carrera en curso se conserva al cerrar la aplicación. Puedes continuar desde la pantalla de inicio."
+      },
+      "pt": {
+        "title": "Sua carreira atual é salva",
+        "body": "Sua carreira em andamento é mantida ao fechar o aplicativo. Você pode continuar pela tela inicial."
+      },
+      "fr": {
+        "title": "Votre carrière en cours est sauvegardée",
+        "body": "Votre carrière en cours est conservée lorsque vous fermez l’application. Vous pouvez la reprendre depuis l’écran d’accueil."
+      },
+      "de": {
+        "title": "Deine laufende Karriere wird gespeichert",
+        "body": "Deine laufende Karriere bleibt beim Schließen der App erhalten. Du kannst sie auf dem Startbildschirm fortsetzen."
+      },
+      "it": {
+        "title": "La tua carriera in corso viene salvata",
+        "body": "La carriera in corso viene conservata quando chiudi l’app. Puoi riprenderla dalla schermata iniziale."
+      },
+      "id": {
+        "title": "Karier yang sedang berjalan disimpan",
+        "body": "Karier yang sedang kamu mainkan tetap tersimpan saat aplikasi ditutup. Kamu bisa melanjutkannya dari layar utama."
+      },
+      "tr": {
+        "title": "Devam eden kariyerin kaydedilir",
+        "body": "Uygulamayı kapattığında devam eden kariyerin korunur. Ana ekrandan devam edebilirsin."
+      }
+    }
   },
   {
     "id": "2026-09-19-create",
     "date": "2026-09-19",
     "title": "선수를 고르는 동안 능력치가 보입니다",
     "body": "국적·포지션·유형을 고르는 동안 위 카드가 실제 시작 능력치와 신체, 감독 신뢰를 그대로 보여줍니다.",
-    "important": false
+    "important": false,
+    "translations": {
+      "ko": {
+        "title": "선수를 고르는 동안 능력치가 보입니다",
+        "body": "국적·포지션·유형을 고르는 동안 위 카드가 실제 시작 능력치와 신체, 감독 신뢰를 그대로 보여줍니다."
+      },
+      "en": {
+        "title": "See your stats while choosing a player",
+        "body": "As you choose a nationality, position and playing style, the card above shows your actual starting stats, physical attributes and manager trust."
+      },
+      "ja": {
+        "title": "選手を選びながら能力を確認できます",
+        "body": "国籍・ポジション・プレースタイルを選ぶと、上のカードに実際の初期能力、身体能力、監督の信頼が表示されます。"
+      },
+      "zh": {
+        "title": "选择球员时即可查看能力值",
+        "body": "选择国籍、位置和踢球风格时，上方卡片会显示实际的初始能力值、身体属性和教练信任度。"
+      },
+      "es": {
+        "title": "Consulta los atributos al elegir un jugador",
+        "body": "Mientras eliges la nacionalidad, la posición y el estilo de juego, la tarjeta superior muestra los atributos iniciales reales, las características físicas y la confianza del entrenador."
+      },
+      "pt": {
+        "title": "Veja os atributos enquanto escolhe um jogador",
+        "body": "Ao escolher a nacionalidade, a posição e o estilo de jogo, o cartão acima mostra os atributos iniciais reais, as características físicas e a confiança do treinador."
+      },
+      "fr": {
+        "title": "Consultez les attributs pendant le choix du joueur",
+        "body": "Lorsque vous choisissez la nationalité, le poste et le style de jeu, la carte du haut affiche les véritables attributs de départ, les caractéristiques physiques et la confiance de l’entraîneur."
+      },
+      "de": {
+        "title": "Spielerwerte schon bei der Auswahl ansehen",
+        "body": "Während du Nationalität, Position und Spielstil auswählst, zeigt die Karte oben die tatsächlichen Startwerte, körperlichen Eigenschaften und das Vertrauen des Trainers."
+      },
+      "it": {
+        "title": "Visualizza gli attributi mentre scegli un giocatore",
+        "body": "Quando scegli nazionalità, posizione e stile di gioco, la scheda in alto mostra gli attributi iniziali effettivi, le caratteristiche fisiche e la fiducia dell’allenatore."
+      },
+      "id": {
+        "title": "Lihat atribut saat memilih pemain",
+        "body": "Saat memilih kewarganegaraan, posisi, dan gaya bermain, kartu di atas menampilkan atribut awal yang sebenarnya, atribut fisik, dan kepercayaan pelatih."
+      },
+      "tr": {
+        "title": "Oyuncu seçerken özelliklerini görebilirsin",
+        "body": "Milliyet, pozisyon ve oyun tarzı seçerken üstteki kart gerçek başlangıç özelliklerini, fiziksel özellikleri ve teknik direktör güvenini gösterir."
+      }
+    }
   }
 ]
