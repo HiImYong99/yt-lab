@@ -169,6 +169,96 @@
     }
     .meta a:hover { color: var(--accent); border-color: var(--accent); }
 
+    /* ---------- hero pipeline ---------- */
+    .hero { display: grid; row-gap: clamp(30px, 5vh, 44px); }
+    @media (min-width: 1080px) {
+      .hero { grid-template-columns: minmax(0, 1fr) 440px; column-gap: 40px; align-items: end; }
+    }
+    .pipe { max-width: 560px; background: var(--card); border: 1px solid var(--line2); border-radius: 14px; overflow: hidden; }
+    .pipe-head {
+      display: flex; align-items: center; gap: 9px; padding: 11px 14px; border-bottom: 1px solid var(--line);
+      font-family: var(--mono); font-size: 11px; color: var(--muted); white-space: nowrap;
+    }
+    .pipe-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); flex: none; }
+    html.js .pipe.run .pipe-dot { animation: blink 1s steps(2, jump-none) infinite; }
+    @keyframes blink { to { opacity: .2; } }
+    .pipe-name { color: var(--fg); font-weight: 600; }
+    .pipe-file { margin-left: auto; color: var(--soft); overflow: hidden; text-overflow: ellipsis; }
+    .pipe-stage { position: relative; aspect-ratio: 16 / 9; background: var(--img-bg); overflow: hidden; }
+    .sc { position: absolute; inset: 0; opacity: 0; visibility: hidden; transition: opacity .35s ease, visibility 0s linear .35s; }
+    .sc.on { opacity: 1; visibility: visible; transition: opacity .35s ease; }
+    @keyframes grow { from { transform: scaleX(0); } }
+    @keyframes amp { from { transform: scaleY(.06); opacity: .25; } }
+    @keyframes rise { from { opacity: 0; transform: translateY(10px); } }
+    @keyframes drop { from { opacity: 0; transform: translateY(-160%); } }
+    @keyframes tile { from { opacity: 0; transform: scale(.9); } }
+    @keyframes head { from { transform: translateX(0); } to { transform: translateX(var(--run)); } }
+    @keyframes settle { from { opacity: 0; transform: scale(1.06); } }
+
+    /* script and metadata: lines being written */
+    .doc { position: absolute; inset: 0; padding: 0 8%; display: flex; flex-direction: column; justify-content: center; gap: 11px; }
+    .ln { display: flex; align-items: center; gap: 10px; font-family: var(--mono); font-size: 10.5px; color: var(--muted); }
+    .ln > span { width: 1.5em; flex: none; }
+    .ln b { display: block; width: var(--w); height: 7px; border-radius: 4px; background: var(--line2); transform-origin: left; }
+    .ln.t b { height: 10px; background: var(--accent); }
+    .ln.k > span { width: 7.5em; color: var(--soft); }
+    .ln.k > .chip { width: auto; display: flex; gap: 5px; }
+    .ln .chip b { width: 34px; }
+    html.js .sc.play .ln b { animation: grow .55s cubic-bezier(.3,.7,.3,1) both; animation-delay: var(--d); }
+
+    /* TTS and sync: the waveform, then captions locked to it */
+    .wave { position: absolute; left: 8%; right: 8%; top: 20%; bottom: 34%; display: flex; align-items: center; gap: 2px; }
+    .wave i { flex: 1; height: var(--h); border-radius: 2px; background: var(--accent); }
+    html.js .sc-tts.play .wave i { animation: amp .45s cubic-bezier(.3,.7,.3,1) both; animation-delay: var(--d); }
+    .sc-sync .wave i { background: var(--line2); }
+    .playhead { position: absolute; left: 8%; top: 14%; bottom: 28%; width: 2px; background: var(--fg); --run: 0px; }
+    html.js .sc-tts.play .playhead { animation: head 1.4s linear both; }
+    .caps { position: absolute; left: 8%; right: 8%; bottom: 14%; height: 11%; }
+    .caps i { position: absolute; top: 0; bottom: 0; left: var(--l); width: var(--w); border-radius: 3px; background: var(--soft); }
+    html.js .sc-sync.play .caps i { animation: drop .4s cubic-bezier(.2,1.3,.4,1) both; animation-delay: var(--d); }
+    .sc-sync .tick { position: absolute; top: 20%; bottom: 25%; width: 1px; left: var(--l); background: var(--accent); opacity: .7; }
+    html.js .sc-sync.play .tick { animation: rise .3s ease both; animation-delay: var(--d); }
+
+    /* render: the thumbnail assembled tile by tile */
+    .frames { position: absolute; left: 8%; right: 8%; top: 12%; bottom: 28%; display: grid; grid-template: repeat(2, 1fr) / repeat(4, 1fr); gap: 3px; }
+    .frames i { border-radius: 3px; background: url(./assets/youtube-case.png) no-repeat; background-size: 400% 200%; background-position: var(--p); }
+    html.js .sc-render.play .frames i { animation: tile .3s ease both; animation-delay: var(--d); }
+    .rbar { position: absolute; left: 8%; right: 8%; bottom: 15%; height: 4px; border-radius: 2px; background: var(--line); overflow: hidden; }
+    .rbar b { display: block; height: 100%; background: var(--accent); transform-origin: left; }
+    html.js .sc-render.play .rbar b { animation: grow 1.3s linear both; }
+
+    .sc img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    html.js .sc-thumb.play img { animation: settle .6s cubic-bezier(.2,.8,.2,1) both; }
+
+    /* upload: what the viewer finally gets */
+    .up { position: absolute; inset: 0; display: grid; grid-template-columns: 54% 1fr; gap: 6%; align-items: center; padding: 0 7%; }
+    .up img { position: static; width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 6px; }
+    .up-info { display: flex; flex-direction: column; gap: 3px; font-size: 11.5px; color: var(--muted); }
+    .up-ok { display: flex; align-items: center; gap: 6px; font-family: var(--mono); font-size: 10.5px; color: var(--accent); margin-bottom: 6px; }
+    .up-ok svg { width: 14px; height: 14px; flex: none; }
+    .up-info b { font-size: clamp(20px, 2.4vw, 26px); color: var(--fg); letter-spacing: -.04em; line-height: 1.1; }
+    html.js .sc-up.play .up > * { animation: rise .5s cubic-bezier(.2,.8,.2,1) both; }
+    html.js .sc-up.play .up-info { animation-delay: .15s; }
+
+    .pipe-steps { list-style: none; position: relative; display: grid; grid-template-columns: repeat(7, 1fr); padding: 12px 8px 13px; border-top: 1px solid var(--line); }
+    .pipe-steps li {
+      position: relative; z-index: 1; padding-top: 15px; text-align: center; white-space: nowrap;
+      font-family: var(--mono); font-size: 10.5px; color: var(--muted); transition: color .3s;
+    }
+    .pipe-steps li::before {
+      content: ""; position: absolute; top: 0; left: 50%; width: 9px; height: 9px; margin-left: -4.5px; border-radius: 50%;
+      box-sizing: border-box; background: var(--card); border: 1px solid var(--line2); transition: background .3s, border-color .3s;
+    }
+    .pipe-steps li.done::before { background: var(--accent); border-color: var(--accent); }
+    .pipe-steps li.on { color: var(--fg); }
+    .pipe-steps li.on::before { border: 2px solid var(--accent); }
+    .pipe-steps::before, .pipe-steps::after {
+      content: ""; position: absolute; top: 16px; left: calc(8px + (100% - 16px) / 14); right: calc(8px + (100% - 16px) / 14);
+      height: 1px; background: var(--line2);
+    }
+    .pipe-steps::after { background: var(--accent); transform-origin: left; transform: scaleX(var(--prog, 1)); transition: transform .45s cubic-bezier(.3,.7,.3,1); }
+    @media (max-width: 560px) { .pipe-steps li { font-size: 9.5px; letter-spacing: -.02em; } }
+
     /* ---------- marquee ---------- */
     .marquee { position: relative; padding: clamp(16px, 3vh, 26px) 0; border-block: 1px solid var(--line); overflow: hidden; }
     .marquee:empty { display: none; }
@@ -265,17 +355,24 @@
     .ssub { font-size: 14.5px; color: var(--muted); margin-top: 10px; max-width: 52ch; }
 
     /* ---------- timeline ---------- */
-    .tl { border-top: 1px solid var(--line); }
+    /* one icon per product, stacked on the month it first shipped */
+    .tl { position: relative; display: grid; grid-template-columns: repeat(var(--n, 8), minmax(0, 1fr)); gap: 6px; align-items: end; }
     .tl:empty { display: none; }
-    .tlrow {
-      display: grid; grid-template-columns: 62px 1fr auto; align-items: center; gap: 14px;
-      padding: 13px 0; border-bottom: 1px solid var(--line);
+    .tlcol { display: flex; flex-direction: column-reverse; align-items: center; gap: 6px; }
+    .tlcol img { width: clamp(24px, 4vw, 40px); height: clamp(24px, 4vw, 40px); border-radius: 24%; background: var(--img-bg); }
+    .tlcol .m {
+      align-self: stretch; margin-top: 6px; padding-top: 10px; border-top: 1px solid var(--line2); text-align: center;
+      font-family: var(--mono); font-size: 12px; color: var(--muted); letter-spacing: .03em;
     }
-    .tlrow .m { font-family: var(--mono); font-size: 12.5px; color: var(--muted); letter-spacing: .03em; }
-    .tlrow .ico { display: flex; flex-wrap: wrap; gap: 6px; }
-    .tlrow .ico img { width: 26px; height: 26px; border-radius: 7px; background: var(--img-bg); }
-    .tlrow .c { font-family: var(--mono); font-size: 12.5px; color: var(--soft); font-variant-numeric: tabular-nums; white-space: nowrap; }
-    .tlrow.peak .m, .tlrow.peak .c { color: var(--accent); }
+    .tlcol .n { font-family: var(--mono); font-size: 12.5px; color: var(--soft); font-variant-numeric: tabular-nums; }
+    .tlcol.peak .m, .tlcol.peak .n { color: var(--accent); }
+    html.js .tlcol img { opacity: 0; transform: translateY(-56px); transition: opacity .25s ease, transform .6s cubic-bezier(.25,1.35,.45,1); }
+    html.js .tlcol .n { opacity: 0; transition: opacity .35s ease; }
+    html.js .tl.in .tlcol img, html.js .tl.in .tlcol .n { opacity: 1; transform: none; }
+    .tltip {
+      position: absolute; z-index: 3; transform: translate(-50%, -100%); pointer-events: none; white-space: nowrap;
+      background: var(--fg); color: var(--bg); font-size: 12px; padding: 5px 9px; border-radius: 6px;
+    }
     .tlfoot {
       display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap;
       margin-top: 18px; font-family: var(--mono); font-size: 12.5px; color: var(--muted);
@@ -392,9 +489,6 @@
     }
     .mlinks a:hover { color: var(--accent); border-color: var(--accent); }
 
-    html.js .tlrow { opacity: 0; transform: translateX(-12px); transition: opacity .5s ease, transform .6s cubic-bezier(.2,.8,.2,1); }
-    html.js .tlrow.in { opacity: 1; transform: none; }
-
     /* ---------- reveal ---------- */
     /* hidden only once the reveal script has claimed the page; without JS everything stays visible */
     html.js .rv { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s cubic-bezier(.2,.7,.2,1); }
@@ -413,8 +507,6 @@
       .stat { border-bottom: 1px solid var(--line); }
       .stats .stat:last-child { border-bottom: 0; }
       .apps { grid-template-columns: repeat(auto-fill, minmax(148px, 1fr)); }
-      .tlrow { grid-template-columns: 46px 1fr auto; gap: 10px; }
-      .tlrow .ico img { width: 22px; height: 22px; border-radius: 6px; }
       .case-metrics { grid-template-columns: 1fr; }
       .case-metric + .case-metric { border-left: 0; border-top: 1px solid var(--line); padding-left: 0; }
       .case-visual, .case-visual img { min-height: 190px; }
@@ -423,7 +515,7 @@
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .mrow.a, .mrow.b { animation: none; }
-      html.js .rv, html.js h1 span, html.js .tlrow { opacity: 1; transform: none; transition: none; }
+      html.js .rv, html.js h1 span, html.js .tlcol img, html.js .tlcol .n { opacity: 1; transform: none; transition: none; }
       html.js dialog.sheet[open] .inner { animation: none; }
     }
 
@@ -431,7 +523,7 @@
       :root, :root[data-theme] { --bg: #fff; --card: #fff; --fg: #111; --soft: #333; --muted: #666; --line: #ddd; --line2: #ccc; --accent: #111; --on-accent: #fff; --img-bg: #fff; --topbar-bg: #fff; --hover: #fff; --icon-dim: 1; color-scheme: light; }
       @page { margin: 12mm; }
       body { font-size: 11.5px; }
-      .topbar, .marquee, .btn { display: none !important; }
+      .topbar, .marquee, .btn, .pipe { display: none !important; }
       .wrap { max-width: none; padding: 0; }
       .hero { padding: 0 0 16px; }
       h1 { font-size: 30px; margin-bottom: 10px; }
@@ -450,7 +542,7 @@
       .case-desc { font-size: 11px; }
       .case-metrics, .flow, .case-link, .case-proof { display: none; }
       .job, .skills > div { break-inside: avoid; }
-      html.js .rv, html.js h1 span, html.js .tlrow { opacity: 1 !important; transform: none !important; }
+      html.js .rv, html.js h1 span, html.js .tlcol img, html.js .tlcol .n { opacity: 1 !important; transform: none !important; }
       [data-par] { transform: none !important; }
       dialog.sheet { display: none !important; }
       /* print snapshots immediately, so the forced end values must not animate toward */
@@ -476,6 +568,7 @@
   <main>
     <div class="wrap">
       <div class="hero">
+        <div class="hero-copy">
         <p class="eyebrow">Portfolio — 2026.10</p>
         <h1 id="heroName"><span>김</span><span>용</span><span>태</span><span class="acc">.</span></h1>
         <p class="lede">
@@ -488,6 +581,54 @@
           <li><a href="https://play.google.com/store/apps/dev?id=8062279144506213960" target="_blank" rel="noopener">Google Play 개발자 페이지</a></li>
           <li><a href="https://www.youtube.com/@VibeBuilderkr" target="_blank" rel="noopener">유튜브 · 바이브빌더</a></li>
         </ul>
+        </div>
+
+        <figure class="pipe" id="pipe" aria-label="유튜브 제작 자동화 파이프라인: 대본, TTS, 싱크, 렌더, 썸네일, 메타데이터, 업로드">
+          <div class="pipe-head">
+            <span class="pipe-dot"></span>
+            <span class="pipe-name">auto-yt</span>
+            <span id="pipeStep">07 / 07</span>
+            <span class="pipe-file" id="pipeFile">YouTube Data API</span>
+          </div>
+          <div class="pipe-stage" aria-hidden="true">
+            <div class="sc sc-script"><div class="doc">
+              <div class="ln t"><span>1</span><b style="--w:58%;--d:0ms"></b></div>
+              <div class="ln"><span>2</span><b style="--w:82%;--d:200ms"></b></div>
+              <div class="ln"><span>3</span><b style="--w:71%;--d:360ms"></b></div>
+              <div class="ln"><span>4</span><b style="--w:88%;--d:520ms"></b></div>
+              <div class="ln"><span>5</span><b style="--w:46%;--d:680ms"></b></div>
+            </div></div>
+            <div class="sc sc-tts"><div class="wave"></div><span class="playhead"></span></div>
+            <div class="sc sc-sync"><div class="wave"></div><div class="caps"></div></div>
+            <div class="sc sc-render"><div class="frames"></div><div class="rbar"><b></b></div></div>
+            <div class="sc sc-thumb"><img src="./assets/youtube-case.png" alt="" loading="lazy" /></div>
+            <div class="sc sc-meta"><div class="doc">
+              <div class="ln k"><span>"title"</span><b style="--w:46%;--d:0ms;background:var(--accent)"></b></div>
+              <div class="ln k"><span>"description"</span><b style="--w:52%;--d:180ms"></b></div>
+              <div class="ln k"><span></span><b style="--w:38%;--d:320ms"></b></div>
+              <div class="ln k"><span>"tags"</span><span class="chip"><b style="--d:460ms"></b><b style="--d:540ms"></b><b style="--d:620ms"></b></span></div>
+              <div class="ln k"><span>"thumbnail"</span><b style="--w:30%;--d:760ms"></b></div>
+            </div></div>
+            <div class="sc sc-up on"><div class="up">
+              <img src="./assets/youtube-case.png" alt="" loading="lazy" />
+              <div class="up-info">
+                <span class="up-ok"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7.25" stroke="currentColor" stroke-width="1.5"/><path d="M4.8 8.2l2.1 2.1 4.3-4.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>업로드 완료</span>
+                <span>바이브빌더 채널 누적 조회수</span>
+                <b>225,716회</b>
+                <span>2026.09.29 기준</span>
+              </div>
+            </div></div>
+          </div>
+          <ol class="pipe-steps">
+            <li class="done" data-file="vibe.txt">대본</li>
+            <li class="done" data-file="ElevenLabs · 타임스탬프">TTS</li>
+            <li class="done" data-file="sync_data.json">싱크</li>
+            <li class="done" data-file="Remotion → video.mp4">렌더</li>
+            <li class="done" data-file="thumbnail.png">썸네일</li>
+            <li class="done" data-file="youtube_metadata.json">메타데이터</li>
+            <li class="done" data-file="YouTube Data API">업로드</li>
+          </ol>
+        </figure>
       </div>
     </div>
 
@@ -1050,20 +1191,15 @@
         requestAnimationFrame(function () { hero.classList.add("in"); });
       }
 
-      // timeline rows come in one after another
-      function staggerRows() {
-        document.querySelectorAll(".tlrow").forEach(function (row, i) {
-          row.style.transitionDelay = (i * 40) + "ms";
-          row.classList.add("in");
-        });
-      }
+      // launch chart: icons drop onto their month once the chart is on screen
+      function dropIcons() { document.getElementById("tl").classList.add("in"); }
 
       if (!motionOK || !("IntersectionObserver" in window)) {
-        staggerRows();
+        dropIcons();
       } else {
         var tlIO = new IntersectionObserver(function (es) {
-          es.forEach(function (e) { if (e.isIntersecting) { staggerRows(); tlIO.disconnect(); } });
-        }, { threshold: .1 });
+          es.forEach(function (e) { if (e.isIntersecting) { dropIcons(); tlIO.disconnect(); } });
+        }, { threshold: .3 });
         var tlEl = document.getElementById("tl");
         if (tlEl) tlIO.observe(tlEl);
       }
@@ -1086,6 +1222,85 @@
         parallax();
         window.addEventListener("scroll", onPar, { passive: true });
         window.addEventListener("resize", onPar);
+      }
+
+      // ---- hero pipeline: one run of the YouTube automation, stage by stage ----
+      var pipe = document.getElementById("pipe");
+      if (pipe && motionOK) {
+        var scenes = pipe.querySelectorAll(".sc");
+        var steps = pipe.querySelectorAll(".pipe-steps li");
+        var stepEl = document.getElementById("pipeStep");
+        var fileEl = document.getElementById("pipeFile");
+        var HOLD = [1500, 1600, 1600, 1700, 1300, 1500, 3600];
+
+        // a fixed, speech-like envelope so every run draws the same waveform
+        pipe.querySelectorAll(".wave").forEach(function (w) {
+          for (var i = 0; i < 46; i++) {
+            var h = .18 + .82 * Math.abs(Math.sin(i * .55) * Math.cos(i * .21 + 1)) * (i % 9 === 8 ? .3 : 1);
+            var b = document.createElement("i");
+            b.style.setProperty("--h", Math.round(h * 100) + "%");
+            b.style.setProperty("--d", (i * 24) + "ms");
+            w.appendChild(b);
+          }
+        });
+        var caps = pipe.querySelector(".caps");
+        var sync = pipe.querySelector(".sc-sync");
+        [[0, 17], [19, 14], [35, 22], [59, 12], [73, 19]].forEach(function (c, i) {
+          var cap = document.createElement("i");
+          cap.style.setProperty("--l", c[0] + "%");
+          cap.style.setProperty("--w", c[1] + "%");
+          cap.style.setProperty("--d", (120 + i * 190) + "ms");
+          caps.appendChild(cap);
+          var tick = document.createElement("span");
+          tick.className = "tick";
+          tick.style.setProperty("--l", "calc(8% + " + (c[0] * .84) + "%)");
+          tick.style.setProperty("--d", (120 + i * 190) + "ms");
+          sync.appendChild(tick);
+        });
+        var frames = pipe.querySelector(".frames");
+        for (var f = 0; f < 8; f++) {
+          var t = document.createElement("i");
+          t.style.setProperty("--p", ((f % 4) / 3 * 100) + "% " + (f < 4 ? 0 : 100) + "%");
+          t.style.setProperty("--d", (f * 130) + "ms");
+          frames.appendChild(t);
+        }
+        var head = pipe.querySelector(".playhead");
+        head.style.setProperty("--run", (pipe.querySelector(".pipe-stage").clientWidth * .84) + "px");
+
+        // the markup ships the finished run, so the first pass starts by leaving it
+        var cur = scenes.length - 1, timer = null, live = false;
+        function show(i) {
+          var prev = scenes[cur];
+          if (prev) {
+            prev.classList.remove("on");
+            setTimeout(function () { if (!prev.classList.contains("on")) prev.classList.remove("play"); }, 400);
+          }
+          cur = i;
+          scenes[i].classList.add("on", "play");
+          steps.forEach(function (li, k) {
+            li.classList.toggle("done", k < i || (k === i && i === steps.length - 1));
+            li.classList.toggle("on", k === i && i < steps.length - 1);
+          });
+          pipe.style.setProperty("--prog", i / (steps.length - 1));
+          stepEl.textContent = "0" + (i + 1) + " / 0" + steps.length;
+          fileEl.textContent = steps[i].dataset.file;
+          pipe.classList.toggle("run", i < steps.length - 1);
+          timer = setTimeout(function () { if (live) show((i + 1) % scenes.length); }, HOLD[i]);
+        }
+        function start() { if (live) return; live = true; clearTimeout(timer); show(cur === scenes.length - 1 ? 0 : cur); }
+        function stop() { live = false; clearTimeout(timer); }
+        if ("IntersectionObserver" in window) {
+          new IntersectionObserver(function (es) {
+            es.forEach(function (e) { if (e.isIntersecting && !document.hidden) start(); else stop(); });
+          }, { threshold: .35 }).observe(pipe);
+          document.addEventListener("visibilitychange", function () {
+            if (document.hidden) stop();
+            else if (pipe.getBoundingClientRect().bottom > 0 && pipe.getBoundingClientRect().top < innerHeight) start();
+          });
+        }
+        window.addEventListener("resize", function () {
+          head.style.setProperty("--run", (pipe.querySelector(".pipe-stage").clientWidth * .84) + "px");
+        });
       }
 
       var bar = document.getElementById("topbar");
@@ -1115,41 +1330,59 @@
       cards.forEach(function (li) {
         var key = li.dataset.key;
         var m = li.querySelector(".dt").textContent.trim().slice(0, 7);
-        if (!first[key] || m < first[key].m) first[key] = { m: m, src: li.querySelector(".ic").getAttribute("src") };
+        if (!first[key] || m < first[key].m) first[key] = { m: m, src: li.querySelector(".ic").getAttribute("src"), name: li.querySelector(".nm").textContent };
       });
       var months = {};
       Object.keys(first).forEach(function (key) {
         var e = first[key];
-        (months[e.m] = months[e.m] || []).push(e.src);
+        (months[e.m] = months[e.m] || []).push(e);
       });
       var keys = Object.keys(months).sort();
       var total = Object.keys(first).length;
       var max = keys.reduce(function (n, k) { return Math.max(n, months[k].length); }, 0);
       var tl = document.getElementById("tl");
-      keys.forEach(function (k) {
+      tl.style.setProperty("--n", keys.length);
+      tl.setAttribute("role", "img");
+      tl.setAttribute("aria-label", "월별 첫 출시 수: " + keys.map(function (k) { return k.slice(5) + "월 " + months[k].length + "개"; }).join(", "));
+      keys.forEach(function (k, ci) {
         var list = months[k];
-        var row = document.createElement("div");
-        row.className = "tlrow" + (list.length === max ? " peak" : "");
+        var col = document.createElement("div");
+        col.className = "tlcol" + (list.length === max ? " peak" : "");
+        // column-reverse: the month label sits on the baseline, the count on top
         var label = document.createElement("span");
         label.className = "m";
-        label.textContent = k.slice(5);
-        var icons = document.createElement("span");
-        icons.className = "ico";
-        list.forEach(function (s) {
+        label.textContent = k.slice(5) + "월";
+        col.appendChild(label);
+        list.forEach(function (e, j) {
           var img = document.createElement("img");
           img.loading = "lazy";
-          img.alt = "";
-          img.src = s;
-          icons.appendChild(img);
+          img.alt = e.name;
+          img.src = e.src;
+          img.dataset.tip = e.name + " · " + k + " 출시";
+          img.style.transitionDelay = (ci * 110 + j * 80) + "ms";
+          col.appendChild(img);
         });
         var count = document.createElement("span");
-        count.className = "c";
-        count.textContent = list.length + "개";
-        row.appendChild(label);
-        row.appendChild(icons);
-        row.appendChild(count);
-        tl.appendChild(row);
+        count.className = "n";
+        count.textContent = list.length;
+        count.style.transitionDelay = (ci * 110 + list.length * 80 + 250) + "ms";
+        col.appendChild(count);
+        tl.appendChild(col);
       });
+      var tip = document.createElement("div");
+      tip.className = "tltip";
+      tip.hidden = true;
+      tl.appendChild(tip);
+      tl.addEventListener("mouseover", function (e) {
+        var img = e.target.closest("img");
+        if (!img) { tip.hidden = true; return; }
+        var r = img.getBoundingClientRect(), box = tl.getBoundingClientRect();
+        tip.textContent = img.dataset.tip;
+        tip.style.left = (r.left - box.left + r.width / 2) + "px";
+        tip.style.top = (r.top - box.top - 6) + "px";
+        tip.hidden = false;
+      });
+      tl.addEventListener("mouseleave", function () { tip.hidden = true; });
 
       var peakMonths = keys.filter(function (k) { return months[k].length === max; });
       document.getElementById("tlavg").innerHTML =
