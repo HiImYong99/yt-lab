@@ -1,5 +1,62 @@
 [
   {
+    "id": "2026-10-08-live-2-2-2",
+    "date": "2026-10-08",
+    "title": "2.2.2 업데이트 안내",
+    "body": "- 은퇴 칭호 50종이 추가됐습니다. 커리어마다 하나씩 얻고, 칭호 도감에 모입니다.\n- 은퇴할 때 선수의 잠재력이 공개됩니다.\n- 상점이 열렸습니다. 플레이로 번 자금으로 카드 스타일과 구단주 꾸미기를 살 수 있고, 장착한 꾸미기는 랭킹에도 보입니다.\n- 구단주 이름을 정할 수 있습니다. 첫 변경은 무료이고, 이후에는 자금 100이 듭니다.\n- 아카데미에 투자하면 다음 커리어 준비 비용이 영구히 할인됩니다.\n- 모든 구단의 이름과 엠블럼을 편집할 수 있고, 내 이미지도 쓸 수 있습니다.\n- 계약 기간 중에도 스카우트 제안이 오고, 이적료가 기록에 남습니다.\n- 월 카드가 시즌 누적으로 표시됩니다.\n- 아랍어를 지원합니다.\n- 6시즌마다(6·12·18시즌) 결산이 끝나면 광고가 한 번 나옵니다. 광고 제거를 구매하셨다면 나오지 않습니다.",
+    "important": true,
+    "translations": {
+      "ko": {
+        "title": "2.2.2 업데이트 안내",
+        "body": "- 은퇴 칭호 50종이 추가됐습니다. 커리어마다 하나씩 얻고, 칭호 도감에 모입니다.\n- 은퇴할 때 선수의 잠재력이 공개됩니다.\n- 상점이 열렸습니다. 플레이로 번 자금으로 카드 스타일과 구단주 꾸미기를 살 수 있고, 장착한 꾸미기는 랭킹에도 보입니다.\n- 구단주 이름을 정할 수 있습니다. 첫 변경은 무료이고, 이후에는 자금 100이 듭니다.\n- 아카데미에 투자하면 다음 커리어 준비 비용이 영구히 할인됩니다.\n- 모든 구단의 이름과 엠블럼을 편집할 수 있고, 내 이미지도 쓸 수 있습니다.\n- 계약 기간 중에도 스카우트 제안이 오고, 이적료가 기록에 남습니다.\n- 월 카드가 시즌 누적으로 표시됩니다.\n- 아랍어를 지원합니다.\n- 6시즌마다(6·12·18시즌) 결산이 끝나면 광고가 한 번 나옵니다. 광고 제거를 구매하셨다면 나오지 않습니다."
+      },
+      "en": {
+        "title": "2.2.2 update",
+        "body": "- 50 retirement titles: earn one per career and collect them in the title collection.\n- A player's potential is revealed at retirement.\n- The store is open: spend funds earned from play on card styles and owner cosmetics. What you equip also shows on the rankings.\n- You can set an owner name. The first change is free; after that it costs 100 funds.\n- Investing in the academy permanently lowers the cost of preparing your next career.\n- Edit any club's name and emblem, or use your own image.\n- Scouts now approach you while you're under contract, and transfer fees are recorded.\n- The month card now shows season totals.\n- Arabic is now supported.\n- Every 6 seasons (seasons 6, 12, 18...), an ad plays once after the season summary. It does not appear if you bought Remove ads."
+      },
+      "ja": {
+        "title": "2.2.2アップデート",
+        "body": "- 引退の称号を50種追加しました。キャリアごとに1つ手に入り、称号コレクションに集まります。\n- 引退時に選手のポテンシャルが公開されます。\n- ストアを追加しました。プレイで稼いだ資金でカードスタイルやオーナーの装飾を購入でき、装着した装飾はランキングにも表示されます。\n- オーナー名を設定できます。最初の変更は無料で、以降はオーナー資金100がかかります。\n- アカデミーに投資すると、次のキャリアの準備費用が恒久的に割引されます。\n- すべてのクラブの名前とエンブレムを編集でき、自分の画像も使えます。\n- 契約期間中でもスカウトのオファーが届き、移籍金が記録に残ります。\n- 月カードがシーズン累計で表示されます。\n- アラビア語に対応しました。\n- 6シーズンごと(6・12・18シーズン)にシーズン総括のあと広告が1回表示されます。「広告を消す」を購入済みの場合は表示されません。"
+      },
+      "zh": {
+        "title": "2.2.2 更新",
+        "body": "- 新增50种退役称号：每段生涯获得一个，收录在称号图鉴中。\n- 退役时会公开球员的潜力。\n- 商店上线：可用比赛中赚到的资金购买卡片样式和老板装饰，装备的装饰也会显示在排行榜上。\n- 可以设置老板昵称。首次修改免费，之后需要100老板资金。\n- 投资学院可永久降低下一段生涯的准备费用。\n- 可编辑所有俱乐部的名称和队徽，也可使用自己的图片。\n- 合同期内也会收到球探报价，转会费会被记录。\n- 月度卡片按赛季累计显示。\n- 新增阿拉伯语。\n- 每6个赛季（第6、12、18个赛季）结算结束后会播放一次广告。已购买“移除广告”则不会出现。"
+      },
+      "es": {
+        "title": "Actualización 2.2.2",
+        "body": "- 50 títulos de retirada: consigues uno por carrera y se guardan en la colección de títulos.\n- El potencial del jugador se revela al retirarte.\n- Llega la tienda: usa los fondos ganados jugando en estilos de tarjeta y adornos de propietario. Lo que equipes también se ve en el ranking.\n- Puedes elegir un nombre de propietario. El primer cambio es gratis; después cuesta 100 fondos.\n- Invertir en la academia rebaja para siempre el coste de preparar la próxima carrera.\n- Edita el nombre y el escudo de cualquier club, o usa tu propia imagen.\n- Los ojeadores te hacen ofertas aunque tengas contrato, y los traspasos quedan registrados.\n- La tarjeta del mes muestra el acumulado de la temporada.\n- Ya disponible en árabe.\n- Cada 6 temporadas (6, 12, 18...), se muestra un anuncio al terminar el resumen de temporada. No aparece si compraste Quitar anuncios."
+      },
+      "pt": {
+        "title": "Atualização 2.2.2",
+        "body": "- 50 títulos de aposentadoria: você ganha um por carreira e eles ficam na coleção de títulos.\n- O potencial do jogador é revelado na aposentadoria.\n- A loja chegou: use os fundos ganhos jogando em estilos de cartão e adornos de proprietário. O que você equipar também aparece no ranking.\n- Você pode definir um nome de proprietário. A primeira troca é grátis; depois custa 100 fundos.\n- Investir na academia reduz para sempre o custo de preparar a próxima carreira.\n- Edite o nome e o emblema de qualquer clube, ou use sua própria imagem.\n- Olheiros fazem propostas mesmo com contrato, e as taxas de transferência são registradas.\n- O cartão do mês mostra o acumulado da temporada.\n- Agora em árabe.\n- A cada 6 temporadas (6, 12, 18...), um anúncio é exibido ao fim do resumo da temporada. Ele não aparece se você comprou Remover anúncios."
+      },
+      "fr": {
+        "title": "Mise à jour 2.2.2",
+        "body": "- 50 titres de retraite : un par carrière, réunis dans la collection de titres.\n- Le potentiel du joueur est révélé à la retraite.\n- La boutique ouvre : les fonds gagnés en jouant servent à acheter des styles de carte et des décorations de propriétaire. Ce que tu équipes apparaît aussi au classement.\n- Tu peux choisir un nom de propriétaire. Le premier changement est gratuit, puis il coûte 100 fonds.\n- Investir dans l’académie réduit pour de bon le coût de préparation de la prochaine carrière.\n- Modifie le nom et l’emblème de n’importe quel club, ou utilise ta propre image.\n- Des recruteurs t’approchent même sous contrat, et les indemnités de transfert sont enregistrées.\n- La carte du mois cumule la saison.\n- L’arabe est désormais disponible.\n- Toutes les 6 saisons (6, 12, 18…), une publicité s’affiche une fois après le bilan de saison. Elle n’apparaît pas si tu as acheté Supprimer les publicités."
+      },
+      "de": {
+        "title": "Update 2.2.2",
+        "body": "- 50 Rücktrittstitel: einer pro Karriere, gesammelt in der Titelsammlung.\n- Das Potenzial des Spielers wird beim Rücktritt enthüllt.\n- Der Shop ist da: Mit erspielten Besitzerfonds kaufst du Kartenstile und Besitzerschmuck. Was du ausrüstest, ist auch in der Rangliste zu sehen.\n- Du kannst einen Besitzernamen festlegen. Die erste Änderung ist kostenlos, danach kostet sie 100 Besitzerfonds.\n- Eine Investition in die Akademie senkt dauerhaft die Kosten für die Vorbereitung der nächsten Karriere.\n- Ändere Namen und Wappen jedes Klubs oder nutze ein eigenes Bild.\n- Scouts melden sich auch, wenn du unter Vertrag stehst, und Ablösesummen werden erfasst.\n- Die Monatskarte zeigt die Saisonsumme.\n- Arabisch wird jetzt unterstützt.\n- Alle 6 Saisons (6, 12, 18 …) erscheint nach dem Saisonabschluss einmal Werbung. Wer „Werbung entfernen“ gekauft hat, sieht sie nicht."
+      },
+      "it": {
+        "title": "Aggiornamento 2.2.2",
+        "body": "- 50 titoli di ritiro: uno per carriera, raccolti nella collezione titoli.\n- Il potenziale del giocatore viene svelato al ritiro.\n- Arriva il negozio: con i fondi guadagnati giocando compri stili delle carte e decorazioni del proprietario. Quello che equipaggi si vede anche in classifica.\n- Puoi scegliere un nome del proprietario. Il primo cambio è gratuito, poi costa 100 fondi.\n- Investire nell’accademia riduce in modo permanente il costo di preparazione della prossima carriera.\n- Modifica nome e stemma di qualsiasi club, o usa una tua immagine.\n- Gli osservatori ti cercano anche sotto contratto e i costi di trasferimento vengono registrati.\n- La carta del mese mostra il totale della stagione.\n- Ora disponibile in arabo.\n- Ogni 6 stagioni (6, 12, 18...), dopo il riepilogo di stagione compare una pubblicità. Non compare se hai acquistato Rimuovi la pubblicità."
+      },
+      "id": {
+        "title": "Pembaruan 2.2.2",
+        "body": "- 50 gelar pensiun: dapatkan satu di setiap karier dan kumpulkan di koleksi gelar.\n- Potensi pemain terungkap saat pensiun.\n- Toko hadir: belanjakan dana yang didapat dari bermain untuk gaya kartu dan hiasan pemilik. Yang kamu pakai juga tampil di peringkat.\n- Kamu bisa mengatur nama pemilik. Perubahan pertama gratis, setelah itu biayanya 100 dana.\n- Berinvestasi di akademi memberi diskon permanen untuk biaya persiapan karier berikutnya.\n- Ubah nama dan lambang klub mana pun, atau pakai gambarmu sendiri.\n- Pencari bakat tetap datang saat kamu masih berkontrak, dan biaya transfer dicatat.\n- Kartu bulanan menampilkan total musim.\n- Kini mendukung bahasa Arab.\n- Setiap 6 musim (musim 6, 12, 18...), iklan tampil satu kali setelah ringkasan musim. Iklan ini tidak muncul jika kamu sudah membeli Hapus iklan."
+      },
+      "tr": {
+        "title": "2.2.2 güncellemesi",
+        "body": "- 50 emeklilik unvanı: her kariyerde bir tane kazanılır ve unvan koleksiyonunda toplanır.\n- Oyuncunun potansiyeli emeklilikte açıklanır.\n- Mağaza açıldı: oynayarak kazanılan fonlarla kart stilleri ve kulüp sahibi süsleri alınabilir. Kuşanılan süsler sıralamada da görünür.\n- Kulüp sahibi adı belirlenebilir. İlk değişiklik ücretsizdir, sonrasında 100 fon tutar.\n- Akademiye yatırım yapmak, sonraki kariyerin hazırlık maliyetini kalıcı olarak düşürür.\n- Her kulübün adını ve armasını düzenle ya da kendi görselini kullan.\n- Sözleşmen sürerken de gözlemci teklifleri gelir ve transfer bedelleri kaydedilir.\n- Ay kartı sezon toplamını gösterir.\n- Artık Arapça destekleniyor.\n- Her 6 sezonda bir (6, 12, 18...), sezon özetinden sonra bir kez reklam gösterilir. Reklamları kaldır satın alındıysa gösterilmez."
+      },
+      "ar": {
+        "title": "تحديث 2.2.2",
+        "body": "- 50 لقب اعتزال: تحصل على لقب واحد في كل مسيرة، وتُجمع الألقاب في مجموعة الألقاب.\n- تُكشف إمكانات اللاعب عند الاعتزال.\n- افتُتح المتجر: استخدم رصيد المالك الذي تكسبه من اللعب لشراء أنماط البطاقات وزينة المالك، ويظهر ما تجهّزه في التصنيف أيضًا.\n- يمكنك تحديد اسم المالك. التغيير الأول مجاني، وبعده يكلّف 100 من رصيد المالك.\n- الاستثمار في الأكاديمية يخفّض تكلفة التحضير للمسيرة التالية بشكل دائم.\n- عدّل اسم أي نادٍ وشعاره، أو استخدم صورتك الخاصة.\n- يتلقى اللاعب عروض الكشافة حتى أثناء العقد، وتُسجَّل رسوم الانتقال.\n- تعرض بطاقة الشهر مجموع الموسم.\n- أصبحت اللغة العربية مدعومة.\n- كل 6 مواسم (الموسم 6 و12 و18...)، يظهر إعلان مرة واحدة بعد ملخص الموسم. لا يظهر إذا اشتريت إزالة الإعلانات."
+      }
+    }
+  },
+  {
     "id": "2026-10-05-live-2-2-1",
     "date": "2026-10-05",
     "title": "2.2.1 업데이트 안내",
