@@ -1,5 +1,62 @@
 [
   {
+    "id": "2026-10-10-weekly-seasons",
+    "date": "2026-10-10",
+    "title": "랭킹 시즌이 주간으로 바뀝니다",
+    "body": "- 10월 시즌(시즌 1)이 10월 12일(월) 오전 9시에 조기 마감되고, 메달은 그대로 지급됩니다.\n- 이후 랭킹 시즌은 매주 월요일 오전 9시(한국 시간)에 새로 시작합니다. 한 주 동안 은퇴한 커리어 상위 3개의 점수 합으로 순위를 매기고, 1~3위 메달과 상위 10% 엠블럼도 매주 주어집니다.\n- 다음 업데이트부터 랭킹 탭은 '시즌'과 '명예의 전당' 두 개로 정리됩니다.",
+    "important": true,
+    "translations": {
+      "ko": {
+        "title": "랭킹 시즌이 주간으로 바뀝니다",
+        "body": "- 10월 시즌(시즌 1)이 10월 12일(월) 오전 9시에 조기 마감되고, 메달은 그대로 지급됩니다.\n- 이후 랭킹 시즌은 매주 월요일 오전 9시(한국 시간)에 새로 시작합니다. 한 주 동안 은퇴한 커리어 상위 3개의 점수 합으로 순위를 매기고, 1~3위 메달과 상위 10% 엠블럼도 매주 주어집니다.\n- 다음 업데이트부터 랭킹 탭은 '시즌'과 '명예의 전당' 두 개로 정리됩니다."
+      },
+      "en": {
+        "title": "Ranking seasons are now weekly",
+        "body": "- The October season (Season 1) ends early on Monday, October 12 at 00:00 UTC. Its medals are awarded as planned.\n- From then on, a new ranking season starts every Monday at 00:00 UTC. You're ranked by the combined score of your top 3 careers retired that week, and the 1st-3rd medals and the top-10% emblem are awarded every week.\n- From the next update, the ranking has two tabs: Season and Hall of Fame."
+      },
+      "ja": {
+        "title": "ランキングシーズンが週単位になります",
+        "body": "- 10月シーズン(シーズン1)は10月12日(月)00:00 UTCに前倒しで終了し、メダルは予定どおり付与されます。\n- 以降、ランキングシーズンは毎週月曜00:00 UTC(日本時間 月曜9時)に新しく始まります。その週に引退したキャリア上位3つのスコア合計で順位が決まり、1〜3位のメダルと上位10%のエンブレムも毎週付与されます。\n- 次のアップデートから、ランキングのタブは「シーズン」と「殿堂」の2つになります。"
+      },
+      "zh": {
+        "title": "排行榜赛季改为每周",
+        "body": "- 10月赛季(第1赛季)将于10月12日(周一)00:00 UTC提前结束，奖牌照常发放。\n- 此后，排行榜赛季每周一00:00 UTC重新开始。按当周退役生涯中前3名的得分总和排名，第1~3名奖牌和前10%徽章每周都会发放。\n- 从下次更新起，排行榜只保留「赛季」和「名人堂」两个标签。"
+      },
+      "es": {
+        "title": "Las temporadas de clasificación pasan a ser semanales",
+        "body": "- La temporada de octubre (Temporada 1) termina antes, el lunes 12 de octubre a las 00:00 UTC. Sus medallas se entregan igualmente.\n- Desde entonces, cada lunes a las 00:00 UTC empieza una nueva temporada. Se clasifica por la suma de tus 3 mejores carreras retiradas esa semana, y las medallas del 1.º al 3.º y el emblema del 10 % superior se entregan cada semana.\n- Desde la próxima actualización, la clasificación tendrá dos pestañas: Temporada y Salón de la Fama."
+      },
+      "pt": {
+        "title": "As temporadas do ranking agora são semanais",
+        "body": "- A temporada de outubro (Temporada 1) termina antes, na segunda-feira, 12 de outubro, às 00:00 UTC. As medalhas são entregues normalmente.\n- A partir daí, uma nova temporada começa toda segunda-feira às 00:00 UTC. A classificação é pela soma das suas 3 melhores carreiras encerradas na semana, e as medalhas do 1.º ao 3.º e o emblema dos 10% melhores são entregues toda semana.\n- A partir da próxima atualização, o ranking terá duas abas: Temporada e Hall da Fama."
+      },
+      "fr": {
+        "title": "Les saisons du classement deviennent hebdomadaires",
+        "body": "- La saison d'octobre (Saison 1) se termine plus tôt, le lundi 12 octobre à 00:00 UTC. Ses médailles sont remises comme prévu.\n- Ensuite, une nouvelle saison commence chaque lundi à 00:00 UTC. Tu es classé selon la somme de tes 3 meilleures carrières terminées dans la semaine, et les médailles du 1er au 3e ainsi que l'emblème des 10 % meilleurs sont remis chaque semaine.\n- À partir de la prochaine mise à jour, le classement aura deux onglets : Saison et Panthéon."
+      },
+      "de": {
+        "title": "Ranglisten-Saisons werden wöchentlich",
+        "body": "- Die Oktober-Saison (Saison 1) endet vorzeitig am Montag, 12. Oktober, um 00:00 UTC. Ihre Medaillen werden wie geplant vergeben.\n- Danach beginnt jeden Montag um 00:00 UTC eine neue Saison. Es zählt die Summe deiner 3 besten in dieser Woche beendeten Karrieren; Medaillen für Platz 1 bis 3 und das Emblem für die besten 10 % gibt es jede Woche.\n- Ab dem nächsten Update hat die Rangliste zwei Tabs: Saison und Ruhmeshalle."
+      },
+      "it": {
+        "title": "Le stagioni della classifica diventano settimanali",
+        "body": "- La stagione di ottobre (Stagione 1) si chiude in anticipo lunedì 12 ottobre alle 00:00 UTC. Le medaglie vengono assegnate come previsto.\n- Da allora, ogni lunedì alle 00:00 UTC inizia una nuova stagione. Conta la somma delle tue 3 migliori carriere concluse nella settimana, e le medaglie dal 1° al 3° posto e l'emblema del miglior 10% vengono assegnati ogni settimana.\n- Dal prossimo aggiornamento la classifica avrà due schede: Stagione e Hall of Fame."
+      },
+      "id": {
+        "title": "Musim peringkat kini mingguan",
+        "body": "- Musim Oktober (Musim 1) berakhir lebih awal pada Senin, 12 Oktober pukul 00:00 UTC. Medalinya tetap diberikan.\n- Setelah itu, musim baru dimulai setiap Senin pukul 00:00 UTC. Peringkat dihitung dari jumlah skor 3 karier terbaik yang pensiun minggu itu, dan medali peringkat 1–3 serta emblem 10% teratas diberikan setiap minggu.\n- Mulai pembaruan berikutnya, peringkat hanya punya dua tab: Musim dan Hall of Fame."
+      },
+      "tr": {
+        "title": "Sıralama sezonları artık haftalık",
+        "body": "- Ekim sezonu (Sezon 1), 12 Ekim Pazartesi 00:00 UTC'de erken kapanır. Madalyaları yine verilir.\n- Bundan sonra her pazartesi 00:00 UTC'de yeni bir sezon başlar. O hafta emekli olan en iyi 3 kariyerinin toplam puanına göre sıralanırsın; ilk 3 madalyası ve ilk %10 amblemi her hafta verilir.\n- Bir sonraki güncellemeden itibaren sıralamada iki sekme olacak: Sezon ve Şöhretler Müzesi."
+      },
+      "ar": {
+        "title": "أصبحت مواسم الترتيب أسبوعية",
+        "body": "- ينتهي موسم أكتوبر (الموسم 1) مبكرًا يوم الاثنين 12 أكتوبر الساعة 00:00 بتوقيت UTC، وتُمنح ميدالياته كما هو مقرر.\n- بعد ذلك يبدأ موسم جديد كل يوم اثنين الساعة 00:00 بتوقيت UTC. يُحسب الترتيب بمجموع نقاط أفضل 3 مسيرات اعتزلت خلال الأسبوع، وتُمنح ميداليات المراكز من الأول إلى الثالث وشعار أفضل 10% كل أسبوع.\n- بدءًا من التحديث القادم، سيضم الترتيب تبويبين فقط: الموسم وقاعة المشاهير."
+      }
+    }
+  },
+  {
     "id": "2026-10-10-live-2-3-0",
     "date": "2026-10-10",
     "title": "2.3.0 업데이트 안내",
