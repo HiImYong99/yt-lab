@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>농구선수 키우기</title>
+<meta name="description" content="고교에서 은퇴까지, 나만의 농구 커리어. 무료 · App Store · Google Play">
+<meta property="og:type" content="website">
+<meta property="og:title" content="농구선수 키우기">
+<meta property="og:description" content="너의 농구 인생은 어떻게 끝날까? 고교에서 은퇴까지, 무료로 시작하기">
+<meta property="og:image" content="https://ytlab.site/basketball-career/og.png">
+<meta property="og:url" content="https://ytlab.site/basketball-career/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#050B0E">
+<style>
+  :root { color-scheme: dark; }
+  body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+         background: #050B0E; color: #E9F2F6; font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; }
+  main { width: min(420px, calc(100% - 32px)); text-align: center; }
+  img.icon { width: 96px; height: 96px; border-radius: 22px; }
+  h1 { font-size: 26px; margin: 16px 0 6px; }
+  p { color: #9BB2BE; margin: 0 0 24px; line-height: 1.5; }
+  a.store { display: block; margin: 10px 0; padding: 15px; border-radius: 14px; font-weight: 800; text-decoration: none; }
+  a.ios { background: #FFC530; color: #050B0E; }
+  a.android { background: #16262E; color: #E9F2F6; border: 1px solid #233A45; }
+</style>
+</head>
+<body>
+<main>
+  <img class="icon" src="icon.png" alt="">
+  <h1 id="t">농구선수 키우기</h1>
+  <p id="d">고교에서 은퇴까지, 나만의 농구 커리어</p>
+  <a class="store ios" id="ios" href="https://apps.apple.com/app/id6816143700">App Store</a>
+  <a class="store android" id="android" href="https://play.google.com/store/apps/details?id=site.ytlab.basketball_career">Google Play</a>
+</main>
+<script>
+  // One address for the share card's QR: each phone goes to its own store,
+  // and anything else sees both buttons.
+  (function () {
+    var ua = navigator.userAgent || '';
+    var ios = /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/.test(ua) && 'ontouchend' in document);
+    var android = /Android/i.test(ua);
+    if (!/^ko\b/i.test(navigator.language || '')) {
+      document.documentElement.lang = 'en';
+      document.getElementById('t').textContent = 'Rimrise: Basketball Career';
+      document.getElementById('d').textContent = 'High school to retirement - your own basketball career.';
+    }
+    if (ios) location.replace(document.getElementById('ios').href);
+    else if (android) location.replace(document.getElementById('android').href);
+  })();
+</script>
+</body>
+</html>
