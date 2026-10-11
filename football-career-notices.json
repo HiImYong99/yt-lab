@@ -1,5 +1,62 @@
 [
   {
+    "id": "2026-10-11-season2-scoring",
+    "date": "2026-10-11",
+    "title": "10월 시즌 2 안내: 점수 계산 개편 예정",
+    "body": "- 다음 업데이트(2.4)에서 경기 시뮬레이션과 커리어 점수 계산이 더 현실적으로 바뀝니다.\n- 개편은 시즌이 바뀌는 월요일 오전 9시 1분(한국 시간)에 맞춰 적용합니다. 한 시즌 안에서 점수 기준이 섞이지 않게 하기 위해서입니다.\n- 준비 과정에서 10월 시즌 2(10월 12일~19일)의 점수와 순위에 일부 변동이 생길 수 있습니다. 양해 부탁드립니다.",
+    "important": true,
+    "translations": {
+      "ko": {
+        "title": "10월 시즌 2 안내: 점수 계산 개편 예정",
+        "body": "- 다음 업데이트(2.4)에서 경기 시뮬레이션과 커리어 점수 계산이 더 현실적으로 바뀝니다.\n- 개편은 시즌이 바뀌는 월요일 오전 9시 1분(한국 시간)에 맞춰 적용합니다. 한 시즌 안에서 점수 기준이 섞이지 않게 하기 위해서입니다.\n- 준비 과정에서 10월 시즌 2(10월 12일~19일)의 점수와 순위에 일부 변동이 생길 수 있습니다. 양해 부탁드립니다."
+      },
+      "en": {
+        "title": "October Season 2: scoring changes ahead",
+        "body": "- The next update (2.4) makes the match simulation and the career score more realistic.\n- It goes live one minute after a season changes over (Monday 00:01 UTC), so no season mixes the old and new scoring.\n- While we prepare it, scores and ranks in October Season 2 (Oct 12-19) may shift somewhat. Thank you for your patience."
+      },
+      "ja": {
+        "title": "10月シーズン2のお知らせ：スコア計算の改定予定",
+        "body": "- 次のアップデート(2.4)で、試合シミュレーションとキャリアスコアの計算がより現実的になります。\n- 改定はシーズンが切り替わる月曜00:01(UTC)に合わせて適用します。1つのシーズンで新旧の計算が混ざらないようにするためです。\n- 準備の過程で、10月シーズン2(10月12日〜19日)のスコアと順位が一部変動する場合があります。ご了承ください。"
+      },
+      "zh": {
+        "title": "10月第2赛季公告：积分计算即将调整",
+        "body": "- 下次更新(2.4)将让比赛模拟和生涯积分的计算更加真实。\n- 调整将在赛季切换后的周一00:01(UTC)生效,确保同一赛季内不会混用新旧计算方式。\n- 准备期间,10月第2赛季(10月12日至19日)的积分和排名可能会有一些变动,敬请谅解。"
+      },
+      "es": {
+        "title": "Temporada 2 de octubre: cambios en la puntuación",
+        "body": "- La próxima actualización (2.4) hace más realista la simulación de partidos y la puntuación de carrera.\n- Se aplicará un minuto después del cambio de temporada (lunes 00:01 UTC), para que ninguna temporada mezcle la puntuación antigua y la nueva.\n- Mientras la preparamos, las puntuaciones y posiciones de la Temporada 2 de octubre (12-19 oct.) pueden variar algo. Gracias por tu paciencia."
+      },
+      "pt": {
+        "title": "Temporada 2 de outubro: mudanças na pontuação",
+        "body": "- A próxima atualização (2.4) deixa a simulação das partidas e a pontuação da carreira mais realistas.\n- Ela entra em vigor um minuto após a virada da temporada (segunda, 00:01 UTC), para que nenhuma temporada misture a pontuação antiga e a nova.\n- Durante a preparação, pontuações e posições da Temporada 2 de outubro (12 a 19/10) podem variar um pouco. Obrigado pela paciência."
+      },
+      "fr": {
+        "title": "Saison 2 d'octobre : changements de score à venir",
+        "body": "- La prochaine mise à jour (2.4) rend la simulation des matchs et le score de carrière plus réalistes.\n- Elle s'appliquera une minute après le changement de saison (lundi 00 h 01 UTC), pour qu'aucune saison ne mélange l'ancien et le nouveau calcul.\n- Pendant sa préparation, les scores et classements de la Saison 2 d'octobre (12-19 oct.) peuvent légèrement varier. Merci de votre patience."
+      },
+      "de": {
+        "title": "Oktober-Saison 2: Änderungen an der Wertung",
+        "body": "- Das nächste Update (2.4) macht die Spielsimulation und die Karrierewertung realistischer.\n- Es gilt ab einer Minute nach dem Saisonwechsel (Montag 00:01 UTC), damit keine Saison alte und neue Wertung mischt.\n- Während der Vorbereitung können sich Punkte und Platzierungen der Oktober-Saison 2 (12.–19. Okt.) etwas verschieben. Danke für die Geduld."
+      },
+      "it": {
+        "title": "Stagione 2 di ottobre: cambi al punteggio",
+        "body": "- Il prossimo aggiornamento (2.4) rende più realistici la simulazione delle partite e il punteggio di carriera.\n- Entrerà in vigore un minuto dopo il cambio di stagione (lunedì 00:01 UTC), così nessuna stagione mescola il vecchio e il nuovo calcolo.\n- Durante la preparazione, punteggi e posizioni della Stagione 2 di ottobre (12-19 ott.) potrebbero variare un po'. Grazie per la pazienza."
+      },
+      "id": {
+        "title": "Musim 2 Oktober: perubahan perhitungan skor",
+        "body": "- Pembaruan berikutnya (2.4) membuat simulasi pertandingan dan skor karier lebih realistis.\n- Perubahan berlaku satu menit setelah pergantian musim (Senin 00.01 UTC), agar tidak ada musim yang mencampur perhitungan lama dan baru.\n- Selama persiapan, skor dan peringkat Musim 2 Oktober (12-19 Okt) bisa sedikit berubah. Terima kasih atas pengertiannya."
+      },
+      "tr": {
+        "title": "Ekim 2. Sezon: puanlamada değişiklik geliyor",
+        "body": "- Bir sonraki güncelleme (2.4) maç simülasyonunu ve kariyer puanını daha gerçekçi yapıyor.\n- Değişiklik, sezon geçişinden bir dakika sonra (Pazartesi 00:01 UTC) devreye girer; böylece hiçbir sezonda eski ve yeni puanlama karışmaz.\n- Hazırlık sürecinde Ekim 2. Sezon'un (12-19 Ekim) puan ve sıralamalarında bazı değişiklikler olabilir. Anlayışınız için teşekkürler."
+      },
+      "ar": {
+        "title": "الموسم الثاني من أكتوبر: تغييرات قادمة على النقاط",
+        "body": "- التحديث القادم (2.4) يجعل محاكاة المباريات ونقاط المسيرة أكثر واقعية.\n- يُطبَّق بعد دقيقة من تبدّل الموسم (الإثنين 00:01 بتوقيت UTC)، حتى لا يجمع أي موسم بين الحساب القديم والجديد.\n- أثناء التحضير قد تتغير النقاط والمراكز في الموسم الثاني من أكتوبر (12-19 أكتوبر) قليلًا. شكرًا لتفهمكم."
+      }
+    }
+  },
+  {
     "id": "2026-10-10-weekly-seasons",
     "date": "2026-10-10",
     "title": "랭킹 시즌이 주간으로 바뀝니다",
