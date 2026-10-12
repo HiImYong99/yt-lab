@@ -1,5 +1,62 @@
 [
   {
+    "id": "2026-10-live-2-4-0",
+    "date": "2026-10-12",
+    "title": "2.4 업데이트 안내",
+    "body": "- 구단주 시설: 훈련장·스카우트망·의무실·스포츠 과학 시설과 구단 명성 7단계가 생겼습니다.\n- 커리어 준비 단계가 따로 생겼습니다. 유스 선택, 추천 조합, 자금 장부를 한 화면에서 봅니다.\n- 상·하반기 결산과 뉴스 헤드라인, 시즌 전 예상 순위, 경기별 기록(리그·컵·대륙대회·국가대표)이 추가됐습니다.\n- 프랑스 리그와 더비 구단이 추가됐고, 순위표에 엠블럼이 보입니다. 국가대표는 예선을 치르고 같은 대륙 팀과 맞붙습니다.\n- 무료 골드: 매일 출석하면, 그리고 랭킹에 오른 커리어마다 받습니다.\n- 2.4로 플레이한 커리어부터 새 점수 계산이 적용됩니다.",
+    "important": true,
+    "translations": {
+      "ko": {
+        "title": "2.4 업데이트 안내",
+        "body": "- 구단주 시설: 훈련장·스카우트망·의무실·스포츠 과학 시설과 구단 명성 7단계가 생겼습니다.\n- 커리어 준비 단계가 따로 생겼습니다. 유스 선택, 추천 조합, 자금 장부를 한 화면에서 봅니다.\n- 상·하반기 결산과 뉴스 헤드라인, 시즌 전 예상 순위, 경기별 기록(리그·컵·대륙대회·국가대표)이 추가됐습니다.\n- 프랑스 리그와 더비 구단이 추가됐고, 순위표에 엠블럼이 보입니다. 국가대표는 예선을 치르고 같은 대륙 팀과 맞붙습니다.\n- 무료 골드: 매일 출석하면, 그리고 랭킹에 오른 커리어마다 받습니다.\n- 2.4로 플레이한 커리어부터 새 점수 계산이 적용됩니다."
+      },
+      "en": {
+        "title": "Update 2.4",
+        "body": "- Owner facilities: training ground, scouting network, medical and sports science, plus 7 club prestige tiers.\n- A separate career prep step: youth start, suggested builds and a funds ledger on one screen.\n- Half-season reviews with headlines, a pre-season predicted finish, and match-by-match records (league, cups, continental, national team).\n- A French league and derby clubs; crests on the league table. The national team plays qualifiers and meets its own continent.\n- Free gold for daily visits and for every career the ranking takes.\n- The new scoring applies to careers played on 2.4."
+      },
+      "ja": {
+        "title": "アップデート2.4のお知らせ",
+        "body": "- オーナー施設:トレーニング場・スカウト網・メディカル・スポーツ科学、クラブ名声7段階を追加。\n- キャリア準備ステップを独立。ユース選択・おすすめ構成・資金台帳を1画面で確認できます。\n- 前半・後半の総括とニュース見出し、開幕前の予想順位、試合ごとの記録(リーグ・カップ・大陸大会・代表)を追加。\n- フランスリーグとダービークラブを追加し、順位表にエンブレムを表示。代表は予選を戦い、同じ大陸のチームと対戦します。\n- 無料ゴールド:毎日の出席と、ランキングに載ったキャリアごとに獲得。\n- 2.4でプレイしたキャリアから新しいスコア計算が適用されます。"
+      },
+      "zh": {
+        "title": "2.4 更新公告",
+        "body": "- 老板设施:训练场、球探网、医疗、运动科学,以及7级俱乐部声望。\n- 独立的生涯准备步骤:青训选择、推荐组合、资金账本一屏查看。\n- 新增半赛季总结与新闻头条、赛季前预测排名、逐场记录(联赛、杯赛、洲际赛事、国家队)。\n- 新增法国联赛和德比球队,积分榜显示队徽。国家队需打预选赛,并与同大洲球队交手。\n- 免费金币:每日签到,以及每个进入排行榜的生涯。\n- 用2.4进行的生涯开始适用新积分计算。"
+      },
+      "es": {
+        "title": "Actualización 2.4",
+        "body": "- Instalaciones del dueño: ciudad deportiva, red de ojeo, servicios médicos y ciencia deportiva, y 7 niveles de prestigio.\n- Un paso de preparación propio: cantera, combinaciones sugeridas y libro de fondos en una pantalla.\n- Balances de media temporada con titulares, puesto previsto y registro partido a partido (liga, copas, continental, selección).\n- Liga francesa y clubes de derbi; escudos en la clasificación. La selección juega clasificatorias y rivales de su continente.\n- Oro gratis por visitas diarias y por cada carrera que entra en el ranking.\n- La nueva puntuación se aplica a las carreras jugadas en la 2.4."
+      },
+      "pt": {
+        "title": "Atualização 2.4",
+        "body": "- Instalações do dono: CT, rede de olheiros, departamento médico e ciência do esporte, e 7 níveis de prestígio.\n- Uma etapa de preparação própria: base, combinações sugeridas e livro de fundos em uma tela.\n- Balanços de meia temporada com manchetes, posição prevista e registro jogo a jogo (liga, copas, continental, seleção).\n- Liga francesa e clubes de clássico; escudos na tabela. A seleção joga eliminatórias e enfrenta rivais do próprio continente.\n- Ouro grátis por visitas diárias e por cada carreira que entra no ranking.\n- A nova pontuação vale para carreiras jogadas na 2.4."
+      },
+      "fr": {
+        "title": "Mise à jour 2.4",
+        "body": "- Installations du propriétaire : centre d'entraînement, réseau de recrutement, médical et science du sport, et 7 paliers de prestige.\n- Une étape de préparation à part : formation, combinaisons suggérées et registre des fonds sur un écran.\n- Bilans de mi-saison avec gros titres, classement prévu et fiches match par match (championnat, coupes, continental, sélection).\n- Championnat français et clubs de derby ; écussons au classement. La sélection dispute des éliminatoires contre son continent.\n- Or gratuit : visites quotidiennes et chaque carrière classée.\n- Le nouveau calcul s'applique aux carrières jouées en 2.4."
+      },
+      "de": {
+        "title": "Update 2.4",
+        "body": "- Besitzer-Anlagen: Trainingsgelände, Scouting-Netz, Medizin und Sportwissenschaft sowie 7 Prestige-Stufen.\n- Ein eigener Vorbereitungsschritt: Jugendstart, Vorschläge und Kassenbuch auf einem Bildschirm.\n- Halbsaison-Bilanzen mit Schlagzeilen, Platzprognose und Spiel-für-Spiel-Daten (Liga, Pokale, Kontinent, Nationalteam).\n- Französische Liga und Derby-Klubs; Wappen in der Tabelle. Das Nationalteam spielt Qualifikation gegen den eigenen Kontinent.\n- Gratis-Gold für tägliche Besuche und jede gewertete Karriere.\n- Die neue Wertung gilt für Karrieren, die mit 2.4 gespielt wurden."
+      },
+      "it": {
+        "title": "Aggiornamento 2.4",
+        "body": "- Strutture del proprietario: centro sportivo, rete di osservatori, staff medico e scienza dello sport, con 7 livelli di prestigio.\n- Una fase di preparazione a parte: vivaio, combinazioni consigliate e registro fondi in una schermata.\n- Bilanci di metà stagione con titoli, piazzamento previsto e dati partita per partita (campionato, coppe, continentali, nazionale).\n- Campionato francese e club del derby; stemmi in classifica. La nazionale gioca le qualificazioni contro il proprio continente.\n- Oro gratis per le visite giornaliere e per ogni carriera in classifica.\n- Il nuovo calcolo vale per le carriere giocate con la 2.4."
+      },
+      "id": {
+        "title": "Pembaruan 2.4",
+        "body": "- Fasilitas pemilik: tempat latihan, jaringan pemandu bakat, medis dan ilmu olahraga, serta 7 tingkat prestise klub.\n- Tahap persiapan karier tersendiri: akademi, kombinasi saran, dan buku dana dalam satu layar.\n- Rekap paruh musim dengan berita utama, prediksi peringkat, dan catatan per laga (liga, piala, kontinental, timnas).\n- Liga Prancis dan klub derbi; lambang di klasemen. Timnas menjalani kualifikasi melawan tim satu benua.\n- Emas gratis dari kunjungan harian dan setiap karier yang masuk peringkat.\n- Perhitungan skor baru berlaku untuk karier yang dimainkan di 2.4."
+      },
+      "tr": {
+        "title": "2.4 güncellemesi",
+        "body": "- Sahip tesisleri: antrenman tesisi, scouting ağı, sağlık ve spor bilimi ile 7 kademe kulüp prestiji.\n- Ayrı bir kariyer hazırlığı adımı: altyapı, önerilen kurulumlar ve fon defteri tek ekranda.\n- Devre özetleri ve manşetler, sezon öncesi tahmini sıra, maç maç kayıtlar (lig, kupalar, kıtasal, milli takım).\n- Fransa ligi ve derbi kulüpleri; puan tablosunda armalar. Milli takım elemelerde kendi kıtasıyla karşılaşır.\n- Günlük ziyaret ve sıralamaya giren her kariyer için ücretsiz altın.\n- Yeni puan hesabı 2.4 ile oynanan kariyerlere uygulanır."
+      },
+      "ar": {
+        "title": "تحديث 2.4",
+        "body": "- مرافق المالك: ملعب التدريب وشبكة الكشافين والطاقم الطبي وعلوم الرياضة، مع 7 مستويات لمكانة النادي.\n- خطوة تحضير مستقلة للمسيرة: الأكاديمية والتشكيلات المقترحة ودفتر الأموال في شاشة واحدة.\n- ملخصات نصف الموسم مع العناوين، والمركز المتوقع قبل الموسم، وسجل كل مباراة (الدوري والكؤوس والقارية والمنتخب).\n- دوري فرنسي وأندية ديربي، وشعارات في جدول الترتيب. يخوض المنتخب التصفيات أمام فرق قارته.\n- ذهب مجاني عند الزيارة اليومية وعن كل مسيرة تدخل التصنيف.\n- يُطبَّق الحساب الجديد على المسيرات التي لُعبت على 2.4."
+      }
+    }
+  },
+  {
     "id": "2026-10-11-season2-scoring",
     "date": "2026-10-11",
     "title": "10월 시즌 2 안내: 점수 계산 개편",
