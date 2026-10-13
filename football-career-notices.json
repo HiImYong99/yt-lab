@@ -1,5 +1,62 @@
 [
   {
+    "id": "2026-10-13-career-score-update",
+    "date": "2026-10-13",
+    "title": "온라인 커리어 점수 개선",
+    "body": "- 온라인 랭킹의 커리어 점수에서 620점 상한을 없앴습니다. 각 항목의 기준을 넘는 성과도 가점으로 반영하며, 추가 점수의 증가폭은 점차 줄어듭니다.\n- 기존에 등록한 온라인 기록도 새 공식으로 재계산했습니다. 진행 중 시즌은 구단주별 점수 상위 3명을 다시 선정해 집계하므로 점수와 순위가 달라질 수 있습니다.\n- 이미 마감된 시즌의 확정 순위와 메달은 유지됩니다.\n- 구버전 앱이나 기기 보관함에 표시된 점수는 온라인 랭킹 점수와 다를 수 있습니다.",
+    "important": true,
+    "translations": {
+      "ko": {
+        "title": "온라인 커리어 점수 개선",
+        "body": "- 온라인 랭킹의 커리어 점수에서 620점 상한을 없앴습니다. 각 항목의 기준을 넘는 성과도 가점으로 반영하며, 추가 점수의 증가폭은 점차 줄어듭니다.\n- 기존에 등록한 온라인 기록도 새 공식으로 재계산했습니다. 진행 중 시즌은 구단주별 점수 상위 3명을 다시 선정해 집계하므로 점수와 순위가 달라질 수 있습니다.\n- 이미 마감된 시즌의 확정 순위와 메달은 유지됩니다.\n- 구버전 앱이나 기기 보관함에 표시된 점수는 온라인 랭킹 점수와 다를 수 있습니다."
+      },
+      "en": {
+        "title": "Online career scoring improved",
+        "body": "- Online career scores no longer have a 620-point cap. Performance beyond each category's reference level earns extra points, with diminishing gains.\n- Previously submitted online records have also been recalculated. Active seasons now select each owner's three highest-scoring careers again, so scores and rankings may change.\n- Final standings and medals for completed seasons remain unchanged.\n- Scores shown in older app versions or your device's collection may differ from online ranking scores."
+      },
+      "ja": {
+        "title": "オンラインのキャリアスコアを改善",
+        "body": "- オンラインランキングのキャリアスコアの620点上限を撤廃しました。各項目の基準を超える実績にも加点され、追加点の増加幅は徐々に小さくなります。\n- 過去に登録されたオンライン記録も新しい計算式で再計算しました。開催中のシーズンでは各オーナーの上位3キャリアを選び直して集計するため、スコアや順位が変わる場合があります。\n- 終了したシーズンの確定順位とメダルは維持されます。\n- 旧バージョンのアプリや端末のコレクションに表示されるスコアは、オンラインランキングと異なる場合があります。"
+      },
+      "zh": {
+        "title": "在线生涯评分改进",
+        "body": "- 在线排行榜的生涯评分不再设620分上限。超出各项基准的表现也会获得加分，但额外分数的增长幅度会逐渐降低。\n- 之前提交的在线记录也已按新公式重新计算。进行中的赛季将重新选出每位老板得分最高的3段生涯进行汇总，因此分数和排名可能变化。\n- 已结束赛季的最终排名和奖牌保持不变。\n- 旧版应用或设备收藏中显示的分数可能与在线排行榜不同。"
+      },
+      "es": {
+        "title": "Mejora de la puntuación de carreras en línea",
+        "body": "- Las carreras del ranking en línea ya no tienen un límite de 620 puntos. Los logros que superan la referencia de cada categoría suman puntos extra, con incrementos cada vez menores.\n- También hemos recalculado los registros enviados anteriormente. En las temporadas activas se vuelven a elegir las tres carreras con mayor puntuación de cada dueño, por lo que las puntuaciones y posiciones pueden cambiar.\n- Las clasificaciones definitivas y medallas de temporadas finalizadas se mantienen.\n- Las puntuaciones de versiones antiguas de la aplicación o de la colección del dispositivo pueden diferir del ranking en línea."
+      },
+      "pt": {
+        "title": "Melhoria na pontuação de carreiras online",
+        "body": "- As carreiras no ranking online não têm mais o limite de 620 pontos. Desempenhos acima da referência de cada categoria dão pontos extras, com ganhos progressivamente menores.\n- Os registros enviados anteriormente também foram recalculados. Nas temporadas em andamento, as três carreiras de maior pontuação de cada dono são selecionadas novamente, então pontos e posições podem mudar.\n- As classificações finais e medalhas de temporadas encerradas são mantidas.\n- Pontuações exibidas em versões antigas do aplicativo ou na coleção do dispositivo podem diferir do ranking online."
+      },
+      "fr": {
+        "title": "Amélioration des scores de carrière en ligne",
+        "body": "- Les scores de carrière du classement en ligne ne sont plus plafonnés à 620 points. Les performances au-delà de la référence de chaque catégorie rapportent des points supplémentaires, avec des gains décroissants.\n- Les anciennes carrières enregistrées en ligne ont aussi été recalculées. Les saisons en cours sélectionnent à nouveau les trois meilleures carrières de chaque propriétaire : les scores et les places peuvent donc changer.\n- Les classements définitifs et les médailles des saisons terminées sont conservés.\n- Les scores affichés dans les anciennes versions de l'application ou dans la collection de votre appareil peuvent différer du classement en ligne."
+      },
+      "de": {
+        "title": "Verbesserte Karrierewertung online",
+        "body": "- Karrierewerte in der Online-Rangliste haben keine Grenze von 620 Punkten mehr. Leistungen über dem Referenzwert jeder Kategorie bringen zusätzliche Punkte, deren Zuwachs allmählich abnimmt.\n- Bereits eingereichte Online-Karrieren wurden ebenfalls neu berechnet. In laufenden Saisons werden die drei besten Karrieren jedes Besitzers neu ausgewählt; Punkte und Plätze können sich daher ändern.\n- Endplatzierungen und Medaillen abgeschlossener Saisons bleiben erhalten.\n- Werte in älteren App-Versionen oder in der Sammlung auf deinem Gerät können von der Online-Rangliste abweichen."
+      },
+      "it": {
+        "title": "Punteggi delle carriere online migliorati",
+        "body": "- I punteggi delle carriere nella classifica online non hanno più il limite di 620 punti. I risultati oltre il riferimento di ogni categoria aggiungono punti extra, con incrementi progressivamente minori.\n- Anche le carriere già registrate online sono state ricalcolate. Nelle stagioni in corso vengono selezionate di nuovo le tre migliori carriere di ogni proprietario, quindi punteggi e posizioni possono cambiare.\n- Le classifiche definitive e le medaglie delle stagioni concluse restano invariate.\n- I punteggi nelle versioni precedenti dell'app o nella raccolta del dispositivo possono differire dalla classifica online."
+      },
+      "id": {
+        "title": "Peningkatan skor karier online",
+        "body": "- Skor karier di peringkat online tidak lagi dibatasi 620 poin. Prestasi yang melampaui acuan tiap kategori tetap memberi poin tambahan, dengan kenaikan yang makin kecil.\n- Catatan online yang sudah dikirim juga telah dihitung ulang. Pada musim yang sedang berlangsung, tiga karier dengan skor tertinggi tiap pemilik dipilih ulang, sehingga skor dan peringkat bisa berubah.\n- Peringkat akhir dan medali musim yang telah selesai tetap dipertahankan.\n- Skor di versi aplikasi lama atau koleksi perangkat dapat berbeda dari skor peringkat online."
+      },
+      "tr": {
+        "title": "Çevrimiçi kariyer puanları iyileştirildi",
+        "body": "- Çevrimiçi sıralamadaki kariyer puanları artık 620 ile sınırlı değil. Her kategorinin referansını aşan başarılar ek puan getirir; ek puan artışı giderek azalır.\n- Önceden gönderilen çevrimiçi kayıtlar da yeniden hesaplandı. Devam eden sezonlarda her sahibin en yüksek puanlı üç kariyeri yeniden seçilir; bu nedenle puanlar ve sıralamalar değişebilir.\n- Tamamlanan sezonların kesin sıralamaları ve madalyaları korunur.\n- Eski uygulama sürümlerinde veya cihaz koleksiyonunda görünen puanlar çevrimiçi sıralamadan farklı olabilir."
+      },
+      "ar": {
+        "title": "تحسين نقاط المسيرة في الترتيب عبر الإنترنت",
+        "body": "- لم تعد نقاط المسيرة في الترتيب عبر الإنترنت محدودة بـ620 نقطة. الإنجازات التي تتجاوز المستوى المرجعي لكل فئة تمنح نقاطًا إضافية، مع تناقص مقدار الزيادة تدريجيًا.\n- أُعيد أيضًا حساب السجلات المسجلة سابقًا عبر الإنترنت. في المواسم الجارية، تُختار من جديد أفضل ثلاث مسيرات لكل مالك، لذا قد تتغير النقاط والمراكز.\n- تبقى المراكز النهائية والميداليات للمواسم المنتهية كما هي.\n- قد تختلف النقاط المعروضة في الإصدارات القديمة من التطبيق أو في مجموعة الجهاز عن نقاط الترتيب عبر الإنترنت."
+      }
+    }
+  },
+  {
     "id": "2026-10-live-2-4-0",
     "date": "2026-10-12",
     "title": "2.4 업데이트 안내",
