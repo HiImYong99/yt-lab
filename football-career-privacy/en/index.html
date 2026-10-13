@@ -31,14 +31,14 @@
 <div class="wrap">
   <p class="eyebrow">Football Career Sim: Be a Pro</p>
   <h1>Privacy Policy</h1>
-  <p class="meta">Effective 7 October 2026 (previously 13 September 2026)</p>
+  <p class="meta">Effective 14 October 2026 (previously 7 October 2026)</p>
   <p class="meta" style="margin-bottom:36px"><a href="../">한국어</a> · English</p>
 
   <p>YT Lab ("the developer") makes the mobile game <strong>Football Career Sim: Be a Pro</strong> ("the app").
   The app has no accounts. What leaves your device is advertising, the career record and owner nickname you put on the global ranking, and usage analytics if you allow them - all set out below.</p>
 
   <h2>1. What is processed</h2>
-  <p>There is no sign-up. The app does not collect your name, email, phone number, contacts or location. Only the following is processed.</p>
+  <p>There is no sign-up. The app does not collect your name, email, phone number, contacts or precise location. Only the following is processed.</p>
   <table>
     <tr><th>Data</th><th>Processed by</th><th>Purpose</th></tr>
     <tr><td>Advertising identifier (IDFA / AAID)</td><td>Google AdMob</td><td>Serving and measuring the bottom banner, the interstitials at a career's end and every sixth season, and the rewarded ad you can choose at player creation</td></tr>
@@ -47,17 +47,17 @@
     <tr><td>Game progress (your shelf of retired players, settings, what you own, game funds, club edits and any image used in them)</td><td>Your device</td><td>Picking up where you left off</td></tr>
     <tr><td>Player name, career record, anonymous id</td><td>This app's ranking server (Cloudflare)</td><td>The global ranking - sent by default, and <strong>switchable off on the Rankings screen</strong>. A name you typed yourself only with your agreement. See section 7</td></tr>
     <tr><td>Owner nickname and the cosmetics shown on the ranking</td><td>This app's ranking server (Cloudflare)</td><td>Shown on the ranking with your careers - only while you take part. See section 7</td></tr>
-    <tr><td>Usage analytics (events such as app open, career created, season completed, retirement; the screen the app was left on; whether reminders are allowed and opened; on Android, whether the install came from an ad or not - never the ad click id itself; time, app version, platform, anonymous id)</td><td>This app's server (Cloudflare)</td><td>Improving the game - sent <strong>only if you choose Allow</strong>, and switchable off in Settings at any time</td></tr>
+    <tr><td>Usage analytics (events such as app open, career created, season completed, retirement; screens viewed and the screen the app was left on; whether reminders are allowed and opened; on Android, whether the install came from an ad or not - never the ad click id itself; time, session duration, app version, platform, device model, OS version, language, country/region derived from IP, anonymous id, app instance ID)</td><td>This app's server (Cloudflare), Google Analytics for Firebase (Google LLC)</td><td>Improving the game - sent <strong>only if you choose Allow</strong>, and switchable off in Settings at any time. See section 8</td></tr>
   </table>
   <div class="card">
     Careers and the shelf are stored <strong>on your device</strong>. When a career ends, what section 7 lists is sent to the ranking server; turn off "Take part in rankings" at the foot of the Rankings screen and nothing further is sent. A player name you typed yourself is sent only if you separately agree to publish it.
-    There is no third-party analytics SDK and no crash reporting. Usage analytics go to our own server only if you allow them, and never include names, free text or the advertising identifier. Images used in club editing never leave the device.
+    There is no crash reporting. Usage analytics go to our own server and to Google Analytics for Firebase only if you allow them, and never include names, free text, the advertising identifier (IDFA / AAID) or the IDFV. Images used in club editing never leave the device.
   </div>
 
   <h2>2. Storage</h2>
   <ul>
     <li>Everything is kept in on-device storage (shared_preferences) and is removed when you delete the app.</li>
-    <li>With the ranking and usage analytics both switched off, nothing reaches a server of ours. Section 7 covers how long an entered career is kept and how to have it deleted. Usage analytics records are likewise kept until a deletion request is made.</li>
+    <li>With the ranking and usage analytics both switched off, nothing reaches a server of ours. Section 7 covers how long an entered career is kept and how to have it deleted. Usage analytics records on our own server are likewise kept until a deletion request is made; Google Analytics event data is deleted automatically after at most 14 months.</li>
   </ul>
 
   <h2>3. Advertising</h2>
@@ -78,7 +78,7 @@
   </ul>
 
   <h2>5. Sharing</h2>
-  <p>The developer does not sell user data and shares nothing beyond the processing described above (AdMob, app-store billing, and the Cloudflare processing the ranking and usage analytics use), except where required by law.</p>
+  <p>The developer does not sell user data and shares nothing beyond the processing described above (AdMob, app-store billing, and the Cloudflare processing the ranking and usage analytics use, and Google Analytics for Firebase for usage analytics), except where required by law.</p>
 
   <h2>6. Your choices</h2>
   <ul>
@@ -102,19 +102,29 @@
     <li><strong>Where this is processed</strong> - the information above is processed and stored on Cloudflare (Workers and D1), and is not shared with any other third party for this purpose.</li>
   </ul>
 
-  <h2>8. Children</h2>
+  <h2>8. Usage analytics (Google Analytics for Firebase)</h2>
+  <p>To see, in aggregate, where players stop and how often they come back, the app uses <strong>Google Analytics for Firebase</strong> (Google LLC). It collects data <strong>only if you choose Allow</strong> on the usage-analytics prompt, and you can switch it off in Settings at any time; once off, nothing further is collected.</p>
+  <ul>
+    <li><strong>What is collected</strong> - app usage events (screens viewed, progress such as a career starting and ending), the app instance ID (a random identifier generated by the SDK), device model, OS version, app version, language, approximate location (country/region derived from the IP address - the IP address itself is not stored by Google Analytics), and session duration</li>
+    <li><strong>What is not collected</strong> - collection of the advertising identifier (IDFA / AAID) and the IDFV is disabled. No names, contacts or free text are sent.</li>
+    <li><strong>Purpose</strong> - aggregate statistics such as retention and drop-off points, used only to improve the app. It is not used to identify individuals and is never sold.</li>
+    <li><strong>Retention</strong> - per the Google Analytics retention settings, event data is kept for up to 14 months and then deleted.</li>
+    <li>See the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a> and <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">how Google uses information from sites or apps that use its services</a>.</li>
+  </ul>
+
+  <h2>9. Children</h2>
   <p>The app is not directed at children and does not knowingly collect data from them.</p>
 
-  <h2>9. About the names in the game</h2>
+  <h2>10. About the names in the game</h2>
   <p>Every league, club, player and manager name in the app is invented and is not connected to any real organisation or person.</p>
 
-  <h2>10. Contact</h2>
+  <h2>11. Contact</h2>
   <div class="card">
     Developer: YT Lab<br>
     Email: <a href="mailto:contact@ytlab.site">contact@ytlab.site</a>
   </div>
 
-  <h2>11. Changes</h2>
+  <h2>12. Changes</h2>
   <p>Any change to this policy will be published on this page.</p>
 
   <footer>© YT Lab · <a href="https://ytlab.site">ytlab.site</a></footer>

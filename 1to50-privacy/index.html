@@ -31,7 +31,7 @@
 <div class="wrap">
   <p class="eyebrow">1 to 50</p>
   <h1>개인정보 처리방침</h1>
-  <p class="meta">시행일: 2026년 6월 20일</p>
+  <p class="meta">시행일: 2026년 10월 14일 (이전 시행일 2026년 6월 20일)</p>
   <p class="meta" style="margin-bottom:36px">한국어 · <a href="en/" style="color:#157a52">English</a></p>
 
   <p>YT Lab(이하 "개발자")은 모바일 게임 <strong>1 to 50</strong>(이하 "앱")을 운영하며,
@@ -45,11 +45,12 @@
     <tr><td>게임 기록 (완주 시간, 격자 크기, 날짜)</td><td>랭킹 등록 시</td><td>순위 산정·표시</td></tr>
     <tr><td>임의 기기 식별자 (앱이 무작위로 생성)</td><td>최초 랭킹 등록 시</td><td>한 기기당 하나의 기록 관리(중복 방지)</td></tr>
     <tr><td>국가/지역 (기기 언어·지역 설정에서 추정)</td><td>랭킹 등록 시</td><td>국기 표시 및 국가별 랭킹</td></tr>
+    <tr><td>앱 사용 통계 (본 화면, 게임 시작·완주 등 이벤트, 앱 인스턴스 ID, 기기 모델·OS 버전, 앱 버전, 언어, IP로 추정한 국가·지역, 세션 시간)</td><td>앱 사용 중 (Google Analytics for Firebase가 처리)</td><td>집계 통계로 앱 개선 — 아래 3항 참조</td></tr>
   </table>
   <div class="card">
     랭킹 등록은 <strong>이용자가 직접 "등록" 버튼을 누를 때만</strong> 이루어집니다.
-    등록하지 않으면 어떤 정보도 서버로 전송되지 않으며, 게임 기록은 기기에만 저장됩니다.
-    이름·이메일·전화번호·위치·연락처 등 식별 가능한 개인정보는 수집하지 않습니다.
+    등록하지 않으면 랭킹 정보는 서버로 전송되지 않으며, 게임 기록은 기기에만 저장됩니다.
+    이름·이메일·전화번호·정밀 위치·연락처 등 식별 가능한 개인정보는 수집하지 않습니다.
     무작위 기기 식별자는 광고 식별자(IDFA/AAID)가 아니며 다른 앱·서비스 추적에 사용되지 않습니다.
     국가/지역은 기기의 언어·지역 설정에서 추정한 국가 코드(예: KR)이며, GPS 등 정밀 위치 정보를 수집하지 않습니다.
   </div>
@@ -59,27 +60,37 @@
     <li>등록된 랭킹 정보는 Google Firebase(Cloud Firestore, 리전: 대한민국 서울 asia-northeast3)에 저장됩니다.</li>
     <li>기기 내 정보(최고 기록, 설정, 무작위 식별자)는 이용자 기기에만 저장됩니다.</li>
     <li>보유 기간: 랭킹 표시 목적이 유지되는 동안. 앱 삭제 후에도 서버에 등록된 기록은 남을 수 있으며, 아래 연락처로 삭제를 요청할 수 있습니다.</li>
+    <li>Google Analytics의 이벤트 데이터는 최대 14개월 보관 후 자동 삭제됩니다.</li>
   </ul>
 
-  <h2>3. 제3자 제공·처리 위탁</h2>
+  <h2>3. 사용 분석 (Google Analytics for Firebase)</h2>
+  <p>앱을 개선하기 위해 <strong>Google Analytics for Firebase</strong>(Google LLC)로 앱 사용 통계를 집계합니다.</p>
+  <ul>
+    <li><strong>수집 항목</strong> — 앱 사용 이벤트(본 화면, 게임 시작·완주 등 진행), 앱 인스턴스 ID(SDK가 만드는 무작위 식별자), 기기 모델, OS 버전, 앱 버전, 언어, 대략적인 위치(IP로 추정한 국가·지역 — IP 주소 자체는 Google Analytics에 저장되지 않음), 세션 시간</li>
+    <li><strong>목적</strong> — 재방문율, 이탈 지점 같은 집계 통계로 앱을 개선하는 데만 씁니다. 개인을 식별하는 데 쓰지 않으며 판매하지 않습니다.</li>
+    <li><strong>보관 기간</strong> — Google Analytics 보관 설정에 따라 이벤트 데이터는 최대 14개월 보관 후 삭제됩니다.</li>
+    <li>자세한 내용은 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 개인정보처리방침</a> 및 <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google이 파트너 사이트·앱의 정보를 이용하는 방식</a>을 참고하세요.</li>
+  </ul>
+
+  <h2>4. 제3자 제공·처리 위탁</h2>
   <p>개발자는 개인정보를 판매하지 않습니다. 서비스 제공을 위해 다음 처리자를 이용합니다.</p>
   <ul>
-    <li><strong>Google Firebase</strong> (Google LLC) — 랭킹 데이터 저장·조회.
+    <li><strong>Google Firebase</strong> (Google LLC) — 랭킹 데이터 저장·조회, Google Analytics for Firebase 사용 통계 집계.
       <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase 개인정보 보호</a></li>
   </ul>
 
-  <h2>4. 이용자 권리</h2>
+  <h2>5. 이용자 권리</h2>
   <p>이용자는 자신의 등록 기록에 대해 열람·삭제를 요청할 수 있습니다.
   닉네임과 함께 아래 이메일로 요청하시면 처리해 드립니다.</p>
 
-  <h2>5. 아동의 개인정보</h2>
+  <h2>6. 아동의 개인정보</h2>
   <p>앱은 만 14세 미만 아동을 주 대상으로 하지 않으며, 아동으로부터 의도적으로 개인정보를 수집하지 않습니다.</p>
 
-  <h2>6. 변경 고지</h2>
+  <h2>7. 변경 고지</h2>
   <p>본 방침이 변경되면 본 페이지에 갱신된 내용과 시행일을 게시합니다.
   광고 등 새로운 기능이 추가될 경우 수집 항목과 함께 본 방침을 갱신합니다.</p>
 
-  <h2>7. 문의</h2>
+  <h2>8. 문의</h2>
   <p>개인정보 관련 문의·삭제 요청: <a href="mailto:contact@ytlab.site">contact@ytlab.site</a></p>
 
   <footer>

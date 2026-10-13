@@ -31,7 +31,7 @@
 <div class="wrap">
   <p class="eyebrow">SumDash</p>
   <h1>개인정보 처리방침</h1>
-  <p class="meta">시행일: 2026년 6월 28일</p>
+  <p class="meta">시행일: 2026년 10월 14일 (이전 시행일 2026년 6월 28일)</p>
   <p class="meta" style="margin-bottom:36px">한국어 · <a href="en/">English</a></p>
 
   <p>YT Lab(이하 "개발자")은 모바일 게임 <strong>SumDash</strong>(이하 "앱")을 운영하며,
@@ -46,6 +46,7 @@
     <tr><td>임의 기기 식별자(앱이 무작위 생성)</td><td>최초 랭킹 등록 시</td><td>기기당 하나의 기록 관리(중복 방지)</td></tr>
     <tr><td>국가/지역(기기 언어·지역 설정에서 추정)</td><td>랭킹 등록 시</td><td>국가별 랭킹 표시</td></tr>
     <tr><td>광고 식별자·대략적 위치·앱 상호작용·진단 정보</td><td>광고 표시 시(아래 3항)</td><td>광고 게재·측정, 오류 진단</td></tr>
+    <tr><td>앱 사용 통계(본 화면, 게임 시작·종료 등 이벤트, 앱 인스턴스 ID, 기기 모델·OS 버전, 앱 버전, 언어, IP로 추정한 국가·지역, 세션 시간)</td><td>앱 사용 중(Google Analytics for Firebase가 처리)</td><td>집계 통계로 앱 개선(아래 4항)</td></tr>
   </table>
   <div class="card">
     랭킹 등록은 <strong>이용자가 직접 등록할 때만</strong> 이루어집니다. 등록하지 않으면 게임 기록은 기기에만 저장됩니다.
@@ -57,6 +58,7 @@
   <ul>
     <li>등록된 랭킹 정보는 Google Firebase(Cloud Firestore, 리전: 대한민국 서울 asia-northeast3)에 저장됩니다.</li>
     <li>기기 내 정보(최고 기록·설정·무작위 식별자)는 이용자 기기에만 저장됩니다.</li>
+    <li>앱 사용 통계는 Google Analytics for Firebase에서 처리됩니다(아래 4항).</li>
   </ul>
 
   <h2>3. 광고</h2>
@@ -70,28 +72,39 @@
     <li>광고 식별자는 기기 설정에서 언제든지 재설정하거나 맞춤 광고를 해제할 수 있습니다.</li>
   </ul>
 
-  <h2>4. 인앱 구매</h2>
+  <h2>4. 사용 분석 (Google Analytics for Firebase)</h2>
+  <p>앱을 개선하기 위해 <strong>Google Analytics for Firebase</strong>(Google LLC)로 앱 사용 통계를 집계합니다.</p>
+  <ul>
+    <li><strong>수집 항목</strong> — 앱 사용 이벤트(본 화면, 게임 시작·종료 등 진행), 앱 인스턴스 ID(SDK가 만드는 무작위 식별자), 기기 모델, OS 버전, 앱 버전, 언어, 대략적인 위치(IP로 추정한 국가·지역 — IP 주소 자체는 Google Analytics에 저장되지 않음), 세션 시간</li>
+    <li><strong>목적</strong> — 재방문율, 이탈 지점 같은 집계 통계로 앱을 개선하는 데만 씁니다. 개인을 식별하는 데 쓰지 않으며 판매하지 않습니다.</li>
+    <li><strong>보관 기간</strong> — Google Analytics 보관 설정에 따라 이벤트 데이터는 최대 14개월 보관 후 삭제됩니다.</li>
+    <li>자세한 내용은 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 개인정보처리방침</a> 및 <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google이 파트너 사이트·앱의 정보를 이용하는 방식</a>을 참고하세요.</li>
+  </ul>
+
+  <h2>5. 인앱 구매</h2>
   <p>앱은 광고 제거(Remove Ads) 인앱 구매를 제공합니다. 결제는 Apple App Store 또는 Google Play를 통해 처리되며,
   개발자는 신용카드 등 결제 정보를 수집·보관하지 않습니다.</p>
 
-  <h2>5. 제3자 서비스</h2>
+  <h2>6. 제3자 서비스</h2>
   <ul>
     <li>Google Firebase(Cloud Firestore) — 랭킹 저장</li>
     <li>Google AdMob — 광고 게재·측정</li>
+    <li>Google Analytics for Firebase — 앱 사용 통계 집계</li>
     <li>Apple App Store / Google Play — 인앱 결제 처리</li>
   </ul>
 
-  <h2>6. 데이터 보관 및 삭제</h2>
+  <h2>7. 데이터 보관 및 삭제</h2>
   <p>랭킹 데이터는 서비스 운영 기간 동안 보관됩니다. 본인 기록의 삭제를 원하면 아래 이메일로 닉네임과 함께 요청해 주세요.
-  기기 내 데이터는 앱 삭제 시 함께 제거됩니다.</p>
+  기기 내 데이터는 앱 삭제 시 함께 제거됩니다.
+  Google Analytics의 이벤트 데이터는 최대 14개월 보관 후 자동 삭제됩니다.</p>
 
-  <h2>7. 아동</h2>
+  <h2>8. 아동</h2>
   <p>앱은 만 13세 미만 아동을 주 대상으로 하지 않으며, 아동의 개인정보를 의도적으로 수집하지 않습니다.</p>
 
-  <h2>8. 변경</h2>
+  <h2>9. 변경</h2>
   <p>본 방침은 변경될 수 있으며, 변경 시 본 페이지에 시행일과 함께 게시합니다.</p>
 
-  <h2>9. 문의</h2>
+  <h2>10. 문의</h2>
   <p>개인정보 관련 문의: <a href="mailto:contact@ytlab.site">contact@ytlab.site</a></p>
 
   <footer>© 2026 YT Lab · SumDash</footer>
