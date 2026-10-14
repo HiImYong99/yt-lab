@@ -43,6 +43,7 @@
     <tr><th>Data</th><th>Processed by</th><th>Purpose</th></tr>
     <tr><td>Advertising identifier (IDFA / AAID)</td><td>Google AdMob</td><td>Serving and measuring the bottom banner, the interstitials at a career's end and every sixth season, and the rewarded ad you can choose at player creation</td></tr>
     <tr><td>Purchase receipts</td><td>Apple App Store / Google Play</td><td>Confirming and restoring in-app purchases</td></tr>
+    <tr><td>Gold purchase and spending records (store transaction id, product, time, anonymous id), the gold balance and club facilities</td><td>This app's server (Cloudflare)</td><td>Crediting the gold bought, preventing double credit, keeping the balance and facilities, and moving them to another device with a restore code</td></tr>
     <tr><td>Game progress (your shelf of retired players, settings, what you own, game funds, team edits and any image used in them)</td><td>Your device</td><td>Picking up where you left off</td></tr>
     <tr><td>Player name, career record, anonymous id</td><td>This app's ranking server (Cloudflare)</td><td>The global ranking - sent by default, and <strong>switchable off on the Rankings screen</strong>. A name you typed yourself only with your agreement. See section 7</td></tr>
     <tr><td>Owner nickname and the cosmetics shown on the ranking</td><td>This app's ranking server (Cloudflare)</td><td>Shown on the ranking with your careers - only while you take part. See section 7</td></tr>
@@ -71,7 +72,8 @@
   <h2>4. Payments</h2>
   <ul>
     <li>In-app purchases are handled by the App Store and Google Play. The developer never receives card or other financial details.</li>
-    <li>The products sold - remove ads, the position pack, Start at 15 in high school and the Supporter Shelf - are all one-off, non-consumable purchases. Game funds are earned by playing and are never sold for money.</li>
+    <li>The products sold are remove ads, the position pack, Start at 15 in high school and the Supporter Shelf (one-off, non-consumable purchases), and gold (a consumable currency). Gold is spent on club facilities, cosmetics and reroll tickets or exchanged for game funds, and is also earned by playing and daily check-ins. Game funds themselves are never sold.</li>
+    <li>The gold balance and purchase records are kept on this app's server under the anonymous id. A restore code in the app moves them to a new device.</li>
     <li>Purchases can be recovered with "Restore purchases" in the app.</li>
   </ul>
 
