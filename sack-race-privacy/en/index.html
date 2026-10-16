@@ -31,11 +31,11 @@
 <div class="wrap">
   <p class="eyebrow">Sack Race: Football Manager Career Sim</p>
   <h1>Privacy Policy</h1>
-  <p class="meta">Effective 14 October 2026 (1.3)</p>
+  <p class="meta">Effective 16 October 2026 (1.4)</p>
   <p class="meta" style="margin-bottom:36px"><a href="../">한국어</a> · English</p>
 
   <p>YT Lab ("the developer") makes the mobile game <strong>Sack Race: Football Manager Career Sim</strong> ("the app").
-  The app has no accounts. What leaves your device is advertising data (Google AdMob, subject to your App Tracking Transparency choice on iOS and to the UMP consent form in the EEA), purchase processing by the App Store and Google Play, and app usage statistics sent to Google Analytics for Firebase. Careers, the shelf, credits, your nickname and your club edits stay on your device - all of it is set out below.</p>
+  The app has no accounts. What leaves your device is advertising data (Google AdMob, subject to your App Tracking Transparency choice on iOS and to the UMP consent form in the EEA), purchase processing by the App Store and Google Play, app usage statistics sent to Google Analytics for Firebase and, if you agree, your retired careers and manager name for the global rankings. Careers, the shelf, credits, your nickname and your club edits stay on your device - all of it is set out below.</p>
 
   <h2>1. What is processed</h2>
   <p>There is no sign-up. The app does not collect your name, email, phone number, contacts or precise location. Only the following is processed.</p>
@@ -45,17 +45,19 @@
     <tr><td>Purchase receipts</td><td>Apple App Store / Google Play</td><td>Confirming and restoring the remove-ads, background-pack and supporter-shelf purchases</td></tr>
     <tr><td>Game progress (three career slots, your shelf of retired managers and their titles, credits, nickname, club edits and any photo you picked, settings, what you own)</td><td>Your device</td><td>Picking up where you left off</td></tr>
     <tr><td>App usage statistics (screens viewed, events such as a career starting and ending, app instance ID, device model, OS version, app version, language, country/region derived from IP, session duration)</td><td>Google Analytics for Firebase (Google LLC)</td><td>Improving the app from aggregate statistics - see section 7</td></tr>
+    <tr><td>Manager name, retired career records, a random ranking ID issued by the server</td><td>This app's ranking server (Cloudflare)</td><td>Global rankings - sent <strong>only if you agree</strong>, and can be switched off on the rankings screen. See section 8</td></tr>
   </table>
   <div class="card">
-    Careers, the shelf, credits, your nickname and your club edits are stored <strong>on your device</strong> and are never sent to the developer (not collected).
+    Careers in progress, the shelf, credits, your nickname and your club edits are stored <strong>on your device</strong>. Only if you agree to the global rankings are the items in section 8 sent.
     The photo library opens only when you pick a picture for a club's pennant, and the picture stays on this device.
-    There is no ranking and no crash reporting in this app. Usage statistics go only to Google Analytics for Firebase (section 7) and never include your nickname, photos or club edits. The app downloads a notices file from ytlab.site and sends nothing with it.
+    There is no crash reporting in this app. Usage statistics go only to Google Analytics for Firebase (section 7) and never include your nickname, photos or club edits. The app downloads a notices file from ytlab.site and sends nothing with it.
+    Sharing a moment card (a new job, a trophy, a sacking) opens your device's system share sheet, and you choose where it goes; the app sends nothing by itself. On iOS, the add-to-photos permission is used only when you choose "Save Image" in that share sheet.
   </div>
 
   <h2>2. Storage</h2>
   <ul>
     <li>Everything is kept in on-device storage (shared_preferences) and is removed when you delete the app.</li>
-    <li>The developer keeps no user data of its own. Google Analytics event data is deleted automatically after at most 14 months.</li>
+    <li>Records submitted to the global rankings (section 8) are kept on the ranking server until you ask for deletion. Beyond that, the developer keeps no user data of its own. Google Analytics event data is deleted automatically after at most 14 months.</li>
   </ul>
 
   <h2>3. Advertising</h2>
@@ -76,12 +78,13 @@
   </ul>
 
   <h2>5. Sharing</h2>
-  <p>The developer does not sell user data and shares nothing beyond the processing described above (AdMob, app-store billing and Google Analytics for Firebase usage statistics), except where required by law.</p>
+  <p>The developer does not sell user data and shares nothing beyond the processing described above (AdMob, app-store billing, Google Analytics for Firebase usage statistics and Cloudflare for the global rankings), except where required by law.</p>
 
   <h2>6. Your choices</h2>
   <ul>
     <li>Deleting the app deletes everything stored on the device.</li>
     <li>The advertising identifier can be reset or limited in your device settings (iOS: Settings &gt; Privacy &gt; Tracking; Android: Settings &gt; Ads).</li>
+    <li>Taking part in the global rankings can be switched off at the foot of the rankings screen, and deletion of submitted records can be requested as described in section 8.</li>
   </ul>
 
   <h2>7. Usage analytics (Google Analytics for Firebase)</h2>
@@ -93,19 +96,31 @@
     <li>See the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a> and <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">how Google uses information from sites or apps that use its services</a>.</li>
   </ul>
 
-  <h2>8. Children</h2>
+  <h2>8. Global rankings</h2>
+  <p>The App Store and Google Play app has weekly, monthly and all-time rankings of retired careers by legacy score. The Apps-in-Toss mini app and the web version have none. The first time a career is retired on a device, a consent sheet is shown, and nothing is sent unless you agree. If you decline, nothing is sent, and the "Take part in rankings" switch at the foot of the rankings screen turns it on or off at any time. Once it is off, nothing more is sent.</p>
+  <ul>
+    <li><strong>What is sent</strong> - the manager name (up to 16 characters, as you typed it); background, tactical identity and clubs; each season's finish, expected finish, record, honours and whether you were sacked; your spell at each club; retirement age; peak reputation; career earnings; and a random ranking ID issued by the server. The ranking ID is not a device or advertising identifier, and there is no login or email. Your nickname, photos and club edits are not sent.</li>
+    <li><strong>Purpose and visibility</strong> - showing the rankings. The manager name, background, club and record (legacy, trophies, sackings, seasons) are visible to other players.</li>
+    <li><strong>Reporting and blocking</strong> - long-press a row to report or block it. Blocking hides it on your own screen only. A name reported by 3 players who have finished a career of their own is hidden automatically, and the developer reviews reports and acts on them. Names containing inappropriate words are filtered on the server and never shown.</li>
+    <li><strong>Abuse prevention</strong> - for rate limiting, IP addresses are processed only as a one-way hash; the IP address itself is not stored.</li>
+    <li><strong>Retention</strong> - kept until you ask for deletion.</li>
+    <li><strong>Deletion</strong> - send the "Ranking ID" shown at the foot of the settings screen to <a href="mailto:contact@ytlab.site">contact@ytlab.site</a>, and the careers submitted under that ID, its report and block records and the ID itself are all deleted.</li>
+    <li><strong>Where it is processed</strong> - Cloudflare (Workers and D1). It is not shared with anyone else for any other purpose.</li>
+  </ul>
+
+  <h2>9. Children</h2>
   <p>The app is not directed at children and does not knowingly collect data from them.</p>
 
-  <h2>9. About the names in the game</h2>
+  <h2>10. About the names in the game</h2>
   <p>Every league, team, player and coach name in the app is invented and is not connected to any real organisation or person.</p>
 
-  <h2>10. Contact</h2>
+  <h2>11. Contact</h2>
   <div class="card">
     Developer: YT Lab<br>
     Email: <a href="mailto:contact@ytlab.site">contact@ytlab.site</a>
   </div>
 
-  <h2>11. Changes</h2>
+  <h2>12. Changes</h2>
   <p>Any change to this policy will be published on this page.</p>
 
   <footer>© YT Lab · <a href="https://ytlab.site">ytlab.site</a></footer>
