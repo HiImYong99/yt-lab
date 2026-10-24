@@ -1,0 +1,10 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "site.ytlab.soccer_career",
+      "sha256_cert_fingerprints": ["94:C5:8D:E0:6B:26:6A:8E:91:BE:5B:CA:4A:40:6A:73:C8:75:A6:C3:9C:5C:FD:71:26:31:E2:72:A9:49:FD:3A"]
+    }
+  }
+]

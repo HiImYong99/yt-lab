@@ -1,0 +1,2 @@
+# GitHub Pages skips dot-folders; app link files live in .well-known.
+include: [".well-known"]

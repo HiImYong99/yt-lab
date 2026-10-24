@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": ["A3NZTDWF42.site.ytlab.soccerCareer"],
+        "appID": "A3NZTDWF42.site.ytlab.soccerCareer",
+        "paths": ["/claim/football/*"],
+        "components": [{ "/": "/claim/football/*", "comment": "Discord community reward" }]
+      }
+    ]
+  }
+}
