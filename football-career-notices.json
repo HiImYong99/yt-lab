@@ -54,6 +54,30 @@
         "title": "مكافأة الانضمام إلى Discord: قائد المشجعين",
         "body": "- انضم إلى مجتمع Discord الرسمي واحصل على شخصية Discord الحصرية «قائد المشجعين» و3 تذاكر لإعادة توليد السمات.\n- ومعها 2,000 من رصيد المالك والبطاقة الحصرية «المجتمع». يصل هذان إلى التطبيق مع تحديث 2.6.2.\n- الطريقة: افتح Discord من «المجتمع الرسمي» في الشاشة الأولى أو «المجتمع (Discord)» في الإعدادات، ثم اضغط الزر في قناة #rewards. افتح الرابط على هاتفك وسيستلمها التطبيق فورًا.\n- مرة واحدة لكل حساب Discord ولكل حساب لعبة، في تطبيق iOS أو Android بالإصدار 2.6.1 أو أحدث."
       }
+    },
+    "popup": {
+      "art": [
+        "avatar:communityCaptain",
+        "card:community"
+      ],
+      "cta": {
+        "url": "https://discord.gg/xaZrNwmdMQ",
+        "label": {
+          "ko": "디스코드 서버 가입",
+          "en": "Join the Discord server",
+          "ja": "Discordサーバーに参加",
+          "zh": "加入 Discord 服务器",
+          "es": "Unirme al servidor de Discord",
+          "pt": "Entrar no servidor do Discord",
+          "fr": "Rejoindre le serveur Discord",
+          "de": "Discord-Server beitreten",
+          "it": "Entra nel server Discord",
+          "id": "Gabung server Discord",
+          "tr": "Discord sunucusuna katıl",
+          "ar": "انضم إلى خادم Discord"
+        }
+      },
+      "skipIfOwns": "communityCaptain"
     }
   },
   {
