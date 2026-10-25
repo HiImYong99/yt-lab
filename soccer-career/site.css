@@ -253,3 +253,8 @@ footer p { margin: 0 0 6px; }
 /* Card grades table */
 .grade { font-weight: 700; }
 .credit { font-size: 13px; }
+
+/* Hall-of-fame podium above the hero title (App Store event art) */
+.podium { margin: 0 0 28px; }
+.podium img { display: block; width: 100%; height: auto; border-radius: 16px; }
+.podium figcaption { margin-top: 8px; font-size: 13px; color: var(--mid); }
