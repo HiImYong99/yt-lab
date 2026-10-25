@@ -150,6 +150,7 @@ def render_page(code, codes, strings, guide=False):
     values = {k: localize_paths(v, code) for k, v in strings.items() if isinstance(v, str)}
     values.update(lang=LANGUAGES[code][0], dir='rtl' if code == 'ar' else 'ltr',
                   canonical=ORIGIN + page_path(code, guide), assets=assets,
+                  shots=f'{assets}img/shots/{code}/',
                   intro_path=page_path(code), guide_path=page_path(code, True),
                   privacy_path='/football-career-privacy/' + ('' if code == 'ko' else 'en/'),
                   og_locale=LANGUAGES[code][2], og_image=image,
