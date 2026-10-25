@@ -1,5 +1,62 @@
 [
   {
+    "id": "2026-10-25-discord-reward",
+    "date": "2026-10-25",
+    "title": "디스코드 가입 보상: 메가폰 응원단장",
+    "body": "- 공식 디스코드 커뮤니티에 들어오면 디스코드 전용 캐릭터 '메가폰 응원단장'과 능력치 굴림 티켓 3장을 받을 수 있습니다.\n- 구단주 자금 2,000과 전용 카드 '커뮤니티'도 함께 드립니다. 이 두 가지는 2.6.2 업데이트 후 앱에 들어옵니다.\n- 받는 법: 첫 화면의 '공식 커뮤니티' 또는 설정의 '커뮤니티 (Discord)'로 디스코드에 들어간 뒤, #rewards-보상 채널의 버튼을 누르세요. 휴대폰에서 링크를 열면 앱에서 바로 받아집니다.\n- 디스코드 계정·게임 계정마다 한 번씩, iOS·Android 앱 2.6.1 이상에서 받을 수 있습니다.",
+    "important": false,
+    "translations": {
+      "ko": {
+        "title": "디스코드 가입 보상: 메가폰 응원단장",
+        "body": "- 공식 디스코드 커뮤니티에 들어오면 디스코드 전용 캐릭터 '메가폰 응원단장'과 능력치 굴림 티켓 3장을 받을 수 있습니다.\n- 구단주 자금 2,000과 전용 카드 '커뮤니티'도 함께 드립니다. 이 두 가지는 2.6.2 업데이트 후 앱에 들어옵니다.\n- 받는 법: 첫 화면의 '공식 커뮤니티' 또는 설정의 '커뮤니티 (Discord)'로 디스코드에 들어간 뒤, #rewards-보상 채널의 버튼을 누르세요. 휴대폰에서 링크를 열면 앱에서 바로 받아집니다.\n- 디스코드 계정·게임 계정마다 한 번씩, iOS·Android 앱 2.6.1 이상에서 받을 수 있습니다."
+      },
+      "en": {
+        "title": "Discord join reward: Cheer Captain",
+        "body": "- Join the official Discord community to get the Discord-only character Cheer Captain and 3 reroll tickets.\n- 2,000 owner funds and the exclusive Community card come with it. Those two arrive in the app with update 2.6.2.\n- How: open Discord from 'Official community' on the first screen or 'Community (Discord)' in Settings, then tap the button in #rewards. Open the link on your phone and the app claims it right away.\n- Once per Discord account and per game account, in the iOS or Android app 2.6.1 or later."
+      },
+      "ja": {
+        "title": "Discord参加特典:メガホン応援団長",
+        "body": "- 公式Discordコミュニティに参加すると、Discord限定キャラクター「メガホン応援団長」と能力値の振り直しチケット3枚がもらえます。\n- オーナー資金2,000と専用カード「コミュニティ」も付いてきます。この2つは2.6.2アップデート後にアプリに届きます。\n- 受け取り方:最初の画面の「公式コミュニティ」または設定の「コミュニティ (Discord)」からDiscordに入り、#rewardsチャンネルのボタンを押してください。スマホでリンクを開くとアプリですぐ受け取れます。\n- Discordアカウント・ゲームアカウントごとに1回、iOS・Androidアプリ2.6.1以降で受け取れます。"
+      },
+      "zh": {
+        "title": "Discord 加入奖励:喇叭啦啦队长",
+        "body": "- 加入官方 Discord 社区,即可获得 Discord 专属角色「喇叭啦啦队长」和 3 张属性重掷券。\n- 另附 2,000 老板资金和专属卡片「社区」。这两项将在 2.6.2 更新后发放到应用中。\n- 领取方法:从首页的「官方社区」或设置中的「社区 (Discord)」进入 Discord,然后点击 #rewards 频道里的按钮。在手机上打开链接,应用内即可直接领取。\n- 每个 Discord 账号、每个游戏账号各限一次,需使用 iOS·Android 应用 2.6.1 及以上版本。"
+      },
+      "es": {
+        "title": "Premio por unirte a Discord: Capitán de la Grada",
+        "body": "- Únete a la comunidad oficial de Discord y recibe el personaje exclusivo de Discord Capitán de la Grada y 3 boletos de atributos.\n- Además, 2.000 fondos del dueño y la tarjeta exclusiva Comunidad. Estos dos llegan a la app con la actualización 2.6.2.\n- Cómo: entra en Discord desde 'Comunidad oficial' en la primera pantalla o 'Comunidad (Discord)' en Ajustes y pulsa el botón de #rewards. Abre el enlace en tu móvil y la app lo recibe al momento.\n- Una vez por cuenta de Discord y por cuenta de juego, en la app de iOS o Android 2.6.1 o posterior."
+      },
+      "pt": {
+        "title": "Prêmio por entrar no Discord: Capitão da Torcida",
+        "body": "- Entre na comunidade oficial do Discord e receba o personagem exclusivo do Discord Capitão da Torcida e 3 bilhetes de atributos.\n- Junto vêm 2.000 fundos do dono e o cartão exclusivo Comunidade. Esses dois chegam ao app com a atualização 2.6.2.\n- Como: entre no Discord por 'Comunidade oficial' na primeira tela ou 'Comunidade (Discord)' nos Ajustes e toque no botão em #rewards. Abra o link no celular e o app recebe na hora.\n- Uma vez por conta do Discord e por conta do jogo, no app iOS ou Android 2.6.1 ou superior."
+      },
+      "fr": {
+        "title": "Récompense Discord : Capitaine des Tribunes",
+        "body": "- Rejoignez la communauté Discord officielle pour obtenir le personnage exclusif Discord Capitaine des Tribunes et 3 tickets de relance.\n- 2 000 fonds de propriétaire et la carte exclusive Communauté sont aussi offerts. Ces deux-là arrivent dans l’app avec la mise à jour 2.6.2.\n- Comment : ouvrez Discord via « Communauté officielle » sur le premier écran ou « Communauté (Discord) » dans les Réglages, puis touchez le bouton dans #rewards. Ouvrez le lien sur votre téléphone et l’app le récupère aussitôt.\n- Une fois par compte Discord et par compte de jeu, dans l’app iOS ou Android 2.6.1 ou plus récente."
+      },
+      "de": {
+        "title": "Discord-Belohnung: Fankurven-Kapitän",
+        "body": "- Tritt der offiziellen Discord-Community bei und erhalte den Discord-exklusiven Charakter Fankurven-Kapitän und 3 Neuwurf-Tickets.\n- Dazu gibt es 2.000 Besitzer-Guthaben und die exklusive Karte Community. Diese beiden kommen mit dem Update 2.6.2 in die App.\n- So geht’s: Öffne Discord über „Offizielle Community“ auf dem ersten Bildschirm oder „Community (Discord)“ in den Einstellungen und tippe in #rewards auf den Button. Öffne den Link auf dem Handy, dann holt die App die Belohnung sofort ab.\n- Einmal pro Discord-Konto und pro Spielkonto, in der iOS- oder Android-App ab 2.6.1."
+      },
+      "it": {
+        "title": "Premio Discord: Capitano della Curva",
+        "body": "- Entra nella community Discord ufficiale e ricevi il personaggio esclusivo Discord Capitano della Curva e 3 biglietti per ritirare i valori.\n- In più 2.000 fondi del proprietario e la carta esclusiva Community. Questi due arrivano nell’app con l’aggiornamento 2.6.2.\n- Come: apri Discord da 'Community ufficiale' nella prima schermata o 'Community (Discord)' nelle Impostazioni, poi tocca il pulsante in #rewards. Apri il link sul telefono e l’app lo riceve subito.\n- Una volta per account Discord e per account di gioco, nell’app iOS o Android 2.6.1 o successiva."
+      },
+      "id": {
+        "title": "Hadiah gabung Discord: Kapten Suporter",
+        "body": "- Gabung ke komunitas Discord resmi untuk mendapatkan karakter khusus Discord Kapten Suporter dan 3 tiket acak ulang atribut.\n- Plus 2.000 dana pemilik dan kartu eksklusif Komunitas. Keduanya masuk ke aplikasi setelah pembaruan 2.6.2.\n- Caranya: buka Discord dari 'Komunitas resmi' di layar pertama atau 'Komunitas (Discord)' di Pengaturan, lalu ketuk tombol di #rewards. Buka tautannya di ponsel dan aplikasi langsung menerimanya.\n- Sekali per akun Discord dan per akun game, di aplikasi iOS atau Android versi 2.6.1 ke atas."
+      },
+      "tr": {
+        "title": "Discord katılım ödülü: Tribün Kaptanı",
+        "body": "- Resmi Discord topluluğuna katıl; Discord'a özel karakter Tribün Kaptanı ve 3 özellik yenileme bileti senin.\n- Yanında 2.000 sahip fonu ve özel Topluluk kartı da var. Bu ikisi 2.6.2 güncellemesiyle uygulamaya gelir.\n- Nasıl: ilk ekrandaki 'Resmi topluluk' ya da Ayarlar'daki 'Topluluk (Discord)' ile Discord'a gir, #rewards kanalındaki düğmeye dokun. Bağlantıyı telefonda aç, uygulama hemen alır.\n- Her Discord hesabı ve her oyun hesabı için bir kez, iOS veya Android uygulamasının 2.6.1 ve üstü sürümünde."
+      },
+      "ar": {
+        "title": "مكافأة الانضمام إلى Discord: قائد المشجعين",
+        "body": "- انضم إلى مجتمع Discord الرسمي واحصل على شخصية Discord الحصرية «قائد المشجعين» و3 تذاكر لإعادة توليد السمات.\n- ومعها 2,000 من رصيد المالك والبطاقة الحصرية «المجتمع». يصل هذان إلى التطبيق مع تحديث 2.6.2.\n- الطريقة: افتح Discord من «المجتمع الرسمي» في الشاشة الأولى أو «المجتمع (Discord)» في الإعدادات، ثم اضغط الزر في قناة #rewards. افتح الرابط على هاتفك وسيستلمها التطبيق فورًا.\n- مرة واحدة لكل حساب Discord ولكل حساب لعبة، في تطبيق iOS أو Android بالإصدار 2.6.1 أو أحدث."
+      }
+    }
+  },
+  {
     "id": "2026-10-13-career-score-update",
     "date": "2026-10-13",
     "title": "온라인 커리어 점수 개선",
