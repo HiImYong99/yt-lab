@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="pt-BR" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="content-language" content="pt-BR">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Simulador de carreira de futebol: cresça com cartas</title>
+<meta name="description" content="Simulador de carreira de futebol: dos 17 à aposentadoria, 1 de 3 cartas de crescimento a cada 2 temporadas. Grátis no iPhone e Android. Teste aqui.">
+<link rel="canonical" href="https://ytlab.site/soccer-career/pt/">
+<link rel="alternate" hreflang="ko" href="https://ytlab.site/soccer-career/ko/">
+<link rel="alternate" hreflang="en" href="https://ytlab.site/soccer-career/en/">
+<link rel="alternate" hreflang="ja" href="https://ytlab.site/soccer-career/ja/">
+<link rel="alternate" hreflang="zh-Hans" href="https://ytlab.site/soccer-career/zh/">
+<link rel="alternate" hreflang="es" href="https://ytlab.site/soccer-career/es/">
+<link rel="alternate" hreflang="pt" href="https://ytlab.site/soccer-career/pt/">
+<link rel="alternate" hreflang="fr" href="https://ytlab.site/soccer-career/fr/">
+<link rel="alternate" hreflang="de" href="https://ytlab.site/soccer-career/de/">
+<link rel="alternate" hreflang="it" href="https://ytlab.site/soccer-career/it/">
+<link rel="alternate" hreflang="id" href="https://ytlab.site/soccer-career/id/">
+<link rel="alternate" hreflang="tr" href="https://ytlab.site/soccer-career/tr/">
+<link rel="alternate" hreflang="ar" href="https://ytlab.site/soccer-career/ar/">
+<link rel="alternate" hreflang="x-default" href="https://ytlab.site/soccer-career/en/">
+<meta name="apple-itunes-app" content="app-id=6807107830">
+<meta name="theme-color" content="#0C1830">
+<link rel="icon" href="../img/icon-192.webp" type="image/webp">
+<link rel="apple-touch-icon" href="/football-career/icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="YT Lab">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Simulador de carreira de futebol: uma carta muda tudo">
+<meta property="og:description" content="Escolha uma de três cartas de crescimento aqui e siga até a aposentadoria no aplicativo.">
+<meta property="og:url" content="https://ytlab.site/soccer-career/pt/">
+<meta property="og:image" content="https://ytlab.site/soccer-career/img/og-podium.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="Personagens em pixel art no pódio de primeiro, segundo e terceiro lugar, ao lado de um troféu, num estádio à noite">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Simulador de carreira de futebol: uma carta muda tudo">
+<meta name="twitter:description" content="Escolha uma de três cartas de crescimento aqui e siga até a aposentadoria no aplicativo.">
+<meta name="twitter:image" content="https://ytlab.site/soccer-career/img/og-podium.jpg">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="../site.css?v=5">
+<link rel="preload" href="../data/cards-pt.json" as="fetch" crossorigin>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://ytlab.site/#org",
+      "name": "YT Lab",
+      "url": "https://ytlab.site/",
+      "email": "contact@ytlab.site",
+      "sameAs": [
+        "https://www.instagram.com/soccer.career.kr/",
+        "https://discord.gg/xaZrNwmdMQ"
+      ]
+    },
+    {
+      "@type": [
+        "MobileApplication",
+        "VideoGame"
+      ],
+      "@id": "https://ytlab.site/soccer-career/pt/#app",
+      "name": "Simulador de Carreira Futebol",
+      "alternateName": [
+        "Simulador de Carreira Futebol",
+        "Football Career Sim"
+      ],
+      "description": "No Simulador de Carreira Futebol, a cada duas temporadas você escolhe uma entre três cartas de crescimento da mesma raridade. Aumentar atributos na hora, ampliar um limite oculto ou cumprir uma condição para ganhar uma recompensa maior? Viva a carreira de um único jogador, dos dezessete anos na base até a aposentadoria.",
+      "url": "https://ytlab.site/soccer-career/pt/",
+      "image": "https://ytlab.site/football-career/icon.png",
+      "screenshot": [
+        "https://ytlab.site/soccer-career/img/ko_04home.webp",
+        "https://ytlab.site/soccer-career/img/ko_05ovr99.webp",
+        "https://ytlab.site/soccer-career/img/ko_01retired.webp"
+      ],
+      "applicationCategory": "GameApplication",
+      "genre": [
+        "Esportes",
+        "Simulação"
+      ],
+      "gamePlatform": [
+        "iOS",
+        "Android"
+      ],
+      "operatingSystem": "iOS 15.0 ou superior, Android 7.0 ou superior",
+      "inLanguage": "pt-BR",
+      "contentRating": "4+",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "KRW"
+      },
+      "installUrl": [
+        "https://apps.apple.com/app/id6807107830",
+        "https://play.google.com/store/apps/details?id=site.ytlab.soccer_career&hl=pt-BR&referrer=utm_source%3Dytlab.site%26utm_medium%3Dweb%26utm_campaign%3Dsoccer-career-pt"
+      ],
+      "sameAs": [
+        "https://apps.apple.com/app/id6807107830",
+        "https://play.google.com/store/apps/details?id=site.ytlab.soccer_career&hl=pt-BR&referrer=utm_source%3Dytlab.site%26utm_medium%3Dweb%26utm_campaign%3Dsoccer-career-pt",
+        "https://discord.gg/xaZrNwmdMQ"
+      ],
+      "publisher": {
+        "@id": "https://ytlab.site/#org"
+      },
+      "author": {
+        "@id": "https://ytlab.site/#org"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "YT Lab",
+          "item": "https://ytlab.site/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Simulador de Carreira Futebol",
+          "item": "https://ytlab.site/soccer-career/pt/"
+        }
+      ]
+    }
+  ]
+}</script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/soccer-career/pt/"><img src="../img/icon-192.webp" alt="" width="32" height="32">Simulador de Carreira Futebol</a>
+    <nav aria-label="Página">
+      <a href="/soccer-career/pt/" aria-current="page">Conheça o jogo</a>
+      <a href="/soccer-career/pt/guide/">Guia</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <ol class="crumbs" aria-label="Você está aqui">
+      <li><a href="/">YT Lab</a></li>
+      <li>Simulador de Carreira Futebol</li>
+    </ol>
+
+    <div class="hero play">
+      <div class="copy">
+        <figure class="podium">
+          <img src="../img/podium.webp" alt="Personagens em pixel art no pódio de primeiro, segundo e terceiro lugar, ao lado de um troféu, num estádio à noite" width="960" height="540" fetchpriority="high">
+          <figcaption>Uma nova temporada de ranking toda semana. As melhores carreiras ficam no Hall da Fama.</figcaption>
+        </figure>
+        <h1>Simulador de Carreira Futebol <span class="second">Uma carta pode mudar sua carreira</span></h1>
+        <p class="lede">No Simulador de Carreira Futebol, a cada duas temporadas você escolhe uma entre três cartas de crescimento da mesma raridade. Aumentar atributos na hora, ampliar um limite oculto ou cumprir uma condição para ganhar uma recompensa maior? Viva a carreira de um único jogador, dos dezessete anos na base até a aposentadoria.</p>
+      </div>
+
+      <div class="demo-wrap">
+        <div class="demo" id="demo" data-cards-url="../data/cards-pt.json" data-assets="../" aria-labelledby="demo-h">
+          <div class="picker">
+            <div class="demo-head">
+              <h2 id="demo-h">Escolha seu próximo crescimento</h2>
+              <span class="demo-who">Atacante de 27 anos · OVR <b>96</b></span>
+            </div>
+            <p class="demo-meta"><span class="demo-grade">Lendária</span>Escolha 1 de 3</p>
+            <ul class="demo-cards">
+<li class="demo-card"><button class="pick" type="button" aria-pressed="false"><span class="emblem" style="--ink:#FF7A7A"><span class="glyph" style="--glyph:url(/soccer-career/img/cards/awakening.webp)"></span></span><span class="txt"><span class="nm">Despertar do gênio</span><span class="sm">Todos os tetos +5 · 3 chaves +5</span></span></button><button class="reroll" type="button" aria-label="Rolar Despertar do gênio de novo" title="Rolar esta carta de novo"></button></li>
+              <li class="demo-card"><button class="pick" type="button" aria-pressed="false"><span class="emblem" style="--ink:#FF7A7A"><span class="glyph" style="--glyph:url(/soccer-career/img/cards/livingLegend.webp)"></span></span><span class="txt"><span class="nm">Lenda viva</span><span class="sm">Cada temporada com nota 7.5: 3 chaves +3·tetos +3 (sem limite)</span></span></button><button class="reroll" type="button" aria-label="Rolar Lenda viva de novo" title="Rolar esta carta de novo"></button></li>
+              <li class="demo-card"><button class="pick" type="button" aria-pressed="false"><span class="emblem" style="--ink:#FF7A7A"><span class="glyph" style="--glyph:url(/soccer-career/img/cards/timeless.webp)"></span></span><span class="txt"><span class="nm">Além do tempo</span><span class="sm">Sem envelhecer por 4 temporadas · Última idade em campo +3</span></span></button><button class="reroll" type="button" aria-label="Rolar Além do tempo de novo" title="Rolar esta carta de novo"></button></li>
+            </ul>
+            <p class="demo-note">Você pode rolar cada carta de novo uma vez. A raridade continua a mesma.</p>
+            <button class="demo-confirm" type="button" disabled>Escolha uma carta</button>
+          </div>
+          <div class="payout" aria-live="polite"></div>
+        </div>
+        <p class="demo-foot">Esta experiência usa as cartas e os cálculos reais do aplicativo. Ela recria o momento em que um atacante estrela de 27 anos recebe uma rodada Legend, a mais rara. Ao rolar de novo ou tirar as próximas cartas, as opções e probabilidades são as mesmas do jogo. A experiência sempre recomeça com o mesmo jogador.</p>
+      </div>
+
+      <div class="getbox">
+        <div class="get" id="get">
+          <a href="https://apps.apple.com/app/id6807107830" data-store="ios"><img src="../img/badges/appstore-pt.svg" alt="Baixe na App Store" width="156" height="52"></a>
+          <a href="https://play.google.com/store/apps/details?id=site.ytlab.soccer_career&amp;hl=pt-BR&amp;referrer=utm_source%3Dytlab.site%26utm_medium%3Dweb%26utm_campaign%3Dsoccer-career-pt" data-store="android"><img src="../img/badges/gp-pt.png" alt="Disponível no Google Play" width="175" height="52"></a>
+          <a class="discord" href="https://discord.gg/xaZrNwmdMQ" rel="noopener"><img src="../img/discord.svg" alt="" width="24" height="24">Entre no Discord</a>
+        </div>
+        <p class="facts">Download gratuito, com compras no aplicativo. Disponível para iPhone e iPad com iOS 15 ou superior e Android 7.0 ou superior.</p>
+      </div>
+    </div>
+  </div>
+
+  <section id="cards" aria-labelledby="cards-h">
+    <div class="wrap">
+      <div class="prose">
+        <h2 id="cards-h">A cada duas temporadas, uma entre três</h2>
+        <p>Os atributos evoluem automaticamente conforme você joga. As cartas de crescimento acrescentam escolhas a essa evolução. No início e depois <strong>a cada duas temporadas</strong>, aparecem três cartas da mesma raridade e de famílias diferentes: você fica com uma. Quanto maior a raridade, maior o efeito. A primeira carta é Épica garantida.</p>
+      </div>
+      <div class="diff">
+        <div><h3>Cartas de efeito imediato</h3><p>O atributo sobe assim que você escolhe. O foco compensa dá +6 a um atributo principal e +3 ao teto. Tapar lacunas aumenta em 4 o menor atributo principal e o menor secundário.</p></div>
+        <div><h3>Cartas que ampliam seus limites</h3><p>Cada atributo tem um teto oculto onde o crescimento automático para. Um pouco de potencial, Potencial aberto e Salto de potencial elevam esse limite. As cartas podem aumentar os tetos até 95.</p></div>
+        <div><h3>Cartas que recompensam seu desempenho</h3><p>Caçador de gols dá +1 de Finalização a cada 5 gols; Estrela da partida dá +2 a um atributo a cada 2 MOM; Pronto para subir dá +8 a um atributo principal após 30 jogos. A recompensa vem de jogar bem.</p></div>
+        <div><h3>Cartas com um preço</h3><p>Sprint explosivo dá +8 de Velocidade em troca de −3 de Jogo aéreo. Talento diabólico dá +12 ao teto e +10 a um atributo principal, mas tira 3 de um secundário. Todo ganho tem sua contrapartida.</p></div>
+        <div><h3>Cartas que prolongam a carreira</h3><p>Segundo auge reduz o envelhecimento pela metade durante três temporadas e prolonga a carreira em 2 anos. Última chama aumenta três atributos principais em +6, mas você se aposenta ao fim daquela temporada.</p></div>
+        <div><h3>Rolar de novo é grátis</h3><p>Não gostou de uma carta? Role de novo, uma por vez. A raridade não muda, e a nova carta será de uma família diferente das outras duas.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="career" aria-labelledby="career-h">
+    <div class="wrap">
+      <h2 id="career-h">Do banco ao prêmio de Melhor jogador do mundo</h2>
+      <p class="prose">Você não começa como titular na elite. Passa pela base e pela equipe reserva, depois conquista seu espaço a partir do banco do time principal. Lá na frente está o prêmio de Melhor jogador do mundo, que reconhece o melhor de cada temporada. Suas cartas e seu desempenho decidem até onde você vai.</p>
+      <ol class="ruler">
+        <li><div class="age">17<small>anos</small></div><div><h3>Categorias de base</h3><p>Você começa na base aos dezessete anos. Com o pacote de início na base, pode começar aos quinze.</p></div></li>
+        <li><div class="age">19<small>anos, no máximo</small></div><div><h3>Equipe reserva</h3><p>Você sobe à equipe reserva quando se aproxima do nível do time principal ou completa dezenove anos. A promoção é definida no fim da temporada.</p></div></li>
+        <li><div class="age">16–21<small>estreia por liga</small></div><div><h3>Do banco do time principal à titularidade</h3><p>A idade de estreia varia por liga. Ao atingir os requisitos de idade, atributos e nota da temporada, você chega ao time principal. A confiança do técnico define seus minutos.</p></div></li>
+        <li><div class="age">Verão<small>após a temporada</small></div><div><h3>Transferências e renovações</h3><p>Peça uma transferência ou escolha entre as propostas. Com seu agente, negocie salário, Promessa de titular, Multa rescisória e outras cláusulas.</p></div></li>
+        <li><div class="age">18+<small>no time principal</small></div><div><h3>Seleção</h3><p>Jogadores do time principal com dezoito anos ou mais podem ser convocados. O torneio mundial e os torneios continentais se alternam a cada dois anos.</p></div></li>
+        <li><div class="age">36–41<small>conforme a posição</small></div><div><h3>O que fica depois da aposentadoria</h3><p>Por padrão, um Ponta joga até os 36 anos e um Goleiro até os 41. Cartas e eventos podem prolongar a carreira, e você também pode decidir parar antes.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="month" aria-labelledby="month-h">
+    <div class="wrap prose">
+      <h2 id="month-h">Jogue mês a mês. Evolua dentro de campo.</h2>
+      <p>Uma temporada tem dez meses, de agosto a maio, e 38 jogos. Partidas, gols, assistências, jogos sem sofrer gol, MOM e notas viram crescimento naquele mês, com números mostrando exatamente o que evoluiu. Avance mês a mês ou deixe o tempo passar automaticamente.</p>
+      <p class="tick"><span class="m">Crescimento do mês</span><span class="v">Drible 57 → 58 <span class="up">+1</span></span></p>
+      <p style="margin-top:20px">Um grande mês pode render Jogador do mês, Seleção do mês e, para Goleiros, Defesa do mês. São seus números que decidem, sem sorteios ocultos. No fim da temporada, você pode buscar Artilheiro, Seleção da temporada, Craque do ano e até Melhor jogador do mundo.</p>
+    </div>
+  </section>
+
+  <section id="screens" aria-labelledby="screens-h">
+    <div class="wrap">
+      <h2 id="screens-h">Telas do jogo</h2>
+      <div class="shots" tabindex="0" aria-label="Sete telas do jogo; deslize para ver">
+        <figure><img src="../img/ko_05ovr99.webp" alt="Tela de atributos: dez atributos e cartas de crescimento adquiridas" width="600" height="1304" loading="lazy"><figcaption>Dez atributos e suas cartas de crescimento</figcaption></figure>
+        <figure><img src="../img/ko_04home.webp" alt="Tela mensal: data, posição, atributos e estatísticas do mês" width="600" height="1304" loading="lazy"><figcaption>A tela inicial, mês a mês</figcaption></figure>
+        <figure><img src="../img/ko_01retired.webp" alt="Resultado da aposentadoria: 627 pontos de carreira, entre o 1% melhor, lenda do clube" width="600" height="1304" loading="lazy"><figcaption>A avaliação da carreira na aposentadoria</figcaption></figure>
+        <figure><img src="../img/ko_02hall.webp" alt="Hall da Fama: pódio das três melhores carreiras da temporada" width="600" height="1304" loading="lazy"><figcaption>Ranking da temporada e Hall da Fama</figcaption></figure>
+        <figure><img src="../img/ko_03titles.webp" alt="Coleção de títulos: 180 títulos e seis níveis de coleção" width="600" height="1304" loading="lazy"><figcaption>Uma coleção com 180 títulos</figcaption></figure>
+        <figure><img src="../img/ko_06owner.webp" alt="Nível de proprietário: recompensas por nível" width="600" height="1304" loading="lazy"><figcaption>O nível de proprietário cresce com suas carreiras</figcaption></figure>
+        <figure><img src="../img/ko_07archive.webp" alt="Arquivo: lista de jogadores aposentados e melhores marcas" width="600" height="1304" loading="lazy"><figcaption>O arquivo dos seus jogadores aposentados</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="different" aria-labelledby="different-h">
+    <div class="wrap">
+      <h2 id="different-h">Um jeito diferente de viver o futebol</h2>
+      <div class="diff">
+        <div><h3>Um jogador, não um técnico</h3><p>Não há tela de escalação, quadro tático nem verba para contratar. O técnico decide seus minutos. Quando ele muda, o perfil de jogador que procura também pode mudar.</p></div>
+        <div><h3>As probabilidades ficam à vista</h3><p>Nas situações da temporada, cada escolha mostra antes as chances dos três resultados, em barras e porcentagens. Você também pode conferir quanto os atributos, a confiança do técnico, a condição e as cartas de crescimento alteraram esses números.</p></div>
+        <div><h3>Cada liga, uma carreira diferente</h3><p>Da Inglaterra, Espanha, Alemanha, Itália e França à Coreia, ao Japão e à América do Sul. Cada liga tem sua idade de estreia, salários e limites de estrangeiros. Todos os nomes de ligas, clubes, jogadores e técnicos são fictícios.</p></div>
+        <div><h3>A carreira acaba. Os recordes ficam.</h3><p>Ficam suas estatísticas e uma avaliação em seis eixos: qualidade, produção, volume, prêmios, títulos e palco. Você vê sua posição percentual entre 20.000 carreiras simuladas pelas regras do jogo. Carreiras concluídas entram nos rankings semanal, mensal e geral e no Hall da Fama da temporada.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" aria-labelledby="faq-h">
+    <div class="wrap prose">
+      <h2 id="faq-h">Perguntas frequentes</h2>
+      <dl class="qa">
+        <dt>É grátis?</dt>
+        <dd>Você pode baixar e jogar até o fim de graça. As cartas de crescimento e as novas rolagens também são grátis. As compras opcionais incluem remoção de anúncios, pacote de posições, pacote de início na base, pacote de apoio, ouro e bilhetes de nova rolagem. As chances dos atributos iniciais são iguais nas rolagens gratuitas, por anúncio ou com bilhetes.</dd>
+        <dt>Dá para jogar sem internet?</dt>
+        <dd>A carreira e o salvamento funcionam no aparelho, então você pode jogar offline. Rankings, compras, uso de ouro e transferência para outro aparelho precisam de internet.</dd>
+        <dt>Dá para jogar no PC ou no navegador?</dt>
+        <dd>É um aplicativo para iPhone, iPad e Android. Não existe uma versão web para jogar no navegador; nesta página você pode experimentar as cartas de crescimento.</dd>
+        <dt>Quais posições estão disponíveis?</dt>
+        <dd>Goleiro, Zagueiro, Meio-campista, Ponta e Atacante. Goleiro e Atacante são grátis; o pacote de posições libera as outras três. Cada posição tem sete estilos de jogo: 35 no total, todos gratuitos.</dd>
+        <dt>Quantas carreiras posso jogar ao mesmo tempo?</dt>
+        <dd>São três espaços de carreira para desenvolver três jogadores ao mesmo tempo. A nacionalidade define a primeira liga e a seleção.</dd>
+        <dt>Existem jogadores ou clubes reais?</dt>
+        <dd>Não. Todas as ligas, clubes, jogadores e técnicos são fictícios.</dd>
+        <dt>Meu nome aparece no ranking?</dt>
+        <dd>Carreiras concluídas entram no ranking, mas você pode desativar isso quando quiser. Nomes editados por você só são publicados com seu consentimento.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="next" aria-labelledby="next-h">
+    <div class="wrap">
+      <h2 id="next-h">Saiba mais</h2>
+      <div class="more"><a href="/soccer-career/pt/guide/">Guia de Simulador de Carreira Futebol<span>Cartas de crescimento, minutos, transferências, renovações e Melhor jogador do mundo</span></a></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Simulador de Carreira Futebol é criado e mantido pelo <a href="/">YT Lab</a>.</p>
+    <p><a href="/football-career-privacy/en/">Política de privacidade</a>, contato: <a href="mailto:contact@ytlab.site">contact@ytlab.site</a>, <a href="https://discord.gg/xaZrNwmdMQ" rel="noopener">Discord</a>, <a href="https://www.instagram.com/soccer.career.kr/" rel="noopener">Instagram</a></p>
+    <p class="credit">Os ícones das cartas de crescimento são obras de Lorc, Delapouite, Skoll, Zeromancer, Carl Olsen e PriorBlue no game-icons.net (CC BY 3.0).</p>
+  </div>
+  <nav class="wrap languages" aria-label="Idioma"><a href="/soccer-career/ko/" lang="ko" dir="auto" data-lang="ko">한국어</a>
+<a href="/soccer-career/en/" lang="en" dir="auto" data-lang="en">English</a>
+<a href="/soccer-career/ja/" lang="ja" dir="auto" data-lang="ja">日本語</a>
+<a href="/soccer-career/zh/" lang="zh-Hans" dir="auto" data-lang="zh">简体中文</a>
+<a href="/soccer-career/es/" lang="es" dir="auto" data-lang="es">Español</a>
+<a href="/soccer-career/pt/" lang="pt-BR" dir="auto" data-lang="pt" aria-current="true">Português</a>
+<a href="/soccer-career/fr/" lang="fr" dir="auto" data-lang="fr">Français</a>
+<a href="/soccer-career/de/" lang="de" dir="auto" data-lang="de">Deutsch</a>
+<a href="/soccer-career/it/" lang="it" dir="auto" data-lang="it">Italiano</a>
+<a href="/soccer-career/id/" lang="id" dir="auto" data-lang="id">Indonesia</a>
+<a href="/soccer-career/tr/" lang="tr" dir="auto" data-lang="tr">Türkçe</a>
+<a href="/soccer-career/ar/" lang="ar" dir="auto" data-lang="ar">العربية</a></nav>
+<script>document.querySelectorAll(".languages [data-lang]").forEach(function (a) {
+  a.addEventListener("click", function () { try { localStorage.setItem("sc-lang", a.dataset.lang); } catch (e) {} });
+});</script>
+</footer>
+
+<div class="dock dock-ios"><a href="https://apps.apple.com/app/id6807107830"><img src="../img/badges/appstore-pt.svg" alt="Baixe na App Store" width="156" height="52"></a></div>
+<div class="dock dock-android"><a href="https://play.google.com/store/apps/details?id=site.ytlab.soccer_career&amp;hl=pt-BR&amp;referrer=utm_source%3Dytlab.site%26utm_medium%3Dweb%26utm_campaign%3Dsoccer-career-pt"><img src="../img/badges/gp-pt.png" alt="Disponível no Google Play" width="175" height="52"></a></div>
+<script>
+  // Phones get one bottom button for their own store. No redirect: the page
+  // stays what a search engine indexed.
+  (function () {
+    var ua = navigator.userAgent || '';
+    var c = document.documentElement.classList;
+    if (/iPhone|iPad|iPod/i.test(ua) || (/Macintosh/.test(ua) && 'ontouchend' in document)) c.add('is-ios');
+    else if (/Android/i.test(ua)) c.add('is-android');
+  })();
+</script>
+<script id="demo-strings" type="application/json">{
+  "player": "{position} de {age} anos · OVR \u003cb>{ovr}\u003c/b>",
+  "confirm": "Escolher esta carta",
+  "next": "Tirar as próximas cartas",
+  "continue": "Continuar no aplicativo",
+  "held_seasons": "Em sua coleção. Ativa pelas próximas {0} temporadas.",
+  "held_condition": "Em sua coleção. A recompensa chega assim que você cumprir a condição.",
+  "reroll_aria": "Rolar {name} de novo",
+  "rerolled_aria": "{name}, já rolada",
+  "grades": {
+    "common": "Comum",
+    "rare": "Rara",
+    "epic": "Épica",
+    "unique": "Única",
+    "legend": "Legend"
+  }
+}</script>
+<script src="../card-demo.js?v=3" defer></script>
+</body>
+</html>

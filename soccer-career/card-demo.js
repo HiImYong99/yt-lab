@@ -1,18 +1,23 @@
 // Growth-card demo: the game's own first hand, grade pools and payouts for a
-// fresh 17-year-old striker (cards.json, written by soccer-career's
+// fresh 17-year-old striker (data/cards-<code>.json, written by soccer-career's
 // tool/web_card_demo_test.dart). Every round starts from that same player,
 // so each payout is exactly what the app would show.
 (function () {
   var root = document.getElementById('demo');
   if (!root || !window.fetch) return;
 
+  var strings = JSON.parse(document.getElementById('demo-strings').textContent);
+  var assets = new URL(root.getAttribute('data-assets'), document.baseURI).href;
+  function format(text, value) { return text.replace('{0}', value); }
+
   var GRADES = {
-    common: { label: '일반', ink: '#CDD1DB' },
-    rare: { label: '레어', ink: '#8DBAFF' },
-    epic: { label: '에픽', ink: '#CEADFF' },
-    unique: { label: '유니크', ink: '#FFC530' }
+    common: { label: strings.grades.common, ink: '#CDD1DB' },
+    rare: { label: strings.grades.rare, ink: '#8DBAFF' },
+    epic: { label: strings.grades.epic, ink: '#CEADFF' },
+    unique: { label: strings.grades.unique, ink: '#FFC530' },
+    legend: { label: strings.grades.legend, ink: '#FF7A7A' }
   };
-  var ODDS = [['common', 10], ['rare', 30], ['epic', 45], ['unique', 15]];
+  var ODDS = [['common', 10], ['rare', 30], ['epic', 44], ['unique', 13], ['legend', 3]];
   var still = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   var data, grade, hand, rerolled, seen, picked;
@@ -33,7 +38,7 @@
     var e = el('span', big ? 'emblem big' : 'emblem');
     e.style.setProperty('--ink', GRADES[c.rarity].ink);
     var g = el('span', 'glyph');
-    g.style.setProperty('--glyph', 'url(img/cards/' + c.family + '.webp)');
+    g.style.setProperty('--glyph', 'url(' + assets + 'img/cards/' + c.family + '.webp)');
     e.appendChild(g);
     return e;
   }
@@ -58,7 +63,7 @@
 
   // Grade by the game's odds, then three cards of different families.
   function drawRound() {
-    var n = Math.random() * 100, g = 'unique';
+    var n = Math.random() * 100, g = 'legend';
     for (var i = 0, acc = 0; i < ODDS.length; i++) {
       acc += ODDS[i][1];
       if (n < acc) { g = ODDS[i][0]; break; }
@@ -114,14 +119,14 @@
       var r = el('button', 'reroll');
       r.type = 'button';
       r.disabled = rerolled[i] || !alternatives(i).length;
-      r.setAttribute('aria-label', rerolled[i] ? c.name + ' 다시 뽑음' : c.name + ' 다시 뽑기');
-      r.title = rerolled[i] ? '다시 뽑음' : '이 카드 다시 뽑기';
+      r.setAttribute('aria-label', (rerolled[i] ? strings.rerolled_aria : strings.reroll_aria).replace('{name}', c.name));
+      r.title = rerolled[i] ? data.ui['gc.rerolled'] : data.ui['gc.reroll'];
       r.addEventListener('click', function () { reroll(i); });
       li.appendChild(r);
       cardsEl.appendChild(li);
     });
     confirmEl.disabled = picked < 0;
-    confirmEl.textContent = picked < 0 ? '카드를 선택하세요' : '이 카드 받기';
+    confirmEl.textContent = picked < 0 ? data.ui['gc.select'] : strings.confirm;
   }
 
   function chip(text, cls) { return el('span', 'chip ' + (cls || ''), text); }
@@ -131,7 +136,8 @@
     var id = hand[picked], c = card(id), g = GRADES[c.rarity];
     payoutEl.textContent = '';
     payoutEl.style.setProperty('--ink', g.ink);
-    var head = el('p', 'got', g.label + ' 카드 획득');
+    payoutEl.classList.toggle('legend', c.rarity === 'legend');
+    var head = el('p', 'got', format(data.ui['gc.reward.got'], g.label));
     head.tabIndex = -1;
     payoutEl.appendChild(head);
     payoutEl.appendChild(emblem(id, true));
@@ -150,7 +156,7 @@
         v.appendChild(el('span', 'arrow', '→'));
         v.appendChild(el('span', 'to', String(l.to)));
         if (l.to !== l.from) v.appendChild(chip(signed(l.to - l.from), l.to < l.from ? 'down' : ''));
-        if (l.wall1 != null && l.wall1 !== l.wall0) v.appendChild(chip('한계 ' + signed(l.wall1 - l.wall0), 'wall'));
+        if (l.wall1 != null && l.wall1 !== l.wall0) v.appendChild(chip(format(data.ui['gc.reward.ceil'], l.wall1 - l.wall0), 'wall'));
         top.appendChild(v);
         li.appendChild(top);
         var track = el('div', 'track');
@@ -179,8 +185,8 @@
       payoutEl.appendChild(ul);
     } else {
       payoutEl.appendChild(el('p', 'held', c.seasons
-        ? '보유 중. 앞으로 ' + c.seasons + '시즌 동안 적용됩니다.'
-        : '보유 중. 조건을 채우는 순간 보상이 들어옵니다.'));
+        ? format(strings.held_seasons, c.seasons)
+        : strings.held_condition));
     }
 
     var o = el('div', 'ovr' + (c.ovr[1] > c.ovr[0] ? ' up' : ''));
@@ -195,7 +201,7 @@
     payoutEl.appendChild(o);
 
     var act = el('div', 'acts');
-    var again = el('button', 'again', '다음 카드 뽑기');
+    var again = el('button', 'again', strings.next);
     again.type = 'button';
     again.addEventListener('click', function () {
       root.classList.remove('paid');
@@ -203,7 +209,7 @@
       cardsEl.querySelector('.pick').focus();
     });
     act.appendChild(again);
-    var go = el('a', 'go', '앱에서 이어 키우기');
+    var go = el('a', 'go', strings.continue);
     go.href = storeHref();
     act.appendChild(go);
     payoutEl.appendChild(act);
@@ -213,13 +219,15 @@
 
     var run = function () {
       fills.forEach(function (f, i) { setTimeout(f, still ? 0 : 120 + i * 140); });
-      countUp(to, c.ovr[0], c.ovr[1], still ? 0 : 120 + fills.length * 140);
+      countUp(to, c.ovr[0], c.ovr[1], still ? 0 : 120 + fills.length * 140, function () {
+        if (c.ovr[1] >= 99) o.classList.add('max');
+      });
     };
     still ? run() : requestAnimationFrame(function () { requestAnimationFrame(run); });
   }
 
-  function countUp(node, from, to, delay) {
-    if (still || from === to) { node.textContent = String(to); return; }
+  function countUp(node, from, to, delay, done) {
+    if (still || from === to) { node.textContent = String(to); if (done) done(); return; }
     setTimeout(function () {
       var t0 = null;
       (function step(t) {
@@ -227,6 +235,7 @@
         var k = Math.min(1, (t - t0) / 500);
         node.textContent = String(Math.round(from + (to - from) * k));
         if (k < 1) requestAnimationFrame(step);
+        else if (done) done();
       })(performance.now());
     }, delay);
   }
@@ -240,8 +249,11 @@
 
   confirmEl.addEventListener('click', function () { if (picked >= 0) payout(); });
 
-  fetch('cards.json').then(function (r) { return r.json(); }).then(function (d) {
+  fetch(root.getAttribute('data-cards-url')).then(function (r) { return r.json(); }).then(function (d) {
     data = d;
+    Object.keys(GRADES).forEach(function (key) {
+      GRADES[key].label = d.ui['gc.' + key] || strings.grades[key];
+    });
     deal(d.firstRarity, d.firstHand);
     root.classList.add('live');
   }).catch(function () {});
