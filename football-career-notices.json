@@ -57,7 +57,8 @@
         "title": "تحديث نقاط المسيرة: مستوى الدوري يُحتسب، وإضافة أفضل لاعب في العالم",
         "body": "- أصبحت نقاط المسيرة في الترتيب عبر الإنترنت تراعي مستوى الدوري. المواسم التي تُلعب خارج الدوريات الأوروبية الخمسة الكبرى (الدرجة الأولى في إنجلترا وإسبانيا وألمانيا وإيطاليا وفرنسا) تُحتسب بنسبة 80% في الجوائز والألقاب ومستوى المنافسة (كوريا 70%، الخليج 60%).\n- كل جائزة أفضل لاعب في العالم تضيف 10 نقاط إلى الجوائز.\n- تُحتسب الألقاب الآن حسب نوعها: الكؤوس القارية أعلاها، ثم الدوريات، ثم الكؤوس.\n- اختيار المدافع في تشكيلة الموسم يساوي الآن 5 نقاط جوائز (بدلًا من 4)، والقفاز الذهبي 12 نقطة (بدلًا من 8).\n- أُعيد حساب السجلات المسجلة سابقًا عبر الإنترنت بالصيغة الجديدة. قد تتغير النقاط والمراكز في موسم هذا الأسبوع الجاري، وتبقى المراكز النهائية والميداليات للمواسم المنتهية كما هي.\n- كل من سجّل مسيرة في موسم هذا الأسبوع حصل على 100 ذهب في صندوق الهدايا على الشاشة الرئيسية.\n- ستتوافق النقاط المعروضة داخل التطبيق مع الصيغة الجديدة بدءًا من التحديث القادم."
       }
-    }
+    },
+    "category": "notice"
   },
   {
     "id": "2026-10-26-halloween",
@@ -68,51 +69,65 @@
     "translations": {
       "ko": {
         "title": "할로윈 이벤트: 매일 출석 선물, 7일차엔 할로윈 카드",
-        "body": "- 11월 1일(일) 23:59까지 할로윈 이벤트를 진행합니다.\n- 매일 앱에 들어오면 홈 화면 선물함에 출석 선물이 도착합니다. 10/26 리롤 티켓 3장, 10/27 골드 50, 10/28 리롤 티켓 3장, 10/29 골드 80, 10/30 리롤 티켓 5장, 10/31 골드 100.\n- 7일차인 11월 1일(일)에 들어오면 '할로윈 나이트' 카드를 드립니다. 카드를 이미 샀다면 300골드로 돌려드립니다.\n- 들어오지 않은 날의 선물은 나중에 받을 수 없습니다.\n- 이벤트 기간에만 '달빛 마녀'(800골드), '늑대 후드 스트라이커'(440골드), '할로윈 나이트' 카드(300골드)를 판매합니다. 커리어를 은퇴하면 '호박모자 축구선수'를 무료로 드립니다(계정당 1회).\n- 받은 캐릭터와 카드는 이벤트가 끝나도 계속 쓸 수 있습니다."
+        "body": "- 11월 1일(일) 23:59까지 할로윈 이벤트를 진행합니다.\n- 매일 앱에 들어오면 홈 화면 선물함에 출석 선물이 도착합니다. 10/26 리롤 티켓 3장, 10/27 골드 50, 10/28 리롤 티켓 3장, 10/29 골드 80, 10/30 리롤 티켓 5장, 10/31 골드 100.\n- 7일차인 11월 1일(일)에 들어오면 '할로윈 나이트' 카드를 드립니다. 카드를 이미 샀다면 300골드로 돌려드립니다.\n- 들어오지 않은 날의 선물은 나중에 받을 수 없습니다.\n- 이벤트 기간에만 '달빛 마녀'(800골드), '늑대 후드 스트라이커'(440골드), '할로윈 나이트' 카드(300골드)를 판매합니다. 커리어를 은퇴하면 '호박모자 축구선수'를 무료로 드립니다(계정당 1회).\n- 받은 캐릭터와 카드는 이벤트가 끝나도 계속 쓸 수 있습니다.",
+        "summary": "매일 들어오면 선물함에 출석 선물이 와요. 7일차엔 할로윈 나이트 카드.",
+        "content": "## 출석 선물\n- 매일 앱에 들어오면 **홈 화면 선물함**에 그날의 선물이 도착해요.\n- 7일차인 **11월 1일(일)**에 들어오면 **할로윈 나이트** 카드를 드려요.\n\n## 기간 한정 판매\n- 달빛 마녀 **800골드**\n- 늑대 후드 스트라이커 **440골드**\n- 할로윈 나이트 카드 **300골드**\n- 이벤트 중 커리어를 은퇴하면 **호박모자 축구선수** 무료 (계정당 1회)\n\n> 들어오지 않은 날의 선물은 나중에 받을 수 없어요.\n> 카드를 이미 샀다면 7일차에 300골드로 드려요.\n> 받은 캐릭터와 카드는 이벤트가 끝나도 계속 쓸 수 있어요."
       },
       "en": {
         "title": "Halloween event: a gift every day, the Halloween card on day 7",
-        "body": "- The Halloween event runs until Sunday, November 1, 23:59 (KST).\n- Open the app each day and a check-in gift arrives in the gift box on the home screen: Oct 26 3 reroll tickets, Oct 27 50 gold, Oct 28 3 reroll tickets, Oct 29 80 gold, Oct 30 5 reroll tickets, Oct 31 100 gold.\n- Open it on day 7, Sunday, November 1, to get the Halloween Night card. If you already bought the card, you get 300 gold back instead.\n- A day you don't open the app can't be claimed later.\n- During the event only: Moonlight Witch (800 gold), Wolf Hood Striker (440 gold) and the Halloween Night card (300 gold). Retire a career to get the Pumpkin Striker for free (once per account).\n- Characters and cards you get stay yours after the event ends."
+        "body": "- The Halloween event runs until Sunday, November 1, 23:59 (KST).\n- Open the app each day and a check-in gift arrives in the gift box on the home screen: Oct 26 3 reroll tickets, Oct 27 50 gold, Oct 28 3 reroll tickets, Oct 29 80 gold, Oct 30 5 reroll tickets, Oct 31 100 gold.\n- Open it on day 7, Sunday, November 1, to get the Halloween Night card. If you already bought the card, you get 300 gold back instead.\n- A day you don't open the app can't be claimed later.\n- During the event only: Moonlight Witch (800 gold), Wolf Hood Striker (440 gold) and the Halloween Night card (300 gold). Retire a career to get the Pumpkin Striker for free (once per account).\n- Characters and cards you get stay yours after the event ends.",
+        "summary": "Open the app each day for a gift in your gift box. Day 7 brings the Halloween Night card.",
+        "content": "## Daily gifts\n- Open the app each day and that day's gift arrives in the **gift box** on the home screen.\n- Open it on day 7, **Sunday, November 1**, for the **Halloween Night** card.\n\n## Limited-time sale\n- Moonlight Witch **800 gold**\n- Wolf Hood Striker **440 gold**\n- Halloween Night card **300 gold**\n- Retire a career during the event for the **Pumpkin Striker**, free (once per account)\n\n> Gifts for days you don't open the app can't be claimed later.\n> If you already bought the card, day 7 gives you 300 gold instead.\n> Characters and cards you get stay yours after the event."
       },
       "ja": {
         "title": "ハロウィンイベント:毎日ログインギフト、7日目はハロウィンカード",
-        "body": "- ハロウィンイベントは11月1日(日)23:59(KST)まで開催します。\n- 毎日アプリを開くと、ホーム画面のギフトボックスにログインギフトが届きます。10/26 リロールチケット3枚、10/27 ゴールド50、10/28 リロールチケット3枚、10/29 ゴールド80、10/30 リロールチケット5枚、10/31 ゴールド100。\n- 7日目の11月1日(日)に開くと「ハロウィンナイト」カードをプレゼント。すでにカードを購入済みなら300ゴールドでお返しします。\n- アプリを開かなかった日のギフトは後から受け取れません。\n- イベント期間限定で「月明かりの魔女」(800ゴールド)、「オオカミフードのストライカー」(440ゴールド)、「ハロウィンナイト」カード(300ゴールド)を販売します。キャリアを引退すると「かぼちゃ帽子の選手」を無料でプレゼント(アカウントごとに1回)。\n- 手に入れたキャラクターとカードはイベント終了後も使えます。"
+        "body": "- ハロウィンイベントは11月1日(日)23:59(KST)まで開催します。\n- 毎日アプリを開くと、ホーム画面のギフトボックスにログインギフトが届きます。10/26 リロールチケット3枚、10/27 ゴールド50、10/28 リロールチケット3枚、10/29 ゴールド80、10/30 リロールチケット5枚、10/31 ゴールド100。\n- 7日目の11月1日(日)に開くと「ハロウィンナイト」カードをプレゼント。すでにカードを購入済みなら300ゴールドでお返しします。\n- アプリを開かなかった日のギフトは後から受け取れません。\n- イベント期間限定で「月明かりの魔女」(800ゴールド)、「オオカミフードのストライカー」(440ゴールド)、「ハロウィンナイト」カード(300ゴールド)を販売します。キャリアを引退すると「かぼちゃ帽子の選手」を無料でプレゼント(アカウントごとに1回)。\n- 手に入れたキャラクターとカードはイベント終了後も使えます。",
+        "summary": "毎日アプリを開くとギフトボックスに出席ギフトが届きます。7日目はハロウィンナイトカード。"
       },
       "zh": {
         "title": "万圣节活动:每日登录礼物,第 7 天送万圣节卡片",
-        "body": "- 万圣节活动持续到 11 月 1 日(周日)23:59(韩国时间)。\n- 每天打开应用,首页礼物箱都会收到登录礼物:10/26 3 张重掷券,10/27 50 金币,10/28 3 张重掷券,10/29 80 金币,10/30 5 张重掷券,10/31 100 金币。\n- 第 7 天即 11 月 1 日(周日)打开应用,可获得「万圣之夜」卡片。若已购买该卡片,则退还 300 金币。\n- 未打开应用当天的礼物之后无法补领。\n- 活动期间限定出售「月光女巫」(800 金币)、「狼帽前锋」(440 金币)和「万圣之夜」卡片(300 金币)。退役一段生涯即可免费获得「南瓜帽球员」(每个账号一次)。\n- 获得的角色和卡片在活动结束后仍可继续使用。"
+        "body": "- 万圣节活动持续到 11 月 1 日(周日)23:59(韩国时间)。\n- 每天打开应用,首页礼物箱都会收到登录礼物:10/26 3 张重掷券,10/27 50 金币,10/28 3 张重掷券,10/29 80 金币,10/30 5 张重掷券,10/31 100 金币。\n- 第 7 天即 11 月 1 日(周日)打开应用,可获得「万圣之夜」卡片。若已购买该卡片,则退还 300 金币。\n- 未打开应用当天的礼物之后无法补领。\n- 活动期间限定出售「月光女巫」(800 金币)、「狼帽前锋」(440 金币)和「万圣之夜」卡片(300 金币)。退役一段生涯即可免费获得「南瓜帽球员」(每个账号一次)。\n- 获得的角色和卡片在活动结束后仍可继续使用。",
+        "summary": "每天打开游戏，礼物箱就会收到签到礼物。第7天送万圣节之夜卡片。"
       },
       "es": {
         "title": "Evento de Halloween: un regalo cada día y la tarjeta de Halloween el día 7",
-        "body": "- El evento de Halloween dura hasta el domingo 1 de noviembre a las 23:59 (hora de Corea).\n- Abre la app cada día y llegará un regalo a la caja de regalos de la pantalla de inicio: 26/10 3 boletos de repetición, 27/10 50 de oro, 28/10 3 boletos de repetición, 29/10 80 de oro, 30/10 5 boletos de repetición, 31/10 100 de oro.\n- Ábrela el día 7, domingo 1 de noviembre, y recibirás la tarjeta Noche de Halloween. Si ya la compraste, te devolvemos 300 de oro.\n- El regalo de un día en que no abras la app no se puede recuperar después.\n- Solo durante el evento: Bruja lunar (800 de oro), Delantero con capucha de lobo (440 de oro) y la tarjeta Noche de Halloween (300 de oro). Retira una carrera y recibe gratis al Delantero calabaza (una vez por cuenta).\n- Los personajes y tarjetas que consigas siguen siendo tuyos al terminar el evento."
+        "body": "- El evento de Halloween dura hasta el domingo 1 de noviembre a las 23:59 (hora de Corea).\n- Abre la app cada día y llegará un regalo a la caja de regalos de la pantalla de inicio: 26/10 3 boletos de repetición, 27/10 50 de oro, 28/10 3 boletos de repetición, 29/10 80 de oro, 30/10 5 boletos de repetición, 31/10 100 de oro.\n- Ábrela el día 7, domingo 1 de noviembre, y recibirás la tarjeta Noche de Halloween. Si ya la compraste, te devolvemos 300 de oro.\n- El regalo de un día en que no abras la app no se puede recuperar después.\n- Solo durante el evento: Bruja lunar (800 de oro), Delantero con capucha de lobo (440 de oro) y la tarjeta Noche de Halloween (300 de oro). Retira una carrera y recibe gratis al Delantero calabaza (una vez por cuenta).\n- Los personajes y tarjetas que consigas siguen siendo tuyos al terminar el evento.",
+        "summary": "Entra cada día y recibe un regalo en tu buzón. El día 7, la tarjeta Noche de Halloween."
       },
       "pt": {
         "title": "Evento de Halloween: um presente por dia e o cartão de Halloween no dia 7",
-        "body": "- O evento de Halloween vai até domingo, 1º de novembro, às 23:59 (horário da Coreia).\n- Abra o app todo dia e um presente chega à caixa de presentes da tela inicial: 26/10 3 bilhetes de nova rolagem, 27/10 50 de ouro, 28/10 3 bilhetes de nova rolagem, 29/10 80 de ouro, 30/10 5 bilhetes de nova rolagem, 31/10 100 de ouro.\n- Abra no dia 7, domingo, 1º de novembro, para ganhar o cartão Noite de Halloween. Se você já comprou o cartão, recebe 300 de ouro de volta.\n- O presente de um dia em que você não abrir o app não pode ser resgatado depois.\n- Só durante o evento: Bruxa do luar (800 de ouro), Atacante com capuz de lobo (440 de ouro) e o cartão Noite de Halloween (300 de ouro). Aposente uma carreira e ganhe o Atacante abóbora de graça (uma vez por conta).\n- Personagens e cartões que você ganhar continuam seus depois do evento."
+        "body": "- O evento de Halloween vai até domingo, 1º de novembro, às 23:59 (horário da Coreia).\n- Abra o app todo dia e um presente chega à caixa de presentes da tela inicial: 26/10 3 bilhetes de nova rolagem, 27/10 50 de ouro, 28/10 3 bilhetes de nova rolagem, 29/10 80 de ouro, 30/10 5 bilhetes de nova rolagem, 31/10 100 de ouro.\n- Abra no dia 7, domingo, 1º de novembro, para ganhar o cartão Noite de Halloween. Se você já comprou o cartão, recebe 300 de ouro de volta.\n- O presente de um dia em que você não abrir o app não pode ser resgatado depois.\n- Só durante o evento: Bruxa do luar (800 de ouro), Atacante com capuz de lobo (440 de ouro) e o cartão Noite de Halloween (300 de ouro). Aposente uma carreira e ganhe o Atacante abóbora de graça (uma vez por conta).\n- Personagens e cartões que você ganhar continuam seus depois do evento.",
+        "summary": "Entre todo dia e receba um presente na caixa de presentes. No dia 7, o cartão Noite de Halloween."
       },
       "fr": {
         "title": "Événement Halloween : un cadeau par jour, la carte Halloween le 7e jour",
-        "body": "- L'événement Halloween dure jusqu'au dimanche 1er novembre, 23:59 (heure de Corée).\n- Ouvrez l'app chaque jour pour recevoir un cadeau dans la boîte à cadeaux de l'écran d'accueil : 26/10 3 tickets de relance, 27/10 50 or, 28/10 3 tickets de relance, 29/10 80 or, 30/10 5 tickets de relance, 31/10 100 or.\n- Ouvrez-la le 7e jour, dimanche 1er novembre, pour obtenir la carte Nuit Halloween. Si vous l'avez déjà achetée, vous récupérez 300 or.\n- Le cadeau d'un jour où vous n'ouvrez pas l'app ne peut pas être récupéré plus tard.\n- Pendant l'événement seulement : Sorcière lunaire (800 or), Buteur à capuche de loup (440 or) et la carte Nuit Halloween (300 or). Terminez une carrière pour recevoir gratuitement le Buteur citrouille (une fois par compte).\n- Les personnages et cartes obtenus restent à vous après l'événement."
+        "body": "- L'événement Halloween dure jusqu'au dimanche 1er novembre, 23:59 (heure de Corée).\n- Ouvrez l'app chaque jour pour recevoir un cadeau dans la boîte à cadeaux de l'écran d'accueil : 26/10 3 tickets de relance, 27/10 50 or, 28/10 3 tickets de relance, 29/10 80 or, 30/10 5 tickets de relance, 31/10 100 or.\n- Ouvrez-la le 7e jour, dimanche 1er novembre, pour obtenir la carte Nuit Halloween. Si vous l'avez déjà achetée, vous récupérez 300 or.\n- Le cadeau d'un jour où vous n'ouvrez pas l'app ne peut pas être récupéré plus tard.\n- Pendant l'événement seulement : Sorcière lunaire (800 or), Buteur à capuche de loup (440 or) et la carte Nuit Halloween (300 or). Terminez une carrière pour recevoir gratuitement le Buteur citrouille (une fois par compte).\n- Les personnages et cartes obtenus restent à vous après l'événement.",
+        "summary": "Ouvre l'app chaque jour pour un cadeau dans ta boîte. Le 7e jour, la carte Nuit d'Halloween."
       },
       "de": {
         "title": "Halloween-Event: jeden Tag ein Geschenk, am 7. Tag die Halloween-Karte",
-        "body": "- Das Halloween-Event läuft bis Sonntag, 1. November, 23:59 Uhr (koreanische Zeit).\n- Öffne die App jeden Tag, dann landet ein Geschenk in der Geschenkbox auf dem Startbildschirm: 26.10. 3 Neuwurf-Tickets, 27.10. 50 Gold, 28.10. 3 Neuwurf-Tickets, 29.10. 80 Gold, 30.10. 5 Neuwurf-Tickets, 31.10. 100 Gold.\n- Öffne sie am 7. Tag, Sonntag, 1. November, und du bekommst die Karte Halloween-Nacht. Hast du die Karte schon gekauft, bekommst du stattdessen 300 Gold zurück.\n- Das Geschenk eines Tages, an dem du die App nicht öffnest, kann nicht nachgeholt werden.\n- Nur während des Events: Mondhexe (800 Gold), Wolfskapuzenstürmer (440 Gold) und die Karte Halloween-Nacht (300 Gold). Beende eine Karriere und erhalte den Kürbisstürmer gratis (einmal pro Konto).\n- Erhaltene Charaktere und Karten bleiben dir auch nach dem Event."
+        "body": "- Das Halloween-Event läuft bis Sonntag, 1. November, 23:59 Uhr (koreanische Zeit).\n- Öffne die App jeden Tag, dann landet ein Geschenk in der Geschenkbox auf dem Startbildschirm: 26.10. 3 Neuwurf-Tickets, 27.10. 50 Gold, 28.10. 3 Neuwurf-Tickets, 29.10. 80 Gold, 30.10. 5 Neuwurf-Tickets, 31.10. 100 Gold.\n- Öffne sie am 7. Tag, Sonntag, 1. November, und du bekommst die Karte Halloween-Nacht. Hast du die Karte schon gekauft, bekommst du stattdessen 300 Gold zurück.\n- Das Geschenk eines Tages, an dem du die App nicht öffnest, kann nicht nachgeholt werden.\n- Nur während des Events: Mondhexe (800 Gold), Wolfskapuzenstürmer (440 Gold) und die Karte Halloween-Nacht (300 Gold). Beende eine Karriere und erhalte den Kürbisstürmer gratis (einmal pro Konto).\n- Erhaltene Charaktere und Karten bleiben dir auch nach dem Event.",
+        "summary": "Öffne die App jeden Tag für ein Geschenk im Geschenkfach. An Tag 7 gibt es die Halloween-Nacht-Karte."
       },
       "it": {
         "title": "Evento di Halloween: un regalo al giorno, la carta di Halloween il 7° giorno",
-        "body": "- L'evento di Halloween dura fino a domenica 1 novembre alle 23:59 (ora coreana).\n- Apri l'app ogni giorno e nella casella regali della schermata iniziale arriva un regalo: 26/10 3 biglietti rilancio, 27/10 50 oro, 28/10 3 biglietti rilancio, 29/10 80 oro, 30/10 5 biglietti rilancio, 31/10 100 oro.\n- Aprila il 7° giorno, domenica 1 novembre, per ricevere la carta Notte di Halloween. Se l'hai già comprata, ti restituiamo 300 oro.\n- Il regalo di un giorno in cui non apri l'app non si può recuperare.\n- Solo durante l'evento: Strega lunare (800 oro), Attaccante col cappuccio da lupo (440 oro) e la carta Notte di Halloween (300 oro). Ritira una carriera e ricevi gratis l'Attaccante zucca (una volta per account).\n- Personaggi e carte ottenuti restano tuoi anche dopo l'evento."
+        "body": "- L'evento di Halloween dura fino a domenica 1 novembre alle 23:59 (ora coreana).\n- Apri l'app ogni giorno e nella casella regali della schermata iniziale arriva un regalo: 26/10 3 biglietti rilancio, 27/10 50 oro, 28/10 3 biglietti rilancio, 29/10 80 oro, 30/10 5 biglietti rilancio, 31/10 100 oro.\n- Aprila il 7° giorno, domenica 1 novembre, per ricevere la carta Notte di Halloween. Se l'hai già comprata, ti restituiamo 300 oro.\n- Il regalo di un giorno in cui non apri l'app non si può recuperare.\n- Solo durante l'evento: Strega lunare (800 oro), Attaccante col cappuccio da lupo (440 oro) e la carta Notte di Halloween (300 oro). Ritira una carriera e ricevi gratis l'Attaccante zucca (una volta per account).\n- Personaggi e carte ottenuti restano tuoi anche dopo l'evento.",
+        "summary": "Apri l'app ogni giorno per un regalo nella casella regali. Il 7° giorno, la carta Notte di Halloween."
       },
       "id": {
         "title": "Event Halloween: hadiah setiap hari, kartu Halloween di hari ke-7",
-        "body": "- Event Halloween berlangsung sampai Minggu, 1 November, pukul 23:59 (waktu Korea).\n- Buka aplikasi setiap hari dan hadiah masuk ke kotak hadiah di layar utama: 26/10 3 tiket acak ulang, 27/10 50 emas, 28/10 3 tiket acak ulang, 29/10 80 emas, 30/10 5 tiket acak ulang, 31/10 100 emas.\n- Buka di hari ke-7, Minggu, 1 November, untuk mendapatkan kartu Malam Halloween. Jika sudah membeli kartunya, kamu menerima 300 emas sebagai gantinya.\n- Hadiah di hari kamu tidak membuka aplikasi tidak bisa diambil belakangan.\n- Hanya selama event: Penyihir bulan (800 emas), Penyerang berkerudung serigala (440 emas), dan kartu Malam Halloween (300 emas). Pensiunkan satu karier untuk mendapatkan Penyerang labu gratis (sekali per akun).\n- Karakter dan kartu yang kamu dapat tetap milikmu setelah event berakhir."
+        "body": "- Event Halloween berlangsung sampai Minggu, 1 November, pukul 23:59 (waktu Korea).\n- Buka aplikasi setiap hari dan hadiah masuk ke kotak hadiah di layar utama: 26/10 3 tiket acak ulang, 27/10 50 emas, 28/10 3 tiket acak ulang, 29/10 80 emas, 30/10 5 tiket acak ulang, 31/10 100 emas.\n- Buka di hari ke-7, Minggu, 1 November, untuk mendapatkan kartu Malam Halloween. Jika sudah membeli kartunya, kamu menerima 300 emas sebagai gantinya.\n- Hadiah di hari kamu tidak membuka aplikasi tidak bisa diambil belakangan.\n- Hanya selama event: Penyihir bulan (800 emas), Penyerang berkerudung serigala (440 emas), dan kartu Malam Halloween (300 emas). Pensiunkan satu karier untuk mendapatkan Penyerang labu gratis (sekali per akun).\n- Karakter dan kartu yang kamu dapat tetap milikmu setelah event berakhir.",
+        "summary": "Buka aplikasi tiap hari untuk hadiah di kotak hadiah. Hari ke-7 dapat kartu Malam Halloween."
       },
       "tr": {
         "title": "Cadılar Bayramı etkinliği: her gün bir hediye, 7. gün Halloween kartı",
-        "body": "- Cadılar Bayramı etkinliği 1 Kasım Pazar 23:59'a (Kore saati) kadar sürüyor.\n- Uygulamayı her gün aç, ana ekrandaki hediye kutusuna bir hediye gelsin: 26.10 3 yeniden atış bileti, 27.10 50 altın, 28.10 3 yeniden atış bileti, 29.10 80 altın, 30.10 5 yeniden atış bileti, 31.10 100 altın.\n- 7. gün, 1 Kasım Pazar günü açarsan Cadılar Bayramı gecesi kartı senin. Kartı zaten aldıysan 300 altın geri verilir.\n- Uygulamayı açmadığın günün hediyesi sonradan alınamaz.\n- Yalnızca etkinlik boyunca: Ay ışığı cadısı (800 altın), Kurt kapüşonlu forvet (440 altın) ve Cadılar Bayramı gecesi kartı (300 altın). Bir kariyeri emekliye ayır, Balkabağı forveti ücretsiz al (hesap başına bir kez).\n- Aldığın karakterler ve kartlar etkinlik bittikten sonra da senin."
+        "body": "- Cadılar Bayramı etkinliği 1 Kasım Pazar 23:59'a (Kore saati) kadar sürüyor.\n- Uygulamayı her gün aç, ana ekrandaki hediye kutusuna bir hediye gelsin: 26.10 3 yeniden atış bileti, 27.10 50 altın, 28.10 3 yeniden atış bileti, 29.10 80 altın, 30.10 5 yeniden atış bileti, 31.10 100 altın.\n- 7. gün, 1 Kasım Pazar günü açarsan Cadılar Bayramı gecesi kartı senin. Kartı zaten aldıysan 300 altın geri verilir.\n- Uygulamayı açmadığın günün hediyesi sonradan alınamaz.\n- Yalnızca etkinlik boyunca: Ay ışığı cadısı (800 altın), Kurt kapüşonlu forvet (440 altın) ve Cadılar Bayramı gecesi kartı (300 altın). Bir kariyeri emekliye ayır, Balkabağı forveti ücretsiz al (hesap başına bir kez).\n- Aldığın karakterler ve kartlar etkinlik bittikten sonra da senin.",
+        "summary": "Her gün uygulamaya gir, hediye kutuna hediye gelsin. 7. gün Cadılar Bayramı Gecesi kartı."
       },
       "ar": {
         "title": "فعالية الهالوين: هدية كل يوم وبطاقة الهالوين في اليوم السابع",
-        "body": "- تستمر فعالية الهالوين حتى الأحد 1 نوفمبر الساعة 23:59 (بتوقيت كوريا).\n- افتح التطبيق كل يوم لتصل هدية إلى صندوق الهدايا في الشاشة الرئيسية: 26/10 3 تذاكر إعادة رمي، 27/10 50 ذهب، 28/10 3 تذاكر إعادة رمي، 29/10 80 ذهب، 30/10 5 تذاكر إعادة رمي، 31/10 100 ذهب.\n- افتحه في اليوم السابع، الأحد 1 نوفمبر، لتحصل على بطاقة «ليلة الهالوين». إذا اشتريت البطاقة مسبقًا فستسترد 300 ذهب بدلًا منها.\n- لا يمكن استلام هدية يوم لم تفتح فيه التطبيق لاحقًا.\n- خلال الفعالية فقط: «ساحرة ضوء القمر» (800 ذهب) و«مهاجم بقلنسوة الذئب» (440 ذهب) وبطاقة «ليلة الهالوين» (300 ذهب). اعتزل مسيرة واحدة لتحصل على «مهاجم اليقطين» مجانًا (مرة واحدة لكل حساب).\n- تبقى الشخصيات والبطاقات التي تحصل عليها لك بعد انتهاء الفعالية."
+        "body": "- تستمر فعالية الهالوين حتى الأحد 1 نوفمبر الساعة 23:59 (بتوقيت كوريا).\n- افتح التطبيق كل يوم لتصل هدية إلى صندوق الهدايا في الشاشة الرئيسية: 26/10 3 تذاكر إعادة رمي، 27/10 50 ذهب، 28/10 3 تذاكر إعادة رمي، 29/10 80 ذهب، 30/10 5 تذاكر إعادة رمي، 31/10 100 ذهب.\n- افتحه في اليوم السابع، الأحد 1 نوفمبر، لتحصل على بطاقة «ليلة الهالوين». إذا اشتريت البطاقة مسبقًا فستسترد 300 ذهب بدلًا منها.\n- لا يمكن استلام هدية يوم لم تفتح فيه التطبيق لاحقًا.\n- خلال الفعالية فقط: «ساحرة ضوء القمر» (800 ذهب) و«مهاجم بقلنسوة الذئب» (440 ذهب) وبطاقة «ليلة الهالوين» (300 ذهب). اعتزل مسيرة واحدة لتحصل على «مهاجم اليقطين» مجانًا (مرة واحدة لكل حساب).\n- تبقى الشخصيات والبطاقات التي تحصل عليها لك بعد انتهاء الفعالية.",
+        "summary": "افتح التطبيق كل يوم لتصلك هدية في صندوق الهدايا. في اليوم السابع بطاقة ليلة الهالوين."
       }
     },
     "popup": {
@@ -121,7 +136,62 @@
         "card:halloween",
         "avatar:halloweenWitch"
       ]
-    }
+    },
+    "category": "event",
+    "period": {
+      "start": "2026-10-26T00:00:00+09:00",
+      "end": "2026-11-01T23:59:59+09:00"
+    },
+    "banner": "card:halloween",
+    "rewards": [
+      {
+        "day": 1,
+        "tickets": 3
+      },
+      {
+        "day": 2,
+        "gold": 50
+      },
+      {
+        "day": 3,
+        "tickets": 3
+      },
+      {
+        "day": 4,
+        "gold": 80
+      },
+      {
+        "day": 5,
+        "tickets": 5
+      },
+      {
+        "day": 6,
+        "gold": 100
+      },
+      {
+        "day": 7,
+        "item": "halloween"
+      }
+    ],
+    "cta": {
+      "route": "event",
+      "label": {
+        "ko": "이벤트 상점 가기",
+        "en": "Go to the event shop",
+        "ja": "イベントショップへ",
+        "zh": "前往活动商店",
+        "es": "Ir a la tienda del evento",
+        "pt": "Ir para a loja do evento",
+        "fr": "Aller à la boutique de l'événement",
+        "de": "Zum Event-Shop",
+        "it": "Vai al negozio dell'evento",
+        "id": "Ke toko event",
+        "tr": "Etkinlik mağazasına git",
+        "ar": "اذهب إلى متجر الحدث"
+      }
+    },
+    "summary": "매일 들어오면 선물함에 출석 선물이 와요. 7일차엔 할로윈 나이트 카드.",
+    "content": "## 출석 선물\n- 매일 앱에 들어오면 **홈 화면 선물함**에 그날의 선물이 도착해요.\n- 7일차인 **11월 1일(일)**에 들어오면 **할로윈 나이트** 카드를 드려요.\n\n## 기간 한정 판매\n- 달빛 마녀 **800골드**\n- 늑대 후드 스트라이커 **440골드**\n- 할로윈 나이트 카드 **300골드**\n- 이벤트 중 커리어를 은퇴하면 **호박모자 축구선수** 무료 (계정당 1회)\n\n> 들어오지 않은 날의 선물은 나중에 받을 수 없어요.\n> 카드를 이미 샀다면 7일차에 300골드로 드려요.\n> 받은 캐릭터와 카드는 이벤트가 끝나도 계속 쓸 수 있어요."
   },
   {
     "id": "2026-10-25-discord-reward",
@@ -132,51 +202,63 @@
     "translations": {
       "ko": {
         "title": "디스코드 가입 보상: 메가폰 응원단장",
-        "body": "- 공식 디스코드 커뮤니티에 들어오면 디스코드 전용 캐릭터 '메가폰 응원단장'과 능력치 굴림 티켓 3장을 받을 수 있습니다.\n- 구단주 자금 2,000과 전용 카드 '커뮤니티'도 함께 드립니다. 이 두 가지는 2.6.2 업데이트 후 앱에 들어옵니다.\n- 받는 법: 첫 화면의 '공식 커뮤니티' 또는 설정의 '커뮤니티 (Discord)'로 디스코드에 들어간 뒤, #rewards-보상 채널의 버튼을 누르세요. 휴대폰에서 링크를 열면 앱에서 바로 받아집니다.\n- 디스코드 계정·게임 계정마다 한 번씩, iOS·Android 앱 2.6.1 이상에서 받을 수 있습니다."
+        "body": "- 공식 디스코드 커뮤니티에 들어오면 디스코드 전용 캐릭터 '메가폰 응원단장'과 능력치 굴림 티켓 3장을 받을 수 있습니다.\n- 구단주 자금 2,000과 전용 카드 '커뮤니티'도 함께 드립니다. 이 두 가지는 2.6.2 업데이트 후 앱에 들어옵니다.\n- 받는 법: 첫 화면의 '공식 커뮤니티' 또는 설정의 '커뮤니티 (Discord)'로 디스코드에 들어간 뒤, #rewards-보상 채널의 버튼을 누르세요. 휴대폰에서 링크를 열면 앱에서 바로 받아집니다.\n- 디스코드 계정·게임 계정마다 한 번씩, iOS·Android 앱 2.6.1 이상에서 받을 수 있습니다.",
+        "summary": "공식 디스코드에 들어오면 메가폰 응원단장과 티켓 3장, 구단주 자금 2,000을 드려요."
       },
       "en": {
         "title": "Discord join reward: Cheer Captain",
-        "body": "- Join the official Discord community to get the Discord-only character Cheer Captain and 3 reroll tickets.\n- 2,000 owner funds and the exclusive Community card come with it. Those two arrive in the app with update 2.6.2.\n- How: open Discord from 'Official community' on the first screen or 'Community (Discord)' in Settings, then tap the button in #rewards. Open the link on your phone and the app claims it right away.\n- Once per Discord account and per game account, in the iOS or Android app 2.6.1 or later."
+        "body": "- Join the official Discord community to get the Discord-only character Cheer Captain and 3 reroll tickets.\n- 2,000 owner funds and the exclusive Community card come with it. Those two arrive in the app with update 2.6.2.\n- How: open Discord from 'Official community' on the first screen or 'Community (Discord)' in Settings, then tap the button in #rewards. Open the link on your phone and the app claims it right away.\n- Once per Discord account and per game account, in the iOS or Android app 2.6.1 or later.",
+        "summary": "Join the official Discord for the Cheer Captain, 3 tickets and 2,000 owner funds."
       },
       "ja": {
         "title": "Discord参加特典:メガホン応援団長",
-        "body": "- 公式Discordコミュニティに参加すると、Discord限定キャラクター「メガホン応援団長」と能力値の振り直しチケット3枚がもらえます。\n- オーナー資金2,000と専用カード「コミュニティ」も付いてきます。この2つは2.6.2アップデート後にアプリに届きます。\n- 受け取り方:最初の画面の「公式コミュニティ」または設定の「コミュニティ (Discord)」からDiscordに入り、#rewardsチャンネルのボタンを押してください。スマホでリンクを開くとアプリですぐ受け取れます。\n- Discordアカウント・ゲームアカウントごとに1回、iOS・Androidアプリ2.6.1以降で受け取れます。"
+        "body": "- 公式Discordコミュニティに参加すると、Discord限定キャラクター「メガホン応援団長」と能力値の振り直しチケット3枚がもらえます。\n- オーナー資金2,000と専用カード「コミュニティ」も付いてきます。この2つは2.6.2アップデート後にアプリに届きます。\n- 受け取り方:最初の画面の「公式コミュニティ」または設定の「コミュニティ (Discord)」からDiscordに入り、#rewardsチャンネルのボタンを押してください。スマホでリンクを開くとアプリですぐ受け取れます。\n- Discordアカウント・ゲームアカウントごとに1回、iOS・Androidアプリ2.6.1以降で受け取れます。",
+        "summary": "公式Discordに参加するとメガホン応援団長、チケット3枚、オーナー資金2,000がもらえます。"
       },
       "zh": {
         "title": "Discord 加入奖励:喇叭啦啦队长",
-        "body": "- 加入官方 Discord 社区,即可获得 Discord 专属角色「喇叭啦啦队长」和 3 张属性重掷券。\n- 另附 2,000 老板资金和专属卡片「社区」。这两项将在 2.6.2 更新后发放到应用中。\n- 领取方法:从首页的「官方社区」或设置中的「社区 (Discord)」进入 Discord,然后点击 #rewards 频道里的按钮。在手机上打开链接,应用内即可直接领取。\n- 每个 Discord 账号、每个游戏账号各限一次,需使用 iOS·Android 应用 2.6.1 及以上版本。"
+        "body": "- 加入官方 Discord 社区,即可获得 Discord 专属角色「喇叭啦啦队长」和 3 张属性重掷券。\n- 另附 2,000 老板资金和专属卡片「社区」。这两项将在 2.6.2 更新后发放到应用中。\n- 领取方法:从首页的「官方社区」或设置中的「社区 (Discord)」进入 Discord,然后点击 #rewards 频道里的按钮。在手机上打开链接,应用内即可直接领取。\n- 每个 Discord 账号、每个游戏账号各限一次,需使用 iOS·Android 应用 2.6.1 及以上版本。",
+        "summary": "加入官方 Discord，即可获得喇叭啦啦队长、3张券和 2,000 老板资金。"
       },
       "es": {
         "title": "Premio por unirte a Discord: Capitán de la Grada",
-        "body": "- Únete a la comunidad oficial de Discord y recibe el personaje exclusivo de Discord Capitán de la Grada y 3 boletos de atributos.\n- Además, 2.000 fondos del dueño y la tarjeta exclusiva Comunidad. Estos dos llegan a la app con la actualización 2.6.2.\n- Cómo: entra en Discord desde 'Comunidad oficial' en la primera pantalla o 'Comunidad (Discord)' en Ajustes y pulsa el botón de #rewards. Abre el enlace en tu móvil y la app lo recibe al momento.\n- Una vez por cuenta de Discord y por cuenta de juego, en la app de iOS o Android 2.6.1 o posterior."
+        "body": "- Únete a la comunidad oficial de Discord y recibe el personaje exclusivo de Discord Capitán de la Grada y 3 boletos de atributos.\n- Además, 2.000 fondos del dueño y la tarjeta exclusiva Comunidad. Estos dos llegan a la app con la actualización 2.6.2.\n- Cómo: entra en Discord desde 'Comunidad oficial' en la primera pantalla o 'Comunidad (Discord)' en Ajustes y pulsa el botón de #rewards. Abre el enlace en tu móvil y la app lo recibe al momento.\n- Una vez por cuenta de Discord y por cuenta de juego, en la app de iOS o Android 2.6.1 o posterior.",
+        "summary": "Únete al Discord oficial y recibe al Capitán de la Grada, 3 tickets y 2.000 fondos del dueño."
       },
       "pt": {
         "title": "Prêmio por entrar no Discord: Capitão da Torcida",
-        "body": "- Entre na comunidade oficial do Discord e receba o personagem exclusivo do Discord Capitão da Torcida e 3 bilhetes de atributos.\n- Junto vêm 2.000 fundos do dono e o cartão exclusivo Comunidade. Esses dois chegam ao app com a atualização 2.6.2.\n- Como: entre no Discord por 'Comunidade oficial' na primeira tela ou 'Comunidade (Discord)' nos Ajustes e toque no botão em #rewards. Abra o link no celular e o app recebe na hora.\n- Uma vez por conta do Discord e por conta do jogo, no app iOS ou Android 2.6.1 ou superior."
+        "body": "- Entre na comunidade oficial do Discord e receba o personagem exclusivo do Discord Capitão da Torcida e 3 bilhetes de atributos.\n- Junto vêm 2.000 fundos do dono e o cartão exclusivo Comunidade. Esses dois chegam ao app com a atualização 2.6.2.\n- Como: entre no Discord por 'Comunidade oficial' na primeira tela ou 'Comunidade (Discord)' nos Ajustes e toque no botão em #rewards. Abra o link no celular e o app recebe na hora.\n- Uma vez por conta do Discord e por conta do jogo, no app iOS ou Android 2.6.1 ou superior.",
+        "summary": "Entre no Discord oficial e ganhe o Capitão da Torcida, 3 tickets e 2.000 fundos do dono."
       },
       "fr": {
         "title": "Récompense Discord : Capitaine des Tribunes",
-        "body": "- Rejoignez la communauté Discord officielle pour obtenir le personnage exclusif Discord Capitaine des Tribunes et 3 tickets de relance.\n- 2 000 fonds de propriétaire et la carte exclusive Communauté sont aussi offerts. Ces deux-là arrivent dans l’app avec la mise à jour 2.6.2.\n- Comment : ouvrez Discord via « Communauté officielle » sur le premier écran ou « Communauté (Discord) » dans les Réglages, puis touchez le bouton dans #rewards. Ouvrez le lien sur votre téléphone et l’app le récupère aussitôt.\n- Une fois par compte Discord et par compte de jeu, dans l’app iOS ou Android 2.6.1 ou plus récente."
+        "body": "- Rejoignez la communauté Discord officielle pour obtenir le personnage exclusif Discord Capitaine des Tribunes et 3 tickets de relance.\n- 2 000 fonds de propriétaire et la carte exclusive Communauté sont aussi offerts. Ces deux-là arrivent dans l’app avec la mise à jour 2.6.2.\n- Comment : ouvrez Discord via « Communauté officielle » sur le premier écran ou « Communauté (Discord) » dans les Réglages, puis touchez le bouton dans #rewards. Ouvrez le lien sur votre téléphone et l’app le récupère aussitôt.\n- Une fois par compte Discord et par compte de jeu, dans l’app iOS ou Android 2.6.1 ou plus récente.",
+        "summary": "Rejoins le Discord officiel : Capitaine des Tribunes, 3 tickets et 2 000 fonds de propriétaire."
       },
       "de": {
         "title": "Discord-Belohnung: Fankurven-Kapitän",
-        "body": "- Tritt der offiziellen Discord-Community bei und erhalte den Discord-exklusiven Charakter Fankurven-Kapitän und 3 Neuwurf-Tickets.\n- Dazu gibt es 2.000 Besitzer-Guthaben und die exklusive Karte Community. Diese beiden kommen mit dem Update 2.6.2 in die App.\n- So geht’s: Öffne Discord über „Offizielle Community“ auf dem ersten Bildschirm oder „Community (Discord)“ in den Einstellungen und tippe in #rewards auf den Button. Öffne den Link auf dem Handy, dann holt die App die Belohnung sofort ab.\n- Einmal pro Discord-Konto und pro Spielkonto, in der iOS- oder Android-App ab 2.6.1."
+        "body": "- Tritt der offiziellen Discord-Community bei und erhalte den Discord-exklusiven Charakter Fankurven-Kapitän und 3 Neuwurf-Tickets.\n- Dazu gibt es 2.000 Besitzer-Guthaben und die exklusive Karte Community. Diese beiden kommen mit dem Update 2.6.2 in die App.\n- So geht’s: Öffne Discord über „Offizielle Community“ auf dem ersten Bildschirm oder „Community (Discord)“ in den Einstellungen und tippe in #rewards auf den Button. Öffne den Link auf dem Handy, dann holt die App die Belohnung sofort ab.\n- Einmal pro Discord-Konto und pro Spielkonto, in der iOS- oder Android-App ab 2.6.1.",
+        "summary": "Tritt dem offiziellen Discord bei: Fankurven-Kapitän, 3 Tickets und 2.000 Besitzer-Guthaben."
       },
       "it": {
         "title": "Premio Discord: Capitano della Curva",
-        "body": "- Entra nella community Discord ufficiale e ricevi il personaggio esclusivo Discord Capitano della Curva e 3 biglietti per ritirare i valori.\n- In più 2.000 fondi del proprietario e la carta esclusiva Community. Questi due arrivano nell’app con l’aggiornamento 2.6.2.\n- Come: apri Discord da 'Community ufficiale' nella prima schermata o 'Community (Discord)' nelle Impostazioni, poi tocca il pulsante in #rewards. Apri il link sul telefono e l’app lo riceve subito.\n- Una volta per account Discord e per account di gioco, nell’app iOS o Android 2.6.1 o successiva."
+        "body": "- Entra nella community Discord ufficiale e ricevi il personaggio esclusivo Discord Capitano della Curva e 3 biglietti per ritirare i valori.\n- In più 2.000 fondi del proprietario e la carta esclusiva Community. Questi due arrivano nell’app con l’aggiornamento 2.6.2.\n- Come: apri Discord da 'Community ufficiale' nella prima schermata o 'Community (Discord)' nelle Impostazioni, poi tocca il pulsante in #rewards. Apri il link sul telefono e l’app lo riceve subito.\n- Una volta per account Discord e per account di gioco, nell’app iOS o Android 2.6.1 o successiva.",
+        "summary": "Entra nel Discord ufficiale: Capitano della Curva, 3 ticket e 2.000 fondi del proprietario."
       },
       "id": {
         "title": "Hadiah gabung Discord: Kapten Suporter",
-        "body": "- Gabung ke komunitas Discord resmi untuk mendapatkan karakter khusus Discord Kapten Suporter dan 3 tiket acak ulang atribut.\n- Plus 2.000 dana pemilik dan kartu eksklusif Komunitas. Keduanya masuk ke aplikasi setelah pembaruan 2.6.2.\n- Caranya: buka Discord dari 'Komunitas resmi' di layar pertama atau 'Komunitas (Discord)' di Pengaturan, lalu ketuk tombol di #rewards. Buka tautannya di ponsel dan aplikasi langsung menerimanya.\n- Sekali per akun Discord dan per akun game, di aplikasi iOS atau Android versi 2.6.1 ke atas."
+        "body": "- Gabung ke komunitas Discord resmi untuk mendapatkan karakter khusus Discord Kapten Suporter dan 3 tiket acak ulang atribut.\n- Plus 2.000 dana pemilik dan kartu eksklusif Komunitas. Keduanya masuk ke aplikasi setelah pembaruan 2.6.2.\n- Caranya: buka Discord dari 'Komunitas resmi' di layar pertama atau 'Komunitas (Discord)' di Pengaturan, lalu ketuk tombol di #rewards. Buka tautannya di ponsel dan aplikasi langsung menerimanya.\n- Sekali per akun Discord dan per akun game, di aplikasi iOS atau Android versi 2.6.1 ke atas.",
+        "summary": "Gabung Discord resmi: Kapten Suporter, 3 tiket, dan 2.000 dana pemilik."
       },
       "tr": {
         "title": "Discord katılım ödülü: Tribün Kaptanı",
-        "body": "- Resmi Discord topluluğuna katıl; Discord'a özel karakter Tribün Kaptanı ve 3 özellik yenileme bileti senin.\n- Yanında 2.000 sahip fonu ve özel Topluluk kartı da var. Bu ikisi 2.6.2 güncellemesiyle uygulamaya gelir.\n- Nasıl: ilk ekrandaki 'Resmi topluluk' ya da Ayarlar'daki 'Topluluk (Discord)' ile Discord'a gir, #rewards kanalındaki düğmeye dokun. Bağlantıyı telefonda aç, uygulama hemen alır.\n- Her Discord hesabı ve her oyun hesabı için bir kez, iOS veya Android uygulamasının 2.6.1 ve üstü sürümünde."
+        "body": "- Resmi Discord topluluğuna katıl; Discord'a özel karakter Tribün Kaptanı ve 3 özellik yenileme bileti senin.\n- Yanında 2.000 sahip fonu ve özel Topluluk kartı da var. Bu ikisi 2.6.2 güncellemesiyle uygulamaya gelir.\n- Nasıl: ilk ekrandaki 'Resmi topluluk' ya da Ayarlar'daki 'Topluluk (Discord)' ile Discord'a gir, #rewards kanalındaki düğmeye dokun. Bağlantıyı telefonda aç, uygulama hemen alır.\n- Her Discord hesabı ve her oyun hesabı için bir kez, iOS veya Android uygulamasının 2.6.1 ve üstü sürümünde.",
+        "summary": "Resmî Discord sunucusuna katıl: Tribün Kaptanı, 3 bilet ve 2.000 sahip fonu."
       },
       "ar": {
         "title": "مكافأة الانضمام إلى Discord: قائد المشجعين",
-        "body": "- انضم إلى مجتمع Discord الرسمي واحصل على شخصية Discord الحصرية «قائد المشجعين» و3 تذاكر لإعادة توليد السمات.\n- ومعها 2,000 من رصيد المالك والبطاقة الحصرية «المجتمع». يصل هذان إلى التطبيق مع تحديث 2.6.2.\n- الطريقة: افتح Discord من «المجتمع الرسمي» في الشاشة الأولى أو «المجتمع (Discord)» في الإعدادات، ثم اضغط الزر في قناة #rewards. افتح الرابط على هاتفك وسيستلمها التطبيق فورًا.\n- مرة واحدة لكل حساب Discord ولكل حساب لعبة، في تطبيق iOS أو Android بالإصدار 2.6.1 أو أحدث."
+        "body": "- انضم إلى مجتمع Discord الرسمي واحصل على شخصية Discord الحصرية «قائد المشجعين» و3 تذاكر لإعادة توليد السمات.\n- ومعها 2,000 من رصيد المالك والبطاقة الحصرية «المجتمع». يصل هذان إلى التطبيق مع تحديث 2.6.2.\n- الطريقة: افتح Discord من «المجتمع الرسمي» في الشاشة الأولى أو «المجتمع (Discord)» في الإعدادات، ثم اضغط الزر في قناة #rewards. افتح الرابط على هاتفك وسيستلمها التطبيق فورًا.\n- مرة واحدة لكل حساب Discord ولكل حساب لعبة، في تطبيق iOS أو Android بالإصدار 2.6.1 أو أحدث.",
+        "summary": "انضم إلى ديسكورد الرسمي واحصل على قائد المشجعين و3 تذاكر و2,000 من رصيد المالك."
       }
     },
     "popup": {
@@ -202,7 +284,27 @@
         }
       },
       "skipIfOwns": "communityCaptain"
-    }
+    },
+    "category": "event",
+    "banner": "avatar:communityCaptain",
+    "cta": {
+      "url": "https://discord.gg/xaZrNwmdMQ",
+      "label": {
+        "ko": "디스코드 서버 가입",
+        "en": "Join the Discord server",
+        "ja": "Discordサーバーに参加",
+        "zh": "加入 Discord 服务器",
+        "es": "Unirme al servidor de Discord",
+        "pt": "Entrar no servidor do Discord",
+        "fr": "Rejoindre le serveur Discord",
+        "de": "Discord-Server beitreten",
+        "it": "Entra nel server Discord",
+        "id": "Gabung server Discord",
+        "tr": "Discord sunucusuna katıl",
+        "ar": "انضم إلى خادم Discord"
+      }
+    },
+    "summary": "공식 디스코드에 들어오면 메가폰 응원단장과 티켓 3장, 구단주 자금 2,000을 드려요."
   },
   {
     "id": "2026-10-13-career-score-update",
@@ -259,7 +361,8 @@
         "title": "تحسين نقاط المسيرة في الترتيب عبر الإنترنت",
         "body": "- لم تعد نقاط المسيرة في الترتيب عبر الإنترنت محدودة بـ620 نقطة. الإنجازات التي تتجاوز المستوى المرجعي لكل فئة تمنح نقاطًا إضافية، مع تناقص مقدار الزيادة تدريجيًا.\n- أُعيد أيضًا حساب السجلات المسجلة سابقًا عبر الإنترنت. في المواسم الجارية، تُختار من جديد أفضل ثلاث مسيرات لكل مالك، لذا قد تتغير النقاط والمراكز.\n- تبقى المراكز النهائية والميداليات للمواسم المنتهية كما هي.\n- قد تختلف النقاط المعروضة في الإصدارات القديمة من التطبيق أو في مجموعة الجهاز عن نقاط الترتيب عبر الإنترنت."
       }
-    }
+    },
+    "category": "update"
   },
   {
     "id": "2026-10-live-2-4-0",
@@ -316,7 +419,8 @@
         "title": "تحديث 2.4",
         "body": "- مرافق المالك: ملعب التدريب وشبكة الكشافين والطاقم الطبي وعلوم الرياضة، مع 7 مستويات لمكانة النادي.\n- خطوة تحضير مستقلة للمسيرة: الأكاديمية والتشكيلات المقترحة ودفتر الأموال في شاشة واحدة.\n- ملخصات نصف الموسم مع العناوين، والمركز المتوقع قبل الموسم، وسجل كل مباراة (الدوري والكؤوس والقارية والمنتخب).\n- دوري فرنسي وأندية ديربي، وشعارات في جدول الترتيب. يخوض المنتخب التصفيات أمام فرق قارته.\n- ذهب مجاني عند الزيارة اليومية وعن كل مسيرة تدخل التصنيف.\n- يُطبَّق الحساب الجديد على المسيرات التي لُعبت على 2.4."
       }
-    }
+    },
+    "category": "update"
   },
   {
     "id": "2026-10-11-season2-scoring",
@@ -373,7 +477,8 @@
         "title": "الموسم الثاني من أكتوبر: تغييرات في حساب النقاط",
         "body": "- بدءًا من التحديث 2.4 أصبحت محاكاة المباريات ونقاط المسيرة أكثر واقعية.\n- يُطبَّق الحساب الجديد على المسيرات التي لُعبت على الإصدار 2.4، وتبقى المسيرات من الإصدارات السابقة على الحساب القديم.\n- أثناء انتشار التحديث قد تتغير نقاط وترتيب الموسم الثاني من أكتوبر (12-19 أكتوبر) قليلًا. شكرًا لصبرك."
       }
-    }
+    },
+    "category": "notice"
   },
   {
     "id": "2026-10-10-weekly-seasons",
@@ -430,7 +535,8 @@
         "title": "أصبحت مواسم الترتيب أسبوعية",
         "body": "- ينتهي موسم أكتوبر (الموسم 1) مبكرًا يوم الاثنين 12 أكتوبر الساعة 00:00 بتوقيت UTC، وتُمنح ميدالياته كما هو مقرر.\n- بعد ذلك يبدأ موسم جديد كل يوم اثنين الساعة 00:00 بتوقيت UTC. يُحسب الترتيب بمجموع نقاط أفضل 3 مسيرات اعتزلت خلال الأسبوع، وتُمنح ميداليات المراكز من الأول إلى الثالث وشعار أفضل 10% كل أسبوع.\n- بدءًا من التحديث القادم، سيضم الترتيب تبويبين فقط: الموسم وقاعة المشاهير."
       }
-    }
+    },
+    "category": "notice"
   },
   {
     "id": "2026-10-10-live-2-3-0",
@@ -487,7 +593,8 @@
         "title": "تحديث 2.3.0",
         "body": "- أصبح الترتيب موسميًا. كل شهر يُحسب ترتيبك بمجموع نقاط أفضل 3 مسيرات اعتزلت في ذلك الشهر؛ ويحصل أصحاب المراكز من الأول إلى الثالث على ميداليات، وأفضل 10% على شعار. اضغط على مركز لترى مسيرات ذلك المالك الثلاث.\n- أصبح الترتيب العام قاعة المشاهير: 15 رقمًا تاريخيًا مثل أكثر الأهداف وأغلى صفقة وأفضل لاعب في العالم، محفوظة مع النادي. لا يظهر إلا اللاعبون الذين حددوا اسم مالك، فحدده من الإعدادات.\n- أُضيف شريط تبويب أسفل شاشة البداية وشاشة المسيرة. ومن شاشة البداية يمكنك الانتقال مباشرة إلى الترتيب والمجموعة والمتجر.\n- لكل نادٍ قوته الخاصة. تعرض عروض الانتقال متوسط OVR للفريق وآخر مراكزه وقيمة الانتقال، وتتحدد نتائج الدوري والكؤوس بحسب قوة النادي.\n- الصعود والهبوط: إن أنهيت في المركز 18 أو أدنى تهبط إلى الدرجة الثانية، وإن أنهيت فيها أولًا أو ثانيًا تصعد مجددًا. وإن لم يكن مستواك كافيًا فقد يُستغنى عنك.\n- تعرض الأندية مدة العقد بحسب عمرك ومكانتك، وخياراتك في أحداث التجديد تغيّر عقدك فعلًا.\n- يمكن علاج الإصابة الكبيرة فورًا بمشاهدة إعلان (3 مرات في المسيرة).\n- احفظ المسيرة المعتزلة في بطاقة واحدة أو شاركها.\n- تغيّر احتساب النقاط، لذا قد تظهر نقاط المسيرة أقل من قبل."
       }
-    }
+    },
+    "category": "update"
   },
   {
     "id": "2026-10-08-live-2-2-2",
@@ -544,7 +651,8 @@
         "title": "تحديث 2.2.2",
         "body": "- 50 لقب اعتزال: تحصل على لقب واحد في كل مسيرة، وتُجمع الألقاب في مجموعة الألقاب.\n- تُكشف إمكانات اللاعب عند الاعتزال.\n- افتُتح المتجر: استخدم رصيد المالك الذي تكسبه من اللعب لشراء أنماط البطاقات وزينة المالك، ويظهر ما تجهّزه في التصنيف أيضًا.\n- يمكنك تحديد اسم المالك. التغيير الأول مجاني، وبعده يكلّف 100 من رصيد المالك.\n- الاستثمار في الأكاديمية يخفّض تكلفة التحضير للمسيرة التالية بشكل دائم.\n- عدّل اسم أي نادٍ وشعاره، أو استخدم صورتك الخاصة.\n- يتلقى اللاعب عروض الكشافة حتى أثناء العقد، وتُسجَّل رسوم الانتقال.\n- تعرض بطاقة الشهر مجموع الموسم.\n- أصبحت اللغة العربية مدعومة.\n- كل 6 مواسم (الموسم 6 و12 و18...)، يظهر إعلان مرة واحدة بعد ملخص الموسم. لا يظهر إذا اشتريت إزالة الإعلانات."
       }
-    }
+    },
+    "category": "update"
   },
   {
     "id": "2026-10-05-live-2-2-1",
@@ -597,7 +705,8 @@
         "title": "2.2.1 güncellemesi",
         "body": "- Duyurular artık uygulamada seçilen dilde gösterilir.\n- Reklam onayı işlemleri iyileştirildi ve gerektiğinde Ayarlar bölümüne reklam gizliliği seçenekleri eklendi."
       }
-    }
+    },
+    "category": "update"
   },
   {
     "id": "2026-10-05-live-retirement-record",
@@ -650,7 +759,8 @@
         "title": "Geçmiş yaşamlar kaldırıldı, emeklilik kayıtları duruyor",
         "body": "Geçmiş yaşam sistemi kaldırıldı: miras, anılar ve geçmiş yaşamların ilk 11'i yok. Emekli oyuncular emeklilik kayıtlarında kalır (10, destekçi paketiyle 50)."
       }
-    }
+    },
+    "category": "notice"
   },
   {
     "id": "2026-09-19-save",
@@ -703,7 +813,8 @@
         "title": "Devam eden kariyerin kaydedilir",
         "body": "Uygulamayı kapattığında devam eden kariyerin korunur. Ana ekrandan devam edebilirsin."
       }
-    }
+    },
+    "category": "update"
   },
   {
     "id": "2026-09-19-create",
@@ -756,6 +867,7 @@
         "title": "Oyuncu seçerken özelliklerini görebilirsin",
         "body": "Milliyet, pozisyon ve oyun tarzı seçerken üstteki kart gerçek başlangıç özelliklerini, fiziksel özellikleri ve teknik direktör güvenini gösterir."
       }
-    }
+    },
+    "category": "update"
   }
 ]
