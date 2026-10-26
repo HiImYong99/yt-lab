@@ -1,5 +1,65 @@
 [
   {
+    "id": "2026-10-26-legacy-league",
+    "date": "2026-10-26",
+    "title": "커리어 점수 개편: 리그 수준 반영, 세계 올해의 선수 추가",
+    "body": "- 온라인 랭킹의 커리어 점수에 리그 수준을 반영합니다. 유럽 5대 리그(잉글랜드·스페인·독일·이탈리아·프랑스 1부) 밖에서 보낸 시즌은 수상·우승·무대 점수가 80%만 반영됩니다(한국 1부 70%, 걸프 1부 60%).\n- '세계 올해의 선수'를 받을 때마다 수상 점수가 10점씩 더해집니다.\n- 우승은 트로피 종류에 따라 다르게 셉니다. 대륙컵이 가장 크고, 그다음 리그, 컵 순입니다.\n- 수비수의 '시즌 베스트 11'은 수상 점수 5점(기존 4점), '무실점왕'은 12점(기존 8점)으로 올렸습니다.\n- 기존에 등록한 온라인 기록도 새 공식으로 재계산했습니다. 진행 중인 이번 주 시즌은 점수와 순위가 달라질 수 있으며, 마감된 시즌의 확정 순위와 메달은 유지됩니다.\n- 이번 주 시즌에 기록을 올린 모든 분께 홈 화면 선물함으로 100골드를 보내드렸습니다.\n- 앱 안에 표시되는 점수는 다음 업데이트부터 새 공식과 같아집니다.",
+    "important": true,
+    "popup": {
+      "until": "2026-11-01"
+    },
+    "translations": {
+      "ko": {
+        "title": "커리어 점수 개편: 리그 수준 반영, 세계 올해의 선수 추가",
+        "body": "- 온라인 랭킹의 커리어 점수에 리그 수준을 반영합니다. 유럽 5대 리그(잉글랜드·스페인·독일·이탈리아·프랑스 1부) 밖에서 보낸 시즌은 수상·우승·무대 점수가 80%만 반영됩니다(한국 1부 70%, 걸프 1부 60%).\n- '세계 올해의 선수'를 받을 때마다 수상 점수가 10점씩 더해집니다.\n- 우승은 트로피 종류에 따라 다르게 셉니다. 대륙컵이 가장 크고, 그다음 리그, 컵 순입니다.\n- 수비수의 '시즌 베스트 11'은 수상 점수 5점(기존 4점), '무실점왕'은 12점(기존 8점)으로 올렸습니다.\n- 기존에 등록한 온라인 기록도 새 공식으로 재계산했습니다. 진행 중인 이번 주 시즌은 점수와 순위가 달라질 수 있으며, 마감된 시즌의 확정 순위와 메달은 유지됩니다.\n- 이번 주 시즌에 기록을 올린 모든 분께 홈 화면 선물함으로 100골드를 보내드렸습니다.\n- 앱 안에 표시되는 점수는 다음 업데이트부터 새 공식과 같아집니다."
+      },
+      "en": {
+        "title": "Career score update: league strength counts, World Player of the Year added",
+        "body": "- Online career scores now reflect league strength. Seasons played outside Europe's big five (the first divisions of England, Spain, Germany, Italy and France) count for 80% of their awards, trophies and stage points (Korea 70%, the Gulf 60%).\n- Each World Player of the Year award adds 10 award points.\n- Trophies now count by type: continental cups count the most, then leagues, then cups.\n- A defender's Team of the season selection is now worth 5 award points (was 4), and the Golden Glove 12 (was 8).\n- Previously submitted online records have been recalculated with the new formula. Scores and rankings in this week's active season may change; final standings and medals for completed seasons remain unchanged.\n- Everyone who posted a career in this week's season has received 100 gold in the gift box on the home screen.\n- Scores shown inside the app will match the new formula from the next update."
+      },
+      "ja": {
+        "title": "キャリアスコア改定:リーグのレベルを反映、世界年間最優秀選手を追加",
+        "body": "- オンラインランキングのキャリアスコアにリーグのレベルを反映します。欧州5大リーグ(イングランド・スペイン・ドイツ・イタリア・フランスの1部)以外で過ごしたシーズンは、個人賞・タイトル・舞台のスコアが80%で計算されます(韓国1部は70%、湾岸1部は60%)。\n- 「世界年間最優秀選手」を受賞するたびに個人賞スコアが10点加算されます。\n- タイトルは種類ごとに異なる重みで数えます。大陸カップが最も大きく、次にリーグ、カップの順です。\n- ディフェンダーの「シーズンベストイレブン」は個人賞スコア5点(従来4点)、「最少失点賞」は12点(従来8点)に引き上げました。\n- 過去に登録されたオンライン記録も新しい計算式で再計算しました。開催中の今週のシーズンはスコアや順位が変わる場合があります。終了したシーズンの確定順位とメダルは維持されます。\n- 今週のシーズンに記録を登録したすべての方に、ホーム画面のギフトボックスへ100ゴールドをお送りしました。\n- アプリ内に表示されるスコアは、次回のアップデートから新しい計算式と一致します。"
+      },
+      "zh": {
+        "title": "生涯评分调整:计入联赛水平,新增世界年度最佳球员",
+        "body": "- 在线排行榜的生涯评分开始计入联赛水平。在欧洲五大联赛(英格兰、西班牙、德国、意大利、法国甲级)以外度过的赛季,个人奖、奖杯和舞台得分按 80% 计算(韩国甲级 70%,海湾甲级 60%)。\n- 每获得一次「世界年度最佳球员」,个人奖得分增加 10 分。\n- 奖杯按类型计算不同分量:洲际杯最高,其次是联赛,然后是杯赛。\n- 后卫入选「赛季最佳阵容」的个人奖得分提高到 5 分(原为 4 分),「金手套」提高到 12 分(原为 8 分)。\n- 之前提交的在线记录也已按新公式重新计算。本周进行中的赛季分数和排名可能变化;已结束赛季的最终排名和奖牌保持不变。\n- 本周赛季中提交过记录的所有玩家,都已在主页礼物箱收到 100 金币。\n- 应用内显示的分数将从下次更新起与新公式一致。"
+      },
+      "es": {
+        "title": "Cambio en la puntuación de carreras: cuenta el nivel de la liga y el Jugador mundial del año",
+        "body": "- La puntuación de carrera del ranking en línea ahora tiene en cuenta el nivel de la liga. Las temporadas jugadas fuera de las cinco grandes ligas europeas (la primera división de Inglaterra, España, Alemania, Italia y Francia) cuentan al 80% en premios, títulos y escenario (Corea 70%, el Golfo 60%).\n- Cada premio de Jugador mundial del año suma 10 puntos de premios.\n- Los títulos ahora cuentan según su tipo: las copas continentales valen más, luego las ligas y después las copas.\n- La selección de un defensa en el Equipo de la temporada vale ahora 5 puntos de premios (antes 4), y el Guante de oro 12 (antes 8).\n- Los registros enviados anteriormente se han recalculado con la nueva fórmula. En la temporada activa de esta semana pueden cambiar puntuaciones y posiciones; las clasificaciones finales y medallas de temporadas cerradas se mantienen.\n- Todos los que registraron una carrera en la temporada de esta semana han recibido 100 de oro en el buzón de regalos de la pantalla de inicio.\n- La puntuación que muestra la app coincidirá con la nueva fórmula a partir de la próxima actualización."
+      },
+      "pt": {
+        "title": "Mudança na pontuação de carreiras: nível da liga e Melhor jogador do mundo",
+        "body": "- A pontuação de carreira do ranking online agora considera o nível da liga. Temporadas jogadas fora das cinco grandes ligas europeias (primeira divisão da Inglaterra, Espanha, Alemanha, Itália e França) contam 80% em prêmios, títulos e palco (Coreia 70%, Golfo 60%).\n- Cada prêmio de Melhor jogador do mundo soma 10 pontos de prêmios.\n- Os títulos agora contam conforme o tipo: copas continentais valem mais, depois ligas e então copas.\n- A escolha de um zagueiro para a Seleção da temporada agora vale 5 pontos de prêmios (antes 4), e a Luva de ouro 12 (antes 8).\n- Os registros enviados anteriormente foram recalculados com a nova fórmula. Na temporada ativa desta semana, pontuações e posições podem mudar; classificações finais e medalhas de temporadas encerradas continuam iguais.\n- Todos que registraram uma carreira na temporada desta semana receberam 100 de ouro na caixa de presentes da tela inicial.\n- A pontuação exibida no app passará a seguir a nova fórmula a partir da próxima atualização."
+      },
+      "fr": {
+        "title": "Évolution du score de carrière : niveau du championnat et Joueur mondial de l'année",
+        "body": "- Le score de carrière du classement en ligne tient désormais compte du niveau du championnat. Les saisons jouées hors des cinq grands championnats européens (première division d'Angleterre, d'Espagne, d'Allemagne, d'Italie et de France) comptent à 80 % pour les distinctions, les trophées et la scène (Corée 70 %, Golfe 60 %).\n- Chaque titre de Joueur mondial de l'année ajoute 10 points de distinctions.\n- Les trophées comptent désormais selon leur type : les coupes continentales valent le plus, puis les championnats, puis les coupes.\n- Une sélection d'un défenseur dans l'Équipe type de la saison vaut désormais 5 points de distinctions (contre 4), et le Gant d'or 12 (contre 8).\n- Les carrières déjà enregistrées en ligne ont été recalculées avec la nouvelle formule. Dans la saison en cours cette semaine, les scores et les classements peuvent changer ; les classements définitifs et les médailles des saisons terminées restent inchangés.\n- Toutes les personnes ayant enregistré une carrière dans la saison de cette semaine ont reçu 100 pièces d'or dans la boîte à cadeaux de l'écran d'accueil.\n- Le score affiché dans l'app suivra la nouvelle formule à partir de la prochaine mise à jour."
+      },
+      "de": {
+        "title": "Neue Karrierewertung: Ligastärke zählt, Weltfußballer des Jahres kommt dazu",
+        "body": "- Die Karrierewertung der Online-Rangliste berücksichtigt jetzt die Stärke der Liga. Saisons außerhalb der fünf großen Ligen Europas (erste Liga in England, Spanien, Deutschland, Italien und Frankreich) zählen bei Auszeichnungen, Titeln und Bühne zu 80 % (Korea 70 %, Golfregion 60 %).\n- Jede Wahl zum Weltfußballer des Jahres bringt 10 Auszeichnungspunkte.\n- Titel zählen jetzt nach Art: Kontinentalpokale am meisten, dann Ligen, dann Pokale.\n- Die Wahl eines Verteidigers in die Elf der Saison ist jetzt 5 Auszeichnungspunkte wert (vorher 4), die Auszeichnung Bester Torhüter 12 (vorher 8).\n- Bereits eingereichte Online-Karrieren wurden mit der neuen Formel neu berechnet. In der laufenden Saison dieser Woche können sich Werte und Platzierungen ändern; Endstände und Medaillen abgeschlossener Saisons bleiben unverändert.\n- Alle, die in der Saison dieser Woche eine Karriere eingetragen haben, haben 100 Gold in der Geschenkbox auf dem Startbildschirm erhalten.\n- Die in der App angezeigte Wertung folgt ab dem nächsten Update der neuen Formel."
+      },
+      "it": {
+        "title": "Nuovo punteggio delle carriere: conta il livello del campionato e il Giocatore mondiale dell'anno",
+        "body": "- Il punteggio di carriera della classifica online ora tiene conto del livello del campionato. Le stagioni giocate fuori dai cinque grandi campionati europei (prima divisione di Inghilterra, Spagna, Germania, Italia e Francia) contano all'80% per premi, trofei e palcoscenico (Corea 70%, Golfo 60%).\n- Ogni premio di Giocatore mondiale dell'anno aggiunge 10 punti premi.\n- I trofei ora contano in base al tipo: le coppe continentali valgono di più, poi i campionati, poi le coppe.\n- La scelta di un difensore nella Squadra della stagione ora vale 5 punti premi (prima 4), e il premio Miglior portiere 12 (prima 8).\n- Le carriere già registrate online sono state ricalcolate con la nuova formula. Nella stagione in corso di questa settimana punteggi e posizioni possono cambiare; classifiche finali e medaglie delle stagioni concluse restano invariate.\n- Chi ha registrato una carriera nella stagione di questa settimana ha ricevuto 100 d'oro nella casella regali della schermata iniziale.\n- Il punteggio mostrato nell'app seguirà la nuova formula dal prossimo aggiornamento."
+      },
+      "tr": {
+        "title": "Kariyer puanı güncellemesi: lig seviyesi ve Yılın dünya oyuncusu",
+        "body": "- Çevrimiçi sıralamadaki kariyer puanı artık lig seviyesini hesaba katıyor. Avrupa'nın beş büyük ligi (İngiltere, İspanya, Almanya, İtalya ve Fransa birinci ligleri) dışında geçen sezonların ödül, kupa ve sahne puanları %80 olarak sayılır (Kore %70, Körfez %60).\n- Her Yılın dünya oyuncusu ödülü 10 ödül puanı ekler.\n- Kupalar artık türüne göre sayılır: en değerlisi kıta kupaları, ardından ligler, sonra kupalar.\n- Bir savunmacının Sezonun 11'ine seçilmesi artık 5 ödül puanı (önceden 4), Altın eldiven ise 12 puan (önceden 8) değerinde.\n- Önceden gönderilen çevrimiçi kayıtlar yeni formülle yeniden hesaplandı. Bu haftaki devam eden sezonda puanlar ve sıralamalar değişebilir; biten sezonların kesin sıralamaları ve madalyaları aynı kalır.\n- Bu haftaki sezona kariyer gönderen herkese ana ekrandaki hediye kutusuna 100 altın gönderildi.\n- Uygulamada gösterilen puan bir sonraki güncellemeden itibaren yeni formülle aynı olacak."
+      },
+      "id": {
+        "title": "Perubahan skor karier: level liga dihitung, Pemain Terbaik Dunia ditambahkan",
+        "body": "- Skor karier di peringkat online kini memperhitungkan level liga. Musim yang dimainkan di luar lima liga besar Eropa (divisi utama Inggris, Spanyol, Jerman, Italia, dan Prancis) dihitung 80% untuk penghargaan, trofi, dan panggung (Korea 70%, Teluk 60%).\n- Setiap gelar Pemain Terbaik Dunia menambah 10 poin penghargaan.\n- Trofi kini dihitung menurut jenisnya: piala kontinental paling bernilai, lalu liga, lalu piala.\n- Terpilihnya bek di Tim terbaik musim ini kini bernilai 5 poin penghargaan (sebelumnya 4), dan Sarung tangan emas 12 (sebelumnya 8).\n- Catatan online yang sudah dikirim telah dihitung ulang dengan rumus baru. Pada musim minggu ini yang sedang berjalan, skor dan peringkat bisa berubah; peringkat akhir dan medali musim yang sudah selesai tetap sama.\n- Semua yang mengirim karier di musim minggu ini telah menerima 100 emas di kotak hadiah layar utama.\n- Skor yang tampil di aplikasi akan mengikuti rumus baru mulai pembaruan berikutnya."
+      },
+      "ar": {
+        "title": "تحديث نقاط المسيرة: مستوى الدوري يُحتسب، وإضافة أفضل لاعب في العالم",
+        "body": "- أصبحت نقاط المسيرة في الترتيب عبر الإنترنت تراعي مستوى الدوري. المواسم التي تُلعب خارج الدوريات الأوروبية الخمسة الكبرى (الدرجة الأولى في إنجلترا وإسبانيا وألمانيا وإيطاليا وفرنسا) تُحتسب بنسبة 80% في الجوائز والألقاب ومستوى المنافسة (كوريا 70%، الخليج 60%).\n- كل جائزة أفضل لاعب في العالم تضيف 10 نقاط إلى الجوائز.\n- تُحتسب الألقاب الآن حسب نوعها: الكؤوس القارية أعلاها، ثم الدوريات، ثم الكؤوس.\n- اختيار المدافع في تشكيلة الموسم يساوي الآن 5 نقاط جوائز (بدلًا من 4)، والقفاز الذهبي 12 نقطة (بدلًا من 8).\n- أُعيد حساب السجلات المسجلة سابقًا عبر الإنترنت بالصيغة الجديدة. قد تتغير النقاط والمراكز في موسم هذا الأسبوع الجاري، وتبقى المراكز النهائية والميداليات للمواسم المنتهية كما هي.\n- كل من سجّل مسيرة في موسم هذا الأسبوع حصل على 100 ذهب في صندوق الهدايا على الشاشة الرئيسية.\n- ستتوافق النقاط المعروضة داخل التطبيق مع الصيغة الجديدة بدءًا من التحديث القادم."
+      }
+    }
+  },
+  {
     "id": "2026-10-26-halloween",
     "date": "2026-10-26",
     "title": "할로윈 이벤트: 매일 출석 선물, 7일차엔 할로윈 카드",
