@@ -1,5 +1,79 @@
 [
   {
+    "id": "2026-10-27-legacy-league-ladder",
+    "date": "2026-10-27",
+    "title": "커리어 점수 조정: 리그 우승 난이도 반영",
+    "body": "- 온라인 랭킹 커리어 점수에 리그 우승 난이도를 반영합니다. 같은 활약이라도 우승 경쟁이 치열한 리그일수록 더 높게 평가됩니다.\n- 잉글랜드 1부 시즌은 수상·우승·무대 점수가 108%, 스페인 1부는 100%, 독일·이탈리아·프랑스 1부는 92%로 반영됩니다. 그 밖의 리그는 기존과 같습니다(80%, 한국 1부 70%, 걸프 1부 60%).\n- 수비수의 '시즌 베스트 11' 수상 점수는 4.8점(기존 5점)으로 조정했습니다.\n- 기존에 등록한 온라인 기록도 새 공식으로 재계산했습니다. 진행 중인 이번 주 시즌은 점수와 순위가 달라질 수 있으며, 마감된 시즌의 확정 순위와 메달은 유지됩니다.\n- 앱 안에 표시되는 점수는 다음 업데이트부터 새 공식과 같아집니다.",
+    "important": true,
+    "popup": {
+      "until": "2026-11-01"
+    },
+    "category": "notice",
+    "summary": "우승 경쟁이 치열한 리그일수록 커리어 점수를 더 높게 쳐줍니다. 이번 주 시즌은 재계산됐어요.",
+    "translations": {
+      "ko": {
+        "title": "커리어 점수 조정: 리그 우승 난이도 반영",
+        "body": "- 온라인 랭킹 커리어 점수에 리그 우승 난이도를 반영합니다. 같은 활약이라도 우승 경쟁이 치열한 리그일수록 더 높게 평가됩니다.\n- 잉글랜드 1부 시즌은 수상·우승·무대 점수가 108%, 스페인 1부는 100%, 독일·이탈리아·프랑스 1부는 92%로 반영됩니다. 그 밖의 리그는 기존과 같습니다(80%, 한국 1부 70%, 걸프 1부 60%).\n- 수비수의 '시즌 베스트 11' 수상 점수는 4.8점(기존 5점)으로 조정했습니다.\n- 기존에 등록한 온라인 기록도 새 공식으로 재계산했습니다. 진행 중인 이번 주 시즌은 점수와 순위가 달라질 수 있으며, 마감된 시즌의 확정 순위와 메달은 유지됩니다.\n- 앱 안에 표시되는 점수는 다음 업데이트부터 새 공식과 같아집니다.",
+        "summary": "우승 경쟁이 치열한 리그일수록 커리어 점수를 더 높게 쳐줍니다. 이번 주 시즌은 재계산됐어요."
+      },
+      "en": {
+        "title": "Career score adjustment: how hard the league is to win",
+        "body": "- Online career scores now reflect how hard each league is to win. The same performance counts for more in a league with a tougher title race.\n- Seasons in England's first division count for 108% of their award, trophy and stage points, Spain's for 100%, and Germany's, Italy's and France's for 92%. Other leagues are unchanged (80%, Korea 70%, the Gulf 60%).\n- A defender's Team of the season selection is now worth 4.8 award points (was 5).\n- Previously submitted online records have been recalculated with the new formula. Scores and rankings in this week's active season may change; final standings and medals for completed seasons remain unchanged.\n- Scores shown inside the app will match the new formula from the next update.",
+        "summary": "Leagues with a tougher title race now count for more. This week's season has been recalculated."
+      },
+      "ja": {
+        "title": "キャリアスコア調整：リーグ優勝の難しさを反映",
+        "body": "- オンラインランキングのキャリアスコアに、リーグ優勝の難しさを反映します。同じ活躍でも、優勝争いが激しいリーグほど高く評価されます。\n- イングランド1部のシーズンは受賞・優勝・舞台スコアが108%、スペイン1部は100%、ドイツ・イタリア・フランス1部は92%で反映されます。その他のリーグは従来どおりです（80%、韓国1部70%、湾岸1部60%）。\n- ディフェンダーの「シーズンベストイレブン」の受賞スコアは4.8点（従来5点）に調整しました。\n- 登録済みのオンライン記録も新しい計算式で再計算しました。進行中の今週のシーズンはスコアと順位が変わる場合があります。終了したシーズンの確定順位とメダルはそのままです。\n- アプリ内に表示されるスコアは、次のアップデートから新しい計算式と同じになります。",
+        "summary": "優勝争いが激しいリーグほどキャリアスコアが高く評価されます。今週のシーズンは再計算されました。"
+      },
+      "zh": {
+        "title": "生涯分数调整：反映联赛夺冠难度",
+        "body": "- 在线排行榜的生涯分数将反映各联赛的夺冠难度。同样的表现，在冠军争夺越激烈的联赛中评价越高。\n- 英格兰顶级联赛的赛季，其奖项、冠军和舞台分数按108%计算，西班牙顶级联赛为100%，德国、意大利、法国顶级联赛为92%。其他联赛不变（80%，韩国顶级联赛70%，海湾顶级联赛60%）。\n- 后卫的“赛季最佳阵容”奖项分数调整为4.8分（原为5分）。\n- 已提交的在线记录也已按新公式重新计算。本周进行中的赛季分数和排名可能会变化，已结束赛季的最终排名和奖牌保持不变。\n- 应用内显示的分数将从下次更新起与新公式一致。",
+        "summary": "冠军争夺越激烈的联赛，生涯分数越高。本周赛季已重新计算。"
+      },
+      "es": {
+        "title": "Ajuste de la puntuación de carrera: lo difícil que es ganar la liga",
+        "body": "- La puntuación de carrera del ranking en línea ahora refleja lo difícil que es ganar cada liga. El mismo rendimiento vale más en una liga con una pelea por el título más dura.\n- Las temporadas en la primera división de Inglaterra cuentan el 108 % de sus puntos de premios, títulos y escenario; las de España, el 100 %; y las de Alemania, Italia y Francia, el 92 %. El resto de ligas no cambia (80 %, Corea 70 %, el Golfo 60 %).\n- El Equipo de la temporada de un defensa ahora vale 4,8 puntos de premio (antes 5).\n- Los registros en línea ya enviados se han recalculado con la nueva fórmula. Las puntuaciones y posiciones de la temporada en curso de esta semana pueden cambiar; las clasificaciones finales y medallas de las temporadas cerradas se mantienen.\n- Las puntuaciones que muestra la app coincidirán con la nueva fórmula a partir de la próxima actualización.",
+        "summary": "Las ligas con una pelea por el título más dura ahora valen más. La temporada de esta semana se ha recalculado."
+      },
+      "pt": {
+        "title": "Ajuste da pontuação de carreira: a dificuldade de vencer a liga",
+        "body": "- A pontuação de carreira do ranking online agora reflete a dificuldade de vencer cada liga. O mesmo desempenho vale mais numa liga com uma disputa de título mais dura.\n- As temporadas na primeira divisão da Inglaterra contam 108% dos pontos de prêmios, títulos e palco; as da Espanha, 100%; e as da Alemanha, Itália e França, 92%. As outras ligas não mudam (80%, Coreia 70%, Golfo 60%).\n- A Seleção da temporada de um zagueiro agora vale 4,8 pontos de prêmio (antes 5).\n- Os registros online já enviados foram recalculados com a nova fórmula. As pontuações e posições da temporada em andamento desta semana podem mudar; as classificações finais e medalhas das temporadas encerradas são mantidas.\n- As pontuações exibidas no app vão coincidir com a nova fórmula a partir da próxima atualização.",
+        "summary": "Ligas com disputa de título mais dura agora valem mais. A temporada desta semana foi recalculada."
+      },
+      "fr": {
+        "title": "Ajustement du score de carrière : la difficulté de gagner le championnat",
+        "body": "- Le score de carrière du classement en ligne reflète désormais la difficulté de gagner chaque championnat. Une même performance compte davantage dans un championnat où la course au titre est plus rude.\n- Les saisons en première division anglaise comptent pour 108 % de leurs points de distinctions, de trophées et de scène, celles d'Espagne pour 100 %, et celles d'Allemagne, d'Italie et de France pour 92 %. Les autres championnats ne changent pas (80 %, Corée 70 %, Golfe 60 %).\n- L'équipe-type de la saison d'un défenseur vaut désormais 4,8 points de distinction (au lieu de 5).\n- Les records en ligne déjà envoyés ont été recalculés avec la nouvelle formule. Les scores et classements de la saison en cours cette semaine peuvent changer ; les classements définitifs et médailles des saisons terminées sont conservés.\n- Les scores affichés dans l'appli correspondront à la nouvelle formule à partir de la prochaine mise à jour.",
+        "summary": "Les championnats où la course au titre est plus rude comptent davantage. La saison de cette semaine a été recalculée."
+      },
+      "de": {
+        "title": "Anpassung der Karrierepunkte: wie schwer die Meisterschaft zu gewinnen ist",
+        "body": "- Die Karrierepunkte der Online-Rangliste berücksichtigen jetzt, wie schwer die Meisterschaft in jeder Liga zu gewinnen ist. Dieselbe Leistung zählt mehr in einer Liga mit härterem Titelkampf.\n- Saisons in Englands erster Liga zählen mit 108 % ihrer Auszeichnungs-, Titel- und Bühnenpunkte, Spaniens mit 100 % und die Deutschlands, Italiens und Frankreichs mit 92 %. Die übrigen Ligen bleiben unverändert (80 %, Korea 70 %, Golf 60 %).\n- Die Wahl eines Verteidigers in die Elf der Saison ist jetzt 4,8 Auszeichnungspunkte wert (vorher 5).\n- Bereits eingereichte Online-Rekorde wurden mit der neuen Formel neu berechnet. Punkte und Platzierungen der laufenden Saison dieser Woche können sich ändern; Endplatzierungen und Medaillen abgeschlossener Saisons bleiben bestehen.\n- Die in der App angezeigten Punkte entsprechen ab dem nächsten Update der neuen Formel.",
+        "summary": "Ligen mit härterem Titelkampf zählen jetzt mehr. Die Saison dieser Woche wurde neu berechnet."
+      },
+      "it": {
+        "title": "Modifica del punteggio di carriera: quanto è difficile vincere il campionato",
+        "body": "- Il punteggio di carriera della classifica online ora tiene conto di quanto è difficile vincere ogni campionato. La stessa prestazione vale di più in un campionato con una corsa al titolo più dura.\n- Le stagioni nella prima divisione inglese contano per il 108% dei punti premi, trofei e palcoscenico, quelle spagnole per il 100% e quelle di Germania, Italia e Francia per il 92%. Gli altri campionati restano invariati (80%, Corea 70%, Golfo 60%).\n- La Squadra della stagione di un difensore ora vale 4,8 punti premio (prima 5).\n- I record online già inviati sono stati ricalcolati con la nuova formula. Punteggi e posizioni della stagione in corso di questa settimana possono cambiare; classifiche finali e medaglie delle stagioni concluse restano invariate.\n- I punteggi mostrati nell'app corrisponderanno alla nuova formula dal prossimo aggiornamento.",
+        "summary": "I campionati con una corsa al titolo più dura ora valgono di più. La stagione di questa settimana è stata ricalcolata."
+      },
+      "tr": {
+        "title": "Kariyer puanı ayarı: ligi kazanmanın zorluğu",
+        "body": "- Çevrim içi sıralamadaki kariyer puanı artık her ligi kazanmanın ne kadar zor olduğunu yansıtıyor. Aynı performans, şampiyonluk yarışı daha çetin olan bir ligde daha değerli sayılır.\n- İngiltere birinci ligindeki sezonlar ödül, kupa ve sahne puanlarının %108'iyle, İspanya'dakiler %100'üyle, Almanya, İtalya ve Fransa'dakiler %92'siyle sayılır. Diğer ligler değişmedi (%80, Kore %70, Körfez %60).\n- Bir defans oyuncusunun Sezonun takımı seçimi artık 4,8 ödül puanı değerinde (önceden 5).\n- Daha önce gönderilen çevrim içi kayıtlar yeni formülle yeniden hesaplandı. Bu haftanın devam eden sezonunda puanlar ve sıralamalar değişebilir; tamamlanan sezonların kesin sıralamaları ve madalyaları korunur.\n- Uygulamada gösterilen puanlar bir sonraki güncellemeden itibaren yeni formülle aynı olacak.",
+        "summary": "Şampiyonluk yarışı daha çetin olan ligler artık daha değerli. Bu haftanın sezonu yeniden hesaplandı."
+      },
+      "id": {
+        "title": "Penyesuaian skor karier: seberapa sulit menjuarai liga",
+        "body": "- Skor karier di peringkat online kini mencerminkan seberapa sulit menjuarai tiap liga. Penampilan yang sama bernilai lebih tinggi di liga dengan perebutan gelar yang lebih ketat.\n- Musim di divisi utama Inggris dihitung 108% dari poin penghargaan, trofi, dan panggungnya, Spanyol 100%, serta Jerman, Italia, dan Prancis 92%. Liga lain tidak berubah (80%, Korea 70%, Teluk 60%).\n- Pilihan Tim terbaik musim ini untuk bek kini bernilai 4,8 poin penghargaan (sebelumnya 5).\n- Rekor online yang sudah dikirim telah dihitung ulang dengan rumus baru. Skor dan peringkat musim minggu ini yang sedang berjalan bisa berubah; peringkat akhir dan medali musim yang sudah selesai tetap.\n- Skor yang ditampilkan di aplikasi akan sama dengan rumus baru mulai pembaruan berikutnya.",
+        "summary": "Liga dengan perebutan gelar lebih ketat kini bernilai lebih tinggi. Musim minggu ini telah dihitung ulang."
+      },
+      "ar": {
+        "title": "تعديل نقاط المسيرة: صعوبة الفوز بالدوري",
+        "body": "- أصبحت نقاط المسيرة في التصنيف عبر الإنترنت تعكس مدى صعوبة الفوز بكل دوري. الأداء نفسه يُحتسب بقيمة أعلى في دوري يكون فيه سباق اللقب أصعب.\n- تُحتسب مواسم الدرجة الأولى الإنجليزية بنسبة 108% من نقاط الجوائز والألقاب والمنصة، والإسبانية بنسبة 100%، والألمانية والإيطالية والفرنسية بنسبة 92%. باقي الدوريات دون تغيير (80%، كوريا 70%، الخليج 60%).\n- أصبح اختيار المدافع في تشكيلة الموسم يساوي 4.8 نقطة جوائز (بدلًا من 5).\n- أُعيد احتساب السجلات المرسلة سابقًا عبر الإنترنت بالصيغة الجديدة. قد تتغير النقاط والترتيب في موسم هذا الأسبوع الجاري، بينما تبقى الترتيبات النهائية والميداليات للمواسم المنتهية كما هي.\n- ستتطابق النقاط المعروضة داخل التطبيق مع الصيغة الجديدة بدءًا من التحديث القادم.",
+        "summary": "الدوريات ذات سباق اللقب الأصعب تُحتسب الآن بقيمة أعلى. أُعيد احتساب موسم هذا الأسبوع."
+      }
+    }
+  },
+  {
     "id": "2026-10-27-feedback-poll",
     "date": "2026-10-27",
     "title": "개선 투표 참여하고 리롤 티켓 3장 받기",
