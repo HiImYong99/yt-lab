@@ -1,5 +1,121 @@
 [
   {
+    "id": "2026-10-27-feedback-poll",
+    "date": "2026-10-27",
+    "title": "개선 투표 참여하고 리롤 티켓 3장 받기",
+    "body": "- 다음 업데이트에서 무엇부터 고칠지 디스코드 투표로 정합니다. 11월 3일(화) 23시(한국 시간)까지 참여할 수 있어요.\n- 보기: 선택 장면이 너무 자주 나와 플레이를 끊어요 / 포지션별 밸런스 / 부상 빈도 / 성장카드 시스템 / 기타 의견\n- 투표한 분 모두에게 리롤 티켓 3장을 홈 화면 선물함으로 드립니다.\n- 받으려면 디스코드 #rewards-보상 채널에서 게임 계정을 연동해 주세요. 이미 커뮤니티 보상을 받았다면 따로 할 일이 없고, 마감 후 11월 6일(금)까지 연동해도 받을 수 있어요.",
+    "important": true,
+    "popup": {
+      "until": "2026-11-03",
+      "art": [
+        "avatar:communityCaptain"
+      ],
+      "cta": {
+        "url": "https://discord.gg/xaZrNwmdMQ",
+        "label": {
+          "ko": "디스코드에서 투표하기",
+          "en": "Vote on Discord",
+          "ja": "Discordで投票する",
+          "zh": "去 Discord 投票",
+          "es": "Votar en Discord",
+          "pt": "Votar no Discord",
+          "fr": "Voter sur Discord",
+          "de": "Auf Discord abstimmen",
+          "it": "Vota su Discord",
+          "tr": "Discord'da oy ver",
+          "id": "Voting di Discord",
+          "ar": "صوّت في Discord"
+        }
+      }
+    },
+    "category": "event",
+    "period": {
+      "start": "2026-10-27T21:00:00+09:00",
+      "end": "2026-11-03T23:00:00+09:00"
+    },
+    "banner": "avatar:communityCaptain",
+    "cta": {
+      "url": "https://discord.gg/xaZrNwmdMQ",
+      "label": {
+        "ko": "디스코드에서 투표하기",
+        "en": "Vote on Discord",
+        "ja": "Discordで投票する",
+        "zh": "去 Discord 投票",
+        "es": "Votar en Discord",
+        "pt": "Votar no Discord",
+        "fr": "Voter sur Discord",
+        "de": "Auf Discord abstimmen",
+        "it": "Vota su Discord",
+        "tr": "Discord'da oy ver",
+        "id": "Voting di Discord",
+        "ar": "صوّت في Discord"
+      }
+    },
+    "summary": "디스코드 투표에 참여하면 리롤 티켓 3장을 드려요. 11월 3일까지.",
+    "translations": {
+      "ko": {
+        "title": "개선 투표 참여하고 리롤 티켓 3장 받기",
+        "body": "- 다음 업데이트에서 무엇부터 고칠지 디스코드 투표로 정합니다. 11월 3일(화) 23시(한국 시간)까지 참여할 수 있어요.\n- 보기: 선택 장면이 너무 자주 나와 플레이를 끊어요 / 포지션별 밸런스 / 부상 빈도 / 성장카드 시스템 / 기타 의견\n- 투표한 분 모두에게 리롤 티켓 3장을 홈 화면 선물함으로 드립니다.\n- 받으려면 디스코드 #rewards-보상 채널에서 게임 계정을 연동해 주세요. 이미 커뮤니티 보상을 받았다면 따로 할 일이 없고, 마감 후 11월 6일(금)까지 연동해도 받을 수 있어요.",
+        "summary": "디스코드 투표에 참여하면 리롤 티켓 3장을 드려요. 11월 3일까지."
+      },
+      "en": {
+        "title": "Vote on what we fix next and get 3 reroll tickets",
+        "body": "- We're letting the Discord community pick what the next update fixes first. Voting is open until Nov 3, 23:00 KST.\n- Options: choice scenes interrupt play too often / position balance / injury frequency / growth card system / other ideas\n- Everyone who votes gets 3 reroll tickets in the gift box on the home screen.\n- To receive them, link your game account in the #rewards channel on Discord. If you already claimed the community reward, there's nothing more to do. Linking by Nov 6 still counts.",
+        "summary": "Vote in our Discord poll and get 3 reroll tickets. Until Nov 3."
+      },
+      "ja": {
+        "title": "改善アンケートに投票してリロールチケット3枚をもらおう",
+        "body": "- 次のアップデートで何から直すかをDiscordの投票で決めます。11月3日(火)23時(韓国時間)まで参加できます。\n- 選択肢:選択シーンが多すぎてプレイが途切れる/ポジション間のバランス/ケガの頻度/成長カードシステム/その他の意見\n- 投票した方全員に、ホーム画面のギフトボックスへリロールチケット3枚をお届けします。\n- 受け取るにはDiscordの#rewardsチャンネルでゲームアカウントを連携してください。コミュニティ報酬を受け取り済みなら追加の操作は不要です。締め切り後も11月6日(金)までに連携すれば受け取れます。",
+        "summary": "Discordの投票に参加するとリロールチケット3枚。11月3日まで。"
+      },
+      "zh": {
+        "title": "参与改进投票,领取 3 张重掷券",
+        "body": "- 我们将通过 Discord 投票决定下次更新优先修复什么。投票截止到 11 月 3 日 23:00(韩国时间)。\n- 选项:选择场景太频繁,打断游戏/位置平衡/受伤频率/成长卡系统/其他意见\n- 所有投票的玩家都会在主页礼物箱收到 3 张重掷券。\n- 领取前请在 Discord 的 #rewards 频道绑定游戏账号。已领取社区奖励的玩家无需其他操作。截止后 11 月 6 日前绑定也能领取。",
+        "summary": "参与 Discord 投票即可获得 3 张重掷券。截止 11 月 3 日。"
+      },
+      "es": {
+        "title": "Vota qué arreglamos primero y llévate 3 tickets de tirada",
+        "body": "- La comunidad de Discord decide qué arregla primero la próxima actualización. Puedes votar hasta el 3 de noviembre a las 23:00 (hora de Corea).\n- Opciones: las escenas de decisión salen demasiado y cortan el juego / equilibrio entre posiciones / frecuencia de lesiones / sistema de cartas de progreso / otras ideas\n- Todos los que voten recibirán 3 tickets de tirada en la caja de regalos de la pantalla de inicio.\n- Para recibirlos, vincula tu cuenta del juego en el canal #rewards de Discord. Si ya recibiste la recompensa de la comunidad, no tienes que hacer nada más. Vincularla hasta el 6 de noviembre también cuenta.",
+        "summary": "Vota en Discord y recibe 3 tickets de tirada. Hasta el 3 de noviembre."
+      },
+      "pt": {
+        "title": "Vote no que corrigir primeiro e ganhe 3 tickets de rolagem",
+        "body": "- A comunidade do Discord vai decidir o que a próxima atualização corrige primeiro. A votação vai até 3 de novembro, 23h (horário da Coreia).\n- Opções: cenas de escolha aparecem demais e interrompem o jogo / equilíbrio entre posições / frequência de lesões / sistema de cartas de evolução / outras ideias\n- Todos que votarem recebem 3 tickets de rolagem na caixa de presentes da tela inicial.\n- Para receber, vincule sua conta do jogo no canal #rewards do Discord. Se você já pegou a recompensa da comunidade, não precisa fazer mais nada. Vincular até 6 de novembro também vale.",
+        "summary": "Vote no Discord e ganhe 3 tickets de rolagem. Até 3 de novembro."
+      },
+      "fr": {
+        "title": "Votez pour la prochaine correction et recevez 3 tickets de relance",
+        "body": "- La communauté Discord choisit ce que la prochaine mise à jour corrigera en premier. Le vote est ouvert jusqu'au 3 novembre, 23 h (heure de Corée).\n- Choix : les scènes à choix reviennent trop souvent et coupent la partie / équilibre entre les postes / fréquence des blessures / système de cartes de progression / autres idées\n- Tous les votants reçoivent 3 tickets de relance dans la boîte à cadeaux de l'écran d'accueil.\n- Pour les recevoir, liez votre compte de jeu dans le salon #rewards sur Discord. Si vous avez déjà reçu la récompense communauté, il n'y a rien d'autre à faire. Lier son compte jusqu'au 6 novembre compte aussi.",
+        "summary": "Votez sur Discord et recevez 3 tickets de relance. Jusqu'au 3 novembre."
+      },
+      "de": {
+        "title": "Stimm ab, was wir zuerst verbessern, und hol dir 3 Neuwurf-Tickets",
+        "body": "- Die Discord-Community entscheidet, was das nächste Update zuerst verbessert. Abstimmen kannst du bis 3. November, 23:00 Uhr (koreanische Zeit).\n- Optionen: Entscheidungsszenen kommen zu oft und unterbrechen das Spiel / Balance zwischen Positionen / Verletzungshäufigkeit / Wachstumskarten-System / andere Ideen\n- Alle, die abstimmen, bekommen 3 Neuwurf-Tickets in die Geschenkbox auf dem Startbildschirm.\n- Verknüpfe dafür dein Spielkonto im Discord-Kanal #rewards. Wenn du die Community-Belohnung schon hast, musst du nichts weiter tun. Verknüpfen bis 6. November zählt auch.",
+        "summary": "Stimm auf Discord ab und hol dir 3 Neuwurf-Tickets. Bis 3. November."
+      },
+      "it": {
+        "title": "Vota cosa sistemare prima e ricevi 3 ticket di ritiro",
+        "body": "- La community di Discord sceglie cosa sistemerà per primo il prossimo aggiornamento. Si vota fino al 3 novembre, ore 23:00 (ora coreana).\n- Opzioni: le scene a scelta compaiono troppo spesso e interrompono il gioco / equilibrio tra i ruoli / frequenza degli infortuni / sistema delle carte crescita / altre idee\n- Chi vota riceve 3 ticket di ritiro nella casella regali della schermata iniziale.\n- Per riceverli, collega il tuo account di gioco nel canale #rewards su Discord. Se hai già ricevuto la ricompensa community non devi fare altro. Collegarlo entro il 6 novembre vale lo stesso.",
+        "summary": "Vota su Discord e ricevi 3 ticket di ritiro. Fino al 3 novembre."
+      },
+      "tr": {
+        "title": "Önce neyi düzelteceğimize oy ver, 3 yeniden zar bileti kazan",
+        "body": "- Bir sonraki güncellemede önce neyin düzeltileceğini Discord topluluğu seçiyor. Oylama 3 Kasım 23:00'e (Kore saati) kadar açık.\n- Seçenekler: seçim sahneleri çok sık çıkıp oyunu bölüyor / mevkiler arası denge / sakatlık sıklığı / gelişim kartı sistemi / diğer fikirler\n- Oy veren herkes ana ekrandaki hediye kutusuna 3 yeniden zar bileti alır.\n- Almak için Discord'daki #rewards kanalında oyun hesabını bağla. Topluluk ödülünü zaten aldıysan başka bir şey yapmana gerek yok. 6 Kasım'a kadar bağlaman da yeterli.",
+        "summary": "Discord oylamasına katıl, 3 yeniden zar bileti kazan. 3 Kasım'a kadar."
+      },
+      "id": {
+        "title": "Pilih yang diperbaiki duluan dan dapatkan 3 tiket reroll",
+        "body": "- Komunitas Discord menentukan apa yang diperbaiki duluan di update berikutnya. Voting dibuka sampai 3 November pukul 23.00 (waktu Korea).\n- Pilihan: adegan pilihan terlalu sering muncul dan mengganggu permainan / keseimbangan antarposisi / frekuensi cedera / sistem kartu perkembangan / ide lainnya\n- Semua yang ikut voting mendapat 3 tiket reroll di kotak hadiah layar utama.\n- Untuk menerimanya, hubungkan akun game di channel #rewards di Discord. Kalau sudah klaim hadiah komunitas, tidak perlu melakukan apa-apa lagi. Menghubungkan sampai 6 November juga tetap dihitung.",
+        "summary": "Ikut voting di Discord dan dapatkan 3 tiket reroll. Sampai 3 November."
+      },
+      "ar": {
+        "title": "صوّت على ما نصلحه أولاً واحصل على 3 تذاكر إعادة",
+        "body": "- يختار مجتمع Discord ما سيصلحه التحديث القادم أولاً. التصويت مفتوح حتى 3 نوفمبر الساعة 23:00 (بتوقيت كوريا).\n- الخيارات: مشاهد الاختيار تظهر كثيراً وتقطع اللعب / التوازن بين المراكز / تكرار الإصابات / نظام بطاقات التطور / أفكار أخرى\n- كل من يصوّت يحصل على 3 تذاكر إعادة في صندوق الهدايا في الشاشة الرئيسية.\n- لاستلامها، اربط حساب اللعبة في قناة #rewards على Discord. إذا استلمت مكافأة المجتمع من قبل فلا حاجة لفعل شيء آخر. الربط حتى 6 نوفمبر يُحتسب أيضاً.",
+        "summary": "صوّت في Discord واحصل على 3 تذاكر إعادة. حتى 3 نوفمبر."
+      }
+    }
+  },
+  {
     "id": "2026-10-26-legacy-league",
     "date": "2026-10-26",
     "title": "커리어 점수 개편: 리그 수준 반영, 세계 올해의 선수 추가",
