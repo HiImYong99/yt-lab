@@ -1,5 +1,79 @@
 [
   {
+    "id": "2026-10-29-app-score-vs-ranking",
+    "date": "2026-10-29",
+    "title": "앱 점수와 랭킹 점수가 다르게 보일 때",
+    "body": "- 2.6.4 이하 버전에서는 앱 안에 표시되는 커리어 점수가 온라인 랭킹 점수와 다를 수 있습니다. 랭킹은 10월 27일 리그 우승 난이도 조정이 반영된 점수로 계산되기 때문입니다.\n- 은퇴한 커리어는 랭킹에 정상적으로 등록되고 있습니다. 시즌 점수와 순위는 랭킹 화면의 점수가 기준입니다.\n- 그래서 앱에서 가장 높게 보이는 커리어가 랭킹에서는 상위 3명에 들지 못해 시즌 점수가 그대로일 수 있습니다.\n- 다음 업데이트(2.6.5)부터 앱 점수가 랭킹 점수와 같아지고, 이미 은퇴한 커리어의 점수도 새 공식으로 다시 계산됩니다.",
+    "important": true,
+    "popup": {
+      "until": "2026-11-05"
+    },
+    "category": "notice",
+    "summary": "기록은 정상 반영 중이에요. 랭킹 화면 점수가 기준이고, 2.6.5부터 앱 점수와 같아집니다.",
+    "translations": {
+      "ko": {
+        "title": "앱 점수와 랭킹 점수가 다르게 보일 때",
+        "body": "- 2.6.4 이하 버전에서는 앱 안에 표시되는 커리어 점수가 온라인 랭킹 점수와 다를 수 있습니다. 랭킹은 10월 27일 리그 우승 난이도 조정이 반영된 점수로 계산되기 때문입니다.\n- 은퇴한 커리어는 랭킹에 정상적으로 등록되고 있습니다. 시즌 점수와 순위는 랭킹 화면의 점수가 기준입니다.\n- 그래서 앱에서 가장 높게 보이는 커리어가 랭킹에서는 상위 3명에 들지 못해 시즌 점수가 그대로일 수 있습니다.\n- 다음 업데이트(2.6.5)부터 앱 점수가 랭킹 점수와 같아지고, 이미 은퇴한 커리어의 점수도 새 공식으로 다시 계산됩니다.",
+        "summary": "기록은 정상 반영 중이에요. 랭킹 화면 점수가 기준이고, 2.6.5부터 앱 점수와 같아집니다."
+      },
+      "en": {
+        "title": "When your app score and ranking score differ",
+        "body": "- On version 2.6.4 and earlier, the career score shown in the app can differ from your online ranking score. The ranking uses the October 27 adjustment for how hard each league is to win.\n- Your retired careers are reaching the ranking normally. Your season score and rank are based on the scores shown on the ranking screen.\n- That is why the career that looks highest in the app may not make your top 3 on the ranking, leaving your season score unchanged.\n- From the next update (2.6.5), the app shows the same score as the ranking, and careers you already retired are recalculated with the new formula.",
+        "summary": "Your careers are being recorded. The ranking screen's score is what counts, and from 2.6.5 the app shows the same score."
+      },
+      "ja": {
+        "title": "アプリのスコアとランキングのスコアが違って見えるとき",
+        "body": "- バージョン2.6.4以前では、アプリ内に表示されるキャリアスコアがオンラインランキングのスコアと異なる場合があります。ランキングは10月27日のリーグ優勝難易度の調整を反映したスコアで計算されているためです。\n- 引退したキャリアはランキングに正常に登録されています。シーズンスコアと順位は、ランキング画面のスコアが基準です。\n- そのため、アプリで最も高く見えるキャリアがランキングでは上位3人に入らず、シーズンスコアが変わらないことがあります。\n- 次のアップデート（2.6.5）から、アプリのスコアがランキングと同じになり、引退済みのキャリアのスコアも新しい計算式で再計算されます。",
+        "summary": "記録は正常に反映されています。ランキング画面のスコアが基準で、2.6.5からアプリのスコアと同じになります。"
+      },
+      "zh": {
+        "title": "应用内分数与排行榜分数不一致时",
+        "body": "- 在2.6.4及更早版本中，应用内显示的生涯分数可能与在线排行榜分数不同。这是因为排行榜采用了10月27日反映联赛夺冠难度的调整。\n- 已退役的生涯都正常登记到排行榜。赛季分数和排名以排行榜页面上的分数为准。\n- 因此，在应用中看起来最高的生涯，在排行榜上可能进不了前三，赛季分数就会保持不变。\n- 从下次更新（2.6.5）起，应用内分数将与排行榜一致，已退役生涯的分数也会按新公式重新计算。",
+        "summary": "记录正常登记中。以排行榜页面的分数为准，2.6.5起应用内分数将与之一致。"
+      },
+      "es": {
+        "title": "Cuando la puntuación de la app y la del ranking no coinciden",
+        "body": "- En la versión 2.6.4 y anteriores, la puntuación de carrera que muestra la app puede diferir de la del ranking en línea. El ranking usa el ajuste del 27 de octubre sobre lo difícil que es ganar cada liga.\n- Tus carreras retiradas se registran en el ranking con normalidad. Tu puntuación y posición de la temporada se basan en las puntuaciones de la pantalla del ranking.\n- Por eso, la carrera que parece la más alta en la app puede no entrar en tu top 3 del ranking y tu puntuación de la temporada no cambia.\n- A partir de la próxima actualización (2.6.5), la app mostrará la misma puntuación que el ranking y las carreras ya retiradas se recalcularán con la nueva fórmula.",
+        "summary": "Tus carreras se están registrando. Cuenta la puntuación del ranking, y desde la 2.6.5 la app mostrará la misma."
+      },
+      "pt": {
+        "title": "Quando a pontuação do app e a do ranking não batem",
+        "body": "- Na versão 2.6.4 e anteriores, a pontuação de carreira exibida no app pode ser diferente da pontuação do ranking online. O ranking usa o ajuste de 27 de outubro sobre a dificuldade de vencer cada liga.\n- Suas carreiras encerradas estão sendo registradas no ranking normalmente. A pontuação e a posição da temporada se baseiam nas pontuações da tela do ranking.\n- Por isso, a carreira que parece a mais alta no app pode não entrar no seu top 3 do ranking, e a pontuação da temporada continua a mesma.\n- A partir da próxima atualização (2.6.5), o app mostra a mesma pontuação do ranking, e as carreiras já encerradas são recalculadas com a nova fórmula.",
+        "summary": "Suas carreiras estão sendo registradas. Vale a pontuação do ranking, e a partir da 2.6.5 o app mostra a mesma."
+      },
+      "fr": {
+        "title": "Quand le score de l'appli et celui du classement diffèrent",
+        "body": "- Sur la version 2.6.4 et antérieures, le score de carrière affiché dans l'appli peut différer de votre score au classement en ligne. Le classement applique l'ajustement du 27 octobre sur la difficulté de gagner chaque championnat.\n- Vos carrières terminées sont bien enregistrées dans le classement. Votre score et votre rang de la saison se basent sur les scores de l'écran du classement.\n- C'est pourquoi la carrière qui paraît la meilleure dans l'appli peut ne pas entrer dans votre top 3 au classement, et votre score de saison reste inchangé.\n- À partir de la prochaine mise à jour (2.6.5), l'appli affiche le même score que le classement, et les carrières déjà terminées sont recalculées avec la nouvelle formule.",
+        "summary": "Vos carrières sont bien enregistrées. Le score du classement fait foi, et dès la 2.6.5 l'appli affiche le même."
+      },
+      "de": {
+        "title": "Wenn App-Punkte und Ranglistenpunkte abweichen",
+        "body": "- In Version 2.6.4 und älter können die in der App angezeigten Karrierepunkte von deinen Punkten in der Online-Rangliste abweichen. Die Rangliste nutzt die Anpassung vom 27. Oktober, die berücksichtigt, wie schwer jede Meisterschaft zu gewinnen ist.\n- Deine beendeten Karrieren werden ganz normal in die Rangliste eingetragen. Saisonpunkte und Platzierung richten sich nach den Punkten auf dem Ranglistenbildschirm.\n- Deshalb kann die Karriere, die in der App am höchsten aussieht, in der Rangliste nicht unter deine Top 3 kommen, und deine Saisonpunkte bleiben gleich.\n- Ab dem nächsten Update (2.6.5) zeigt die App dieselben Punkte wie die Rangliste, und bereits beendete Karrieren werden mit der neuen Formel neu berechnet.",
+        "summary": "Deine Karrieren werden eingetragen. Es zählen die Ranglistenpunkte, ab 2.6.5 zeigt die App dieselben."
+      },
+      "it": {
+        "title": "Quando il punteggio nell'app e quello in classifica non coincidono",
+        "body": "- Nella versione 2.6.4 e precedenti, il punteggio di carriera mostrato nell'app può essere diverso da quello della classifica online. La classifica usa la modifica del 27 ottobre su quanto è difficile vincere ogni campionato.\n- Le tue carriere concluse vengono registrate in classifica regolarmente. Il punteggio e la posizione della stagione si basano sui punteggi della schermata della classifica.\n- Per questo la carriera che sembra la più alta nell'app potrebbe non entrare nella tua top 3 in classifica, e il punteggio della stagione resta invariato.\n- Dal prossimo aggiornamento (2.6.5) l'app mostrerà lo stesso punteggio della classifica e le carriere già concluse verranno ricalcolate con la nuova formula.",
+        "summary": "Le tue carriere vengono registrate. Conta il punteggio in classifica, e dalla 2.6.5 l'app mostrerà lo stesso."
+      },
+      "tr": {
+        "title": "Uygulama puanı ile sıralama puanı farklı görünürse",
+        "body": "- 2.6.4 ve önceki sürümlerde uygulamada gösterilen kariyer puanı, çevrim içi sıralama puanından farklı olabilir. Sıralama, 27 Ekim'de yapılan lig kazanma zorluğu ayarıyla hesaplanıyor.\n- Emekli olan kariyerlerin sıralamaya normal şekilde kaydediliyor. Sezon puanın ve sıran, sıralama ekranındaki puanlara göre belirlenir.\n- Bu yüzden uygulamada en yüksek görünen kariyer sıralamada ilk 3'üne girmeyebilir ve sezon puanın değişmeyebilir.\n- Bir sonraki güncellemeden (2.6.5) itibaren uygulama sıralamadakiyle aynı puanı gösterecek ve emekli olan kariyerler yeni formülle yeniden hesaplanacak.",
+        "summary": "Kariyerlerin kaydediliyor. Geçerli olan sıralama puanı; 2.6.5'ten itibaren uygulama da aynı puanı gösterecek."
+      },
+      "id": {
+        "title": "Saat skor di aplikasi berbeda dengan skor peringkat",
+        "body": "- Di versi 2.6.4 dan sebelumnya, skor karier yang tampil di aplikasi bisa berbeda dengan skor peringkat online. Peringkat memakai penyesuaian 27 Oktober tentang seberapa sulit menjuarai tiap liga.\n- Karier yang sudah pensiun tetap tercatat di peringkat seperti biasa. Skor dan posisi musim mengikuti skor di layar peringkat.\n- Karena itu, karier yang terlihat paling tinggi di aplikasi bisa saja tidak masuk 3 teratasmu di peringkat, sehingga skor musim tidak berubah.\n- Mulai pembaruan berikutnya (2.6.5), aplikasi menampilkan skor yang sama dengan peringkat, dan karier yang sudah pensiun dihitung ulang dengan rumus baru.",
+        "summary": "Kariermu tetap tercatat. Yang berlaku skor peringkat, dan mulai 2.6.5 aplikasi menampilkan skor yang sama."
+      },
+      "ar": {
+        "title": "عندما تختلف نقاط التطبيق عن نقاط التصنيف",
+        "body": "- في الإصدار 2.6.4 وما قبله، قد تختلف نقاط المسيرة المعروضة داخل التطبيق عن نقاطك في التصنيف عبر الإنترنت، لأن التصنيف يعتمد تعديل 27 أكتوبر الخاص بصعوبة الفوز بكل دوري.\n- تُسجَّل مسيراتك المعتزلة في التصنيف بشكل طبيعي. نقاط الموسم وترتيبك يعتمدان على النقاط الظاهرة في شاشة التصنيف.\n- لذلك قد لا تدخل المسيرة التي تبدو الأعلى في التطبيق ضمن أفضل 3 لديك في التصنيف، فتبقى نقاط الموسم كما هي.\n- بدءًا من التحديث القادم (2.6.5) سيعرض التطبيق النقاط نفسها الموجودة في التصنيف، وستُعاد حساب المسيرات المعتزلة بالصيغة الجديدة.",
+        "summary": "مسيراتك تُسجَّل بشكل طبيعي. المعتمد هو نقاط التصنيف، ومن الإصدار 2.6.5 سيعرض التطبيق النقاط نفسها."
+      }
+    }
+  },
+  {
     "id": "2026-10-27-legacy-league-ladder",
     "date": "2026-10-27",
     "title": "커리어 점수 조정: 리그 우승 난이도 반영",
