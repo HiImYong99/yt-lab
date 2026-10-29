@@ -31,7 +31,7 @@
 <div class="wrap">
   <p class="eyebrow">Rimrise: Basketball Career Sim</p>
   <h1>Privacy Policy</h1>
-  <p class="meta">Effective 14 October 2026 (previously 7 October 2026)</p>
+  <p class="meta">Effective 2 November 2026 (previously 14 October 2026)</p>
   <p class="meta" style="margin-bottom:36px"><a href="../">한국어</a> · English</p>
 
   <p>YT Lab ("the developer") makes the mobile game <strong>Rimrise: Basketball Career Sim</strong> ("the app").
@@ -45,18 +45,20 @@
     <tr><td>Purchase receipts</td><td>Apple App Store / Google Play</td><td>Confirming and restoring in-app purchases</td></tr>
     <tr><td>Gold purchase and spending records (store transaction id, product, time, anonymous id), the gold balance and club facilities</td><td>This app's server (Cloudflare)</td><td>Crediting the gold bought, preventing double credit, keeping the balance and facilities, and moving them to another device with a restore code</td></tr>
     <tr><td>Game progress (your shelf of retired players, settings, what you own, game funds, team edits and any image used in them)</td><td>Your device</td><td>Picking up where you left off</td></tr>
+    <tr><td>Automatic backup (game progress: careers in progress, the shelf of retired players, titles, game funds and so on, with the anonymous id; images used in team edits are not included)</td><td>This app's server (Cloudflare)</td><td>Picking up where you left off after deleting and reinstalling the app - only the latest one per account is kept</td></tr>
+    <tr><td>Anonymous id and access token</td><td>Your device's secure storage (iOS Keychain, Android Block Store - encrypted in your Google backup when Google backup is on)</td><td>Coming back as the same owner after a reinstall</td></tr>
     <tr><td>Player name, career record, anonymous id</td><td>This app's ranking server (Cloudflare)</td><td>The global ranking - sent by default, and <strong>switchable off on the Rankings screen</strong>. A name you typed yourself only with your agreement. See section 7</td></tr>
     <tr><td>Owner nickname and the cosmetics shown on the ranking</td><td>This app's ranking server (Cloudflare)</td><td>Shown on the ranking with your careers - only while you take part. See section 7</td></tr>
     <tr><td>Usage analytics (events such as app open, career created, first season completed, retirement; screens viewed, time, session duration, app version, platform, device model, OS version, language, country/region derived from IP, anonymous id, app instance ID)</td><td>This app's server (Cloudflare), Google Analytics for Firebase (Google LLC)</td><td>Improving the game - sent <strong>only if you choose Allow</strong>, and switchable off in Settings at any time. See section 8</td></tr>
   </table>
   <div class="card">
-    Careers and the shelf are stored <strong>on your device</strong>. When a career ends, what section 7 lists is sent to the ranking server; turn off "Take part in rankings" at the foot of the Rankings screen and nothing further is sent. A player name you typed yourself is sent only if you separately agree to publish it.
+    Careers and the shelf are stored <strong>on your device</strong>, and backed up automatically to this app's server (the latest one per account) so you can pick up again after a reinstall. When a career ends, what section 7 lists is sent to the ranking server; turn off "Take part in rankings" at the foot of the Rankings screen and nothing further is sent. A player name you typed yourself is sent only if you separately agree to publish it.
     There is no crash reporting. Usage analytics go to our own server and to Google Analytics for Firebase only if you allow them, and never include names, free text, the advertising identifier (IDFA / AAID) or the IDFV. Images used in team editing never leave the device.
   </div>
 
   <h2>2. Storage</h2>
   <ul>
-    <li>Everything is kept in on-device storage (shared_preferences) and is removed when you delete the app.</li>
+    <li>Everything is kept in on-device storage (shared_preferences) and is removed when you delete the app, except the server's automatic backup (the latest one per account) and the anonymous id in the device's secure storage, which stay so a reinstall can pick up again. The backup is kept until you ask us to delete it; each new backup replaces the previous one.</li>
     <li>With the ranking and usage analytics both switched off, nothing reaches a server of ours. Section 7 covers how long an entered career is kept and how to have it deleted. Usage analytics records on our own server are likewise kept until a deletion request is made; Google Analytics event data is deleted automatically after at most 14 months.</li>
   </ul>
 
@@ -82,7 +84,7 @@
 
   <h2>6. Your choices</h2>
   <ul>
-    <li>Deleting the app deletes everything stored on the device.</li>
+    <li>Deleting the app deletes what is stored on the device. The server's automatic backup and the anonymous id in the device's secure storage stay so a reinstall can pick up again; you can ask for them to be deleted as described in section 7.</li>
     <li>Anything you entered into the ranking, and your usage analytics records, can be deleted on request - see section 7. Usage analytics can be switched off in Settings, which also clears anything not yet sent.</li>
     <li>The advertising identifier can be reset or limited in your device settings (iOS: Settings &gt; Privacy &gt; Tracking; Android: Settings &gt; Ads).</li>
   </ul>
@@ -93,12 +95,12 @@
     <li>The player's name (up to 16 characters). The game generates one to suit the chosen nationality. <strong>A name you typed yourself is sent only if you separately agree to publish it</strong>; if you decline, that career is not added to the ranking</li>
     <li>Your career's play record (position, team, per-season games, points, assists, rebounds and rating, national-team caps, retirement age, peak rating, earnings, and similar in-game stats)</li>
     <li>Your owner nickname (up to 16 characters) and the cosmetics shown on the ranking - the nickname you chose on first launch appears beside your careers. Inappropriate words are filtered out on the server, and nothing is sent while you do not take part</li>
-    <li>An anonymous id (uid) issued by our service - not a device or advertising identifier, and it changes if you delete and reinstall the app</li>
+    <li>An anonymous id (uid) issued by our service - not a device or advertising identifier; it is also kept in the device's secure storage so a reinstall comes back as the same owner</li>
   </ul>
   <p>Device identifiers, advertising identifiers, location, contacts, and email addresses are not sent by this feature.</p>
   <ul>
     <li><strong>Retention</strong> - the information above is kept indefinitely, until a deletion request is made.</li>
-    <li><strong>Deletion requests</strong> - send the "Ranking ID" shown at the foot of the Settings screen to the contact address below, and we will delete every record that id created on our server: its submitted careers, the reports it filed, the reports filed against its own careers, any player it blocked, and its usage analytics records. The one thing this does not delete: if another player blocked this id, that block is their own setting, not this id's data, and it stays in place.</li>
+    <li><strong>Deletion requests</strong> - send the "Ranking ID" shown at the foot of the Settings screen to the contact address below, and we will delete every record that id created on our server: its submitted careers, the reports it filed, the reports filed against its own careers, any player it blocked, its usage analytics records and its automatic backup. The one thing this does not delete: if another player blocked this id, that block is their own setting, not this id's data, and it stays in place.</li>
     <li><strong>Where this is processed</strong> - the information above is processed and stored on Cloudflare (Workers and D1), and is not shared with any other third party for this purpose.</li>
   </ul>
 
