@@ -1,5 +1,112 @@
 [
   {
+    "id": "2026-10-31-halloween-surprise",
+    "date": "2026-10-31",
+    "title": "할로윈 깜짝 선물: 리롤 티켓 3장",
+    "body": "- 할로윈을 맞아 모든 분께 리롤 티켓 3장을 드립니다.\n- 홈 화면 선물함에서 받기를 눌러 주세요.\n- 매일 받는 할로윈 출석 선물과는 별도로 드리는 선물입니다.",
+    "important": true,
+    "popup": {
+      "until": "2026-11-01",
+      "art": [
+        "avatar:pumpkinStriker"
+      ]
+    },
+    "category": "event",
+    "summary": "홈 화면 선물함에서 리롤 티켓 3장을 받아 가세요.",
+    "content": "## 할로윈 깜짝 선물\n- 모든 계정에 **리롤 티켓 3장**을 드려요.\n- **홈 화면 선물함**에서 받기를 눌러 주세요.\n\n> 매일 받는 할로윈 출석 선물과는 별도예요.",
+    "cta": {
+      "route": "gifts",
+      "label": {
+        "ko": "선물함 열기",
+        "en": "Open gift box",
+        "ja": "プレゼントボックスを開く",
+        "zh": "打开礼物箱",
+        "es": "Abrir buzón de regalos",
+        "pt": "Abrir caixa de presentes",
+        "fr": "Ouvrir la boîte à cadeaux",
+        "de": "Geschenkbox öffnen",
+        "it": "Apri la scatola dei regali",
+        "id": "Buka kotak hadiah",
+        "tr": "Hediye kutusunu aç",
+        "ar": "افتح صندوق الهدايا"
+      }
+    },
+    "translations": {
+      "ko": {
+        "title": "할로윈 깜짝 선물: 리롤 티켓 3장",
+        "body": "- 할로윈을 맞아 모든 분께 리롤 티켓 3장을 드립니다.\n- 홈 화면 선물함에서 받기를 눌러 주세요.\n- 매일 받는 할로윈 출석 선물과는 별도로 드리는 선물입니다.",
+        "summary": "홈 화면 선물함에서 리롤 티켓 3장을 받아 가세요.",
+        "content": "## 할로윈 깜짝 선물\n- 모든 계정에 **리롤 티켓 3장**을 드려요.\n- **홈 화면 선물함**에서 받기를 눌러 주세요.\n\n> 매일 받는 할로윈 출석 선물과는 별도예요."
+      },
+      "en": {
+        "title": "Halloween surprise: 3 reroll tickets",
+        "body": "- For Halloween, everyone gets 3 reroll tickets.\n- Open the gift box on the home screen and tap Claim.\n- This comes on top of the daily Halloween check-in gifts.",
+        "summary": "Claim 3 reroll tickets from the gift box on the home screen.",
+        "content": "## Halloween surprise\n- Every account gets **3 reroll tickets**.\n- Open the **gift box on the home screen** and tap Claim.\n\n> This comes on top of the daily Halloween check-in gifts."
+      },
+      "ja": {
+        "title": "ハロウィンのサプライズ:リロールチケット3枚",
+        "body": "- ハロウィンを記念して、全員にリロールチケット3枚をプレゼントします。\n- ホーム画面のプレゼントボックスで「受け取る」をタップしてください。\n- 毎日のハロウィンログインギフトとは別のプレゼントです。",
+        "summary": "ホーム画面のプレゼントボックスでリロールチケット3枚を受け取ってください。",
+        "content": "## ハロウィンのサプライズ\n- すべてのアカウントに**リロールチケット3枚**をプレゼント。\n- **ホーム画面のプレゼントボックス**で「受け取る」をタップしてください。\n\n> 毎日のハロウィンログインギフトとは別のプレゼントです。"
+      },
+      "zh": {
+        "title": "万圣节惊喜:3 张重掷券",
+        "body": "- 为庆祝万圣节,每位玩家都可获得 3 张重掷券。\n- 请打开首页的礼物箱并点击「领取」。\n- 这份礼物与每日万圣节登录礼物分开发放。",
+        "summary": "在首页礼物箱领取 3 张重掷券。",
+        "content": "## 万圣节惊喜\n- 每个账号可获得 **3 张重掷券**。\n- 打开**首页的礼物箱**并点击「领取」。\n\n> 这份礼物与每日万圣节登录礼物分开发放。"
+      },
+      "es": {
+        "title": "Sorpresa de Halloween: 3 boletos de repetición",
+        "body": "- Por Halloween, todos reciben 3 boletos de repetición.\n- Abre el buzón de regalos de la pantalla de inicio y toca Recibir.\n- Es un regalo aparte de los regalos diarios de Halloween.",
+        "summary": "Recibe 3 boletos de repetición en el buzón de regalos de la pantalla de inicio.",
+        "content": "## Sorpresa de Halloween\n- Cada cuenta recibe **3 boletos de repetición**.\n- Abre el **buzón de regalos de la pantalla de inicio** y toca Recibir.\n\n> Es un regalo aparte de los regalos diarios de Halloween."
+      },
+      "pt": {
+        "title": "Surpresa de Halloween: 3 bilhetes de nova rolagem",
+        "body": "- No Halloween, todo mundo ganha 3 bilhetes de nova rolagem.\n- Abra a caixa de presentes da tela inicial e toque em Receber.\n- É um presente à parte dos presentes diários de Halloween.",
+        "summary": "Receba 3 bilhetes de nova rolagem na caixa de presentes da tela inicial.",
+        "content": "## Surpresa de Halloween\n- Cada conta ganha **3 bilhetes de nova rolagem**.\n- Abra a **caixa de presentes da tela inicial** e toque em Receber.\n\n> É um presente à parte dos presentes diários de Halloween."
+      },
+      "fr": {
+        "title": "Surprise d'Halloween : 3 tickets de relance",
+        "body": "- Pour Halloween, tout le monde reçoit 3 tickets de relance.\n- Ouvrez la boîte à cadeaux de l'écran d'accueil et touchez Récupérer.\n- Ce cadeau s'ajoute aux cadeaux quotidiens d'Halloween.",
+        "summary": "Récupérez 3 tickets de relance dans la boîte à cadeaux de l'écran d'accueil.",
+        "content": "## Surprise d'Halloween\n- Chaque compte reçoit **3 tickets de relance**.\n- Ouvrez la **boîte à cadeaux de l'écran d'accueil** et touchez Récupérer.\n\n> Ce cadeau s'ajoute aux cadeaux quotidiens d'Halloween."
+      },
+      "de": {
+        "title": "Halloween-Überraschung: 3 Neuwurf-Tickets",
+        "body": "- Zu Halloween bekommen alle 3 Neuwurf-Tickets.\n- Öffne die Geschenkbox auf dem Startbildschirm und tippe auf Abholen.\n- Das Geschenk kommt zu den täglichen Halloween-Geschenken dazu.",
+        "summary": "Hol dir 3 Neuwurf-Tickets in der Geschenkbox auf dem Startbildschirm.",
+        "content": "## Halloween-Überraschung\n- Jedes Konto bekommt **3 Neuwurf-Tickets**.\n- Öffne die **Geschenkbox auf dem Startbildschirm** und tippe auf Abholen.\n\n> Das Geschenk kommt zu den täglichen Halloween-Geschenken dazu."
+      },
+      "it": {
+        "title": "Sorpresa di Halloween: 3 biglietti rilancio",
+        "body": "- Per Halloween, tutti ricevono 3 biglietti rilancio.\n- Apri la scatola dei regali nella schermata iniziale e tocca Riscatta.\n- Questo regalo si aggiunge ai regali giornalieri di Halloween.",
+        "summary": "Riscatta 3 biglietti rilancio nella scatola dei regali della schermata iniziale.",
+        "content": "## Sorpresa di Halloween\n- Ogni account riceve **3 biglietti rilancio**.\n- Apri la **scatola dei regali nella schermata iniziale** e tocca Riscatta.\n\n> Questo regalo si aggiunge ai regali giornalieri di Halloween."
+      },
+      "id": {
+        "title": "Kejutan Halloween: 3 tiket acak ulang",
+        "body": "- Dalam rangka Halloween, semua pemain mendapat 3 tiket acak ulang.\n- Buka kotak hadiah di layar utama lalu ketuk Ambil.\n- Hadiah ini terpisah dari hadiah harian Halloween.",
+        "summary": "Ambil 3 tiket acak ulang di kotak hadiah layar utama.",
+        "content": "## Kejutan Halloween\n- Setiap akun mendapat **3 tiket acak ulang**.\n- Buka **kotak hadiah di layar utama** lalu ketuk Ambil.\n\n> Hadiah ini terpisah dari hadiah harian Halloween."
+      },
+      "tr": {
+        "title": "Cadılar Bayramı sürprizi: 3 yeniden atış bileti",
+        "body": "- Cadılar Bayramı için herkese 3 yeniden atış bileti veriyoruz.\n- Ana ekrandaki hediye kutusunu aç ve Al'a dokun.\n- Bu hediye, günlük Cadılar Bayramı hediyelerinden ayrıdır.",
+        "summary": "Ana ekrandaki hediye kutusundan 3 yeniden atış biletini al.",
+        "content": "## Cadılar Bayramı sürprizi\n- Her hesaba **3 yeniden atış bileti**.\n- **Ana ekrandaki hediye kutusunu** aç ve Al'a dokun.\n\n> Bu hediye, günlük Cadılar Bayramı hediyelerinden ayrıdır."
+      },
+      "ar": {
+        "title": "مفاجأة الهالوين: 3 تذاكر إعادة رمي",
+        "body": "- بمناسبة الهالوين، يحصل الجميع على 3 تذاكر إعادة رمي.\n- افتح صندوق الهدايا في الشاشة الرئيسية واضغط على استلام.\n- هذه الهدية إضافة إلى هدايا الهالوين اليومية.",
+        "summary": "استلم 3 تذاكر إعادة رمي من صندوق الهدايا في الشاشة الرئيسية.",
+        "content": "## مفاجأة الهالوين\n- يحصل كل حساب على **3 تذاكر إعادة رمي**.\n- افتح **صندوق الهدايا في الشاشة الرئيسية** واضغط على استلام.\n\n> هذه الهدية إضافة إلى هدايا الهالوين اليومية."
+      }
+    }
+  },
+  {
     "id": "2026-10-29-app-score-vs-ranking",
     "date": "2026-10-29",
     "title": "앱 점수와 랭킹 점수가 다르게 보일 때",
