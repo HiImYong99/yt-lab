@@ -1,5 +1,79 @@
 [
   {
+    "id": "2026-11-02-gold-packs",
+    "date": "2026-11-02",
+    "title": "골드 팩 지급량이 늘어납니다",
+    "body": "- 11월 2일(월) 업데이트부터 골드 팩 3종의 지급 골드가 늘어납니다. 가격은 그대로입니다.\n- 3,100골드 → 3,250골드\n- 6,600골드 → 7,200골드\n- 11,600골드 → 12,900골드\n- 큰 팩일수록 더 많이 늘어나도록 맞췄습니다.",
+    "important": true,
+    "popup": {
+      "until": "2026-11-05"
+    },
+    "category": "update",
+    "summary": "11월 2일 업데이트부터 같은 가격에 골드를 더 드려요.",
+    "translations": {
+      "ko": {
+        "title": "골드 팩 지급량이 늘어납니다",
+        "body": "- 11월 2일(월) 업데이트부터 골드 팩 3종의 지급 골드가 늘어납니다. 가격은 그대로입니다.\n- 3,100골드 → 3,250골드\n- 6,600골드 → 7,200골드\n- 11,600골드 → 12,900골드\n- 큰 팩일수록 더 많이 늘어나도록 맞췄습니다.",
+        "summary": "11월 2일 업데이트부터 같은 가격에 골드를 더 드려요."
+      },
+      "en": {
+        "title": "More gold in gold packs",
+        "body": "- From the November 2 (Mon) update, three gold packs give more gold. Prices stay the same.\n- 3,100 gold → 3,250 gold\n- 6,600 gold → 7,200 gold\n- 11,600 gold → 12,900 gold\n- The bigger the pack, the bigger the increase.",
+        "summary": "From the November 2 update, the same price buys more gold."
+      },
+      "ja": {
+        "title": "ゴールドパックの付与量が増えます",
+        "body": "- 11月2日（月）のアップデートから、ゴールドパック3種の付与ゴールドが増えます。価格は変わりません。\n- 3,100ゴールド → 3,250ゴールド\n- 6,600ゴールド → 7,200ゴールド\n- 11,600ゴールド → 12,900ゴールド\n- 大きいパックほど増える量が多くなります。",
+        "summary": "11月2日のアップデートから、同じ価格でより多くのゴールドを受け取れます。"
+      },
+      "zh": {
+        "title": "金币礼包数量提升",
+        "body": "- 自11月2日（周一）更新起，3款金币礼包的金币数量提升，价格不变。\n- 3,100金币 → 3,250金币\n- 6,600金币 → 7,200金币\n- 11,600金币 → 12,900金币\n- 礼包越大，提升越多。",
+        "summary": "自11月2日更新起，同样的价格可获得更多金币。"
+      },
+      "es": {
+        "title": "Más oro en los packs de oro",
+        "body": "- Desde la actualización del 2 de noviembre (lunes), tres packs de oro dan más oro. Los precios no cambian.\n- 3.100 oro → 3.250 oro\n- 6.600 oro → 7.200 oro\n- 11.600 oro → 12.900 oro\n- Cuanto más grande es el pack, mayor es el aumento.",
+        "summary": "Desde la actualización del 2 de noviembre, el mismo precio te da más oro."
+      },
+      "pt": {
+        "title": "Mais ouro nos pacotes de ouro",
+        "body": "- A partir da atualização de 2 de novembro (segunda), três pacotes de ouro dão mais ouro. Os preços continuam os mesmos.\n- 3.100 ouro → 3.250 ouro\n- 6.600 ouro → 7.200 ouro\n- 11.600 ouro → 12.900 ouro\n- Quanto maior o pacote, maior o aumento.",
+        "summary": "A partir da atualização de 2 de novembro, o mesmo preço rende mais ouro."
+      },
+      "fr": {
+        "title": "Plus d’or dans les packs d’or",
+        "body": "- À partir de la mise à jour du 2 novembre (lundi), trois packs d’or donnent plus d’or. Les prix ne changent pas.\n- 3 100 or → 3 250 or\n- 6 600 or → 7 200 or\n- 11 600 or → 12 900 or\n- Plus le pack est gros, plus la hausse est forte.",
+        "summary": "À partir de la mise à jour du 2 novembre, le même prix donne plus d’or."
+      },
+      "de": {
+        "title": "Mehr Gold in den Goldpaketen",
+        "body": "- Ab dem Update am 2. November (Montag) enthalten drei Goldpakete mehr Gold. Die Preise bleiben gleich.\n- 3.100 Gold → 3.250 Gold\n- 6.600 Gold → 7.200 Gold\n- 11.600 Gold → 12.900 Gold\n- Je größer das Paket, desto größer das Plus.",
+        "summary": "Ab dem Update am 2. November bekommst du zum gleichen Preis mehr Gold."
+      },
+      "it": {
+        "title": "Più oro nei pacchetti d’oro",
+        "body": "- Dall’aggiornamento del 2 novembre (lunedì), tre pacchetti d’oro danno più oro. I prezzi restano invariati.\n- 3.100 oro → 3.250 oro\n- 6.600 oro → 7.200 oro\n- 11.600 oro → 12.900 oro\n- Più grande è il pacchetto, maggiore è l’aumento.",
+        "summary": "Dall’aggiornamento del 2 novembre, allo stesso prezzo ricevi più oro."
+      },
+      "tr": {
+        "title": "Altın paketlerinde daha fazla altın",
+        "body": "- 2 Kasım (Pazartesi) güncellemesinden itibaren üç altın paketi daha fazla altın veriyor. Fiyatlar aynı kalıyor.\n- 3.100 altın → 3.250 altın\n- 6.600 altın → 7.200 altın\n- 11.600 altın → 12.900 altın\n- Paket büyüdükçe artış da büyüyor.",
+        "summary": "2 Kasım güncellemesinden itibaren aynı fiyata daha fazla altın."
+      },
+      "id": {
+        "title": "Emas di paket emas bertambah",
+        "body": "- Mulai pembaruan 2 November (Senin), tiga paket emas memberi lebih banyak emas. Harga tetap sama.\n- 3.100 emas → 3.250 emas\n- 6.600 emas → 7.200 emas\n- 11.600 emas → 12.900 emas\n- Makin besar paketnya, makin besar tambahannya.",
+        "summary": "Mulai pembaruan 2 November, harga yang sama memberi lebih banyak emas."
+      },
+      "ar": {
+        "title": "ذهب أكثر في حزم الذهب",
+        "body": "- بدءًا من تحديث 2 نوفمبر (الاثنين)، تمنح ثلاث حزم ذهب كمية أكبر من الذهب. الأسعار كما هي.\n- 3,100 ذهب ← 3,250 ذهب\n- 6,600 ذهب ← 7,200 ذهب\n- 11,600 ذهب ← 12,900 ذهب\n- كلما كبرت الحزمة زادت الكمية أكثر.",
+        "summary": "بدءًا من تحديث 2 نوفمبر، يمنحك السعر نفسه ذهبًا أكثر."
+      }
+    }
+  },
+  {
     "id": "2026-10-31-halloween-surprise",
     "date": "2026-10-31",
     "title": "할로윈 깜짝 선물: 리롤 티켓 3장",
