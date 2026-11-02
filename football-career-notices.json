@@ -104,6 +104,180 @@
     }
   },
   {
+    "id": "2026-11-02-update-poll",
+    "date": "2026-11-02",
+    "title": "이번 업데이트 투표하고 500자금",
+    "body": "- 오늘의 리그, 데일리 챌린지, 라이프 탭, 출석판 중 가장 마음에 든 걸 하나 골라 주세요.\n- 투표한 분께 500자금을 드려요. 11월 6일(금) 마감 후 다음 날 홈 화면 선물함으로 보내 드려요.\n- 투표는 이 공지 맨 아래에서 할 수 있고, 마감 전까지 바꿀 수 있어요.",
+    "important": true,
+    "popup": {
+      "until": "2026-11-06"
+    },
+    "category": "event",
+    "summary": "가장 마음에 든 새 기능 하나에 투표하면 500자금을 드려요. 11월 6일(금)까지.",
+    "content": "## 이번 업데이트, 뭐가 제일 좋았나요?\n- **오늘의 리그 · 데일리 챌린지 · 라이프 탭 · 출석판** 중 하나를 골라 주세요.\n- 투표한 분께 **500자금**을 드려요.\n- 투표 칸은 공지 맨 아래에 있어요. 팝업에서는 **자세히 보기**를 눌러 주세요.\n\n> 11월 6일(금) 자정 마감, 다음 날 홈 화면 선물함으로 보내 드려요. 마감 전까지 투표를 바꿀 수 있어요.",
+    "poll": {
+      "question": {
+        "ko": "가장 마음에 든 새 기능은?",
+        "en": "Which new feature did you like most?",
+        "ja": "いちばん気に入った新機能は?",
+        "zh": "你最喜欢哪个新功能?",
+        "es": "¿Qué función nueva te gustó más?",
+        "pt": "De qual recurso novo você mais gostou?",
+        "fr": "Quelle nouveauté avez-vous préférée ?",
+        "de": "Welche Neuerung hat dir am besten gefallen?",
+        "it": "Quale novità ti è piaciuta di più?",
+        "id": "Fitur baru mana yang paling kamu suka?",
+        "tr": "En çok hangi yeni özelliği sevdin?",
+        "ar": "ما الميزة الجديدة التي أعجبتك أكثر؟"
+      },
+      "options": [
+        {
+          "id": "league",
+          "label": {
+            "ko": "오늘의 리그",
+            "en": "Today's League",
+            "ja": "今日のリーグ",
+            "zh": "今日联赛",
+            "es": "La liga de hoy",
+            "pt": "Liga de hoje",
+            "fr": "Ligue du jour",
+            "de": "Heutige Liga",
+            "it": "Lega di oggi",
+            "id": "Liga Hari Ini",
+            "tr": "Günün Ligi",
+            "ar": "دوري اليوم"
+          }
+        },
+        {
+          "id": "daily",
+          "label": {
+            "ko": "데일리 챌린지",
+            "en": "Daily Challenge",
+            "ja": "デイリーチャレンジ",
+            "zh": "每日挑战",
+            "es": "Desafío diario",
+            "pt": "Desafio diário",
+            "fr": "Défi du jour",
+            "de": "Tägliche Challenge",
+            "it": "Sfida del giorno",
+            "id": "Tantangan Harian",
+            "tr": "Günlük Meydan Okuma",
+            "ar": "التحدي اليومي"
+          }
+        },
+        {
+          "id": "life",
+          "label": {
+            "ko": "라이프 탭",
+            "en": "Life tab",
+            "ja": "ライフタブ",
+            "zh": "生活页",
+            "es": "Pestaña Vida",
+            "pt": "Aba Vida",
+            "fr": "Onglet Vie",
+            "de": "Leben-Tab",
+            "it": "Scheda Vita",
+            "id": "Tab Gaya hidup",
+            "tr": "Yaşam sekmesi",
+            "ar": "تبويب الحياة"
+          }
+        },
+        {
+          "id": "attendance",
+          "label": {
+            "ko": "출석판",
+            "en": "Attendance",
+            "ja": "出席ボード",
+            "zh": "出席板",
+            "es": "Asistencia",
+            "pt": "Presença",
+            "fr": "Présences",
+            "de": "Anwesenheit",
+            "it": "Presenze",
+            "id": "Kehadiran",
+            "tr": "Katılım",
+            "ar": "الحضور"
+          }
+        }
+      ],
+      "until": "2026-11-06T23:59:59+09:00"
+    },
+    "translations": {
+      "ko": {
+        "title": "이번 업데이트 투표하고 500자금",
+        "summary": "가장 마음에 든 새 기능 하나에 투표하면 500자금을 드려요. 11월 6일(금)까지.",
+        "body": "- 오늘의 리그, 데일리 챌린지, 라이프 탭, 출석판 중 가장 마음에 든 걸 하나 골라 주세요.\n- 투표한 분께 500자금을 드려요. 11월 6일(금) 마감 후 다음 날 홈 화면 선물함으로 보내 드려요.\n- 투표는 이 공지 맨 아래에서 할 수 있고, 마감 전까지 바꿀 수 있어요.",
+        "content": "## 이번 업데이트, 뭐가 제일 좋았나요?\n- **오늘의 리그 · 데일리 챌린지 · 라이프 탭 · 출석판** 중 하나를 골라 주세요.\n- 투표한 분께 **500자금**을 드려요.\n- 투표 칸은 공지 맨 아래에 있어요. 팝업에서는 **자세히 보기**를 눌러 주세요.\n\n> 11월 6일(금) 자정 마감, 다음 날 홈 화면 선물함으로 보내 드려요. 마감 전까지 투표를 바꿀 수 있어요."
+      },
+      "en": {
+        "title": "Vote on this update: 500 funds",
+        "summary": "Vote for your favourite new feature and get 500 funds. Until Fri, Nov 6.",
+        "body": "- Pick the one you liked most: Today's League, Daily Challenge, Life tab or Attendance.\n- Everyone who votes gets 500 funds. Voting closes Fri, Nov 6; the funds arrive in the home-screen gift box the next day.\n- Vote at the bottom of this notice. You can change your vote until it closes.",
+        "content": "## What did you like most in this update?\n- Pick one: **Today's League · Daily Challenge · Life tab · Attendance**.\n- Everyone who votes gets **500 funds**.\n- The vote is at the bottom of this notice. From the pop-up, tap **View details**.\n\n> Closes Fri, Nov 6. The funds arrive in the home-screen gift box the next day. You can change your vote until then."
+      },
+      "ja": {
+        "title": "アップデート投票で500資金",
+        "summary": "いちばん気に入った新機能に投票すると500資金。11月6日(金)まで。",
+        "body": "- 今日のリーグ、デイリーチャレンジ、ライフタブ、出席ボードの中から、いちばん気に入ったものを1つ選んでください。\n- 投票した方に500資金をプレゼント。11月6日(金)締め切り、翌日ホーム画面のプレゼントボックスに届きます。\n- 投票はこのお知らせのいちばん下から。締め切りまで変更できます。",
+        "content": "## 今回のアップデート、どれがいちばん良かった?\n- **今日のリーグ · デイリーチャレンジ · ライフタブ · 出席ボード** から1つ選んでください。\n- 投票した方に **500資金** をプレゼント。\n- 投票欄はお知らせのいちばん下にあります。ポップアップからは **詳しく見る** をタップ。\n\n> 11月6日(金)締め切り。翌日ホーム画面のプレゼントボックスに届きます。締め切りまで投票を変更できます。"
+      },
+      "zh": {
+        "title": "更新投票送500资金",
+        "summary": "为最喜欢的新功能投票即得500资金。截至11月6日(周五)。",
+        "body": "- 从今日联赛、每日挑战、生活页、出席板中选出你最喜欢的一个。\n- 投票即送500资金。11月6日(周五)截止,次日发送到主页礼物箱。\n- 在本公告最下方投票,截止前可以更改。",
+        "content": "## 这次更新你最喜欢哪个?\n- 从 **今日联赛 · 每日挑战 · 生活页 · 出席板** 中选一个。\n- 投票即送 **500资金**。\n- 投票区在公告最下方。在弹窗中请点 **查看详情**。\n\n> 11月6日(周五)截止,次日发送到主页礼物箱。截止前可以更改投票。"
+      },
+      "es": {
+        "title": "Vota la actualización: 500 fondos",
+        "summary": "Vota tu función nueva favorita y recibe 500 fondos. Hasta el viernes 6 de noviembre.",
+        "body": "- Elige la que más te gustó: La liga de hoy, Desafío diario, pestaña Vida o Asistencia.\n- Quien vote recibe 500 fondos. La votación cierra el viernes 6 de noviembre y los fondos llegan al buzón de regalos de la pantalla de inicio al día siguiente.\n- Vota al final de este aviso. Puedes cambiar tu voto hasta el cierre.",
+        "content": "## ¿Qué te gustó más de esta actualización?\n- Elige una: **La liga de hoy · Desafío diario · pestaña Vida · Asistencia**.\n- Quien vote recibe **500 fondos**.\n- La votación está al final de este aviso. Desde la ventana emergente, toca **Ver detalles**.\n\n> Cierra el viernes 6 de noviembre. Los fondos llegan al buzón de regalos de la pantalla de inicio al día siguiente. Puedes cambiar tu voto hasta entonces."
+      },
+      "pt": {
+        "title": "Vote na atualização: 500 fundos",
+        "summary": "Vote no seu recurso novo favorito e ganhe 500 fundos. Até sexta, 6 de novembro.",
+        "body": "- Escolha o que você mais gostou: Liga de hoje, Desafio diário, aba Vida ou Presença.\n- Quem votar ganha 500 fundos. A votação fecha na sexta, 6 de novembro, e os fundos chegam à caixa de presentes da tela inicial no dia seguinte.\n- Vote no fim deste aviso. Dá para mudar o voto até o fechamento.",
+        "content": "## Do que você mais gostou nesta atualização?\n- Escolha um: **Liga de hoje · Desafio diário · aba Vida · Presença**.\n- Quem votar ganha **500 fundos**.\n- A votação fica no fim deste aviso. No pop-up, toque em **Ver detalhes**.\n\n> Fecha na sexta, 6 de novembro. Os fundos chegam à caixa de presentes da tela inicial no dia seguinte. Dá para mudar o voto até lá."
+      },
+      "fr": {
+        "title": "Votez pour la mise à jour : 500 fonds",
+        "summary": "Votez pour votre nouveauté préférée et recevez 500 fonds. Jusqu’au vendredi 6 novembre.",
+        "body": "- Choisissez celle que vous avez préférée : Ligue du jour, Défi du jour, onglet Vie ou Présences.\n- Chaque votant reçoit 500 fonds. Le vote se termine le vendredi 6 novembre ; les fonds arrivent le lendemain dans la boîte à cadeaux de l’écran d’accueil.\n- Le vote se trouve en bas de cet avis. Vous pouvez changer votre vote jusqu’à la clôture.",
+        "content": "## Qu’avez-vous préféré dans cette mise à jour ?\n- Choisissez-en une : **Ligue du jour · Défi du jour · onglet Vie · Présences**.\n- Chaque votant reçoit **500 fonds**.\n- Le vote se trouve en bas de cet avis. Depuis la fenêtre, touchez **Voir les détails**.\n\n> Clôture le vendredi 6 novembre. Les fonds arrivent le lendemain dans la boîte à cadeaux de l’écran d’accueil. Vous pouvez changer votre vote d’ici là."
+      },
+      "de": {
+        "title": "Update-Abstimmung: 500 Fonds",
+        "summary": "Stimm für deine liebste Neuerung ab und erhalte 500 Fonds. Bis Freitag, 6. November.",
+        "body": "- Wähle, was dir am besten gefallen hat: Heutige Liga, Tägliche Challenge, Leben-Tab oder Anwesenheit.\n- Wer abstimmt, bekommt 500 Fonds. Die Abstimmung endet am Freitag, 6. November; die Fonds kommen am nächsten Tag in die Geschenkbox auf dem Startbildschirm.\n- Abgestimmt wird ganz unten in dieser Mitteilung. Bis zum Ende kannst du deine Stimme ändern.",
+        "content": "## Was hat dir an diesem Update am besten gefallen?\n- Wähle eins: **Heutige Liga · Tägliche Challenge · Leben-Tab · Anwesenheit**.\n- Wer abstimmt, bekommt **500 Fonds**.\n- Die Abstimmung steht ganz unten in dieser Mitteilung. Im Pop-up tippe auf **Details ansehen**.\n\n> Endet am Freitag, 6. November. Die Fonds kommen am nächsten Tag in die Geschenkbox auf dem Startbildschirm. Bis dahin kannst du deine Stimme ändern."
+      },
+      "it": {
+        "title": "Vota l’aggiornamento: 500 fondi",
+        "summary": "Vota la novità che ti è piaciuta di più e ricevi 500 fondi. Fino a venerdì 6 novembre.",
+        "body": "- Scegli quella che ti è piaciuta di più: Lega di oggi, Sfida del giorno, scheda Vita o Presenze.\n- Chi vota riceve 500 fondi. Il voto chiude venerdì 6 novembre; i fondi arrivano il giorno dopo nella scatola dei regali della schermata iniziale.\n- Si vota in fondo a questo avviso. Puoi cambiare il voto fino alla chiusura.",
+        "content": "## Cosa ti è piaciuto di più di questo aggiornamento?\n- Scegline una: **Lega di oggi · Sfida del giorno · scheda Vita · Presenze**.\n- Chi vota riceve **500 fondi**.\n- Il voto è in fondo a questo avviso. Dal pop-up, tocca **Vedi dettagli**.\n\n> Chiude venerdì 6 novembre. I fondi arrivano il giorno dopo nella scatola dei regali della schermata iniziale. Puoi cambiare il voto fino ad allora."
+      },
+      "id": {
+        "title": "Vote pembaruan: 500 dana",
+        "summary": "Pilih fitur baru favoritmu dan dapatkan 500 dana. Sampai Jumat, 6 November.",
+        "body": "- Pilih yang paling kamu suka: Liga Hari Ini, Tantangan Harian, tab Gaya hidup, atau Kehadiran.\n- Semua yang memilih dapat 500 dana. Voting ditutup Jumat, 6 November; dana dikirim ke kotak hadiah di layar utama keesokan harinya.\n- Voting ada di bagian bawah pengumuman ini. Pilihan bisa diubah sampai ditutup.",
+        "content": "## Apa yang paling kamu suka di pembaruan ini?\n- Pilih satu: **Liga Hari Ini · Tantangan Harian · tab Gaya hidup · Kehadiran**.\n- Semua yang memilih dapat **500 dana**.\n- Voting ada di bagian bawah pengumuman ini. Dari pop-up, ketuk **Lihat detail**.\n\n> Ditutup Jumat, 6 November. Dana dikirim ke kotak hadiah di layar utama keesokan harinya. Pilihan bisa diubah sampai saat itu."
+      },
+      "tr": {
+        "title": "Güncelleme oylaması: 500 fon",
+        "summary": "En sevdiğin yeni özelliğe oy ver, 500 fon kazan. 6 Kasım Cuma'ya kadar.",
+        "body": "- En çok beğendiğini seç: Günün Ligi, Günlük Meydan Okuma, Yaşam sekmesi veya Katılım.\n- Oy veren herkes 500 fon alır. Oylama 6 Kasım Cuma günü kapanır; fonlar ertesi gün ana ekrandaki hediye kutusuna gelir.\n- Oylama bu duyurunun en altında. Kapanana kadar oyunu değiştirebilirsin.",
+        "content": "## Bu güncellemede en çok neyi sevdin?\n- Birini seç: **Günün Ligi · Günlük Meydan Okuma · Yaşam sekmesi · Katılım**.\n- Oy veren herkes **500 fon** alır.\n- Oylama bu duyurunun en altında. Açılır pencereden **Ayrıntıları gör** düğmesine dokun.\n\n> 6 Kasım Cuma günü kapanır. Fonlar ertesi gün ana ekrandaki hediye kutusuna gelir. O zamana kadar oyunu değiştirebilirsin."
+      },
+      "ar": {
+        "title": "صوّت على التحديث: 500 رصيد",
+        "summary": "صوّت لميزتك الجديدة المفضلة واحصل على 500 رصيد. حتى الجمعة 6 نوفمبر.",
+        "body": "- اختر الأكثر إعجابًا لك: دوري اليوم، التحدي اليومي، تبويب الحياة أو الحضور.\n- كل من يصوّت يحصل على 500 رصيد. يُغلق التصويت يوم الجمعة 6 نوفمبر، ويصل الرصيد إلى صندوق الهدايا في الشاشة الرئيسية في اليوم التالي.\n- التصويت في أسفل هذا الإعلان. يمكنك تغيير صوتك حتى الإغلاق.",
+        "content": "## ما الذي أعجبك أكثر في هذا التحديث؟\n- اختر واحدًا: **دوري اليوم · التحدي اليومي · تبويب الحياة · الحضور**.\n- كل من يصوّت يحصل على **500 رصيد**.\n- التصويت في أسفل هذا الإعلان. من النافذة المنبثقة، اضغط **عرض التفاصيل**.\n\n> يُغلق يوم الجمعة 6 نوفمبر. يصل الرصيد إلى صندوق الهدايا في الشاشة الرئيسية في اليوم التالي. يمكنك تغيير صوتك حتى ذلك الحين."
+      }
+    }
+  },
+  {
     "id": "2026-11-02-attendance-season1",
     "date": "2026-11-02",
     "title": "출석판 시즌 1 — 철인 에디션 카드 받기",
