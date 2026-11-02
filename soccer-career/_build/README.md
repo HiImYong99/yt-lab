@@ -66,3 +66,14 @@ python3 soccer-career/_build/stats.py ~/Desktop/soccer-career/server
 python3 soccer-career/_build/build.py && python3 soccer-career/_build/check.py
 python3 soccer-career/_build/indexnow.py   # IndexNow + Naver, after the push is live
 ```
+
+## Browser trial (`/soccer-career/play/`)
+
+A Flutter web build of the app with `WEB_TRIAL=true` (first five seasons,
+no purchases/ads/server, store buttons at the end). Rebuild from any app
+checkout that contains `lib/web_trial.dart`, then rebuild the pages:
+
+```sh
+soccer-career/_build/play.sh ~/worktrees/soccer-career/<lane>
+python3 soccer-career/_build/build.py && python3 soccer-career/_build/check.py
+```

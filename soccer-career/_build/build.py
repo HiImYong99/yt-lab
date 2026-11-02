@@ -32,7 +32,7 @@ INK = {'common': '#CDD1DB', 'rare': '#8DBAFF', 'epic': '#CEADFF', 'unique': '#FF
 TOKEN = re.compile(r'{{\s*([\w.]+)\s*}}')
 SM = 'http://www.sitemaps.org/schemas/sitemap/0.9'
 XHTML = 'http://www.w3.org/1999/xhtml'
-TOPICS = ('goalkeeper', 'awards', 'positions', 'offline')
+TOPICS = ('goalkeeper', 'awards', 'positions', 'offline', 'web')
 
 
 def available_languages():
@@ -236,7 +236,7 @@ def render_topic(code, codes, strings, slug, stats):
         {'@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': plain(q), 'acceptedAnswer': {'@type': 'Answer', 'text': plain(a)}} for q, a in faqs]},
         {'@type': 'Article', 'headline': plain(text[slug + '.h1']), 'inLanguage': LANGUAGES[code][0], 'dateModified': stats['asOf'], 'author': {'@id': ORIGIN + '/#org'}, 'publisher': {'@id': ORIGIN + '/#org'}}]}
     app, play = store_links(code)
-    values = dict(lang=LANGUAGES[code][0], dir='rtl' if code == 'ar' else 'ltr', assets='../../', intro_path=page_path(code), guide_path=page_path(code, True), canonical=url, og_locale=LANGUAGES[code][2], og_image=ORIGIN + '/soccer-career/img/og-podium.jpg', og_width='1280', og_height='720', title=escape(text[slug + '.title']), desc=escape(text[slug + '.desc'], quote=True), h1=escape(text[slug + '.h1']), lede=text[slug + '.lede'], byline=text['topics.byline'], home=escape(text['topics.home']), sections=''.join(sections), faq_heading=escape(text['topics.faq']), faq=''.join('<h3>' + q + '</h3><p>' + a + '</p>' for q, a in faqs), cta=escape(text['topics.cta']), app_store=escape(app, quote=True), google_play=escape(play, quote=True), app_badge=badge(code, 'app', '../../', strings), play_badge=badge(code, 'play', '../../', strings), json_ld=script_json(graph), switcher=switcher(code, codes, slug, strings['switcher.label']), hreflang='\n'.join(f'<link rel="alternate" hreflang="{lang}" href="{link}">' for lang, link in alternates(codes, slug).items()), topics_nav=topics_nav(text, slug))
+    values = dict(lang=LANGUAGES[code][0], dir='rtl' if code == 'ar' else 'ltr', assets='../../', intro_path=page_path(code), guide_path=page_path(code, True), canonical=url, og_locale=LANGUAGES[code][2], og_image=ORIGIN + '/soccer-career/img/og-podium.jpg', og_width='1280', og_height='720', title=escape(text[slug + '.title']), desc=escape(text[slug + '.desc'], quote=True), h1=escape(text[slug + '.h1']), lede=text[slug + '.lede'], byline=text['topics.byline'], home=escape(text['topics.home']), sections=''.join(sections), faq_heading=escape(text['topics.faq']), faq=''.join('<h3>' + q + '</h3><p>' + a + '</p>' for q, a in faqs), cta=escape(text['topics.cta']), app_store=escape(app, quote=True), google_play=escape(play, quote=True), app_badge=badge(code, 'app', '../../', strings), play_badge=badge(code, 'play', '../../', strings), json_ld=script_json(graph), switcher=switcher(code, codes, slug, strings['switcher.label']), hreflang='\n'.join(f'<link rel="alternate" hreflang="{lang}" href="{link}">' for lang, link in alternates(codes, slug).items()), play=('<p class="play-cta"><a class="play-btn" href="../../play/">' + escape(text[slug + '.play']) + '</a><span>' + escape(text[slug + '.play.note']) + '</span></p>') if slug + '.play' in text else '', topics_nav=topics_nav(text, slug))
     for k, v in text.items():
         if k not in values:
             values[k] = v
