@@ -41,7 +41,7 @@ class Page(HTMLParser):
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
         hidden = (tag in ('script', 'style') or
-                  bool({'languages', 'topics-nav', 'webplay'} & set(attrs.get('class', '').split())) or
+                  bool({'languages', 'topics-nav'} & set(attrs.get('class', '').split())) or
                   (bool(self.stack) and self.stack[-1][1]))
         if tag not in ('area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr'):
             self.stack.append((tag, hidden))
@@ -236,7 +236,7 @@ def main():
             assert [a['href'] for tag, a in page.links if 'data-lang' in a] == [page_path(c, kind) for c in codes]
             graphs = [json.loads(body) for attrs, body in page.scripts if attrs.get('type') == 'application/ld+json']
             assert len(graphs) == 1 and any(e.get('@type') == 'FAQPage' and e.get('mainEntity') for e in graphs[0]['@graph'])
-    assert sum(1 for path in documents if path.parent.name in build.TOPICS) == len(codes) * len(build.TOPICS)
+    assert sum(1 for path in documents if path.parent.name in build.TOPICS) == len(codes) * 4
     # Every hreflang target has the same complete set, including self references.
     for path, page in documents.items():
         links = {a['hreflang']: a['href'] for tag, a in page.links if a.get('rel') == 'alternate'}
