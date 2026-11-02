@@ -173,6 +173,11 @@ footer p { margin: 0 0 6px; }
 .hero.play .demo-wrap { grid-area: demo; }
 .hero.play .getbox { grid-area: get; }
 .hero.play .get { margin-top: 0; }
+#get { scroll-margin-top: 35vh; }
+@media (prefers-reduced-motion: no-preference) {
+  .get.nudge a[data-store] { animation: nudge 1.4s ease-out .25s; }
+  @keyframes nudge { 0%, 100% { box-shadow: 0 0 0 0 rgba(255, 197, 48, 0); } 30% { box-shadow: 0 0 0 4px rgba(255, 197, 48, .85); } }
+}
 @media (min-width: 900px) {
   .hero.play { grid-template-columns: 1fr 440px; grid-template-areas: "copy demo" "get demo"; align-items: start; column-gap: 56px; row-gap: 32px; }
   .hero.play .copy { align-self: end; }

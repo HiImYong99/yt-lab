@@ -211,6 +211,7 @@
     act.appendChild(again);
     var go = el('a', 'go', strings.continue);
     go.href = storeHref();
+    if (go.getAttribute('href') === '#get') go.addEventListener('click', showGet);
     act.appendChild(go);
     payoutEl.appendChild(act);
 
@@ -245,6 +246,21 @@
     if (c.contains('is-android')) return document.querySelector('[data-store="android"]').href;
     if (c.contains('is-ios')) return document.querySelector('[data-store="ios"]').href;
     return '#get';
+  }
+
+  // Desktop: scroll only until the store badges come into view, so the payout
+  // stays on screen, instead of jumping the badges to the top edge.
+  function showGet(e) {
+    e.preventDefault();
+    var box = document.querySelector('.getbox');
+    var get = document.getElementById('get');
+    var r = box.getBoundingClientRect();
+    var gap = 32;
+    var dy = r.bottom > innerHeight - gap ? r.bottom - innerHeight + gap : r.top < gap ? r.top - gap : 0;
+    if (dy) window.scrollBy({ top: dy, behavior: still ? 'auto' : 'smooth' });
+    get.classList.remove('nudge');
+    void get.offsetWidth;
+    get.classList.add('nudge');
   }
 
   confirmEl.addEventListener('click', function () { if (picked >= 0) payout(); });
