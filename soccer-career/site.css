@@ -286,3 +286,11 @@ html:lang(ko) body { word-break: keep-all; }
 html:lang(ja) body, html:lang(zh-Hans) body { line-break: strict; }
 /* Numbers read left to right in every script (RTL included) */
 .lines .v, .ovr .v, .tick .v { direction: ltr; unicode-bidi: isolate; }
+
+/* Related articles and topic content */
+.topics-nav { padding-block: 32px; }
+.topics-nav h2 { font-size: 1.25rem; }
+.topics-nav ul { display:flex; flex-wrap:wrap; gap:12px 24px; padding:0; list-style:none; }
+.topic-cta .get { display:flex; flex-wrap:wrap; gap:12px; }
+.prose ul { padding-inline-start: 1.5em; }
+.table-scroll { max-width:100%; overflow-x:auto; }

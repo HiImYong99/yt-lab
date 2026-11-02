@@ -52,3 +52,17 @@ Set `PLAYWRIGHT_MODULE` to the module's path if it is not on Node's module
 search path. This checks ko/en mobile and desktop layouts, actual demo
 interaction, RTL payout bars, navigation, routers and JavaScript-free fallback.
 The build and standard checker do not require Node or Playwright.
+
+## Topic pages (programmatic SEO)
+
+`topic.html` renders `/<code>/{goalkeeper,awards,positions,offline}/` from the
+`topics.*` and `<slug>.*` keys. Numbers come from `data/stats.json`
+(`{stat:keeper.seasons}` placeholders), a snapshot of finished careers in the
+live ranking database. Refresh it now and then, rebuild, push, then ping
+search engines:
+
+```sh
+python3 soccer-career/_build/stats.py ~/Desktop/soccer-career/server
+python3 soccer-career/_build/build.py && python3 soccer-career/_build/check.py
+python3 soccer-career/_build/indexnow.py   # IndexNow + Naver, after the push is live
+```

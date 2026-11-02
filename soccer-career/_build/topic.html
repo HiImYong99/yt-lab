@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="{{lang}}" dir="{{dir}}">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="content-language" content="{{lang}}">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{title}}</title>
+<meta name="description" content="{{desc}}">
+<link rel="canonical" href="{{canonical}}">
+{{hreflang}}
+<meta name="apple-itunes-app" content="app-id=6807107830">
+<meta name="theme-color" content="#0C1830">
+<link rel="icon" href="{{assets}}img/icon-192.webp" type="image/webp">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="YT Lab">
+<meta property="og:locale" content="{{og_locale}}">
+<meta property="og:title" content="{{h1}}">
+<meta property="og:description" content="{{desc}}">
+<meta property="og:url" content="{{canonical}}">
+<meta property="og:image" content="{{og_image}}">
+<meta property="og:image:width" content="{{og_width}}">
+<meta property="og:image:height" content="{{og_height}}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{h1}}">
+<meta name="twitter:description" content="{{desc}}">
+<meta name="twitter:image" content="{{og_image}}">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"></noscript>
+<link rel="stylesheet" href="{{assets}}site.css?v=7">
+<script type="application/ld+json">{{json_ld}}</script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="{{intro_path}}"><img src="{{assets}}img/icon-192.webp" alt="" width="32" height="32">{{page.li.077}}</a>
+    <nav aria-label="{{page.attr.088}}">
+      <a href="{{intro_path}}">{{page.a.085}}</a>
+      <a href="{{guide_path}}">{{page.a.086}}</a>
+    </nav>
+  </div>
+</header>
+
+<main><article><div class="wrap prose"><ol class="crumbs"><li><a href="{{intro_path}}">{{home}}</a></li><li>{{h1}}</li></ol><div class="hero" style="display:block;padding-bottom:40px"><h1>{{h1}}</h1><p class="lede">{{lede}}</p><p class="updated">{{byline}}</p></div></div>{{sections}}<section><div class="wrap prose"><h2>{{faq_heading}}</h2>{{faq}}</div></section><section class="topic-cta"><div class="wrap prose"><h2>{{cta}}</h2><div class="get"><a href="{{app_store}}" data-store="ios">{{app_badge}}</a><a href="{{google_play}}" data-store="android">{{play_badge}}</a></div></div></section></article></main>
+{{topics_nav}}
+<footer>
+  <div class="wrap">
+    <p>{{page.p.051}}</p>
+    <p>{{guide.p.150}}</p>
+  </div>
+  {{switcher}}
+</footer>
+
+<div class="dock dock-ios"><a href="{{app_store}}">{{app_badge}}</a></div>
+<div class="dock dock-android"><a href="{{google_play}}">{{play_badge}}</a></div>
+<script>
+  (function () {
+    var ua = navigator.userAgent || '';
+    var c = document.documentElement.classList;
+    if (/iPhone|iPad|iPod/i.test(ua) || (/Macintosh/.test(ua) && 'ontouchend' in document)) c.add('is-ios');
+    else if (/Android/i.test(ua)) c.add('is-android');
+  })();
+</script>
+</body>
+</html>

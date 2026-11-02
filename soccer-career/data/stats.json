@@ -1,0 +1,76 @@
+{
+  "asOf": "2026-11-02",
+  "all": {
+    "n": 36402
+  },
+  "defender": {
+    "n": 732,
+    "seasons": 20.5,
+    "age": 36.4,
+    "age_max": 43,
+    "goals": 36,
+    "goals_max": 78,
+    "assists": 42,
+    "assists_max": 99,
+    "cs": 186,
+    "cs_max": 414,
+    "apps": 461,
+    "share": 2
+  },
+  "keeper": {
+    "n": 4164,
+    "seasons": 21.5,
+    "age": 38.3,
+    "age_max": 46,
+    "goals": 0,
+    "goals_max": 0,
+    "assists": 3,
+    "assists_max": 21,
+    "cs": 160,
+    "cs_max": 494,
+    "apps": 485,
+    "share": 11
+  },
+  "midfielder": {
+    "n": 1397,
+    "seasons": 20,
+    "age": 35.8,
+    "age_max": 45,
+    "goals": 99,
+    "goals_max": 230,
+    "assists": 160,
+    "assists_max": 368,
+    "cs": 0,
+    "cs_max": 0,
+    "apps": 460,
+    "share": 4
+  },
+  "striker": {
+    "n": 28463,
+    "seasons": 18.1,
+    "age": 34.9,
+    "age_max": 45,
+    "goals": 258,
+    "goals_max": 778,
+    "assists": 72,
+    "assists_max": 246,
+    "cs": 0,
+    "cs_max": 0,
+    "apps": 411,
+    "share": 78
+  },
+  "winger": {
+    "n": 1646,
+    "seasons": 17.9,
+    "age": 33.7,
+    "age_max": 42,
+    "goals": 176,
+    "goals_max": 480,
+    "assists": 144,
+    "assists_max": 390,
+    "cs": 0,
+    "cs_max": 0,
+    "apps": 408,
+    "share": 5
+  }
+}

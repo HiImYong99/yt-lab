@@ -41,7 +41,7 @@ class Page(HTMLParser):
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
         hidden = (tag in ('script', 'style') or
-                  'languages' in attrs.get('class', '').split() or
+                  bool({'languages', 'topics-nav'} & set(attrs.get('class', '').split())) or
                   (bool(self.stack) and self.stack[-1][1]))
         if tag not in ('area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr'):
             self.stack.append((tag, hidden))
@@ -127,7 +127,7 @@ def check_subsets():
             tree = ET.fromstring(build.sitemap(subset))
             actual = {e.find(f'{{{SM}}}loc').text for e in tree}
             assert {url for url in actual if url.startswith(ORIGIN + '/soccer-career/')} == {
-                ORIGIN + page_path(c, g) for c in subset for g in (False, True)}
+                ORIGIN + page_path(c, g) for c in subset for g in (False, True, *build.TOPICS)}
             if fixture:
                 for code in subset:
                     text = build.render_page(code, subset, fixture, guide)
@@ -144,6 +144,9 @@ def check_subsets():
 
 def main():
     codes = available_languages()
+    reference = set(json.loads((BUILD / 'i18n' / 'ko.json').read_text()))
+    for code in codes:
+        assert set(json.loads((BUILD / 'i18n' / f'{code}.json').read_text())) == reference, f'{code}: translation keys differ'
     documents = {}
     for code in codes:
         for guide in (False, True):
@@ -214,6 +217,26 @@ def main():
                 if before != after:
                     at = next((i for i, pair in enumerate(zip(before, after)) if pair[0] != pair[1]), min(len(before), len(after)))
                     raise AssertionError(f'Korean copy changed at {at}: {before[at:at+100]!r} != {after[at:at+100]!r}')
+    for code in codes:
+        titles = set()
+        for kind in (False, True, *build.TOPICS):
+            path = ROOT / page_path(code, kind).lstrip('/') / 'index.html'
+            text = path.read_text()
+            title = re.search(r'<title>(.*?)</title>', text, re.S).group(1)
+            assert title not in titles, f'Duplicate title: {path}'
+            titles.add(title)
+            if kind not in build.TOPICS: continue
+            assert '{stat:' not in text and '{0}' not in text
+            no_placeholders(text, path)
+            page = Page(text)
+            documents[path] = page
+            assert page.html['lang'] == LANGUAGES[code][0]
+            assert [a['href'] for tag, a in page.links if a.get('rel') == 'canonical'] == [ORIGIN + page_path(code, kind)]
+            assert {a['hreflang']: a['href'] for tag, a in page.links if a.get('rel') == 'alternate'} == alternates(codes, kind)
+            assert [a['href'] for tag, a in page.links if 'data-lang' in a] == [page_path(c, kind) for c in codes]
+            graphs = [json.loads(body) for attrs, body in page.scripts if attrs.get('type') == 'application/ld+json']
+            assert len(graphs) == 1 and any(e.get('@type') == 'FAQPage' and e.get('mainEntity') for e in graphs[0]['@graph'])
+    assert sum(1 for path in documents if path.parent.name in build.TOPICS) == len(codes) * 4
     # Every hreflang target has the same complete set, including self references.
     for path, page in documents.items():
         links = {a['hreflang']: a['href'] for tag, a in page.links if a.get('rel') == 'alternate'}
@@ -244,10 +267,10 @@ def main():
     sitemap = ET.parse(ROOT / 'sitemap.xml').getroot()
     entries = {e.find(f'{{{SM}}}loc').text: e for e in sitemap}
     assert ORIGIN + '/' in entries
-    expected = {ORIGIN + page_path(c, g) for c in codes for g in (False, True)}
+    expected = {ORIGIN + page_path(c, g) for c in codes for g in (False, True, *build.TOPICS)}
     assert {url for url in entries if url.startswith(ORIGIN + '/soccer-career/')} == expected
     for code in codes:
-        for guide in (False, True):
+        for guide in (False, True, *build.TOPICS):
             entry = entries[ORIGIN + page_path(code, guide)]
             links = entry.findall(f'{{{XHTML}}}link')
             assert len(links) == len(alternates(codes, guide))

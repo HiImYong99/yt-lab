@@ -7,6 +7,7 @@ from pathlib import Path
 import re
 import struct
 import xml.etree.ElementTree as ET
+from datetime import date
 
 BUILD = Path(__file__).resolve().parent
 SITE = BUILD.parent
@@ -31,6 +32,7 @@ INK = {'common': '#CDD1DB', 'rare': '#8DBAFF', 'epic': '#CEADFF', 'unique': '#FF
 TOKEN = re.compile(r'{{\s*([\w.]+)\s*}}')
 SM = 'http://www.sitemaps.org/schemas/sitemap/0.9'
 XHTML = 'http://www.w3.org/1999/xhtml'
+TOPICS = ('goalkeeper', 'awards', 'positions', 'offline')
 
 
 def available_languages():
@@ -38,7 +40,7 @@ def available_languages():
 
 
 def page_path(code, guide=False):
-    return f'/soccer-career/{code}/' + ('guide/' if guide else '')
+    return f'/soccer-career/{code}/' + ((guide if isinstance(guide, str) else 'guide') + '/' if guide else '')
 
 
 def alternates(codes, guide=False):
@@ -142,6 +144,107 @@ def json_ld(strings, code, guide, image):
     return script_json(visit(schema))
 
 
+MONTHS = {
+    'en': 'January February March April May June July August September October November December',
+    'es': 'enero febrero marzo abril mayo junio julio agosto septiembre octubre noviembre diciembre',
+    'pt': 'janeiro fevereiro março abril maio junho julho agosto setembro outubro novembro dezembro',
+    'fr': 'janvier février mars avril mai juin juillet août septembre octobre novembre décembre',
+    'de': 'Januar Februar März April Mai Juni Juli August September Oktober November Dezember',
+    'it': 'gennaio febbraio marzo aprile maggio giugno luglio agosto settembre ottobre novembre dicembre',
+    'id': 'Januari Februari Maret April Mei Juni Juli Agustus September Oktober November Desember',
+    'tr': 'Ocak Şubat Mart Nisan Mayıs Haziran Temmuz Ağustos Eylül Ekim Kasım Aralık',
+    'ar': 'يناير فبراير مارس أبريل مايو يونيو يوليو أغسطس سبتمبر أكتوبر نوفمبر ديسمبر',
+}
+
+
+def format_number(value, code):
+    group = '\u202f' if code == 'fr' else '.' if code in ('es', 'pt', 'de', 'it', 'id', 'tr') else ','
+    decimal = ',' if code in ('es', 'pt', 'fr', 'de', 'it', 'id', 'tr') else '.'
+    whole, dot, fraction = f'{value:,}'.partition('.')
+    return whole.replace(',', group) + (decimal + fraction if dot else '')
+
+
+def format_date(value, code):
+    d = date.fromisoformat(value)
+    if code == 'ko': return f'{d.year}년 {d.month}월 {d.day}일'
+    if code in ('ja', 'zh'): return f'{d.year}年{d.month}月{d.day}日'
+    month = MONTHS[code].split()[d.month - 1]
+    if code == 'en': return f'{month} {d.day}, {d.year}'
+    if code in ('es', 'pt'): return f'{d.day} de {month} de {d.year}'
+    if code == 'de': return f'{d.day}. {month} {d.year}'
+    return f'{d.day} {month} {d.year}'
+
+
+def fill_stats(value, stats, code):
+    def replace(match):
+        key = match[1]
+        item = stats
+        for part in key.split('.'):
+            item = item[part]
+        return format_date(item, code) if key == 'asOf' else format_number(item, code)
+    result = re.sub(r'\{stat:([^{}]+)\}', replace, value)
+    if '{stat:' in result: raise ValueError(f'Invalid stat placeholder: {value}')
+    return result
+
+
+def topics_nav(strings, current):
+    links = []
+    for slug in ('guide',) + TOPICS:
+        if slug == current: continue
+        # All pages are one level below the language directory except the main page.
+        prefix = '' if current is None else '../'
+        links.append(f'<li><a href="{prefix}{slug}/">{escape(strings["topics.nav." + slug])}</a></li>')
+    return '<nav class="wrap topics-nav"><h2>' + escape(strings['topics.more']) + '</h2><ul>' + ''.join(links) + '</ul></nav>'
+
+
+def render_topic(code, codes, strings, slug, stats):
+    text = {k: fill_stats(localize_paths(v, code), stats, code) for k, v in strings.items() if isinstance(v, str)}
+    sections = []
+    for n in range(1, 100):
+        base = f'{slug}.s{n}.'
+        if base + 'h2' not in text: break
+        body = [f'<h2>{text[base + "h2"]}</h2>']
+        if slug == 'positions' and n == 1:
+            heads = ''.join(f'<th scope="col">{escape(text["positions.th." + k])}</th>' for k in ('pos', 'peak', 'seasons', 'age', 'record'))
+            rows = []
+            for pos, peak, fields in [('striker', 27, ('goals',)), ('winger', 26, ('goals', 'assists')), ('midfielder', 28, ('assists',)), ('defender', 29, ('cs',)), ('keeper', 31, ('cs',))]:
+                fmt = lambda key, v: escape(text[key].replace('{0}', format_number(v, code)))
+                record = ' + '.join(fmt('positions.rec.' + f, stats[pos][f]) for f in fields)
+                rows.append(f'<tr><th scope="row">{escape(text["positions.pos." + pos])}</th><td>{fmt("positions.peak", peak)}</td><td>{format_number(stats[pos]["seasons"], code)}</td><td>{fmt("positions.age", stats[pos]["age"])}</td><td>{record}</td></tr>')
+            body.append('<div class="table-scroll"><table class="table"><thead><tr>' + heads + '</tr></thead><tbody>' + ''.join(rows) + '</tbody></table></div>')
+        in_list = False
+        for key, value in text.items():
+            if not key.startswith(base): continue
+            part = key[len(base):]
+            if re.fullmatch(r'li\d+', part):
+                if not in_list: body.append('<ul>'); in_list = True
+                body.append('<li>' + value + '</li>')
+            elif re.fullmatch(r'p\d+', part):
+                if in_list: body.append('</ul>'); in_list = False
+                body.append('<p>' + value + '</p>')
+        if in_list: body.append('</ul>')
+        sections.append('<section><div class="wrap prose">' + ''.join(body) + '</div></section>')
+    faqs = []
+    for n in range(1, 100):
+        q, a = f'{slug}.faq{n}.q', f'{slug}.faq{n}.a'
+        if q not in text: break
+        faqs.append((text[q], text[a]))
+    url = ORIGIN + page_path(code, slug)
+    plain = lambda s: re.sub(r'<[^>]*>', '', s)
+    graph = {'@context': 'https://schema.org', '@graph': [
+        {'@type': 'BreadcrumbList', 'itemListElement': [{'@type': 'ListItem', 'position': i, 'name': name, 'item': link} for i, (name, link) in enumerate([('YT Lab', ORIGIN + '/'), (text['topics.home'], ORIGIN + page_path(code)), (text[slug + '.h1'], url)], 1)]},
+        {'@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': plain(q), 'acceptedAnswer': {'@type': 'Answer', 'text': plain(a)}} for q, a in faqs]},
+        {'@type': 'Article', 'headline': plain(text[slug + '.h1']), 'inLanguage': LANGUAGES[code][0], 'dateModified': stats['asOf'], 'author': {'@id': ORIGIN + '/#org'}, 'publisher': {'@id': ORIGIN + '/#org'}}]}
+    app, play = store_links(code)
+    values = dict(lang=LANGUAGES[code][0], dir='rtl' if code == 'ar' else 'ltr', assets='../../', intro_path=page_path(code), guide_path=page_path(code, True), canonical=url, og_locale=LANGUAGES[code][2], og_image=ORIGIN + '/soccer-career/img/og-podium.jpg', og_width='1280', og_height='720', title=escape(text[slug + '.title']), desc=escape(text[slug + '.desc'], quote=True), h1=escape(text[slug + '.h1']), lede=text[slug + '.lede'], byline=text['topics.byline'], home=escape(text['topics.home']), sections=''.join(sections), faq_heading=escape(text['topics.faq']), faq=''.join('<h3>' + q + '</h3><p>' + a + '</p>' for q, a in faqs), cta=escape(text['topics.cta']), app_store=escape(app, quote=True), google_play=escape(play, quote=True), app_badge=badge(code, 'app', '../../', strings), play_badge=badge(code, 'play', '../../', strings), json_ld=script_json(graph), switcher=switcher(code, codes, slug, strings['switcher.label']), hreflang='\n'.join(f'<link rel="alternate" hreflang="{lang}" href="{link}">' for lang, link in alternates(codes, slug).items()), topics_nav=topics_nav(text, slug))
+    for k, v in text.items():
+        if k not in values:
+            values[k] = v
+    result = TOKEN.sub(lambda m: values[m[1]], (BUILD / 'topic.html').read_text())
+    if '{{' in result or '{stat:' in result or '{0}' in result: raise ValueError(f'Unresolved topic placeholder: {code}/{slug}')
+    return result
+
+
 def render_page(code, codes, strings, guide=False):
     assets = '../../' if guide else '../'
     og = 'og-guide.jpg' if guide and code == 'ko' else 'og-podium.jpg'
@@ -160,6 +263,7 @@ def render_page(code, codes, strings, guide=False):
                   app_badge=badge(code, 'app', assets, strings),
                   play_badge=badge(code, 'play', assets, strings),
                   json_ld=json_ld(strings, code, guide, image),
+                  topics_nav=topics_nav(strings, 'guide' if guide else None),
                   switcher=switcher(code, codes, guide, strings['switcher.label']),
                   hreflang='\n'.join(f'<link rel="alternate" hreflang="{lang}" href="{url}">'
                                      for lang, url in alternates(codes, guide).items()))
@@ -237,7 +341,7 @@ def sitemap(codes):
         if loc is not None and (loc.text or '').startswith(ORIGIN + '/soccer-career/'):
             root.remove(entry)
     for code in codes:
-        for guide in (False, True):
+        for guide in (False, True, *TOPICS):
             entry = ET.SubElement(root, f'{{{SM}}}url')
             ET.SubElement(entry, f'{{{SM}}}loc').text = ORIGIN + page_path(code, guide)
             for lang, url in alternates(codes, guide).items():
@@ -250,6 +354,7 @@ def main():
     codes = available_languages()
     reference = json.loads((BUILD / 'i18n' / f'{codes[0]}.json').read_text()) if codes else {}
     outputs = {}
+    stats = json.loads((SITE / 'data' / 'stats.json').read_text())
     for code in codes:
         strings = json.loads((BUILD / 'i18n' / f'{code}.json').read_text())
         if set(strings) != set(reference):
@@ -257,6 +362,9 @@ def main():
         for guide in (False, True):
             path = ROOT / page_path(code, guide).lstrip('/') / 'index.html'
             outputs[path] = render_page(code, codes, strings, guide)
+        for slug in TOPICS:
+            path = ROOT / page_path(code, slug).lstrip('/') / 'index.html'
+            outputs[path] = render_topic(code, codes, strings, slug, stats)
     outputs[SITE / 'index.html'] = router(codes)
     outputs[SITE / 'guide/index.html'] = router(codes, True)
     outputs[ROOT / 'sitemap.xml'] = sitemap(codes)
@@ -264,7 +372,7 @@ def main():
     for path, content in outputs.items():
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(content, encoding='utf-8')
-    print(f'Built {len(codes) * 2} language pages ({", ".join(codes) or "none"}), 2 routers and sitemap.xml')
+    print(f'Built {len(codes) * 6} language pages ({", ".join(codes) or "none"}), 2 routers and sitemap.xml')
 
 
 if __name__ == '__main__':
