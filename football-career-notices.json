@@ -1,5 +1,89 @@
 [
   {
+    "id": "2026-11-02-attendance-season1",
+    "date": "2026-11-02",
+    "title": "출석판 시즌 1 — 철인 에디션 카드 받기",
+    "body": "- 2.6.6 업데이트부터 출석판이 열려요. 하루 한 번 앱을 켜면 한 칸씩 채워지고, 칸마다 구단주 자금이나 리롤 티켓을 드려요.\n- 기간: 11월 2일(월) ~ 12월 7일(월), 한국 시간\n- 7일차 철인 루키 + 100골드 · 14일차 철인 에디션 카드 · 21일차 '개근' 칭호 + 300골드 · 28일차 철인 베테랑\n- 하루 빠져도 다음 칸부터 이어서 채워져요. 기간 안에 28번 출석하면 전부 받을 수 있어요.\n- 철인 에디션 카드와 '개근' 칭호는 시즌 1에서만 받을 수 있어요. 12월 8일부터는 시즌 2가 시작돼요.",
+    "important": true,
+    "popup": {
+      "until": "2026-11-08",
+      "art": [
+        "avatar:ironRookie",
+        "card:ironEdition",
+        "avatar:ironVeteran"
+      ]
+    },
+    "category": "event",
+    "period": {
+      "start": "2026-11-02T00:00:00+09:00",
+      "end": "2026-12-07T23:59:59+09:00"
+    },
+    "banner": "card:ironEdition",
+    "summary": "12월 7일까지 28번 출석하면 철인 캐릭터 2종, 철인 에디션 카드, '개근' 칭호를 받아요.",
+    "translations": {
+      "ko": {
+        "title": "출석판 시즌 1 — 철인 에디션 카드 받기",
+        "body": "- 2.6.6 업데이트부터 출석판이 열려요. 하루 한 번 앱을 켜면 한 칸씩 채워지고, 칸마다 구단주 자금이나 리롤 티켓을 드려요.\n- 기간: 11월 2일(월) ~ 12월 7일(월), 한국 시간\n- 7일차 철인 루키 + 100골드 · 14일차 철인 에디션 카드 · 21일차 '개근' 칭호 + 300골드 · 28일차 철인 베테랑\n- 하루 빠져도 다음 칸부터 이어서 채워져요. 기간 안에 28번 출석하면 전부 받을 수 있어요.\n- 철인 에디션 카드와 '개근' 칭호는 시즌 1에서만 받을 수 있어요. 12월 8일부터는 시즌 2가 시작돼요.",
+        "summary": "12월 7일까지 28번 출석하면 철인 캐릭터 2종, 철인 에디션 카드, '개근' 칭호를 받아요."
+      },
+      "en": {
+        "title": "Attendance Season 1: earn the Iron Edition card",
+        "body": "- The attendance board opens with update 2.6.6. Open the app once a day to fill a cell; every cell gives owner funds or reroll tickets.\n- Period: Nov 2 (Mon) – Dec 7 (Mon), KST\n- Day 7 Iron Rookie + 100 gold · Day 14 Iron Edition card · Day 21 Perfect Attendance title + 300 gold · Day 28 Iron Veteran\n- Missed a day? Your next check-in simply fills the next cell. Check in 28 times within the period to get everything.\n- The Iron Edition card and the Perfect Attendance title are Season 1 only. Season 2 starts on Dec 8.",
+        "summary": "Check in 28 times by Dec 7 for two Iron characters, the Iron Edition card and the Perfect Attendance title."
+      },
+      "ja": {
+        "title": "出席ボード シーズン1 — 鉄人エディションカードをもらおう",
+        "body": "- 2.6.6アップデートから出席ボードが開きます。1日1回アプリを開くと1マスずつ埋まり、マスごとにオーナー資金かリロールチケットをお届けします。\n- 期間:11月2日(月)〜12月7日(月)、韓国時間\n- 7日目 鉄人ルーキー+100ゴールド・14日目 鉄人エディションカード・21日目「皆勤」称号+300ゴールド・28日目 鉄人ベテラン\n- 1日休んでも、次の出席で次のマスから続きます。期間内に28回出席すればすべて受け取れます。\n- 鉄人エディションカードと「皆勤」称号はシーズン1限定です。12月8日からシーズン2が始まります。",
+        "summary": "12月7日までに28回出席すると、鉄人キャラクター2種、鉄人エディションカード、「皆勤」称号がもらえます。"
+      },
+      "zh": {
+        "title": "出席板第 1 季:领取铁人版卡面",
+        "body": "- 2.6.6 更新后开放出席板。每天打开一次应用即可填满一格,每格都会送出老板资金或重掷券。\n- 活动时间:11月2日(周一)~12月7日(周一),韩国时间\n- 第 7 天 铁人新秀 + 100 金币 · 第 14 天 铁人版卡面 · 第 21 天「全勤」称号 + 300 金币 · 第 28 天 铁人老将\n- 漏签一天也没关系,下次签到会接着填下一格。活动期间签到 28 次即可领取全部奖励。\n- 铁人版卡面和「全勤」称号仅限第 1 季。12月8日起开始第 2 季。",
+        "summary": "12月7日前签到 28 次,可获得 2 个铁人角色、铁人版卡面和「全勤」称号。"
+      },
+      "es": {
+        "title": "Asistencia, temporada 1: consigue la tarjeta Edición de hierro",
+        "body": "- El tablero de asistencia llega con la actualización 2.6.6. Abre la app una vez al día para llenar una casilla; cada casilla da fondos del dueño o tickets de tirada.\n- Periodo: del 2 de noviembre (lun) al 7 de diciembre (lun), hora de Corea\n- Día 7 Novato de hierro + 100 de oro · Día 14 tarjeta Edición de hierro · Día 21 título Asistencia perfecta + 300 de oro · Día 28 Veterano de hierro\n- ¿Te saltaste un día? Tu siguiente asistencia llena la siguiente casilla. Con 28 asistencias dentro del periodo lo consigues todo.\n- La tarjeta Edición de hierro y el título Asistencia perfecta son exclusivos de la temporada 1. La temporada 2 empieza el 8 de diciembre.",
+        "summary": "Registra 28 asistencias antes del 7 de diciembre y consigue dos personajes de hierro, la tarjeta Edición de hierro y el título Asistencia perfecta."
+      },
+      "pt": {
+        "title": "Presença, temporada 1: ganhe o cartão Edição de ferro",
+        "body": "- O quadro de presença chega com a atualização 2.6.6. Abra o app uma vez por dia para preencher uma casa; cada casa dá fundos do dono ou fichas de rolagem.\n- Período: 2 de novembro (seg) a 7 de dezembro (seg), horário da Coreia\n- Dia 7 Novato de ferro + 100 de ouro · Dia 14 cartão Edição de ferro · Dia 21 título Presença perfeita + 300 de ouro · Dia 28 Veterano de ferro\n- Perdeu um dia? A próxima presença preenche a casa seguinte. Com 28 presenças dentro do período você ganha tudo.\n- O cartão Edição de ferro e o título Presença perfeita são exclusivos da temporada 1. A temporada 2 começa em 8 de dezembro.",
+        "summary": "Marque 28 presenças até 7 de dezembro e ganhe dois personagens de ferro, o cartão Edição de ferro e o título Presença perfeita."
+      },
+      "fr": {
+        "title": "Présences, saison 1 : obtiens la carte Édition fer",
+        "body": "- Le tableau des présences arrive avec la mise à jour 2.6.6. Ouvre l’app une fois par jour pour remplir une case ; chaque case donne des fonds du propriétaire ou des tickets de relance.\n- Période : du 2 novembre (lun.) au 7 décembre (lun.), heure de Corée\n- Jour 7 Débutant de fer + 100 d’or · Jour 14 carte Édition fer · Jour 21 titre Assiduité parfaite + 300 d’or · Jour 28 Vétéran de fer\n- Un jour manqué ? Ta prochaine présence remplit simplement la case suivante. 28 présences pendant la période suffisent pour tout obtenir.\n- La carte Édition fer et le titre Assiduité parfaite sont réservés à la saison 1. La saison 2 commence le 8 décembre.",
+        "summary": "28 présences d’ici le 7 décembre : deux personnages de fer, la carte Édition fer et le titre Assiduité parfaite."
+      },
+      "de": {
+        "title": "Anwesenheit, Saison 1: Hol dir die Eisen-Edition-Karte",
+        "body": "- Die Anwesenheitstafel kommt mit dem Update 2.6.6. Öffne die App einmal am Tag, um ein Feld zu füllen; jedes Feld bringt Besitzerguthaben oder Neuwürfel-Tickets.\n- Zeitraum: 2. November (Mo) bis 7. Dezember (Mo), koreanische Zeit\n- Tag 7 Eisenrookie + 100 Gold · Tag 14 Eisen-Edition-Karte · Tag 21 Titel „Lückenlose Anwesenheit“ + 300 Gold · Tag 28 Eisenveteran\n- Einen Tag verpasst? Die nächste Anmeldung füllt einfach das nächste Feld. Mit 28 Anmeldungen im Zeitraum bekommst du alles.\n- Die Eisen-Edition-Karte und der Titel „Lückenlose Anwesenheit“ gibt es nur in Saison 1. Saison 2 beginnt am 8. Dezember.",
+        "summary": "Melde dich bis zum 7. Dezember 28-mal an: zwei Eisen-Figuren, die Eisen-Edition-Karte und der Titel „Lückenlose Anwesenheit“."
+      },
+      "it": {
+        "title": "Presenze, stagione 1: ottieni la carta Edizione ferro",
+        "body": "- Il tabellone presenze arriva con l’aggiornamento 2.6.6. Apri l’app una volta al giorno per riempire una casella; ogni casella dà fondi del proprietario o ticket per ritirare.\n- Periodo: dal 2 novembre (lun) al 7 dicembre (lun), ora coreana\n- Giorno 7 Esordiente di ferro + 100 oro · Giorno 14 carta Edizione ferro · Giorno 21 titolo Presenza perfetta + 300 oro · Giorno 28 Veterano di ferro\n- Hai saltato un giorno? La presenza successiva riempie semplicemente la casella dopo. Con 28 presenze nel periodo ottieni tutto.\n- La carta Edizione ferro e il titolo Presenza perfetta sono solo della stagione 1. La stagione 2 inizia l’8 dicembre.",
+        "summary": "28 presenze entro il 7 dicembre: due personaggi di ferro, la carta Edizione ferro e il titolo Presenza perfetta."
+      },
+      "tr": {
+        "title": "Katılım 1. sezon: Demir sürüm kartını kazan",
+        "body": "- Katılım tablosu 2.6.6 güncellemesiyle açılıyor. Uygulamayı günde bir kez aç, bir kutu dolsun; her kutu kulüp sahibi fonu ya da yeniden zar bileti verir.\n- Süre: 2 Kasım (Pzt) – 7 Aralık (Pzt), Kore saati\n- 7. gün Demir Çaylak + 100 altın · 14. gün Demir sürüm kartı · 21. gün Tam Katılım unvanı + 300 altın · 28. gün Demir Veteran\n- Bir gün mü kaçırdın? Sonraki girişin bir sonraki kutuyu doldurur. Süre içinde 28 kez giriş yaparsan hepsini alırsın.\n- Demir sürüm kartı ve Tam Katılım unvanı yalnızca 1. sezona özel. 2. sezon 8 Aralık'ta başlıyor.",
+        "summary": "7 Aralık'a kadar 28 kez giriş yap: iki Demir karakter, Demir sürüm kartı ve Tam Katılım unvanı."
+      },
+      "id": {
+        "title": "Kehadiran musim 1: dapatkan kartu Edisi besi",
+        "body": "- Papan kehadiran hadir di pembaruan 2.6.6. Buka aplikasi sekali sehari untuk mengisi satu kotak; setiap kotak memberi dana pemilik atau tiket lempar ulang.\n- Periode: 2 November (Sen) – 7 Desember (Sen), waktu Korea\n- Hari 7 Rookie Besi + 100 emas · Hari 14 kartu Edisi besi · Hari 21 gelar Kehadiran Sempurna + 300 emas · Hari 28 Veteran Besi\n- Terlewat sehari? Kehadiran berikutnya tinggal mengisi kotak selanjutnya. Hadir 28 kali dalam periode ini untuk mendapatkan semuanya.\n- Kartu Edisi besi dan gelar Kehadiran Sempurna hanya ada di musim 1. Musim 2 dimulai 8 Desember.",
+        "summary": "Hadir 28 kali sampai 7 Desember untuk dua karakter besi, kartu Edisi besi, dan gelar Kehadiran Sempurna."
+      },
+      "ar": {
+        "title": "الحضور، الموسم 1: احصل على بطاقة الإصدار الحديدي",
+        "body": "- تفتح لوحة الحضور مع التحديث 2.6.6. افتح التطبيق مرة في اليوم لتملأ خانة؛ كل خانة تمنحك أموال المالك أو تذاكر إعادة الرمي.\n- المدة: من 2 نوفمبر (الاثنين) إلى 7 ديسمبر (الاثنين)، بتوقيت كوريا\n- اليوم 7 المبتدئ الحديدي + 100 ذهب · اليوم 14 بطاقة الإصدار الحديدي · اليوم 21 لقب «حضور كامل» + 300 ذهب · اليوم 28 المخضرم الحديدي\n- فاتك يوم؟ حضورك التالي يملأ الخانة التالية ببساطة. سجّل حضورك 28 مرة خلال المدة لتحصل على كل شيء.\n- بطاقة الإصدار الحديدي ولقب «حضور كامل» حصريان للموسم 1. يبدأ الموسم 2 في 8 ديسمبر.",
+        "summary": "سجّل حضورك 28 مرة حتى 7 ديسمبر لتحصل على شخصيتين حديديتين وبطاقة الإصدار الحديدي ولقب «حضور كامل»."
+      }
+    }
+  },
+  {
     "id": "2026-11-02-gold-packs",
     "date": "2026-11-02",
     "title": "골드 팩 지급량이 늘어납니다",
