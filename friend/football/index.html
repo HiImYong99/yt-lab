@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>친선전 초대 · Football Career Sim</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="친선전 한 판 붙어요! · Friendly match invite">
+<meta property="og:description" content="축구선수 키우기 오늘의 리그 · 친구 코드로 내 클럽과 친선전 · Add my club with the friend code and play a friendly">
+<meta property="og:image" content="https://ytlab.site/soccer-career/img/og-podium.jpg">
+<style>
+:root { color-scheme: light dark; --bg: #f2f5f1; --fg: #15201a; --dim: #5a6a61; --card: #fff; --line: #d6ded7; --accent: #1f7a4c; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0d1411; --fg: #e4ece6; --dim: #93a69b; --card: #151f1a; --line: #26342c; --accent: #45c486; } }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", system-ui, sans-serif; padding: 32px max(16px, env(safe-area-inset-left)); }
+main { max-width: 460px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+h1 { font-size: 21px; margin: 0; text-align: center; line-height: 1.35; }
+.code { text-align: center; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 18px 16px; display: grid; gap: 10px; }
+.code span { font-size: 13px; color: var(--dim); }
+.code b { font: 800 40px/1.1 ui-monospace, "SF Mono", Menlo, monospace; letter-spacing: .08em; }
+.code button { justify-self: center; border: 1px solid var(--line); background: transparent; color: var(--fg); border-radius: 999px; padding: 6px 16px; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px; }
+ol { margin: 0; padding-left: 20px; }
+p { margin: 0; color: var(--dim); font-size: 14px; }
+.stores { display: flex; gap: 10px; flex-wrap: wrap; }
+.stores a { flex: 1; text-align: center; padding: 10px; border-radius: 10px; background: var(--accent); color: #fff; text-decoration: none; font-weight: 600; min-width: 130px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>친선전 한 판 붙어요!<br>You're invited to a friendly</h1>
+  <div class="code">
+    <span>친구 코드 · Friend code</span>
+    <b id="code">#-----</b>
+    <button id="copy" type="button">코드 복사 · Copy</button>
+  </div>
+  <div class="card">
+    <ol>
+      <li>축구선수 키우기를 설치하거나 2.6.7 이상으로 업데이트해 주세요. · Install or update Football Career Sim (2.6.7 or later).</li>
+      <li>앱이 있으면 이 링크를 다시 누르면 바로 친구로 추가돼요. · With the app installed, open this link again to add the club.</li>
+      <li>또는 오늘의 리그 → 친구에서 위 코드를 입력하세요. · Or enter the code in Today's League → Friends.</li>
+    </ol>
+  </div>
+  <div class="stores">
+    <a href="https://apps.apple.com/app/id6807107830">App Store</a>
+    <a href="https://play.google.com/store/apps/details?id=site.ytlab.soccer_career">Google Play</a>
+  </div>
+  <p>리그 클럽을 만든 지 7일 안에 이 초대로 친구를 추가하고 리그를 3일 뛰면 두 사람 모두 200골드를 받아요. · Add this club within 7 days of starting your league club and play 3 league days: you both get 200 gold.</p>
+</main>
+<script>
+(function () {
+  var c = (new URLSearchParams(location.search).get('c') || '').toUpperCase().replace(/^#/, '');
+  var ok = /^[A-Z0-9]{5}$/.test(c);
+  var el = document.getElementById('code');
+  el.textContent = ok ? '#' + c : '#-----';
+  var btn = document.getElementById('copy');
+  if (!ok) { btn.hidden = true; return; }
+  btn.addEventListener('click', function () {
+    var done = function () { btn.textContent = '복사했어요 · Copied'; };
+    if (navigator.clipboard) navigator.clipboard.writeText(c).then(done, function () {});
+  });
+})();
+</script>
+</body>
+</html>
