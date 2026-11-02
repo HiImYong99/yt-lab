@@ -1,5 +1,109 @@
 [
   {
+    "id": "2026-11-02-league-daily-gift",
+    "date": "2026-11-02",
+    "title": "오픈 기념 선물: 100골드",
+    "body": "- 오늘의 리그와 데일리 챌린지(시범 운영)가 열렸어요. 기념으로 모든 분께 100골드를 드려요.\n- 100골드면 리그 포메이션 하나를 열 수 있어요. 오늘의 리그 › 스쿼드에서 4-3-3 말고 다른 포메이션으로 바꿔 보세요.\n- 홈 화면 선물함에서 받기를 눌러 주세요. 11월 6일(금)까지 받지 않은 선물은 사라져요.",
+    "important": true,
+    "popup": {
+      "until": "2026-11-06"
+    },
+    "category": "event",
+    "summary": "선물함에서 100골드를 받고 리그 포메이션 하나를 열어 보세요. 11월 6일(금)까지.",
+    "content": "## 오늘의 리그 · 데일리 챌린지 오픈\n- 모든 분께 **100골드**를 드려요.\n- 100골드 = **리그 포메이션 하나**. 오늘의 리그 › 스쿼드에서 열 수 있어요.\n- **홈 화면 선물함**에서 받기를 눌러 주세요.\n\n> 11월 6일(금)까지 받지 않은 선물은 사라져요. 데일리 챌린지는 시범 운영 중이에요.",
+    "cta": {
+      "route": "gifts",
+      "label": {
+        "ko": "선물함 열기",
+        "en": "Open gift box",
+        "ja": "プレゼントボックスを開く",
+        "zh": "打开礼物箱",
+        "es": "Abrir buzón de regalos",
+        "pt": "Abrir caixa de presentes",
+        "fr": "Ouvrir la boîte à cadeaux",
+        "de": "Geschenkbox öffnen",
+        "it": "Apri la scatola dei regali",
+        "id": "Buka kotak hadiah",
+        "tr": "Hediye kutusunu aç",
+        "ar": "افتح صندوق الهدايا"
+      }
+    },
+    "translations": {
+      "ko": {
+        "title": "오픈 기념 선물: 100골드",
+        "body": "- 오늘의 리그와 데일리 챌린지(시범 운영)가 열렸어요. 기념으로 모든 분께 100골드를 드려요.\n- 100골드면 리그 포메이션 하나를 열 수 있어요. 오늘의 리그 › 스쿼드에서 4-3-3 말고 다른 포메이션으로 바꿔 보세요.\n- 홈 화면 선물함에서 받기를 눌러 주세요. 11월 6일(금)까지 받지 않은 선물은 사라져요.",
+        "summary": "선물함에서 100골드를 받고 리그 포메이션 하나를 열어 보세요. 11월 6일(금)까지.",
+        "content": "## 오늘의 리그 · 데일리 챌린지 오픈\n- 모든 분께 **100골드**를 드려요.\n- 100골드 = **리그 포메이션 하나**. 오늘의 리그 › 스쿼드에서 열 수 있어요.\n- **홈 화면 선물함**에서 받기를 눌러 주세요.\n\n> 11월 6일(금)까지 받지 않은 선물은 사라져요. 데일리 챌린지는 시범 운영 중이에요."
+      },
+      "en": {
+        "title": "Launch gift: 100 gold",
+        "body": "- Today's League and the Daily Challenge (trial) are open. To celebrate, everyone gets 100 gold.\n- 100 gold unlocks one league formation. Switch from 4-3-3 in Today's League › Squad.\n- Open the gift box on the home screen and tap Claim. Gifts not claimed by Fri, Nov 6 will expire.",
+        "summary": "Claim 100 gold from the gift box and unlock a league formation. Until Fri, Nov 6.",
+        "content": "## Today's League · Daily Challenge are open\n- Everyone gets **100 gold**.\n- 100 gold = **one league formation**, unlocked in Today's League › Squad.\n- Open the **gift box on the home screen** and tap Claim.\n\n> Gifts not claimed by Fri, Nov 6 will expire. The Daily Challenge is on trial."
+      },
+      "ja": {
+        "title": "オープン記念プレゼント:100ゴールド",
+        "body": "- 今日のリーグとデイリーチャレンジ(試験運用)がオープンしました。記念に全員へ100ゴールドをプレゼントします。\n- 100ゴールドでリーグのフォーメーションを1つ解放できます。今日のリーグ › チームで4-3-3から変更してみてください。\n- ホーム画面のプレゼントボックスで「受け取る」をタップしてください。11月6日(金)までに受け取らないと消えます。",
+        "summary": "プレゼントボックスで100ゴールドを受け取り、リーグのフォーメーションを1つ解放しよう。11月6日(金)まで。",
+        "content": "## 今日のリーグ・デイリーチャレンジ オープン\n- 全員に**100ゴールド**をプレゼント。\n- 100ゴールド = **リーグのフォーメーション1つ**。今日のリーグ › チームで解放できます。\n- **ホーム画面のプレゼントボックス**で「受け取る」をタップしてください。\n\n> 11月6日(金)までに受け取らないと消えます。デイリーチャレンジは試験運用中です。"
+      },
+      "zh": {
+        "title": "开放纪念礼物:100 金币",
+        "body": "- 今日联赛和每日挑战(试运营)已开放。为此向所有玩家赠送 100 金币。\n- 100 金币可解锁一个联赛阵型。在今日联赛 › 球队中把 4-3-3 换成其他阵型吧。\n- 请打开首页的礼物箱并点击「领取」。11月6日(周五)前未领取的礼物将消失。",
+        "summary": "在礼物箱领取 100 金币,解锁一个联赛阵型。截至11月6日(周五)。",
+        "content": "## 今日联赛 · 每日挑战开放\n- 所有玩家可获得 **100 金币**。\n- 100 金币 = **一个联赛阵型**,在今日联赛 › 球队中解锁。\n- 打开**首页的礼物箱**并点击「领取」。\n\n> 11月6日(周五)前未领取的礼物将消失。每日挑战目前为试运营。"
+      },
+      "es": {
+        "title": "Regalo de estreno: 100 de oro",
+        "body": "- La liga de hoy y el Desafío diario (de prueba) ya están abiertos. Para celebrarlo, todos reciben 100 de oro.\n- Con 100 de oro desbloqueas una formación de liga. Cambia el 4-3-3 en La liga de hoy › Plantilla.\n- Abre el buzón de regalos de la pantalla de inicio y toca Recibir. Los regalos no recibidos antes del viernes 6 de noviembre caducan.",
+        "summary": "Recibe 100 de oro en el buzón de regalos y desbloquea una formación de liga. Hasta el viernes 6 de noviembre.",
+        "content": "## La liga de hoy · Desafío diario abiertos\n- Todos reciben **100 de oro**.\n- 100 de oro = **una formación de liga**, en La liga de hoy › Plantilla.\n- Abre el **buzón de regalos de la pantalla de inicio** y toca Recibir.\n\n> Los regalos no recibidos antes del viernes 6 de noviembre caducan. El Desafío diario está de prueba."
+      },
+      "pt": {
+        "title": "Presente de estreia: 100 de ouro",
+        "body": "- A Liga de hoje e o Desafio diário (em teste) estão abertos. Para comemorar, todo mundo ganha 100 de ouro.\n- Com 100 de ouro você desbloqueia uma formação da liga. Troque o 4-3-3 em Liga de hoje › Elenco.\n- Abra a caixa de presentes da tela inicial e toque em Receber. Presentes não recebidos até sexta, 6 de novembro, expiram.",
+        "summary": "Receba 100 de ouro na caixa de presentes e desbloqueie uma formação da liga. Até sexta, 6 de novembro.",
+        "content": "## Liga de hoje · Desafio diário abertos\n- Todo mundo ganha **100 de ouro**.\n- 100 de ouro = **uma formação da liga**, em Liga de hoje › Elenco.\n- Abra a **caixa de presentes da tela inicial** e toque em Receber.\n\n> Presentes não recebidos até sexta, 6 de novembro, expiram. O Desafio diário está em teste."
+      },
+      "fr": {
+        "title": "Cadeau de lancement : 100 or",
+        "body": "- La Ligue du jour et le Défi du jour (en essai) sont ouverts. Pour fêter ça, tout le monde reçoit 100 or.\n- 100 or débloquent une formation de ligue. Changez le 4-3-3 dans Ligue du jour › Effectif.\n- Ouvrez la boîte à cadeaux de l'écran d'accueil et touchez Récupérer. Les cadeaux non récupérés avant le vendredi 6 novembre expirent.",
+        "summary": "Récupérez 100 or dans la boîte à cadeaux et débloquez une formation de ligue. Jusqu'au vendredi 6 novembre.",
+        "content": "## Ligue du jour · Défi du jour ouverts\n- Tout le monde reçoit **100 or**.\n- 100 or = **une formation de ligue**, dans Ligue du jour › Effectif.\n- Ouvrez la **boîte à cadeaux de l'écran d'accueil** et touchez Récupérer.\n\n> Les cadeaux non récupérés avant le vendredi 6 novembre expirent. Le Défi du jour est en essai."
+      },
+      "de": {
+        "title": "Start-Geschenk: 100 Gold",
+        "body": "- Heutige Liga und Tägliche Challenge (Testphase) sind offen. Zur Feier bekommen alle 100 Gold.\n- Mit 100 Gold schaltest du eine Liga-Formation frei. Wechsle in Heutige Liga › Kader weg vom 4-3-3.\n- Öffne die Geschenkbox auf dem Startbildschirm und tippe auf Abholen. Nicht bis Freitag, 6. November abgeholte Geschenke verfallen.",
+        "summary": "Hol dir 100 Gold in der Geschenkbox und schalte eine Liga-Formation frei. Bis Freitag, 6. November.",
+        "content": "## Heutige Liga · Tägliche Challenge sind offen\n- Alle bekommen **100 Gold**.\n- 100 Gold = **eine Liga-Formation**, freischaltbar in Heutige Liga › Kader.\n- Öffne die **Geschenkbox auf dem Startbildschirm** und tippe auf Abholen.\n\n> Nicht bis Freitag, 6. November abgeholte Geschenke verfallen. Die Tägliche Challenge ist in der Testphase."
+      },
+      "it": {
+        "title": "Regalo di lancio: 100 oro",
+        "body": "- Lega di oggi e Sfida del giorno (in prova) sono aperte. Per festeggiare, tutti ricevono 100 oro.\n- Con 100 oro sblocchi un modulo di lega. Cambia il 4-3-3 in Lega di oggi › Rosa.\n- Apri la scatola dei regali nella schermata iniziale e tocca Riscatta. I regali non riscattati entro venerdì 6 novembre scadono.",
+        "summary": "Riscatta 100 oro nella scatola dei regali e sblocca un modulo di lega. Fino a venerdì 6 novembre.",
+        "content": "## Lega di oggi · Sfida del giorno aperte\n- Tutti ricevono **100 oro**.\n- 100 oro = **un modulo di lega**, in Lega di oggi › Rosa.\n- Apri la **scatola dei regali nella schermata iniziale** e tocca Riscatta.\n\n> I regali non riscattati entro venerdì 6 novembre scadono. La Sfida del giorno è in prova."
+      },
+      "id": {
+        "title": "Hadiah peluncuran: 100 emas",
+        "body": "- Liga Hari Ini dan Tantangan Harian (uji coba) sudah dibuka. Untuk merayakannya, semua pemain mendapat 100 emas.\n- 100 emas bisa membuka satu formasi liga. Ganti 4-3-3 di Liga Hari Ini › Skuad.\n- Buka kotak hadiah di layar utama lalu ketuk Ambil. Hadiah yang belum diambil sampai Jumat, 6 November akan hangus.",
+        "summary": "Ambil 100 emas di kotak hadiah dan buka satu formasi liga. Sampai Jumat, 6 November.",
+        "content": "## Liga Hari Ini · Tantangan Harian dibuka\n- Semua pemain mendapat **100 emas**.\n- 100 emas = **satu formasi liga**, dibuka di Liga Hari Ini › Skuad.\n- Buka **kotak hadiah di layar utama** lalu ketuk Ambil.\n\n> Hadiah yang belum diambil sampai Jumat, 6 November akan hangus. Tantangan Harian masih uji coba."
+      },
+      "tr": {
+        "title": "Açılış hediyesi: 100 altın",
+        "body": "- Günün Ligi ve Günlük Meydan Okuma (deneme) açıldı. Kutlamak için herkese 100 altın veriyoruz.\n- 100 altınla bir lig dizilişi açabilirsin. Günün Ligi › Kadro'da 4-3-3 yerine başka bir diziliş seç.\n- Ana ekrandaki hediye kutusunu açıp Al'a dokun. 6 Kasım Cuma'ya kadar alınmayan hediyeler silinir.",
+        "summary": "Hediye kutusundan 100 altını al ve bir lig dizilişi aç. 6 Kasım Cuma'ya kadar.",
+        "content": "## Günün Ligi · Günlük Meydan Okuma açıldı\n- Herkese **100 altın**.\n- 100 altın = **bir lig dizilişi**, Günün Ligi › Kadro'da açılır.\n- **Ana ekrandaki hediye kutusunu** açıp Al'a dokun.\n\n> 6 Kasım Cuma'ya kadar alınmayan hediyeler silinir. Günlük Meydan Okuma deneme aşamasında."
+      },
+      "ar": {
+        "title": "هدية الإطلاق: 100 ذهبة",
+        "body": "- انطلق دوري اليوم والتحدي اليومي (تجريبي). احتفالًا بذلك نهدي الجميع 100 ذهبة.\n- بـ100 ذهبة تفتح خطة واحدة في الدوري. غيّر 4-3-3 من دوري اليوم › التشكيلة.\n- افتح صندوق الهدايا في الشاشة الرئيسية واضغط استلام. الهدايا التي لا تُستلم قبل الجمعة 6 نوفمبر تنتهي.",
+        "summary": "استلم 100 ذهبة من صندوق الهدايا وافتح خطة في الدوري. حتى الجمعة 6 نوفمبر.",
+        "content": "## انطلاق دوري اليوم والتحدي اليومي\n- الجميع يحصل على **100 ذهبة**.\n- 100 ذهبة = **خطة واحدة في الدوري**، تُفتح من دوري اليوم › التشكيلة.\n- افتح **صندوق الهدايا في الشاشة الرئيسية** واضغط استلام.\n\n> الهدايا التي لا تُستلم قبل الجمعة 6 نوفمبر تنتهي. التحدي اليومي تجريبي."
+      }
+    }
+  },
+  {
     "id": "2026-11-02-attendance-season1",
     "date": "2026-11-02",
     "title": "출석판 시즌 1 — 철인 에디션 카드 받기",
