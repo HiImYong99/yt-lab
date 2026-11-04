@@ -31,14 +31,14 @@
 <div class="wrap">
   <p class="eyebrow"><a href="/soccer-career/en/" style="color:inherit">Football Career Sim: Be a Pro</a></p>
   <h1>Privacy Policy</h1>
-  <p class="meta">Effective 2 November 2026 (previously 14 October 2026)</p>
+  <p class="meta">Effective 4 November 2026 (previously 2 November 2026)</p>
   <p class="meta" style="margin-bottom:36px"><a href="../">한국어</a> · English</p>
 
   <p>YT Lab ("the developer") makes the mobile game <strong>Football Career Sim: Be a Pro</strong> ("the app").
-  The app has no accounts. What leaves your device is advertising, the career record and owner nickname you put on the global ranking, and usage analytics if you allow them - all set out below.</p>
+  The app works without sign-up; you can link an Apple or Google account if you choose to. What leaves your device is advertising, the career record and owner nickname you put on the global ranking, usage analytics if you allow them, and account-link details if you link an account - all set out below.</p>
 
   <h2>1. What is processed</h2>
-  <p>There is no sign-up. The app does not collect your name, email, phone number, contacts or precise location. Only the following is processed.</p>
+  <p>There is no sign-up. The app does not collect your name, email, phone number, contacts or precise location (linking an account does not store your email or name either). Only the following is processed.</p>
   <table>
     <tr><th>Data</th><th>Processed by</th><th>Purpose</th></tr>
     <tr><td>Advertising identifier (IDFA / AAID)</td><td>Google AdMob (mediation: Unity Ads, Mintegral)</td><td>Serving and measuring the bottom banner, the native ad in the season result, the interstitial every sixth season, and the rewarded ads you choose to watch</td></tr>
@@ -46,6 +46,7 @@
     <tr><td>Gold purchase and spending records (store transaction id, product, time, anonymous id), the gold balance and club facilities</td><td>This app's server (Cloudflare)</td><td>Crediting the gold bought, preventing double credit, keeping the balance and facilities, and moving them to another device with a restore code</td></tr>
     <tr><td>Game progress (your shelf of retired players, settings, what you own, game funds, club edits and any image used in them)</td><td>Your device</td><td>Picking up where you left off</td></tr>
     <tr><td>Automatic backup (game progress: careers in progress, the shelf of retired players, titles, game funds and so on, with the anonymous id; images used in club edits are not included)</td><td>This app's server (Cloudflare)</td><td>Picking up where you left off after deleting and reinstalling the app - only the latest one per account is kept</td></tr>
+    <tr><td>Account link (optional) - a one-way hash (SHA-256) of the account identifier received from Sign in with Apple or Google Sign-In, which service it is, when it was linked, and the anonymous id. No email or name is stored</td><td>This app's server (Cloudflare), Apple (Sign in with Apple), Google (Google Sign-In)</td><td>Signing in on a new or replacement device to get the automatic backup, gold and purchase records back - <strong>only if you link an account in Settings</strong></td></tr>
     <tr><td>Anonymous id and access token</td><td>Your device's secure storage (iOS Keychain, Android Block Store - encrypted in your Google backup when Google backup is on)</td><td>Coming back as the same owner after a reinstall</td></tr>
     <tr><td>Player name, career record, anonymous id</td><td>This app's ranking server (Cloudflare)</td><td>The global ranking - sent by default, and <strong>switchable off on the Rankings screen</strong>. See section 7</td></tr>
     <tr><td>Owner nickname and the cosmetics shown on the ranking</td><td>This app's ranking server (Cloudflare)</td><td>Shown on the ranking with your careers - only while you take part. See section 7</td></tr>
@@ -58,7 +59,7 @@
 
   <h2>2. Storage</h2>
   <ul>
-    <li>Everything is kept in on-device storage (shared_preferences) and is removed when you delete the app, except the server's automatic backup (the latest one per account) and the anonymous id in the device's secure storage, which stay so a reinstall can pick up again. The backup is kept until you ask us to delete it; each new backup replaces the previous one.</li>
+    <li>Everything is kept in on-device storage (shared_preferences) and is removed when you delete the app, except the server's automatic backup (the latest one per account) and the anonymous id in the device's secure storage, which stay so a reinstall can pick up again. The backup is kept until you ask us to delete it; each new backup replaces the previous one. Account-link details are kept until you unlink the account or delete it.</li>
     <li>With the ranking and usage analytics both switched off, nothing reaches a server of ours. Section 7 covers how long an entered career is kept and how to have it deleted. Usage analytics records on our own server are likewise kept until a deletion request is made; Google Analytics event data is deleted automatically after at most 14 months.</li>
   </ul>
 
@@ -77,16 +78,17 @@
   <ul>
     <li>In-app purchases are handled by the App Store and Google Play. The developer never receives card or other financial details.</li>
     <li>The products sold are remove ads, the position pack, Start at 15 and the Supporter Shelf (one-off, non-consumable purchases), and gold (a consumable currency). Gold is spent on club facilities, cosmetics and reroll tickets or exchanged for game funds, and is also earned by playing and daily check-ins. Game funds themselves are never sold.</li>
-    <li>The gold balance and purchase records are kept on this app's server under the anonymous id. A restore code in the app moves them to a new device.</li>
+    <li>The gold balance and purchase records are kept on this app's server under the anonymous id. A restore code in the app moves them to a new device, or, with a linked account, signing in on the new device gets them back.</li>
     <li>Purchases can be recovered with "Restore purchases" in the app.</li>
   </ul>
 
   <h2>5. Sharing</h2>
-  <p>The developer does not sell user data and shares nothing beyond the processing described above (AdMob and its mediation networks Unity Ads and Mintegral, app-store billing, and the Cloudflare processing the ranking and usage analytics use, and Google Analytics for Firebase for usage analytics), except where required by law.</p>
+  <p>The developer does not sell user data and shares nothing beyond the processing described above (AdMob and its mediation networks Unity Ads and Mintegral, app-store billing, and the Cloudflare processing the ranking and usage analytics use, Google Analytics for Firebase for usage analytics, and Apple and Google sign-in for account links), except where required by law.</p>
 
   <h2>6. Your choices</h2>
   <ul>
     <li>Deleting the app deletes what is stored on the device. The server's automatic backup and the anonymous id in the device's secure storage stay so a reinstall can pick up again; you can ask for them to be deleted as described in section 7.</li>
+    <li id="delete"><strong>Deleting your account in the app</strong> - Settings &gt; Link account &gt; Delete account deletes it straight away. Your owner profile, gold balance, club facilities, automatic backup, submitted careers and ranking records, and account links are deleted at once and cannot be restored. Where your club appears in other players' league and cup match records, it stays there with its names removed; store transaction ids are kept, linked to no one, so a purchase cannot be credited twice. If you linked Apple, the Sign in with Apple authorisation is revoked too. If you can no longer open the app, email the address in section 7.</li>
     <li>Anything you entered into the ranking, and your usage analytics records, can be deleted on request - see section 7. Usage analytics can be switched off in Settings, which also clears anything not yet sent.</li>
     <li>The advertising identifier can be reset or limited in your device settings (iOS: Settings &gt; Privacy &gt; Tracking; Android: Settings &gt; Ads).</li>
   </ul>
@@ -102,7 +104,7 @@
   <p>Device identifiers, advertising identifiers, location, contacts, and email addresses are not sent by this feature.</p>
   <ul>
     <li><strong>Retention</strong> - the information above is kept indefinitely, until a deletion request is made.</li>
-    <li><strong>Deletion requests</strong> - send the id shown at the foot of the Settings screen to the contact address below, and we will delete every record that id created on our server: its submitted careers, the reports it filed, the reports filed against its own careers, any player it blocked, its usage analytics records and its automatic backup. The one thing this does not delete: if another player blocked this id, that block is their own setting, not this id's data, and it stays in place.</li>
+    <li><strong>Deletion requests</strong> - delete the account in the app (section 6), or send the id shown at the foot of the Settings screen to the contact address below, and we will delete every record that id created on our server: its submitted careers, the reports it filed, the reports filed against its own careers, any player it blocked, its usage analytics records and its automatic backup. The one thing this does not delete: if another player blocked this id, that block is their own setting, not this id's data, and it stays in place.</li>
     <li><strong>Where this is processed</strong> - the information above is processed and stored on Cloudflare (Workers and D1), and is not shared with any other third party for this purpose.</li>
   </ul>
 
