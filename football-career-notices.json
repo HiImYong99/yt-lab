@@ -1,92 +1,75 @@
 [
   {
-    "id": "2026-11-04-league-kept-players-no-record",
+    "id": "2026-11-04-league-kept-players-fixed",
     "date": "2026-11-04",
-    "title": "리그에 보관함 선수가 안 나올 때",
-    "body": "- 리그 스쿼드에 '서버 기록이 없는 보관함 선수 N명은 뛸 수 없어요'가 보인다면, 그 선수들은 은퇴할 때 서버에 기록이 올라가지 않은 선수입니다.\n- 선수 이름을 직접 지은 커리어에서 '이 이름을 랭킹에 올릴까' 창이 떴을 때 한 번이라도 '올리지 않는다'를 고르거나 창을 닫았다면, 그 뒤로 이름을 직접 지은 선수는 은퇴해도 서버에 올라가지 않았습니다. 랭킹 참여가 꺼져 있을 때 은퇴한 선수도 마찬가지입니다.\n- 랭킹 화면 맨 아래 '랭킹 참여'를 껐다가 다시 켜 주세요. 꺼져 있었다면 켜 주세요. 다음 은퇴 때 확인 창이 뜨면 '올린다'를 누르면 그 선수부터 리그에 나설 수 있습니다.\n- 이미 보관함에 있는 선수는 요약 기록만 남아 있어 나중에 서버로 보낼 수 없습니다. 불편을 드려 죄송합니다.\n- 다음 업데이트에서 이 확인 창을 없애고, 은퇴한 선수가 모두 서버에 올라가도록 수정하겠습니다.",
+    "title": "리그 보관함 선수 문제를 고쳤어요",
+    "body": "- 서버 기록이 없어 리그에서 뛸 수 없던 보관함 선수도 이제 리그에 나설 수 있어요. 앱 업데이트 없이 바로 적용됩니다.\n- 리그 스쿼드 화면에서 '직접 편성'을 눌렀다가 다시 '자동 관리'를 한 번 눌러 주세요. 보관함 선수까지 불러와서 가장 강한 11명으로 다시 짜요. '서버 기록이 없는 보관함 선수' 안내도 이때 사라져요.\n- 자동 관리 중인 클럽은 앞으로 은퇴한 선수가 바로 라인업에 들어가요.\n- 이렇게 불러온 선수는 리그에서만 뛰고, 기본 얼굴에 트로피 0개로 보여요. 랭킹에는 올라가지 않아요.\n- 이름 필터에 걸린 선수도 숨겨지지 않고 기본 이름으로 바뀌어 나와요.\n- 앞서 안내드린 '랭킹 참여 껐다 켜기'는 이제 하지 않으셔도 됩니다. 혼란을 드려 죄송합니다.",
     "important": true,
     "popup": {
       "until": "2026-11-08"
     },
     "category": "notice",
-    "summary": "랭킹 화면 맨 아래 '랭킹 참여'를 껐다가 다시 켜 주세요. 다음에 은퇴하는 선수부터 리그에 나설 수 있습니다.",
-    "cta": {
-      "route": "ranking",
-      "label": {
-        "ko": "랭킹 열기",
-        "en": "Open Ranking",
-        "ja": "ランキングを開く",
-        "zh": "打开排行榜",
-        "es": "Abrir Ranking",
-        "pt": "Abrir Ranking",
-        "fr": "Ouvrir le Top",
-        "de": "Ranking öffnen",
-        "it": "Apri Ranking",
-        "tr": "Liderleri aç",
-        "id": "Buka Ranking",
-        "ar": "افتح الترتيب"
-      }
-    },
+    "summary": "리그 스쿼드에서 '직접 편성' → '자동 관리'를 한 번 눌러 주세요. 보관함 선수까지 리그에 들어와요.",
     "translations": {
       "ko": {
-        "title": "리그에 보관함 선수가 안 나올 때",
-        "body": "- 리그 스쿼드에 '서버 기록이 없는 보관함 선수 N명은 뛸 수 없어요'가 보인다면, 그 선수들은 은퇴할 때 서버에 기록이 올라가지 않은 선수입니다.\n- 선수 이름을 직접 지은 커리어에서 '이 이름을 랭킹에 올릴까' 창이 떴을 때 한 번이라도 '올리지 않는다'를 고르거나 창을 닫았다면, 그 뒤로 이름을 직접 지은 선수는 은퇴해도 서버에 올라가지 않았습니다. 랭킹 참여가 꺼져 있을 때 은퇴한 선수도 마찬가지입니다.\n- 랭킹 화면 맨 아래 '랭킹 참여'를 껐다가 다시 켜 주세요. 꺼져 있었다면 켜 주세요. 다음 은퇴 때 확인 창이 뜨면 '올린다'를 누르면 그 선수부터 리그에 나설 수 있습니다.\n- 이미 보관함에 있는 선수는 요약 기록만 남아 있어 나중에 서버로 보낼 수 없습니다. 불편을 드려 죄송합니다.\n- 다음 업데이트에서 이 확인 창을 없애고, 은퇴한 선수가 모두 서버에 올라가도록 수정하겠습니다.",
-        "summary": "랭킹 화면 맨 아래 '랭킹 참여'를 껐다가 다시 켜 주세요. 다음에 은퇴하는 선수부터 리그에 나설 수 있습니다."
+        "title": "리그 보관함 선수 문제를 고쳤어요",
+        "body": "- 서버 기록이 없어 리그에서 뛸 수 없던 보관함 선수도 이제 리그에 나설 수 있어요. 앱 업데이트 없이 바로 적용됩니다.\n- 리그 스쿼드 화면에서 '직접 편성'을 눌렀다가 다시 '자동 관리'를 한 번 눌러 주세요. 보관함 선수까지 불러와서 가장 강한 11명으로 다시 짜요. '서버 기록이 없는 보관함 선수' 안내도 이때 사라져요.\n- 자동 관리 중인 클럽은 앞으로 은퇴한 선수가 바로 라인업에 들어가요.\n- 이렇게 불러온 선수는 리그에서만 뛰고, 기본 얼굴에 트로피 0개로 보여요. 랭킹에는 올라가지 않아요.\n- 이름 필터에 걸린 선수도 숨겨지지 않고 기본 이름으로 바뀌어 나와요.\n- 앞서 안내드린 '랭킹 참여 껐다 켜기'는 이제 하지 않으셔도 됩니다. 혼란을 드려 죄송합니다.",
+        "summary": "리그 스쿼드에서 '직접 편성' → '자동 관리'를 한 번 눌러 주세요. 보관함 선수까지 리그에 들어와요."
       },
       "en": {
-        "title": "When your kept players can't play in the league",
-        "body": "- If your league squad says \"N kept players have no server record and can't play\", those players' records never reached the server when they retired.\n- If you ever chose \"Keep it private\" or closed the \"Put this name on the board?\" window for a player whose name you typed, every later player with a typed name was not sent to the server when they retired. The same goes for players who retired while \"Take part in rankings\" was off.\n- Turn \"Take part in rankings\" at the bottom of the Ranking screen off and on again, or just on if it was off. When the window shows up at the next retirement, tap \"Submit\" and that player can play in the league.\n- Players already in your archive keep only a summary, so they can't be sent to the server later. Sorry for the trouble.\n- The next update removes that window and sends every retired player to the server.",
-        "summary": "Turn \"Take part in rankings\" at the bottom of the Ranking screen off and on again. Players who retire after that can play in the league."
+        "title": "Kept players can now play in the league",
+        "body": "- Kept players who had no server record and couldn't play in the league can now play. It works right away, no app update needed.\n- In your league squad, tap 'Manual' and then 'Auto' once. Your kept players are pulled in and the best eleven is picked again. The note about kept players with no server record goes away then too.\n- Clubs on Auto now put newly retired players straight into the lineup.\n- Players pulled in this way play in the league only, with a default face and no trophies. They don't go on the rankings.\n- Players whose names were caught by the name filter are no longer hidden. They show under a default name.\n- You no longer need to turn \"Take part in rankings\" off and on as we said earlier. Sorry for the confusion.",
+        "summary": "In your league squad, tap 'Manual' and then 'Auto' once. Your kept players join the league."
       },
       "ja": {
-        "title": "保管選手がリーグに出場できないとき",
-        "body": "- リーグのスカッドに「サーバー記録のない保管選手N人は出場できません」と表示される場合、その選手たちは引退時にサーバーへ記録が送られていません。\n- 名前を自分で付けたキャリアで「この名前をランキングに載せる？」が出たときに一度でも「載せない」を選んだり画面を閉じたりした場合、それ以降に名前を自分で付けた選手は引退してもサーバーに送られていませんでした。「ランキングに参加する」がオフのときに引退した選手も同じです。\n- ランキング画面の一番下の「ランキングに参加する」を一度オフにしてからオンにしてください。オフだった場合はオンにしてください。次の引退で確認画面が出たら「載せる」を押すと、その選手からリーグに出場できます。\n- すでに保管されている選手は要約だけが残っているため、後からサーバーに送ることはできません。ご不便をおかけして申し訳ありません。\n- 次のアップデートでこの確認画面をなくし、引退した選手はすべてサーバーに送られるよう修正します。",
-        "summary": "ランキング画面の一番下の「ランキングに参加する」を一度オフにしてからオンにしてください。次に引退する選手からリーグに出場できます。"
+        "title": "保管選手がリーグに出場できるようになりました",
+        "body": "- サーバー記録がなくリーグに出場できなかった保管選手も、出場できるようになりました。アプリのアップデートなしですぐ反映されます。\n- リーグのスカッド画面で「手動編成」を押してから、もう一度「自動管理」を押してください。保管選手も読み込んで、最も強い11人で組み直します。「サーバー記録のない保管選手」の案内もこのとき消えます。\n- 「自動管理」のクラブは、これから引退した選手がすぐラインナップに入ります。\n- こうして読み込んだ選手はリーグでのみプレーし、基本の顔・トロフィー0個で表示されます。ランキングには載りません。\n- 名前フィルターにかかった選手も非表示にならず、基本の名前に変わって表示されます。\n- 先にご案内した「ランキングに参加する」のオフ・オンはもう必要ありません。混乱させてしまい申し訳ありません。",
+        "summary": "リーグのスカッドで「手動編成」→「自動管理」を一度押してください。保管選手もリーグに入ります。"
       },
       "zh": {
-        "title": "收藏球员无法在联赛出场时",
-        "body": "- 如果联赛阵容显示“N名收藏球员没有服务器记录，无法出场”，说明这些球员退役时记录没有上传到服务器。\n- 如果在自己起名的生涯中，出现“把这个名字放上排行榜？”时曾选择“不上传”或关闭了窗口，之后所有自己起名的球员退役时都没有上传到服务器。在“参加排行榜”关闭期间退役的球员也是如此。\n- 请在排行榜页面最下方把“参加排行榜”关闭后再打开；如果原本是关闭的，请直接打开。下次退役时出现确认窗口请点“上传”，从该球员起即可在联赛出场。\n- 已在收藏中的球员只保留了摘要，之后无法再上传到服务器。给您带来不便，非常抱歉。\n- 下次更新将取消这个确认窗口，所有退役球员都会上传到服务器。",
-        "summary": "请在排行榜页面最下方把“参加排行榜”关闭后再打开。之后退役的球员就能在联赛出场。"
+        "title": "收藏球员现在可以在联赛出场了",
+        "body": "- 没有服务器记录、无法在联赛出场的收藏球员，现在也能出场了。无需更新应用，立即生效。\n- 请在联赛阵容页面先点“手动选阵”，再点一次“自动管理”。会连同收藏球员一起读取，重新选出最强的11人。“没有服务器记录的收藏球员”的提示也会随之消失。\n- 处于“自动管理”的俱乐部，之后退役的球员会直接进入阵容。\n- 这样读取的球员只在联赛中出场，显示为默认头像、0个奖杯，不会进入排行榜。\n- 被名字过滤的球员也不再被隐藏，会以默认名字显示。\n- 之前提到的把“参加排行榜”关闭再打开，现在已不需要。造成混乱，非常抱歉。",
+        "summary": "请在联赛阵容中点一次“手动选阵”→“自动管理”。收藏球员也会进入联赛。"
       },
       "es": {
-        "title": "Si tus jugadores guardados no pueden jugar en la liga",
-        "body": "- Si tu plantilla de liga dice «N jugadores guardados no tienen registro en el servidor y no pueden jugar», esos jugadores no enviaron su registro al servidor al retirarse.\n- Si alguna vez elegiste «No subir» o cerraste la ventana «¿Poner este nombre en la clasificación?» con un jugador al que pusiste nombre tú, ningún jugador posterior con nombre propio se envió al servidor al retirarse. Lo mismo pasa con los que se retiraron con «Participar en la clasificación» desactivado.\n- Desactiva y vuelve a activar «Participar en la clasificación» al final de la pantalla Ranking, o actívalo si estaba desactivado. Cuando aparezca la ventana en la próxima retirada, pulsa «Subir» y ese jugador podrá jugar en la liga.\n- Los jugadores que ya están en tu archivo solo guardan un resumen, así que no se pueden enviar al servidor más tarde. Perdona las molestias.\n- La próxima actualización elimina esa ventana y envía al servidor a todos los jugadores retirados.",
-        "summary": "Desactiva y vuelve a activar «Participar en la clasificación» al final de la pantalla Ranking. Los jugadores que se retiren después podrán jugar en la liga."
+        "title": "Tus jugadores guardados ya pueden jugar en la liga",
+        "body": "- Los jugadores guardados que no tenían registro en el servidor y no podían jugar en la liga ya pueden hacerlo. Funciona al instante, sin actualizar la app.\n- En tu plantilla de liga, toca 'Manual' y luego 'Automático' una vez. Se cargan también tus jugadores guardados y se vuelve a elegir el mejor once. El aviso de jugadores guardados sin registro en el servidor desaparece entonces.\n- Los clubes en 'Automático' ahora meten directamente en la alineación a los jugadores que se retiren.\n- Los jugadores cargados así solo juegan en la liga, con una cara por defecto y sin trofeos. No aparecen en la clasificación.\n- Los jugadores cuyo nombre bloqueó el filtro ya no se ocultan: aparecen con un nombre por defecto.\n- Ya no hace falta desactivar y activar «Participar en la clasificación» como te dijimos antes. Perdón por la confusión.",
+        "summary": "En tu plantilla de liga, toca 'Manual' y luego 'Automático' una vez. Tus jugadores guardados entran en la liga."
       },
       "pt": {
-        "title": "Quando seus jogadores guardados não podem jogar na liga",
-        "body": "- Se o elenco da liga mostra \"N jogadores guardados não têm registro no servidor e não podem jogar\", o registro desses jogadores não chegou ao servidor quando se aposentaram.\n- Se você já escolheu \"Não enviar\" ou fechou a janela \"Colocar este nome na classificação?\" com um jogador cujo nome você digitou, nenhum jogador seguinte com nome digitado foi enviado ao servidor ao se aposentar. O mesmo vale para quem se aposentou com \"Participar da classificação\" desativado.\n- Desative e ative de novo \"Participar da classificação\" no fim da tela Ranking, ou apenas ative se estava desativado. Quando a janela aparecer na próxima aposentadoria, toque em \"Enviar\" e esse jogador poderá jogar na liga.\n- Jogadores que já estão no seu arquivo guardam só um resumo, então não podem ser enviados ao servidor depois. Desculpe o transtorno.\n- A próxima atualização remove essa janela e envia todos os jogadores aposentados ao servidor.",
-        "summary": "Desative e ative de novo \"Participar da classificação\" no fim da tela Ranking. Os jogadores que se aposentarem depois poderão jogar na liga."
+        "title": "Seus jogadores guardados já podem jogar na liga",
+        "body": "- Os jogadores guardados que não tinham registro no servidor e não podiam jogar na liga agora podem. Funciona na hora, sem atualizar o app.\n- No seu elenco da liga, toque em 'Manual' e depois em 'Automático' uma vez. Seus jogadores guardados são carregados e o melhor time titular é escolhido de novo. O aviso sobre jogadores guardados sem registro no servidor também some.\n- Clubes no 'Automático' agora colocam direto na escalação os jogadores que se aposentarem.\n- Os jogadores carregados assim jogam só na liga, com rosto padrão e sem troféus. Eles não entram na classificação.\n- Jogadores cujo nome foi barrado pelo filtro não ficam mais ocultos: aparecem com um nome padrão.\n- Não é mais preciso desativar e ativar \"Participar da classificação\" como dissemos antes. Desculpe pela confusão.",
+        "summary": "No seu elenco da liga, toque em 'Manual' e depois em 'Automático' uma vez. Seus jogadores guardados entram na liga."
       },
       "fr": {
-        "title": "Si vos joueurs conservés ne peuvent pas jouer en ligue",
-        "body": "- Si votre effectif de ligue indique « N joueurs conservés sans données serveur ne peuvent pas jouer », le dossier de ces joueurs n'a pas été envoyé au serveur à leur retraite.\n- Si vous avez déjà choisi « Ne pas ajouter » ou fermé la fenêtre « Mettre ce nom au classement ? » pour un joueur dont vous aviez saisi le nom, aucun joueur suivant avec un nom saisi n'a été envoyé au serveur à sa retraite. C'est aussi le cas des joueurs retraités pendant que « Participer au classement » était désactivé.\n- Désactivez puis réactivez « Participer au classement » en bas de l'écran Top, ou activez-le simplement s'il était désactivé. Quand la fenêtre s'affiche à la prochaine retraite, touchez « Ajouter » : ce joueur pourra jouer en ligue.\n- Les joueurs déjà dans vos archives n'en gardent qu'un résumé et ne peuvent pas être envoyés au serveur plus tard. Désolés pour la gêne.\n- La prochaine mise à jour supprime cette fenêtre et envoie tous les joueurs retraités au serveur.",
-        "summary": "Désactivez puis réactivez « Participer au classement » en bas de l'écran Top. Les joueurs qui prendront leur retraite ensuite pourront jouer en ligue."
+        "title": "Vos joueurs gardés peuvent jouer en ligue",
+        "body": "- Les joueurs gardés sans fiche sur le serveur, qui ne pouvaient pas jouer en ligue, le peuvent maintenant. C'est actif tout de suite, sans mise à jour de l'appli.\n- Dans votre effectif de ligue, touchez « Manuel » puis « Auto » une fois. Vos joueurs gardés sont chargés et le meilleur onze est choisi à nouveau. Le message sur les joueurs gardés sans fiche disparaît aussi.\n- Les clubs en « Auto » placent désormais directement dans la composition les joueurs qui prennent leur retraite.\n- Les joueurs chargés ainsi jouent seulement en ligue, avec un visage par défaut et sans trophée. Ils n'apparaissent pas au classement.\n- Les joueurs dont le nom a été bloqué par le filtre ne sont plus masqués : ils apparaissent sous un nom par défaut.\n- Plus besoin de désactiver puis réactiver « Participer au classement » comme indiqué plus tôt. Désolés pour la confusion.",
+        "summary": "Dans votre effectif de ligue, touchez « Manuel » puis « Auto » une fois. Vos joueurs gardés rejoignent la ligue."
       },
       "de": {
-        "title": "Wenn gesicherte Spieler nicht in der Liga spielen können",
-        "body": "- Steht in deinem Liga-Kader „N gesicherte Spieler ohne Serverdaten können nicht spielen“, wurden die Daten dieser Spieler beim Karriereende nicht an den Server gesendet.\n- Hast du bei einem selbst benannten Spieler im Fenster „Diesen Namen in die Bestenliste?“ einmal „Nicht eintragen“ gewählt oder das Fenster geschlossen, wurde danach kein selbst benannter Spieler beim Karriereende an den Server gesendet. Das gilt auch für Spieler, die bei ausgeschaltetem „An der Bestenliste teilnehmen“ aufgehört haben.\n- Schalte „An der Bestenliste teilnehmen“ unten im Ranking aus und wieder ein, oder nur ein, falls es aus war. Erscheint das Fenster beim nächsten Karriereende, tippe auf „Eintragen“ – ab diesem Spieler geht es in der Liga.\n- Spieler, die schon im Archiv sind, haben nur eine Zusammenfassung und können nicht nachträglich gesendet werden. Entschuldige die Unannehmlichkeiten.\n- Das nächste Update entfernt dieses Fenster und sendet alle Spieler beim Karriereende an den Server.",
-        "summary": "Schalte „An der Bestenliste teilnehmen“ unten im Ranking aus und wieder ein. Spieler, die danach in Rente gehen, können in der Liga spielen."
+        "title": "Aufbewahrte Spieler können jetzt in der Liga spielen",
+        "body": "- Aufbewahrte Spieler ohne Servereintrag, die nicht in der Liga spielen konnten, sind jetzt spielberechtigt. Das gilt sofort, ohne App-Update.\n- Tippe in deinem Liga-Kader einmal auf „Manuell“ und dann wieder auf „Automatisch“. Deine aufbewahrten Spieler werden geladen und die beste Elf neu aufgestellt. Der Hinweis zu Spielern ohne Servereintrag verschwindet dann auch.\n- Clubs auf „Automatisch“ stellen neu zurückgetretene Spieler ab jetzt direkt in die Aufstellung.\n- So geladene Spieler spielen nur in der Liga, mit Standardgesicht und ohne Trophäen. Sie erscheinen nicht in der Bestenliste.\n- Spieler, deren Name vom Filter blockiert wurde, werden nicht mehr ausgeblendet, sondern mit einem Standardnamen angezeigt.\n- „An der Bestenliste teilnehmen“ aus- und wieder einzuschalten, wie zuvor beschrieben, ist nicht mehr nötig. Entschuldige die Verwirrung.",
+        "summary": "Tippe im Liga-Kader einmal auf „Manuell“ → „Automatisch“. Deine aufbewahrten Spieler kommen in die Liga."
       },
       "it": {
-        "title": "Se i giocatori salvati non possono giocare in lega",
-        "body": "- Se la rosa di lega mostra \"N giocatori salvati senza dati sul server non possono giocare\", i dati di quei giocatori non sono arrivati al server quando si sono ritirati.\n- Se hai mai scelto \"Non pubblicare\" o chiuso la finestra \"Pubblicare questo nome in classifica?\" per un giocatore a cui avevi dato tu il nome, nessun giocatore successivo con un nome scelto da te è stato inviato al server al ritiro. Vale anche per chi si è ritirato con \"Partecipa alla classifica\" disattivato.\n- Disattiva e riattiva \"Partecipa alla classifica\" in fondo alla schermata Ranking, oppure attivalo se era disattivato. Quando la finestra compare al prossimo ritiro, tocca \"Pubblica\": da quel giocatore in poi potranno giocare in lega.\n- I giocatori già nell'archivio conservano solo un riepilogo, quindi non si possono inviare al server in seguito. Ci scusiamo per il disagio.\n- Il prossimo aggiornamento elimina quella finestra e invia al server tutti i giocatori ritirati.",
-        "summary": "Disattiva e riattiva \"Partecipa alla classifica\" in fondo alla schermata Ranking. I giocatori che si ritirano dopo potranno giocare in lega."
+        "title": "I giocatori conservati ora possono giocare in campionato",
+        "body": "- I giocatori conservati senza dati sul server, che non potevano giocare in campionato, ora possono farlo. Vale subito, senza aggiornare l'app.\n- Nella tua rosa di campionato tocca 'Formazione manuale' e poi di nuovo 'Gestione auto'. Vengono caricati anche i giocatori conservati e si sceglie di nuovo il miglior undici. Sparisce anche l'avviso sui giocatori conservati senza dati sul server.\n- I club in 'Gestione auto' ora mettono subito in formazione i giocatori che si ritirano.\n- I giocatori caricati così giocano solo in campionato, con un volto predefinito e senza trofei. Non entrano in classifica.\n- I giocatori con un nome bloccato dal filtro non sono più nascosti: compaiono con un nome predefinito.\n- Non serve più disattivare e riattivare \"Partecipa alla classifica\" come indicato prima. Scusa per la confusione.",
+        "summary": "Nella rosa di campionato tocca 'Formazione manuale' → 'Gestione auto' una volta. I giocatori conservati entrano in campionato."
       },
       "tr": {
-        "title": "Kayıtlı oyuncuların ligde oynayamadığında",
-        "body": "- Lig kadronda \"N kayıtlı oyuncunun sunucuda kaydı yok ve oynayamaz\" yazıyorsa, bu oyuncuların kaydı emekli olurken sunucuya gitmemiştir.\n- Adını kendin yazdığın bir oyuncuda \"Bu isim sıralamaya eklensin mi?\" penceresinde bir kez bile \"Ekleme\" seçtiysen veya pencereyi kapattıysan, sonrasında adını kendin yazdığın oyuncular emekli olunca sunucuya gönderilmedi. \"Sıralamaya katıl\" kapalıyken emekli olan oyuncular için de durum aynı.\n- Liderler ekranının en altındaki \"Sıralamaya katıl\" ayarını kapatıp yeniden aç; kapalıysa sadece aç. Bir sonraki emeklilikte pencere çıkınca \"Ekle\"ye dokun, o oyuncudan itibaren ligde oynayabilirler.\n- Arşivdeki oyuncuların yalnızca özeti tutulduğu için sonradan sunucuya gönderilemezler. Yaşattığımız sorun için özür dileriz.\n- Bir sonraki güncelleme bu pencereyi kaldırıyor ve emekli olan tüm oyuncuları sunucuya gönderiyor.",
-        "summary": "Liderler ekranının en altındaki \"Sıralamaya katıl\" ayarını kapatıp yeniden açın. Bundan sonra emekli olan oyuncular ligde oynayabilir."
+        "title": "Saklanan oyuncular artık ligde oynayabilir",
+        "body": "- Sunucu kaydı olmadığı için ligde oynayamayan saklanan oyuncular artık oynayabilir. Uygulama güncellemesi gerekmeden hemen geçerli.\n- Lig kadronda bir kez 'Manuel'e, ardından yeniden 'Otomatik'e dokun. Saklanan oyuncuların da yüklenir ve en güçlü 11 yeniden seçilir. Sunucu kaydı olmayan saklanan oyuncular uyarısı da o zaman kaybolur.\n- 'Otomatik' moddaki kulüpler artık emekli olan oyuncuları doğrudan kadroya alır.\n- Bu şekilde yüklenen oyuncular yalnızca ligde oynar; varsayılan yüz ve sıfır kupayla görünür. Sıralamaya girmez.\n- Adı filtreye takılan oyuncular artık gizlenmez, varsayılan bir adla görünür.\n- Daha önce söylediğimiz gibi \"Sıralamaya katıl\" ayarını kapatıp açmana artık gerek yok. Karışıklık için özür dileriz.",
+        "summary": "Lig kadronda bir kez 'Manuel' → 'Otomatik'e dokun. Saklanan oyuncuların lige katılır."
       },
       "id": {
-        "title": "Jika pemain tersimpan tidak bisa main di liga",
-        "body": "- Jika skuad liga menampilkan \"N pemain tersimpan tanpa catatan server tidak dapat bermain\", catatan pemain itu tidak terkirim ke server saat mereka pensiun.\n- Jika kamu pernah memilih \"Jangan tambahkan\" atau menutup jendela \"Tambahkan nama ini ke papan peringkat?\" untuk pemain yang namanya kamu ketik sendiri, semua pemain berikutnya dengan nama ketikan sendiri tidak dikirim ke server saat pensiun. Begitu juga pemain yang pensiun saat \"Ikut peringkat\" mati.\n- Matikan lalu nyalakan lagi \"Ikut peringkat\" di bagian paling bawah layar Ranking, atau nyalakan saja jika tadinya mati. Saat jendela muncul di pensiun berikutnya, ketuk \"Tambahkan\" dan pemain itu bisa bermain di liga.\n- Pemain yang sudah ada di arsip hanya menyimpan ringkasan, jadi tidak bisa dikirim ke server belakangan. Maaf atas ketidaknyamanannya.\n- Pembaruan berikutnya menghapus jendela itu dan mengirim semua pemain yang pensiun ke server.",
-        "summary": "Matikan lalu nyalakan lagi \"Ikut peringkat\" di bagian paling bawah layar Ranking. Pemain yang pensiun setelah itu bisa bermain di liga."
+        "title": "Pemain simpanan kini bisa main di liga",
+        "body": "- Pemain simpanan yang tidak punya catatan di server dan tidak bisa main di liga kini bisa main. Langsung berlaku tanpa pembaruan aplikasi.\n- Di skuad liga, ketuk 'Manual' lalu 'Otomatis' sekali. Pemain simpananmu ikut dimuat dan 11 pemain terkuat disusun ulang. Pesan soal pemain simpanan tanpa catatan server juga akan hilang.\n- Klub dengan mode 'Otomatis' kini langsung memasukkan pemain yang baru pensiun ke susunan pemain.\n- Pemain yang dimuat dengan cara ini hanya main di liga, dengan wajah bawaan dan tanpa trofi. Mereka tidak masuk peringkat.\n- Pemain yang namanya tersaring filter tidak lagi disembunyikan, melainkan tampil dengan nama bawaan.\n- Kamu tidak perlu lagi mematikan lalu menyalakan \"Ikut peringkat\" seperti yang kami sampaikan sebelumnya. Maaf atas kebingungannya.",
+        "summary": "Di skuad liga, ketuk 'Manual' → 'Otomatis' sekali. Pemain simpananmu ikut masuk liga."
       },
       "ar": {
-        "title": "عندما لا يستطيع لاعبوك المحفوظون اللعب في الدوري",
-        "body": "- إذا ظهر في تشكيلة الدوري «N لاعبين محفوظين بلا سجل على الخادم ولا يمكنهم اللعب»، فسجل هؤلاء اللاعبين لم يصل إلى الخادم عند اعتزالهم.\n- إذا اخترت مرة «أبقه خاصا» أو أغلقت نافذة «تنشر هذا الاسم في لوحة الترتيب؟» للاعب كتبت اسمه بنفسك، فلم يُرسل بعدها أي لاعب كتبت اسمه بنفسك إلى الخادم عند اعتزاله. والأمر نفسه للاعبين الذين اعتزلوا و«المشاركة في الترتيب» متوقفة.\n- أوقف «المشاركة في الترتيب» أسفل شاشة الترتيب ثم شغّله من جديد، أو شغّله فقط إذا كان متوقفا. عندما تظهر النافذة عند الاعتزال التالي اضغط «إرسال»، وسيتمكن هذا اللاعب من اللعب في الدوري.\n- اللاعبون الموجودون في أرشيفك يحتفظون بملخص فقط، لذا لا يمكن إرسالهم إلى الخادم لاحقا. نعتذر عن الإزعاج.\n- التحديث القادم يلغي هذه النافذة ويرسل جميع اللاعبين المعتزلين إلى الخادم.",
-        "summary": "أوقف «المشاركة في الترتيب» أسفل شاشة الترتيب ثم شغّله من جديد. اللاعبون الذين يعتزلون بعد ذلك يمكنهم اللعب في الدوري."
+        "title": "أصبح بإمكان اللاعبين المحفوظين اللعب في الدوري",
+        "body": "- اللاعبون المحفوظون الذين لم يكن لهم سجل على الخادم ولم يستطيعوا اللعب في الدوري يمكنهم اللعب الآن. يسري ذلك فورا دون تحديث التطبيق.\n- في تشكيلة الدوري اضغط «يدوي» ثم «تلقائي» مرة واحدة. سيتم جلب لاعبيك المحفوظين واختيار أقوى 11 لاعبا من جديد. وتختفي حينها رسالة اللاعبين المحفوظين بلا سجل على الخادم.\n- الأندية على وضع «تلقائي» تضع الآن اللاعبين المعتزلين حديثا في التشكيلة مباشرة.\n- اللاعبون الذين يتم جلبهم بهذه الطريقة يلعبون في الدوري فقط، بوجه افتراضي ودون كؤوس، ولا يظهرون في الترتيب.\n- اللاعبون الذين حجب المرشح أسماءهم لم يعودوا مخفيين، بل يظهرون باسم افتراضي.\n- لم تعد بحاجة إلى إيقاف «المشاركة في الترتيب» ثم تشغيله كما ذكرنا سابقا. نعتذر عن الالتباس.",
+        "summary": "في تشكيلة الدوري اضغط «يدوي» ← «تلقائي» مرة واحدة. سينضم لاعبوك المحفوظون إلى الدوري."
       }
     }
   },
