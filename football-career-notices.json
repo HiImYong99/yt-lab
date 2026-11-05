@@ -1,5 +1,76 @@
 [
   {
+    "id": "2026-11-06-reroll-top-pack-600",
+    "date": "2026-11-06",
+    "title": "리롤권 최상위 팩이 600장으로 늘었어요",
+    "body": "- 리롤권 최상위 팩(추가 굴림 5,000회)이 리롤권 600장(추가 굴림 6,000회)으로 늘었어요. 가격은 그대로이고, 지금 구매해도 600장이 들어와요.\n- 다음 업데이트(2.6.7)부터 상점의 할인 표시가 10장 팩과 비교한 장당 할인율로 바뀌어요. 큰 팩일수록 할인율이 높게 보여요.\n- iPhone 결제창에는 업데이트가 나올 때까지 이전 이름(5,000회)이 보일 수 있어요.",
+    "important": true,
+    "category": "update",
+    "summary": "가격 그대로, 최상위 팩 500장 → 600장. 지금 구매부터 적용.",
+    "translations": {
+      "ko": {
+        "title": "리롤권 최상위 팩이 600장으로 늘었어요",
+        "body": "- 리롤권 최상위 팩(추가 굴림 5,000회)이 리롤권 600장(추가 굴림 6,000회)으로 늘었어요. 가격은 그대로이고, 지금 구매해도 600장이 들어와요.\n- 다음 업데이트(2.6.7)부터 상점의 할인 표시가 10장 팩과 비교한 장당 할인율로 바뀌어요. 큰 팩일수록 할인율이 높게 보여요.\n- iPhone 결제창에는 업데이트가 나올 때까지 이전 이름(5,000회)이 보일 수 있어요.",
+        "summary": "가격 그대로, 최상위 팩 500장 → 600장. 지금 구매부터 적용."
+      },
+      "en": {
+        "title": "The top reroll pack now has 600 tickets",
+        "body": "- The top reroll pack (5,000 extra rolls) now gives 600 tickets (6,000 extra rolls). Same price, and purchases made now already get 600.\n- From the next update (2.6.7) the shop shows each pack's discount per ticket against the 10-ticket pack, so bigger packs show bigger discounts.\n- Until the update is out, the iPhone payment sheet may still show the old name (5,000 rolls).",
+        "summary": "Same price, top pack 500 → 600 tickets, from purchases made now."
+      },
+      "ja": {
+        "title": "リロール券の最上位パックが600枚に",
+        "body": "- リロール券の最上位パック（追加ロール5,000回）がリロール券600枚（追加ロール6,000回）になりました。価格はそのままで、今の購入から600枚が届きます。\n- 次のアップデート（2.6.7）から、ショップの割引表示は10枚パックと比べた1枚あたりの割引率になります。大きいパックほど割引率が高く表示されます。\n- アップデートまでは、iPhoneの決済画面に以前の名前（5,000回）が表示される場合があります。",
+        "summary": "価格そのまま、最上位パック500枚→600枚。今の購入から適用。"
+      },
+      "zh": {
+        "title": "重掷券最高档礼包增至600张",
+        "body": "- 重掷券最高档礼包（额外重掷5,000次）增至600张（额外重掷6,000次）。价格不变，现在购买即可获得600张。\n- 从下次更新（2.6.7）起，商店的折扣显示改为与10张礼包相比的每张折扣，礼包越大折扣越高。\n- 更新上线前，iPhone 付款界面可能仍显示旧名称（5,000次）。",
+        "summary": "价格不变，最高档礼包500张→600张，现在购买即适用。"
+      },
+      "es": {
+        "title": "El mejor pack de rerolls ahora trae 600",
+        "body": "- El pack más grande de rerolls (5000 tiradas extra) ahora da 600 tiques (6000 tiradas extra). Mismo precio, y las compras de ahora ya reciben 600.\n- Desde la próxima actualización (2.6.7) la tienda mostrará el descuento por tique frente al pack de 10, así que los packs grandes muestran más descuento.\n- Hasta la actualización, el pago en iPhone puede seguir mostrando el nombre anterior (5000 tiradas).",
+        "summary": "Mismo precio, pack mayor de 500 a 600 tiques desde ahora."
+      },
+      "pt": {
+        "title": "O maior pacote de rerolls agora tem 600",
+        "body": "- O maior pacote de rerolls (5000 rolagens extras) agora dá 600 bilhetes (6000 rolagens extras). Mesmo preço, e as compras de agora já recebem 600.\n- A partir da próxima atualização (2.6.7) a loja mostra o desconto por bilhete em relação ao pacote de 10, então pacotes maiores mostram mais desconto.\n- Até a atualização, o pagamento no iPhone pode mostrar o nome antigo (5000 rolagens).",
+        "summary": "Mesmo preço, maior pacote de 500 para 600 bilhetes a partir de agora."
+      },
+      "fr": {
+        "title": "Le plus grand pack de relances passe à 600",
+        "body": "- Le plus grand pack de relances (5000 tirages supplémentaires) donne désormais 600 tickets (6000 tirages). Même prix, et les achats faits maintenant reçoivent déjà 600.\n- Dès la prochaine mise à jour (2.6.7), la boutique affiche la réduction par ticket par rapport au pack de 10 : plus le pack est grand, plus la réduction est forte.\n- D’ici la mise à jour, l’écran de paiement iPhone peut encore afficher l’ancien nom (5000 tirages).",
+        "summary": "Même prix, plus grand pack de 500 à 600 tickets dès maintenant."
+      },
+      "de": {
+        "title": "Das größte Reroll-Paket hat jetzt 600",
+        "body": "- Das größte Reroll-Paket (5000 zusätzliche Würfe) gibt jetzt 600 Tickets (6000 Würfe). Gleicher Preis, Käufe ab jetzt erhalten bereits 600.\n- Ab dem nächsten Update (2.6.7) zeigt der Shop den Rabatt pro Ticket gegenüber dem 10er-Paket, größere Pakete zeigen also mehr Rabatt.\n- Bis zum Update kann der iPhone-Zahlungsdialog noch den alten Namen (5000 Würfe) zeigen.",
+        "summary": "Gleicher Preis, größtes Paket von 500 auf 600 Tickets, ab sofort."
+      },
+      "it": {
+        "title": "Il pacchetto rilanci più grande ora ha 600",
+        "body": "- Il pacchetto rilanci più grande (5000 rilanci extra) ora dà 600 biglietti (6000 rilanci extra). Stesso prezzo, e gli acquisti di adesso ricevono già 600.\n- Dal prossimo aggiornamento (2.6.7) il negozio mostra lo sconto per biglietto rispetto al pacchetto da 10, quindi i pacchetti più grandi mostrano più sconto.\n- Fino all’aggiornamento, il pagamento su iPhone può mostrare il vecchio nome (5000 rilanci).",
+        "summary": "Stesso prezzo, pacchetto più grande da 500 a 600 biglietti da ora."
+      },
+      "tr": {
+        "title": "En büyük yeniden atış paketi artık 600",
+        "body": "- En büyük yeniden atış paketi (5000 ek atış) artık 600 bilet (6000 ek atış) veriyor. Fiyat aynı, şimdi yapılan alımlar zaten 600 alıyor.\n- Sonraki güncellemeden (2.6.7) itibaren mağaza, 10'luk pakete göre bilet başına indirimi gösterir; büyük paketlerde indirim daha yüksek görünür.\n- Güncelleme gelene kadar iPhone ödeme ekranında eski ad (5000 atış) görünebilir.",
+        "summary": "Fiyat aynı, en büyük paket 500 → 600 bilet, şimdiden geçerli."
+      },
+      "id": {
+        "title": "Paket undian ulang terbesar kini 600 tiket",
+        "body": "- Paket undian ulang terbesar (5000 undian ekstra) kini memberi 600 tiket (6000 undian ekstra). Harga sama, pembelian sekarang sudah mendapat 600.\n- Mulai pembaruan berikutnya (2.6.7), toko menampilkan diskon per tiket dibanding paket 10, jadi paket besar menampilkan diskon lebih tinggi.\n- Sampai pembaruan tiba, layar pembayaran iPhone mungkin masih menampilkan nama lama (5000 undian).",
+        "summary": "Harga sama, paket terbesar 500 → 600 tiket mulai sekarang."
+      },
+      "ar": {
+        "title": "أكبر حزمة لإعادة الرمي أصبحت 600",
+        "body": "- أكبر حزمة لإعادة الرمي (5000 رمية إضافية) تمنح الآن 600 تذكرة (6000 رمية إضافية). السعر نفسه، والمشتريات من الآن تحصل على 600.\n- بدءًا من التحديث القادم (2.6.7) يعرض المتجر الخصم لكل تذكرة مقارنةً بحزمة الـ10، لذا تظهر الحزم الأكبر بخصم أعلى.\n- حتى صدور التحديث قد تعرض شاشة الدفع على iPhone الاسم القديم (5000 رمية).",
+        "summary": "السعر نفسه، أكبر حزمة من 500 إلى 600 تذكرة من الآن."
+      }
+    }
+  },
+  {
     "id": "2026-11-04-league-kept-players-fixed",
     "date": "2026-11-04",
     "title": "리그 보관함 선수 문제를 고쳤어요",
