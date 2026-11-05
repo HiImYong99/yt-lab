@@ -4,6 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
+<script>
+  // Safari's app banner: its Open button hands this very link to the game,
+  // which claims it. Written while the head parses, with the link as opened.
+  document.write('<meta name="apple-itunes-app" content="app-id=6807107830, app-argument=' +
+    location.href.replace(/"/g, '') + '">');
+</script>
 <title>캐릭터 받기 · Football Career Sim</title>
 <style>
 :root { color-scheme: light dark; --bg: #f3f4f8; --fg: #1d2030; --dim: #5f6478; --card: #fff; --line: #dde0ea; --accent: #4a55d6; }
@@ -13,27 +19,72 @@ main { max-width: 460px; margin: 0 auto; display: flex; flex-direction: column; 
 img { width: 120px; align-self: center; image-rendering: pixelated; }
 h1 { font-size: 21px; margin: 0; text-align: center; }
 .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px; }
-ol { margin: 0; padding-left: 20px; }
+ol { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
 p { margin: 0; color: var(--dim); font-size: 14px; }
 .stores { display: flex; gap: 10px; flex-wrap: wrap; }
-.stores a { flex: 1; text-align: center; padding: 10px; border-radius: 10px; background: var(--accent); color: #fff; text-decoration: none; font-weight: 600; min-width: 130px; }
+.stores a, .open { flex: 1; text-align: center; padding: 10px; border-radius: 10px; background: var(--accent); color: #fff; text-decoration: none; font-weight: 600; min-width: 130px; }
+.open { display: block; padding: 14px; font-size: 17px; }
+[hidden] { display: none !important; }
 </style>
 </head>
 <body>
 <main>
-  <img src="/discord/icons/community_captain.png" alt="">
-  <h1>게임이 열리지 않았나요?<br>Didn't the game open?</h1>
-  <div class="card">
-    <ol>
-      <li>축구선수 키우기를 2.6.1 이상으로 업데이트해 주세요. · Update Football Career Sim to 2.6.1 or later.</li>
-      <li>Discord로 돌아가 '게임에서 받기'를 다시 눌러 주세요. · Go back to Discord and tap "Open in game" again.</li>
-    </ol>
-  </div>
-  <div class="stores">
-    <a href="https://apps.apple.com/app/id6807107830">App Store</a>
-    <a href="https://play.google.com/store/apps/details?id=site.ytlab.soccer_career">Google Play</a>
-  </div>
-  <p>PC에서는 Discord의 '랭킹 ID로 받기'를 쓰세요. 랭킹 ID는 게임 설정에서 복사할 수 있어요. · On a computer, use "Claim with Ranking ID" in Discord; copy the ID from Settings in the game.</p>
+  <!-- Discord: a signed token per member. -->
+  <section id="discord" style="display:contents">
+    <img src="/discord/icons/community_captain.png" alt="">
+    <h1>게임이 열리지 않았나요?<br>Didn't the game open?</h1>
+    <div class="card">
+      <ol>
+        <li>축구선수 키우기를 2.6.1 이상으로 업데이트해 주세요. · Update Football Career Sim to 2.6.1 or later.</li>
+        <li>Discord로 돌아가 '게임에서 받기'를 다시 눌러 주세요. · Go back to Discord and tap "Open in game" again.</li>
+      </ol>
+    </div>
+    <div class="stores">
+      <a href="https://apps.apple.com/app/id6807107830">App Store</a>
+      <a href="https://play.google.com/store/apps/details?id=site.ytlab.soccer_career">Google Play</a>
+    </div>
+    <p>PC에서는 Discord의 '랭킹 ID로 받기'를 쓰세요. 랭킹 ID는 게임 설정에서 복사할 수 있어요. · On a computer, use "Claim with Ranking ID" in Discord; copy the ID from Settings in the game.</p>
+  </section>
+
+  <!-- Link campaigns (?t=ig.…): one shared link, once per game account. -->
+  <section id="campaign" style="display:contents" hidden>
+    <img src="social_star.png" alt="">
+    <h1>셀카 스타 받기<br>Claim the Selfie Star</h1>
+    <a class="open" id="android-open" href="#" hidden>게임에서 받기 · Open in game</a>
+    <div class="card">
+      <ol>
+        <li>축구선수 키우기를 2.6.7 이상으로 업데이트해 주세요. · Update Football Career Sim to 2.6.7 or later.</li>
+        <li id="ios-step" hidden>iPhone: 이 화면을 Safari로 연 뒤(인스타그램 오른쪽 위 ⋯ → 외부 브라우저로 열기), 화면 맨 위 배너의 '열기'를 누르세요. · Open this page in Safari (Instagram ⋯ → Open in external browser), then tap "Open" on the banner at the top.</li>
+        <li id="android-step" hidden>Android: 위의 '게임에서 받기'를 누르세요. · Tap "Open in game" above.</li>
+        <li>게임이 열리면 선물함으로 캐릭터가 도착해요. 게임 계정마다 한 번 받을 수 있어요. · The character arrives in your gift box, once per game account.</li>
+      </ol>
+    </div>
+    <div class="stores">
+      <a href="https://apps.apple.com/app/id6807107830">App Store</a>
+      <a href="https://play.google.com/store/apps/details?id=site.ytlab.soccer_career">Google Play</a>
+    </div>
+    <p>이 이벤트는 Instagram이 후원·보증·관리하지 않으며 Instagram과 관련이 없습니다. · This event is not sponsored, endorsed or administered by, or associated with, Instagram.</p>
+  </section>
 </main>
+<script>
+  const token = new URLSearchParams(location.search).get('t') || '';
+  if (/^ig\.[A-Za-z0-9_-]+$/.test(token)) {
+    document.getElementById('discord').hidden = true;
+    document.getElementById('campaign').hidden = false;
+    const ua = navigator.userAgent;
+    if (/Android/i.test(ua)) {
+      // App Links from a webview: an intent link opens the game when it is
+      // installed and falls back to the store page when it is not.
+      const store = 'https://play.google.com/store/apps/details?id=site.ytlab.soccer_career';
+      const open = document.getElementById('android-open');
+      open.href = 'intent://ytlab.site/claim/football/?t=' + encodeURIComponent(token) +
+        '#Intent;scheme=https;package=site.ytlab.soccer_career;S.browser_fallback_url=' + encodeURIComponent(store) + ';end';
+      open.hidden = false;
+      document.getElementById('android-step').hidden = false;
+    } else {
+      document.getElementById('ios-step').hidden = false;
+    }
+  }
+</script>
 </body>
 </html>
