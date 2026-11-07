@@ -11,6 +11,7 @@
 <li><a href="/soccer-career/en/guide/" lang="en" dir="auto">English</a></li>
 <li><a href="/soccer-career/ja/guide/" lang="ja" dir="auto">日本語</a></li>
 <li><a href="/soccer-career/zh/guide/" lang="zh-Hans" dir="auto">简体中文</a></li>
+<li><a href="/soccer-career/zh-hant/guide/" lang="zh-Hant" dir="auto">繁體中文</a></li>
 <li><a href="/soccer-career/es/guide/" lang="es" dir="auto">Español</a></li>
 <li><a href="/soccer-career/pt/guide/" lang="pt-BR" dir="auto">Português</a></li>
 <li><a href="/soccer-career/fr/guide/" lang="fr" dir="auto">Français</a></li>
@@ -21,13 +22,15 @@
 <li><a href="/soccer-career/ar/guide/" lang="ar" dir="auto">العربية</a></li></ul>
 <script>
 (function () {
-  var available = ["ko", "en", "ja", "zh", "es", "pt", "fr", "de", "it", "id", "tr", "ar"];
+  var available = ["ko", "en", "ja", "zh", "zh-hant", "es", "pt", "fr", "de", "it", "id", "tr", "ar"];
   if (!available.length) return;
   var language;
   try { language = localStorage.getItem('sc-lang'); } catch (e) {}
   if (available.indexOf(language) < 0) {
     language = (navigator.languages || [navigator.language || '']).map(function (locale) {
-      return locale.toLowerCase().split('-')[0];
+      locale = locale.toLowerCase();
+      if (/^zh-(tw|hk|mo|hant)(-|$)/.test(locale)) return 'zh-hant';
+      return locale.split('-')[0];
     }).find(function (code) { return available.indexOf(code) >= 0; });
   }
   if (!language) language = available.indexOf('en') >= 0 ? 'en' : available[0];

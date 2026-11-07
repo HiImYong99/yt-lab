@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build plain HTML using only the standard library. Run from any directory."""
 from copy import deepcopy
-from html import escape
+from html import escape, unescape
 import json
 from pathlib import Path
 import re
@@ -19,6 +19,7 @@ LANGUAGES = {
     'en': ('en', 'en', 'en_US', 'English'),
     'ja': ('ja', 'ja', 'ja_JP', '日本語'),
     'zh': ('zh-Hans', 'zh-Hans', 'zh_CN', '简体中文'),
+    'zh-hant': ('zh-Hant', 'zh-Hant', 'zh_TW', '繁體中文'),
     'es': ('es', 'es', 'es_ES', 'Español'),
     'pt': ('pt-BR', 'pt', 'pt_BR', 'Português'),
     'fr': ('fr', 'fr', 'fr_FR', 'Français'),
@@ -45,6 +46,9 @@ def page_path(code, guide=False):
 
 def alternates(codes, guide=False):
     links = {LANGUAGES[c][1]: ORIGIN + page_path(c, guide) for c in codes}
+    if 'zh-hant' in codes:
+        for locale in ('zh-TW', 'zh-HK'):
+            links[locale] = ORIGIN + page_path('zh-hant', guide)
     # An absent English translation must never leave a dangling x-default.
     if 'en' in codes:
         links['x-default'] = ORIGIN + page_path('en', guide)
@@ -56,8 +60,8 @@ def script_json(value):
 
 
 def store_links(code, guide=False):
-    app = 'https://apps.apple.com/' + ('kr/' if code == 'ko' else '') + 'app/id6807107830'
-    hl = {'zh': 'zh-CN', 'pt': 'pt-BR'}.get(code, code)
+    app = 'https://apps.apple.com/' + ({'ko': 'kr/', 'zh-hant': 'tw/'}.get(code, '')) + 'app/id6807107830'
+    hl = {'zh': 'zh-CN', 'zh-hant': 'zh-TW', 'pt': 'pt-BR'}.get(code, code)
     campaign = 'guide' if guide else 'soccer-career'
     play = ('https://play.google.com/store/apps/details?id=site.ytlab.soccer_career'
             f'&hl={hl}&referrer=utm_source%3Dytlab.site%26utm_medium%3Dweb%26utm_campaign%3D{campaign}-{code}')
@@ -122,9 +126,45 @@ def localize_paths(value, code):
                      'href="/football-career-privacy/' + ('' if code == 'ko' else 'en/') + '"'))
 
 
+def extra_intro_faqs(strings):
+    return [q for node in strings['schema.page']['@graph'] if node.get('@type') == 'FAQPage'
+            for q in node['mainEntity']]
+
+
+def plain(value):
+    return unescape(re.sub(r'<[^>]*>', '', value))
+
+
+def screenshot_code(code):
+    # hant.py --screenshots refreshes the optional Traditional set from Apple.
+    return 'zh' if code == 'zh-hant' and not (SITE / 'img/shots/zh-hant/04home.webp').is_file() else code
+
+
 def json_ld(strings, code, guide, image):
     schema = deepcopy(strings['schema.guide' if guide else 'schema.page'])
     app, play = store_links(code, guide)
+    if not guide:
+        names = ['Football Career Sim: Be a Pro', 'Football Career Sim', '축구선수 키우기',
+                 '绿茵人生', '绿茵人生：足球员养成模拟', '綠茵人生', '綠茵人生：足球員養成模擬']
+        for other in available_languages():
+            localized = json.loads((BUILD / 'i18n' / f'{other}.json').read_text())
+            for node in localized['schema.page']['@graph']:
+                if 'MobileApplication' in node.get('@type', []):
+                    names.append(node['name'])
+        for node in schema['@graph']:
+            if 'MobileApplication' in node.get('@type', []):
+                node['alternateName'] = list(dict.fromkeys(node.get('alternateName', []) + names))
+                node['alternateName'] = [name for name in node['alternateName'] if name != node['name']]
+                node['installUrl'] = [app, play]
+                node['sameAs'] = [app, play] + [url for url in node.get('sameAs', [])
+                                              if not url.startswith(('https://apps.apple.com/', 'https://play.google.com/'))]
+                node['screenshot'] = [url.replace('/shots/zh/', f'/shots/{screenshot_code(code)}/')
+                                      for url in node.get('screenshot', [])]
+        faqs = [{'@type': 'Question', 'name': plain(strings[f'page.dt.{n:03}']),
+                 'acceptedAnswer': {'@type': 'Answer', 'text': plain(localize_paths(strings[f'page.dd.{n+7:03}'], code))}}
+                for n in range(62, 69)] + extra_intro_faqs(strings)
+        schema['@graph'] = [node for node in schema['@graph'] if node.get('@type') != 'FAQPage']
+        schema['@graph'].append({'@type': 'FAQPage', 'mainEntity': faqs})
     def visit(value):
         if isinstance(value, dict):
             result = {key: visit(item) for key, item in value.items()}
@@ -167,7 +207,7 @@ def format_number(value, code):
 def format_date(value, code):
     d = date.fromisoformat(value)
     if code == 'ko': return f'{d.year}년 {d.month}월 {d.day}일'
-    if code in ('ja', 'zh'): return f'{d.year}年{d.month}月{d.day}日'
+    if code in ('ja', 'zh', 'zh-hant'): return f'{d.year}年{d.month}月{d.day}日'
     month = MONTHS[code].split()[d.month - 1]
     if code == 'en': return f'{month} {d.day}, {d.year}'
     if code in ('es', 'pt'): return f'{d.day} de {month} de {d.year}'
@@ -253,7 +293,7 @@ def render_page(code, codes, strings, guide=False):
     values = {k: localize_paths(v, code) for k, v in strings.items() if isinstance(v, str)}
     values.update(lang=LANGUAGES[code][0], dir='rtl' if code == 'ar' else 'ltr',
                   canonical=ORIGIN + page_path(code, guide), assets=assets,
-                  shots=f'{assets}img/shots/{code}/',
+                  shots=f'{assets}img/shots/{screenshot_code(code)}/',
                   intro_path=page_path(code), guide_path=page_path(code, True),
                   privacy_path='/football-career-privacy/' + ('' if code == 'ko' else 'en/'),
                   og_locale=LANGUAGES[code][2], og_image=image,
@@ -273,7 +313,8 @@ def render_page(code, codes, strings, guide=False):
         player_text = strings['demo.player']
         for key in ('age', 'position', 'ovr'):
             player_text = player_text.replace('{' + key + '}', escape(str(player[key])))
-        values.update(cards_url=f'{assets}data/cards-{code}.json',
+        values.update(intro_extra_faq=''.join('<dt>' + escape(q['name']) + '</dt><dd>' + escape(q['acceptedAnswer']['text']) + '</dd>' for q in extra_intro_faqs(strings)),
+                      cards_url=f'{assets}data/cards-{code}.json',
                       initial_hand=initial_hand(data, strings, assets),
                       demo_choose=escape(data['ui']['gc.choose']), demo_one=escape(data['ui']['gc.one']),
                       demo_select=escape(data['ui']['gc.select']),
@@ -319,7 +360,9 @@ def router(codes, guide=False):
   try { language = localStorage.getItem('sc-lang'); } catch (e) {}
   if (available.indexOf(language) < 0) {
     language = (navigator.languages || [navigator.language || '']).map(function (locale) {
-      return locale.toLowerCase().split('-')[0];
+      locale = locale.toLowerCase();
+      if (/^zh-(tw|hk|mo|hant)(-|$)/.test(locale)) return 'zh-hant';
+      return locale.split('-')[0];
     }).find(function (code) { return available.indexOf(code) >= 0; });
   }
   if (!language) language = available.indexOf('en') >= 0 ? 'en' : available[0];
@@ -372,7 +415,7 @@ def main():
     for path, content in outputs.items():
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(content, encoding='utf-8')
-    print(f'Built {len(codes) * 6} language pages ({", ".join(codes) or "none"}), 2 routers and sitemap.xml')
+    print(f'Built {len(codes) * (2 + len(TOPICS))} language pages ({", ".join(codes) or "none"}), 2 routers and sitemap.xml')
 
 
 if __name__ == '__main__':

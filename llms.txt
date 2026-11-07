@@ -1,0 +1,46 @@
+# YT Lab
+
+> YT Lab develops and operates mobile games, including Football Career Sim.
+
+## Football Career Sim
+
+English: Football Career Sim: Be a Pro / Football Career Sim.
+한국어: 축구선수 키우기.
+简体中文: 绿茵人生：足球员养成模拟 / 绿茵人生.
+繁體中文: 綠茵人生：足球員養成模擬 / 綠茵人生.
+
+Develop a youth football player from age seventeen through retirement.
+Choose Growth Cards to shape the player's development and career.
+Progress through matches, transfers, contract renewals and national-team opportunities.
+Career simulation works offline; rankings, purchases, wallet and device transfers require a network connection.
+
+Platforms: iPhone and iPad (iOS 15 or later), Android 7.0 or later. Free to download, with optional in-app purchases.
+
+- [App Store](https://apps.apple.com/app/id6807107830): iOS download.
+- [Google Play](https://play.google.com/store/apps/details?id=site.ytlab.soccer_career): Android download.
+- [한국어 landing](https://ytlab.site/soccer-career/ko/): Game introduction.
+- [한국어 guide](https://ytlab.site/soccer-career/ko/guide/): Growth, matches, transfers and awards.
+- [English landing](https://ytlab.site/soccer-career/en/): Game introduction.
+- [English guide](https://ytlab.site/soccer-career/en/guide/): Growth, matches, transfers and awards.
+- [日本語 landing](https://ytlab.site/soccer-career/ja/): Game introduction.
+- [日本語 guide](https://ytlab.site/soccer-career/ja/guide/): Growth, matches, transfers and awards.
+- [简体中文 landing](https://ytlab.site/soccer-career/zh/): Game introduction.
+- [简体中文 guide](https://ytlab.site/soccer-career/zh/guide/): Growth, matches, transfers and awards.
+- [繁體中文 landing](https://ytlab.site/soccer-career/zh-hant/): Game introduction.
+- [繁體中文 guide](https://ytlab.site/soccer-career/zh-hant/guide/): Growth, matches, transfers and awards.
+- [Español landing](https://ytlab.site/soccer-career/es/): Game introduction.
+- [Español guide](https://ytlab.site/soccer-career/es/guide/): Growth, matches, transfers and awards.
+- [Português landing](https://ytlab.site/soccer-career/pt/): Game introduction.
+- [Português guide](https://ytlab.site/soccer-career/pt/guide/): Growth, matches, transfers and awards.
+- [Français landing](https://ytlab.site/soccer-career/fr/): Game introduction.
+- [Français guide](https://ytlab.site/soccer-career/fr/guide/): Growth, matches, transfers and awards.
+- [Deutsch landing](https://ytlab.site/soccer-career/de/): Game introduction.
+- [Deutsch guide](https://ytlab.site/soccer-career/de/guide/): Growth, matches, transfers and awards.
+- [Italiano landing](https://ytlab.site/soccer-career/it/): Game introduction.
+- [Italiano guide](https://ytlab.site/soccer-career/it/guide/): Growth, matches, transfers and awards.
+- [Indonesia landing](https://ytlab.site/soccer-career/id/): Game introduction.
+- [Indonesia guide](https://ytlab.site/soccer-career/id/guide/): Growth, matches, transfers and awards.
+- [Türkçe landing](https://ytlab.site/soccer-career/tr/): Game introduction.
+- [Türkçe guide](https://ytlab.site/soccer-career/tr/guide/): Growth, matches, transfers and awards.
+- [العربية landing](https://ytlab.site/soccer-career/ar/): Game introduction.
+- [العربية guide](https://ytlab.site/soccer-career/ar/guide/): Growth, matches, transfers and awards.

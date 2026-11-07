@@ -1,0 +1,1039 @@
+{
+  "player": {
+    "age": 27,
+    "position": "前鋒",
+    "ovr": 96,
+    "stats": [
+      {
+        "label": "射術",
+        "bar": 94,
+        "tier": "core"
+      },
+      {
+        "label": "速度",
+        "bar": 94,
+        "tier": "core"
+      },
+      {
+        "label": "冷靜",
+        "bar": 94,
+        "tier": "core"
+      },
+      {
+        "label": "爭頂",
+        "bar": 99,
+        "tier": "support"
+      },
+      {
+        "label": "盤帶",
+        "bar": 99,
+        "tier": "support"
+      },
+      {
+        "label": "跑動",
+        "bar": 99,
+        "tier": "support"
+      },
+      {
+        "label": "傳球",
+        "bar": 97,
+        "tier": "other"
+      },
+      {
+        "label": "防守",
+        "bar": 97,
+        "tier": "other"
+      },
+      {
+        "label": "閱讀比賽",
+        "bar": 97,
+        "tier": "other"
+      },
+      {
+        "label": "領導力",
+        "bar": 97,
+        "tier": "other"
+      }
+    ]
+  },
+  "ui": {
+    "gc.choose": "選擇你的下一步成長",
+    "gc.one": "三選一",
+    "gc.next": "2個賽季後再選 · 每張卡可單獨重抽一次，稀有度不變。",
+    "gc.reroll": "重抽這張卡",
+    "gc.rerolled": "已重抽",
+    "gc.reward.got": "獲得{0}卡",
+    "gc.reward.ceil": "上限 +{0}",
+    "gc.select": "請選擇一張卡",
+    "gc.common": "普通",
+    "gc.rare": "稀有",
+    "gc.epic": "史詩",
+    "gc.unique": "傳說",
+    "gc.legend": "傳奇"
+  },
+  "firstHand": [
+    "L08",
+    "L06",
+    "L07"
+  ],
+  "firstRarity": "legend",
+  "pools": {
+    "common": [
+      "C01",
+      "C03",
+      "C04",
+      "C07",
+      "C08",
+      "C09",
+      "C10",
+      "C14",
+      "C22",
+      "C23",
+      "C26"
+    ],
+    "rare": [
+      "R01",
+      "R06",
+      "R08",
+      "R11",
+      "R12",
+      "R14",
+      "R18",
+      "R20",
+      "R21",
+      "R29",
+      "R30",
+      "R33",
+      "R34"
+    ],
+    "epic": [
+      "E07",
+      "E08",
+      "E10",
+      "E12",
+      "E14",
+      "E21",
+      "E22",
+      "E23",
+      "E28",
+      "E31",
+      "E39",
+      "E44"
+    ],
+    "unique": [
+      "U10",
+      "U11",
+      "U12",
+      "U18",
+      "U20",
+      "U26",
+      "U27",
+      "U30",
+      "U31"
+    ],
+    "legend": [
+      "L06",
+      "L07",
+      "L08",
+      "L09",
+      "L10",
+      "L11",
+      "L01"
+    ]
+  },
+  "cards": {
+    "C01": {
+      "rarity": "common",
+      "family": "direct",
+      "name": "打好基礎",
+      "summary": "核心能力 +1",
+      "seasons": 0,
+      "lines": [
+        {
+          "label": "射術",
+          "from": 94,
+          "to": 95,
+          "wall0": 99,
+          "wall1": 99,
+          "scale": 99
+        }
+      ],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "C03": {
+      "rarity": "common",
+      "family": "recovery",
+      "name": "活動筋骨",
+      "summary": "體能 +12",
+      "seasons": 0,
+      "lines": [
+        {
+          "label": "狀態",
+          "from": 85,
+          "to": 97,
+          "scale": 100
+        }
+      ],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "C04": {
+      "rarity": "common",
+      "family": "trust",
+      "name": "初步信任",
+      "summary": "主教練信任 +4",
+      "seasons": 0,
+      "lines": [
+        {
+          "label": "信任",
+          "from": 49,
+          "to": 53,
+          "scale": 99
+        }
+      ],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "C07": {
+      "rarity": "common",
+      "family": "odds",
+      "name": "沉著",
+      "summary": "下個關鍵時刻最佳結果 +4pp",
+      "seasons": 0,
+      "lines": [],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "C08": {
+      "rarity": "common",
+      "family": "summer",
+      "name": "夏日休整",
+      "summary": "下個夏天體能 +18",
+      "seasons": 2,
+      "lines": [],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "C09": {
+      "rarity": "common",
+      "family": "monthlyRecovery",
+      "name": "比賽節奏",
+      "summary": "有出場的月份：體能 +3",
+      "seasons": 1,
+      "lines": [],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "C10": {
+      "rarity": "common",
+      "family": "trade",
+      "name": "重新分配",
+      "summary": "核心 +2 · 上限 +1 · 輔助 −1",
+      "seasons": 0,
+      "lines": [
+        {
+          "label": "射術",
+          "from": 94,
+          "to": 96,
+          "wall0": 99,
+          "wall1": 99,
+          "scale": 99
+        },
+        {
+          "label": "跑動",
+          "from": 99,
+          "to": 98,
+          "wall0": 99,
+          "wall1": 99,
+          "scale": 99
+        }
+      ],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "C14": {
+      "rarity": "common",
+      "family": "coin",
+      "name": "拋硬幣",
+      "summary": "50%: 核心 +3 / 50%: 核心 −1",
+      "seasons": 0,
+      "lines": [
+        {
+          "label": "射術",
+          "from": 94,
+          "to": 93,
+          "wall0": 99,
+          "wall1": 99,
+          "scale": 99
+        }
+      ],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "C22": {
+      "rarity": "common",
+      "family": "manage",
+      "name": "掌控比賽",
+      "summary": "冷靜 +2",
+      "seasons": 0,
+      "lines": [
+        {
+          "label": "冷靜",
+          "from": 94,
+          "to": 96,
+          "wall0": 99,
+          "wall1": 99,
+          "scale": 99
+        }
+      ],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "C23": {
+      "rarity": "common",
+      "family": "armband",
+      "name": "隊長袖標",
+      "summary": "信任 +6 · 領導力 +2",
+      "seasons": 0,
+      "lines": [
+        {
+          "label": "領導力",
+          "from": 97,
+          "to": 99,
+          "wall0": 99,
+          "wall1": 99,
+          "scale": 99
+        },
+        {
+          "label": "信任",
+          "from": 49,
+          "to": 55,
+          "scale": 99
+        }
+      ],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "C26": {
+      "rarity": "common",
+      "family": "scent",
+      "name": "進球嗅覺",
+      "summary": "射術 +1·上限 +1",
+      "seasons": 0,
+      "lines": [
+        {
+          "label": "射術",
+          "from": 94,
+          "to": 95,
+          "wall0": 99,
+          "wall1": 99,
+          "scale": 99
+        }
+      ],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "R01": {
+      "rarity": "rare",
+      "family": "direct",
+      "name": "專注提升",
+      "summary": "核心能力 +2",
+      "seasons": 0,
+      "lines": [
+        {
+          "label": "射術",
+          "from": 94,
+          "to": 96,
+          "wall0": 99,
+          "wall1": 99,
+          "scale": 99
+        }
+      ],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "R06": {
+      "rarity": "rare",
+      "family": "fatigue",
+      "name": "結實的身體",
+      "summary": "每月疲勞最多 −1",
+      "seasons": 2,
+      "lines": [],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "R08": {
+      "rarity": "rare",
+      "family": "trustGuard",
+      "name": "穩固信任",
+      "summary": "賽季末信任下降 −50%",
+      "seasons": 2,
+      "lines": [],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "R11": {
+      "rarity": "rare",
+      "family": "consistent",
+      "name": "穩步前進",
+      "summary": "2個賽季各出場12次：+4",
+      "seasons": 2,
+      "lines": [],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "R12": {
+      "rarity": "rare",
+      "family": "sceneReward",
+      "name": "學得快",
+      "summary": "首次最佳時刻結果：能力 +2",
+      "seasons": 2,
+      "lines": [],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "R14": {
+      "rarity": "rare",
+      "family": "lossGuard",
+      "name": "後援",
+      "summary": "防止共2點能力損失",
+      "seasons": 2,
+      "lines": [],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "R18": {
+      "rarity": "rare",
+      "family": "allOrNothing",
+      "name": "孤注一擲",
+      "summary": "50%: 核心上限 +6·能力 +3 / 50%: 核心 −2",
+      "seasons": 0,
+      "lines": [
+        {
+          "label": "射術",
+          "from": 94,
+          "to": 92,
+          "wall0": 99,
+          "wall1": 99,
+          "scale": 99
+        }
+      ],
+      "ovr": [
+        96,
+        95
+      ]
+    },
+    "R20": {
+      "rarity": "rare",
+      "family": "sceneBet",
+      "name": "關鍵時刻下注",
+      "summary": "接下來3次時刻: 最佳結果核心 +2 / 最差 −1",
+      "seasons": 2,
+      "lines": [],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "R21": {
+      "rarity": "rare",
+      "family": "snowball",
+      "name": "滾雪球",
+      "summary": "每次賽季結束核心 +1 → +2 → +3",
+      "seasons": 3,
+      "lines": [],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "R29": {
+      "rarity": "rare",
+      "family": "peak",
+      "name": "巔峰感覺",
+      "summary": "距上限餘量最大的2項核心 +2",
+      "seasons": 0,
+      "lines": [
+        {
+          "label": "射術",
+          "from": 94,
+          "to": 96,
+          "wall0": 99,
+          "wall1": 99,
+          "scale": 99
+        },
+        {
+          "label": "速度",
+          "from": 94,
+          "to": 96,
+          "wall0": 99,
+          "wall1": 99,
+          "scale": 99
+        }
+      ],
+      "ovr": [
+        96,
+        97
+      ]
+    },
+    "R30": {
+      "rarity": "rare",
+      "family": "poise",
+      "name": "老練沉著",
+      "summary": "2賽季信任下降 −50% · 冷靜 +2",
+      "seasons": 2,
+      "lines": [
+        {
+          "label": "冷靜",
+          "from": 94,
+          "to": 96,
+          "wall0": 99,
+          "wall1": 99,
+          "scale": 99
+        }
+      ],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "R33": {
+      "rarity": "rare",
+      "family": "fox",
+      "name": "禁區之狐",
+      "summary": "射術 +2 · 冷靜 +2",
+      "seasons": 0,
+      "lines": [
+        {
+          "label": "射術",
+          "from": 94,
+          "to": 96,
+          "wall0": 99,
+          "wall1": 99,
+          "scale": 99
+        },
+        {
+          "label": "冷靜",
+          "from": 94,
+          "to": 96,
+          "wall0": 99,
+          "wall1": 99,
+          "scale": 99
+        }
+      ],
+      "ovr": [
+        96,
+        97
+      ]
+    },
+    "R34": {
+      "rarity": "rare",
+      "family": "poacher",
+      "name": "射手本能",
+      "summary": "下賽季每5球: 射術 +1 (3次)",
+      "seasons": 2,
+      "lines": [],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "E07": {
+      "rarity": "epic",
+      "family": "goals",
+      "name": "獵門者",
+      "summary": "每5球：射術 +1 · 最多 +8",
+      "seasons": 0,
+      "lines": [],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "E08": {
+      "rarity": "epic",
+      "family": "assists",
+      "name": "助攻專家",
+      "summary": "每3次助攻：傳球 +1 · 最多 +8",
+      "seasons": 0,
+      "lines": [],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "E10": {
+      "rarity": "epic",
+      "family": "rating",
+      "name": "穩定王牌",
+      "summary": "賽季評分7.0以上：核心 +3",
+      "seasons": 0,
+      "lines": [],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "E12": {
+      "rarity": "epic",
+      "family": "mom",
+      "name": "比賽之星",
+      "summary": "每2次全場最佳：能力 +2",
+      "seasons": 0,
+      "lines": [],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "E14": {
+      "rarity": "epic",
+      "family": "mindGrowth",
+      "name": "遲來的智慧",
+      "summary": "心智成長 +80% · 2個賽季",
+      "seasons": 2,
+      "lines": [],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "E21": {
+      "rarity": "epic",
+      "family": "agingGuard",
+      "name": "保養身體",
+      "summary": "防止50%身體衰退 · 最多12",
+      "seasons": 3,
+      "lines": [],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "E22": {
+      "rarity": "epic",
+      "family": "trustReward",
+      "name": "可靠的領袖",
+      "summary": "信任80以上結束賽季：能力與上限 +3",
+      "seasons": 0,
+      "lines": [],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "E23": {
+      "rarity": "epic",
+      "family": "odds",
+      "name": "關鍵先生",
+      "summary": "關鍵時刻最佳結果 +8pp · 12次",
+      "seasons": 4,
+      "lines": [],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "E28": {
+      "rarity": "epic",
+      "family": "allIn",
+      "name": "全力押注",
+      "summary": "評分7.3↑: 3項核心 +4·上限 +2 / 未達標: 3項核心 −2",
+      "seasons": 1,
+      "lines": [],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "E31": {
+      "rarity": "epic",
+      "family": "compound",
+      "name": "複利成長",
+      "summary": "自動成長每賽季累加 +10% · 4賽季",
+      "seasons": 4,
+      "lines": [],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "E39": {
+      "rarity": "epic",
+      "family": "careerHigh",
+      "name": "生涯新高",
+      "summary": "本賽季進球·助攻·零封創個人紀錄: 3項核心 +4·上限 +3",
+      "seasons": 1,
+      "lines": [],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "E44": {
+      "rarity": "epic",
+      "family": "runner",
+      "name": "前插大師",
+      "summary": "速度 +4 · 射術 +2·上限 +2",
+      "seasons": 0,
+      "lines": [
+        {
+          "label": "射術",
+          "from": 94,
+          "to": 96,
+          "wall0": 99,
+          "wall1": 99,
+          "scale": 99
+        },
+        {
+          "label": "速度",
+          "from": 94,
+          "to": 98,
+          "wall0": 99,
+          "wall1": 99,
+          "scale": 99
+        }
+      ],
+      "ovr": [
+        96,
+        97
+      ]
+    },
+    "U10": {
+      "rarity": "unique",
+      "family": "experience",
+      "name": "經驗的財富",
+      "summary": "50%身體衰退轉為心智成長",
+      "seasons": 0,
+      "lines": [],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "U11": {
+      "rarity": "unique",
+      "family": "sceneReward",
+      "name": "勝利的記憶",
+      "summary": "每3次最佳時刻：能力與上限 +3",
+      "seasons": 0,
+      "lines": [],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "U12": {
+      "rarity": "unique",
+      "family": "balance",
+      "name": "完美平衡",
+      "summary": "共 +12，優先最低的核心能力",
+      "seasons": 0,
+      "lines": [
+        {
+          "label": "射術",
+          "from": 94,
+          "to": 98,
+          "wall0": 99,
+          "wall1": 99,
+          "scale": 99
+        },
+        {
+          "label": "速度",
+          "from": 94,
+          "to": 98,
+          "wall0": 99,
+          "wall1": 99,
+          "scale": 99
+        },
+        {
+          "label": "冷靜",
+          "from": 94,
+          "to": 98,
+          "wall0": 99,
+          "wall1": 99,
+          "scale": 99
+        }
+      ],
+      "ovr": [
+        96,
+        98
+      ]
+    },
+    "U18": {
+      "rarity": "unique",
+      "family": "lateBloom",
+      "name": "大器晚成",
+      "summary": "2賽季後每賽季3項核心 +3·上限 +3 (3次)",
+      "seasons": 5,
+      "lines": [],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "U20": {
+      "rarity": "unique",
+      "family": "phoenix",
+      "name": "不死鳥",
+      "summary": "每次重傷復出: 核心 +3·上限 +2 (3次)",
+      "seasons": 0,
+      "lines": [],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "U26": {
+      "rarity": "unique",
+      "family": "extendPrime",
+      "name": "延續巔峰",
+      "summary": "3賽季衰老損失 −50% · 3項核心 +2",
+      "seasons": 3,
+      "lines": [
+        {
+          "label": "射術",
+          "from": 94,
+          "to": 96,
+          "wall0": 99,
+          "wall1": 99,
+          "scale": 99
+        },
+        {
+          "label": "速度",
+          "from": 94,
+          "to": 96,
+          "wall0": 99,
+          "wall1": 99,
+          "scale": 99
+        },
+        {
+          "label": "冷靜",
+          "from": 94,
+          "to": 96,
+          "wall0": 99,
+          "wall1": 99,
+          "scale": 99
+        }
+      ],
+      "ovr": [
+        96,
+        97
+      ]
+    },
+    "U27": {
+      "rarity": "unique",
+      "family": "legendPath",
+      "name": "傳奇之路",
+      "summary": "每個評分7.3的賽季: 核心 +3·上限 +3 (3次)",
+      "seasons": 0,
+      "lines": [],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "U30": {
+      "rarity": "unique",
+      "family": "boot",
+      "name": "金靴",
+      "summary": "賽季每25球: 射術·冷靜 +4·上限 +4 (3次)",
+      "seasons": 0,
+      "lines": [],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "U31": {
+      "rarity": "unique",
+      "family": "finisher",
+      "name": "關鍵先生",
+      "summary": "時刻成功率 +12%p (每季4次) · 每次成功射術 +1 (共8)",
+      "seasons": 0,
+      "lines": [],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "L06": {
+      "rarity": "legend",
+      "family": "livingLegend",
+      "name": "活著的傳奇",
+      "summary": "每個評分7.5的賽季: 3項核心 +3·上限 +3 (不限次數)",
+      "seasons": 0,
+      "lines": [],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "L07": {
+      "rarity": "legend",
+      "family": "timeless",
+      "name": "時光停駐",
+      "summary": "4賽季不衰老 · 最後出場年齡 +3",
+      "seasons": 4,
+      "lines": [],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "L08": {
+      "rarity": "legend",
+      "family": "awakening",
+      "name": "天才覺醒",
+      "summary": "所有能力上限 +5 · 3項核心 +5",
+      "seasons": 0,
+      "lines": [
+        {
+          "label": "射術",
+          "from": 94,
+          "to": 99,
+          "wall0": 99,
+          "wall1": 99,
+          "scale": 99
+        },
+        {
+          "label": "速度",
+          "from": 94,
+          "to": 99,
+          "wall0": 99,
+          "wall1": 99,
+          "scale": 99
+        },
+        {
+          "label": "冷靜",
+          "from": 94,
+          "to": 99,
+          "wall0": 99,
+          "wall1": 99,
+          "scale": 99
+        }
+      ],
+      "ovr": [
+        96,
+        99
+      ]
+    },
+    "L09": {
+      "rarity": "legend",
+      "family": "midas",
+      "name": "點金之手",
+      "summary": "賭局總是獲勝 · 下注失敗無懲罰 · 核心 +4",
+      "seasons": 0,
+      "lines": [
+        {
+          "label": "射術",
+          "from": 94,
+          "to": 98,
+          "wall0": 99,
+          "wall1": 99,
+          "scale": 99
+        }
+      ],
+      "ovr": [
+        96,
+        97
+      ]
+    },
+    "L10": {
+      "rarity": "legend",
+      "family": "complete",
+      "name": "全能球員",
+      "summary": "所有標籤 +1 (套組升1級) · 從最低核心起共 +8",
+      "seasons": 0,
+      "lines": [
+        {
+          "label": "射術",
+          "from": 94,
+          "to": 97,
+          "wall0": 99,
+          "wall1": 99,
+          "scale": 99
+        },
+        {
+          "label": "速度",
+          "from": 94,
+          "to": 97,
+          "wall0": 99,
+          "wall1": 99,
+          "scale": 99
+        },
+        {
+          "label": "冷靜",
+          "from": 94,
+          "to": 96,
+          "wall0": 99,
+          "wall1": 99,
+          "scale": 99
+        }
+      ],
+      "ovr": [
+        96,
+        97
+      ]
+    },
+    "L11": {
+      "rarity": "legend",
+      "family": "goat",
+      "name": "史詩賽季",
+      "summary": "本賽季自動成長 +150% · 時刻 +15%p · 評分7.5則3項核心上限 +6",
+      "seasons": 1,
+      "lines": [],
+      "ovr": [
+        96,
+        96
+      ]
+    },
+    "L01": {
+      "rarity": "legend",
+      "family": "goalMachine",
+      "name": "進球機器",
+      "summary": "射術上限 +6 · 賽季每5球核心 +1 (每季6次，無期限)",
+      "seasons": 0,
+      "lines": [],
+      "ovr": [
+        96,
+        96
+      ]
+    }
+  }
+}

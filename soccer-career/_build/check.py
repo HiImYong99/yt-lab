@@ -105,7 +105,7 @@ def check_subsets():
     """Exercise locale wiring without publishing untranslated fixture pages."""
     codes = available_languages()
     fixture = json.loads((BUILD / 'i18n' / f'{codes[0]}.json').read_text()) if codes else None
-    subsets = [[], ['ko'], ['en'], ['ar'], ['zh', 'pt'], list(LANGUAGES)]
+    subsets = [[], ['ko'], ['en'], ['ar'], ['zh', 'pt'], ['zh-hant'], ['zh', 'zh-hant'], list(LANGUAGES)]
     for subset in subsets:
         # Discovery depends only on files present, never on ko/en being mandatory.
         with tempfile.TemporaryDirectory(dir=BUILD) as temp:
@@ -193,6 +193,20 @@ def main():
                     w, h = badge_dimensions((path.parent / img['src']).resolve())
                     assert int(img['width']) == round(w * 52 / h)
             if not guide:
+                app = next(e for e in entities if 'MobileApplication' in e.get('@type', []))
+                assert 'VideoGame' in app['@type'] and app['name']
+                assert {'绿茵人生', '綠茵人生', 'Football Career Sim: Be a Pro', '축구선수 키우기'} <= set(app['alternateName'] + [app['name']])
+                assert app['applicationCategory'] == 'GameApplication'
+                assert 'iOS' in app['operatingSystem'] and 'Android' in app['operatingSystem']
+                assert str(app['offers']['price']) == '0'
+                assert app['installUrl'] == list(store_links(code))
+                assert set(store_links(code)) <= set(app['sameAs'])
+                faq = next(e for e in entities if e.get('@type') == 'FAQPage')['mainEntity']
+                assert len(faq) == (10 if code == 'zh-hant' else 7)
+                for question in faq:
+                    assert question['name'] in page.visible_text()
+                    answer = Page(question['acceptedAnswer']['text']).visible_text()
+                    assert answer in page.visible_text()
                 data = json.loads((SITE / 'data' / f'cards-{code}.json').read_text())
                 assert page.demo['data-cards-url'] == f'../data/cards-{code}.json'
                 assert_local(page.demo['data-cards-url'], path)
@@ -275,8 +289,17 @@ def main():
             links = entry.findall(f'{{{XHTML}}}link')
             assert len(links) == len(alternates(codes, guide))
             assert {a.attrib['hreflang']: a.attrib['href'] for a in links} == alternates(codes, guide)
+    if 'zh-hant' in codes:
+        assert store_links('zh-hant')[0] == 'https://apps.apple.com/tw/app/id6807107830'
+        assert '&hl=zh-TW&' in store_links('zh-hant')[1]
+        assert build.format_date('2026-11-07', 'zh-hant') == '2026年11月7日'
+        for kind in (False, True, *build.TOPICS):
+            links = alternates(codes, kind)
+            assert links['zh-Hant'] == links['zh-TW'] == links['zh-HK'] == ORIGIN + page_path('zh-hant', kind)
+            if 'zh' in codes:
+                assert links['zh-Hans'] == ORIGIN + page_path('zh', kind)
     check_subsets()
-    print(f'PASS: {len(codes)*2} language pages, 2 routers, {count} resource references, JSON-LD, reciprocal hreflang, sitemap, badges, Korean legacy copy and partial-language/12-locale configurations')
+    print(f'PASS: {len(codes) * (2 + len(build.TOPICS))} language pages, 2 routers, {count} resource references, JSON-LD, reciprocal hreflang, sitemap, badges, Korean legacy copy and partial-language/{len(LANGUAGES)}-locale configurations')
 
 
 if __name__ == '__main__':
