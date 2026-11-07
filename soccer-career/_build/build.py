@@ -145,7 +145,7 @@ def json_ld(strings, code, guide, image):
     app, play = store_links(code, guide)
     if not guide:
         names = ['Football Career Sim: Be a Pro', 'Football Career Sim', '축구선수 키우기',
-                 '绿茵人生', '绿茵人生：足球员养成模拟', '綠茵人生', '綠茵人生：足球員養成模擬']
+                 '绿茵人生', '绿茵人生：足球员养成模拟', '綠茵人生', '綠茵人生：足球員養成模擬', '축키']
         for other in available_languages():
             localized = json.loads((BUILD / 'i18n' / f'{other}.json').read_text())
             for node in localized['schema.page']['@graph']:
