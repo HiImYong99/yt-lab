@@ -228,6 +228,9 @@ def main():
                 legacy = BUILD / 'legacy' / ('guide/index.html' if guide else 'index.html')
                 before = Page(legacy.read_text()).visible_text()
                 after = page.visible_text()
+                if not guide:
+                    missing = set(re.findall('[가-힣]', after)) - set((BUILD / 'font-glyphs.txt').read_text())
+                    assert not missing, f'Run subset_font.py; font lacks {sorted(missing)[:10]}'
                 if before != after:
                     at = next((i for i, pair in enumerate(zip(before, after)) if pair[0] != pair[1]), min(len(before), len(after)))
                     raise AssertionError(f'Korean copy changed at {at}: {before[at:at+100]!r} != {after[at:at+100]!r}')

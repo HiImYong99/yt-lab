@@ -53,6 +53,15 @@ search path. This checks ko/en mobile and desktop layouts, actual demo
 interaction, RTL payout bars, navigation, routers and JavaScript-free fallback.
 The build and standard checker do not require Node or Playwright.
 
+## Korean font
+
+The Korean main page loads one self-hosted Pretendard subset instead of about
+twenty jsDelivr files. After changing Korean main-page copy or `cards-ko.json`,
+run `_build/subset_font.py` (needs `fonttools` and `brotli`); `check.py` fails
+when the page uses a Hangul syllable the font lacks. When main-page copy
+changes on purpose, also bump `LANDING_UPDATED` in `build.py` and copy the
+generated `ko/index.html` over `legacy/index.html`.
+
 ## Topic pages (programmatic SEO)
 
 `topic.html` renders `/<code>/{goalkeeper,awards,positions,offline}/` from the

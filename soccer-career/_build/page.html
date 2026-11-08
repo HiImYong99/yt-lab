@@ -6,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{{page.title.001}}</title>
 <meta name="description" content="{{page.attr.099}}">
+<meta name="robots" content="max-image-preview:large">
 <link rel="canonical" href="{{canonical}}">
 {{hreflang}}
 <meta name="apple-itunes-app" content="app-id=6807107830">
@@ -26,9 +27,7 @@
 <meta name="twitter:title" content="{{page.attr.100}}">
 <meta name="twitter:description" content="{{page.attr.101}}">
 <meta name="twitter:image" content="{{og_image}}">
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-<link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"></noscript>
+{{font_head}}
 <link rel="stylesheet" href="{{assets}}site.css?v=8">
 <link rel="preload" href="{{cards_url}}" as="fetch" crossorigin>
 <script type="application/ld+json">{{json_ld}}</script>
@@ -121,6 +120,21 @@
         <li><div class="age">{{page.div.082}}</div><div><h3>{{page.h3.020}}</h3><p>{{page.p.042}}</p></div></li>
         <li><div class="age">{{page.div.083}}</div><div><h3>{{page.h3.021}}</h3><p>{{page.p.043}}</p></div></li>
       </ol>
+    </div>
+  </section>
+
+  <section id="club" aria-labelledby="club-h">
+    <div class="wrap">
+      <div class="prose">
+        <h2 id="club-h">{{page.club.h2}}</h2>
+        <p>{{page.club.p}}</p>
+      </div>
+      <div class="diff">
+        <div><h3>{{page.club.h3a}}</h3><p>{{page.club.pa}}</p></div>
+        <div><h3>{{page.club.h3b}}</h3><p>{{page.club.pb}}</p></div>
+        <div><h3>{{page.club.h3c}}</h3><p>{{page.club.pc}}</p></div>
+        <div><h3>{{page.club.h3d}}</h3><p>{{page.club.pd}}</p></div>
+      </div>
     </div>
   </section>
 

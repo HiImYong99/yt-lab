@@ -12,6 +12,8 @@ English: Football Career Sim: Be a Pro / Football Career Sim.
 Develop a youth football player from age seventeen through retirement.
 Choose Growth Cards to shape the player's development and career.
 Progress through matches, transfers, contract renewals and national-team opportunities.
+Retired players become the squad of your club in the Weekly League, a separate online mode with promotion and relegation.
+A free browser trial covers the first five seasons of the same game.
 Career simulation works offline; rankings, purchases, wallet and device transfers require a network connection.
 
 Platforms: iPhone and iPad (iOS 15 or later), Android 7.0 or later. Free to download, with optional in-app purchases.

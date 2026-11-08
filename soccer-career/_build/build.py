@@ -34,6 +34,12 @@ TOKEN = re.compile(r'{{\s*([\w.]+)\s*}}')
 SM = 'http://www.sitemaps.org/schemas/sitemap/0.9'
 XHTML = 'http://www.w3.org/1999/xhtml'
 TOPICS = ('goalkeeper', 'awards', 'positions', 'offline', 'web')
+RELEASED = '2026-09-21'
+# Bump when the main page's copy changes; feeds JSON-LD and the sitemap.
+LANDING_UPDATED = '2026-11-09'
+ORG_PROFILES = ['https://www.instagram.com/soccer.career.global/']
+APP_PROFILES = ['https://namu.wiki/w/%EC%B6%95%EA%B5%AC%EC%84%A0%EC%88%98%20%ED%82%A4%EC%9A%B0%EA%B8%B0']
+PRETENDARD = 'https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css'
 
 
 def available_languages():
@@ -158,8 +164,13 @@ def json_ld(strings, code, guide, image):
                 node['installUrl'] = [app, play]
                 node['sameAs'] = [app, play] + [url for url in node.get('sameAs', [])
                                               if not url.startswith(('https://apps.apple.com/', 'https://play.google.com/'))]
+                node['sameAs'] += APP_PROFILES
+                node['datePublished'] = RELEASED
+                node['dateModified'] = LANDING_UPDATED
                 node['screenshot'] = [url.replace('/shots/zh/', f'/shots/{screenshot_code(code)}/')
                                       for url in node.get('screenshot', [])]
+            elif node.get('@type') == 'Organization':
+                node['sameAs'] = list(dict.fromkeys(node.get('sameAs', []) + ORG_PROFILES))
         faqs = [{'@type': 'Question', 'name': plain(strings[f'page.dt.{n:03}']),
                  'acceptedAnswer': {'@type': 'Answer', 'text': plain(localize_paths(strings[f'page.dd.{n+7:03}'], code))}}
                 for n in range(62, 69)] + extra_intro_faqs(strings)
@@ -285,6 +296,19 @@ def render_topic(code, codes, strings, slug, stats):
     return result
 
 
+def font_head(code, assets):
+    # Korean pulls ~20 jsDelivr subset files (540 KB); subset_font.py cuts that to one.
+    if code == 'ko':
+        url = f'{assets}img/fonts/ytlab-sans-ko.woff2'
+        return (f'<link rel="preload" as="font" type="font/woff2" href="{url}" crossorigin>\n'
+                '<style>@font-face{font-family:"YT Lab Sans KO";font-weight:45 920;'
+                f'font-display:swap;src:url({url}) format("woff2")}}'
+                'html:root{--sans:"YT Lab Sans KO",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}</style>')
+    return (f'<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>\n'
+            f'<link rel="preload" as="style" href="{PRETENDARD}" onload="this.onload=null;this.rel=\'stylesheet\'">\n'
+            f'<noscript><link rel="stylesheet" href="{PRETENDARD}"></noscript>')
+
+
 def render_page(code, codes, strings, guide=False):
     assets = '../../' if guide else '../'
     og = 'og-guide.jpg' if guide and code == 'ko' else 'og-podium.jpg'
@@ -314,6 +338,7 @@ def render_page(code, codes, strings, guide=False):
         for key in ('age', 'position', 'ovr'):
             player_text = player_text.replace('{' + key + '}', escape(str(player[key])))
         values.update(intro_extra_faq=''.join('<dt>' + escape(q['name']) + '</dt><dd>' + escape(q['acceptedAnswer']['text']) + '</dd>' for q in extra_intro_faqs(strings)),
+                      font_head=font_head(code, assets),
                       cards_url=f'{assets}data/cards-{code}.json',
                       initial_hand=initial_hand(data, strings, assets),
                       demo_choose=escape(data['ui']['gc.choose']), demo_one=escape(data['ui']['gc.one']),
@@ -374,6 +399,14 @@ def router(codes, guide=False):
 '''
 
 
+def lastmod(code, kind):
+    if not kind: return LANDING_UPDATED
+    if kind is True:
+        strings = json.loads((BUILD / 'i18n' / f'{code}.json').read_text())
+        return strings['schema.guide']['@graph'][0]['dateModified']
+    return json.loads((SITE / 'data' / 'stats.json').read_text())['asOf']
+
+
 def sitemap(codes):
     ET.register_namespace('', SM)
     ET.register_namespace('xhtml', XHTML)
@@ -387,6 +420,7 @@ def sitemap(codes):
         for guide in (False, True, *TOPICS):
             entry = ET.SubElement(root, f'{{{SM}}}url')
             ET.SubElement(entry, f'{{{SM}}}loc').text = ORIGIN + page_path(code, guide)
+            ET.SubElement(entry, f'{{{SM}}}lastmod').text = lastmod(code, guide)
             for lang, url in alternates(codes, guide).items():
                 ET.SubElement(entry, f'{{{XHTML}}}link', rel='alternate', hreflang=lang, href=url)
     ET.indent(root, space='  ')
