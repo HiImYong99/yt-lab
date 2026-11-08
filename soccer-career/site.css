@@ -106,7 +106,6 @@ ul.plain li + li { margin-top: 6px; }
 .shots { margin: 32px 0 0; display: grid; grid-auto-flow: column; grid-auto-columns: min(240px, 62vw); gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 12px; }
 .shots figure { margin: 0; scroll-snap-align: start; }
 .shots img { display: block; border-radius: 16px; }
-.shots figcaption { margin-top: 10px; font-size: 14px; color: var(--mid); line-height: 1.5; }
 
 /* Comparison and data tables */
 .table { width: 100%; margin: 24px 0 0; border-collapse: collapse; font-size: 15px; }

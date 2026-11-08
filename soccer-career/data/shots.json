@@ -1,0 +1,340 @@
+{
+ "ar": [
+  {
+   "file": "01world",
+   "alt": "منصة أفضل لاعب في العالم: ابدأ موهبة واعدة، كن الأفضل في العالم"
+  },
+  {
+   "file": "02retired",
+   "alt": "سجل الاعتزال: مسيرتك بعد الاعتزال، حياة كروية في بطاقة"
+  },
+  {
+   "file": "03league",
+   "alt": "دوري اليوم · بيانات تجريبية: كوّن فريقًا من لاعبيك، مواجهات أندية يومية"
+  },
+  {
+   "file": "04friendly",
+   "alt": "مباراة ودية · بيانات تجريبية: لاعبوك في بث مباشر، تغلّب على أندية أصدقائك"
+  },
+  {
+   "file": "05hall",
+   "alt": "قاعة المشاهير · بيانات تجريبية: تحدَّ بلاعبك الخاص، قاعة المشاهير"
+  },
+  {
+   "file": "06cards",
+   "alt": "اختيار بطاقات التطور: اختيار واحد يغيّر مسارك، بطاقات تطوّرك الخاصة"
+  }
+ ],
+ "de": [
+  {
+   "file": "01world",
+   "alt": "Podium des Weltfußballers: Starte als junges Talent, Werde der Weltbeste"
+  },
+  {
+   "file": "02retired",
+   "alt": "Karrierebilanz: Deine Karriere nach dem Rücktritt, Ein Fußballleben als Karte"
+  },
+  {
+   "file": "03league",
+   "alt": "Heutige Liga · Beispieldaten: Deine Spieler, deine Aufstellung, Tägliche Clubduelle"
+  },
+  {
+   "file": "04friendly",
+   "alt": "Freundschaftsspiel · Beispieldaten: Deine Spieler live im Spiel, Schlag deine Freunde"
+  },
+  {
+   "file": "05hall",
+   "alt": "Ruhmeshalle · Beispieldaten: Mit deinem eigenen Spieler in die, Ruhmeshalle"
+  },
+  {
+   "file": "06cards",
+   "alt": "Wachstumskarten wählen: Eine Wahl verändert deinen Weg, Deine Wachstumskarten"
+  }
+ ],
+ "en": [
+  {
+   "file": "01world",
+   "alt": "World Player of the Year podium: Start as a prospect, Become the world’s best"
+  },
+  {
+   "file": "02retired",
+   "alt": "Retirement record: Your career, remembered, A football life in one card"
+  },
+  {
+   "file": "03league",
+   "alt": "Today’s League · sample data: Build a squad from your stars, Daily club battles"
+  },
+  {
+   "file": "04friendly",
+   "alt": "Friendly · sample data: Watch your stars play live, Beat your friends’ clubs"
+  },
+  {
+   "file": "05hall",
+   "alt": "Hall of Fame · sample data: Take your player to the, Hall of Fame"
+  },
+  {
+   "file": "06cards",
+   "alt": "Growth card selection: One choice shapes your path, Your growth cards"
+  }
+ ],
+ "es": [
+  {
+   "file": "01world",
+   "alt": "Podio del mejor jugador del mundo: Empieza como promesa, Llega a ser el mejor"
+  },
+  {
+   "file": "02retired",
+   "alt": "Registro de retiro: Tu carrera al retirarte, Tu vida en una ficha"
+  },
+  {
+   "file": "03league",
+   "alt": "Liga de hoy · datos de ejemplo: Forma equipo con tus jugadores, Duelos de clubes diarios"
+  },
+  {
+   "file": "04friendly",
+   "alt": "Amistoso · datos de ejemplo: Tus jugadores, en directo, Gana a tus amigos"
+  },
+  {
+   "file": "05hall",
+   "alt": "Palmarés · datos de ejemplo: Lleva a tu jugador al, Palmarés"
+  },
+  {
+   "file": "06cards",
+   "alt": "Selección de cartas de crecimiento: Una elección cambia tu rumbo, Tus cartas de crecimiento"
+  }
+ ],
+ "fr": [
+  {
+   "file": "01world",
+   "alt": "Podium du meilleur joueur mondial: Débutez comme espoir, Devenez le meilleur"
+  },
+  {
+   "file": "02retired",
+   "alt": "Bilan de retraite: Votre carrière à la retraite, Une vie sur une carte"
+  },
+  {
+   "file": "03league",
+   "alt": "Ligue du jour · données d’exemple: Formez une équipe avec vos joueurs, Défis de clubs quotidiens"
+  },
+  {
+   "file": "04friendly",
+   "alt": "Amical · données d’exemple: Vos joueurs, en direct, Battez vos amis"
+  },
+  {
+   "file": "05hall",
+   "alt": "Panthéon · données d’exemple: Menez votre joueur au, Panthéon du football"
+  },
+  {
+   "file": "06cards",
+   "alt": "Choix des cartes de progression: Un choix change votre parcours, Vos cartes de progression"
+  }
+ ],
+ "id": [
+  {
+   "file": "01world",
+   "alt": "Podium Pemain Terbaik Dunia: Mulai sebagai pemain muda, Jadi yang terbaik di dunia"
+  },
+  {
+   "file": "02retired",
+   "alt": "Catatan pensiun: Kariermu setelah pensiun, Kisah bola dalam satu kartu"
+  },
+  {
+   "file": "03league",
+   "alt": "Liga Hari Ini · data contoh: Susun tim dari pemain binaanmu, Duel klub setiap hari"
+  },
+  {
+   "file": "04friendly",
+   "alt": "Laga persahabatan · data contoh: Pemain binaanmu tampil langsung, Kalahkan klub temanmu"
+  },
+  {
+   "file": "05hall",
+   "alt": "Hall of Fame · data contoh: Raih prestasi dengan pemainmu, Hall of Fame"
+  },
+  {
+   "file": "06cards",
+   "alt": "Pilihan kartu pertumbuhan: Satu pilihan mengubah arahmu, Kartu pertumbuhanmu"
+  }
+ ],
+ "it": [
+  {
+   "file": "01world",
+   "alt": "Podio del miglior giocatore al mondo: Inizia da giovane promessa, Diventa il migliore"
+  },
+  {
+   "file": "02retired",
+   "alt": "Bilancio del ritiro: La tua carriera dopo il ritiro, Una vita in una scheda"
+  },
+  {
+   "file": "03league",
+   "alt": "Lega di oggi · dati di esempio: Crea una squadra con i tuoi giocatori, Sfide tra club ogni giorno"
+  },
+  {
+   "file": "04friendly",
+   "alt": "Amichevole · dati di esempio: I tuoi giocatori in diretta, Batti i tuoi amici"
+  },
+  {
+   "file": "05hall",
+   "alt": "Hall of Fame · dati di esempio: Porta il tuo giocatore nella, Hall of Fame"
+  },
+  {
+   "file": "06cards",
+   "alt": "Scelta delle carte crescita: Una scelta cambia il tuo percorso, Le tue carte crescita"
+  }
+ ],
+ "ja": [
+  {
+   "file": "01world",
+   "alt": "世界年間最優秀選手の表彰台: 有望な若手から 世界最高の選手へ"
+  },
+  {
+   "file": "02retired",
+   "alt": "引退記録: 自分で築いたキャリア 一枚に刻むサッカー人生"
+  },
+  {
+   "file": "03league",
+   "alt": "今日のリーグ・サンプルデータ: 育てた選手でチームを組み 毎日クラブ対戦"
+  },
+  {
+   "file": "04friendly",
+   "alt": "親善試合・サンプルデータ: 育てた選手が走る生中継 友達のクラブと対決"
+  },
+  {
+   "file": "05hall",
+   "alt": "殿堂・サンプルデータ: 自分だけの選手で挑む 殿堂入り"
+  },
+  {
+   "file": "06cards",
+   "alt": "成長カード選択: ひとつの選択で変わる 自分だけの成長カード"
+  }
+ ],
+ "ko": [
+  {
+   "file": "01world",
+   "alt": "세계 올해의 선수 포디움: 유망주에서 시작해 세계 최고의 선수로"
+  },
+  {
+   "file": "02retired",
+   "alt": "은퇴 기록: 내가 완성한 커리어 한 장에 담긴 축구 인생"
+  },
+  {
+   "file": "03league",
+   "alt": "오늘의 리그 · 예시 데이터: 키운 선수들로 스쿼드를 짜고 매일 열리는 클럽 대전"
+  },
+  {
+   "file": "04friendly",
+   "alt": "친선전 · 예시 데이터: 키운 선수들이 뛰는 친구 클럽과의 한판"
+  },
+  {
+   "file": "05hall",
+   "alt": "명예의 전당 · 예시 데이터: 나만의 선수로 도전하는 명예의 전당"
+  },
+  {
+   "file": "06cards",
+   "alt": "성장 카드 선택: 선택 하나로 달라지는 나만의 성장 카드"
+  }
+ ],
+ "pt": [
+  {
+   "file": "01world",
+   "alt": "Pódio do melhor jogador do mundo: Comece como promessa, Seja o melhor do mundo"
+  },
+  {
+   "file": "02retired",
+   "alt": "Registro da aposentadoria: Sua carreira, sua história, Sua vida em um card"
+  },
+  {
+   "file": "03league",
+   "alt": "Liga de Hoje · dados de exemplo: Monte um time com seus craques, Duelos de clubes diários"
+  },
+  {
+   "file": "04friendly",
+   "alt": "Amistoso · dados de exemplo: Seus craques ao vivo, Vença os times dos amigos"
+  },
+  {
+   "file": "05hall",
+   "alt": "Hall da Fama · dados de exemplo: Leve seu jogador ao, Hall da Fama"
+  },
+  {
+   "file": "06cards",
+   "alt": "Escolha de cartas de evolução: Uma escolha muda seu caminho, Suas cartas de evolução"
+  }
+ ],
+ "tr": [
+  {
+   "file": "01world",
+   "alt": "Dünyada Yılın Oyuncusu podyumu: Genç yetenek olarak başla, Dünyanın en iyisi ol"
+  },
+  {
+   "file": "02retired",
+   "alt": "Emeklilik kaydı: Emeklilikte kariyerin, Bir kartta futbol hayatın"
+  },
+  {
+   "file": "03league",
+   "alt": "Günün Ligi · örnek veriler: Yetiştirdiğin oyuncularla kadro kur, Her gün kulüp düellosu"
+  },
+  {
+   "file": "04friendly",
+   "alt": "Hazırlık maçı · örnek veriler: Oyuncuların canlı sahada, Arkadaşlarını yen"
+  },
+  {
+   "file": "05hall",
+   "alt": "Onur Listesi · örnek veriler: Oyuncunu zirveye taşı, Onur Listesi"
+  },
+  {
+   "file": "06cards",
+   "alt": "Gelişim kartı seçimi: Bir seçim yolunu değiştirir, Kendi gelişim kartların"
+  }
+ ],
+ "zh": [
+  {
+   "file": "01world",
+   "alt": "世界足球先生领奖台: 从潜力新星起步 成为世界最佳球员"
+  },
+  {
+   "file": "02retired",
+   "alt": "退役记录: 亲手成就的职业生涯 一张卡尽览足球人生"
+  },
+  {
+   "file": "03league",
+   "alt": "今日联赛 · 示例数据: 用亲手培养的球员组队 每天开启俱乐部对战"
+  },
+  {
+   "file": "04friendly",
+   "alt": "友谊赛 · 示例数据: 亲手培养的球员上场 与好友俱乐部一决高下"
+  },
+  {
+   "file": "05hall",
+   "alt": "名人堂 · 示例数据: 带着你的专属球员 挑战名人堂"
+  },
+  {
+   "file": "06cards",
+   "alt": "成长卡选择: 一次选择改变成长之路 你的专属成长卡"
+  }
+ ],
+ "zh-hant": [
+  {
+   "file": "01world",
+   "alt": "世界足球先生領獎臺: 從潛力新星起步 成為世界最佳球員"
+  },
+  {
+   "file": "02retired",
+   "alt": "退役記錄: 親手成就的職業生涯 一張卡盡覽足球人生"
+  },
+  {
+   "file": "03league",
+   "alt": "今日聯賽 · 示例數據: 用親手培養的球員組隊 每天開啟俱樂部對戰"
+  },
+  {
+   "file": "04friendly",
+   "alt": "友誼賽 · 示例數據: 親手培養的球員上場 與好友俱樂部一決高下"
+  },
+  {
+   "file": "05hall",
+   "alt": "名人堂 · 示例數據: 帶著你的專屬球員 挑戰名人堂"
+  },
+  {
+   "file": "06cards",
+   "alt": "成長卡選擇: 一次選擇改變成長之路 你的專屬成長卡"
+  }
+ ]
+}

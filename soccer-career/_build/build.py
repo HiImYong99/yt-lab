@@ -141,9 +141,16 @@ def plain(value):
     return unescape(re.sub(r'<[^>]*>', '', value))
 
 
-def screenshot_code(code):
-    # hant.py --screenshots refreshes the optional Traditional set from Apple.
-    return 'zh' if code == 'zh-hant' and not (SITE / 'img/shots/zh-hant/04home.webp').is_file() else code
+def store_shots(code):
+    return json.loads((SITE / 'data/shots.json').read_text())[code]
+
+
+def shots_html(code, assets):
+    base = f'{assets}img/shots/{code}/'
+    return '\n        '.join(
+        f'<figure><img src="{base}{s["file"]}.webp" srcset="{base}{s["file"]}-300.webp 300w, {base}{s["file"]}.webp 600w" '
+        f'sizes="(max-width: 420px) 62vw, 240px" alt="{escape(s["alt"], quote=True)}" width="600" height="1304" loading="lazy"></figure>'
+        for s in store_shots(code))
 
 
 def json_ld(strings, code, guide, image):
@@ -167,8 +174,7 @@ def json_ld(strings, code, guide, image):
                 node['sameAs'] += APP_PROFILES
                 node['datePublished'] = RELEASED
                 node['dateModified'] = LANDING_UPDATED
-                node['screenshot'] = [url.replace('/shots/zh/', f'/shots/{screenshot_code(code)}/')
-                                      for url in node.get('screenshot', [])]
+                node['screenshot'] = [f'{ORIGIN}/soccer-career/img/shots/{code}/{s["file"]}.webp' for s in store_shots(code)]
             elif node.get('@type') == 'Organization':
                 node['sameAs'] = list(dict.fromkeys(node.get('sameAs', []) + ORG_PROFILES))
         faqs = [{'@type': 'Question', 'name': plain(strings[f'page.dt.{n:03}']),
@@ -317,7 +323,6 @@ def render_page(code, codes, strings, guide=False):
     values = {k: localize_paths(v, code) for k, v in strings.items() if isinstance(v, str)}
     values.update(lang=LANGUAGES[code][0], dir='rtl' if code == 'ar' else 'ltr',
                   canonical=ORIGIN + page_path(code, guide), assets=assets,
-                  shots=f'{assets}img/shots/{screenshot_code(code)}/',
                   intro_path=page_path(code), guide_path=page_path(code, True),
                   privacy_path='/football-career-privacy/' + ('' if code == 'ko' else 'en/'),
                   og_locale=LANGUAGES[code][2], og_image=image,
@@ -339,6 +344,7 @@ def render_page(code, codes, strings, guide=False):
             player_text = player_text.replace('{' + key + '}', escape(str(player[key])))
         values.update(intro_extra_faq=''.join('<dt>' + escape(q['name']) + '</dt><dd>' + escape(q['acceptedAnswer']['text']) + '</dd>' for q in extra_intro_faqs(strings)),
                       font_head=font_head(code, assets),
+                      shots_html=shots_html(code, assets),
                       cards_url=f'{assets}data/cards-{code}.json',
                       initial_hand=initial_hand(data, strings, assets),
                       demo_choose=escape(data['ui']['gc.choose']), demo_one=escape(data['ui']['gc.one']),

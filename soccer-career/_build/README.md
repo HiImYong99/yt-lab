@@ -29,8 +29,8 @@ Page-only demo strings live under `demo.*`. The existing shorter reroll note
 remains page copy (rather than the longer `gc.next`) to preserve Korean text.
 Inline card mask URLs are site-root-relative: CSS custom-property URLs may
 resolve against the stylesheet rather than the HTML document. Other shared
-assets use paths relative to each generated page. The original Korean game
-screenshots are retained in both languages. Non-Korean privacy links use the
+assets use paths relative to each generated page. Game screenshots are the
+approved store set; rerun `export_shots.py` when that set changes. Non-Korean privacy links use the
 existing English privacy page.
 
 `legacy/` is the untouched Korean source captured before routing was added.
