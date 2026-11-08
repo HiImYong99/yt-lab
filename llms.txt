@@ -20,6 +20,7 @@ Platforms: iPhone and iPad (iOS 15 or later), Android 7.0 or later. Free to down
 
 - [App Store](https://apps.apple.com/app/id6807107830): iOS download.
 - [Google Play](https://play.google.com/store/apps/details?id=site.ytlab.soccer_career): Android download.
+- [English press kit](https://ytlab.site/press/football-career/): Fact sheet, screenshots and logo.
 - [한국어 landing](https://ytlab.site/soccer-career/ko/): Game introduction.
 - [한국어 guide](https://ytlab.site/soccer-career/ko/guide/): Growth, matches, transfers and awards.
 - [English landing](https://ytlab.site/soccer-career/en/): Game introduction.
