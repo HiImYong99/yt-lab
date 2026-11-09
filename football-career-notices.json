@@ -1,5 +1,79 @@
 [
   {
+    "id": "2026-11-09-room-keywords",
+    "date": "2026-11-09",
+    "title": "여지 표시를 다시 보여드려요",
+    "body": "- 2.6.7 이후 많은 분들이 의견을 주셔서, 가렸던 여지를 모든 능력치에 다시 보여드리기로 했어요. 월클감 · 리그 정상급 · 주전감 · 한계 뚜렷, 네 단계로 짐작할 수 있어요.\n- 이벤트나 성장 카드로 한계가 오르면 초록색 +로 바로 보여드려요.\n- 처음 한계가 낮아도 이벤트와 성장 카드로 더 클 수 있어요.\n- 2.6.8에 담아 곧 출시할게요.\n- 당분간은 월요일을 기다리지 않고, 의견과 개선 사항이 보이면 바로바로 업데이트할게요. 랭킹에 지장이 가지 않는 항목 위주로 진행합니다.",
+    "important": true,
+    "popup": {
+      "until": "2026-11-12"
+    },
+    "category": "notice",
+    "summary": "숫자 대신 네 단계로 짐작할 수 있어요. 2.6.8에서 적용돼요.",
+    "translations": {
+      "ko": {
+        "title": "여지 표시를 다시 보여드려요",
+        "body": "- 2.6.7 이후 많은 분들이 의견을 주셔서, 가렸던 여지를 모든 능력치에 다시 보여드리기로 했어요. 월클감 · 리그 정상급 · 주전감 · 한계 뚜렷, 네 단계로 짐작할 수 있어요.\n- 이벤트나 성장 카드로 한계가 오르면 초록색 +로 바로 보여드려요.\n- 처음 한계가 낮아도 이벤트와 성장 카드로 더 클 수 있어요.\n- 2.6.8에 담아 곧 출시할게요.\n- 당분간은 월요일을 기다리지 않고, 의견과 개선 사항이 보이면 바로바로 업데이트할게요. 랭킹에 지장이 가지 않는 항목 위주로 진행합니다.",
+        "summary": "숫자 대신 네 단계로 짐작할 수 있어요. 2.6.8에서 적용돼요."
+      },
+      "en": {
+        "title": "Room to grow is back",
+        "body": "- After 2.6.7 many of you told us what you thought, so room to grow is back on every stat. Instead of exact numbers you'll see four levels to judge by: World class, League elite, Starter, Clear limit.\n- When an event or growth card raises a limit, you'll see it as a green +.\n- Even with a low limit at the start, a player can still grow through events and growth cards.\n- It's all in 2.6.8, coming soon.\n- For now, we won't wait for Mondays. When we see feedback or something to improve, we'll ship it right away, mostly changes that don't affect the rankings.",
+        "summary": "Four levels to judge by instead of exact numbers. Coming in 2.6.8."
+      },
+      "ja": {
+        "title": "伸びしろの表示が戻ります",
+        "body": "- 2.6.7の後に多くのご意見をいただき、隠していた伸びしろをすべての能力に再び表示することにしました。ワールドクラス級・リーグ上位級・主力級・限界あり、の4段階で見当がつきます。\n- イベントや成長カードで限界が上がると、緑の+ですぐに表示します。\n- 最初の限界が低くても、イベントと成長カードでさらに伸ばせます。\n- 2.6.8に含めて、まもなく配信します。\n- 当面は月曜日を待たず、ご意見や改善点が見つかり次第すぐにアップデートします。ランキングに影響しない項目を中心に進めます。",
+        "summary": "正確な数字の代わりに4段階で見当がつきます。2.6.8で適用されます。"
+      },
+      "zh": {
+        "title": "成长空间重新显示",
+        "body": "- 2.6.7 之后收到了许多意见，我们决定在所有能力上重新显示被隐藏的成长空间。可通过世界级、联赛顶级、主力级、上限明显四个等级来判断。\n- 当事件或成长卡提升上限时，会立刻以绿色 + 显示。\n- 即使一开始上限较低，也能通过事件和成长卡继续成长。\n- 这些内容将包含在 2.6.8 中，很快推出。\n- 近期我们不再等到周一，看到意见和可改进之处就会马上更新，并以不影响排名的内容为主。",
+        "summary": "用四个等级代替精确数字来判断。将在 2.6.8 生效。"
+      },
+      "es": {
+        "title": "Vuelve el margen de mejora",
+        "body": "- Tras la 2.6.7 muchos nos disteis vuestra opinión, así que el margen de mejora vuelve a verse en todos los atributos. En lugar de números exactos verás cuatro niveles para orientarte: Clase mundial, Élite de liga, Titular y Límite claro.\n- Cuando un evento o una carta de crecimiento suba un límite, lo verás con un + verde.\n- Aunque el límite inicial sea bajo, un jugador puede seguir creciendo con eventos y cartas de crecimiento.\n- Todo llega en la 2.6.8, muy pronto.\n- Por ahora no esperaremos a los lunes. Cuando veamos comentarios o algo que mejorar, actualizaremos enseguida, sobre todo con cambios que no afecten a las clasificaciones.",
+        "summary": "Cuatro niveles para orientarte en lugar de números exactos. Llega en la 2.6.8."
+      },
+      "pt": {
+        "title": "A margem de evolução está de volta",
+        "body": "- Depois da 2.6.7 muitos de vocês deram sua opinião, então a margem de evolução volta a aparecer em todos os atributos. Em vez de números exatos, você verá quatro níveis para avaliar: Classe mundial, Elite da liga, Titular e Limite claro.\n- Quando um evento ou uma carta de crescimento aumentar um limite, você verá um + verde.\n- Mesmo com um limite baixo no início, o jogador ainda pode evoluir com eventos e cartas de crescimento.\n- Tudo isso vem na 2.6.8, em breve.\n- Por enquanto não vamos esperar pelas segundas-feiras. Quando virmos comentários ou algo a melhorar, atualizaremos na hora, principalmente com mudanças que não afetem os rankings.",
+        "summary": "Quatro níveis para avaliar no lugar de números exatos. Chega na 2.6.8."
+      },
+      "fr": {
+        "title": "La marge de progression revient",
+        "body": "- Après la 2.6.7, vous avez été nombreux à nous donner votre avis : la marge de progression réapparaît donc sur toutes les caractéristiques. Au lieu de chiffres exacts, quatre niveaux pour vous faire une idée : Classe mondiale, Élite du championnat, Titulaire et Limite nette.\n- Quand un événement ou une carte de croissance relève une limite, un + vert l'indique aussitôt.\n- Même avec une limite basse au départ, un joueur peut encore progresser grâce aux événements et aux cartes de croissance.\n- Tout cela arrive dans la 2.6.8, très bientôt.\n- Pour le moment, nous n'attendrons plus le lundi. Dès que nous verrons des retours ou des améliorations à apporter, nous mettrons à jour tout de suite, surtout pour des changements sans effet sur les classements.",
+        "summary": "Quatre niveaux pour se faire une idée au lieu de chiffres exacts. Dans la 2.6.8."
+      },
+      "de": {
+        "title": "Das Entwicklungspotenzial ist zurück",
+        "body": "- Nach 2.6.7 habt ihr uns viel Feedback gegeben, deshalb zeigen wir den Spielraum wieder bei allen Werten. Statt genauer Zahlen gibt es vier Stufen zur Einschätzung: Weltklasse, Ligaspitze, Stammspieler und Klare Grenze.\n- Hebt ein Ereignis oder eine Wachstumskarte eine Grenze an, siehst du das sofort als grünes +.\n- Auch mit niedriger Grenze zu Beginn kann ein Spieler durch Ereignisse und Wachstumskarten weiter wachsen.\n- Das alles kommt bald mit 2.6.8.\n- Vorerst warten wir nicht mehr auf den Montag. Sobald wir Feedback oder Verbesserungen sehen, aktualisieren wir direkt, vor allem mit Änderungen, die die Ranglisten nicht beeinflussen.",
+        "summary": "Vier Stufen zur Einschätzung statt genauer Zahlen. Kommt mit 2.6.8."
+      },
+      "it": {
+        "title": "Torna il margine di crescita",
+        "body": "- Dopo la 2.6.7 in molti ci avete dato il vostro parere, quindi il margine di crescita torna visibile su tutte le statistiche. Invece dei numeri esatti vedrai quattro livelli per farti un'idea: Classe mondiale, Élite di lega, Titolare e Limite netto.\n- Quando un evento o una carta di crescita alza un limite, lo vedrai subito con un + verde.\n- Anche con un limite basso all'inizio, un giocatore può ancora crescere con eventi e carte di crescita.\n- Tutto questo arriva presto con la 2.6.8.\n- Per ora non aspetteremo il lunedì. Quando vedremo commenti o cose da migliorare aggiorneremo subito, soprattutto con modifiche che non influiscono sulle classifiche.",
+        "summary": "Quattro livelli per farti un'idea al posto dei numeri esatti. In arrivo con la 2.6.8."
+      },
+      "id": {
+        "title": "Ruang berkembang kembali ditampilkan",
+        "body": "- Setelah 2.6.7 banyak dari kalian memberi masukan, jadi ruang berkembang kembali ditampilkan di semua atribut. Alih-alih angka pasti, kamu akan melihat empat tingkat untuk memperkirakan: Kelas dunia, Elite liga, Pemain inti, dan Batas jelas.\n- Saat peristiwa atau kartu pertumbuhan menaikkan batas, kamu akan langsung melihat + hijau.\n- Meski batas awalnya rendah, pemain tetap bisa berkembang lewat peristiwa dan kartu pertumbuhan.\n- Semua ini hadir di 2.6.8, segera.\n- Untuk sementara kami tidak menunggu hari Senin. Begitu ada masukan atau hal yang perlu diperbaiki, kami langsung memperbarui, terutama perubahan yang tidak memengaruhi peringkat.",
+        "summary": "Empat tingkat untuk memperkirakan, bukan angka pasti. Hadir di 2.6.8."
+      },
+      "tr": {
+        "title": "Gelişim payı geri geliyor",
+        "body": "- 2.6.7 sonrası birçoğunuz görüşlerini paylaştı, bu yüzden gelişim payı tüm özelliklerde yeniden görünecek. Kesin sayılar yerine fikir veren dört seviye göreceksin: Dünya klası, Lig eliti, İlk on bir ve Sınırı belli.\n- Bir olay ya da gelişim kartı bir sınırı yükselttiğinde bunu hemen yeşil + olarak göreceksin.\n- Başlangıçta sınırı düşük olsa da oyuncu olaylar ve gelişim kartlarıyla büyümeye devam edebilir.\n- Bunların hepsi yakında 2.6.8 ile geliyor.\n- Şimdilik pazartesiyi beklemeyeceğiz. Geri bildirim ya da iyileştirilecek bir şey gördüğümüzde, özellikle sıralamaları etkilemeyen değişiklikleri hemen yayınlayacağız.",
+        "summary": "Kesin sayılar yerine fikir veren dört seviye. 2.6.8 ile geliyor."
+      },
+      "ar": {
+        "title": "هامش التطور يعود من جديد",
+        "body": "- بعد 2.6.7 شاركنا كثير منكم آراءهم، لذلك سيعود هامش التطور للظهور في كل المهارات. بدلًا من الأرقام الدقيقة سترى أربعة مستويات للتقدير: مستوى عالمي، نخبة الدوري، أساسي، حد واضح.\n- عندما يرفع حدث أو بطاقة نمو أحد الحدود سترى ذلك فورًا بعلامة + خضراء.\n- حتى مع حد منخفض في البداية، يمكن للاعب أن يواصل التطور عبر الأحداث وبطاقات النمو.\n- كل هذا يصل قريبًا في 2.6.8.\n- في الوقت الحالي لن ننتظر يوم الاثنين. عندما نرى آراء أو أمورًا تحتاج إلى تحسين سنحدّث فورًا، وخاصة التغييرات التي لا تؤثر في التصنيفات.",
+        "summary": "أربعة مستويات للتقدير بدلًا من الأرقام الدقيقة. يصل في 2.6.8."
+      }
+    }
+  },
+  {
     "id": "2026-11-06-reroll-top-pack-600",
     "date": "2026-11-06",
     "title": "리롤권 최상위 팩이 600장으로 늘었어요",
