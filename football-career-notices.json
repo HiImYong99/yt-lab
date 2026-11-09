@@ -1,5 +1,94 @@
 [
   {
+    "id": "2026-11-09-instagram-event",
+    "date": "2026-11-09",
+    "title": "인스타 이벤트: 셀카 스타 + 리롤권 5장",
+    "body": "- 인스타그램 @soccer.career.kr을 팔로우하고 이벤트 게시물에 댓글 ‘축키’를 남기세요.\n- DM의 받기 버튼을 누르면 선물함으로 도착해요. 앱 2.6.7 이상, 게임 계정마다 1회.\n- 댓글은 11월 22일(일) 23:59까지, 받기는 11월 23일(월) 23:59까지예요(한국 시간).",
+    "important": true,
+    "category": "event",
+    "banner": "avatar:socialStar",
+    "summary": "셀카 스타 캐릭터와 리롤권 5장을 참여한 분 전원에게 드려요. 11월 22일까지.",
+    "cta": {
+      "url": "https://ytlab.site/football-career/instagram/",
+      "label": {
+        "ko": "인스타그램에서 참여하기",
+        "en": "Join on Instagram",
+        "ja": "Instagramで参加する",
+        "zh": "前往Instagram参与",
+        "es": "Participar en Instagram",
+        "pt": "Participar no Instagram",
+        "fr": "Participer sur Instagram",
+        "de": "Auf Instagram mitmachen",
+        "it": "Partecipa su Instagram",
+        "id": "Ikut di Instagram",
+        "tr": "Instagram’da katıl",
+        "ar": "شارك على إنستغرام"
+      }
+    },
+    "translations": {
+      "ko": {
+        "title": "인스타 이벤트: 셀카 스타 + 리롤권 5장",
+        "body": "- 인스타그램 @soccer.career.kr을 팔로우하고 이벤트 게시물에 댓글 ‘축키’를 남기세요.\n- DM의 받기 버튼을 누르면 선물함으로 도착해요. 앱 2.6.7 이상, 게임 계정마다 1회.\n- 댓글은 11월 22일(일) 23:59까지, 받기는 11월 23일(월) 23:59까지예요(한국 시간).",
+        "summary": "셀카 스타 캐릭터와 리롤권 5장을 참여한 분 전원에게 드려요. 11월 22일까지."
+      },
+      "en": {
+        "title": "Instagram event: Selfie Star + 5 reroll tickets",
+        "body": "- Follow @soccer.career.global on Instagram and comment FCS on the event post.\n- Tap Claim in the DM and it lands in your gift box. App 2.6.7 or later, once per game account.\n- Comments close Nov 22, 23:59 KST. Claim by Nov 23, 23:59 KST.",
+        "summary": "Everyone who joins gets the Selfie Star and 5 reroll tickets. Until Nov 22."
+      },
+      "ja": {
+        "title": "Instagramイベント:セルフィースター+リロールチケット5枚",
+        "body": "- Instagramで@soccer.career.globalをフォローし、イベント投稿に「FCS」とコメントしてください。\n- DMの受け取りボタンを押すとプレゼントボックスに届きます。アプリ2.6.7以降、ゲームアカウントごとに1回。\n- コメントは11月22日23:59まで、受け取りは11月23日23:59まで(韓国時間)。",
+        "summary": "参加した方全員にセルフィースターとリロールチケット5枚をプレゼント。11月22日まで。"
+      },
+      "zh": {
+        "title": "Instagram活动:自拍之星 + 5张重掷券",
+        "body": "- 在Instagram关注@soccer.career.global,并在活动帖子下评论 FCS。\n- 点击私信中的领取按钮,奖励将发送到礼物箱。需要2.6.7或更高版本,每个游戏账号限领一次。\n- 评论截至11月22日23:59,领取截至11月23日23:59(韩国时间)。",
+        "summary": "所有参与者都能获得自拍之星和5张重掷券。截至11月22日。"
+      },
+      "es": {
+        "title": "Evento de Instagram: Estrella Selfie + 5 boletos de repetición",
+        "body": "- Sigue a @soccer.career.global en Instagram y comenta FCS en la publicación del evento.\n- Pulsa Reclamar en el mensaje directo y llegará a tu buzón de regalos. App 2.6.7 o posterior, una vez por cuenta de juego.\n- Comentarios hasta el 22 de nov., 23:59 KST. Reclama hasta el 23 de nov., 23:59 KST.",
+        "summary": "Todos los que participen reciben la Estrella Selfie y 5 boletos de repetición. Hasta el 22 de noviembre."
+      },
+      "pt": {
+        "title": "Evento do Instagram: Estrela da Selfie + 5 bilhetes de nova rolagem",
+        "body": "- Siga @soccer.career.global no Instagram e comente FCS na publicação do evento.\n- Toque em Resgatar na mensagem direta e o prêmio chega à sua caixa de presentes. App 2.6.7 ou superior, uma vez por conta de jogo.\n- Comentários até 22 de nov., 23:59 KST. Resgate até 23 de nov., 23:59 KST.",
+        "summary": "Quem participar recebe a Estrela da Selfie e 5 bilhetes de nova rolagem. Até 22 de novembro."
+      },
+      "fr": {
+        "title": "Événement Instagram : Star du selfie + 5 tickets de relance",
+        "body": "- Abonnez-vous à @soccer.career.global sur Instagram et commentez FCS sous la publication de l’événement.\n- Touchez Récupérer dans le message privé : tout arrive dans votre boîte à cadeaux. App 2.6.7 ou plus récente, une fois par compte de jeu.\n- Commentaires jusqu’au 22 nov., 23:59 KST. À récupérer avant le 23 nov., 23:59 KST.",
+        "summary": "Tous les participants reçoivent la Star du selfie et 5 tickets de relance. Jusqu’au 22 novembre."
+      },
+      "de": {
+        "title": "Instagram-Event: Selfie-Star + 5 Neuwurf-Tickets",
+        "body": "- Folge @soccer.career.global auf Instagram und kommentiere FCS unter dem Event-Beitrag.\n- Tippe in der DM auf Abholen, dann landet alles in deiner Geschenkbox. App 2.6.7 oder neuer, einmal pro Spielkonto.\n- Kommentare bis 22. Nov., 23:59 KST. Abholen bis 23. Nov., 23:59 KST.",
+        "summary": "Alle Teilnehmenden erhalten den Selfie-Star und 5 Neuwurf-Tickets. Bis 22. November."
+      },
+      "it": {
+        "title": "Evento Instagram: Star del selfie + 5 biglietti rilancio",
+        "body": "- Segui @soccer.career.global su Instagram e commenta FCS sul post dell’evento.\n- Tocca Riscatta nel messaggio diretto e arriverà nella tua casella regali. App 2.6.7 o successiva, una volta per account di gioco.\n- Commenti fino al 22 nov., 23:59 KST. Riscatto entro il 23 nov., 23:59 KST.",
+        "summary": "Chi partecipa riceve la Star del selfie e 5 biglietti rilancio. Fino al 22 novembre."
+      },
+      "id": {
+        "title": "Acara Instagram: Bintang Swafoto + 5 tiket acak ulang",
+        "body": "- Ikuti @soccer.career.global di Instagram dan komentari FCS pada postingan acara.\n- Ketuk Klaim di DM dan hadiah masuk ke kotak hadiah. Aplikasi 2.6.7 atau lebih baru, sekali per akun game.\n- Komentar sampai 22 Nov, 23:59 KST. Klaim sampai 23 Nov, 23:59 KST.",
+        "summary": "Semua peserta mendapat Bintang Swafoto dan 5 tiket acak ulang. Sampai 22 November."
+      },
+      "tr": {
+        "title": "Instagram etkinliği: Selfie Yıldızı + 5 yeniden atış bileti",
+        "body": "- Instagram’da @soccer.career.global hesabını takip et ve etkinlik gönderisine FCS yorumunu yaz.\n- DM’deki Al düğmesine dokun, ödül hediye kutuna gelsin. Uygulama 2.6.7 veya üstü, oyun hesabı başına bir kez.\n- Yorumlar 22 Kasım 23:59 KST’ye kadar. Almak için son tarih 23 Kasım 23:59 KST.",
+        "summary": "Katılan herkes Selfie Yıldızı ve 5 yeniden atış bileti kazanır. 22 Kasım’a kadar."
+      },
+      "ar": {
+        "title": "فعالية إنستغرام: نجم السيلفي + 5 تذاكر إعادة رمي",
+        "body": "- تابع @soccer.career.global على إنستغرام واكتب FCS في تعليق على منشور الفعالية.\n- اضغط زر الاستلام في الرسالة الخاصة لتصل المكافأة إلى صندوق الهدايا. الإصدار 2.6.7 أو أحدث، مرة واحدة لكل حساب لعب.\n- التعليقات حتى 22 نوفمبر 23:59 بتوقيت كوريا. الاستلام حتى 23 نوفمبر 23:59 بتوقيت كوريا.",
+        "summary": "كل من يشارك يحصل على نجم السيلفي و5 تذاكر إعادة رمي. حتى 22 نوفمبر."
+      }
+    }
+  },
+  {
     "id": "2026-11-09-room-keywords",
     "date": "2026-11-09",
     "title": "여지 표시를 다시 보여드려요",
