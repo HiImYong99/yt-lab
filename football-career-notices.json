@@ -1,5 +1,184 @@
 [
   {
+    "id": "2026-11-10-league-poll",
+    "date": "2026-11-10",
+    "title": "주간 리그 어때요? 투표하고 500자금",
+    "body": "- 주간 리그를 해 보며 느낀 점에 가장 가까운 걸 하나 골라 주세요. 아직 안 해보셨어도 괜찮아요.\n- 투표한 분께 500자금을 드려요. 11월 16일(일) 마감 후 다음 날 홈 화면 선물함으로 보내 드려요.\n- 투표는 이 공지 맨 아래에서 할 수 있고, 마감 전까지 바꿀 수 있어요.",
+    "important": true,
+    "popup": {
+      "until": "2026-11-16"
+    },
+    "category": "event",
+    "period": {
+      "start": "2026-11-10T00:00:00+09:00",
+      "end": "2026-11-16T23:59:59+09:00"
+    },
+    "banner": "avatar:communityCaptain",
+    "summary": "주간 리그를 해 보며 느낀 점에 가장 가까운 걸 하나 고르면 500자금을 드려요. 11월 16일(일)까지.",
+    "content": "## 주간 리그, 지금 어떤가요?\n- 다음 리그 개편에 여러분의 답을 참고할게요.\n- **재밌어요 · 할 게 별로 없어요 · 라인업 짜기가 불편해요 · 아직 안 해봤어요** 중 하나를 골라 주세요.\n- 투표한 분께 **500자금**을 드려요. 아직 리그를 안 해보셨어도 받을 수 있어요.\n- 투표 칸은 공지 맨 아래에 있어요. 팝업에서는 **자세히 보기**를 눌러 주세요.\n\n> 11월 16일(일) 자정 마감, 다음 날 홈 화면 선물함으로 보내 드려요. 마감 전까지 투표를 바꿀 수 있어요.",
+    "poll": {
+      "question": {
+        "ko": "주간 리그, 지금 어떤가요?",
+        "en": "How is the Weekly League going?",
+        "ja": "週間リーグ、いまどうですか?",
+        "zh": "每周联赛,现在感觉如何?",
+        "es": "¿Qué tal va la Liga semanal?",
+        "pt": "Como está a Liga semanal?",
+        "fr": "Que pensez-vous de la Ligue hebdo ?",
+        "de": "Wie läuft die Wochenliga für dich?",
+        "it": "Come va la Lega settimanale?",
+        "id": "Gimana Liga Mingguan sejauh ini?",
+        "tr": "Haftalık Lig nasıl gidiyor?",
+        "ar": "كيف تجد الدوري الأسبوعي حتى الآن؟"
+      },
+      "options": [
+        {
+          "id": "fun",
+          "label": {
+            "ko": "재밌어요, 자주 들어가요",
+            "en": "It's fun, I check in often",
+            "ja": "楽しい、よく開いている",
+            "zh": "好玩,经常进去看",
+            "es": "Es divertida, entro seguido",
+            "pt": "É divertida, entro sempre",
+            "fr": "C’est amusant, j’y vais souvent",
+            "de": "Macht Spaß, ich schaue oft rein",
+            "it": "È divertente, entro spesso",
+            "id": "Seru, sering kubuka",
+            "tr": "Eğlenceli, sık sık giriyorum",
+            "ar": "ممتع، أدخله كثيرًا"
+          }
+        },
+        {
+          "id": "nothing",
+          "label": {
+            "ko": "들어가도 할 게 별로 없어요",
+            "en": "Not much to do when I open it",
+            "ja": "開いてもやることが少ない",
+            "zh": "进去也没什么可做",
+            "es": "Al entrar no hay mucho que hacer",
+            "pt": "Quando entro, não tem muito o que fazer",
+            "fr": "Pas grand-chose à faire en y entrant",
+            "de": "Wenn ich reinschaue, gibt es wenig zu tun",
+            "it": "Quando entro, c’è poco da fare",
+            "id": "Dibuka pun tidak banyak yang bisa dilakukan",
+            "tr": "Girince yapacak pek bir şey yok",
+            "ar": "عندما أدخله لا يوجد الكثير لأفعله"
+          }
+        },
+        {
+          "id": "lineup",
+          "label": {
+            "ko": "라인업 짜기가 불편해요",
+            "en": "Setting the lineup is a hassle",
+            "ja": "編成を組むのが面倒",
+            "zh": "排阵容太麻烦",
+            "es": "Armar la alineación es un lío",
+            "pt": "Montar a escalação é chato",
+            "fr": "Faire la composition est pénible",
+            "de": "Die Aufstellung ist mühsam",
+            "it": "Fare la formazione è scomodo",
+            "id": "Mengatur susunan pemain merepotkan",
+            "tr": "Kadro kurmak zahmetli",
+            "ar": "ضبط التشكيلة مزعج"
+          }
+        },
+        {
+          "id": "notyet",
+          "label": {
+            "ko": "아직 안 해봤어요",
+            "en": "Haven't tried it yet",
+            "ja": "まだ遊んでいない",
+            "zh": "还没玩过",
+            "es": "Aún no la probé",
+            "pt": "Ainda não joguei",
+            "fr": "Pas encore essayée",
+            "de": "Noch nicht ausprobiert",
+            "it": "Non l’ho ancora provata",
+            "id": "Belum pernah coba",
+            "tr": "Henüz denemedim",
+            "ar": "لم أجربه بعد"
+          }
+        }
+      ],
+      "until": "2026-11-16T23:59:59+09:00"
+    },
+    "translations": {
+      "ko": {
+        "title": "주간 리그 어때요? 투표하고 500자금",
+        "summary": "주간 리그를 해 보며 느낀 점에 가장 가까운 걸 하나 고르면 500자금을 드려요. 11월 16일(일)까지.",
+        "body": "- 주간 리그를 해 보며 느낀 점에 가장 가까운 걸 하나 골라 주세요. 아직 안 해보셨어도 괜찮아요.\n- 투표한 분께 500자금을 드려요. 11월 16일(일) 마감 후 다음 날 홈 화면 선물함으로 보내 드려요.\n- 투표는 이 공지 맨 아래에서 할 수 있고, 마감 전까지 바꿀 수 있어요.",
+        "content": "## 주간 리그, 지금 어떤가요?\n- 다음 리그 개편에 여러분의 답을 참고할게요.\n- **재밌어요 · 할 게 별로 없어요 · 라인업 짜기가 불편해요 · 아직 안 해봤어요** 중 하나를 골라 주세요.\n- 투표한 분께 **500자금**을 드려요. 아직 리그를 안 해보셨어도 받을 수 있어요.\n- 투표 칸은 공지 맨 아래에 있어요. 팝업에서는 **자세히 보기**를 눌러 주세요.\n\n> 11월 16일(일) 자정 마감, 다음 날 홈 화면 선물함으로 보내 드려요. 마감 전까지 투표를 바꿀 수 있어요."
+      },
+      "en": {
+        "title": "How is the Weekly League? Vote for 500 funds",
+        "summary": "Pick the answer closest to how the Weekly League feels to you and get 500 funds. Until Sun, Nov 16.",
+        "body": "- Pick the answer closest to how the Weekly League feels to you. Haven't tried it yet? That counts too.\n- Everyone who votes gets 500 funds. Voting closes Sun, Nov 16; the funds arrive in the home-screen gift box the next day.\n- Vote at the bottom of this notice. You can change your vote until it closes.",
+        "content": "## How is the Weekly League going?\n- Your answers will guide the next league update.\n- Pick one: **It's fun · Not much to do · Lineups are a hassle · Haven't tried it**.\n- Everyone who votes gets **500 funds**, even if you haven't played the league yet.\n- The vote is at the bottom of this notice. From the pop-up, tap **View details**.\n\n> Closes Sun, Nov 16 at midnight (KST). The funds arrive in the home-screen gift box the next day. You can change your vote until then."
+      },
+      "ja": {
+        "title": "週間リーグはどう?投票で500資金",
+        "summary": "週間リーグの感想にいちばん近いものを1つ選ぶと500資金をプレゼント。11月16日(日)まで。",
+        "body": "- 週間リーグを遊んでみた感想にいちばん近いものを1つ選んでください。まだ遊んでいなくても大丈夫です。\n- 投票した方に500資金をプレゼント。11月16日(日)締め切り後、翌日にホーム画面のギフトボックスへお届けします。\n- 投票はこのお知らせのいちばん下から。締め切りまで変更できます。",
+        "content": "## 週間リーグ、いまどうですか?\n- 次のリーグ改善の参考にします。\n- **楽しい · やることが少ない · 編成が面倒 · まだ遊んでいない** から1つ選んでください。\n- 投票した方に **500資金** をプレゼント。リーグ未参加でも受け取れます。\n- 投票欄はこのお知らせのいちばん下です。ポップアップでは **詳しく見る** をタップしてください。\n\n> 11月16日(日)24時締め切り、翌日ホーム画面のギフトボックスへお届けします。締め切りまで投票を変更できます。"
+      },
+      "zh": {
+        "title": "每周联赛怎么样?投票领500资金",
+        "summary": "选出最接近你对每周联赛感受的一项,即可获得500资金。截止11月16日(周日)。",
+        "body": "- 请选出最接近你玩每周联赛感受的一项。还没玩过也可以投。\n- 投票即送500资金。11月16日(周日)截止后,第二天发到首页礼物箱。\n- 投票在本公告最下方,截止前可以更改。",
+        "content": "## 每周联赛,现在感觉如何?\n- 你的回答会作为下次联赛改版的参考。\n- 请从 **好玩 · 没什么可做 · 排阵容麻烦 · 还没玩过** 中选一项。\n- 投票即送 **500资金**,没玩过联赛也能领取。\n- 投票栏在本公告最下方。在弹窗中请点 **查看详情**。\n\n> 11月16日(周日)24点截止,第二天发到首页礼物箱。截止前可以更改投票。"
+      },
+      "es": {
+        "title": "¿Qué tal la Liga semanal? Vota y gana 500 fondos",
+        "summary": "Elige la respuesta que mejor describe la Liga semanal para ti y recibe 500 fondos. Hasta el dom 16 de nov.",
+        "body": "- Elige la respuesta que mejor describe cómo te parece la Liga semanal. Si aún no la has probado, también vale.\n- Quien vote recibe 500 fondos. La votación cierra el domingo 16 de noviembre; los fondos llegan al buzón de regalos de la pantalla de inicio al día siguiente.\n- Vota al final de este aviso. Puedes cambiar tu voto hasta el cierre.",
+        "content": "## ¿Qué tal va la Liga semanal?\n- Tus respuestas guiarán la próxima actualización de la liga.\n- Elige una: **Es divertida · No hay mucho que hacer · Armar la alineación es un lío · Aún no la probé**.\n- Quien vote recibe **500 fondos**, aunque no haya jugado la liga.\n- La votación está al final de este aviso. Desde la ventana emergente, toca **Ver detalles**.\n\n> Cierra el domingo 16 de noviembre a medianoche (KST). Los fondos llegan al buzón de regalos al día siguiente. Puedes cambiar tu voto hasta entonces."
+      },
+      "pt": {
+        "title": "Como está a Liga semanal? Vote e ganhe 500 fundos",
+        "summary": "Escolha a resposta mais próxima do que você acha da Liga semanal e ganhe 500 fundos. Até dom, 16 de nov.",
+        "body": "- Escolha a resposta mais próxima do que você acha da Liga semanal. Ainda não jogou? Também vale.\n- Quem votar ganha 500 fundos. A votação fecha no domingo, 16 de novembro; os fundos chegam à caixa de presentes da tela inicial no dia seguinte.\n- Vote no fim deste aviso. Você pode mudar o voto até o encerramento.",
+        "content": "## Como está a Liga semanal?\n- Suas respostas vão orientar a próxima atualização da liga.\n- Escolha uma: **É divertida · Não tem muito o que fazer · Montar a escalação é chato · Ainda não joguei**.\n- Quem votar ganha **500 fundos**, mesmo sem ter jogado a liga.\n- A votação fica no fim deste aviso. No pop-up, toque em **Ver detalhes**.\n\n> Fecha no domingo, 16 de novembro, à meia-noite (KST). Os fundos chegam à caixa de presentes no dia seguinte. Você pode mudar o voto até lá."
+      },
+      "fr": {
+        "title": "La Ligue hebdo vous plaît ? Votez pour 500 fonds",
+        "summary": "Choisissez la réponse la plus proche de votre avis sur la Ligue hebdo et recevez 500 fonds. Jusqu’au dim. 16 nov.",
+        "body": "- Choisissez la réponse la plus proche de votre avis sur la Ligue hebdo. Pas encore essayée ? Ça compte aussi.\n- Chaque votant reçoit 500 fonds. Le vote se termine le dimanche 16 novembre ; les fonds arrivent dans la boîte à cadeaux de l’écran d’accueil le lendemain.\n- Votez en bas de cette annonce. Vous pouvez changer votre vote jusqu’à la clôture.",
+        "content": "## Que pensez-vous de la Ligue hebdo ?\n- Vos réponses orienteront la prochaine mise à jour de la ligue.\n- Choisissez une réponse : **C’est amusant · Pas grand-chose à faire · La composition est pénible · Pas encore essayée**.\n- Chaque votant reçoit **500 fonds**, même sans avoir joué la ligue.\n- Le vote se trouve en bas de cette annonce. Depuis la fenêtre, touchez **Voir le détail**.\n\n> Clôture le dimanche 16 novembre à minuit (KST). Les fonds arrivent dans la boîte à cadeaux le lendemain. Vous pouvez changer votre vote d’ici là."
+      },
+      "de": {
+        "title": "Wie gefällt dir die Wochenliga? Abstimmen für 500 Fonds",
+        "summary": "Wähle die Antwort, die am besten zu deinem Eindruck der Wochenliga passt, und erhalte 500 Fonds. Bis So, 16. Nov.",
+        "body": "- Wähle die Antwort, die am besten zu deinem Eindruck der Wochenliga passt. Noch nicht ausprobiert? Zählt auch.\n- Wer abstimmt, erhält 500 Fonds. Die Abstimmung endet am Sonntag, 16. November; die Fonds kommen am nächsten Tag in die Geschenkbox auf dem Startbildschirm.\n- Abstimmen kannst du unten in dieser Mitteilung. Bis zum Ende kannst du deine Stimme ändern.",
+        "content": "## Wie läuft die Wochenliga für dich?\n- Deine Antworten fließen in das nächste Liga-Update ein.\n- Wähle eine: **Macht Spaß · Wenig zu tun · Aufstellung ist mühsam · Noch nicht ausprobiert**.\n- Wer abstimmt, erhält **500 Fonds**, auch ohne die Liga gespielt zu haben.\n- Die Abstimmung steht unten in dieser Mitteilung. Im Pop-up tippe auf **Details ansehen**.\n\n> Endet Sonntag, 16. November, um Mitternacht (KST). Die Fonds kommen am nächsten Tag in die Geschenkbox. Bis dahin kannst du deine Stimme ändern."
+      },
+      "it": {
+        "title": "Come va la Lega settimanale? Vota per 500 fondi",
+        "summary": "Scegli la risposta più vicina a come vivi la Lega settimanale e ricevi 500 fondi. Fino a dom 16 nov.",
+        "body": "- Scegli la risposta più vicina a come vivi la Lega settimanale. Non l’hai ancora provata? Vale lo stesso.\n- Chi vota riceve 500 fondi. Il voto chiude domenica 16 novembre; i fondi arrivano nella casella regali della schermata iniziale il giorno dopo.\n- Vota in fondo a questo avviso. Puoi cambiare il voto fino alla chiusura.",
+        "content": "## Come va la Lega settimanale?\n- Le vostre risposte guideranno il prossimo aggiornamento della lega.\n- Scegline una: **È divertente · C’è poco da fare · La formazione è scomoda · Non l’ho ancora provata**.\n- Chi vota riceve **500 fondi**, anche senza aver giocato la lega.\n- Il voto è in fondo a questo avviso. Dal pop-up tocca **Vedi dettagli**.\n\n> Chiude domenica 16 novembre a mezzanotte (KST). I fondi arrivano nella casella regali il giorno dopo. Puoi cambiare il voto fino ad allora."
+      },
+      "id": {
+        "title": "Gimana Liga Mingguan? Vote dapat 500 dana",
+        "summary": "Pilih jawaban yang paling sesuai dengan kesanmu soal Liga Mingguan dan dapatkan 500 dana. Sampai Min, 16 Nov.",
+        "body": "- Pilih jawaban yang paling sesuai dengan kesanmu soal Liga Mingguan. Belum pernah coba? Tetap boleh vote.\n- Semua yang vote dapat 500 dana. Voting ditutup Minggu, 16 November; dana masuk ke kotak hadiah di layar utama keesokan harinya.\n- Vote di bagian bawah pengumuman ini. Pilihan bisa diubah sampai ditutup.",
+        "content": "## Gimana Liga Mingguan sejauh ini?\n- Jawabanmu jadi acuan pembaruan liga berikutnya.\n- Pilih satu: **Seru · Tidak banyak yang bisa dilakukan · Mengatur susunan merepotkan · Belum pernah coba**.\n- Semua yang vote dapat **500 dana**, walau belum main liga.\n- Kolom vote ada di bagian bawah pengumuman ini. Dari pop-up, ketuk **Lihat detail**.\n\n> Ditutup Minggu, 16 November pukul 24.00 (KST). Dana masuk ke kotak hadiah keesokan harinya. Pilihan bisa diubah sampai saat itu."
+      },
+      "tr": {
+        "title": "Haftalık Lig nasıl? Oy ver, 500 fon kazan",
+        "summary": "Haftalık Lig hakkındaki izlenimine en yakın cevabı seç, 500 fon kazan. 16 Kasım Pazar’a kadar.",
+        "body": "- Haftalık Lig hakkındaki izlenimine en yakın cevabı seç. Henüz denemedin mi? O da bir cevap.\n- Oy veren herkes 500 fon alır. Oylama 16 Kasım Pazar günü kapanır; fonlar ertesi gün ana ekrandaki hediye kutusuna gelir.\n- Oyunu bu duyurunun en altında verebilirsin. Kapanana kadar değiştirebilirsin.",
+        "content": "## Haftalık Lig nasıl gidiyor?\n- Cevapların bir sonraki lig güncellemesine yön verecek.\n- Birini seç: **Eğlenceli · Yapacak pek bir şey yok · Kadro kurmak zahmetli · Henüz denemedim**.\n- Oy veren herkes **500 fon** alır, ligi oynamamış olsan bile.\n- Oylama bu duyurunun en altında. Açılır pencerede **Ayrıntıları gör**e dokun.\n\n> 16 Kasım Pazar gece yarısı (KST) kapanır. Fonlar ertesi gün hediye kutusuna gelir. O zamana kadar oyunu değiştirebilirsin."
+      },
+      "ar": {
+        "title": "ما رأيك في الدوري الأسبوعي؟ صوّت واحصل على 500 رصيد",
+        "summary": "اختر الإجابة الأقرب إلى انطباعك عن الدوري الأسبوعي واحصل على 500 رصيد. حتى الأحد 16 نوفمبر.",
+        "body": "- اختر الإجابة الأقرب إلى انطباعك عن الدوري الأسبوعي. لم تجربه بعد؟ هذه إجابة أيضًا.\n- كل من يصوّت يحصل على 500 رصيد. ينتهي التصويت يوم الأحد 16 نوفمبر، ويصل الرصيد إلى صندوق الهدايا في الشاشة الرئيسية في اليوم التالي.\n- صوّت في أسفل هذا الإعلان. يمكنك تغيير صوتك حتى الإغلاق.",
+        "content": "## كيف تجد الدوري الأسبوعي حتى الآن؟\n- ستساعدنا إجاباتكم في التحديث القادم للدوري.\n- اختر واحدة: **ممتع · لا يوجد الكثير لأفعله · ضبط التشكيلة مزعج · لم أجربه بعد**.\n- كل من يصوّت يحصل على **500 رصيد** حتى لو لم يلعب الدوري.\n- خانة التصويت في أسفل هذا الإعلان. من النافذة المنبثقة اضغط **عرض التفاصيل**.\n\n> ينتهي يوم الأحد 16 نوفمبر عند منتصف الليل (بتوقيت كوريا). يصل الرصيد إلى صندوق الهدايا في اليوم التالي. يمكنك تغيير صوتك حتى ذلك الحين."
+      }
+    }
+  },
+  {
     "id": "2026-11-09-instagram-event",
     "date": "2026-11-09",
     "title": "인스타 이벤트: 셀카 스타 + 리롤권 5장",
