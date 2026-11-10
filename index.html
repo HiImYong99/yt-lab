@@ -398,33 +398,6 @@
       max-width: 60ch;
       margin-top: 18px;
     }
-    .videos {
-      list-style: none;
-      margin: 34px 0 32px;
-      display: grid;
-      gap: 1px;
-      background: var(--line);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      overflow: hidden;
-    }
-    .videos li {
-      background: var(--bg);
-      padding: 16px 20px;
-      display: flex;
-      gap: 13px;
-      align-items: baseline;
-      font-size: 15px;
-    }
-    .videos li a { color: inherit; text-decoration: none; transition: color .15s; }
-    .videos li a:hover { color: var(--accent); }
-    .videos li::before {
-      content: "▶";
-      color: var(--muted);
-      font-size: 10px;
-      flex: none;
-      transform: translateY(-1px);
-    }
 
     footer .fnav { display: flex; gap: 18px; flex-wrap: wrap; }
     footer .fnav a { color: var(--muted); text-decoration: none; transition: color .15s; }
@@ -560,6 +533,357 @@
     [data-lang] { display: none; }
     html[lang="ko"] [data-lang="ko"],
     html[lang="en"] [data-lang="en"] { display: revert; }
+    /* ============================================================
+       Motion layer. A sticky bar, a hero split between the copy and
+       a tilted wall of the live products, then sections whose parts
+       rise in as they are reached. All of it stands still under
+       prefers-reduced-motion (block at the end).
+       ============================================================ */
+    :root {
+      --soft: #cfcfcf;
+      --line2: #2c2c29;
+      --card: #0d0d0c;
+      --gut: clamp(20px, 6vw, 64px);
+      --e-out: cubic-bezier(.16, 1, .3, 1);
+      --e-pop: cubic-bezier(.34, 1.56, .64, 1);
+      color-scheme: dark;
+    }
+    body { word-break: keep-all; overflow-wrap: break-word; }
+    section[id] { scroll-margin-top: 60px; }
+    .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+    /* ---------- top bar ---------- */
+    .topbar {
+      position: sticky; top: 0; z-index: 20;
+      padding-block: 16px;
+      background: rgba(8, 8, 8, .72);
+      -webkit-backdrop-filter: saturate(160%) blur(14px);
+      backdrop-filter: saturate(160%) blur(14px);
+      border-bottom: 1px solid transparent;
+      transition: border-color .25s;
+    }
+    .topbar.stuck { border-bottom-color: var(--line); }
+    .progress {
+      position: absolute; left: 0; right: 0; bottom: -1px; height: 1px;
+      background: var(--accent); transform: scaleX(0); transform-origin: left; pointer-events: none;
+    }
+    .js .mark .dot { animation: led 1.3s steps(1, end) .25s both; }
+    @keyframes led { 0%, 36% { opacity: 0; } 18%, 54%, 100% { opacity: 1; } }
+    .navlinks a { position: relative; }
+    .navlinks a::after {
+      content: ""; position: absolute; left: 50%; bottom: -9px; width: 4px; height: 4px; margin-left: -2px;
+      border-radius: 50%; background: var(--accent); transform: scale(0); transition: transform .35s var(--e-pop);
+    }
+    .navlinks a.on { color: var(--fg); }
+    .navlinks a.on::after { transform: none; }
+
+    /* ---------- hero ---------- */
+    main {
+      display: grid; grid-template-columns: minmax(0, 1fr); align-items: center;
+      gap: clamp(26px, 5vh, 44px);
+      padding-top: clamp(36px, 8vh, 96px);
+      overflow: hidden;
+    }
+    @media (min-width: 1000px) {
+      main { grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: 16px; }
+    }
+    .hero { position: relative; z-index: 1; }
+    /* graph paper: a dot sheet with one crest of light sweeping across it */
+    .gridbg {
+      position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;
+      -webkit-mask-image: linear-gradient(#000 35%, transparent 95%);
+      mask-image: linear-gradient(#000 35%, transparent 95%);
+    }
+    h1 .dot { display: inline-block; font-style: normal; color: var(--accent); transform-origin: 50% 85%; }
+    .js h1 .dot { transform: scale(0); transition: transform .6s var(--e-pop) 1s; }
+    .js h1.in .dot { transform: none; }
+    .js .hi {
+      opacity: 0; transform: translateY(16px);
+      transition: opacity .8s ease, transform 1s var(--e-out); transition-delay: var(--d, 0ms);
+    }
+    .js .hero.ready .hi { opacity: 1; transform: none; }
+
+    /* the wall: six columns of product icons drifting on a tilted plane */
+    .wall {
+      position: relative; height: clamp(360px, 56vh, 580px);
+      perspective: 1100px; perspective-origin: 50% 42%;
+      /* soft on all four sides; the right side runs off the page */
+      margin-right: calc(-1 * var(--gut));
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 22%, #000 80%, transparent), linear-gradient(transparent, #000 26%, #000 78%, transparent);
+      -webkit-mask-composite: source-in;
+      mask-image: linear-gradient(90deg, transparent, #000 22%, #000 80%, transparent), linear-gradient(transparent, #000 26%, #000 78%, transparent);
+      mask-composite: intersect;
+    }
+    .wall-tilt {
+      --g: clamp(11px, 1.5vw, 18px);
+      position: absolute; inset: -26% -10% -26% -6%;
+      display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); column-gap: var(--g); align-items: start;
+      transform: rotateX(calc(20deg + var(--rx, 0deg))) rotateY(calc(-20deg + var(--ry, 0deg))) rotateZ(6deg) translate3d(0, var(--sy, 0px), 0);
+      transition: transform .7s var(--e-out);
+      will-change: transform;
+    }
+    /* a little of the accent behind the icons, so the wall sits in the page's light */
+    .wall::before {
+      content: ""; position: absolute; left: 18%; right: 6%; top: 14%; bottom: 14%;
+      background: radial-gradient(closest-side, rgba(216, 255, 54, .11), transparent);
+    }
+    .wall-col { animation: wall-y var(--dur, 56s) linear infinite; will-change: transform; }
+    .wall-col:nth-child(even) { animation-direction: reverse; }
+    @keyframes wall-y { to { transform: translate3d(0, -50%, 0); } }
+    .wall .wi { display: block; margin-bottom: var(--g); }
+    .js .wall .wi { opacity: 0; transform: translate3d(0, 70px, 0) scale(.72); }
+    .js .wall.ready .wi { animation: wall-in 1.1s var(--e-out) both; animation-delay: calc(var(--i) * 26ms + 150ms); }
+    @keyframes wall-in { to { opacity: 1; transform: none; } }
+    .wall img {
+      display: block; width: 100%; aspect-ratio: 1; border-radius: 23%; background: #151515;
+      box-shadow: 0 16px 34px rgba(0, 0, 0, .55); cursor: pointer;
+      transition: transform .4s var(--e-out), filter .3s;
+    }
+    .wall img:hover { transform: scale(1.12); filter: brightness(1.12); }
+    .walltip {
+      position: fixed; z-index: 15; left: 0; top: 0; pointer-events: none; white-space: nowrap;
+      font-size: 12px; font-weight: 600; color: var(--bg); background: var(--fg);
+      padding: 5px 9px; border-radius: 7px; opacity: 0; transition: opacity .15s;
+    }
+    .walltip.on { opacity: 1; }
+    @media (max-width: 999px) {
+      .wall { height: 250px; margin-inline: calc(-1 * var(--gut)); }
+      .wall { -webkit-mask-image: linear-gradient(transparent, #000 24%, #000 76%, transparent); mask-image: linear-gradient(transparent, #000 24%, #000 76%, transparent); -webkit-mask-composite: source-over; mask-composite: add; }
+      .wall-tilt { inset: -34% -8%; }
+    }
+
+    /* ---------- reveals ---------- */
+    .js .reveal {
+      transform: translateY(20px);
+      transition: opacity .8s ease, transform 1s var(--e-out); transition-delay: calc(var(--i, 0) * 90ms);
+    }
+    /* headings rise word by word out of a mask instead of fading as a block */
+    .js .split.reveal { opacity: 1; transform: none; }
+    .split .wd { display: inline-block; overflow: hidden; vertical-align: top; padding: .16em .06em; margin: -.16em -.06em; }
+    .js .split .wi { display: inline-block; transform: translateY(125%); transition: transform 1s var(--e-out); transition-delay: calc(var(--k, 0) * 55ms); }
+    .js .split.in .wi { transform: none; }
+
+    /* ---------- approach ---------- */
+    .principle { position: relative; padding-top: 26px; border-top: 1px solid var(--line); }
+    .principle::before {
+      content: ""; position: absolute; left: 0; top: -1px; width: 34%; height: 1px; background: var(--accent);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 1.1s var(--e-out) calc(var(--i, 0) * 140ms + 250ms);
+    }
+    .principle.in::before { transform: none; }
+    .pg { display: block; width: 44px; height: 44px; margin-bottom: 20px; color: var(--accent); overflow: visible; }
+    .pg path { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+    .js .pg path {
+      stroke-dasharray: 1; stroke-dashoffset: 1;
+      transition: stroke-dashoffset 1.1s var(--e-out); transition-delay: calc(var(--i, 0) * 140ms + var(--j, 0) * 110ms + 350ms);
+    }
+    .js .principle.in .pg path { stroke-dashoffset: 0; }
+    .pg g { transform-origin: 22px 22px; transition: transform .5s var(--e-out); }
+    .principle.in .pg-run g { animation: spin 16s linear 2s infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .principle:hover .pg-ship g { transform: translate(3px, -3px); }
+    .pg-data path { stroke-width: 5.5; }
+
+    /* ---------- traction ---------- */
+    .stats {
+      display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0;
+      margin: 36px 0 0; border-block: 1px solid var(--line);
+    }
+    .stat { padding: 26px 14px 24px 0; }
+    .stat + .stat { border-left: 1px solid var(--line); padding-left: clamp(14px, 2.2vw, 26px); }
+    .stat .num {
+      font-size: clamp(30px, 4.4vw, 46px); font-weight: 800; letter-spacing: -.045em;
+      font-variant-numeric: tabular-nums; white-space: nowrap;
+    }
+    .stat:first-child .num { color: var(--accent); }
+    @media (max-width: 720px) {
+      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .stat:nth-child(3) { border-left: 0; padding-left: 0; }
+      .stat:nth-child(n+3) { border-top: 1px solid var(--line); }
+    }
+    /* odometer: each digit is a strip that rolls to its value */
+    .od { display: inline-block; height: 1em; overflow: hidden; vertical-align: top; }
+    .od > span { display: block; transition: transform var(--t, 1.6s) var(--e-out) var(--w, 0s); }
+    .od i { display: block; height: 1em; font-style: normal; }
+
+    /* cumulative downloads chart */
+    .chart { display: none; }
+    .js .chart {
+      display: block; margin: 30px 0 0; padding: clamp(16px, 2.6vw, 26px);
+      border: 1px solid var(--line); border-radius: 16px; background: var(--card);
+    }
+    .chart-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 22px; }
+    .chart-title { font-size: 14.5px; font-weight: 600; letter-spacing: -.01em; }
+    .chart-sub { display: block; margin-top: 3px; font-size: 12px; font-weight: 400; color: var(--muted); }
+    .chart-legend { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 12px; color: var(--soft); }
+    .chart-legend li { display: flex; align-items: center; gap: 7px; }
+    .chart-legend i, .tip i { width: 14px; height: 2px; border-radius: 1px; background: var(--c); flex: none; }
+    .plot {
+      position: relative; height: clamp(190px, 28vw, 280px); margin: 38px 80px 28px 36px;
+      touch-action: pan-y; cursor: crosshair; outline: none;
+    }
+    .plot:focus-visible { outline: 1px solid var(--muted); outline-offset: 8px; border-radius: 4px; }
+    .plot svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .plot .gl { position: absolute; left: 0; right: 0; height: 1px; background: var(--line); }
+    .plot .gl.base { background: var(--line2); }
+    .plot .yt, .plot .xt { position: absolute; font-size: 11px; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .plot .yt { right: 100%; margin-right: 9px; transform: translateY(-50%); }
+    .plot .xt { top: 100%; margin-top: 9px; transform: translateX(-50%); }
+    .plot .note { position: absolute; top: -14px; bottom: 0; width: 1px; background: var(--line2); font-style: normal; }
+    .plot .note span {
+      position: absolute; top: 0; right: 9px; width: max-content; max-width: 150px;
+      font-size: 11px; line-height: 1.35; color: var(--soft); text-align: right;
+    }
+    .plot .pt {
+      position: absolute; width: 9px; height: 9px; margin: -4.5px 0 0 -4.5px; border-radius: 50%;
+      background: var(--c); box-shadow: 0 0 0 2px var(--card); pointer-events: none;
+    }
+    .plot .hp { opacity: 0; }
+    .plot .end { position: absolute; left: 100%; margin-left: 13px; transform: translateY(-50%); line-height: 1.2; white-space: nowrap; }
+    .plot .end b { display: block; font-size: 14px; font-weight: 700; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+    .plot .end span { font-size: 11px; color: var(--muted); }
+    .plot .cross { position: absolute; top: 0; bottom: 0; width: 1px; background: var(--muted); opacity: 0; pointer-events: none; }
+    .plot .tip {
+      position: absolute; z-index: 2; top: 6px; padding: 9px 11px; border-radius: 10px;
+      background: #1a1a18; border: 1px solid var(--line2); font-size: 12px; white-space: nowrap;
+      opacity: 0; pointer-events: none; transition: opacity .12s;
+    }
+    .plot.hov .cross, .plot.hov .tip { opacity: 1; }
+    .plot.hov .hp.live { opacity: 1; }
+    .tip time { display: block; margin-bottom: 6px; color: var(--muted); font-variant-numeric: tabular-nums; }
+    .tip div { display: flex; align-items: center; gap: 7px; color: var(--muted); }
+    .tip div + div { margin-top: 3px; }
+    .tip b { color: var(--fg); font-weight: 700; font-variant-numeric: tabular-nums; }
+    @media (max-width: 560px) {
+      .plot { margin: 36px 64px 26px 30px; }
+      .plot .end { margin-left: 10px; }
+      .plot .end b { font-size: 12.5px; }
+      .plot .end span { font-size: 10px; }
+      .plot .note span { max-width: 112px; }
+    }
+    .wins { margin-top: 30px; }
+
+    /* ---------- product grids ---------- */
+    .apps { margin-top: 34px; }
+    .js .apps.reveal { opacity: 1; transform: none; }
+    .apps li { position: relative; }
+    .apps li > * { position: relative; }
+    .js .apps li {
+      opacity: 0; transform: translateY(16px);
+      transition: opacity .6s ease, transform .8s var(--e-out), background .18s;
+      transition-delay: calc(var(--c, 0) * 45ms), calc(var(--c, 0) * 45ms), 0s;
+    }
+    .js .apps li.in { opacity: 1; transform: none; }
+    @media (max-width: 560px) {
+      .apps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .apps li { padding: 16px 14px; }
+      .apps .nm { font-size: 15px; }
+    }
+    @media (hover: hover) {
+      /* a soft light follows the pointer across the hovered card */
+      .apps li[data-app]::before {
+        content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity .3s;
+        background: radial-gradient(200px circle at var(--mx, 50%) var(--my, 50%), rgba(216, 255, 54, .1), transparent 65%);
+      }
+      .apps li[data-app]:hover::before { opacity: 1; }
+    }
+
+    /* app sheet: the icon travels from the card (or the wall) into the sheet */
+    .modal-backdrop.instant, .modal-backdrop.instant .modal { transition: none; }
+    ::view-transition-group(appicon) { animation-duration: .5s; animation-timing-function: cubic-bezier(.16, 1, .3, 1); }
+    ::view-transition-old(root), ::view-transition-new(root) { animation-duration: .28s; }
+    /* whole screenshots at one height, so portrait and landscape shots share a baseline */
+    .appmodal-shots img { width: auto; height: 300px; aspect-ratio: auto; object-fit: contain; }
+    .modal-backdrop.show .appmodal-shots img { animation: shot .7s var(--e-out) both; animation-delay: calc(var(--i, 0) * 60ms + 120ms); }
+    @keyframes shot { from { opacity: 0; transform: translateX(26px); } }
+
+    /* ---------- youtube ---------- */
+    .pipeline {
+      list-style: none; position: relative; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr));
+      margin: 34px 0 0; padding: 0;
+    }
+    .pipeline li {
+      position: relative; z-index: 1; padding-top: 20px; text-align: center; white-space: nowrap;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; color: var(--muted);
+      transition: color .3s;
+    }
+    .pipeline li::before {
+      content: ""; position: absolute; top: 0; left: 50%; width: 9px; height: 9px; margin-left: -4.5px;
+      border-radius: 50%; box-sizing: border-box; background: var(--bg); border: 1px solid var(--line2);
+      transition: background .3s, border-color .3s, box-shadow .3s;
+    }
+    .pipeline li.done::before { background: var(--accent); border-color: var(--accent); }
+    .pipeline li.on { color: var(--fg); }
+    .pipeline li.on::before { border: 2px solid var(--accent); box-shadow: 0 0 0 5px rgba(216, 255, 54, .14); }
+    .pipeline::before, .pipeline::after {
+      content: ""; position: absolute; top: 4px; left: calc(100% / 14); right: calc(100% / 14); height: 1px;
+      background: var(--line2);
+    }
+    .pipeline::after {
+      background: var(--accent); transform-origin: left; transform: scaleX(var(--prog, 1));
+      transition: transform .8s linear;
+    }
+    .pipeline.rewind::after { transition: none; }
+    @media (max-width: 560px) { .pipeline li { font-size: 9.5px; letter-spacing: -.02em; } }
+
+    .vids { list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin: 34px 0 30px; }
+    .vids a { display: block; color: var(--soft); text-decoration: none; font-size: 13.5px; line-height: 1.45; transition: color .2s; }
+    .vids a:hover { color: var(--fg); }
+    .vids .th {
+      position: relative; display: block; aspect-ratio: 16 / 9; margin-bottom: 10px;
+      border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: #151515;
+    }
+    .vids .th img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .7s var(--e-out); }
+    .vids a:hover .th img { transform: scale(1.06); }
+    .vids .pl {
+      position: absolute; right: 8px; bottom: 8px; width: 28px; height: 28px; border-radius: 50%;
+      display: grid; place-items: center; background: var(--accent); color: var(--bg);
+      transform: scale(0); transition: transform .35s var(--e-pop);
+    }
+    .vids a:hover .pl, .vids a:focus-visible .pl { transform: none; }
+    @media (max-width: 720px) { .vids { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+    /* ---------- collab ---------- */
+    .collab-panel {
+      position: relative; overflow: hidden; padding: clamp(28px, 6vw, 64px);
+      border: 1px solid var(--line); border-radius: 22px; background: var(--card);
+    }
+    .collab-panel > * { position: relative; }
+    .collab-panel .gridbg {
+      position: absolute; z-index: 0;
+      -webkit-mask-image: radial-gradient(100% 130% at 100% 100%, #000, transparent 72%);
+      mask-image: radial-gradient(100% 130% at 100% 100%, #000, transparent 72%);
+    }
+    .collab h2 { font-size: clamp(28px, 5vw, 50px); line-height: 1.08; letter-spacing: -.035em; margin-top: 16px; }
+    .btn-primary {
+      transform: translate(var(--bx, 0px), var(--by, 0px));
+      transition: background .15s, border-color .15s, color .15s, transform .45s var(--e-out);
+    }
+    .btn-primary:hover { transform: translate(var(--bx, 0px), calc(var(--by, 0px) - 1px)); }
+
+    /* ---------- footer ---------- */
+    footer { overflow: hidden; }
+    .wordmark {
+      flex-basis: 100%; order: 9; margin: 34px 0 -28px; overflow: hidden;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-weight: 700;
+      font-size: clamp(64px, 26.6vw, 400px); line-height: .82; letter-spacing: -.05em; white-space: nowrap;
+      color: #111110; -webkit-text-stroke: 1px var(--line2); user-select: none;
+    }
+    .wordmark span { display: inline-block; }
+    .js .wordmark span { transform: translateY(105%); transition: transform 1.2s var(--e-out); transition-delay: calc(var(--i) * 70ms); }
+    .js .wordmark.in span { transform: none; }
+    .wordmark .dot { color: var(--accent); -webkit-text-stroke: 0; }
+    .js .wordmark.in .dot { animation: led 1.3s steps(1, end) 1s both; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .js .reveal, .js .hi, .js .split .wi, .js h1 .dot, .js .apps li, .js .wall .wi, .js .wordmark span {
+        opacity: 1; transform: none; transition: none; animation: none;
+      }
+      .js .mark .dot, .wall-col, .principle.in .pg-run g, .js .wordmark.in .dot, .modal-backdrop.show .appmodal-shots img { animation: none; }
+      .js .pg path { stroke-dashoffset: 0; transition: none; }
+      .principle::before { transform: none; transition: none; }
+      .wall-tilt, .od > span, .pipeline::after, .btn-primary { transition: none; }
+    }
   </style>
 </head>
 <body>
@@ -575,26 +899,28 @@
       </div>
       <button class="langtoggle" id="langBtn" aria-label="Switch language">EN</button>
     </nav>
+    <div class="progress" id="progress" aria-hidden="true"></div>
   </header>
 
   <main>
+    <canvas class="gridbg" aria-hidden="true"></canvas>
     <div class="hero">
-      <span class="badge">
+      <span class="badge hi">
         <span data-lang="ko">제품 스튜디오</span>
         <span data-lang="en">Product Studio</span>
       </span>
 
       <h1>
-        <span data-lang="ko">앱·게임을 만들고,<br>직접 운영합니다.</span>
-        <span data-lang="en">Apps and games,<br>built and run by us.</span>
+        <span data-lang="ko">앱·게임을 만들고,<br>직접 운영합니다<i class="dot">.</i></span>
+        <span data-lang="en">Apps and games,<br>built and run by us<i class="dot">.</i></span>
       </h1>
 
-      <p class="lead">
+      <p class="lead hi" style="--d:380ms">
         <span data-lang="ko">YT Lab은 AI 에이전트와 앱·게임을 기획하고 검증해 출시하는 제품 스튜디오입니다. App Store·Google Play·앱인토스에서 직접 운영하고, 유튜브 콘텐츠 제작과 발행을 자동화합니다.</span>
         <span data-lang="en">YT Lab is a product studio planning, testing, shipping, and running apps and games with AI agents across the App Store, Google Play, and Apps in Toss. We also automate YouTube production and publishing.</span>
       </p>
 
-      <div class="cta">
+      <div class="cta hi" style="--d:470ms">
         <a class="btn btn-primary" href="#work">
           <span data-lang="ko">제품 보기</span>
           <span data-lang="en">See our products</span>
@@ -605,7 +931,7 @@
         </a>
       </div>
 
-      <div class="contact" id="contact">
+      <div class="contact hi" id="contact" style="--d:560ms">
         <span data-lang="ko">문의</span>
         <span data-lang="en">Contact</span>
         <span class="sep">/</span>
@@ -614,6 +940,7 @@
         <a href="https://www.youtube.com/@VibeBuilderkr" target="_blank" rel="noopener">YouTube</a>
       </div>
     </div>
+    <div class="wall" id="wall" aria-hidden="true"></div>
   </main>
 
   <section class="approach" id="approach">
@@ -629,6 +956,7 @@
 
       <div class="principles">
         <div class="principle reveal">
+          <svg class="pg pg-ship" viewBox="0 0 44 44" aria-hidden="true"><g><path pathLength="1" d="M10 34 33 11"/><path pathLength="1" style="--j:1" d="M17 11h16v16"/><path pathLength="1" style="--j:2" d="M7 25l6-6M19 37l6-6"/></g></svg>
           <span class="pnum">01</span>
           <h3>
             <span data-lang="ko">빠르게 출시</span>
@@ -640,6 +968,7 @@
           </p>
         </div>
         <div class="principle reveal">
+          <svg class="pg pg-run" viewBox="0 0 44 44" aria-hidden="true"><g><path pathLength="1" d="M33 22A11 11 0 1 1 28.5 13.1"/><path pathLength="1" style="--j:1" d="M27 7.3l1.5 5.8-6 .4"/></g></svg>
           <span class="pnum">02</span>
           <h3>
             <span data-lang="ko">직접 운영</span>
@@ -651,6 +980,7 @@
           </p>
         </div>
         <div class="principle reveal">
+          <svg class="pg pg-data" viewBox="0 0 44 44" aria-hidden="true"><path pathLength="1" d="M12 34v-6"/><path pathLength="1" style="--j:1" d="M22 34V21"/><path pathLength="1" style="--j:2" d="M32 34V12"/></svg>
           <span class="pnum">03</span>
           <h3>
             <span data-lang="ko">데이터로 결정</span>
@@ -682,6 +1012,20 @@
         <div class="stat"><span class="num">30,820</span><span class="lbl"><span data-lang="ko">App Store 첫 다운로드 · 2026.06.15~11.08</span><span data-lang="en">App Store first downloads · Jun 15–Nov 8, 2026</span></span></div>
         <div class="stat"><span class="num">10,757</span><span class="lbl"><span data-lang="ko">Google Play 사용자 설치 · 2026.05.01~11.05</span><span data-lang="en">Google Play user installs · May 1–Nov 5, 2026</span></span></div>
       </div>
+
+      <figure class="chart reveal" id="dlChart">
+        <div class="chart-head">
+          <figcaption class="chart-title">
+            <span data-lang="ko">스토어 누적 다운로드·설치</span><span data-lang="en">Cumulative store downloads &amp; installs</span>
+            <span class="chart-sub"><span data-lang="ko">스토어 공식 일별 리포트 · 2026.05.01~11.08</span><span data-lang="en">Official daily store reports · May 1–Nov 8, 2026</span></span>
+          </figcaption>
+          <ul class="chart-legend">
+            <li><i style="--c:var(--accent)"></i><span data-lang="ko">App Store 첫 다운로드</span><span data-lang="en">App Store first downloads</span></li>
+            <li><i style="--c:var(--soft)"></i><span data-lang="ko">Google Play 사용자 설치</span><span data-lang="en">Google Play user installs</span></li>
+          </ul>
+        </div>
+        <div class="plot" tabindex="0" role="img"></div>
+      </figure>
 
       <ul class="wins reveal">
         <li><span data-lang="ko">스토어 앱·게임 <b>16종</b> — App Store 15종 · Google Play 16종</span><span data-lang="en"><b>16 store apps and games</b> — 15 on the App Store · 16 on Google Play</span></li>
@@ -750,22 +1094,22 @@
       </h2>
 
       <ul class="apps reveal">
-          <li data-app="oneto50" data-key="one-to-fifty" tabindex="0"><img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/97/88/39/9788395f-c794-14b8-7005-f991f3d9b9af/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg" /><span class="nm">1 to 50</span><span class="tag" data-lang="ko">숫자 순서 스피드 게임</span><span class="tag" data-lang="en">Number tap race</span><a class="store" href="https://apps.apple.com/kr/app/id6782382427" rel="noopener" target="_blank">App Store</a><a class="store" href="https://play.google.com/store/apps/details?id=com.ytlab.one_to_fifty" rel="noopener" target="_blank">Google Play</a><span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span></li>
-          <li data-app="treble" data-key="road-to-treble" tabindex="0"><img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/51/47/57/5147574e-cb5a-6bf9-4406-538506b04d1e/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg" /><span class="nm">로드 투 트레블</span><span class="tag" data-lang="ko">축구 드래프트 게임</span><span class="tag" data-lang="en">Football draft game</span><a class="store" href="https://apps.apple.com/kr/app/id6783814192" rel="noopener" target="_blank">App Store</a><a class="store" href="https://play.google.com/store/apps/details?id=dev.goldenroad.golden_road_app" rel="noopener" target="_blank">Google Play</a><span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span></li>
-          <li data-app="animalpop" data-key="animal-pop" tabindex="0"><img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/17/b5/a5/17b5a5c9-3fcf-fd27-4168-b43d7e0d81fe/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg" /><span class="nm">애니멀 팝</span><span class="tag" data-lang="ko">동물 합치기 퍼즐</span><span class="tag" data-lang="en">Animal merge puzzle</span><a class="store" href="https://apps.apple.com/kr/app/id6782373454" rel="noopener" target="_blank">App Store</a><a class="store" href="https://play.google.com/store/apps/details?id=com.animalpop.app" rel="noopener" target="_blank">Google Play</a><span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span></li>
-          <li data-app="sumdash" data-key="sumdash" tabindex="0"><img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/be/f4/1d/bef41d4b-75af-60c7-e6f3-439e74deff78/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg" /><span class="nm">SumDash</span><span class="tag" data-lang="ko">사칙연산 스피드 게임</span><span class="tag" data-lang="en">Math speed game</span><a class="store" href="https://apps.apple.com/kr/app/id6785198584" rel="noopener" target="_blank">App Store</a><a class="store" href="https://play.google.com/store/apps/details?id=com.ytlab.sumdash" rel="noopener" target="_blank">Google Play</a><span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span></li>
-          <li data-app="blindduel" data-key="blind-duel" tabindex="0"><img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/39/0e/87/390e870b-ddf3-d66a-6bef-9cee90df045c/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg" /><span class="nm">블라인드 듀얼</span><span class="tag" data-lang="ko">한 장 심리전 카드게임</span><span class="tag" data-lang="en">One-card bluffing duel</span><a class="store" href="https://apps.apple.com/kr/app/id6791613672" rel="noopener" target="_blank">App Store</a><a class="store" href="https://play.google.com/store/apps/details?id=com.ytlab.blind_poker" rel="noopener" target="_blank">Google Play</a><span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span></li>
-          <li data-app="admeter" data-key="admeter" tabindex="0"><img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/56/17/31/5617317b-8d62-9614-c9cf-c935aae6c987/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg" /><span class="nm">AdMeter</span><span class="tag" data-lang="ko">애드몹 · 애드센스 수익 대시보드</span><span class="tag" data-lang="en">AdMob &amp; AdSense earnings</span><a class="store" href="https://apps.apple.com/kr/app/id6789329258" rel="noopener" target="_blank">App Store</a><a class="store" href="https://play.google.com/store/apps/details?id=site.ytlab.adpulse" rel="noopener" target="_blank">Google Play</a><span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span></li>
-          <li data-app="kupanote" data-key="kupanote" tabindex="0"><img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/8a/56/6d/8a566d40-4126-1aec-bd6e-61d4077f18bf/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg" /><span class="nm">쿠파노트</span><span class="tag" data-lang="ko">쿠팡 파트너스 실적 · 정산 달력</span><span class="tag" data-lang="en">Coupang Partners earnings calendar</span><a class="store" href="https://apps.apple.com/kr/app/id6795585727" rel="noopener" target="_blank">App Store</a><a class="store" href="https://play.google.com/store/apps/details?id=site.ytlab.kupanote" rel="noopener" target="_blank">Google Play</a><span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span></li>
-          <li data-app="banpick" data-key="banpick" tabindex="0"><img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/6e/8b/fa/6e8bfa4c-d800-7f40-49e9-f1a7c0ebb966/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg" /><span class="nm">밴픽 매니저</span><span class="tag" data-lang="ko">e스포츠 구단 경영 게임</span><span class="tag" data-lang="en">Esports team manager</span><a class="store" href="https://apps.apple.com/kr/app/id6802333370" rel="noopener" target="_blank">App Store</a><a class="store" href="https://play.google.com/store/apps/details?id=com.ytlab.esports_gm" rel="noopener" target="_blank">Google Play</a><span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span></li>
-          <li data-app="mallow" data-key="malang-brain" tabindex="0"><img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/1d/47/1f/1d471fc3-a504-b1a3-4241-19e73d479c75/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/512x512bb.jpg" /><span class="nm">말랑브레인</span><span class="tag" data-lang="ko">두뇌 게임 7종 모음</span><span class="tag" data-lang="en">Brain game collection</span><a class="store" href="https://apps.apple.com/kr/app/id6792457720" rel="noopener" target="_blank">App Store</a><a class="store" href="https://play.google.com/store/apps/details?id=com.ytlab.malang_brain" rel="noopener" target="_blank">Google Play</a><span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span></li>
-          <li data-app="chess12" data-key="twelve-chess" tabindex="0"><img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a5/2e/8d/a52e8d6f-5cec-aa33-4f72-c4e65c514197/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.jpg" /><span class="nm">십이장기 · 12 Chess</span><span class="tag" data-lang="ko">3×4 판 미니 체스</span><span class="tag" data-lang="en">12-square mini chess</span><a class="store" href="https://apps.apple.com/kr/app/id6804221169" rel="noopener" target="_blank">App Store</a><a class="store" href="https://play.google.com/store/apps/details?id=com.ytlab.tinythrone" rel="noopener" target="_blank">Google Play</a><span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span></li>
-          <li data-app="soccer" data-key="soccer-career" tabindex="0"><img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/e5/6a/49/e56a490f-4a9b-3490-198f-9b5b0d8943fa/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg" /><span class="nm">축구선수 키우기</span><span class="tag" data-lang="ko">축구선수 커리어 시뮬레이션</span><span class="tag" data-lang="en">Football career sim</span><a class="store" href="https://apps.apple.com/kr/app/id6807107830" rel="noopener" target="_blank">App Store</a><a class="store" href="https://play.google.com/store/apps/details?id=site.ytlab.soccer_career" rel="noopener" target="_blank">Google Play</a><span class="pgrow"><a class="page" href="/soccer-career/ko/">게임 소개</a><a class="page" href="/soccer-career/ko/guide/">공략</a><a class="page" href="/soccer-career/ko/web/">웹 체험</a></span><span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span></li>
-          <li data-app="road-to-crown" data-key="road-to-crown" tabindex="0"><img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ec/c2/ce/ecc2ceaa-3831-43ba-d1d2-eb5ec2ab7f02/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg" /><span class="nm">로드 투 크라운</span><span class="tag" data-lang="ko">야구 드래프트 게임</span><span class="tag" data-lang="en">Baseball draft game</span><a class="store" href="https://apps.apple.com/kr/app/%EB%A1%9C%EB%93%9C-%ED%88%AC-%ED%81%AC%EB%9D%BC%EC%9A%B4-%EC%95%BC%EA%B5%AC-%EB%93%9C%EB%9E%98%ED%94%84%ED%8A%B8/id6815189319?uo=4" rel="noopener" target="_blank">App Store</a><a class="store" href="https://play.google.com/store/apps/details?id=site.ytlab.roadtocrown" rel="noopener" target="_blank">Google Play</a><span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span></li>
-          <li data-app="rimrise" data-key="rimrise" tabindex="0"><img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/5d/13/89/5d138948-5070-3bd5-637e-bda44fa747c6/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg" /><span class="nm">림라이즈 · 농구선수 키우기</span><span class="tag" data-lang="ko">농구선수 커리어 시뮬레이션</span><span class="tag" data-lang="en">Basketball career simulation</span><a class="store" href="https://apps.apple.com/kr/app/%EB%A6%BC%EB%9D%BC%EC%9D%B4%EC%A6%88-%EB%86%8D%EA%B5%AC-%EC%84%A0%EC%88%98-%ED%82%A4%EC%9A%B0%EA%B8%B0-%EC%8B%9C%EB%AE%AC%EB%A0%88%EC%9D%B4%EC%85%98/id6816143700?uo=4" rel="noopener" target="_blank">App Store</a><a class="store" href="https://play.google.com/store/apps/details?id=site.ytlab.basketball_career" rel="noopener" target="_blank">Google Play</a><span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span></li>
-          <li data-app="sack-race" data-key="sack-race" tabindex="0"><img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/de/47/7e/de477e2a-83aa-599a-34a5-c306877cfdd3/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg" /><span class="nm">축구감독 키우기 · Sack Race</span><span class="tag" data-lang="ko">축구 감독·구단 운영 게임</span><span class="tag" data-lang="en">Football manager career game</span><a class="store" href="https://apps.apple.com/kr/app/id6816726503" rel="noopener" target="_blank">App Store</a><a class="store" href="https://play.google.com/store/apps/details?id=site.ytlab.sack_race" rel="noopener" target="_blank">Google Play</a><span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span></li>
-          <li data-app="baseball-manager" data-key="baseball-manager" tabindex="0"><img class="ic" loading="lazy" alt="" src="https://play-lh.googleusercontent.com/R_eVAAsOkbEL2hUTO0wB_WU1ntt1KAfwp5sz-Hg4okd0TkLc0BETp7VdLdVuJQIbpj3ldkPUGRkc-7PYnacAJQ=s0-br30" /><span class="nm">야구감독 키우기 · Squeeze Play</span><span class="tag" data-lang="ko">라인업·로테이션·이적시장 야구 감독 게임</span><span class="tag" data-lang="en">Baseball lineup, rotation &amp; transfers</span><a class="store" href="https://play.google.com/store/apps/details?id=site.ytlab.baseball_manager" rel="noopener" target="_blank">Google Play</a><span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span></li>
-          <li data-app="baseball-career" data-key="baseball-career" tabindex="0"><img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/1a/44/95/1a449580-941e-7033-167e-68118b83cafd/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg" /><span class="nm">야구선수 키우기 · Five Tool</span><span class="tag" data-lang="ko">야구선수 커리어 시뮬레이션</span><span class="tag" data-lang="en">Baseball career simulation</span><a class="store" href="https://apps.apple.com/kr/app/id6822653314" rel="noopener" target="_blank">App Store</a><a class="store" href="https://play.google.com/store/apps/details?id=site.ytlab.baseball_career" rel="noopener" target="_blank">Google Play</a><span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span></li>
+          <li data-app="oneto50" data-key="one-to-fifty" tabindex="0"><img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/97/88/39/9788395f-c794-14b8-7005-f991f3d9b9af/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" /><span class="nm">1 to 50</span><span class="tag" data-lang="ko">숫자 순서 스피드 게임</span><span class="tag" data-lang="en">Number tap race</span><a class="store" href="https://apps.apple.com/kr/app/id6782382427" rel="noopener" target="_blank">App Store</a><a class="store" href="https://play.google.com/store/apps/details?id=com.ytlab.one_to_fifty" rel="noopener" target="_blank">Google Play</a><span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span></li>
+          <li data-app="treble" data-key="road-to-treble" tabindex="0"><img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/51/47/57/5147574e-cb5a-6bf9-4406-538506b04d1e/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" /><span class="nm">로드 투 트레블</span><span class="tag" data-lang="ko">축구 드래프트 게임</span><span class="tag" data-lang="en">Football draft game</span><a class="store" href="https://apps.apple.com/kr/app/id6783814192" rel="noopener" target="_blank">App Store</a><a class="store" href="https://play.google.com/store/apps/details?id=dev.goldenroad.golden_road_app" rel="noopener" target="_blank">Google Play</a><span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span></li>
+          <li data-app="animalpop" data-key="animal-pop" tabindex="0"><img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/17/b5/a5/17b5a5c9-3fcf-fd27-4168-b43d7e0d81fe/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/256x256bb.jpg" /><span class="nm">애니멀 팝</span><span class="tag" data-lang="ko">동물 합치기 퍼즐</span><span class="tag" data-lang="en">Animal merge puzzle</span><a class="store" href="https://apps.apple.com/kr/app/id6782373454" rel="noopener" target="_blank">App Store</a><a class="store" href="https://play.google.com/store/apps/details?id=com.animalpop.app" rel="noopener" target="_blank">Google Play</a><span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span></li>
+          <li data-app="sumdash" data-key="sumdash" tabindex="0"><img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/be/f4/1d/bef41d4b-75af-60c7-e6f3-439e74deff78/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" /><span class="nm">SumDash</span><span class="tag" data-lang="ko">사칙연산 스피드 게임</span><span class="tag" data-lang="en">Math speed game</span><a class="store" href="https://apps.apple.com/kr/app/id6785198584" rel="noopener" target="_blank">App Store</a><a class="store" href="https://play.google.com/store/apps/details?id=com.ytlab.sumdash" rel="noopener" target="_blank">Google Play</a><span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span></li>
+          <li data-app="blindduel" data-key="blind-duel" tabindex="0"><img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/39/0e/87/390e870b-ddf3-d66a-6bef-9cee90df045c/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg" /><span class="nm">블라인드 듀얼</span><span class="tag" data-lang="ko">한 장 심리전 카드게임</span><span class="tag" data-lang="en">One-card bluffing duel</span><a class="store" href="https://apps.apple.com/kr/app/id6791613672" rel="noopener" target="_blank">App Store</a><a class="store" href="https://play.google.com/store/apps/details?id=com.ytlab.blind_poker" rel="noopener" target="_blank">Google Play</a><span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span></li>
+          <li data-app="admeter" data-key="admeter" tabindex="0"><img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/56/17/31/5617317b-8d62-9614-c9cf-c935aae6c987/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" /><span class="nm">AdMeter</span><span class="tag" data-lang="ko">애드몹 · 애드센스 수익 대시보드</span><span class="tag" data-lang="en">AdMob &amp; AdSense earnings</span><a class="store" href="https://apps.apple.com/kr/app/id6789329258" rel="noopener" target="_blank">App Store</a><a class="store" href="https://play.google.com/store/apps/details?id=site.ytlab.adpulse" rel="noopener" target="_blank">Google Play</a><span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span></li>
+          <li data-app="kupanote" data-key="kupanote" tabindex="0"><img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/8a/56/6d/8a566d40-4126-1aec-bd6e-61d4077f18bf/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" /><span class="nm">쿠파노트</span><span class="tag" data-lang="ko">쿠팡 파트너스 실적 · 정산 달력</span><span class="tag" data-lang="en">Coupang Partners earnings calendar</span><a class="store" href="https://apps.apple.com/kr/app/id6795585727" rel="noopener" target="_blank">App Store</a><a class="store" href="https://play.google.com/store/apps/details?id=site.ytlab.kupanote" rel="noopener" target="_blank">Google Play</a><span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span></li>
+          <li data-app="banpick" data-key="banpick" tabindex="0"><img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/6e/8b/fa/6e8bfa4c-d800-7f40-49e9-f1a7c0ebb966/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg" /><span class="nm">밴픽 매니저</span><span class="tag" data-lang="ko">e스포츠 구단 경영 게임</span><span class="tag" data-lang="en">Esports team manager</span><a class="store" href="https://apps.apple.com/kr/app/id6802333370" rel="noopener" target="_blank">App Store</a><a class="store" href="https://play.google.com/store/apps/details?id=com.ytlab.esports_gm" rel="noopener" target="_blank">Google Play</a><span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span></li>
+          <li data-app="mallow" data-key="malang-brain" tabindex="0"><img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/1d/47/1f/1d471fc3-a504-b1a3-4241-19e73d479c75/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/256x256bb.jpg" /><span class="nm">말랑브레인</span><span class="tag" data-lang="ko">두뇌 게임 7종 모음</span><span class="tag" data-lang="en">Brain game collection</span><a class="store" href="https://apps.apple.com/kr/app/id6792457720" rel="noopener" target="_blank">App Store</a><a class="store" href="https://play.google.com/store/apps/details?id=com.ytlab.malang_brain" rel="noopener" target="_blank">Google Play</a><span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span></li>
+          <li data-app="chess12" data-key="twelve-chess" tabindex="0"><img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a5/2e/8d/a52e8d6f-5cec-aa33-4f72-c4e65c514197/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/256x256bb.jpg" /><span class="nm">십이장기 · 12 Chess</span><span class="tag" data-lang="ko">3×4 판 미니 체스</span><span class="tag" data-lang="en">12-square mini chess</span><a class="store" href="https://apps.apple.com/kr/app/id6804221169" rel="noopener" target="_blank">App Store</a><a class="store" href="https://play.google.com/store/apps/details?id=com.ytlab.tinythrone" rel="noopener" target="_blank">Google Play</a><span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span></li>
+          <li data-app="soccer" data-key="soccer-career" tabindex="0"><img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/e5/6a/49/e56a490f-4a9b-3490-198f-9b5b0d8943fa/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg" /><span class="nm">축구선수 키우기</span><span class="tag" data-lang="ko">축구선수 커리어 시뮬레이션</span><span class="tag" data-lang="en">Football career sim</span><a class="store" href="https://apps.apple.com/kr/app/id6807107830" rel="noopener" target="_blank">App Store</a><a class="store" href="https://play.google.com/store/apps/details?id=site.ytlab.soccer_career" rel="noopener" target="_blank">Google Play</a><span class="pgrow"><a class="page" href="/soccer-career/ko/">게임 소개</a><a class="page" href="/soccer-career/ko/guide/">공략</a><a class="page" href="/soccer-career/ko/web/">웹 체험</a></span><span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span></li>
+          <li data-app="road-to-crown" data-key="road-to-crown" tabindex="0"><img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ec/c2/ce/ecc2ceaa-3831-43ba-d1d2-eb5ec2ab7f02/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg" /><span class="nm">로드 투 크라운</span><span class="tag" data-lang="ko">야구 드래프트 게임</span><span class="tag" data-lang="en">Baseball draft game</span><a class="store" href="https://apps.apple.com/kr/app/%EB%A1%9C%EB%93%9C-%ED%88%AC-%ED%81%AC%EB%9D%BC%EC%9A%B4-%EC%95%BC%EA%B5%AC-%EB%93%9C%EB%9E%98%ED%94%84%ED%8A%B8/id6815189319?uo=4" rel="noopener" target="_blank">App Store</a><a class="store" href="https://play.google.com/store/apps/details?id=site.ytlab.roadtocrown" rel="noopener" target="_blank">Google Play</a><span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span></li>
+          <li data-app="rimrise" data-key="rimrise" tabindex="0"><img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/5d/13/89/5d138948-5070-3bd5-637e-bda44fa747c6/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg" /><span class="nm">림라이즈 · 농구선수 키우기</span><span class="tag" data-lang="ko">농구선수 커리어 시뮬레이션</span><span class="tag" data-lang="en">Basketball career simulation</span><a class="store" href="https://apps.apple.com/kr/app/%EB%A6%BC%EB%9D%BC%EC%9D%B4%EC%A6%88-%EB%86%8D%EA%B5%AC-%EC%84%A0%EC%88%98-%ED%82%A4%EC%9A%B0%EA%B8%B0-%EC%8B%9C%EB%AE%AC%EB%A0%88%EC%9D%B4%EC%85%98/id6816143700?uo=4" rel="noopener" target="_blank">App Store</a><a class="store" href="https://play.google.com/store/apps/details?id=site.ytlab.basketball_career" rel="noopener" target="_blank">Google Play</a><span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span></li>
+          <li data-app="sack-race" data-key="sack-race" tabindex="0"><img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/de/47/7e/de477e2a-83aa-599a-34a5-c306877cfdd3/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg" /><span class="nm">축구감독 키우기 · Sack Race</span><span class="tag" data-lang="ko">축구 감독·구단 운영 게임</span><span class="tag" data-lang="en">Football manager career game</span><a class="store" href="https://apps.apple.com/kr/app/id6816726503" rel="noopener" target="_blank">App Store</a><a class="store" href="https://play.google.com/store/apps/details?id=site.ytlab.sack_race" rel="noopener" target="_blank">Google Play</a><span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span></li>
+          <li data-app="baseball-manager" data-key="baseball-manager" tabindex="0"><img class="ic" loading="lazy" alt="" src="https://play-lh.googleusercontent.com/R_eVAAsOkbEL2hUTO0wB_WU1ntt1KAfwp5sz-Hg4okd0TkLc0BETp7VdLdVuJQIbpj3ldkPUGRkc-7PYnacAJQ=s256" /><span class="nm">야구감독 키우기 · Squeeze Play</span><span class="tag" data-lang="ko">라인업·로테이션·이적시장 야구 감독 게임</span><span class="tag" data-lang="en">Baseball lineup, rotation &amp; transfers</span><a class="store" href="https://play.google.com/store/apps/details?id=site.ytlab.baseball_manager" rel="noopener" target="_blank">Google Play</a><span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span></li>
+          <li data-app="baseball-career" data-key="baseball-career" tabindex="0"><img class="ic" loading="lazy" alt="" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/1a/44/95/1a449580-941e-7033-167e-68118b83cafd/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/256x256bb.jpg" /><span class="nm">야구선수 키우기 · Five Tool</span><span class="tag" data-lang="ko">야구선수 커리어 시뮬레이션</span><span class="tag" data-lang="en">Baseball career simulation</span><a class="store" href="https://apps.apple.com/kr/app/id6822653314" rel="noopener" target="_blank">App Store</a><a class="store" href="https://play.google.com/store/apps/details?id=site.ytlab.baseball_career" rel="noopener" target="_blank">Google Play</a><span class="more"><span data-lang="ko">자세히 보기 →</span><span data-lang="en">Details →</span></span></li>
         </ul>
 
       <p class="asof">
@@ -790,29 +1134,43 @@
         <span data-lang="en">On <b>Vibe Builder</b>, I test AI tools and document building and shipping apps. The production pipeline runs from script through TTS, captions, rendering, thumbnails, metadata, and YouTube upload.</span>
       </p>
 
-      <ul class="videos reveal">
-        <li>
+      <ol class="pipeline reveal">
+        <li class="done"><span data-lang="ko">대본</span><span data-lang="en">Script</span></li>
+        <li class="done"><span data-lang="ko">TTS</span><span data-lang="en">TTS</span></li>
+        <li class="done"><span data-lang="ko">싱크</span><span data-lang="en">Sync</span></li>
+        <li class="done"><span data-lang="ko">렌더</span><span data-lang="en">Render</span></li>
+        <li class="done"><span data-lang="ko">썸네일</span><span data-lang="en">Thumbnail</span></li>
+        <li class="done"><span data-lang="ko">메타데이터</span><span data-lang="en">Metadata</span></li>
+        <li class="done"><span data-lang="ko">업로드</span><span data-lang="en">Upload</span></li>
+      </ol>
+
+      <ul class="vids">
+        <li class="reveal">
           <a href="https://www.youtube.com/watch?v=1s7ihHZIVtM" target="_blank" rel="noopener">
-            <span class="vt" data-lang="ko">AI 자동화로 월 수천 버는 사람들이 절대 안 하는 3가지</span>
-            <span class="vt" data-lang="en">3 things people earning with AI automation never do</span>
+            <span class="th"><img src="https://i.ytimg.com/vi/1s7ihHZIVtM/mqdefault.jpg" alt="" loading="lazy" /><span class="pl"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2.5 1 9 5 2.5 9z" fill="currentColor"/></svg></span></span>
+            <span data-lang="ko">AI 자동화로 월 수천 버는 사람들이 절대 안 하는 3가지</span>
+            <span data-lang="en">3 things people earning with AI automation never do</span>
           </a>
         </li>
-        <li>
+        <li class="reveal">
           <a href="https://www.youtube.com/watch?v=FcwNzSDjYSY" target="_blank" rel="noopener">
-            <span class="vt" data-lang="ko">AI로 시간만 아끼는 사람과 돈 버는 사람의 결정적 차이</span>
-            <span class="vt" data-lang="en">Saving time with AI vs. making money with it</span>
+            <span class="th"><img src="https://i.ytimg.com/vi/FcwNzSDjYSY/mqdefault.jpg" alt="" loading="lazy" /><span class="pl"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2.5 1 9 5 2.5 9z" fill="currentColor"/></svg></span></span>
+            <span data-lang="ko">AI로 시간만 아끼는 사람과 돈 버는 사람의 결정적 차이</span>
+            <span data-lang="en">Saving time with AI vs. making money with it</span>
           </a>
         </li>
-        <li>
+        <li class="reveal">
           <a href="https://www.youtube.com/watch?v=FVcdpiVuatE" target="_blank" rel="noopener">
-            <span class="vt" data-lang="ko">왜 다들 REA로 몰릴까 — 바이브코더가 REA로 할 수 있는 것 5가지</span>
-            <span class="vt" data-lang="en">Why everyone is moving to REA — 5 things vibe coders can do with it</span>
+            <span class="th"><img src="https://i.ytimg.com/vi/FVcdpiVuatE/mqdefault.jpg" alt="" loading="lazy" /><span class="pl"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2.5 1 9 5 2.5 9z" fill="currentColor"/></svg></span></span>
+            <span data-lang="ko">왜 다들 REA로 몰릴까 — 바이브코더가 REA로 할 수 있는 것 5가지</span>
+            <span data-lang="en">Why everyone is moving to REA — 5 things vibe coders can do with it</span>
           </a>
         </li>
-        <li>
+        <li class="reveal">
           <a href="https://www.youtube.com/watch?v=lU0v2ON4gnA" target="_blank" rel="noopener">
-            <span class="vt" data-lang="ko">클로드 코드 '모드'에 개발자들이 몰리는 진짜 이유</span>
-            <span class="vt" data-lang="en">Why developers are flocking to Claude Code mods</span>
+            <span class="th"><img src="https://i.ytimg.com/vi/lU0v2ON4gnA/mqdefault.jpg" alt="" loading="lazy" /><span class="pl"><svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2.5 1 9 5 2.5 9z" fill="currentColor"/></svg></span></span>
+            <span data-lang="ko">클로드 코드 '모드'에 개발자들이 몰리는 진짜 이유</span>
+            <span data-lang="en">Why developers are flocking to Claude Code mods</span>
           </a>
         </li>
       </ul>
@@ -826,6 +1184,8 @@
 
   <section class="collab" id="collab">
     <div class="collab-inner">
+      <div class="collab-panel">
+      <canvas class="gridbg" aria-hidden="true"></canvas>
       <span class="badge reveal">
         <span data-lang="ko">협업</span>
         <span data-lang="en">Work with us</span>
@@ -848,6 +1208,7 @@
           <span data-lang="en">See our products</span>
         </a>
       </div>
+      </div>
     </div>
   </section>
 
@@ -865,6 +1226,7 @@
       <span data-lang="ko">상호 와이티랩(YT Lab) · 대표 김용태 · 사업자등록번호 555-41-01443 · 대한민국 충청북도 청주시</span>
       <span data-lang="en">YT Lab (와이티랩) · Founder Yongtae Kim · Business Reg. No. 555-41-01443 · Cheongju, Republic of Korea</span>
     </span>
+    <div class="wordmark" aria-hidden="true"><span>Y</span><span>T</span><span class="dot">·</span><span>L</span><span>a</span><span>b</span></div>
   </footer>
 
   <div class="modal-backdrop" id="appModal" hidden>
@@ -964,16 +1326,58 @@
     document.documentElement.classList.add("js");
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    var reveals = document.querySelectorAll(".reveal");
-    if ("IntersectionObserver" in window) {
-      var io = new IntersectionObserver(function (entries) {
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    function each(sel, fn, ctx) { Array.prototype.forEach.call((ctx || document).querySelectorAll(sel), fn); }
+
+    // Reveal comes first so that a failure further down can never leave the page hidden.
+    function revealAll() {
+      each(".reveal, .apps li, .wordmark, .split, .hero, .wall", function (el) {
+        el.classList.add("in", "ready");
+        if (el._in) { var f = el._in; el._in = null; f(); }
+      });
+    }
+    window.addEventListener("error", revealAll);
+
+    // Headings are cut into words so each can rise out of its own mask.
+    function splitWords(el) {
+      var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null), nodes = [], n;
+      while ((n = walker.nextNode())) nodes.push(n);
+      nodes.forEach(function (t) {
+        if (!t.nodeValue.trim() || t.parentNode.classList.contains("dot")) return;
+        var frag = document.createDocumentFragment();
+        t.nodeValue.split(/(\s+)/).forEach(function (part) {
+          if (!part) return;
+          if (!part.trim()) { frag.appendChild(document.createTextNode(" ")); return; }
+          var wd = document.createElement("span"), wi = document.createElement("span");
+          wd.className = "wd";
+          wi.className = "wi";
+          wi.textContent = part;
+          wd.appendChild(wi);
+          frag.appendChild(wd);
+        });
+        t.parentNode.replaceChild(frag, t);
+      });
+      each("[data-lang]", function (lang) {
+        // each language counts its own words, so both start the stagger at zero
+        each(".wi", function (w, k) { w.style.setProperty("--k", k); }, lang);
+        // the closing dot rides inside the last word, so it can never wrap onto a line alone
+        var dot = lang.querySelector(".dot");
+        if (dot && dot.previousElementSibling) dot.previousElementSibling.firstChild.appendChild(dot);
+      }, el);
+    }
+    each("h1, h2.reveal", function (h) { h.classList.add("split"); splitWords(h); });
+
+    var io = null;
+    if (!reduce && "IntersectionObserver" in window) {
+      io = new IntersectionObserver(function (entries) {
         entries.forEach(function (e) {
-          if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+          if (!e.isIntersecting) return;
+          e.target.classList.add("in");
+          if (e.target._in) { var f = e.target._in; e.target._in = null; f(); }
+          io.unobserve(e.target);
         });
       }, { threshold: 0.12 });
-      reveals.forEach(function (el) { io.observe(el); });
-    } else {
-      reveals.forEach(function (el) { el.classList.add("in"); });
+      each(".reveal, .apps li, .wordmark", function (el) { io.observe(el); });
     }
 
     var btn = document.getElementById("langBtn");
@@ -983,7 +1387,9 @@
       try { localStorage.setItem("yt_lang", l); } catch (e) {}
     }
     btn.addEventListener("click", function () {
-      setLang(document.documentElement.lang === "ko" ? "en" : "ko");
+      var next = document.documentElement.lang === "ko" ? "en" : "ko";
+      if (document.startViewTransition && !reduce) document.startViewTransition(function () { setLang(next); });
+      else setLang(next);
     });
     var saved;
     try { saved = localStorage.getItem("yt_lang"); } catch (e) {}
@@ -1289,8 +1695,10 @@
     var amLinks = document.getElementById("amLinks");
     var amLastFocus = null;
     var amHideTimer = null;
+    var amFrom = null;
 
-    function openAppModal(li) {
+    // `from` is the icon that was pressed; where the browser can, it travels into the sheet
+    function openAppModal(li, from) {
       clearTimeout(amHideTimer);
       var key = li.getAttribute("data-app");
       var d = APPS[key];
@@ -1307,8 +1715,9 @@
       amDesc.textContent = en ? d.en : d.ko;
       amShots.innerHTML = "";
       if (d.shots && d.shots.length) {
-        d.shots.forEach(function (u) {
+        d.shots.forEach(function (u, i) {
           var img = document.createElement("img");
+          img.style.setProperty("--i", i);
           img.src = u;
           img.alt = "";
           img.loading = "lazy";
@@ -1338,17 +1747,47 @@
         amLinks.appendChild(note);
       }
       amLastFocus = li;
-      appModal.hidden = false;
-      requestAnimationFrame(function () { appModal.classList.add("show"); });
-      document.body.style.overflow = "hidden";
-      document.getElementById("amClose").focus();
+      var src = from || li.querySelector(".ic");
+      function show() {
+        appModal.hidden = false;
+        document.body.style.overflow = "hidden";
+        document.getElementById("amClose").focus();
+      }
+      if (document.startViewTransition && !reduce && src && appModal.hidden) {
+        amFrom = src;
+        src.style.viewTransitionName = "appicon";
+        appModal.classList.add("instant", "show");
+        var done = function () { amIcon.style.viewTransitionName = ""; appModal.classList.remove("instant"); };
+        document.startViewTransition(function () {
+          src.style.viewTransitionName = "";
+          amIcon.style.viewTransitionName = "appicon";
+          show();
+        }).finished.then(done, done);
+      } else {
+        show();
+        requestAnimationFrame(function () { appModal.classList.add("show"); });
+      }
     }
     function closeAppModal() {
-      appModal.classList.remove("show");
       document.body.style.overflow = "";
       clearTimeout(amHideTimer);
-      amHideTimer = setTimeout(function () { appModal.hidden = true; }, 200);
-      if (amLastFocus) amLastFocus.focus();
+      var back = amFrom && amFrom.isConnected ? amFrom : null;
+      amFrom = null;
+      if (document.startViewTransition && !reduce && back) {
+        amIcon.style.viewTransitionName = "appicon";
+        appModal.classList.add("instant");
+        var done = function () { back.style.viewTransitionName = ""; appModal.classList.remove("instant"); };
+        document.startViewTransition(function () {
+          amIcon.style.viewTransitionName = "";
+          back.style.viewTransitionName = "appicon";
+          appModal.classList.remove("show");
+          appModal.hidden = true;
+        }).finished.then(done, done);
+      } else {
+        appModal.classList.remove("show");
+        amHideTimer = setTimeout(function () { appModal.hidden = true; }, 200);
+      }
+      if (amLastFocus) amLastFocus.focus({ preventScroll: true });
     }
     document.querySelectorAll(".apps li[data-app]").forEach(function (li) {
       li.addEventListener("click", function (e) {
@@ -1450,6 +1889,489 @@
         sb.querySelector('[data-lang="en"]').textContent = "Send";
       });
     });
+
+    // ---------------------------------------------------------------
+    // Motion layer
+    // ---------------------------------------------------------------
+    var root = document.documentElement;
+    var finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    function fmt(n) { return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ","); }
+    function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+    function pad(n) { return n < 10 ? "0" + n : "" + n; }
+
+    // children of these groups arrive one after another
+    each(".principles, .vids", function (g) {
+      Array.prototype.forEach.call(g.children, function (c, i) { c.style.setProperty("--i", i); });
+    });
+
+    // ---- hero entrance: wait for the web font so the headline does not reflow mid-rise ----
+    var hero = document.querySelector(".hero"), h1 = document.querySelector("h1"), wall = document.getElementById("wall");
+    function heroIn() { hero.classList.add("ready"); h1.classList.add("in"); wall.classList.add("ready"); }
+    if (reduce || !document.fonts || !document.fonts.ready) heroIn();
+    else Promise.race([document.fonts.ready, new Promise(function (r) { setTimeout(r, 600); })]).then(function () { requestAnimationFrame(heroIn); });
+
+    // ---- hero wall: every live product, drifting in six columns ----
+    var colAnims = [];
+    (function () {
+      var seen = {}, apps = [];
+      // store listings first: their icon is the one a product shared with Toss is known by
+      each("#stores .apps li, #work .apps li", function (li) {
+        if (seen[li.dataset.key]) return;
+        seen[li.dataset.key] = 1;
+        apps.push(li);
+      });
+      if (!apps.length) return;
+      var tilt = document.createElement("div"), COLS = 6, PER = 8, DUR = [52, 64, 44, 70, 58, 48];
+      tilt.className = "wall-tilt";
+      for (var c = 0; c < COLS; c++) {
+        var col = document.createElement("div");
+        col.className = "wall-col";
+        col.style.setProperty("--dur", DUR[c] + "s");
+        for (var r = 0; r < PER * 2; r++) {      // the set twice, so the loop has no seam
+          var li = apps[(c * PER + (r % PER) * 3) % apps.length];
+          var cell = document.createElement("span"), img = new Image();
+          cell.className = "wi";
+          cell.style.setProperty("--i", (r % PER) + c * 2);
+          img.alt = "";
+          img.decoding = "async";
+          img.draggable = false;
+          img.src = li.querySelector(".ic").getAttribute("src");
+          img._li = li;
+          cell.appendChild(img);
+          col.appendChild(cell);
+        }
+        tilt.appendChild(col);
+      }
+      wall.appendChild(tilt);
+
+      // the mask fades the edges but does not stop clicks, so only the lit middle responds
+      function lit(e) {
+        var b = wall.getBoundingClientRect(), x = (e.clientX - b.left) / b.width, y = (e.clientY - b.top) / b.height;
+        return x > .12 && x < .9 && y > .12 && y < .88;
+      }
+      var tip = document.createElement("div"), hot = null, tipLoop = false;
+      tip.className = "walltip";
+      document.body.appendChild(tip);
+      function placeTip() {
+        if (!hot) { tipLoop = false; return; }
+        var b = hot.getBoundingClientRect();
+        tip.style.transform = "translate(" + Math.round(b.left + b.width / 2 - tip.offsetWidth / 2) + "px," + Math.round(b.top - tip.offsetHeight - 8) + "px)";
+        requestAnimationFrame(placeTip);
+      }
+      wall.addEventListener("pointerover", function (e) {
+        if (e.pointerType !== "mouse" || e.target.tagName !== "IMG" || !lit(e)) return;
+        hot = e.target;
+        tip.textContent = hot._li.querySelector(".nm").textContent;
+        tip.classList.add("on");
+        if (!tipLoop) { tipLoop = true; placeTip(); }
+      });
+      wall.addEventListener("pointerout", function (e) {
+        if (e.target === hot) { hot = null; tip.classList.remove("on"); }
+      });
+      wall.addEventListener("click", function (e) {
+        if (e.target.tagName === "IMG" && lit(e)) openAppModal(e.target._li, e.target);
+      });
+
+      if (!reduce && col.getAnimations) {
+        each(".wall-col", function (el) { colAnims = colAnims.concat(el.getAnimations()); }, wall);
+      }
+    })();
+
+    // The columns speed up with the scroll and slow to a crawl under the pointer.
+    var tiltEl = wall.firstChild, heroBand = document.querySelector("main");
+    var rate = 1, rateTo = 1, rateBase = 1, rateBusy = false;
+    function rateStep() {
+      rateTo += (rateBase - rateTo) * .06;
+      rate += (rateTo - rate) * .14;
+      if (Math.abs(rate - rateBase) < .01 && Math.abs(rateTo - rateBase) < .01) { rate = rateBase; rateBusy = false; }
+      colAnims.forEach(function (a) { a.updatePlaybackRate(rate); });
+      if (rateBusy) requestAnimationFrame(rateStep);
+    }
+    function rateKick() { if (!rateBusy && colAnims.length) { rateBusy = true; requestAnimationFrame(rateStep); } }
+    wall.addEventListener("pointerenter", function (e) { if (e.pointerType === "mouse") { rateBase = .15; rateKick(); } });
+    wall.addEventListener("pointerleave", function () { rateBase = 1; rateKick(); });
+    if (colAnims.length && "IntersectionObserver" in window) {
+      new IntersectionObserver(function (es) {
+        es.forEach(function (e) { colAnims.forEach(function (a) { if (e.isIntersecting) a.play(); else a.pause(); }); });
+      }).observe(wall);
+    }
+
+    // ---- scroll: progress hairline, bar border, wall parallax ----
+    var bar = document.querySelector(".topbar"), prog = document.getElementById("progress");
+    var lastY = window.scrollY, lastT = performance.now(), ticking = false;
+    function onFrame() {
+      ticking = false;
+      var y = window.scrollY, now = performance.now(), max = root.scrollHeight - window.innerHeight;
+      prog.style.transform = "scaleX(" + (max > 0 ? clamp(y / max, 0, 1) : 0).toFixed(4) + ")";
+      bar.classList.toggle("stuck", y > 8);
+      if (max > 0 && y >= max - 2) revealAll();      // nothing may stay hidden at the end of the page
+      if (!reduce && tiltEl && y < heroBand.offsetHeight + 200) {
+        tiltEl.style.setProperty("--sy", (y * -.22).toFixed(1) + "px");
+        var v = Math.abs(y - lastY) / Math.max(16, now - lastT);      // px per ms
+        rateTo = Math.max(rateTo, Math.min(1 + v * 4, 9));
+        rateKick();
+      }
+      lastY = y;
+      lastT = now;
+    }
+    window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(onFrame); } }, { passive: true });
+    onFrame();
+
+    if (finePointer && !reduce && tiltEl) {
+      var px = 0, py = 0, pBusy = false;
+      heroBand.addEventListener("pointermove", function (e) {
+        var b = heroBand.getBoundingClientRect();
+        px = (e.clientX - b.left) / b.width - .5;
+        py = (e.clientY - b.top) / b.height - .5;
+        if (pBusy) return;
+        pBusy = true;
+        requestAnimationFrame(function () {
+          pBusy = false;
+          tiltEl.style.setProperty("--ry", (px * 7).toFixed(2) + "deg");
+          tiltEl.style.setProperty("--rx", (py * -5).toFixed(2) + "deg");
+        });
+      });
+      heroBand.addEventListener("pointerleave", function () {
+        tiltEl.style.setProperty("--ry", "0deg");
+        tiltEl.style.setProperty("--rx", "0deg");
+      });
+    }
+
+    // ---- graph paper: a dot sheet with one crest of light crossing it ----
+    function dotGrid(cv) {
+      var ctx = cv.getContext("2d"), w = 0, h = 0, on = false, t0 = performance.now(), GAP = 26;
+      function size() {
+        var d = Math.min(window.devicePixelRatio || 1, 2);
+        w = cv.clientWidth;
+        h = cv.clientHeight;
+        cv.width = Math.round(w * d);
+        cv.height = Math.round(h * d);
+        ctx.setTransform(d, 0, 0, d, 0, 0);
+      }
+      function draw(now) {
+        var t = (now - t0) / 1000, crest = (t * .14) % 1.5 - .25, x, y, k;
+        ctx.clearRect(0, 0, w, h);
+        ctx.fillStyle = "rgba(242,242,240,.14)";
+        for (y = GAP / 2; y < h; y += GAP) for (x = GAP / 2; x < w; x += GAP) ctx.fillRect(x - .75, y - .75, 1.5, 1.5);
+        for (y = GAP / 2; y < h; y += GAP) {
+          for (x = GAP / 2; x < w; x += GAP) {
+            k = 1 - Math.abs((x * .7 + y) / (w * .7 + h) - crest) / .085;
+            if (k <= 0) continue;
+            ctx.fillStyle = "rgba(216,255,54," + (k * .75).toFixed(2) + ")";
+            ctx.fillRect(x - 1, y - 1, 2, 2);
+          }
+        }
+        if (on) requestAnimationFrame(draw);
+      }
+      size();
+      draw(t0);
+      window.addEventListener("resize", function () { size(); if (!on) draw(t0); });
+      if (reduce || !("IntersectionObserver" in window)) return;
+      new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          var was = on;
+          on = e.isIntersecting;
+          if (on && !was) requestAnimationFrame(draw);
+        });
+      }).observe(cv);
+    }
+    each(".gridbg", dotGrid);
+
+    // ---- odometer: digits roll up to the figure ----
+    function odometer(el) {
+      var txt = el.textContent.trim(), k = 0;
+      var sr = document.createElement("span"), vis = document.createElement("span");
+      sr.className = "sr";
+      sr.textContent = txt;
+      vis.setAttribute("aria-hidden", "true");
+      txt.split("").forEach(function (ch) {
+        if (!/\d/.test(ch)) { vis.appendChild(document.createTextNode(ch)); return; }
+        var od = document.createElement("span"), strip = document.createElement("span"), d = +ch;
+        od.className = "od";
+        for (var i = 0; i <= 10 + d; i++) {
+          var cell = document.createElement("i");
+          cell.textContent = i % 10;
+          strip.appendChild(cell);
+        }
+        strip.style.setProperty("--t", (1.3 + k * .16) + "s");
+        strip.style.setProperty("--w", (k * 70) + "ms");
+        strip._to = "translateY(-" + ((10 + d) / (11 + d) * 100).toFixed(4) + "%)";
+        od.appendChild(strip);
+        vis.appendChild(od);
+        k++;
+      });
+      el.textContent = "";
+      el.appendChild(sr);
+      el.appendChild(vis);
+    }
+    var statsEl = document.querySelector(".stats");
+    if (statsEl && !reduce) {
+      each(".stat .num", odometer, statsEl);
+      statsEl._in = function () { each(".od > span", function (s) { s.style.transform = s._to; }, statsEl); };
+    }
+
+    // ---- cumulative downloads: both lines draw across, their totals ride the tips ----
+    var DL = { ios: { from: "2026-06-15", d: [2,0,0,9,3,2,2,3,3,0,0,0,0,1,1,7,11,12,14,11,9,8,8,8,6,7,6,2,6,9,4,5,8,6,5,5,7,5,6,4,5,4,12,9,17,11,12,20,13,9,13,15,15,13,19,19,22,13,19,11,15,19,21,21,19,15,7,14,17,13,18,14,19,17,9,22,26,17,12,14,36,26,31,32,35,31,27,16,19,15,23,21,20,19,20,17,10,13,34,41,57,120,169,166,166,125,125,138,133,186,234,246,230,224,215,232,319,745,574,441,436,442,497,476,542,686,492,485,483,592,593,594,879,982,1272,1257,1228,1137,1398,1299,1135,1313,1168,1208,1111,1692,1287] }, play: { from: "2026-05-01", d: [0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,2,0,0,0,0,0,1,3,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,3,0,0,0,1,0,2,1,0,1,2,0,0,2,1,1,3,0,0,0,0,1,2,4,2,7,4,2,2,2,2,1,3,1,5,4,2,3,3,3,4,6,2,1,6,1,0,3,22,14,19,15,11,14,18,16,21,41,41,57,21,43,46,70,78,46,44,53,92,77,88,95,76,47,61,70,79,97,103,102,103,105,115,121,131,155,156,142,133,148,167,180,158,187,166,175,211,344,402,413,436,441,439,481,478,569,603,0,423,502,459,432] } };
+    (function () {
+      var fig = document.getElementById("dlChart");
+      if (!fig) return;
+      var plot = fig.querySelector(".plot"), NS = "http://www.w3.org/2000/svg";
+      var DAY = 864e5, t0 = Date.UTC(2026, 4, 1), W = 1000, H = 300;
+      var MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+      function dayOf(iso) { var p = iso.split("-"); return (Date.UTC(+p[0], p[1] - 1, +p[2]) - t0) / DAY; }
+      var S = [
+        { key: "ios", name: "App Store", c: "var(--accent)" },
+        { key: "play", name: "Google Play", c: "var(--soft)" }
+      ];
+      var span = 0, top = 0;
+      S.forEach(function (s) {
+        var sum = 0;
+        s.off = dayOf(DL[s.key].from);
+        s.cum = DL[s.key].d.map(function (v) { return (sum += v); });
+        s.end = s.off + s.cum.length - 1;
+        s.total = sum;
+        span = Math.max(span, s.end);
+        top = Math.max(top, sum);
+      });
+      var YMAX = top * 1.06;
+      function X(day) { return day / span; }
+      function Y(v) { return 1 - v / YMAX; }
+      function at(s, day) {
+        var i = day - s.off;
+        if (i <= 0) return i < 0 ? 0 : s.cum[0];
+        if (i >= s.cum.length - 1) return s.total;
+        var a = Math.floor(i);
+        return s.cum[a] + (s.cum[a + 1] - s.cum[a]) * (i - a);
+      }
+      function el(tag, cls, parent, txt) {
+        var e = document.createElement(tag);
+        if (cls) e.className = cls;
+        if (txt != null) e.textContent = txt;
+        (parent || plot).appendChild(e);
+        return e;
+      }
+      function both(parent, ko, en) {
+        el("span", null, parent, ko).setAttribute("data-lang", "ko");
+        el("span", null, parent, en).setAttribute("data-lang", "en");
+      }
+
+      for (var v = 0; v <= YMAX; v += 10000) {
+        el("i", "gl" + (v ? "" : " base")).style.top = (Y(v) * 100) + "%";
+        el("span", "yt", null, v ? (v / 1000) + "K" : "0").style.top = (Y(v) * 100) + "%";
+      }
+      for (var m = 4; m < 12; m++) {
+        var md = (Date.UTC(2026, m, 1) - t0) / DAY;
+        if (md > span) break;
+        var xt = el("span", "xt");
+        xt.style.left = (X(md) * 100) + "%";
+        both(xt, (m + 1) + "월", MON[m]);
+      }
+
+      var svg = document.createElementNS(NS, "svg");
+      svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+      svg.setAttribute("preserveAspectRatio", "none");
+      svg.setAttribute("aria-hidden", "true");
+      svg.innerHTML = '<defs><clipPath id="dlClip"><rect x="0" y="-20" width="0" height="' + (H + 40) + '"/></clipPath>' +
+        '<linearGradient id="dlFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--accent);stop-opacity:.2"/>' +
+        '<stop offset="1" style="stop-color:var(--accent);stop-opacity:0"/></linearGradient></defs><g clip-path="url(#dlClip)"></g>';
+      var layer = svg.lastChild, clip = svg.querySelector("rect");
+      S.forEach(function (s, si) {
+        var d = "";
+        s.cum.forEach(function (val, i) { d += (i ? "L" : "M") + (X(s.off + i) * W).toFixed(1) + " " + (Y(val) * H).toFixed(1); });
+        if (si === 0) {
+          var area = document.createElementNS(NS, "path");
+          area.setAttribute("d", d + "L" + (X(s.end) * W).toFixed(1) + " " + H + "L" + (X(s.off) * W).toFixed(1) + " " + H + "Z");
+          area.setAttribute("fill", "url(#dlFill)");
+          layer.appendChild(area);
+        }
+        var line = document.createElementNS(NS, "path");
+        line.setAttribute("d", d);
+        line.setAttribute("fill", "none");
+        line.setAttribute("stroke-width", "2");
+        line.setAttribute("stroke-linejoin", "round");
+        line.setAttribute("stroke-linecap", "round");
+        line.setAttribute("vector-effect", "non-scaling-stroke");
+        line.style.stroke = s.c;
+        layer.appendChild(line);
+      });
+      plot.appendChild(svg);
+
+      var note = el("i", "note");
+      note.style.left = (X(dayOf("2026-09-21")) * 100) + "%";
+      both(el("span", null, note), "09.21 축구선수 키우기 출시", "Sep 21 · Football Career Sim launch");
+
+      var cross = el("i", "cross"), tip = el("div", "tip"), tipTime = el("time", null, tip);
+      S.forEach(function (s) {
+        s.pt = el("i", "pt");
+        s.pt.style.setProperty("--c", s.c);
+        s.hp = el("i", "pt hp");
+        s.hp.style.setProperty("--c", s.c);
+        s.lab = el("div", "end");
+        s.val = el("b", null, s.lab, "0");
+        el("span", null, s.lab, s.name);
+        var row = el("div", null, tip);
+        el("i", null, row).style.setProperty("--c", s.c);
+        s.tv = el("b", null, row);
+        el("span", null, row, s.name);
+      });
+
+      // p runs 0..1 across the whole date range
+      function frame(p) {
+        var day = p * span, hgt = plot.clientHeight;
+        clip.setAttribute("width", (p * W + 2).toFixed(1));
+        var ys = S.map(function (s) {
+          var dd = clamp(day, s.off, s.end), val = day < s.off ? 0 : at(s, dd);
+          s.pt.style.left = (X(dd) * 100) + "%";
+          s.pt.style.top = (Y(val) * 100) + "%";
+          s.pt.style.opacity = day >= s.off ? 1 : 0;
+          s.val.textContent = fmt(val);
+          return Y(val) * hgt;
+        });
+        // while both lines are still low the two riding totals would sit on each other
+        var gap = ys[1] - ys[0], push = gap < 40 ? (40 - gap) / 2 : 0;
+        S[0].lab.style.top = (ys[0] - push) + "px";
+        S[1].lab.style.top = (ys[1] + push) + "px";
+      }
+      function run() {
+        var start = null, DUR = 2800;
+        function tick(now) {
+          if (start === null) start = now;
+          var u = Math.min(1, (now - start) / DUR);
+          frame(1 - Math.pow(1 - u, 3));      // quick through the flat months, slow on the climb
+          if (u < 1) requestAnimationFrame(tick); else fig.classList.add("done");
+        }
+        requestAnimationFrame(tick);
+      }
+      if (reduce) { frame(1); fig.classList.add("done"); }
+      else { frame(0); fig._in = run; }
+      window.addEventListener("resize", function () { if (fig.classList.contains("done")) frame(1); });
+
+      // hover and keyboard: a crosshair snaps to the day and reads out both series
+      var cur = span;
+      function show(day) {
+        cur = clamp(Math.round(day), 0, span);
+        var x = X(cur), date = new Date(t0 + cur * DAY);
+        cross.style.left = (x * 100) + "%";
+        tipTime.textContent = date.getUTCFullYear() + "." + pad(date.getUTCMonth() + 1) + "." + pad(date.getUTCDate());
+        S.forEach(function (s) {
+          var has = cur >= s.off && cur <= s.end;
+          s.tv.textContent = has ? fmt(at(s, cur)) : "—";
+          s.hp.classList.toggle("live", has);
+          if (has) { s.hp.style.left = (x * 100) + "%"; s.hp.style.top = (Y(at(s, cur)) * 100) + "%"; }
+        });
+        if (x > .5) { tip.style.left = "auto"; tip.style.right = "calc(" + ((1 - x) * 100) + "% + 12px)"; }
+        else { tip.style.right = "auto"; tip.style.left = "calc(" + (x * 100) + "% + 12px)"; }
+        plot.classList.add("hov");
+      }
+      function hide() { plot.classList.remove("hov"); }
+      function onPointer(e) {
+        if (!fig.classList.contains("done")) return;
+        var b = plot.getBoundingClientRect();
+        show((e.clientX - b.left) / b.width * span);
+      }
+      plot.addEventListener("pointermove", onPointer);
+      plot.addEventListener("pointerdown", onPointer);
+      plot.addEventListener("pointerleave", hide);
+      plot.addEventListener("focus", function () { if (plot.matches(":focus-visible")) show(cur); });
+      plot.addEventListener("blur", hide);
+      plot.addEventListener("keydown", function (e) {
+        var step = e.shiftKey ? 1 : 7;
+        if (e.key === "ArrowLeft") show(cur - step);
+        else if (e.key === "ArrowRight") show(cur + step);
+        else if (e.key === "Home") show(0);
+        else if (e.key === "End") show(span);
+        else return;
+        e.preventDefault();
+      });
+
+      // the same figures as a table, for readers who cannot use the plot
+      var table = el("table", "sr", fig), head = el("tr", null, el("thead", null, table)), body = el("tbody", null, table);
+      el("th", null, head, "Date");
+      S.forEach(function (s) { el("th", null, head, s.name); });
+      for (var k = 5; k <= 12; k++) {
+        var dd = Math.min((Date.UTC(2026, k, 1) - t0) / DAY - 1, span), dt = new Date(t0 + dd * DAY), tr = el("tr", null, body);
+        el("td", null, tr, dt.getUTCFullYear() + "-" + pad(dt.getUTCMonth() + 1) + "-" + pad(dt.getUTCDate()));
+        S.forEach(function (s) { el("td", null, tr, dd >= s.off && dd <= s.end ? fmt(at(s, dd)) : "—"); });
+        if (dd >= span) break;
+      }
+    })();
+
+    // ---- nav: a dot under the section in view ----
+    if ("IntersectionObserver" in window) {
+      var navLinks = {};
+      each('.navlinks a[href^="#"]', function (a) { navLinks[a.getAttribute("href").slice(1)] = a; });
+      var navIO = new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          each(".navlinks a.on", function (a) { a.classList.remove("on"); });
+          var a = navLinks[e.target.id === "stores" ? "work" : e.target.id];
+          if (a) a.classList.add("on");
+        });
+      }, { rootMargin: "-45% 0px -50% 0px" });
+      each("main, section[id]", function (s) { navIO.observe(s); });
+    }
+
+    // ---- product grids: cards arrive left to right, a light follows the pointer ----
+    function gridCols() {
+      each(".apps", function (g) {
+        var n = getComputedStyle(g).gridTemplateColumns.split(" ").length || 1;
+        Array.prototype.forEach.call(g.children, function (li, i) { li.style.setProperty("--c", i % n); });
+      });
+    }
+    gridCols();
+    window.addEventListener("resize", gridCols);
+    if (finePointer) {
+      each(".apps", function (g) {
+        g.addEventListener("pointermove", function (e) {
+          var li = e.target.closest("li");
+          if (!li) return;
+          var b = li.getBoundingClientRect();
+          li.style.setProperty("--mx", (e.clientX - b.left) + "px");
+          li.style.setProperty("--my", (e.clientY - b.top) + "px");
+        });
+      });
+    }
+
+    // ---- youtube pipeline: one run of the seven stages, on repeat while in view ----
+    (function () {
+      var pl = document.querySelector(".pipeline");
+      if (!pl || reduce || !("IntersectionObserver" in window)) return;
+      var steps = pl.children, last = steps.length - 1, timer = null, live = false;
+      function show(k) {
+        Array.prototype.forEach.call(steps, function (li, n) {
+          li.classList.toggle("done", n < k || (n === k && k === last));
+          li.classList.toggle("on", n === k && k < last);
+        });
+        pl.classList.toggle("rewind", k === 0);
+        pl.style.setProperty("--prog", k / last);
+        timer = setTimeout(function () { if (live) show((k + 1) % steps.length); }, k === last ? 2200 : 800);
+      }
+      new IntersectionObserver(function (es) {
+        es.forEach(function (e) {
+          if (e.isIntersecting && !live) { live = true; show(0); }
+          else if (!e.isIntersecting) { live = false; clearTimeout(timer); }
+        });
+      }, { threshold: .6 }).observe(pl);
+    })();
+
+    // ---- primary buttons lean toward the pointer ----
+    if (finePointer && !reduce) {
+      each(".hero .btn-primary, .collab .btn-primary", function (b) {
+        b.addEventListener("pointermove", function (e) {
+          var r = b.getBoundingClientRect();
+          b.style.setProperty("--bx", ((e.clientX - r.left - r.width / 2) * .22).toFixed(1) + "px");
+          b.style.setProperty("--by", ((e.clientY - r.top - r.height / 2) * .32).toFixed(1) + "px");
+        });
+        b.addEventListener("pointerleave", function () {
+          b.style.setProperty("--bx", "0px");
+          b.style.setProperty("--by", "0px");
+        });
+      });
+    }
+
+    each(".wordmark span", function (s, i) { s.style.setProperty("--i", i); });
+
+    if (!io) revealAll();
   </script>
 </body>
 </html>

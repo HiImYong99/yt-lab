@@ -548,6 +548,220 @@
       /* print snapshots immediately, so the forced end values must not animate toward */
       html.js .rv { transition: none !important; }
     }
+    /* ============================================================
+       Motion layer. Parts rise in as they are reached: the name out
+       of a mask, figures as odometers, the download chart drawing
+       itself, case images wiping open. Print and reduced motion get
+       the finished state (blocks at the end).
+       ============================================================ */
+    :root {
+      --e-out: cubic-bezier(.16, 1, .3, 1);
+      --e-pop: cubic-bezier(.34, 1.56, .64, 1);
+    }
+    section[id] { scroll-margin-top: 56px; }
+    .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+    /* ---------- top bar ---------- */
+    .progress {
+      position: absolute; left: 0; right: 0; bottom: -1px; height: 1px;
+      background: var(--accent); transform: scaleX(0); transform-origin: left; pointer-events: none;
+    }
+    .topnav a { position: relative; }
+    .topnav a::after {
+      content: ""; position: absolute; left: 50%; bottom: -2px; width: 4px; height: 4px; margin-left: -2px;
+      border-radius: 50%; background: var(--accent); transform: scale(0); transition: transform .35s var(--e-pop);
+    }
+    .topnav a.on { color: var(--fg); }
+    .topnav a.on::after { transform: none; }
+
+    /* ---------- hero ---------- */
+    /* the name rises out of a mask; the padding keeps the tight line box from clipping the glyphs */
+    h1 { overflow: hidden; padding-block: .1em .16em; margin-block: -.1em calc(clamp(20px, 4vh, 34px) - .16em); }
+    html.js h1 span { opacity: 1; transform: translateY(120%); transition: transform 1.1s var(--e-out); }
+    html.js h1 span.acc { transform: translateY(-160%); transition: transform .8s var(--e-pop); }
+    html.js h1.in span { transform: none; }
+    html.js .hi {
+      opacity: 0; transform: translateY(16px);
+      transition: opacity .8s ease, transform 1s var(--e-out); transition-delay: var(--d, 0ms);
+    }
+    html.js .hero.ready .hi { opacity: 1; transform: none; }
+    html.js .eyebrow::before { transform: scaleX(0); transform-origin: left; transition: transform .9s var(--e-out) .15s; }
+    html.js .hero.ready .eyebrow::before { transform: none; }
+
+    /* ---------- reveals ---------- */
+    html.js .rv { transition: opacity .8s ease, transform 1s var(--e-out); }
+    html.js .shead.rv { opacity: 1; transform: none; }
+    html.js .shead .snum, html.js .shead .ssub {
+      opacity: 0; transform: translateY(12px); transition: opacity .7s ease, transform .9s var(--e-out);
+    }
+    html.js .shead .ssub { transition-delay: .3s; }
+    html.js .shead.in .snum, html.js .shead.in .ssub { opacity: 1; transform: none; }
+    /* headings rise word by word out of a mask */
+    .split .wd { display: inline-block; overflow: hidden; vertical-align: top; padding: .16em .06em; margin: -.16em -.06em; }
+    html.js .split .wi { display: inline-block; transform: translateY(125%); transition: transform 1s var(--e-out); transition-delay: calc(var(--k, 0) * 60ms); }
+    html.js .in .split .wi { transform: none; }
+
+    /* ---------- stats ---------- */
+    .od { display: inline-block; height: 1em; overflow: hidden; vertical-align: top; }
+    .od > span { display: block; transition: transform var(--t, 1.6s) var(--e-out) var(--w, 0s); }
+    .od i { display: block; height: 1em; font-style: normal; }
+    /* the case figures sit under a broad `.case-metric span` rule; keep the odometer parts out of it */
+    .case-metric b { font-variant-numeric: tabular-nums; }
+    .case-metric b span { display: inline; margin: 0; font-size: inherit; color: inherit; }
+    .case-metric b .od { display: inline-block; }
+    .case-metric b .od > span { display: block; }
+
+    /* cumulative downloads chart */
+    .chart { display: none; }
+    html.js .chart {
+      display: block; margin: 26px 0 0; padding: clamp(16px, 2.6vw, 26px);
+      border: 1px solid var(--line); border-radius: 14px; background: var(--card);
+    }
+    .chart-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 22px; }
+    .chart-title { font-size: 14.5px; font-weight: 600; letter-spacing: -.02em; }
+    .chart-sub { display: block; margin-top: 3px; font-size: 12px; font-weight: 400; color: var(--muted); letter-spacing: 0; }
+    .chart-legend { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 12px; color: var(--soft); }
+    .chart-legend li { display: flex; align-items: center; gap: 7px; }
+    .chart-legend i, .tip i { width: 14px; height: 2px; border-radius: 1px; background: var(--c); flex: none; }
+    .plot {
+      position: relative; height: clamp(190px, 26vw, 290px); margin: 38px 80px 28px 36px;
+      touch-action: pan-y; cursor: crosshair; outline: none;
+    }
+    .plot:focus-visible { outline: 1px solid var(--muted); outline-offset: 8px; border-radius: 4px; }
+    .plot svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+    .plot .gl { position: absolute; left: 0; right: 0; height: 1px; background: var(--line); }
+    .plot .gl.base { background: var(--line2); }
+    .plot .yt, .plot .xt { position: absolute; font-family: var(--mono); font-size: 10.5px; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .plot .yt { right: 100%; margin-right: 9px; transform: translateY(-50%); }
+    .plot .xt { top: 100%; margin-top: 9px; transform: translateX(-50%); }
+    .plot .note { position: absolute; top: -14px; bottom: 0; width: 1px; margin: 0; background: var(--line2); font-style: normal; }
+    .plot .note span {
+      position: absolute; top: 0; right: 9px; width: max-content; max-width: 150px;
+      font-size: 11px; line-height: 1.35; color: var(--soft); text-align: right;
+    }
+    .plot .pt {
+      position: absolute; width: 9px; height: 9px; margin: -4.5px 0 0 -4.5px; border-radius: 50%;
+      background: var(--c); box-shadow: 0 0 0 2px var(--card); pointer-events: none;
+    }
+    .plot .hp { opacity: 0; }
+    .plot .end { position: absolute; left: 100%; margin-left: 13px; transform: translateY(-50%); line-height: 1.2; white-space: nowrap; }
+    .plot .end b { display: block; font-size: 14px; font-weight: 700; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+    .plot .end span { font-size: 11px; color: var(--muted); }
+    .plot .cross { position: absolute; top: 0; bottom: 0; width: 1px; background: var(--muted); opacity: 0; pointer-events: none; }
+    .plot .tip {
+      position: absolute; z-index: 2; top: 6px; padding: 9px 11px; border-radius: 10px;
+      background: var(--card); border: 1px solid var(--line2); box-shadow: 0 10px 28px rgba(0, 0, 0, .22);
+      font-size: 12px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity .12s;
+    }
+    .plot.hov .cross, .plot.hov .tip { opacity: 1; }
+    .plot.hov .hp.live { opacity: 1; }
+    .tip time { display: block; margin-bottom: 6px; color: var(--muted); font-variant-numeric: tabular-nums; }
+    .tip div { display: flex; align-items: center; gap: 7px; color: var(--muted); }
+    .tip div + div { margin-top: 3px; }
+    .tip b { color: var(--fg); font-weight: 700; font-variant-numeric: tabular-nums; }
+    @media (max-width: 560px) {
+      .plot { margin: 36px 64px 26px 30px; }
+      .plot .end { margin-left: 10px; }
+      .plot .end b { font-size: 12.5px; }
+      .plot .end span { font-size: 10px; }
+      .plot .note span { max-width: 112px; }
+    }
+
+    /* ---------- cases ---------- */
+    html.js .case.rv { opacity: 1; transform: none; }
+    html.js .case-copy { opacity: 0; transform: translateY(22px); transition: opacity .8s ease, transform 1s var(--e-out); }
+    html.js .case.in .case-copy { opacity: 1; transform: none; }
+    /* the visual wipes open from the top while the picture settles back */
+    html.js .case-visual { clip-path: inset(0 0 100% 0); transition: clip-path 1.3s var(--e-out) .12s; }
+    html.js .case.in .case-visual { clip-path: inset(0 0 0 0); }
+    html.js .case-visual:not(.app-screens) img { transform: scale(1.14); transition: transform 1.8s var(--e-out) .12s; }
+    html.js .case.in .case-visual:not(.app-screens) img { transform: none; }
+    html.js .app-screens img {
+      opacity: 0; transform: translateY(34px);
+      transition: opacity .7s ease, transform 1.1s var(--e-out); transition-delay: calc(var(--i, 0) * 120ms + 350ms);
+    }
+    html.js .case.in .app-screens img { opacity: 1; transform: none; }
+    html.js .case-proof { transform: translateY(170%); transition: transform .9s var(--e-out) .9s; }
+    html.js .case.in .case-proof { transform: none; }
+    html.js .case.in .flow li { animation: flowlit 1.1s ease backwards; animation-delay: calc(var(--i, 0) * 170ms + 500ms); }
+    @keyframes flowlit { 0% { opacity: .25; } 45% { color: var(--fg); border-color: var(--accent); } }
+
+    /* ---------- app grid ---------- */
+    html.js .apps.rv { opacity: 1; transform: none; }
+    .apps li { position: relative; overflow: hidden; }
+    .apps li > * { position: relative; }
+    html.js .apps li { opacity: 0; }
+    html.js .apps li.in { opacity: 1; animation: card-in .8s var(--e-out) backwards; animation-delay: calc(var(--c, 0) * 45ms); }
+    @keyframes card-in { from { opacity: 0; transform: translateY(16px); } }
+    @media (hover: hover) {
+      /* a soft light follows the pointer across the hovered card */
+      .apps li::before {
+        content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity .3s;
+        background: radial-gradient(190px circle at var(--mx, 50%) var(--my, 50%), color-mix(in srgb, var(--accent) 13%, transparent), transparent 65%);
+      }
+      .apps li:hover::before { opacity: 1; }
+    }
+
+    /* detail sheet: the icon travels from the card into the sheet */
+    dialog.sheet.vt[open] .inner { animation: none; }
+    ::view-transition-group(appicon) { animation-duration: .5s; animation-timing-function: cubic-bezier(.16, 1, .3, 1); }
+    ::view-transition-old(root), ::view-transition-new(root) { animation-duration: .28s; }
+    html.js dialog.sheet[open] .mshots img { animation: shot .7s var(--e-out) backwards; animation-delay: calc(var(--i, 0) * 60ms + 140ms); }
+    @keyframes shot { from { opacity: 0; transform: translateX(26px); } }
+    /* theme switch: the new palette spreads from the button */
+    html.theme-vt::view-transition-old(root), html.theme-vt::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+
+    /* ---------- career ---------- */
+    @media (min-width: 821px) {
+      /* a rail between the dates and the work; it fills as the section is read */
+      .jobs { position: relative; --rail: calc(180px + clamp(16px, 3vw, 36px) / 2); }
+      .jobs::before, .jobs::after {
+        content: ""; position: absolute; top: 8px; bottom: 0; left: var(--rail); width: 1px; background: var(--line);
+      }
+      .jobs::after { background: var(--accent); transform: scaleY(var(--p, 0)); transform-origin: top; }
+      .job { position: relative; }
+      .job::before {
+        content: ""; position: absolute; z-index: 1; top: 5px; left: calc(var(--rail) - 4px); width: 9px; height: 9px;
+        border-radius: 50%; box-sizing: border-box; background: var(--bg); border: 1px solid var(--line2);
+        transition: background .4s, border-color .4s;
+      }
+      .job + .job::before { top: 49px; }
+      .job.in::before { background: var(--accent); border-color: var(--accent); }
+      .job > div:last-child { padding-left: 8px; }
+    }
+    html.js .job .bullets li {
+      opacity: 0; transform: translateY(10px);
+      transition: opacity .6s ease, transform .8s var(--e-out); transition-delay: calc(var(--i, 0) * 70ms + 200ms);
+    }
+    html.js .job.in .bullets li { opacity: 1; transform: none; }
+
+    /* ---------- skills ---------- */
+    html.js .skills li { opacity: 0; transform: scale(.82); transition: opacity .4s ease, transform .6s var(--e-pop); transition-delay: calc(var(--i, 0) * 28ms + 150ms); }
+    html.js .skills.in li { opacity: 1; transform: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html.js .hi, html.js .shead .snum, html.js .shead .ssub, html.js .split .wi, html.js .case-copy, html.js .app-screens img,
+      html.js .case-visual:not(.app-screens) img, html.js .case-proof, html.js .job .bullets li, html.js .skills li, html.js .apps li {
+        opacity: 1; transform: none; transition: none; animation: none;
+      }
+      html.js .case-visual { clip-path: none; transition: none; }
+      html.js h1 span, html.js h1 span.acc { transform: none; transition: none; }
+      html.js .eyebrow::before { transform: none; transition: none; }
+      html.js .case.in .flow li, html.js dialog.sheet[open] .mshots img { animation: none; }
+      .od > span { transition: none; }
+    }
+    @media print {
+      *, *::before, *::after { transition: none !important; animation: none !important; }
+      .progress, .chart .cross, .chart .tip { display: none !important; }
+      h1 { overflow: visible; }
+      html.js .hi, html.js .shead .snum, html.js .shead .ssub, html.js .split .wi, html.js .case-copy, html.js .app-screens img,
+      html.js .case-visual:not(.app-screens) img, html.js .case-proof, html.js .job .bullets li, html.js .skills li, html.js .apps li {
+        opacity: 1 !important; transform: none !important;
+      }
+      html.js .case-visual { clip-path: none !important; }
+      .jobs::before, .jobs::after, .job::before { display: none !important; }
+      .chart { break-inside: avoid; }
+    }
   </style>
 </head>
 <body>
@@ -563,18 +777,19 @@
       <button class="btn" id="themeBtn" type="button" aria-pressed="false">Light</button>
       <button class="btn" id="printBtn" type="button">PDF</button>
     </span>
+    <div class="progress" id="progress" aria-hidden="true"></div>
   </header>
 
   <main>
     <div class="wrap">
       <div class="hero">
         <div class="hero-copy">
-        <p class="eyebrow">Portfolio — 2026.11</p>
+        <p class="eyebrow hi">Portfolio — 2026.11</p>
         <h1 id="heroName"><span>김</span><span>용</span><span>태</span><span class="acc">.</span></h1>
-        <p class="lede">
+        <p class="lede hi" style="--d:420ms">
           앱·게임을 기획해 <b>직접 출시·운영</b>하고, 유튜브 콘텐츠 제작과 발행을 자동화합니다.
         </p>
-        <ul class="meta">
+        <ul class="meta hi" style="--d:520ms">
           <li><a href="mailto:contact@ytlab.site">contact@ytlab.site</a></li>
           <li><a href="https://ytlab.site" target="_blank" rel="noopener">ytlab.site</a></li>
           <li><a href="https://apps.apple.com/kr/developer/yt-lab/id6774625279" target="_blank" rel="noopener">App Store 개발자 페이지</a></li>
@@ -583,7 +798,7 @@
         </ul>
         </div>
 
-        <figure class="pipe" id="pipe" aria-label="유튜브 제작 자동화 파이프라인: 대본, TTS, 싱크, 렌더, 썸네일, 메타데이터, 업로드">
+        <figure class="pipe hi" id="pipe" style="--d:300ms" aria-label="유튜브 제작 자동화 파이프라인: 대본, TTS, 싱크, 렌더, 썸네일, 메타데이터, 업로드">
           <div class="pipe-head">
             <span class="pipe-dot"></span>
             <span class="pipe-name">auto-yt</span>
@@ -635,12 +850,26 @@
     <div class="marquee" id="marquee" data-par="-22" aria-hidden="true"></div>
 
     <div class="wrap">
-      <div class="stats">
+      <div class="stats rv">
         <div class="stat"><span class="num">26</span><span class="lbl">직접 만들어 운영 중인 서비스<br />스토어 16 · 앱인토스 24 · 양쪽 출시 14</span></div>
         <div class="stat"><span class="num">250,166</span><span class="lbl">유튜브 채널 누적 조회수<br />바이브빌더 · 2026.11.10 기준</span></div>
         <div class="stat"><span class="num">30,820</span><span class="lbl">App Store 첫 다운로드<br />2026.06.15 첫 출시~11.08 전체</span></div>
         <div class="stat"><span class="num">10,757</span><span class="lbl">Google Play 사용자 설치<br />2026.05.01~11.05 · 리포트 전체</span></div>
       </div>
+
+      <figure class="chart rv" id="dlChart">
+        <div class="chart-head">
+          <figcaption class="chart-title">
+            스토어 누적 다운로드·설치
+            <span class="chart-sub">스토어 공식 일별 리포트 · 2026.05.01~11.08</span>
+          </figcaption>
+          <ul class="chart-legend">
+            <li><i style="--c:var(--accent)"></i>App Store 첫 다운로드</li>
+            <li><i style="--c:var(--soft)"></i>Google Play 사용자 설치</li>
+          </ul>
+        </div>
+        <div class="plot" tabindex="0" role="img"></div>
+      </figure>
 
       <p class="note">다운로드·설치는 스토어 공식 리포트의 집계입니다. 두 스토어는 지표가 달라 합치지 않았습니다. 상세 집계 범위는 <a href="#download-scope">아래 기준</a>을 참고해 주세요.</p>
 
@@ -966,6 +1195,7 @@
           <div><h2>경력</h2></div>
         </div>
 
+        <div class="jobs">
         <div class="job rv">
           <div class="when">2024.05 — 재직중</div>
           <div>
@@ -994,6 +1224,7 @@
               <li>유튜브 영상 제작·업로드 7단계 및 인스타그램 카드뉴스 제작·발행 프로세스 자동화</li>
             </ul>
           </div>
+        </div>
         </div>
       </section>
 
@@ -1063,24 +1294,35 @@
       var cards = Array.prototype.slice.call(document.querySelectorAll(".apps li"));
 
       // ---- scroll reveal (set up first so a builder error can't hide the page) ----
-      function revealAll() { document.querySelectorAll(".rv").forEach(function (el) { el.classList.add("in"); }); }
+      // An element may carry _in (start its motion) and _fin (jump straight to its end state).
+      function each(sel, fn, ctx) { Array.prototype.forEach.call((ctx || document).querySelectorAll(sel), fn); }
+      function land(el, instant) {
+        el.classList.add("in");
+        var f = (instant && el._fin) || el._in;
+        el._in = el._fin = null;
+        if (f) f();
+      }
+      function revealAll(instant) {
+        each(".hero", function (el) { el.classList.add("ready"); });
+        each(".rv, .apps li, h1", function (el) { land(el, instant); });
+      }
+      window.addEventListener("error", function () { revealAll(true); });
 
       var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      if (reduce || !("IntersectionObserver" in window)) {
-        revealAll();
-      } else {
-        var io = new IntersectionObserver(function (entries) {
+      var io = null;
+      if (!reduce && "IntersectionObserver" in window) {
+        io = new IntersectionObserver(function (entries) {
           entries.forEach(function (e) {
             if (!e.isIntersecting) return;
-            e.target.classList.add("in");
+            land(e.target);
             io.unobserve(e.target);
           });
         }, { rootMargin: "0px 0px -40px 0px", threshold: 0.05 });
-        document.querySelectorAll(".rv").forEach(function (el) { io.observe(el); });
+        each(".rv, .apps li", function (el) { io.observe(el); });
       }
 
       // printing can start from anywhere, including the browser's own menu
-      function beforePrint() { revealAll(); }
+      function beforePrint() { revealAll(true); }
       window.addEventListener("beforeprint", beforePrint);
       document.getElementById("printBtn").addEventListener("click", function () {
         beforePrint();
@@ -1104,9 +1346,24 @@
       systemLight.addEventListener("change", paintToggle);
       themeBtn.addEventListener("click", function () {
         var next = isLight() ? "dark" : "light";
-        root.setAttribute("data-theme", next);
-        try { localStorage.setItem("theme", next); } catch (e) {}
-        paintToggle();
+        function apply() {
+          root.setAttribute("data-theme", next);
+          try { localStorage.setItem("theme", next); } catch (e) {}
+          paintToggle();
+        }
+        if (!document.startViewTransition || reduce) { apply(); return; }
+        // the new palette spreads out from the button as a growing circle
+        var b = themeBtn.getBoundingClientRect(), x = b.left + b.width / 2, y = b.top + b.height / 2;
+        var r = Math.hypot(Math.max(x, window.innerWidth - x), Math.max(y, window.innerHeight - y));
+        root.classList.add("theme-vt");
+        var t = document.startViewTransition(apply), done = function () { root.classList.remove("theme-vt"); };
+        t.ready.then(function () {
+          root.animate(
+            { clipPath: ["circle(0px at " + x + "px " + y + "px)", "circle(" + r + "px at " + x + "px " + y + "px)"] },
+            { duration: 700, easing: "cubic-bezier(.65, 0, .35, 1)", pseudoElement: "::view-transition-new(root)" }
+          );
+        }, done);
+        t.finished.then(done, done);
       });
 
 
@@ -1114,6 +1371,7 @@
       var APPS = {"one-to-fifty":{"v":"1.0.10","r":"2026.06","u":"2026.10","g":"게임","iap":[1,1],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5d/98/d0/5d98d047-2cfa-1f4f-e546-94f5666d0b26/1_loop.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f3/4b/35/f34b355a-117f-1adb-9136-facdf51c04fc/2_compete.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/fc/40/7c/fc407ce8-1c2f-7e53-6b0e-8d44be449216/3_win.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/36/44/10/36441035-69d3-46e1-7353-9cfcbcd728d3/4_modes.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/59/84/84/59848459-a0f9-d9ed-2eb5-94ddba8c152d/5_themes.png/626x0w.webp"],"d":"1부터 50까지, 얼마나 빨리 탭할 수 있나요? 다음 숫자를 찾아 누르고, 시간을 줄이고, 그다음엔 전 세계와 겨루세요. 1 to 50: 숫자 순서 게임은 단 하나의 중독적인 루프로 만들어진 스피드 게임입니다. 격자에서 다음 수를 찾아 손가락이 움직이는 만큼 빠르게 터치하세요. 배우는 데는 몇 초면 충분하지만, 마스터하는 데는 끝이 없습니다."},"road-to-treble":{"v":"3.6.10","r":"2026.07","u":"2026.10","g":"게임","iap":[26,24],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a7/da/f6/a7daf622-ddd3-b266-1868-3a230bece00f/6.7_01_manager.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/36/c7/c9/36c7c903-43aa-323f-aeca-c1c66db4c5fa/6.7_02_matchday.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/cc/bc/9a/ccbc9a56-4d96-fa46-e839-2548a0960e3d/6.7_03_weekdraft.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/26/d7/14/26d71480-e869-556b-aaaf-d9aa52eb2b30/6.7_04_hook.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ce/a4/9d/cea49d2a-da6d-c231-e7ad-8eee2d3b48e3/6.7_05_trophies.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/bc/21/cd/bc21cd82-f071-f3d4-8e0c-649e537d454f/6.7_06_album.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/7e/56/ed/7e56eda4-7d2c-9074-636b-a8df5a5cfb43/6.7_07_cover.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a3/aa/53/a3aa5332-2848-f820-aec1-62e6531ca7ed/6.7_08_ranks.png/626x0w.webp"],"d":"능력치를 가린 채 11개 포지션을 한 명씩 채우는 축구 드래프트 게임입니다. 화려한 이름값에 속을지 숨은 보석을 알아볼지는 당신의 축구 지식에 달렸습니다. 베스트11을 확정하고 시즌을 돌려 트레블에 도전하세요."},"animal-pop":{"v":"1.4.3","r":"2026.07","u":"2026.10","g":"게임","iap":[1,1],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a1/d1/79/a1d17961-80ee-806b-b22a-3e0b6625b732/ko-KR_1.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/a8/49/d5/a849d5f8-69ef-a177-68e8-d42baa25d251/ko-KR_2.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/46/4c/1d/464c1d96-e092-ec0e-5653-24a96bff6917/ko-KR_3.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/43/11/45/43114569-286b-5d77-d391-eb84eadfd9ff/ko-KR_4.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/e9/58/a3/e958a343-94ea-9c76-0505-b2f62af810dc/ko-KR_5.png/626x0w.webp"],"d":"같은 동물 둘을 톡! 합치면 더 큰 동물로 자라나요. 병아리에서 시작해 사자까지, 귀여운 동물을 합쳐 키우는 힐링 합치기 퍼즐! 떨어뜨리고, 합치고, 점수를 쌓는 단순한 규칙."},"sumdash":{"v":"1.2.5","r":"2026.07","u":"2026.09","g":"게임","iap":[1,1],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/9e/3b/90/9e3b905d-a5c5-c693-6a9f-1241f2b5ff48/ios_65_1_play.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c8/58/dd/c858dd78-2097-9368-949e-3e72dd115991/ios_65_2_rank.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d9/ea/f0/d9eaf0e1-7af4-cbec-c777-76ab5371c765/ios_65_3_modes.png/626x0w.webp"],"d":"카운트다운이 0이 되기 전에 정답을 눌러라. SumDash는 사칙연산을 아케이드 게임으로 바꾼 빠른 암산 게임입니다. 정답을 맞힐 때마다 시간이 충전되고, 속도는 조금씩 더 빨라집니다. 시작은 쉽습니다. 하지만 끝까지 쉬웠던 적은 없습니다."},"blind-duel":{"v":"2.1.4","r":"2026.07","u":"2026.10","g":"게임","iap":[5,5],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ab/44/4d/ab444dfb-9c1f-35a5-fa59-384526b2b1e9/1_hero.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/b7/88/e2/b788e29c-a630-e9b2-9378-22410a2d0f83/2_rule.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f1/3d/3f/f13d3f38-1a7f-7b34-54fa-7b875a8dde76/3_league.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/81/42/7e/81427e3b-7174-c6d6-1e23-755a934ca079/4_style.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/17/68/23/17682333-abe4-05ea-cd33-ef509cfad796/5_duel.png/626x0w.webp"],"d":"상대 카드는 보이는데, 내 카드만 안 보인다. 한 장으로 벌이는 블러핑 심리전, 블라인드 듀얼. 읽고, 속여서 라운드를 가져가세요. 승부를 결정하는 단 한 장이 나만 안 보입니다."},"admeter":{"v":"1.0.3","r":"2026.07","u":"2026.10","g":"금융","iap":[1,1],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c4/46/fa/c446faca-346c-23c9-77ff-f273d5c59f0b/1_glance.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1e/c4/6c/1ec46cd7-6b37-3ff7-c2f4-870f6e5958f9/2_calendar.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f0/38/ea/f038eafe-a840-a90a-bb64-4bfd0c0e0865/3_sources.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/66/a4/c5/66a4c514-a445-489c-f153-29dfc81a8b1b/4_detail.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/68/8f/11/688f11c3-e70f-8310-e444-00801a6b3d68/5_theme.png/626x0w.webp"],"d":"내 광고는 24시간 돈을 법니다. AdMeter는 그 돈을 한 화면에 모아 보여줍니다. 구글 계정으로 로그인하면 애드몹(AdMob)과 애드센스(AdSense) 수익을 함께 볼 수 있습니다 — 스프레드시트도, 브라우저 탭도, 콘솔 뒤지기도 필요 없습니다."},"kupanote":{"v":"1.0.10","r":"2026.08","u":"2026.10","g":"비즈니스","iap":[0,0],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c3/39/9f/c3399f78-cec0-1b55-3a55-7419a5d725f5/1_home.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d9/ef/47/d9ef475d-2fba-9467-d404-cbf1eb54a0fc/2_calendar.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f4/1d/ce/f41dce39-c1fe-d63d-f93e-fbb9daa53b9f/3_products.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f0/8f/ce/f08fceaa-b059-12ca-8e12-68227689e1aa/4_trust.png/626x0w.webp"],"d":"쿠팡 파트너스 실적을 매일 오후 3시에 받아 채워 두고 알림 한 통을 보냅니다. 사이트에 들어가 새로고침할 이유를 없앤 앱입니다.","sub":"구독 1종 · 월 990원"},"banpick":{"v":"2.1.0","r":"2026.08","u":"2026.10","g":"게임","iap":[19,19],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/2a/aa/09/2aaa0966-f6ab-14f1-1e82-63c1266bb4f2/1_draft.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/44/86/d2/4486d242-615e-9340-4669-1ec66935e146/2_hub.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8f/76/7e/8f767e6f-0de3-73eb-811b-c2a12e54e031/3_tier.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/c9/da/64/c9da6448-1eaa-1f13-cbad-740537dc7801/4_sheet.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/67/bb/01/67bb015f-1dd4-1ff7-4266-fb9ce1892fc2/5_tactic.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/83/ff/d3/83ffd306-1428-02fb-8858-962910448cb0/6_awards.png/626x0w.webp"],"d":"당신은 신생 e스포츠 게임단의 감독입니다. 2부 리그에서 시작해 밴픽을 읽고, 선수를 키우고, 리그 정상과 월드 챔피언십까지 올라가세요."},"malang-brain":{"v":"1.0.3","r":"2026.08","u":"2026.10","g":"게임","iap":[0,0],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a9/a8/f7/a9a8f7c8-aae7-b6f6-96be-0b89ccd488b0/1_games.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a3/d8/54/a3d85418-0846-7d8b-5c2f-d527234c4004/2_percentile.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1f/1d/fc/1f1dfc8a-8f10-d7cc-d0bf-25aa0fc76196/3_rank.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/90/24/f3/9024f3f4-5e92-5d19-0b0f-f1f46bb66fa3/4_growth.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/8e/2b/0b/8e2b0bf8-c7c5-e57c-69a4-61410a3044bc/5_play.png/626x0w.webp"],"d":"말랑한 머리, 일곱 가지로 단련하세요. 말랑브레인은 7가지 두뇌게임을 아기자기한 페이퍼 월드에 담았어요. 한 판은 1분 이내, 모든 점수는 전 세계 백분위로, 전부 합쳐 나만의 말랑지수가 됩니다.","sub":"구독 2종 · 월 · 연"},"twelve-chess":{"v":"1.0.5","r":"2026.09","u":"2026.09","g":"게임","iap":[1,1],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b1/df/20/b1df209c-5bd3-afca-f1dd-dd9f3662e243/1_home.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1b/9f/8b/1b9f8bda-f71d-3686-9a37-9b0adbfac7d8/2_select.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f6/d8/ab/f6d8abc6-2d04-3654-0c15-6bc322562c53/3_midgame.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8e/ea/64/8eea6467-3ffe-b40f-a8e9-2e3d56401bf9/4_sheet.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/62/02/15/62021580-835c-c665-24b3-e87ad7040954/5_rank.png/626x0w.webp"],"d":"체스를 열두 칸으로 줄였습니다. 12 Chess는 3x4 판에서 벌어지는 3분짜리 수싸움입니다. 첫 수부터 모든 기물이 서로 사정권 안에 있어서, 외울 오프닝도 없고 늘어지는 중반도 없습니다. 1수부터 그냥 싸움입니다."},"soccer-career":{"v":"2.6.8","r":"2026.09","u":"2026.11","g":"게임","iap":[17,17],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/c7/44/ff/c744ff6c-4444-e753-1bcf-161d91743818/ko_1retired.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/08/2b/bb/082bbbe7-79d8-0784-d1c9-940411169a21/ko_2board.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/88/2f/a9/882fa99f-c018-c8d7-5d3f-5949c5e451b2/ko_3month.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d0/17/83/d017833f-f61b-d1d4-bac9-bfe7df3faf02/ko_4event.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ed/ea/d7/edead70d-00be-e70f-e5e6-f87c63bf51fb/ko_5offer.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/33/97/20/33972094-4fe9-846e-2de8-f9147646dbb1/ko_6plan.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/1a/c2/38/1ac238c7-2df2-645f-4082-cae0995cab97/ko_7result.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/5e/65/39/5e653913-404e-64ca-92e3-9d361256e760/ko_8award.png/626x0w.webp"],"d":"유소년부터 은퇴까지, 축구선수 한 명의 커리어를 선택으로 굴려 보는 시뮬레이션입니다."},"road-to-crown":{"v":"1.0.4","r":"2026.09","u":"2026.10","g":"게임","iap":[14,14],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/14/cc/bc/14ccbcdc-2beb-962f-66ce-8645f4ff4d53/01_cover.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/23/bf/0d/23bf0df3-9e33-6f48-7024-d65860bd8fdc/02_draft.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d4/a0/68/d4a068b1-4839-e78a-28a9-23f8b6d983f3/03_slate.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/40/68/36/406836e4-d3f1-2d6f-ae44-6f216631e302/04_album.png/626x0w.webp"],"d":"야구 선수를 드래프트하고 구단을 운영하는 야구 드래프트 게임입니다."},"rimrise":{"v":"2.6.2","r":"2026.10","u":"2026.11","g":"게임","iap":[17,17],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/ae/1a/1c/ae1a1c92-eb22-bca4-4513-062d2a8ff197/ko_1month.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f1/0b/fd/f10bfdf6-0666-1b7b-69f0-42c3e77eed43/ko_2event.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/09/f9/d6/09f9d6a4-7b99-720d-4a1c-3e82cb078d1b/ko_3playoffs.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/27/14/bb/2714bb00-61e1-cf9c-190c-0a0ad5f86e11/ko_4offer.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/b6/a9/b6/b6a9b6e7-7c0a-c5f2-b685-c7771aa82aa6/ko_5plan.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/22/fe/94/22fe94e3-b331-fc80-51ff-5f869386292a/ko_6result.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/31/e8/91/31e89134-990d-d672-70f2-658e24b3bfe0/ko_7outcome.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/76/99/fe/7699fe64-54d2-d064-fbf2-8580fe061cdf/ko_8award.png/626x0w.webp"],"d":"농구선수 한 명의 커리어를 성장시키는 시뮬레이션입니다."},"sack-race":{"v":"2.2.1","r":"2026.09","u":"2026.11","g":"게임","iap":[16,16],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/44/0a/bc/440abc86-761b-2a91-0419-eb75b727d02d/ko_1decision.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/0d/23/76/0d23767f-694c-fbec-1c9b-291aa2221c07/ko_2result.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/6d/92/36/6d923661-9f97-a7b8-6c14-66875425c4f3/ko_3squad.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/9d/da/98/9dda98fb-1b28-9c1a-bd0b-30fa3ee80d30/ko_4preseason.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/57/82/2a/57822a9c-c90c-cf9f-c001-b28cfdb0c2cd/ko_5market.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/9c/48/e3/9c48e3ea-f126-9e7c-7b93-9d0be1b08c98/ko_6season.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/59/ef/52/59ef5283-6002-f4bb-ad89-11f04942d592/ko_7money.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f2/12/48/f2124832-ac6c-6607-c2a0-15f259043d98/ko_8home.png/626x0w.webp"],"d":"전술과 이적시장을 관리하고 구단의 평가에 따라 시즌을 이어가는 축구 감독 게임입니다."},"baseball-manager":{"v":"2.1.0","r":"2026.10","u":"2026.11","g":"게임","iap":[16,16],"s":["https://play-lh.googleusercontent.com/VvRFJLAh8pggCVlwCfjqIJdDixxz1QWzlsi-hHAxK0KJp2DGM7rJl0a2sjejT8YXQFJZPlrec7Qbr39X41m16w=w626","https://play-lh.googleusercontent.com/kBXhgyhlOXgOhjZp3ci8H0K5NH7PcqtbdssQiZW5CbThFWrLVi1NB8j5iSB-8hqAc-CVUtO5moBX-wyRz8jIcA=w626","https://play-lh.googleusercontent.com/MTP-9P3Ye7tSJwz9KLA4PGL5lSXgmxdf59SZGsjj-WwaTbT1FC5w0k2pFjlchGETMezPAaRffVei1IqmNkj7Zw=w626","https://play-lh.googleusercontent.com/vxKDs5cGsBNL8DxrihAyx7ZyTsYObdiYW2ub8JCW6Z7aFboCE36qQhz26Fn0hCf_yKuk8r44SUxIIZtenPwLrQ=w626","https://play-lh.googleusercontent.com/DY0Q6AJilJ0VfSGZarG1yAwPn7C7hqZ7JU7mvetR2Ud_pXbbTeTBh4pw9PmLepeLTAN7xt7KJ6aHspGL3ltWRJU=w626","https://play-lh.googleusercontent.com/CvrbsEy0kuChhz7IGPajfloUQJsP8JXsacC1F54HoMBHJi4fFBT5aFkidm4isQLv_RmUK-WrakJ8q783FDTS7w=w626","https://play-lh.googleusercontent.com/ZxxEZNXCZGuWk1RjugxbkAooiBXuj-YEVdH948uz1ckNUTo44hUbrn1Ta3hc9pnwhfSTsyuMPP3kKrnLDFeL=w626","https://play-lh.googleusercontent.com/f8vs4loAYtnPoKLHrwzQWUxCuIz9xGI6ih1BeQJasmJpowSDr6GKJIKsOvbvZmHDXVnpFKM2eEkRA0hTd_VJ=w626"],"d":"라인업과 선발 로테이션을 정하고, 트레이드·FA·팜 육성을 통해 구단을 운영하는 야구 감독 커리어 게임입니다."},"baseball-career":{"v":"1.3.1","r":"2026.10","u":"2026.11","g":"게임","iap":[17,17],"s":["https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/f4/9b/8c/f49b8c98-b1d7-f224-d4f3-c99dcf2c35d3/ko_01retired.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/ea/f9/69/eaf969f0-f81b-1476-08d4-12be8d4affc0/ko_02hall.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/91/ae/00/91ae003e-6115-e09e-47ca-593191a7de90/ko_03titles.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/9d/4d/76/9d4d769e-55d8-1bf5-2e3d-cf1385805562/ko_04home.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/14/c8/b9/14c8b983-3a91-b986-b8a2-7ae680f117dd/ko_05growth.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/d7/f6/e6/d7f6e661-fc23-d984-0fc3-d5f41da47a96/ko_06owner.png/626x0w.webp","https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/43/56/a2/4356a200-5279-4b4c-a1dd-0b78dd5f364c/ko_07archive.png/626x0w.webp"],"d":"고교 2학년 유망주로 시작해 드래프트, 마이너 A·AA·AAA, 빅리그 콜업까지 한 선수의 시즌을 직접 보내는 야구선수 육성 게임입니다. 투수 또는 야수로 커리어를 쌓습니다."}};
       var sheet = document.getElementById("sheet");
       var lastFocus = null;
+      var sheetFrom = null;
 
       function chip(text) { var el = document.createElement("span"); el.textContent = text; return el; }
 
@@ -1138,6 +1396,7 @@
         shots.textContent = "";
         d.s.forEach(function (src, i) {
           var img = document.createElement("img");
+          img.style.setProperty("--i", i);
           // the sheet only opens on request, so load every shot now instead of leaving empty frames
           img.onerror = function () { img.remove(); };
           img.src = src; img.alt = li.querySelector(".nm").textContent + " 화면 " + (i + 1);
@@ -1151,12 +1410,41 @@
         links.forEach(function (a) { out.appendChild(a.cloneNode(true)); });
 
         document.body.style.overflow = "hidden";
-        sheet.showModal();
+        // where the browser can, the card's icon travels into the sheet
+        var icon = li.querySelector(".ic"), sIcon = document.getElementById("sheetIcon");
+        if (document.startViewTransition && !reduce) {
+          sheetFrom = icon;
+          icon.style.viewTransitionName = "appicon";
+          sheet.classList.add("vt");
+          var done = function () { sIcon.style.viewTransitionName = ""; };
+          document.startViewTransition(function () {
+            icon.style.viewTransitionName = "";
+            sIcon.style.viewTransitionName = "appicon";
+            sheet.showModal();
+          }).finished.then(done, done);
+        } else {
+          sheet.classList.remove("vt");
+          sheet.showModal();
+        }
+      }
+
+      function closeSheet() {
+        var back = sheetFrom && sheetFrom.isConnected ? sheetFrom : null, sIcon = document.getElementById("sheetIcon");
+        sheetFrom = null;
+        if (!document.startViewTransition || reduce || !back) { sheet.close(); return; }
+        sIcon.style.viewTransitionName = "appicon";
+        var done = function () { back.style.viewTransitionName = ""; };
+        document.startViewTransition(function () {
+          sIcon.style.viewTransitionName = "";
+          back.style.viewTransitionName = "appicon";
+          sheet.close();
+        }).finished.then(done, done);
       }
 
       if (sheet) {
-        document.getElementById("sheetClose").addEventListener("click", function () { sheet.close(); });
-        sheet.addEventListener("click", function (e) { if (e.target === sheet) sheet.close(); });
+        document.getElementById("sheetClose").addEventListener("click", closeSheet);
+        sheet.addEventListener("click", function (e) { if (e.target === sheet) closeSheet(); });
+        sheet.addEventListener("cancel", function (e) { e.preventDefault(); closeSheet(); });      // Esc leaves the same way
         sheet.addEventListener("close", function () {
           document.body.style.overflow = "";
           if (lastFocus) lastFocus.focus();
@@ -1173,12 +1461,15 @@
       // ---- motion ----
       var motionOK = !reduce;
 
-      var hero = document.getElementById("heroName");
+      var hero = document.getElementById("heroName"), heroBox = document.querySelector(".hero");
       if (hero) {
         Array.prototype.forEach.call(hero.children, function (el, i) {
-          el.style.transitionDelay = (i * 70) + "ms";
+          el.style.transitionDelay = (el.classList.contains("acc") ? 760 : i * 90) + "ms";      // the dot drops in last
         });
-        requestAnimationFrame(function () { hero.classList.add("in"); });
+        // wait for the web font so the name does not reflow mid-rise
+        var heroIn = function () { hero.classList.add("in"); heroBox.classList.add("ready"); };
+        if (reduce || !document.fonts || !document.fonts.ready) heroIn();
+        else Promise.race([document.fonts.ready, new Promise(function (r) { setTimeout(r, 600); })]).then(function () { requestAnimationFrame(heroIn); });
       }
 
       // launch chart: icons drop onto their month once the chart is on screen
@@ -1379,6 +1670,333 @@
         "평균 <b>월 " + (total / keys.length).toFixed(1) + "개</b> 출시";
       document.getElementById("tlpeak").innerHTML =
         "최다 <b>" + peakMonths.map(function (k) { return k.slice(5); }).join(" · ") + "월 · " + max + "개</b>";
+
+      // ---------------------------------------------------------------
+      // Motion layer
+      // ---------------------------------------------------------------
+      var finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+      function fmt(n) { return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ","); }
+      function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+      function pad(n) { return n < 10 ? "0" + n : "" + n; }
+
+      // section headings are cut into words so each can rise out of its own mask
+      each(".shead h2", function (h) {
+        var walker = document.createTreeWalker(h, NodeFilter.SHOW_TEXT, null), nodes = [], n, k = 0;
+        while ((n = walker.nextNode())) nodes.push(n);
+        nodes.forEach(function (t) {
+          if (!t.nodeValue.trim()) return;
+          var frag = document.createDocumentFragment();
+          t.nodeValue.split(/(\s+)/).forEach(function (part) {
+            if (!part) return;
+            if (!part.trim()) { frag.appendChild(document.createTextNode(" ")); return; }
+            var wd = document.createElement("span"), wi = document.createElement("span");
+            wd.className = "wd";
+            wi.className = "wi";
+            wi.textContent = part;
+            wi.style.setProperty("--k", k++);
+            wd.appendChild(wi);
+            frag.appendChild(wd);
+          });
+          t.parentNode.replaceChild(frag, t);
+        });
+        h.classList.add("split");
+      });
+
+      // children of these groups arrive one after another
+      each(".flow, .bullets, .app-screens", function (g) {
+        Array.prototype.forEach.call(g.children, function (c, i) { c.style.setProperty("--i", i); });
+      });
+      each(".skills li", function (li, i) { li.style.setProperty("--i", i); });
+
+      // ---- odometer: digits roll up to the figure ----
+      function odometer(el) {
+        var txt = el.textContent.trim(), k = 0;
+        var sr = document.createElement("span"), vis = document.createElement("span");
+        sr.className = "sr";
+        sr.textContent = txt;
+        vis.setAttribute("aria-hidden", "true");
+        txt.split("").forEach(function (ch) {
+          if (!/\d/.test(ch)) { vis.appendChild(document.createTextNode(ch)); return; }
+          var od = document.createElement("span"), strip = document.createElement("span"), d = +ch;
+          od.className = "od";
+          for (var i = 0; i <= 10 + d; i++) {
+            var cell = document.createElement("i");
+            cell.textContent = i % 10;
+            strip.appendChild(cell);
+          }
+          strip.style.setProperty("--t", (1.3 + k * .16) + "s");
+          strip.style.setProperty("--w", (k * 70) + "ms");
+          strip._to = "translateY(-" + ((10 + d) / (11 + d) * 100).toFixed(4) + "%)";
+          od.appendChild(strip);
+          vis.appendChild(od);
+          k++;
+        });
+        el.textContent = "";
+        el.appendChild(sr);
+        el.appendChild(vis);
+      }
+      function rollOn(box, sel) {
+        if (reduce) return;
+        each(sel, odometer, box);
+        box._in = function () { each(".od > span", function (s) { s.style.transform = s._to; }, box); };
+      }
+      each(".stats", function (s) { rollOn(s, ".num"); });
+      each(".case", function (c) { if (c.querySelector(".case-metric")) rollOn(c, ".case-metric b"); });
+
+      // ---- cumulative downloads: both lines draw across, their totals ride the tips ----
+      var DL = { ios: { from: "2026-06-15", d: [2,0,0,9,3,2,2,3,3,0,0,0,0,1,1,7,11,12,14,11,9,8,8,8,6,7,6,2,6,9,4,5,8,6,5,5,7,5,6,4,5,4,12,9,17,11,12,20,13,9,13,15,15,13,19,19,22,13,19,11,15,19,21,21,19,15,7,14,17,13,18,14,19,17,9,22,26,17,12,14,36,26,31,32,35,31,27,16,19,15,23,21,20,19,20,17,10,13,34,41,57,120,169,166,166,125,125,138,133,186,234,246,230,224,215,232,319,745,574,441,436,442,497,476,542,686,492,485,483,592,593,594,879,982,1272,1257,1228,1137,1398,1299,1135,1313,1168,1208,1111,1692,1287] }, play: { from: "2026-05-01", d: [0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,2,0,0,0,0,0,1,3,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,3,0,0,0,1,0,2,1,0,1,2,0,0,2,1,1,3,0,0,0,0,1,2,4,2,7,4,2,2,2,2,1,3,1,5,4,2,3,3,3,4,6,2,1,6,1,0,3,22,14,19,15,11,14,18,16,21,41,41,57,21,43,46,70,78,46,44,53,92,77,88,95,76,47,61,70,79,97,103,102,103,105,115,121,131,155,156,142,133,148,167,180,158,187,166,175,211,344,402,413,436,441,439,481,478,569,603,0,423,502,459,432] } };
+      (function () {
+        var fig = document.getElementById("dlChart");
+        if (!fig) return;
+        var plot = fig.querySelector(".plot"), NS = "http://www.w3.org/2000/svg";
+        var DAY = 864e5, t0 = Date.UTC(2026, 4, 1), W = 1000, H = 300;
+        function dayOf(iso) { var p = iso.split("-"); return (Date.UTC(+p[0], p[1] - 1, +p[2]) - t0) / DAY; }
+        var S = [
+          { key: "ios", name: "App Store", c: "var(--accent)" },
+          { key: "play", name: "Google Play", c: "var(--soft)" }
+        ];
+        var span = 0, top = 0;
+        S.forEach(function (s) {
+          var sum = 0;
+          s.off = dayOf(DL[s.key].from);
+          s.cum = DL[s.key].d.map(function (v) { return (sum += v); });
+          s.end = s.off + s.cum.length - 1;
+          s.total = sum;
+          span = Math.max(span, s.end);
+          top = Math.max(top, sum);
+        });
+        var YMAX = top * 1.06;
+        function X(day) { return day / span; }
+        function Y(v) { return 1 - v / YMAX; }
+        function at(s, day) {
+          var i = day - s.off;
+          if (i <= 0) return i < 0 ? 0 : s.cum[0];
+          if (i >= s.cum.length - 1) return s.total;
+          var a = Math.floor(i);
+          return s.cum[a] + (s.cum[a + 1] - s.cum[a]) * (i - a);
+        }
+        function el(tag, cls, parent, txt) {
+          var e = document.createElement(tag);
+          if (cls) e.className = cls;
+          if (txt != null) e.textContent = txt;
+          (parent || plot).appendChild(e);
+          return e;
+        }
+
+        for (var v = 0; v <= YMAX; v += 10000) {
+          el("i", "gl" + (v ? "" : " base")).style.top = (Y(v) * 100) + "%";
+          el("span", "yt", null, v ? (v / 1000) + "K" : "0").style.top = (Y(v) * 100) + "%";
+        }
+        for (var m = 4; m < 12; m++) {
+          var md = (Date.UTC(2026, m, 1) - t0) / DAY;
+          if (md > span) break;
+          el("span", "xt", null, (m + 1) + "월").style.left = (X(md) * 100) + "%";
+        }
+
+        var svg = document.createElementNS(NS, "svg");
+        svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+        svg.setAttribute("preserveAspectRatio", "none");
+        svg.setAttribute("aria-hidden", "true");
+        svg.innerHTML = '<defs><clipPath id="dlClip"><rect x="0" y="-20" width="0" height="' + (H + 40) + '"/></clipPath>' +
+          '<linearGradient id="dlFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--accent);stop-opacity:.2"/>' +
+          '<stop offset="1" style="stop-color:var(--accent);stop-opacity:0"/></linearGradient></defs><g clip-path="url(#dlClip)"></g>';
+        var layer = svg.lastChild, clip = svg.querySelector("rect");
+        S.forEach(function (s, si) {
+          var d = "";
+          s.cum.forEach(function (val, i) { d += (i ? "L" : "M") + (X(s.off + i) * W).toFixed(1) + " " + (Y(val) * H).toFixed(1); });
+          if (si === 0) {
+            var area = document.createElementNS(NS, "path");
+            area.setAttribute("d", d + "L" + (X(s.end) * W).toFixed(1) + " " + H + "L" + (X(s.off) * W).toFixed(1) + " " + H + "Z");
+            area.setAttribute("fill", "url(#dlFill)");
+            layer.appendChild(area);
+          }
+          var line = document.createElementNS(NS, "path");
+          line.setAttribute("d", d);
+          line.setAttribute("fill", "none");
+          line.setAttribute("stroke-width", "2");
+          line.setAttribute("stroke-linejoin", "round");
+          line.setAttribute("stroke-linecap", "round");
+          line.setAttribute("vector-effect", "non-scaling-stroke");
+          line.style.stroke = s.c;
+          layer.appendChild(line);
+        });
+        plot.appendChild(svg);
+        plot.setAttribute("aria-label", "누적 추이: " + S.map(function (s) { return s.name + " " + fmt(s.total); }).join(", "));
+
+        var note = el("i", "note");
+        note.style.left = (X(dayOf("2026-09-21")) * 100) + "%";
+        el("span", null, note, "09.21 축구선수 키우기 출시");
+
+        var cross = el("i", "cross"), tip = el("div", "tip"), tipTime = el("time", null, tip);
+        S.forEach(function (s) {
+          s.pt = el("i", "pt");
+          s.pt.style.setProperty("--c", s.c);
+          s.hp = el("i", "pt hp");
+          s.hp.style.setProperty("--c", s.c);
+          s.lab = el("div", "end");
+          s.val = el("b", null, s.lab, "0");
+          el("span", null, s.lab, s.name);
+          var row = el("div", null, tip);
+          el("i", null, row).style.setProperty("--c", s.c);
+          s.tv = el("b", null, row);
+          el("span", null, row, s.name);
+        });
+
+        // p runs 0..1 across the whole date range
+        function frame(p) {
+          var day = p * span, hgt = plot.clientHeight;
+          clip.setAttribute("width", (p * W + 2).toFixed(1));
+          var ys = S.map(function (s) {
+            var dd = clamp(day, s.off, s.end), val = day < s.off ? 0 : at(s, dd);
+            s.pt.style.left = (X(dd) * 100) + "%";
+            s.pt.style.top = (Y(val) * 100) + "%";
+            s.pt.style.opacity = day >= s.off ? 1 : 0;
+            s.val.textContent = fmt(val);
+            return Y(val) * hgt;
+          });
+          // while both lines are still low the two riding totals would sit on each other
+          var gap = ys[1] - ys[0], push = gap < 40 ? (40 - gap) / 2 : 0;
+          S[0].lab.style.top = (ys[0] - push) + "px";
+          S[1].lab.style.top = (ys[1] + push) + "px";
+        }
+        function finish() { frame(1); fig.classList.add("done"); }
+        function run() {
+          var start = null, DUR = 2800;
+          function tick(now) {
+            if (fig.classList.contains("done")) return;
+            if (start === null) start = now;
+            var u = Math.min(1, (now - start) / DUR);
+            frame(1 - Math.pow(1 - u, 3));      // quick through the flat months, slow on the climb
+            if (u < 1) requestAnimationFrame(tick); else fig.classList.add("done");
+          }
+          requestAnimationFrame(tick);
+        }
+        if (reduce) finish();
+        else { frame(0); fig._in = run; fig._fin = finish; }
+        window.addEventListener("resize", function () { if (fig.classList.contains("done")) frame(1); });
+        window.addEventListener("beforeprint", finish);
+
+        // hover and keyboard: a crosshair snaps to the day and reads out both series
+        var cur = span;
+        function show(day) {
+          cur = clamp(Math.round(day), 0, span);
+          var x = X(cur), date = new Date(t0 + cur * DAY);
+          cross.style.left = (x * 100) + "%";
+          tipTime.textContent = date.getUTCFullYear() + "." + pad(date.getUTCMonth() + 1) + "." + pad(date.getUTCDate());
+          S.forEach(function (s) {
+            var has = cur >= s.off && cur <= s.end;
+            s.tv.textContent = has ? fmt(at(s, cur)) : "—";
+            s.hp.classList.toggle("live", has);
+            if (has) { s.hp.style.left = (x * 100) + "%"; s.hp.style.top = (Y(at(s, cur)) * 100) + "%"; }
+          });
+          if (x > .5) { tip.style.left = "auto"; tip.style.right = "calc(" + ((1 - x) * 100) + "% + 12px)"; }
+          else { tip.style.right = "auto"; tip.style.left = "calc(" + (x * 100) + "% + 12px)"; }
+          plot.classList.add("hov");
+        }
+        function hide() { plot.classList.remove("hov"); }
+        function onPointer(e) {
+          if (!fig.classList.contains("done")) return;
+          var b = plot.getBoundingClientRect();
+          show((e.clientX - b.left) / b.width * span);
+        }
+        plot.addEventListener("pointermove", onPointer);
+        plot.addEventListener("pointerdown", onPointer);
+        plot.addEventListener("pointerleave", hide);
+        plot.addEventListener("focus", function () { if (plot.matches(":focus-visible")) show(cur); });
+        plot.addEventListener("blur", hide);
+        plot.addEventListener("keydown", function (e) {
+          var step = e.shiftKey ? 1 : 7;
+          if (e.key === "ArrowLeft") show(cur - step);
+          else if (e.key === "ArrowRight") show(cur + step);
+          else if (e.key === "Home") show(0);
+          else if (e.key === "End") show(span);
+          else return;
+          e.preventDefault();
+        });
+
+        // the same figures as a table, for readers who cannot use the plot
+        var table = el("table", "sr", fig), head = el("tr", null, el("thead", null, table)), body = el("tbody", null, table);
+        el("th", null, head, "날짜");
+        S.forEach(function (s) { el("th", null, head, s.name); });
+        for (var k = 5; k <= 12; k++) {
+          var dd = Math.min((Date.UTC(2026, k, 1) - t0) / DAY - 1, span), dt = new Date(t0 + dd * DAY), tr = el("tr", null, body);
+          el("td", null, tr, dt.getUTCFullYear() + "-" + pad(dt.getUTCMonth() + 1) + "-" + pad(dt.getUTCDate()));
+          S.forEach(function (s) { el("td", null, tr, dd >= s.off && dd <= s.end ? fmt(at(s, dd)) : "—"); });
+          if (dd >= span) break;
+        }
+      })();
+
+      // ---- marquee: the rows speed up with the scroll ----
+      var mqAnims = !reduce && mq.getAnimations ? mq.getAnimations({ subtree: true }) : [];
+      var rate = 1, rateTo = 1, rateBusy = false;
+      function rateStep() {
+        rateTo += (1 - rateTo) * .06;
+        rate += (rateTo - rate) * .14;
+        if (Math.abs(rate - 1) < .01 && Math.abs(rateTo - 1) < .01) { rate = 1; rateBusy = false; }
+        mqAnims.forEach(function (a) { a.updatePlaybackRate(rate); });
+        if (rateBusy) requestAnimationFrame(rateStep);
+      }
+
+      // ---- scroll: progress hairline, marquee speed, career rail ----
+      var prog = document.getElementById("progress"), jobs = document.querySelector(".jobs");
+      var lastY = window.scrollY, lastT = performance.now(), frameBusy = false;
+      function onFrame() {
+        frameBusy = false;
+        var y = window.scrollY, now = performance.now(), vh = window.innerHeight, max = root.scrollHeight - vh;
+        prog.style.transform = "scaleX(" + (max > 0 ? clamp(y / max, 0, 1) : 0).toFixed(4) + ")";
+        if (max > 0 && y >= max - 2) revealAll();        // nothing may stay hidden at the end of the page
+        if (jobs) {
+          var b = jobs.getBoundingClientRect();
+          jobs.style.setProperty("--p", clamp((vh * .62 - b.top) / b.height, 0, 1).toFixed(4));
+        }
+        if (mqAnims.length) {
+          var v = Math.abs(y - lastY) / Math.max(16, now - lastT);      // px per ms
+          rateTo = Math.max(rateTo, Math.min(1 + v * 5, 10));
+          if (!rateBusy) { rateBusy = true; requestAnimationFrame(rateStep); }
+        }
+        lastY = y;
+        lastT = now;
+      }
+      window.addEventListener("scroll", function () { if (!frameBusy) { frameBusy = true; requestAnimationFrame(onFrame); } }, { passive: true });
+      window.addEventListener("resize", onFrame);
+      onFrame();
+
+      // ---- nav: a dot under the section in view ----
+      if ("IntersectionObserver" in window) {
+        var navLinks = {};
+        each('.topnav a[href^="#"]', function (a) { navLinks[a.getAttribute("href").slice(1)] = a; });
+        var navIO = new IntersectionObserver(function (es) {
+          es.forEach(function (e) {
+            if (!e.isIntersecting) return;
+            each(".topnav a.on", function (a) { a.classList.remove("on"); });
+            if (navLinks[e.target.id]) navLinks[e.target.id].classList.add("on");
+          });
+        }, { rootMargin: "-45% 0px -50% 0px" });
+        each(".hero, section[id]", function (s) { navIO.observe(s); });
+      }
+
+      // ---- app grid: cards arrive left to right, a light follows the pointer ----
+      function gridCols() {
+        each(".apps", function (g) {
+          var n = getComputedStyle(g).gridTemplateColumns.split(" ").length || 1;
+          Array.prototype.forEach.call(g.children, function (li, i) { li.style.setProperty("--c", i % n); });
+        });
+      }
+      gridCols();
+      window.addEventListener("resize", gridCols);
+      if (finePointer) {
+        each(".apps", function (g) {
+          g.addEventListener("pointermove", function (e) {
+            var li = e.target.closest("li");
+            if (!li) return;
+            var b = li.getBoundingClientRect();
+            li.style.setProperty("--mx", (e.clientX - b.left) + "px");
+            li.style.setProperty("--my", (e.clientY - b.top) + "px");
+          });
+        });
+      }
+
+      if (!io) revealAll(true);
     })();
   </script>
 </body>
