@@ -609,9 +609,9 @@
       perspective: 1100px; perspective-origin: 50% 42%;
       /* soft on all four sides; the right side runs off the page */
       margin-right: calc(-1 * var(--gut));
-      -webkit-mask-image: linear-gradient(90deg, transparent, #000 22%, #000 80%, transparent), linear-gradient(transparent, #000 26%, #000 78%, transparent);
+      -webkit-mask-image: linear-gradient(90deg, transparent 1%, rgba(0, 0, 0, .14) 9%, #000 27%, #000 80%, rgba(0, 0, 0, .2) 94%, transparent), linear-gradient(transparent 2%, rgba(0, 0, 0, .14) 11%, #000 32%, #000 75%, rgba(0, 0, 0, .14) 91%, transparent 99%);
       -webkit-mask-composite: source-in;
-      mask-image: linear-gradient(90deg, transparent, #000 22%, #000 80%, transparent), linear-gradient(transparent, #000 26%, #000 78%, transparent);
+      mask-image: linear-gradient(90deg, transparent 1%, rgba(0, 0, 0, .14) 9%, #000 27%, #000 80%, rgba(0, 0, 0, .2) 94%, transparent), linear-gradient(transparent 2%, rgba(0, 0, 0, .14) 11%, #000 32%, #000 75%, rgba(0, 0, 0, .14) 91%, transparent 99%);
       mask-composite: intersect;
     }
     .wall-tilt {
@@ -648,7 +648,7 @@
     .walltip.on { opacity: 1; }
     @media (max-width: 999px) {
       .wall { height: 250px; margin-inline: calc(-1 * var(--gut)); }
-      .wall { -webkit-mask-image: linear-gradient(transparent, #000 24%, #000 76%, transparent); mask-image: linear-gradient(transparent, #000 24%, #000 76%, transparent); -webkit-mask-composite: source-over; mask-composite: add; }
+      .wall { -webkit-mask-image: linear-gradient(transparent 2%, rgba(0, 0, 0, .14) 11%, #000 32%, #000 75%, rgba(0, 0, 0, .14) 91%, transparent 99%); mask-image: linear-gradient(transparent 2%, rgba(0, 0, 0, .14) 11%, #000 32%, #000 75%, rgba(0, 0, 0, .14) 91%, transparent 99%); -webkit-mask-composite: source-over; mask-composite: add; }
       .wall-tilt { inset: -34% -8%; }
     }
 

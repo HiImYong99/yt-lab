@@ -169,10 +169,10 @@
     }
     .meta a:hover { color: var(--accent); border-color: var(--accent); }
 
-    /* ---------- hero pipeline ---------- */
+    /* ---------- hero layout, pipeline widget ---------- */
     .hero { display: grid; row-gap: clamp(30px, 5vh, 44px); }
-    @media (min-width: 1080px) {
-      .hero { grid-template-columns: minmax(0, 1fr) 440px; column-gap: 40px; align-items: end; }
+    @media (min-width: 1000px) {
+      .hero { grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); column-gap: 12px; align-items: center; }
     }
     .pipe { max-width: 560px; background: var(--card); border: 1px solid var(--line2); border-radius: 14px; overflow: hidden; }
     .pipe-head {
@@ -258,23 +258,6 @@
     }
     .pipe-steps::after { background: var(--accent); transform-origin: left; transform: scaleX(var(--prog, 1)); transition: transform .45s cubic-bezier(.3,.7,.3,1); }
     @media (max-width: 560px) { .pipe-steps li { font-size: 9.5px; letter-spacing: -.02em; } }
-
-    /* ---------- marquee ---------- */
-    .marquee { position: relative; padding: clamp(16px, 3vh, 26px) 0; border-block: 1px solid var(--line); overflow: hidden; }
-    .marquee:empty { display: none; }
-    .marquee::before, .marquee::after {
-      content: ""; position: absolute; top: 0; bottom: 0; width: clamp(40px, 12vw, 140px); z-index: 2; pointer-events: none;
-    }
-    .marquee::before { left: 0; background: linear-gradient(90deg, var(--bg), transparent); }
-    .marquee::after { right: 0; background: linear-gradient(270deg, var(--bg), transparent); }
-    .mrow { display: flex; width: max-content; gap: 14px; }
-    .mrow + .mrow { margin-top: 14px; }
-    .mrow img { width: 46px; height: 46px; border-radius: 12px; background: var(--img-bg); opacity: var(--icon-dim); transition: opacity .25s, transform .25s; }
-    .mrow img:hover { opacity: 1; transform: translateY(-3px); }
-    .mrow.a { animation: slideA 46s linear infinite; }
-    .mrow.b { animation: slideB 58s linear infinite; }
-    @keyframes slideA { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-    @keyframes slideB { from { transform: translateX(-50%); } to { transform: translateX(0); } }
 
     /* ---------- stats ---------- */
     .stats {
@@ -514,7 +497,6 @@
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .mrow.a, .mrow.b { animation: none; }
       html.js .rv, html.js h1 span, html.js .tlcol img, html.js .tlcol .n { opacity: 1; transform: none; transition: none; }
       html.js dialog.sheet[open] .inner { animation: none; }
     }
@@ -523,7 +505,7 @@
       :root, :root[data-theme] { --bg: #fff; --card: #fff; --fg: #111; --soft: #333; --muted: #666; --line: #ddd; --line2: #ccc; --accent: #111; --on-accent: #fff; --img-bg: #fff; --topbar-bg: #fff; --hover: #fff; --icon-dim: 1; color-scheme: light; }
       @page { margin: 12mm; }
       body { font-size: 11.5px; }
-      .topbar, .marquee, .btn, .pipe { display: none !important; }
+      .topbar, .btn, .pipe { display: none !important; }
       .wrap { max-width: none; padding: 0; }
       .hero { padding: 0 0 16px; }
       h1 { font-size: 30px; margin-bottom: 10px; }
@@ -543,7 +525,6 @@
       .case-metrics, .flow, .case-link, .case-proof { display: none; }
       .job, .skills > div { break-inside: avoid; }
       html.js .rv, html.js h1 span, html.js .tlcol img, html.js .tlcol .n { opacity: 1 !important; transform: none !important; }
-      [data-par] { transform: none !important; }
       dialog.sheet { display: none !important; }
       /* print snapshots immediately, so the forced end values must not animate toward */
       html.js .rv { transition: none !important; }
@@ -557,7 +538,10 @@
     :root {
       --e-out: cubic-bezier(.16, 1, .3, 1);
       --e-pop: cubic-bezier(.34, 1.56, .64, 1);
+      --wall-shadow: rgba(0, 0, 0, .55);
     }
+    @media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) { --wall-shadow: rgba(40, 40, 30, .2); } }
+    :root[data-theme="light"] { --wall-shadow: rgba(40, 40, 30, .2); }
     section[id] { scroll-margin-top: 56px; }
     .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 
@@ -587,6 +571,58 @@
     html.js .hero.ready .hi { opacity: 1; transform: none; }
     html.js .eyebrow::before { transform: scaleX(0); transform-origin: left; transition: transform .9s var(--e-out) .15s; }
     html.js .hero.ready .eyebrow::before { transform: none; }
+    .hero-copy { position: relative; z-index: 1; }
+
+    /* the wall: six columns of the products drifting on a tilted plane, running off the page on the right */
+    .wall {
+      position: relative; height: clamp(340px, 52vh, 540px); overflow: hidden;
+      margin-right: calc(-1 * max(var(--gut), (100vw - 1080px) / 2 + var(--gut)));
+      perspective: 1100px; perspective-origin: 50% 42%;
+      -webkit-mask-image: linear-gradient(90deg, transparent 1%, rgba(0, 0, 0, .14) 9%, #000 27%, #000 80%, rgba(0, 0, 0, .2) 94%, transparent), linear-gradient(transparent 2%, rgba(0, 0, 0, .14) 11%, #000 32%, #000 75%, rgba(0, 0, 0, .14) 91%, transparent 99%);
+      -webkit-mask-composite: source-in;
+      mask-image: linear-gradient(90deg, transparent 1%, rgba(0, 0, 0, .14) 9%, #000 27%, #000 80%, rgba(0, 0, 0, .2) 94%, transparent), linear-gradient(transparent 2%, rgba(0, 0, 0, .14) 11%, #000 32%, #000 75%, rgba(0, 0, 0, .14) 91%, transparent 99%);
+      mask-composite: intersect;
+    }
+    .wall::before {
+      content: ""; position: absolute; left: 18%; right: 6%; top: 14%; bottom: 14%;
+      background: radial-gradient(closest-side, color-mix(in srgb, var(--accent) 12%, transparent), transparent);
+    }
+    .wall-tilt {
+      --g: clamp(11px, 1.5vw, 18px);
+      position: absolute; inset: -26% -10% -26% -6%;
+      display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); column-gap: var(--g); align-items: start;
+      transform: rotateX(calc(20deg + var(--rx, 0deg))) rotateY(calc(-20deg + var(--ry, 0deg))) rotateZ(6deg) translate3d(0, var(--sy, 0px), 0);
+      transition: transform .7s var(--e-out);
+      will-change: transform;
+    }
+    .wall-col { animation: wall-y var(--dur, 56s) linear infinite; will-change: transform; }
+    .wall-col:nth-child(even) { animation-direction: reverse; }
+    @keyframes wall-y { to { transform: translate3d(0, -50%, 0); } }
+    .wall .wi { display: block; margin-bottom: var(--g); }
+    html.js .wall .wi { opacity: 0; transform: translate3d(0, 70px, 0) scale(.72); }
+    html.js .wall.ready .wi { animation: wall-in 1.1s var(--e-out) both; animation-delay: calc(var(--i) * 26ms + 150ms); }
+    @keyframes wall-in { to { opacity: 1; transform: none; } }
+    .wall img {
+      display: block; width: 100%; aspect-ratio: 1; border-radius: 23%; background: var(--img-bg);
+      box-shadow: 0 16px 34px var(--wall-shadow);
+      transition: transform .4s var(--e-out), filter .3s;
+    }
+    .wall img.has { cursor: pointer; }
+    .wall img:hover { transform: scale(1.12); filter: brightness(1.1); }
+    .walltip {
+      position: fixed; z-index: 45; left: 0; top: 0; pointer-events: none; white-space: nowrap;
+      font-size: 12px; font-weight: 600; color: var(--bg); background: var(--fg);
+      padding: 5px 9px; border-radius: 7px; opacity: 0; transition: opacity .15s;
+    }
+    .walltip.on { opacity: 1; }
+    @media (max-width: 999px) {
+      .wall {
+        height: 250px; margin-inline: calc(-1 * var(--gut));
+        -webkit-mask-image: linear-gradient(transparent 2%, rgba(0, 0, 0, .14) 11%, #000 32%, #000 75%, rgba(0, 0, 0, .14) 91%, transparent 99%); -webkit-mask-composite: source-over;
+        mask-image: linear-gradient(transparent 2%, rgba(0, 0, 0, .14) 11%, #000 32%, #000 75%, rgba(0, 0, 0, .14) 91%, transparent 99%); mask-composite: add;
+      }
+      .wall-tilt { inset: -34% -8%; }
+    }
 
     /* ---------- reveals ---------- */
     html.js .rv { transition: opacity .8s ease, transform 1s var(--e-out); }
@@ -602,6 +638,7 @@
     html.js .in .split .wi { transform: none; }
 
     /* ---------- stats ---------- */
+    .stats { border-top: 1px solid var(--line); }
     .od { display: inline-block; height: 1em; overflow: hidden; vertical-align: top; }
     .od > span { display: block; transition: transform var(--t, 1.6s) var(--e-out) var(--w, 0s); }
     .od i { display: block; height: 1em; font-style: normal; }
@@ -683,6 +720,13 @@
     html.js .case.in .app-screens img { opacity: 1; transform: none; }
     html.js .case-proof { transform: translateY(170%); transition: transform .9s var(--e-out) .9s; }
     html.js .case.in .case-proof { transform: none; }
+    /* the pipeline widget stands in for the picture in the YouTube case; print keeps the picture */
+    .case:nth-child(even) .case-pipe { order: -1; }
+    .pipe-note { padding: 10px 14px; border-top: 1px solid var(--line); font-family: var(--mono); font-size: 10.5px; color: var(--muted); }
+    .print-only { display: none; }
+    html.js .case-pipe { opacity: 0; transform: translateY(22px); transition: opacity .8s ease .12s, transform 1s var(--e-out) .12s; }
+    html.js .case.in .case-pipe { opacity: 1; transform: none; }
+    @media (max-width: 820px) { .case:nth-child(even) .case-pipe { order: initial; } }
     html.js .case.in .flow li { animation: flowlit 1.1s ease backwards; animation-delay: calc(var(--i, 0) * 170ms + 500ms); }
     @keyframes flowlit { 0% { opacity: .25; } 45% { color: var(--fg); border-color: var(--accent); } }
 
@@ -741,9 +785,12 @@
 
     @media (prefers-reduced-motion: reduce) {
       html.js .hi, html.js .shead .snum, html.js .shead .ssub, html.js .split .wi, html.js .case-copy, html.js .app-screens img,
-      html.js .case-visual:not(.app-screens) img, html.js .case-proof, html.js .job .bullets li, html.js .skills li, html.js .apps li {
+      html.js .case-visual:not(.app-screens) img, html.js .case-proof, html.js .job .bullets li, html.js .skills li, html.js .apps li,
+      html.js .case-pipe, html.js .wall .wi {
         opacity: 1; transform: none; transition: none; animation: none;
       }
+      .wall-col { animation: none; }
+      .wall-tilt { transition: none; }
       html.js .case-visual { clip-path: none; transition: none; }
       html.js h1 span, html.js h1 span.acc { transform: none; transition: none; }
       html.js .eyebrow::before { transform: none; transition: none; }
@@ -752,7 +799,8 @@
     }
     @media print {
       *, *::before, *::after { transition: none !important; animation: none !important; }
-      .progress, .chart .cross, .chart .tip { display: none !important; }
+      .progress, .wall, .chart .cross, .chart .tip { display: none !important; }
+      .print-only { display: block; }
       h1 { overflow: visible; }
       html.js .hi, html.js .shead .snum, html.js .shead .ssub, html.js .split .wi, html.js .case-copy, html.js .app-screens img,
       html.js .case-visual:not(.app-screens) img, html.js .case-proof, html.js .job .bullets li, html.js .skills li, html.js .apps li {
@@ -798,56 +846,9 @@
         </ul>
         </div>
 
-        <figure class="pipe hi" id="pipe" style="--d:300ms" aria-label="유튜브 제작 자동화 파이프라인: 대본, TTS, 싱크, 렌더, 썸네일, 메타데이터, 업로드">
-          <div class="pipe-head">
-            <span class="pipe-dot"></span>
-            <span class="pipe-name">auto-yt</span>
-            <span id="pipeStep">07 / 07</span>
-            <span class="pipe-file" id="pipeFile">YouTube Data API</span>
-          </div>
-          <div class="pipe-stage" aria-hidden="true">
-            <div class="sc sc-script"><div class="doc">
-              <div class="ln t"><span>1</span><b style="--w:58%;--d:0ms"></b></div>
-              <div class="ln"><span>2</span><b style="--w:82%;--d:200ms"></b></div>
-              <div class="ln"><span>3</span><b style="--w:71%;--d:360ms"></b></div>
-              <div class="ln"><span>4</span><b style="--w:88%;--d:520ms"></b></div>
-              <div class="ln"><span>5</span><b style="--w:46%;--d:680ms"></b></div>
-            </div></div>
-            <div class="sc sc-tts"><div class="wave"></div><span class="playhead"></span></div>
-            <div class="sc sc-sync"><div class="wave"></div><div class="caps"></div></div>
-            <div class="sc sc-render"><div class="frames"></div><div class="rbar"><b></b></div></div>
-            <div class="sc sc-thumb"><img src="./assets/youtube-case.png" alt="" loading="lazy" /></div>
-            <div class="sc sc-meta"><div class="doc">
-              <div class="ln k"><span>"title"</span><b style="--w:46%;--d:0ms;background:var(--accent)"></b></div>
-              <div class="ln k"><span>"description"</span><b style="--w:52%;--d:180ms"></b></div>
-              <div class="ln k"><span></span><b style="--w:38%;--d:320ms"></b></div>
-              <div class="ln k"><span>"tags"</span><span class="chip"><b style="--d:460ms"></b><b style="--d:540ms"></b><b style="--d:620ms"></b></span></div>
-              <div class="ln k"><span>"thumbnail"</span><b style="--w:30%;--d:760ms"></b></div>
-            </div></div>
-            <div class="sc sc-up on"><div class="up">
-              <img src="./assets/youtube-case.png" alt="" loading="lazy" />
-              <div class="up-info">
-                <span class="up-ok"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7.25" stroke="currentColor" stroke-width="1.5"/><path d="M4.8 8.2l2.1 2.1 4.3-4.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>업로드 완료</span>
-                <span>바이브빌더 채널 누적 조회수</span>
-                <b>250,166회</b>
-                <span>2026.11.10 기준</span>
-              </div>
-            </div></div>
-          </div>
-          <ol class="pipe-steps">
-            <li class="done" data-file="vibe.txt">대본</li>
-            <li class="done" data-file="ElevenLabs · 타임스탬프">TTS</li>
-            <li class="done" data-file="sync_data.json">싱크</li>
-            <li class="done" data-file="Remotion → video.mp4">렌더</li>
-            <li class="done" data-file="thumbnail.png">썸네일</li>
-            <li class="done" data-file="youtube_metadata.json">메타데이터</li>
-            <li class="done" data-file="YouTube Data API">업로드</li>
-          </ol>
-        </figure>
+        <div class="wall" id="wall" aria-hidden="true"></div>
       </div>
     </div>
-
-    <div class="marquee" id="marquee" data-par="-22" aria-hidden="true"></div>
 
     <div class="wrap">
       <div class="stats rv">
@@ -909,13 +910,57 @@
               <p class="case-tag">유튜브 콘텐츠 제작 자동화</p>
               <h3>대본 한 파일에서 영상 업로드까지</h3>
               <p class="case-desc">대본을 입력하면 음성·자막 싱크·영상·썸네일·메타데이터를 만들고 YouTube API로 업로드하는 파이프라인을 운영합니다.</p>
-              <ol class="flow" aria-label="유튜브 자동화 단계">
-                <li>대본</li><li>TTS</li><li>싱크</li><li>렌더</li><li>썸네일</li><li>메타데이터</li><li>업로드</li>
-              </ol>
               <p class="case-role"><b>담당</b> 단계 설계 · 에이전트 지시 · 품질 기준 정의 · 렌더 검수 · 채널 운영</p>
               <a class="case-link" href="https://www.youtube.com/@VibeBuilderkr" target="_blank" rel="noopener">바이브빌더 채널 보기</a>
             </div>
-            <figure class="case-visual">
+            <figure class="pipe case-pipe" id="pipe" aria-label="유튜브 제작 자동화 파이프라인: 대본, TTS, 싱크, 렌더, 썸네일, 메타데이터, 업로드">
+              <div class="pipe-head">
+                <span class="pipe-dot"></span>
+                <span class="pipe-name">auto-yt</span>
+                <span id="pipeStep">07 / 07</span>
+                <span class="pipe-file" id="pipeFile">YouTube Data API</span>
+              </div>
+              <div class="pipe-stage" aria-hidden="true">
+                <div class="sc sc-script"><div class="doc">
+                  <div class="ln t"><span>1</span><b style="--w:58%;--d:0ms"></b></div>
+                  <div class="ln"><span>2</span><b style="--w:82%;--d:200ms"></b></div>
+                  <div class="ln"><span>3</span><b style="--w:71%;--d:360ms"></b></div>
+                  <div class="ln"><span>4</span><b style="--w:88%;--d:520ms"></b></div>
+                  <div class="ln"><span>5</span><b style="--w:46%;--d:680ms"></b></div>
+                </div></div>
+                <div class="sc sc-tts"><div class="wave"></div><span class="playhead"></span></div>
+                <div class="sc sc-sync"><div class="wave"></div><div class="caps"></div></div>
+                <div class="sc sc-render"><div class="frames"></div><div class="rbar"><b></b></div></div>
+                <div class="sc sc-thumb"><img src="./assets/youtube-case.png" alt="" loading="lazy" /></div>
+                <div class="sc sc-meta"><div class="doc">
+                  <div class="ln k"><span>"title"</span><b style="--w:46%;--d:0ms;background:var(--accent)"></b></div>
+                  <div class="ln k"><span>"description"</span><b style="--w:52%;--d:180ms"></b></div>
+                  <div class="ln k"><span></span><b style="--w:38%;--d:320ms"></b></div>
+                  <div class="ln k"><span>"tags"</span><span class="chip"><b style="--d:460ms"></b><b style="--d:540ms"></b><b style="--d:620ms"></b></span></div>
+                  <div class="ln k"><span>"thumbnail"</span><b style="--w:30%;--d:760ms"></b></div>
+                </div></div>
+                <div class="sc sc-up on"><div class="up">
+                  <img src="./assets/youtube-case.png" alt="" loading="lazy" />
+                  <div class="up-info">
+                    <span class="up-ok"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7.25" stroke="currentColor" stroke-width="1.5"/><path d="M4.8 8.2l2.1 2.1 4.3-4.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>업로드 완료</span>
+                    <span>바이브빌더 채널 누적 조회수</span>
+                    <b>250,166회</b>
+                    <span>2026.11.10 기준</span>
+                  </div>
+                </div></div>
+              </div>
+              <ol class="pipe-steps">
+                <li class="done" data-file="vibe.txt">대본</li>
+                <li class="done" data-file="ElevenLabs · 타임스탬프">TTS</li>
+                <li class="done" data-file="sync_data.json">싱크</li>
+                <li class="done" data-file="Remotion → video.mp4">렌더</li>
+                <li class="done" data-file="thumbnail.png">썸네일</li>
+                <li class="done" data-file="youtube_metadata.json">메타데이터</li>
+                <li class="done" data-file="YouTube Data API">업로드</li>
+              </ol>
+              <figcaption class="pipe-note">단계 실패 시 이후 실행 중단 · 필요한 단계부터 재실행</figcaption>
+            </figure>
+            <figure class="case-visual print-only">
               <img src="./assets/youtube-case.png" alt="바이브빌더 유튜브 영상 썸네일" loading="lazy" />
               <figcaption class="case-proof">단계 실패 시 이후 실행 중단 · 필요한 단계부터 재실행</figcaption>
             </figure>
@@ -1303,7 +1348,7 @@
         if (f) f();
       }
       function revealAll(instant) {
-        each(".hero", function (el) { el.classList.add("ready"); });
+        each(".hero, .wall", function (el) { el.classList.add("ready"); });
         each(".rv, .apps li, h1", function (el) { land(el, instant); });
       }
       window.addEventListener("error", function () { revealAll(true); });
@@ -1375,7 +1420,7 @@
 
       function chip(text) { var el = document.createElement("span"); el.textContent = text; return el; }
 
-      function openSheet(li) {
+      function openSheet(li, from) {
         var d = APPS[li.dataset.key];
         if (!d || !sheet.showModal) return;
         lastFocus = document.activeElement;
@@ -1411,7 +1456,7 @@
 
         document.body.style.overflow = "hidden";
         // where the browser can, the card's icon travels into the sheet
-        var icon = li.querySelector(".ic"), sIcon = document.getElementById("sheetIcon");
+        var icon = from || li.querySelector(".ic"), sIcon = document.getElementById("sheetIcon");
         if (document.startViewTransition && !reduce) {
           sheetFrom = icon;
           icon.style.viewTransitionName = "appicon";
@@ -1467,7 +1512,11 @@
           el.style.transitionDelay = (el.classList.contains("acc") ? 760 : i * 90) + "ms";      // the dot drops in last
         });
         // wait for the web font so the name does not reflow mid-rise
-        var heroIn = function () { hero.classList.add("in"); heroBox.classList.add("ready"); };
+        var heroIn = function () {
+          hero.classList.add("in");
+          heroBox.classList.add("ready");
+          document.getElementById("wall").classList.add("ready");
+        };
         if (reduce || !document.fonts || !document.fonts.ready) heroIn();
         else Promise.race([document.fonts.ready, new Promise(function (r) { setTimeout(r, 600); })]).then(function () { requestAnimationFrame(heroIn); });
       }
@@ -1485,27 +1534,7 @@
         if (tlEl) tlIO.observe(tlEl);
       }
 
-      // parallax: elements drift against the scroll while they cross the viewport
-      var parEls = Array.prototype.slice.call(document.querySelectorAll("[data-par]"));
-      if (motionOK && parEls.length) {
-        var ticking = false;
-        function parallax() {
-          var vh = window.innerHeight;
-          parEls.forEach(function (el) {
-            var r = el.getBoundingClientRect();
-            if (r.bottom < -200 || r.top > vh + 200) return;
-            var p = (r.top + r.height / 2 - vh / 2) / vh;
-            el.style.transform = "translate3d(0," + (p * +el.dataset.par).toFixed(1) + "px,0)";
-          });
-          ticking = false;
-        }
-        var onPar = function () { if (!ticking) { ticking = true; requestAnimationFrame(parallax); } };
-        parallax();
-        window.addEventListener("scroll", onPar, { passive: true });
-        window.addEventListener("resize", onPar);
-      }
-
-      // ---- hero pipeline: one run of the YouTube automation, stage by stage ----
+      // ---- pipeline widget: one run of the YouTube automation, stage by stage ----
       var pipe = document.getElementById("pipe");
       if (pipe && motionOK) {
         var scenes = pipe.querySelectorAll(".sc");
@@ -1588,23 +1617,6 @@
       var onScroll = function () { bar.classList.toggle("stuck", window.scrollY > 8); };
       onScroll();
       window.addEventListener("scroll", onScroll, { passive: true });
-
-      // ---- hero marquee, built from the same icons as the grid ----
-      var srcs = cards.map(function (li) { return li.querySelector(".ic").getAttribute("src"); });
-      var mq = document.getElementById("marquee");
-      [["a", 0], ["b", 1]].forEach(function (cfg) {
-        var row = document.createElement("div");
-        row.className = "mrow " + cfg[0];
-        var half = srcs.filter(function (_, i) { return i % 2 === cfg[1]; });
-        half.concat(half).forEach(function (s) {
-          var img = document.createElement("img");
-          img.loading = "lazy";
-          img.alt = "";
-          img.src = s;
-          row.appendChild(img);
-        });
-        mq.appendChild(row);
-      });
 
       // ---- launch timeline: one entry per product, at the month it first shipped ----
       var first = {};
@@ -1926,18 +1938,114 @@
         }
       })();
 
-      // ---- marquee: the rows speed up with the scroll ----
-      var mqAnims = !reduce && mq.getAnimations ? mq.getAnimations({ subtree: true }) : [];
-      var rate = 1, rateTo = 1, rateBusy = false;
+      // ---- hero wall: every product once, drifting in six columns ----
+      var wall = document.getElementById("wall"), heroBand = document.querySelector(".hero"), colAnims = [];
+      (function () {
+        var seen = {}, apps = [];
+        // store listings come first in the grid, so a product shared with Toss shows its store icon
+        cards.forEach(function (li) {
+          if (seen[li.dataset.key]) return;
+          seen[li.dataset.key] = 1;
+          apps.push(li);
+        });
+        if (!wall || !apps.length) return;
+        var tilt = document.createElement("div"), COLS = 6, PER = 8, DUR = [52, 64, 44, 70, 58, 48];
+        tilt.className = "wall-tilt";
+        for (var c = 0; c < COLS; c++) {
+          var col = document.createElement("div");
+          col.className = "wall-col";
+          col.style.setProperty("--dur", DUR[c] + "s");
+          for (var r = 0; r < PER * 2; r++) {      // the set twice, so the loop has no seam
+            var li = apps[(c * PER + (r % PER) * 3) % apps.length];
+            var cell = document.createElement("span"), img = new Image();
+            cell.className = "wi";
+            cell.style.setProperty("--i", (r % PER) + c * 2);
+            img.alt = "";
+            img.decoding = "async";
+            img.draggable = false;
+            img.src = li.querySelector(".ic").getAttribute("src");
+            img._li = li;
+            if (li.hasAttribute("data-detail")) img.className = "has";      // only store apps have a detail sheet
+            cell.appendChild(img);
+            col.appendChild(cell);
+          }
+          tilt.appendChild(col);
+        }
+        wall.appendChild(tilt);
+
+        // the mask fades the edges but does not stop clicks, so only the lit middle responds
+        function lit(e) {
+          var b = wall.getBoundingClientRect(), x = (e.clientX - b.left) / b.width, y = (e.clientY - b.top) / b.height;
+          return x > .12 && x < .9 && y > .12 && y < .88;
+        }
+        var tip = document.createElement("div"), hot = null, tipLoop = false;
+        tip.className = "walltip";
+        document.body.appendChild(tip);
+        function placeTip() {
+          if (!hot) { tipLoop = false; return; }
+          var b = hot.getBoundingClientRect();
+          tip.style.transform = "translate(" + Math.round(b.left + b.width / 2 - tip.offsetWidth / 2) + "px," + Math.round(b.top - tip.offsetHeight - 8) + "px)";
+          requestAnimationFrame(placeTip);
+        }
+        wall.addEventListener("pointerover", function (e) {
+          if (e.pointerType !== "mouse" || e.target.tagName !== "IMG" || !lit(e)) return;
+          hot = e.target;
+          tip.textContent = hot._li.querySelector(".nm").textContent;
+          tip.classList.add("on");
+          if (!tipLoop) { tipLoop = true; placeTip(); }
+        });
+        wall.addEventListener("pointerout", function (e) {
+          if (e.target === hot) { hot = null; tip.classList.remove("on"); }
+        });
+        wall.addEventListener("click", function (e) {
+          if (e.target.className === "has" && lit(e)) openSheet(e.target._li, e.target);
+        });
+        if (!reduce && col.getAnimations) {
+          each(".wall-col", function (el) { colAnims = colAnims.concat(el.getAnimations()); }, wall);
+        }
+      })();
+
+      // the columns speed up with the scroll and slow to a crawl under the pointer
+      var tiltEl = wall && wall.firstChild;
+      var rate = 1, rateTo = 1, rateBase = 1, rateBusy = false;
       function rateStep() {
-        rateTo += (1 - rateTo) * .06;
+        rateTo += (rateBase - rateTo) * .06;
         rate += (rateTo - rate) * .14;
-        if (Math.abs(rate - 1) < .01 && Math.abs(rateTo - 1) < .01) { rate = 1; rateBusy = false; }
-        mqAnims.forEach(function (a) { a.updatePlaybackRate(rate); });
+        if (Math.abs(rate - rateBase) < .01 && Math.abs(rateTo - rateBase) < .01) { rate = rateBase; rateBusy = false; }
+        colAnims.forEach(function (a) { a.updatePlaybackRate(rate); });
         if (rateBusy) requestAnimationFrame(rateStep);
       }
+      function rateKick() { if (!rateBusy && colAnims.length) { rateBusy = true; requestAnimationFrame(rateStep); } }
+      if (wall) {
+        wall.addEventListener("pointerenter", function (e) { if (e.pointerType === "mouse") { rateBase = .15; rateKick(); } });
+        wall.addEventListener("pointerleave", function () { rateBase = 1; rateKick(); });
+      }
+      if (colAnims.length && "IntersectionObserver" in window) {
+        new IntersectionObserver(function (es) {
+          es.forEach(function (e) { colAnims.forEach(function (a) { if (e.isIntersecting) a.play(); else a.pause(); }); });
+        }).observe(wall);
+      }
+      if (finePointer && !reduce && tiltEl) {
+        var px = 0, py = 0, pBusy = false;
+        heroBand.addEventListener("pointermove", function (e) {
+          var b = heroBand.getBoundingClientRect();
+          px = (e.clientX - b.left) / b.width - .5;
+          py = (e.clientY - b.top) / b.height - .5;
+          if (pBusy) return;
+          pBusy = true;
+          requestAnimationFrame(function () {
+            pBusy = false;
+            tiltEl.style.setProperty("--ry", (px * 7).toFixed(2) + "deg");
+            tiltEl.style.setProperty("--rx", (py * -5).toFixed(2) + "deg");
+          });
+        });
+        heroBand.addEventListener("pointerleave", function () {
+          tiltEl.style.setProperty("--ry", "0deg");
+          tiltEl.style.setProperty("--rx", "0deg");
+        });
+      }
 
-      // ---- scroll: progress hairline, marquee speed, career rail ----
+      // ---- scroll: progress hairline, wall speed and drift, career rail ----
       var prog = document.getElementById("progress"), jobs = document.querySelector(".jobs");
       var lastY = window.scrollY, lastT = performance.now(), frameBusy = false;
       function onFrame() {
@@ -1949,10 +2057,11 @@
           var b = jobs.getBoundingClientRect();
           jobs.style.setProperty("--p", clamp((vh * .62 - b.top) / b.height, 0, 1).toFixed(4));
         }
-        if (mqAnims.length) {
+        if (!reduce && tiltEl && y < heroBand.offsetHeight + 300) {
+          tiltEl.style.setProperty("--sy", (y * -.22).toFixed(1) + "px");
           var v = Math.abs(y - lastY) / Math.max(16, now - lastT);      // px per ms
-          rateTo = Math.max(rateTo, Math.min(1 + v * 5, 10));
-          if (!rateBusy) { rateBusy = true; requestAnimationFrame(rateStep); }
+          rateTo = Math.max(rateTo, Math.min(1 + v * 4, 9));
+          rateKick();
         }
         lastY = y;
         lastT = now;
