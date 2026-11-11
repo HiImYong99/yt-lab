@@ -36,7 +36,7 @@ XHTML = 'http://www.w3.org/1999/xhtml'
 TOPICS = ('goalkeeper', 'awards', 'positions', 'offline', 'web')
 RELEASED = '2026-09-21'
 # Bump when the main page's copy changes; feeds JSON-LD and the sitemap.
-LANDING_UPDATED = '2026-11-09'
+LANDING_UPDATED = '2026-11-11'
 ORG_PROFILES = ['https://www.instagram.com/soccer.career.global/']
 APP_PROFILES = ['https://namu.wiki/w/%EC%B6%95%EA%B5%AC%EC%84%A0%EC%88%98%20%ED%82%A4%EC%9A%B0%EA%B8%B0']
 PRETENDARD = 'https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css'
