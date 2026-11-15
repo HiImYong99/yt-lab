@@ -1,5 +1,98 @@
 [
   {
+    "id": "2026-11-15-10k-downloads",
+    "date": "2026-11-15",
+    "title": "1만 다운로드 감사: 5일 동안 매일 선물",
+    "body": "- App Store와 Google Play에서 각각 1만 다운로드를 넘었어요. 함께해 주셔서 고마워요.\n- 11월 19일(목)까지 매일 0시에 선물함으로 선물이 와요: 리롤권 5장 · 골드 100 · 리롤권 5장 · 골드 200 · 리롤권 10장.\n- 받을 때까지 선물함에 남아 있어요. 새로 설치해도 그날 선물부터 받을 수 있어요.",
+    "important": true,
+    "category": "event",
+    "period": {
+      "start": "2026-11-15T00:00:00+09:00",
+      "end": "2026-11-19T23:59:59+09:00"
+    },
+    "banner": "avatar:cupLifter",
+    "summary": "App Store와 Google Play에서 각각 1만 다운로드를 넘었어요. 11월 19일까지 매일 선물을 드려요.",
+    "cta": {
+      "route": "gifts",
+      "label": {
+        "ko": "선물함 열기",
+        "en": "Open gift box",
+        "ja": "プレゼントボックスを開く",
+        "zh": "打开礼物箱",
+        "es": "Abrir buzón de regalos",
+        "pt": "Abrir caixa de presentes",
+        "fr": "Ouvrir la boîte à cadeaux",
+        "de": "Geschenkbox öffnen",
+        "it": "Apri la scatola dei regali",
+        "id": "Buka kotak hadiah",
+        "tr": "Hediye kutusunu aç",
+        "ar": "افتح صندوق الهدايا"
+      }
+    },
+    "translations": {
+      "ko": {
+        "title": "1만 다운로드 감사: 5일 동안 매일 선물",
+        "body": "- App Store와 Google Play에서 각각 1만 다운로드를 넘었어요. 함께해 주셔서 고마워요.\n- 11월 19일(목)까지 매일 0시에 선물함으로 선물이 와요: 리롤권 5장 · 골드 100 · 리롤권 5장 · 골드 200 · 리롤권 10장.\n- 받을 때까지 선물함에 남아 있어요. 새로 설치해도 그날 선물부터 받을 수 있어요.",
+        "summary": "App Store와 Google Play에서 각각 1만 다운로드를 넘었어요. 11월 19일까지 매일 선물을 드려요."
+      },
+      "en": {
+        "title": "10K downloads thank-you: a gift every day for 5 days",
+        "body": "- We passed 10,000 downloads on both the App Store and Google Play. Thank you for playing!\n- Until Thu, Nov 19, a gift lands in your gift box every day at midnight KST: 5 reroll tickets · 100 gold · 5 reroll tickets · 200 gold · 10 reroll tickets.\n- Gifts wait in the gift box until you claim them. New installs get gifts from that day on.",
+        "summary": "We passed 10,000 downloads on both the App Store and Google Play. A gift every day until Nov 19."
+      },
+      "ja": {
+        "title": "1万ダウンロード感謝:5日間毎日プレゼント",
+        "body": "- App StoreとGoogle Playでそれぞれ1万ダウンロードを突破しました。遊んでくださってありがとうございます。\n- 11月19日(木)まで毎日0時(韓国時間)にプレゼントボックスへ届きます:リロールチケット5枚・ゴールド100・リロールチケット5枚・ゴールド200・リロールチケット10枚。\n- 受け取るまでプレゼントボックスに残ります。新しくインストールした方も、その日のプレゼントから受け取れます。",
+        "summary": "App StoreとGoogle Playでそれぞれ1万ダウンロードを突破しました。11月19日まで毎日プレゼントを贈ります。"
+      },
+      "zh": {
+        "title": "1万下载感谢:连续5天每天送礼",
+        "body": "- App Store 和 Google Play 下载量均突破 1 万,感谢你的支持!\n- 11月19日(周四)前,每天0点(韩国时间)礼物会送到礼物箱:5张重掷券 · 100金币 · 5张重掷券 · 200金币 · 10张重掷券。\n- 礼物在领取前会一直留在礼物箱里。新安装的玩家也能从安装当天的礼物开始领取。",
+        "summary": "App Store 和 Google Play 下载量均突破 1 万。11月19日前每天都有礼物。"
+      },
+      "es": {
+        "title": "Gracias por 10.000 descargas: un regalo diario durante 5 días",
+        "body": "- Superamos las 10.000 descargas tanto en App Store como en Google Play. ¡Gracias por jugar!\n- Hasta el jueves 19 de noviembre, cada día a medianoche (hora de Corea) llega un regalo a tu buzón: 5 tiques de tiradas · 100 de oro · 5 tiques de tiradas · 200 de oro · 10 tiques de tiradas.\n- Los regalos esperan en el buzón hasta que los recojas. Si instalas ahora, recibes los regalos desde ese día.",
+        "summary": "Superamos las 10.000 descargas en App Store y en Google Play. Un regalo cada día hasta el 19 de noviembre."
+      },
+      "pt": {
+        "title": "10 mil downloads: um presente por dia durante 5 dias",
+        "body": "- Passamos de 10 mil downloads na App Store e no Google Play. Obrigado por jogar!\n- Até quinta, 19 de novembro, um presente chega à sua caixa todo dia à meia-noite (horário da Coreia): 5 bilhetes de rolagem · 100 de ouro · 5 bilhetes de rolagem · 200 de ouro · 10 bilhetes de rolagem.\n- Os presentes ficam na caixa até você resgatar. Quem instalar agora recebe os presentes a partir desse dia.",
+        "summary": "Passamos de 10 mil downloads na App Store e no Google Play. Um presente por dia até 19 de novembro."
+      },
+      "fr": {
+        "title": "Merci pour 10 000 téléchargements : un cadeau par jour pendant 5 jours",
+        "body": "- Nous avons dépassé les 10 000 téléchargements sur l’App Store et sur Google Play. Merci de jouer !\n- Jusqu’au jeudi 19 novembre, un cadeau arrive chaque jour à minuit (heure de Corée) dans votre boîte à cadeaux : 5 tickets de tirage · 100 or · 5 tickets de tirage · 200 or · 10 tickets de tirage.\n- Les cadeaux restent dans la boîte jusqu’à ce que vous les récupériez. Une nouvelle installation reçoit les cadeaux à partir de ce jour-là.",
+        "summary": "Plus de 10 000 téléchargements sur l’App Store et sur Google Play. Un cadeau chaque jour jusqu’au 19 novembre."
+      },
+      "de": {
+        "title": "Danke für 10.000 Downloads: 5 Tage lang jeden Tag ein Geschenk",
+        "body": "- Wir haben im App Store und bei Google Play jeweils 10.000 Downloads geschafft. Danke fürs Spielen!\n- Bis Donnerstag, 19. November, landet jeden Tag um Mitternacht (koreanische Zeit) ein Geschenk in deiner Geschenkbox: 5 Neuwurf-Tickets · 100 Gold · 5 Neuwurf-Tickets · 200 Gold · 10 Neuwurf-Tickets.\n- Geschenke bleiben in der Box, bis du sie abholst. Wer jetzt neu installiert, bekommt die Geschenke ab diesem Tag.",
+        "summary": "Über 10.000 Downloads im App Store und bei Google Play. Bis 19. November jeden Tag ein Geschenk."
+      },
+      "it": {
+        "title": "Grazie per 10.000 download: un regalo al giorno per 5 giorni",
+        "body": "- Abbiamo superato i 10.000 download sia su App Store sia su Google Play. Grazie per giocare con noi!\n- Fino a giovedì 19 novembre, ogni giorno a mezzanotte (ora coreana) arriva un regalo nella tua scatola dei regali: 5 biglietti rilancio · 100 oro · 5 biglietti rilancio · 200 oro · 10 biglietti rilancio.\n- I regali restano nella scatola finché non li riscatti. Chi installa ora riceve i regali da quel giorno in poi.",
+        "summary": "Oltre 10.000 download sia su App Store sia su Google Play. Un regalo ogni giorno fino al 19 novembre."
+      },
+      "id": {
+        "title": "Terima kasih 10.000 unduhan: hadiah setiap hari selama 5 hari",
+        "body": "- Kami tembus 10.000 unduhan di App Store dan juga di Google Play. Terima kasih sudah bermain!\n- Sampai Kamis, 19 November, hadiah masuk ke kotak hadiah setiap hari pukul 00.00 (waktu Korea): 5 tiket undian · 100 emas · 5 tiket undian · 200 emas · 10 tiket undian.\n- Hadiah tetap di kotak hadiah sampai kamu klaim. Pemain baru mendapat hadiah mulai hari mereka menginstal.",
+        "summary": "Tembus 10.000 unduhan di App Store dan Google Play. Hadiah setiap hari sampai 19 November."
+      },
+      "tr": {
+        "title": "10.000 indirme için teşekkürler: 5 gün boyunca her gün hediye",
+        "body": "- App Store ve Google Play’de ayrı ayrı 10.000 indirmeyi geçtik. Oynadığın için teşekkürler!\n- 19 Kasım Perşembe’ye kadar her gün gece yarısı (Kore saati) hediye kutuna bir hediye gelir: 5 zar bileti · 100 altın · 5 zar bileti · 200 altın · 10 zar bileti.\n- Hediyeler alana kadar kutuda bekler. Yeni yükleyenler o günün hediyesinden itibaren alır.",
+        "summary": "App Store ve Google Play’de ayrı ayrı 10.000 indirmeyi geçtik. 19 Kasım’a kadar her gün bir hediye."
+      },
+      "ar": {
+        "title": "شكرًا على 10,000 تنزيل: هدية كل يوم لمدة 5 أيام",
+        "body": "- تجاوزنا 10,000 تنزيل على كل من App Store وGoogle Play. شكرًا لأنك تلعب معنا!\n- حتى الخميس 19 نوفمبر تصل هدية إلى صندوق الهدايا كل يوم عند منتصف الليل بتوقيت كوريا: 5 تذاكر إعادة سحب · 100 ذهب · 5 تذاكر إعادة سحب · 200 ذهب · 10 تذاكر إعادة سحب.\n- تبقى الهدايا في الصندوق حتى تستلمها. من يثبّت اللعبة الآن يحصل على الهدايا بدءًا من ذلك اليوم.",
+        "summary": "تجاوزنا 10,000 تنزيل على كل من App Store وGoogle Play. هدية كل يوم حتى 19 نوفمبر."
+      }
+    }
+  },
+  {
     "id": "2026-11-10-league-poll",
     "date": "2026-11-10",
     "title": "주간 리그 어때요? 투표하고 500자금",
