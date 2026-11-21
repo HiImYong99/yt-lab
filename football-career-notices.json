@@ -1,5 +1,99 @@
 [
   {
+    "id": "2026-11-21-fair-play",
+    "date": "2026-11-21",
+    "title": "비정상 커리어 기록 조치 안내",
+    "body": "최근 정상적인 플레이로는 나올 수 없는 커리어 기록이 랭킹에 올라온 것을 확인했습니다.\n- 해당 기록은 랭킹에서 제외했고, 관련 계정의 랭킹 참여를 제한했습니다.\n- 같은 방식의 기록은 이제 서버에서 자동으로 걸러집니다.\n- 이번 주 시즌 순위는 조치 후 기준으로 다시 집계되어 월요일 정산에 반영됩니다.\n공정한 순위를 위해 열심히 플레이해 주시는 모든 분께 감사드리며, 리롤권 3장을 선물함에 넣어 두었습니다.",
+    "important": true,
+    "popup": {
+      "until": "2026-11-24",
+      "art": [
+        "avatar:communityCaptain"
+      ]
+    },
+    "category": "notice",
+    "summary": "정상적인 플레이로는 나올 수 없는 커리어 기록을 랭킹에서 제외했습니다. 리롤권 3장을 선물함에 넣어 두었습니다.",
+    "cta": {
+      "route": "gifts",
+      "label": {
+        "ko": "선물함 열기",
+        "en": "Open gift box",
+        "ja": "プレゼントボックスを開く",
+        "zh": "打开礼物箱",
+        "es": "Abrir buzón de regalos",
+        "pt": "Abrir caixa de presentes",
+        "fr": "Ouvrir la boîte à cadeaux",
+        "de": "Geschenkbox öffnen",
+        "it": "Apri la scatola dei regali",
+        "id": "Buka kotak hadiah",
+        "tr": "Hediye kutusunu aç",
+        "ar": "افتح صندوق الهدايا"
+      }
+    },
+    "translations": {
+      "ko": {
+        "title": "비정상 커리어 기록 조치 안내",
+        "body": "최근 정상적인 플레이로는 나올 수 없는 커리어 기록이 랭킹에 올라온 것을 확인했습니다.\n- 해당 기록은 랭킹에서 제외했고, 관련 계정의 랭킹 참여를 제한했습니다.\n- 같은 방식의 기록은 이제 서버에서 자동으로 걸러집니다.\n- 이번 주 시즌 순위는 조치 후 기준으로 다시 집계되어 월요일 정산에 반영됩니다.\n공정한 순위를 위해 열심히 플레이해 주시는 모든 분께 감사드리며, 리롤권 3장을 선물함에 넣어 두었습니다.",
+        "summary": "정상적인 플레이로는 나올 수 없는 커리어 기록을 랭킹에서 제외했습니다. 리롤권 3장을 선물함에 넣어 두었습니다."
+      },
+      "en": {
+        "title": "Action taken on abnormal career records",
+        "body": "We recently found career records in the rankings that could not have come from normal play.\n- Those records have been removed from the rankings, and the accounts involved have been restricted from taking part in the rankings.\n- Records made the same way are now filtered out automatically by the server.\n- This week's season ranking will be recounted after these actions and settled on Monday.\nThank you to everyone who plays hard for fair rankings. We've put 3 reroll tickets in your gift box.",
+        "summary": "Career records that could not have come from normal play have been removed from the rankings. We've put 3 reroll tickets in your gift box."
+      },
+      "ja": {
+        "title": "異常なキャリア記録への対応について",
+        "body": "最近、通常のプレイでは出るはずのないキャリア記録がランキングに載っていることを確認しました。\n- 該当する記録はランキングから除外し、関連するアカウントのランキング参加を制限しました。\n- 同じ方法による記録は、今後サーバーで自動的に除外されます。\n- 今週のシーズン順位は対応後の基準で再集計され、月曜日の順位確定に反映されます。\n公正な順位のために熱心にプレイしてくださっている皆さまに感謝し、リロールチケット3枚をプレゼントボックスに入れておきました。",
+        "summary": "通常のプレイでは出るはずのないキャリア記録をランキングから除外しました。リロールチケット3枚をプレゼントボックスに入れておきました。"
+      },
+      "zh": {
+        "title": "关于异常生涯记录的处理公告",
+        "body": "近期我们发现，排行榜上出现了正常游玩不可能产生的生涯记录。\n- 相关记录已从排行榜中移除，并已限制相关账号参与排行榜。\n- 今后，以同样方式产生的记录会由服务器自动过滤。\n- 本周赛季排名将按处理后的标准重新统计，并在周一结算时生效。\n感谢每一位为公平排名而认真游玩的玩家，我们已在礼物箱中放入3张重掷券。",
+        "summary": "正常游玩不可能产生的生涯记录已从排行榜中移除。我们已在礼物箱中放入3张重掷券。"
+      },
+      "es": {
+        "title": "Medidas sobre registros de carrera anómalos",
+        "body": "Hemos detectado recientemente en la clasificación registros de carrera imposibles de lograr jugando con normalidad.\n- Hemos retirado esos registros de la clasificación y restringido la participación de las cuentas implicadas en la clasificación.\n- A partir de ahora, el servidor filtra automáticamente los registros obtenidos de la misma forma.\n- La clasificación de la temporada de esta semana se recalculará tras estas medidas y se tendrá en cuenta en el cierre del lunes.\nGracias a todos los que juegan con dedicación por una clasificación justa. Hemos dejado 3 tiques de tiradas en tu buzón de regalos.",
+        "summary": "Hemos retirado de la clasificación los registros de carrera imposibles de lograr jugando con normalidad. Hemos dejado 3 tiques de tiradas en tu buzón de regalos."
+      },
+      "pt": {
+        "title": "Medidas sobre registros de carreira anormais",
+        "body": "Recentemente, identificamos no ranking registros de carreira impossíveis de obter jogando normalmente.\n- Esses registros foram removidos do ranking, e a participação das contas envolvidas no ranking foi restringida.\n- Registros obtidos da mesma forma agora são filtrados automaticamente pelo servidor.\n- A classificação da temporada desta semana será recalculada após essas medidas e valerá para a apuração de segunda-feira.\nAgradecemos a todos que jogam com dedicação por um ranking justo. Colocamos 3 bilhetes de rolagem na sua caixa de presentes.",
+        "summary": "Registros de carreira impossíveis de obter jogando normalmente foram removidos do ranking. Colocamos 3 bilhetes de rolagem na sua caixa de presentes."
+      },
+      "fr": {
+        "title": "Mesures concernant des résultats de carrière anormaux",
+        "body": "Nous avons récemment constaté que des résultats de carrière impossibles à obtenir en jouant normalement figuraient au classement.\n- Ces résultats ont été retirés du classement, et la participation des comptes concernés au classement a été restreinte.\n- Les résultats obtenus de la même manière sont désormais filtrés automatiquement par le serveur.\n- Le classement de la saison de cette semaine sera recalculé après ces mesures et pris en compte lors de la clôture du lundi.\nMerci à tous ceux qui jouent avec sérieux pour un classement équitable. Nous avons déposé 3 tickets de tirage dans votre boîte à cadeaux.",
+        "summary": "Les résultats de carrière impossibles à obtenir en jouant normalement ont été retirés du classement. Nous avons déposé 3 tickets de tirage dans votre boîte à cadeaux."
+      },
+      "de": {
+        "title": "Maßnahmen zu ungewöhnlichen Karriereergebnissen",
+        "body": "Wir haben kürzlich festgestellt, dass in der Rangliste Karriereergebnisse aufgetaucht sind, die bei normalem Spielen nicht möglich sind.\n- Diese Ergebnisse wurden aus der Rangliste entfernt, und die Teilnahme der betroffenen Konten an der Rangliste wurde eingeschränkt.\n- Ergebnisse, die auf dieselbe Weise entstehen, filtert der Server ab sofort automatisch heraus.\n- Die Saisonrangliste dieser Woche wird nach diesen Maßnahmen neu berechnet und fließt in den Wertungsabschluss am Montag ein.\nDanke an alle, die mit Einsatz für eine faire Rangliste spielen. Wir haben dir 3 Neuwurf-Tickets in die Geschenkbox gelegt.",
+        "summary": "Karriereergebnisse, die bei normalem Spielen nicht möglich sind, wurden aus der Rangliste entfernt. Wir haben dir 3 Neuwurf-Tickets in die Geschenkbox gelegt."
+      },
+      "it": {
+        "title": "Provvedimenti su risultati di carriera anomali",
+        "body": "Di recente abbiamo rilevato in classifica risultati di carriera impossibili da ottenere giocando normalmente.\n- Questi risultati sono stati rimossi dalla classifica e la partecipazione degli account coinvolti alla classifica è stata limitata.\n- D'ora in poi i risultati ottenuti allo stesso modo vengono filtrati automaticamente dal server.\n- La classifica stagionale di questa settimana sarà ricalcolata dopo questi provvedimenti e varrà per la chiusura di lunedì.\nGrazie a tutti coloro che giocano con impegno per una classifica equa. Abbiamo messo 3 biglietti rilancio nella tua scatola dei regali.",
+        "summary": "I risultati di carriera impossibili da ottenere giocando normalmente sono stati rimossi dalla classifica. Abbiamo messo 3 biglietti rilancio nella tua scatola dei regali."
+      },
+      "id": {
+        "title": "Pemberitahuan tindakan atas catatan karier tidak wajar",
+        "body": "Baru-baru ini kami menemukan catatan karier di peringkat yang tidak mungkin didapat dengan bermain secara normal.\n- Catatan tersebut telah dikeluarkan dari peringkat, dan keikutsertaan akun terkait di peringkat telah dibatasi.\n- Catatan yang dibuat dengan cara yang sama kini otomatis disaring oleh server.\n- Peringkat musim minggu ini akan dihitung ulang setelah tindakan ini dan diperhitungkan dalam penutupan hari Senin.\nTerima kasih kepada semua yang bermain dengan sungguh-sungguh demi peringkat yang adil. Kami sudah memasukkan 3 tiket undian ke kotak hadiahmu.",
+        "summary": "Catatan karier yang tidak mungkin didapat dengan bermain secara normal telah dikeluarkan dari peringkat. Kami sudah memasukkan 3 tiket undian ke kotak hadiahmu."
+      },
+      "tr": {
+        "title": "Olağan dışı kariyer kayıtlarına ilişkin işlem duyurusu",
+        "body": "Son zamanlarda sıralamada normal oyunla elde edilemeyecek kariyer kayıtları olduğunu tespit ettik.\n- Bu kayıtlar sıralamadan çıkarıldı ve ilgili hesapların sıralamaya katılımı kısıtlandı.\n- Aynı yolla elde edilen kayıtlar artık sunucu tarafından otomatik olarak ayıklanıyor.\n- Bu haftanın sezon sıralaması, alınan önlemlerin ardından yeniden hesaplanacak ve pazartesi günü kesinleşen sonuçlara yansıyacak.\nAdil bir sıralama için emek vererek oynayan herkese teşekkür ederiz. Hediye kutuna 3 zar bileti bıraktık.",
+        "summary": "Normal oyunla elde edilemeyecek kariyer kayıtları sıralamadan çıkarıldı. Hediye kutuna 3 zar bileti bıraktık."
+      },
+      "ar": {
+        "title": "إشعار بالإجراءات المتخذة بشأن سجلات مسيرة غير طبيعية",
+        "body": "رصدنا مؤخرًا ظهور سجلات مسيرة في الترتيب لا يمكن تحقيقها باللعب الطبيعي.\n- أزلنا هذه السجلات من الترتيب، وقيّدنا مشاركة الحسابات المعنية في الترتيب.\n- أصبح الخادم يستبعد تلقائيًا السجلات التي تُحقَّق بالطريقة نفسها.\n- سيُعاد احتساب ترتيب موسم هذا الأسبوع بعد هذه الإجراءات، وسيُعتمد في النتائج النهائية يوم الاثنين.\nشكرًا لكل من يلعب بجد من أجل ترتيب عادل. وضعنا 3 تذاكر إعادة سحب في صندوق الهدايا الخاص بك.",
+        "summary": "أزلنا من الترتيب سجلات المسيرة التي لا يمكن تحقيقها باللعب الطبيعي. وضعنا 3 تذاكر إعادة سحب في صندوق الهدايا الخاص بك."
+      }
+    }
+  },
+  {
     "id": "2026-11-15-10k-downloads",
     "date": "2026-11-15",
     "title": "1만 다운로드 감사: 5일 동안 매일 선물",
