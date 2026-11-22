@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f8f4e8">
+<title>거대작물 선수권 · YT Lab</title>
+<meta name="description" content="내 손으로 기른 호박은 몇 kg일까? 날씨를 읽고 수확 시기를 골라 나만의 종자를 잇는 무료 농사 웹게임. 매주 같은 씨앗으로 전국 기록에 도전하세요.">
+<meta property="og:title" content="거대작물 선수권">
+<meta property="og:description" content="올해 내 밭에서 자란 최고 기록은? 같은 씨앗으로 도전해 보세요.">
+<meta property="og:image" content="https://ytlab.site/play/giant-growers/harvest.png">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://ytlab.site/play/giant-growers/">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header><div class="shell top"><a class="lab" href="/" aria-label="YT Lab 홈페이지">YT LAB</a><span class="sep"></span><span>웹 오락실</span><button id="records" class="record-link">대회 기록 ↗</button></div></header>
+<main class="shell">
+  <div class="title-row"><div><h1>거대작물 선수권</h1><p class="intro">씨앗 하나로 시작하는 나의 농사 기록.</p></div><span class="stamp">공개<br>시험판</span></div>
+  <div id="modes" class="modes" aria-label="게임 방식"></div>
+  <div class="layout">
+    <section class="field-card" aria-label="재배 현황">
+      <div class="field-tag"><span id="field-label">내 농장</span><span id="sky"></span></div>
+      <canvas id="scene" width="360" height="160" role="img" aria-label="밭과 수확물을 그린 픽셀 풍경"></canvas>
+      <div class="scale"><div><span id="weight-label" class="caption"></span><div id="weight" class="digits"></div></div><div id="comparison" class="comparison"></div></div>
+      <div class="ruler"></div>
+    </section>
+    <section class="sheet" id="sheet" aria-label="농사 선택"></section>
+  </div>
+  <section id="journal" class="journal"></section>
+  <footer><span>YT Lab · 거대작물 선수권</span><a href="mailto:contact@ytlab.site?subject=거대작물%20선수권%20의견">플레이 의견 보내기 ↗</a></footer>
+  <div role="status" id="notice" aria-live="polite"></div>
+</main>
+<dialog id="dialog"><div class="dialog-head"><h2 id="dialog-title">대회 기록</h2><button id="close" aria-label="닫기">닫기</button></div><div id="dialog-body"></div></dialog>
+<noscript>이 게임은 자바스크립트를 켜야 플레이할 수 있습니다.</noscript>
+<script type="module" src="./game.mjs"></script>
+</body>
+</html>

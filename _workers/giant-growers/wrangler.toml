@@ -1,0 +1,8 @@
+name = "giant-growers-fair"
+main = "worker.mjs"
+compatibility_date = "2026-09-01"
+workers_dev = true
+[[d1_databases]]
+binding = "DB"
+database_name = "giant-growers-records"
+database_id = "88727a3e-5987-4122-81a3-dbacef95efcd"
