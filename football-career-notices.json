@@ -1,5 +1,183 @@
 [
   {
+    "id": "2026-11-25-first-career-poll",
+    "date": "2026-11-25",
+    "title": "커리어 개선 투표",
+    "body": "새 선수를 키울 때 개선이 가장 필요하다고 느낀 구간 하나를 골라 주세요. 투표에 참여한 계정에는 홈 선물함으로 100골드를 보내 드려요. 투표는 11월 28일(토) 밤 11시 59분(한국 시간)까지예요. 마감 전에는 선택을 바꿀 수 있어요.",
+    "important": true,
+    "popup": {
+      "until": "2026-11-28"
+    },
+    "category": "event",
+    "period": {
+      "start": "2026-11-25T00:00:00+09:00",
+      "end": "2026-11-28T23:59:59.999+09:00"
+    },
+    "summary": "새 선수를 키울 때 어떤 부분을 먼저 바꾸면 좋을까요? 11월 28일(토) 밤 11시 59분(한국 시간)까지 투표하면 홈 선물함에서 100골드를 받을 수 있어요.",
+    "content": "새 선수를 키울 때 개선이 가장 필요하다고 느낀 구간 하나를 골라 주세요. 투표에 참여한 계정에는 홈 선물함으로 100골드를 보내 드려요. 투표는 11월 28일(토) 밤 11시 59분(한국 시간)까지예요. 마감 전에는 선택을 바꿀 수 있어요.",
+    "poll": {
+      "question": {
+        "ko": "새 선수를 키울 때 어떤 부분을 가장 먼저 개선하면 좋을까요?",
+        "en": "What should we improve first when you start a new player?",
+        "ja": "新しい選手を育てるとき、どこを最初に改善してほしいですか？",
+        "zh": "培养新球员时，你最希望先改进哪个环节？",
+        "es": "¿Qué deberíamos mejorar primero al empezar con un nuevo jugador?",
+        "pt": "O que devemos melhorar primeiro ao começar com um novo jogador?",
+        "fr": "Qu’est-ce qu’on devrait améliorer en priorité quand vous commencez avec un nouveau joueur ?",
+        "de": "Was sollen wir beim Start mit einem neuen Spieler zuerst verbessern?",
+        "it": "Cosa dovremmo migliorare per prima cosa quando inizi con un nuovo giocatore?",
+        "id": "Apa yang sebaiknya kami perbaiki dulu saat kamu memulai dengan pemain baru?",
+        "tr": "Yeni bir oyuncuyla başlarken ilk olarak neyi iyileştirelim?",
+        "ar": "ما الذي تود أن نحسّنه أولًا عند البدء بلاعب جديد؟"
+      },
+      "options": [
+        {
+          "id": "creation",
+          "label": {
+            "ko": "선수 만들기 (포지션·능력치·준비도)",
+            "en": "Creating a player (position, stats, preparation)",
+            "ja": "選手作成（ポジション・能力値・準備）",
+            "zh": "创建球员（位置、能力值、准备）",
+            "es": "Crear un jugador (posición, atributos y preparación)",
+            "pt": "Criação do jogador (posição, atributos e preparação)",
+            "fr": "Création du joueur (poste, caractéristiques et préparation)",
+            "de": "Spieler erstellen (Position, Werte und Vorbereitung)",
+            "it": "Creazione del giocatore (ruolo, attributi e preparazione)",
+            "id": "Membuat pemain (posisi, atribut, dan persiapan)",
+            "tr": "Oyuncu oluşturma (mevki, özellikler ve hazırlık)",
+            "ar": "إنشاء اللاعب (المركز والقدرات والاستعداد)"
+          }
+        },
+        {
+          "id": "contract",
+          "label": {
+            "ko": "첫 계약과 시즌 시작 (서명·프리시즌)",
+            "en": "First contract and season start (signing, preseason)",
+            "ja": "初契約とシーズン開幕（署名・プレシーズン）",
+            "zh": "首份合同与赛季开始（签约、季前赛）",
+            "es": "Primer contrato e inicio de temporada (firma y pretemporada)",
+            "pt": "Primeiro contrato e início da temporada (assinatura e pré-temporada)",
+            "fr": "Premier contrat et début de saison (signature et présaison)",
+            "de": "Erster Vertrag und Saisonstart (Unterschrift und Saisonvorbereitung)",
+            "it": "Primo contratto e inizio stagione (firma e precampionato)",
+            "id": "Kontrak pertama dan awal musim (tanda tangan dan pramusim)",
+            "tr": "İlk sözleşme ve sezon başlangıcı (imza ve sezon öncesi)",
+            "ar": "العقد الأول وبداية الموسم (التوقيع وفترة الإعداد)"
+          }
+        },
+        {
+          "id": "progress",
+          "label": {
+            "ko": "시즌 진행 (월간 이벤트·다음 달 진행)",
+            "en": "Season progression (monthly events, advancing to the next month)",
+            "ja": "シーズン進行（月間イベント・翌月への進行）",
+            "zh": "赛季推进（月度事件、进入下个月）",
+            "es": "Progreso de la temporada (eventos mensuales y avance al mes siguiente)",
+            "pt": "Andamento da temporada (eventos mensais e avanço para o próximo mês)",
+            "fr": "Déroulement de la saison (événements mensuels et passage au mois suivant)",
+            "de": "Saisonverlauf (monatliche Ereignisse und Wechsel zum nächsten Monat)",
+            "it": "Avanzamento della stagione (eventi mensili e passaggio al mese successivo)",
+            "id": "Jalannya musim (acara bulanan dan lanjut ke bulan berikutnya)",
+            "tr": "Sezon ilerleyişi (aylık etkinlikler ve sonraki aya geçiş)",
+            "ar": "تقدّم الموسم (الأحداث الشهرية والانتقال إلى الشهر التالي)"
+          }
+        },
+        {
+          "id": "next_goal",
+          "label": {
+            "ko": "시즌 결과와 다음 목표 (시즌을 마친 뒤 이어갈 목표)",
+            "en": "Season results and next goals (what to aim for after a season)",
+            "ja": "シーズン結果と次の目標（シーズン終了後に目指すこと）",
+            "zh": "赛季结果与下个目标（赛季结束后要做什么）",
+            "es": "Resultados y próximos objetivos (qué hacer tras la temporada)",
+            "pt": "Resultados e próximos objetivos (o que buscar após a temporada)",
+            "fr": "Bilan et prochains objectifs (quoi viser après la saison)",
+            "de": "Saisonergebnis und nächste Ziele (worauf du danach hinarbeitest)",
+            "it": "Risultati e prossimi obiettivi (cosa fare dopo la stagione)",
+            "id": "Hasil musim dan target berikutnya (tujuan setelah musim berakhir)",
+            "tr": "Sezon sonuçları ve sonraki hedefler (sezon bitince neyi hedefleyeceğin)",
+            "ar": "نتائج الموسم والأهداف التالية (ما تسعى إليه بعد انتهاء الموسم)"
+          }
+        }
+      ],
+      "until": "2026-11-29T00:00:00+09:00"
+    },
+    "translations": {
+      "ko": {
+        "title": "커리어 개선 투표",
+        "summary": "새 선수를 키울 때 어떤 부분을 먼저 바꾸면 좋을까요? 11월 28일(토) 밤 11시 59분(한국 시간)까지 투표하면 홈 선물함에서 100골드를 받을 수 있어요.",
+        "body": "새 선수를 키울 때 개선이 가장 필요하다고 느낀 구간 하나를 골라 주세요. 투표에 참여한 계정에는 홈 선물함으로 100골드를 보내 드려요. 투표는 11월 28일(토) 밤 11시 59분(한국 시간)까지예요. 마감 전에는 선택을 바꿀 수 있어요.",
+        "content": "새 선수를 키울 때 개선이 가장 필요하다고 느낀 구간 하나를 골라 주세요. 투표에 참여한 계정에는 홈 선물함으로 100골드를 보내 드려요. 투표는 11월 28일(토) 밤 11시 59분(한국 시간)까지예요. 마감 전에는 선택을 바꿀 수 있어요."
+      },
+      "en": {
+        "title": "Career Improvement Poll",
+        "summary": "What should we improve first when you start a new player? Vote by Saturday, November 28 at 11:59 p.m. KST to get 100 gold in your Home gift box.",
+        "body": "Choose the part you most want us to improve when starting a new player. We’ll send 100 gold to the Home gift box of each account that votes. Voting closes on Saturday, November 28 at 11:59 p.m. KST. You can change your vote until then.",
+        "content": "Choose the part you most want us to improve when starting a new player. We’ll send 100 gold to the Home gift box of each account that votes. Voting closes on Saturday, November 28 at 11:59 p.m. KST. You can change your vote until then."
+      },
+      "ja": {
+        "title": "キャリア改善アンケート",
+        "summary": "新しい選手を育てるとき、まずどこを改善してほしいですか？11月28日（土）23:59（韓国時間）までに投票すると、ホームのギフトボックスで100ゴールドを受け取れます。",
+        "body": "新しい選手を育てるとき、もっとも改善してほしいところを1つ選んでください。投票したアカウントには、ホームのギフトボックスに100ゴールドをお届けします。締め切りは11月28日（土）23:59（韓国時間）です。締め切りまでは回答を変更できます。",
+        "content": "新しい選手を育てるとき、もっとも改善してほしいところを1つ選んでください。投票したアカウントには、ホームのギフトボックスに100ゴールドをお届けします。締め切りは11月28日（土）23:59（韓国時間）です。締め切りまでは回答を変更できます。"
+      },
+      "zh": {
+        "title": "生涯改进投票",
+        "summary": "培养新球员时，你最希望先改进什么？在11月28日（周六）23:59（韩国时间）前投票，即可在主页礼物箱领取100金币。",
+        "body": "请选出培养新球员时你最想改进的一个环节。我们会向每个投票账号的主页礼物箱发放100金币。投票于11月28日（周六）23:59（韩国时间）截止，截止前可以更改选择。",
+        "content": "请选出培养新球员时你最想改进的一个环节。我们会向每个投票账号的主页礼物箱发放100金币。投票于11月28日（周六）23:59（韩国时间）截止，截止前可以更改选择。"
+      },
+      "es": {
+        "title": "Votación para mejorar la carrera",
+        "summary": "¿Qué deberíamos mejorar primero al empezar con un nuevo jugador? Vota hasta el sábado 28 de noviembre a las 23:59 (hora de Corea) y recibe 100 de oro en el buzón de regalos de Inicio.",
+        "body": "Elige la parte que más te gustaría mejorar al empezar con un nuevo jugador. Enviaremos 100 de oro al buzón de regalos de Inicio de cada cuenta que vote. La votación cierra el sábado 28 de noviembre a las 23:59 (hora de Corea). Puedes cambiar tu voto hasta entonces.",
+        "content": "Elige la parte que más te gustaría mejorar al empezar con un nuevo jugador. Enviaremos 100 de oro al buzón de regalos de Inicio de cada cuenta que vote. La votación cierra el sábado 28 de noviembre a las 23:59 (hora de Corea). Puedes cambiar tu voto hasta entonces."
+      },
+      "pt": {
+        "title": "Votação para melhorar a carreira",
+        "summary": "O que devemos melhorar primeiro ao começar com um novo jogador? Vote até sábado, 28 de novembro, às 23h59 (horário da Coreia) e receba 100 de ouro na caixa de presentes da tela inicial.",
+        "body": "Escolha a parte que você mais quer melhorar ao começar com um novo jogador. Cada conta que votar receberá 100 de ouro na caixa de presentes da tela inicial. A votação termina no sábado, 28 de novembro, às 23h59 (horário da Coreia). Você pode mudar seu voto até lá.",
+        "content": "Escolha a parte que você mais quer melhorar ao começar com um novo jogador. Cada conta que votar receberá 100 de ouro na caixa de presentes da tela inicial. A votação termina no sábado, 28 de novembro, às 23h59 (horário da Coreia). Você pode mudar seu voto até lá."
+      },
+      "fr": {
+        "title": "Vote pour améliorer la carrière",
+        "summary": "Que faut-il améliorer en priorité quand vous créez un nouveau joueur ? Votez avant le samedi 28 novembre à 23 h 59 (heure coréenne) pour recevoir 100 pièces d’or dans la boîte de cadeaux de l’accueil.",
+        "body": "Choisissez le point que vous aimeriez le plus voir améliorer quand vous commencez avec un nouveau joueur. Chaque compte qui vote recevra 100 pièces d’or dans la boîte de cadeaux de l’accueil. Le vote se termine le samedi 28 novembre à 23 h 59 (heure coréenne). Vous pouvez modifier votre choix jusqu’à la clôture.",
+        "content": "Choisissez le point que vous aimeriez le plus voir améliorer quand vous commencez avec un nouveau joueur. Chaque compte qui vote recevra 100 pièces d’or dans la boîte de cadeaux de l’accueil. Le vote se termine le samedi 28 novembre à 23 h 59 (heure coréenne). Vous pouvez modifier votre choix jusqu’à la clôture."
+      },
+      "de": {
+        "title": "Abstimmung zur Karriereverbesserung",
+        "summary": "Was sollen wir beim Start mit einem neuen Spieler zuerst verbessern? Stimme bis Samstag, 28. November, um 23:59 Uhr (koreanische Zeit) ab und erhalte 100 Gold im Geschenkfach auf der Startseite.",
+        "body": "Wähle den Bereich, den wir beim Start mit einem neuen Spieler am dringendsten verbessern sollen. Jedes Konto, das abstimmt, erhält 100 Gold im Geschenkfach auf der Startseite. Die Abstimmung endet am Samstag, 28. November, um 23:59 Uhr (koreanische Zeit). Bis dahin kannst du deine Stimme ändern.",
+        "content": "Wähle den Bereich, den wir beim Start mit einem neuen Spieler am dringendsten verbessern sollen. Jedes Konto, das abstimmt, erhält 100 Gold im Geschenkfach auf der Startseite. Die Abstimmung endet am Samstag, 28. November, um 23:59 Uhr (koreanische Zeit). Bis dahin kannst du deine Stimme ändern."
+      },
+      "it": {
+        "title": "Sondaggio per migliorare la carriera",
+        "summary": "Cosa dovremmo migliorare per prima cosa quando inizi con un nuovo giocatore? Vota entro sabato 28 novembre alle 23:59 (ora coreana) e ricevi 100 monete d’oro nella casella regali della schermata Home.",
+        "body": "Scegli l’aspetto che vorresti migliorare di più quando inizi con un nuovo giocatore. Ogni account che vota riceverà 100 monete d’oro nella casella regali della schermata Home. Il sondaggio chiude sabato 28 novembre alle 23:59 (ora coreana). Fino ad allora puoi cambiare il tuo voto.",
+        "content": "Scegli l’aspetto che vorresti migliorare di più quando inizi con un nuovo giocatore. Ogni account che vota riceverà 100 monete d’oro nella casella regali della schermata Home. Il sondaggio chiude sabato 28 novembre alle 23:59 (ora coreana). Fino ad allora puoi cambiare il tuo voto."
+      },
+      "id": {
+        "title": "Jajak pendapat perbaikan karier",
+        "summary": "Apa yang sebaiknya kami perbaiki dulu saat kamu memulai dengan pemain baru? Pilih hingga Sabtu, 28 November pukul 23.59 (waktu Korea) untuk mendapat 100 emas di kotak hadiah pada layar utama.",
+        "body": "Pilih satu bagian yang paling ingin kamu perbaiki saat memulai dengan pemain baru. Setiap akun yang memilih akan mendapat 100 emas di kotak hadiah pada layar utama. Jajak pendapat ditutup pada Sabtu, 28 November pukul 23.59 (waktu Korea). Kamu bisa mengubah pilihan sebelum ditutup.",
+        "content": "Pilih satu bagian yang paling ingin kamu perbaiki saat memulai dengan pemain baru. Setiap akun yang memilih akan mendapat 100 emas di kotak hadiah pada layar utama. Jajak pendapat ditutup pada Sabtu, 28 November pukul 23.59 (waktu Korea). Kamu bisa mengubah pilihan sebelum ditutup."
+      },
+      "tr": {
+        "title": "Kariyer geliştirme anketi",
+        "summary": "Yeni bir oyuncuyla başlarken ilk olarak neyi iyileştirelim? 28 Kasım Cumartesi 23.59’a (Kore saati) kadar oy ver, ana ekrandaki hediye kutundan 100 altın al.",
+        "body": "Yeni bir oyuncuyla başlarken en çok iyileştirilmesini istediğin kısmı seç. Oy veren her hesaba ana ekrandaki hediye kutusundan 100 altın göndereceğiz. Oylama 28 Kasım Cumartesi 23.59’da (Kore saati) sona erer. O zamana kadar seçimini değiştirebilirsin.",
+        "content": "Yeni bir oyuncuyla başlarken en çok iyileştirilmesini istediğin kısmı seç. Oy veren her hesaba ana ekrandaki hediye kutusundan 100 altın göndereceğiz. Oylama 28 Kasım Cumartesi 23.59’da (Kore saati) sona erer. O zamana kadar seçimini değiştirebilirsin."
+      },
+      "ar": {
+        "title": "تصويت لتحسين المسيرة",
+        "summary": "ما الذي تود أن نحسّنه أولًا عند البدء بلاعب جديد؟ صوّت حتى السبت 28 نوفمبر الساعة 23:59 بتوقيت كوريا لتحصل على 100 ذهب في صندوق الهدايا على الشاشة الرئيسية.",
+        "body": "اختر الجزء الذي ترغب في تحسينه أكثر عند البدء بلاعب جديد. سنرسل 100 ذهب إلى صندوق الهدايا على الشاشة الرئيسية لكل حساب يصوّت. ينتهي التصويت يوم السبت 28 نوفمبر الساعة 23:59 بتوقيت كوريا. يمكنك تغيير اختيارك حتى موعد الإغلاق.",
+        "content": "اختر الجزء الذي ترغب في تحسينه أكثر عند البدء بلاعب جديد. سنرسل 100 ذهب إلى صندوق الهدايا على الشاشة الرئيسية لكل حساب يصوّت. ينتهي التصويت يوم السبت 28 نوفمبر الساعة 23:59 بتوقيت كوريا. يمكنك تغيير اختيارك حتى موعد الإغلاق."
+      }
+    }
+  },
+  {
     "id": "2026-11-21-fair-play",
     "date": "2026-11-21",
     "title": "비정상 커리어 기록 조치 안내",
