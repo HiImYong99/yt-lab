@@ -1,5 +1,79 @@
 [
   {
+    "id": "2026-11-26-rebuild-harder",
+    "date": "2026-11-26",
+    "title": "재건 모드가 더 어려워집니다",
+    "body": "재건 모드를 플레이해 주신 분들께 감사드립니다.\n4부에서 시작했는데 생각보다 너무 쉽게 1부까지 올라가서 아쉬우셨죠? 플레이 기록을 살펴보니 가장 약한 구단으로 시작해도 대부분 1부에 올랐고, 1부에 오른 뒤에는 원구단에서 할 일이 금방 끝났습니다. 한 번에 깨지는 모드는 저희가 만들고 싶었던 재건이 아니었습니다.\n앞으로 재건 모드는 이렇게 바뀝니다.\n- 1부로 가는 길이 훨씬 험해집니다. 약한 구단일수록 한 번의 커리어로는 올라가기 어렵습니다.\n- 1부에 오른 뒤에도 원구단과 함께 노릴 목표가 이어집니다.\n여러 번 도전해야 비로소 깰 수 있는 모드로 다듬고 있습니다. 적용 시점은 업데이트 때 다시 안내드리겠습니다.",
+    "important": true,
+    "popup": {
+      "until": "2026-11-30"
+    },
+    "category": "notice",
+    "summary": "재건 모드에서 1부까지 너무 쉽게 오르는 문제를 확인했습니다. 1부로 가는 길을 더 험하게 바꾸고, 1부에 오른 뒤에도 원구단과 노릴 목표를 더합니다.",
+    "translations": {
+      "ko": {
+        "title": "재건 모드가 더 어려워집니다",
+        "body": "재건 모드를 플레이해 주신 분들께 감사드립니다.\n4부에서 시작했는데 생각보다 너무 쉽게 1부까지 올라가서 아쉬우셨죠? 플레이 기록을 살펴보니 가장 약한 구단으로 시작해도 대부분 1부에 올랐고, 1부에 오른 뒤에는 원구단에서 할 일이 금방 끝났습니다. 한 번에 깨지는 모드는 저희가 만들고 싶었던 재건이 아니었습니다.\n앞으로 재건 모드는 이렇게 바뀝니다.\n- 1부로 가는 길이 훨씬 험해집니다. 약한 구단일수록 한 번의 커리어로는 올라가기 어렵습니다.\n- 1부에 오른 뒤에도 원구단과 함께 노릴 목표가 이어집니다.\n여러 번 도전해야 비로소 깰 수 있는 모드로 다듬고 있습니다. 적용 시점은 업데이트 때 다시 안내드리겠습니다.",
+        "summary": "재건 모드에서 1부까지 너무 쉽게 오르는 문제를 확인했습니다. 1부로 가는 길을 더 험하게 바꾸고, 1부에 오른 뒤에도 원구단과 노릴 목표를 더합니다."
+      },
+      "en": {
+        "title": "Rebuild mode is getting harder",
+        "body": "Thank you to everyone who has played Rebuild mode.\nYou started in Division 4, but reaching Division 1 turned out far too easy, didn't it? Looking at play records, most careers made it to Division 1 even from the weakest club, and once there, little was left to do with the club you started with. A mode you beat on the first try isn't the rebuild we wanted to make.\nHere's how Rebuild mode will change:\n- The road to Division 1 gets much tougher. The weaker your club, the harder it will be to get there in a single career.\n- After reaching Division 1, new goals to chase with the club you started with keep coming.\nWe're reworking it into a mode that takes several attempts to beat. We'll let you know when it arrives with the update.",
+        "summary": "Reaching Division 1 in Rebuild mode was far too easy. We are making the road there tougher and adding goals to chase with the club you started with once you arrive."
+      },
+      "ja": {
+        "title": "再建モードが難しくなります",
+        "body": "再建モードをプレイしていただいた皆さま、ありがとうございます。\n4部から始めたのに、思ったより簡単に1部まで上がってしまい、物足りなかったですよね。プレイ記録を確認したところ、最も弱いクラブから始めてもほとんどが1部に到達し、1部に上がった後は元のクラブでやることがすぐになくなっていました。一度でクリアできてしまうモードは、私たちが作りたかった再建ではありませんでした。\n今後、再建モードは次のように変わります。\n- 1部への道がずっと険しくなります。弱いクラブほど、1回のキャリアでは上がりにくくなります。\n- 1部に上がった後も、元のクラブと一緒に目指す目標が続きます。\n何度も挑戦してようやくクリアできるモードに仕上げています。適用時期はアップデートの際に改めてお知らせします。",
+        "summary": "再建モードで1部まで簡単に上がれすぎることを確認しました。1部への道をより険しくし、1部に上がった後も元のクラブと目指せる目標を追加します。"
+      },
+      "zh": {
+        "title": "重建模式将变得更难",
+        "body": "感谢各位玩过重建模式的玩家。\n从第四级别起步，却比想象中轻松得多就升到了第一级别，是不是有点失望？查看游戏记录后发现，即使从最弱的俱乐部起步，大多数生涯也都升入了第一级别，而升入第一级别后，在原俱乐部能做的事很快就没有了。一次就能通关的模式，不是我们想做的重建。\n今后重建模式将这样改变：\n- 通往第一级别的路会艰难得多。俱乐部越弱，越难在一次生涯中升上去。\n- 升入第一级别后，还会有与原俱乐部一起追求的目标。\n我们正在把它打磨成需要多次挑战才能通关的模式。具体上线时间会在更新时另行通知。",
+        "summary": "我们发现重建模式升入第一级别太容易了。我们会让通往第一级别的道路更加艰难，并在升入第一级别后加入与原俱乐部一起追求的新目标。"
+      },
+      "es": {
+        "title": "El Modo reconstrucción será más difícil",
+        "body": "Gracias a todos los que han jugado el Modo reconstrucción.\nEmpezaste en la División 4, pero llegar a la División 1 fue demasiado fácil, ¿verdad? Al revisar las partidas vimos que la mayoría de las carreras llegaban a la División 1 incluso desde el club más débil, y una vez allí quedaba poco por hacer con tu club de origen. Un modo que se supera al primer intento no es la reconstrucción que queríamos crear.\nAsí cambiará el Modo reconstrucción:\n- El camino a la División 1 será mucho más duro. Cuanto más débil sea tu club, más difícil será subir en una sola carrera.\n- Después de llegar a la División 1, seguirá habiendo objetivos que perseguir con tu club de origen.\nLo estamos ajustando para que haga falta más de un intento para superarlo. Avisaremos de la fecha con la actualización.",
+        "summary": "Llegar a la División 1 en el Modo reconstrucción era demasiado fácil. Vamos a endurecer el camino y añadir objetivos para seguir con tu club de origen una vez arriba."
+      },
+      "pt": {
+        "title": "O Modo reconstrução vai ficar mais difícil",
+        "body": "Obrigado a todos que jogaram o Modo reconstrução.\nVocê começou na Divisão 4, mas chegar à Divisão 1 foi fácil demais, não foi? Analisando os registros de jogo, vimos que a maioria das carreiras chegou à Divisão 1 mesmo começando pelo clube mais fraco e, depois disso, sobrava pouco para fazer no clube de origem. Um modo que se vence na primeira tentativa não é a reconstrução que queríamos criar.\nO Modo reconstrução vai mudar assim:\n- O caminho até a Divisão 1 vai ficar muito mais difícil. Quanto mais fraco o clube, mais difícil será subir em uma única carreira.\n- Depois de chegar à Divisão 1, continuarão surgindo metas para buscar com o seu clube de origem.\nEstamos ajustando o modo para que sejam necessárias várias tentativas para vencê-lo. Avisaremos a data junto com a atualização.",
+        "summary": "Chegar à Divisão 1 no Modo reconstrução era fácil demais. Vamos deixar o caminho mais difícil e adicionar metas para buscar com seu clube de origem depois de chegar lá."
+      },
+      "fr": {
+        "title": "Le Mode reconstruction va devenir plus difficile",
+        "body": "Merci à toutes celles et ceux qui ont joué au Mode reconstruction.\nVous avez commencé en Division 4, mais atteindre la Division 1 a été bien trop facile, n'est-ce pas ? En examinant les parties, nous avons vu que la plupart des carrières atteignaient la Division 1 même depuis le club le plus faible, et qu'une fois là-haut, il ne restait presque plus rien à faire avec votre club d'origine. Un mode que l'on termine du premier coup n'est pas la reconstruction que nous voulions créer.\nVoici comment le Mode reconstruction va évoluer :\n- La route vers la Division 1 sera beaucoup plus difficile. Plus votre club est faible, plus il sera dur d'y arriver en une seule carrière.\n- Une fois en Division 1, de nouveaux objectifs à atteindre avec votre club d'origine continueront de s'enchaîner.\nNous le retravaillons pour qu'il faille plusieurs tentatives pour en venir à bout. Nous vous indiquerons la date avec la mise à jour.",
+        "summary": "Atteindre la Division 1 en Mode reconstruction était bien trop facile. Le chemin sera plus rude, et de nouveaux objectifs vous attendront avec votre club d'origine une fois en haut."
+      },
+      "de": {
+        "title": "Der Aufbaumodus wird schwerer",
+        "body": "Danke an alle, die den Aufbaumodus gespielt haben.\nDu hast in Liga 4 angefangen, aber der Weg in Liga 1 war viel zu leicht, oder? Die Spieldaten zeigen: Selbst vom schwächsten Klub aus haben es die meisten Karrieren in Liga 1 geschafft, und danach gab es beim Startklub kaum noch etwas zu tun. Ein Modus, den man beim ersten Versuch schafft, ist nicht der Aufbau, den wir machen wollten.\nSo ändert sich der Aufbaumodus:\n- Der Weg in Liga 1 wird deutlich härter. Je schwächer dein Klub, desto schwerer schaffst du es in einer einzigen Karriere nach oben.\n- Auch nach dem Aufstieg in Liga 1 warten weitere Ziele mit deinem Startklub.\nWir arbeiten daran, dass man mehrere Anläufe braucht, um ihn zu schaffen. Wann es so weit ist, sagen wir mit dem Update.",
+        "summary": "Im Aufbaumodus war der Weg in Liga 1 viel zu leicht. Wir machen ihn deutlich härter und fügen Ziele hinzu, die du danach mit deinem Startklub verfolgen kannst."
+      },
+      "it": {
+        "title": "La Modalità ricostruzione diventa più difficile",
+        "body": "Grazie a tutti quelli che hanno giocato alla Modalità ricostruzione.\nHai iniziato in Divisione 4, ma arrivare in Divisione 1 è stato fin troppo facile, vero? Dai dati di gioco abbiamo visto che la maggior parte delle carriere arrivava in Divisione 1 anche partendo dal club più debole, e una volta lì restava ben poco da fare con il club di partenza. Una modalità che si completa al primo tentativo non è la ricostruzione che volevamo creare.\nEcco come cambierà la Modalità ricostruzione:\n- La strada verso la Divisione 1 sarà molto più dura. Più il club è debole, più sarà difficile salire in una sola carriera.\n- Anche dopo l'arrivo in Divisione 1 ci saranno nuovi obiettivi da inseguire con il tuo club di partenza.\nLa stiamo rifinendo perché servano più tentativi per completarla. Comunicheremo la data con l'aggiornamento.",
+        "summary": "Arrivare in Divisione 1 nella Modalità ricostruzione era troppo facile. Renderemo la strada più dura e aggiungeremo obiettivi da inseguire con il tuo club di partenza una volta arrivato."
+      },
+      "id": {
+        "title": "Mode pembangunan akan jadi lebih sulit",
+        "body": "Terima kasih untuk semua yang sudah memainkan Mode pembangunan.\nKamu mulai dari Divisi 4, tapi naik ke Divisi 1 ternyata terlalu mudah, kan? Dari catatan permainan, kami melihat sebagian besar karier tetap sampai di Divisi 1 bahkan dari klub terlemah, dan setelah itu hampir tidak ada lagi yang bisa dikejar di klub asal. Mode yang bisa ditamatkan dalam sekali coba bukanlah pembangunan yang ingin kami buat.\nKe depannya, Mode pembangunan akan berubah seperti ini:\n- Jalan ke Divisi 1 akan jauh lebih berat. Makin lemah klubmu, makin sulit naik dalam satu karier.\n- Setelah sampai di Divisi 1, masih ada target yang bisa dikejar bersama klub asalmu.\nKami sedang menyempurnakannya agar butuh beberapa kali percobaan untuk menamatkannya. Waktu penerapannya akan kami umumkan saat pembaruan.",
+        "summary": "Naik ke Divisi 1 di Mode pembangunan ternyata terlalu mudah. Jalannya akan dibuat lebih berat, dan akan ada target baru bersama klub asalmu setelah sampai di sana."
+      },
+      "tr": {
+        "title": "Yeniden yapılanma modu zorlaşıyor",
+        "body": "Yeniden yapılanma modunu oynayan herkese teşekkür ederiz.\n4. Lig'den başladın ama 1. Lig'e çıkmak beklenenden çok daha kolay oldu, değil mi? Oyun kayıtlarına baktığımızda en zayıf kulüpten başlayan kariyerlerin bile çoğunun 1. Lig'e çıktığını, oraya çıktıktan sonra da ilk kulüpte yapacak pek bir şey kalmadığını gördük. İlk denemede bitirilen bir mod, yapmak istediğimiz yeniden yapılanma değildi.\nYeniden yapılanma modu şöyle değişecek:\n- 1. Lig'e giden yol çok daha zorlu olacak. Kulübün ne kadar zayıfsa tek bir kariyerde yukarı çıkmak o kadar zor olacak.\n- 1. Lig'e çıktıktan sonra da ilk kulübünle birlikte peşinden koşacağın hedefler devam edecek.\nModu, bitirmek için birkaç deneme gerektirecek şekilde yeniden düzenliyoruz. Ne zaman geleceğini güncellemeyle birlikte duyuracağız.",
+        "summary": "Yeniden yapılanma modunda 1. Lig'e çıkmak fazla kolaydı. Bu yolu zorlaştırıyor, oraya çıktıktan sonra da ilk kulübünle peşinden koşacağın hedefler ekliyoruz."
+      },
+      "ar": {
+        "title": "نمط إعادة البناء سيصبح أصعب",
+        "body": "شكراً لكل من لعب نمط إعادة البناء.\nبدأت في الدرجة الرابعة، لكن الوصول إلى الدرجة الأولى كان أسهل بكثير مما ينبغي، أليس كذلك؟ عندما راجعنا سجلات اللعب وجدنا أن معظم المسيرات وصلت إلى الدرجة الأولى حتى من أضعف نادٍ، وبعد الوصول لم يبق الكثير لفعله مع النادي الأصلي. النمط الذي يُنهى من المحاولة الأولى ليس إعادة البناء التي أردنا صنعها.\nهكذا سيتغير نمط إعادة البناء:\n- سيصبح الطريق إلى الدرجة الأولى أصعب بكثير. كلما كان ناديك أضعف، صعب الصعود في مسيرة واحدة.\n- بعد الوصول إلى الدرجة الأولى، ستستمر أهداف تسعى إليها مع ناديك الأصلي.\nنعمل على تحسينه ليحتاج إلى عدة محاولات حتى يُنهى. سنعلن موعد تطبيقه مع التحديث.",
+        "summary": "كان الوصول إلى الدرجة الأولى في نمط إعادة البناء سهلاً أكثر من اللازم. سنجعل الطريق أصعب، ونضيف أهدافاً تسعى إليها مع ناديك الأصلي بعد الوصول."
+      }
+    }
+  },
+  {
     "id": "2026-11-25-first-career-poll",
     "date": "2026-11-25",
     "title": "커리어 개선 투표",
