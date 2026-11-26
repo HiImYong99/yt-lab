@@ -1,5 +1,79 @@
 [
   {
+    "id": "2026-11-26-roll-odds-youth",
+    "date": "2026-11-26",
+    "title": "능력치 뽑기 확률표 표시 오류 안내",
+    "body": "2.7.2에서 유스 아카데미로 시작할 때 시작 능력치 뽑기 화면의 확률표가 잘못 표시되는 오류를 확인했습니다.\n유스 아카데미는 두 시즌 먼저 출발하는 만큼 시작 OVR이 프로보다 낮게 나옵니다. 그런데 확률표는 프로 시작 기준 구간을 그대로 보여 주고 있어서, 확률표보다 낮은 숫자만 계속 나오는 것처럼 보였습니다.\n- 뽑기 확률 자체는 바뀌지 않았습니다. 무료 굴림, 광고, 티켓 모두 같은 확률입니다.\n- 프로로 시작하면 확률표에 적힌 구간대로 나옵니다.\n- 2.7.2부터는 지난 커리어의 시작 방식이 미리 선택되니, 뽑기 전에 프로·유스 중 어느 쪽인지 확인해 주세요.\n다음 업데이트에서 확률표가 고른 시작 방식을 반영한 구간을 보여 주도록 수정하겠습니다. 혼란을 드려 죄송하고, 제보해 주신 분께 감사드립니다.",
+    "important": true,
+    "popup": {
+      "until": "2026-11-30"
+    },
+    "category": "notice",
+    "summary": "2.7.2에서 유스 아카데미로 시작하면 확률표가 프로 시작 기준으로 표시되는 오류가 있었습니다. 뽑기 확률은 그대로이며, 다음 업데이트에서 수정하겠습니다.",
+    "translations": {
+      "ko": {
+        "title": "능력치 뽑기 확률표 표시 오류 안내",
+        "body": "2.7.2에서 유스 아카데미로 시작할 때 시작 능력치 뽑기 화면의 확률표가 잘못 표시되는 오류를 확인했습니다.\n유스 아카데미는 두 시즌 먼저 출발하는 만큼 시작 OVR이 프로보다 낮게 나옵니다. 그런데 확률표는 프로 시작 기준 구간을 그대로 보여 주고 있어서, 확률표보다 낮은 숫자만 계속 나오는 것처럼 보였습니다.\n- 뽑기 확률 자체는 바뀌지 않았습니다. 무료 굴림, 광고, 티켓 모두 같은 확률입니다.\n- 프로로 시작하면 확률표에 적힌 구간대로 나옵니다.\n- 2.7.2부터는 지난 커리어의 시작 방식이 미리 선택되니, 뽑기 전에 프로·유스 중 어느 쪽인지 확인해 주세요.\n다음 업데이트에서 확률표가 고른 시작 방식을 반영한 구간을 보여 주도록 수정하겠습니다. 혼란을 드려 죄송하고, 제보해 주신 분께 감사드립니다.",
+        "summary": "2.7.2에서 유스 아카데미로 시작하면 확률표가 프로 시작 기준으로 표시되는 오류가 있었습니다. 뽑기 확률은 그대로이며, 다음 업데이트에서 수정하겠습니다."
+      },
+      "en": {
+        "title": "Starting stats odds were shown wrong",
+        "body": "We found an error in the odds table on the Roll starting stats screen when you start at the Youth academy in 2.7.2.\nA Youth academy start sets out two seasons earlier, so its starting OVR comes out lower than a pro start's. The table kept showing the pro start's ranges, so it looked as if every roll landed below the table.\n- The roll odds themselves haven't changed. Free rolls, ads and tickets all use the same odds.\n- If you start as a Pro, rolls land in the ranges the table shows.\n- From 2.7.2 your last career's start is preselected, so check whether Pro or Youth is chosen before you roll.\nIn the next update the table will show the ranges for the start you picked. Sorry for the confusion, and thank you to the player who reported it.",
+        "summary": "In 2.7.2, a Youth academy start showed the odds table for a pro start. The odds themselves haven't changed, and we'll fix the table in the next update."
+      },
+      "ja": {
+        "title": "能力値抽選の確率表示の不具合について",
+        "body": "2.7.2でユースアカデミーから始めるとき、初期能力値を抽選する画面の確率表が正しく表示されない不具合を確認しました。\nユースアカデミーは2シーズン早く出発するぶん、開始OVRがプロより低くなります。ところが確率表はプロ開始の範囲をそのまま表示していたため、確率表より低い数字ばかり出ているように見えていました。\n- 抽選の確率そのものは変わっていません。無料、広告、チケットのどれも同じ確率です。\n- プロで始めると、確率表どおりの範囲で出ます。\n- 2.7.2からは前回のキャリアの開始方法があらかじめ選ばれているので、抽選の前にプロかユースかを確認してください。\n次のアップデートで、選んだ開始方法に合わせた範囲を確率表に表示するよう修正します。ご迷惑をおかけして申し訳ありません。報告してくださった方、ありがとうございました。",
+        "summary": "2.7.2でユースアカデミーから始めると、確率表がプロ開始の基準で表示される不具合がありました。抽選確率は変わっておらず、次のアップデートで修正します。"
+      },
+      "zh": {
+        "title": "初始能力值概率表显示错误说明",
+        "body": "我们发现，在2.7.2中从青训学院起步时，抽取初始能力值画面上的概率表显示有误。\n青训学院比职业起步早两个赛季出发，所以初始OVR会比职业起步低。但概率表一直显示职业起步的区间，看起来就像抽出的数字总是低于概率表。\n- 抽取概率本身没有变化。免费、广告和券的概率都一样。\n- 选择职业起步时，结果会落在概率表所写的区间内。\n- 从2.7.2起会预先选中上一段生涯的起步方式，抽取前请先确认选的是职业还是青训。\n下次更新中，概率表将显示与所选起步方式对应的区间。给您带来困扰，非常抱歉，也感谢提交反馈的玩家。",
+        "summary": "在2.7.2中从青训学院起步时，概率表按职业起步的区间显示。抽取概率本身没有变化，我们会在下次更新中修正。"
+      },
+      "es": {
+        "title": "Error en la tabla de probabilidades de atributos",
+        "body": "Hemos detectado un error en la tabla de probabilidades de la pantalla Sortea tus atributos al empezar en la Cantera en 2.7.2.\nLa Cantera sale dos temporadas antes, así que su OVR inicial es más bajo que el de un inicio Pro. La tabla seguía mostrando los rangos del inicio Pro, y parecía que todas las tiradas quedaban por debajo de ella.\n- Las probabilidades del sorteo no han cambiado. Las tiradas gratis, con anuncio y con boleto usan las mismas.\n- Si empiezas como Pro, las tiradas caen en los rangos que muestra la tabla.\n- Desde 2.7.2 se preselecciona el inicio de tu última carrera, así que comprueba si está elegido Pro o Cantera antes de tirar.\nEn la próxima actualización la tabla mostrará los rangos del inicio que elijas. Perdón por la confusión, y gracias a quien nos lo reportó.",
+        "summary": "En 2.7.2, al empezar en la Cantera, la tabla de probabilidades mostraba los rangos de un inicio Pro. Las probabilidades no han cambiado y corregiremos la tabla en la próxima actualización."
+      },
+      "pt": {
+        "title": "Erro na tabela de chances dos atributos",
+        "body": "Encontramos um erro na tabela de chances da tela Sorteie os atributos ao começar nas Categorias de base na 2.7.2.\nAs Categorias de base começam duas temporadas antes, então o OVR inicial sai mais baixo que o de um início Pro. A tabela continuava mostrando as faixas do início Pro, e parecia que todo sorteio ficava abaixo dela.\n- As chances do sorteio não mudaram. Sorteios grátis, por anúncio e por bilhete usam as mesmas chances.\n- Se você começar como Pro, os sorteios caem nas faixas que a tabela mostra.\n- Desde a 2.7.2 o início da sua última carreira já vem selecionado, então confira se Pro ou Base está escolhido antes de sortear.\nNa próxima atualização a tabela vai mostrar as faixas do início que você escolher. Desculpe a confusão, e obrigado a quem nos avisou.",
+        "summary": "Na 2.7.2, começar nas Categorias de base mostrava a tabela de chances de um início Pro. As chances não mudaram e vamos corrigir a tabela na próxima atualização."
+      },
+      "fr": {
+        "title": "Erreur dans le tableau des probabilités d'attributs",
+        "body": "Nous avons repéré une erreur dans le tableau des probabilités de l'écran Tirez vos attributs lors d'un départ au Centre de formation dans la 2.7.2.\nLe Centre de formation part deux saisons plus tôt, donc son OVR de départ est plus bas que celui d'un départ Pro. Le tableau affichait toujours les plages du départ Pro, et on aurait dit que chaque tirage tombait en dessous.\n- Les probabilités du tirage n'ont pas changé. Tirages gratuits, par publicité ou par ticket : mêmes chances.\n- Si vous partez en Pro, les tirages tombent dans les plages du tableau.\n- Depuis la 2.7.2, le départ de votre dernière carrière est présélectionné : vérifiez si Pro ou Formation est choisi avant de tirer.\nÀ la prochaine mise à jour, le tableau affichera les plages du départ choisi. Désolés pour la confusion, et merci au joueur qui nous l'a signalé.",
+        "summary": "Dans la 2.7.2, un départ au Centre de formation affichait le tableau des probabilités d'un départ Pro. Les probabilités n'ont pas changé et nous corrigerons le tableau dans la prochaine mise à jour."
+      },
+      "de": {
+        "title": "Fehler in der Wahrscheinlichkeitstabelle der Startattribute",
+        "body": "Wir haben einen Fehler in der Wahrscheinlichkeitstabelle auf dem Bildschirm Startattribute würfeln gefunden, wenn du in 2.7.2 in der Nachwuchsakademie startest.\nDie Nachwuchsakademie startet zwei Saisons früher, daher fällt die Start-OVR niedriger aus als bei einem Profi-Start. Die Tabelle zeigte aber weiter die Bereiche des Profi-Starts, sodass es aussah, als läge jeder Wurf darunter.\n- Die Wahrscheinlichkeiten selbst haben sich nicht geändert. Gratis, per Werbung oder Ticket: dieselben Chancen.\n- Mit einem Profi-Start landen die Würfe in den Bereichen der Tabelle.\n- Seit 2.7.2 ist der Start deiner letzten Karriere vorausgewählt. Prüfe vor dem Würfeln, ob Profi oder Nachwuchs gewählt ist.\nIm nächsten Update zeigt die Tabelle die Bereiche für den gewählten Start. Entschuldige die Verwirrung, und danke an den Spieler, der es gemeldet hat.",
+        "summary": "In 2.7.2 zeigte ein Start in der Nachwuchsakademie die Tabelle für einen Profi-Start. Die Wahrscheinlichkeiten selbst sind unverändert, die Tabelle korrigieren wir im nächsten Update."
+      },
+      "it": {
+        "title": "Errore nella tabella delle probabilità degli attributi",
+        "body": "Abbiamo trovato un errore nella tabella delle probabilità della schermata Tira gli attributi iniziali quando parti dal Settore giovanile nella 2.7.2.\nIl Settore giovanile parte due stagioni prima, quindi l'OVR iniziale è più basso di quello di una partenza Pro. La tabella però mostrava ancora le fasce della partenza Pro, e sembrava che ogni tiro finisse sotto la tabella.\n- Le probabilità del tiro non sono cambiate. Tiri gratuiti, con pubblicità o con biglietto hanno le stesse probabilità.\n- Se parti come Pro, i tiri cadono nelle fasce indicate dalla tabella.\n- Dalla 2.7.2 la partenza della tua ultima carriera è già selezionata: controlla se è scelto Pro o Giovanili prima di tirare.\nNel prossimo aggiornamento la tabella mostrerà le fasce della partenza scelta. Ci scusiamo per la confusione e grazie a chi ce l'ha segnalato.",
+        "summary": "Nella 2.7.2, partire dal Settore giovanile mostrava la tabella delle probabilità di una partenza Pro. Le probabilità non sono cambiate e correggeremo la tabella nel prossimo aggiornamento."
+      },
+      "id": {
+        "title": "Kesalahan tabel peluang atribut awal",
+        "body": "Kami menemukan kesalahan pada tabel peluang di layar Acak atribut awal saat memulai dari Akademi muda di 2.7.2.\nAkademi muda berangkat dua musim lebih awal, jadi OVR awalnya lebih rendah daripada awal Pro. Namun tabel tetap menampilkan rentang awal Pro, sehingga seolah-olah setiap acakan selalu di bawah tabel.\n- Peluang acakan tidak berubah. Acakan gratis, lewat iklan, dan dengan tiket memakai peluang yang sama.\n- Jika memulai sebagai Pro, hasil acakan masuk ke rentang yang tertulis di tabel.\n- Sejak 2.7.2 cara memulai karier terakhirmu sudah terpilih, jadi periksa apakah Pro atau Akademi yang dipilih sebelum mengacak.\nDi pembaruan berikutnya, tabel akan menampilkan rentang sesuai cara memulai yang kamu pilih. Maaf atas kebingungannya, dan terima kasih kepada pemain yang melaporkannya.",
+        "summary": "Di 2.7.2, memulai dari Akademi muda menampilkan tabel peluang untuk awal Pro. Peluangnya sendiri tidak berubah, dan tabelnya akan kami perbaiki di pembaruan berikutnya."
+      },
+      "tr": {
+        "title": "Başlangıç özellikleri olasılık tablosu hatası",
+        "body": "2.7.2'de Altyapı akademisinden başlarken Başlangıç özelliklerini belirle ekranındaki olasılık tablosunun yanlış gösterildiğini tespit ettik.\nAltyapı akademisi iki sezon erken başladığı için başlangıç OVR'si Pro başlangıçtan düşük çıkar. Tablo ise Pro başlangıcın aralıklarını göstermeye devam ettiğinden, her atış tablonun altında kalıyormuş gibi görünüyordu.\n- Atış olasılıkları değişmedi. Ücretsiz, reklamlı ve biletli atışların hepsi aynı olasılığı kullanır.\n- Pro olarak başlarsan atışlar tablodaki aralıklara düşer.\n- 2.7.2'den itibaren son kariyerinin başlangıç şekli önceden seçili gelir; atmadan önce Pro mu Altyapı mı seçili olduğunu kontrol et.\nBir sonraki güncellemede tablo, seçtiğin başlangıca göre aralıkları gösterecek. Karışıklık için özür dileriz, bildiren oyuncuya da teşekkürler.",
+        "summary": "2.7.2'de Altyapı akademisinden başlarken olasılık tablosu Pro başlangıcın aralıklarını gösteriyordu. Olasılıklar değişmedi, tabloyu bir sonraki güncellemede düzelteceğiz."
+      },
+      "ar": {
+        "title": "خطأ في جدول احتمالات قدرات البداية",
+        "body": "اكتشفنا خطأ في جدول الاحتمالات على شاشة توزيع قدرات البداية عند البدء من أكاديمية الشباب في الإصدار 2.7.2.\nتبدأ أكاديمية الشباب قبل موسمين، لذلك يكون OVR البداية أقل من البدء كمحترف. لكن الجدول ظل يعرض نطاقات البدء كمحترف، فبدا وكأن كل رمية تقع تحت الجدول.\n- احتمالات الرمي نفسها لم تتغير. الرميات المجانية وبالإعلان وبالتذكرة لها الاحتمالات نفسها.\n- إذا بدأت كمحترف فستقع الرميات ضمن النطاقات المكتوبة في الجدول.\n- منذ الإصدار 2.7.2 تُختار طريقة بدء مسيرتك الأخيرة مسبقا، فتأكد هل اخترت محترف أم الأكاديمية قبل الرمي.\nفي التحديث القادم سيعرض الجدول النطاقات الخاصة بطريقة البدء التي تختارها. نعتذر عن الالتباس، وشكرا للاعب الذي أبلغنا.",
+        "summary": "في الإصدار 2.7.2، كان البدء من أكاديمية الشباب يعرض جدول الاحتمالات الخاص بالبدء كمحترف. الاحتمالات نفسها لم تتغير، وسنصلح الجدول في التحديث القادم."
+      }
+    }
+  },
+  {
     "id": "2026-11-26-rebuild-harder",
     "date": "2026-11-26",
     "title": "재건 모드가 더 어려워집니다",
